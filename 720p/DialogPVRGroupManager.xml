@@ -318,7 +318,7 @@
   			<onleft>10010</onleft>
   			<onright>10010</onright>
   			<onup>26</onup>
-  			<ondown>28</ondown>
+  			<ondown>25</ondown>
 				<label>$LOCALIZE[190]</label>
   		</control>
   		<control type="button" id="26">
@@ -359,12 +359,33 @@
     		<texturenofocus border="49,0,49,0">dialogs/buttons/cancel_nofocus.png</texturenofocus>
   			<onleft>10010</onleft>
   			<onright>10010</onright>
-  			<onup>29</onup>
+  			<onup>25</onup>
   			<ondown>27</ondown>
 				<label>$LOCALIZE[31353]</label>
-  		</control>
-	  </control>
-
+  		</control>		
+		<control type="radiobutton" id="25">
+			<description>Hide Group</description>
+			<top>-200</top>
+    		<width>200</width>
+		    <textwidth>150</textwidth>
+	        <include>DialogsButtonsText</include>
+    		<texturefocus border="49,0,49,0">dialogs/buttons/empty_focus.png</texturefocus>
+    		<texturenofocus border="49,0,49,0">dialogs/buttons/empty_nofocus.png</texturenofocus>
+			<textureradioonfocus>dialogs/buttons/hide_radio_on.png</textureradioonfocus>
+    		<textureradioonnofocus>dialogs/buttons/hide_radio_on.png</textureradioonnofocus>
+  			<textureradioofffocus>dialogs/buttons/hide_radio_off.png</textureradioofffocus>
+    		<textureradiooffnofocus>dialogs/buttons/hide_radio_off.png</textureradiooffnofocus>
+  			<onleft>10010</onleft>
+  			<onright>10010</onright>
+  			<onup>29</onup>
+  			<ondown>28</ondown>
+			<label>19289</label>
+			<radioposx>11</radioposx>
+			<radioposy>11</radioposy>
+			<radiowidth>24</radiowidth>
+			<radioheight>24</radioheight>
+			</control>
+		</control>
 		<control type="label" id="20">
 			<description>Fake Label used to pass on name label</description>
 			<visible>false</visible>

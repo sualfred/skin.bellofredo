@@ -86,16 +86,26 @@
   			<onright>50</onright>
   			<onup>9111</onup>
   			<ondown>9111</ondown>
-        <include>GeneralOptionsTopMenuAnimation</include>
-				<control type="togglebutton" id="31">
+			<include>GeneralOptionsTopMenuAnimation</include>
+				<control type="togglebutton" id="30">
 					<description>Channels</description>
-          <label>$VAR[PVRChannelsGroupLabel]</label>
-          <altlabel>$VAR[PVRChannelsGroupAltLabel]</altlabel>
-  			  <include>TopLeftMenusButton</include>
+					<label>$VAR[PVRChannelsGroupLabel]</label>
+					<altlabel>$VAR[PVRChannelsGroupAltLabel]</altlabel>
+					<include>TopLeftMenusButton</include>
 					<onclick condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">NextChannelGroup</onclick>
 					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
 					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
 				</control>
+				
+				<control type="radiobutton" id="31">
+					<description>Filter</description>
+					<include>TopLeftMenusButton</include>
+					<label>587</label>
+					<selected>Container.Filtered</selected>
+					<onclick>right</onclick>
+					<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
+				</control>
+
 				<control type="togglebutton" id="32">
 					<description>EPG Guide</description>
           <label>$VAR[PVRGuideGroupLabel]</label>
@@ -150,6 +160,12 @@
   			  <include>TopLeftMenusButton</include>
           <visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
   			</control>
+			<control type="radiobutton" id="6">
+				<description>Show hidden channels</description>
+				<include>TopLeftMenusButton</include>
+				<label>19051</label>
+				<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
+			</control>
 			<control type="radiobutton" id="7">
 				<description>Show deleted recordings</description>
 				<include>TopLeftMenusButton</include>
