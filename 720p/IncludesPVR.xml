@@ -150,6 +150,12 @@
   			  <include>TopLeftMenusButton</include>
           <visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
   			</control>
+			<control type="radiobutton" id="7">
+				<description>Show deleted recordings</description>
+				<include>TopLeftMenusButton</include>
+				<label>19184</label>
+				<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
+			</control>
   	  </control>
 	  </control>
 

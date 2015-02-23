@@ -1377,6 +1377,9 @@
 	</variable>
 
 	<variable name="DialogSeekBarLabel">
+		<value condition="!IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding]">$LOCALIZE[773][COLOR=osdinfo] $INFO[Player.SeekStepSize][/COLOR]</value>
+		<value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding]">$LOCALIZE[773][COLOR=osdinfo] $INFO[Player.SeekOffset][/COLOR]</value>
+		<value condition="!Player.DisplayAfterSeek + Player.Seeking">$LOCALIZE[773]</value>
 		<value condition="Player.Playing + !Player.Seeking + !Player.DisplayAfterSeek">[COLOR=blue]$LOCALIZE[31301][/COLOR]</value>
 		<value condition="[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">[COLOR=blue]$LOCALIZE[31302][/COLOR]</value>
 		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">[COLOR=osdinfo]$LOCALIZE[15107] $INFO[Player.CacheLevel]%[/COLOR]</value>
@@ -1390,10 +1393,10 @@
 		<value condition="Player.Forwarding4x + !Player.Seeking">$LOCALIZE[31304] [COLOR=osdinfo]x4[/COLOR]</value>
 		<value condition="Player.Forwarding8x + !Player.Seeking">$LOCALIZE[31304] [COLOR=osdinfo]x8[/COLOR]</value>
 		<value condition="Player.Forwarding16x + !Player.Seeking">$LOCALIZE[31304] [COLOR=osdinfo]x16[/COLOR]</value>
-		<value condition="Player.Forwarding32x + !Player.Seeking">$LOCALIZE[31304] [COLOR=osdinfo]x32[/COLOR]</value>
+		<value condition="Player.Forwarding32x + !Player.Seeking">$LOCALIZE[31304] [COLOR=osdinfo]x32[/COLOR]</value>		
 		<value condition="Player.DisplayAfterSeek + !Player.Seeking">$LOCALIZE[773]  [COLOR=osdinfo]$INFO[Player.SeekOffset][/COLOR]</value>
 	</variable>
-
+	
 	<variable name="Vis-Background">
 		<value condition="Skin.HasSetting(Vis-Fanart)">$INFO[Player.Art(fanart)]</value>
 		<value condition="Skin.HasSetting(Vis-ArtistSlideshow) + IsEmpty(Window(Visualisation).Property(ArtistSlideshowRefresh))">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</value>

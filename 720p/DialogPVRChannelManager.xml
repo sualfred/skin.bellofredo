@@ -84,7 +84,7 @@
 					<height>308</height>
 					<onup>20</onup>
 					<ondown>20</ondown>
-					<onleft>31</onleft>
+					<onleft>34</onleft>
 					<onright>10030</onright>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime>200</scrolltime>
@@ -223,8 +223,8 @@
 				<control type="group">
 					<left>0</left>
 					<top>308</top>
-					<control type="button" id ="31">
-						<description>Edit channel Button</description>
+					<control type="button" id ="34">
+						<description>Create channel Button</description>
 						<width>131</width>
 				    <height>40</height>
 						<font>FontSize_16B</font>
@@ -239,13 +239,13 @@
 						<textoffsetx>5</textoffsetx>
 						<textoffsety>9</textoffsety>
 						<pulseonselect>true</pulseonselect>
-						<label>19203</label>
+						<label>19204</label>
 						<onleft>noop</onleft>
-						<onright>32</onright>
+						<onright>noop</onright>
 						<onup>20</onup>
 						<ondown>20</ondown>
 					</control>
-					<control type="button" id ="32">
+					<!--<control type="button" id ="32">
 						<description>Delete channel Button</description>
 						<left>135</left>
 						<width>131</width>
@@ -263,7 +263,7 @@
 						<textoffsety>9</textoffsety>
 						<pulseonselect>true</pulseonselect>
 						<label>19211</label>
-						<onleft>31</onleft>
+						<onleft>34</onleft>
 						<onright>33</onright>
 						<onup>20</onup>
 						<ondown>20</ondown>
@@ -290,7 +290,7 @@
 						<onright>10030</onright>
 						<onup>20</onup>
 						<ondown>20</ondown>
-					</control>
+					</control>-->
 				</control>
 			</control>
 	
