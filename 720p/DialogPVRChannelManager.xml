@@ -81,7 +81,7 @@
 					<left>0</left>
 					<top>0</top>
 					<width>400</width>
-					<height>352</height>
+					<height>308</height>
 					<onup>20</onup>
 					<ondown>20</ondown>
 					<onleft>31</onleft>
@@ -97,7 +97,7 @@
 							<height>34</height>
 		          <colordiffuse>77white</colordiffuse>
 						  <aspectratio align="center" aligny="center">keep</aspectratio>
-							<texture fallback="windows/pvr/LiveTV.png">$INFO[ListItem.Property(Icon)]</texture>
+							<texture fallback="windows/pvr/channel_icon.png">$INFO[ListItem.Property(Icon)]</texture>
 							<visible>ListItem.Property(ActiveChannel)</visible>
 						</control>
 						<control type="image">
@@ -108,7 +108,7 @@
 		          <colordiffuse>77white</colordiffuse>
 						  <aspectratio align="center" aligny="center">keep</aspectratio>
 							<colordiffuse>77white</colordiffuse>
-							<texture fallback="windows/pvr/LiveTV.png">$INFO[ListItem.Property(Icon)]</texture>
+							<texture fallback="windows/pvr/channel_icon.png">$INFO[ListItem.Property(Icon)]</texture>
 							<visible>!ListItem.Property(ActiveChannel)</visible>
 						</control>
 						<control type="label">
@@ -170,7 +170,7 @@
 							<width>34</width>
 							<height>34</height>
 						  <aspectratio align="center" aligny="center">keep</aspectratio>
-							<texture fallback="windows/pvr/LiveTV.png">$INFO[ListItem.Property(Icon)]</texture>
+							<texture fallback="windows/pvr/channel_icon.png">$INFO[ListItem.Property(Icon)]</texture>
 							<visible>ListItem.Property(ActiveChannel)</visible>
 						</control>
 						<control type="image">
@@ -180,7 +180,7 @@
 							<height>34</height>
 						  <aspectratio align="center" aligny="center">keep</aspectratio>
 							<colordiffuse>77white</colordiffuse>
-							<texture fallback="windows/pvr/LiveTV.png">$INFO[ListItem.Property(Icon)]</texture>
+							<texture fallback="windows/pvr/channel_icon.png">$INFO[ListItem.Property(Icon)]</texture>
 							<visible>!ListItem.Property(ActiveChannel)</visible>
 						</control>
 						<control type="label">
@@ -220,7 +220,78 @@
 					</focusedlayout>
 				</control>
 	
-				
+				<control type="group">
+					<left>0</left>
+					<top>308</top>
+					<control type="button" id ="31">
+						<description>Edit channel Button</description>
+						<width>131</width>
+				    <height>40</height>
+						<font>FontSize_16B</font>
+						<textcolor>77white</textcolor>
+						<focusedcolor>white</focusedcolor>
+					  <disabledcolor>33white</disabledcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<texturefocus>buttons/focus.png</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<align>center</align>
+						<aligny>top</aligny>
+						<textoffsetx>5</textoffsetx>
+						<textoffsety>9</textoffsety>
+						<pulseonselect>true</pulseonselect>
+						<label>19203</label>
+						<onleft>noop</onleft>
+						<onright>32</onright>
+						<onup>20</onup>
+						<ondown>20</ondown>
+					</control>
+					<control type="button" id ="32">
+						<description>Delete channel Button</description>
+						<left>135</left>
+						<width>131</width>
+				    <height>40</height>
+						<font>FontSize_16B</font>
+						<textcolor>77white</textcolor>
+						<focusedcolor>white</focusedcolor>
+					  <disabledcolor>33white</disabledcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<texturefocus>buttons/focus.png</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<align>center</align>
+						<aligny>top</aligny>
+						<textoffsetx>5</textoffsetx>
+						<textoffsety>9</textoffsety>
+						<pulseonselect>true</pulseonselect>
+						<label>19211</label>
+						<onleft>31</onleft>
+						<onright>33</onright>
+						<onup>20</onup>
+						<ondown>20</ondown>
+					</control>
+					<control type="button" id ="33">
+						<description>New channel Button</description>
+						<left>270</left>
+						<width>130</width>
+				    <height>40</height>
+						<font>FontSize_16B</font>
+						<textcolor>77white</textcolor>
+						<focusedcolor>white</focusedcolor>
+					  <disabledcolor>33white</disabledcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<texturefocus>buttons/focus.png</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<align>center</align>
+						<aligny>top</aligny>
+						<textoffsetx>5</textoffsetx>
+						<textoffsety>9</textoffsety>
+						<pulseonselect>true</pulseonselect>
+						<label>19204</label>
+						<onleft>32</onleft>
+						<onright>10030</onright>
+						<onup>20</onup>
+						<ondown>20</ondown>
+					</control>
+				</control>
 			</control>
 	
 			<!-- Right Part -->		
@@ -305,7 +376,7 @@
 					<width>36</width>
 					<height>36</height>
 				  <aspectratio align="right" aligny="center">keep</aspectratio>
-					<texture fallback="windows/pvr/LiveTV.png">$INFO[ListItem.Property(Icon)]</texture>
+					<texture fallback="windows/pvr/channel_icon.png">$INFO[ListItem.Property(Icon)]</texture>
 				</control>
 				<control type="radiobutton" id="12">
 					<description>EPG activated</description>

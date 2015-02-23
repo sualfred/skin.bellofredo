@@ -42,7 +42,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture background="true">dialogs/other/header_line.png</texture>
 		</control>
-		<control type="label" id="2">
+		<control type="label" id="3">
 			<description>header label</description>
 			<left>360</left>
 			<top>152</top>
@@ -74,7 +74,7 @@
 			<label>$LOCALIZE[13389]</label>
 			<font>FontSize_20</font>
 		</control>
-		<control type="list" id="5">
+		<control type="list" id="2">
 			<posx>364</posx>
 			<posy>209</posy>
 			<width>553</width>
