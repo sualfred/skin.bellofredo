@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes> 
 	<variable name="MPAAFilmRating">
+		<!--international ratings-->
 		<value condition="substring(ListItem.MPAA,Rated G) | substring(ListItem.MPAA,USA:G)">flags/mpaa/film/rating-g.png</value>
 		<value condition="[substring(ListItem.MPAA,Rated PG) + !substring(ListItem.MPAA,13)] | substring(ListItem.MPAA,USA:PG)">flags/mpaa/film/rating-pg.png</value>
 		<value condition="[substring(ListItem.MPAA,PG-13) | substring(ListItem.MPAA,USA:PG-13)] + [!substring(ListItem.MPAA,USA:R) + !substring(ListItem.MPAA,rated R)]">flags/mpaa/film/rating-pg13.png</value>
 		<value condition="substring(ListItem.MPAA,Rated R) | substring(ListItem.MPAA,USA:R)">flags/mpaa/film/rating-r.png</value>
 		<value condition="substring(ListItem.MPAA, NC-17) | substring(ListItem.MPAA,USA:NC-17)">flags/mpaa/film/rating-nc17.png</value>
+		<!--german rating-->
+		<value condition="substring(ListItem.mpaa,Rated 18) | substring(ListItem.mpaa,Germany:18) | substring(ListItem.mpaa,FSK 18) | substring(ListItem.mpaa,ab 18)">flags/mpaa/fsk/fsk18.png</value>
+		<value condition="substring(ListItem.mpaa,Rated 16) | substring(ListItem.mpaa,Germany:16) | substring(ListItem.mpaa,FSK 16) | substring(ListItem.mpaa,ab 16)">flags/mpaa/fsk/fsk16.png</value>
+		<value condition="substring(ListItem.mpaa,Rated 12) | substring(ListItem.mpaa,Germany:12) | substring(ListItem.mpaa,FSK 12) | substring(ListItem.mpaa,ab 12)">flags/mpaa/fsk/fsk12.png</value>
+		<value condition="substring(ListItem.mpaa,Rated 0) | substring(ListItem.mpaa,Germany:0) | substring(ListItem.mpaa,FSK 0) | substring(ListItem.mpaa,ab 0)">flags/mpaa/fsk/fsk0.png</value>
 		<value>flags/mpaa/film/rating-nr.png</value>
 	</variable>
 	<variable name="VideoCodec">
