@@ -15,5 +15,6 @@
 		<!-- <include>HomeMenuSubLabels</include> -->
 		<include>TopHomeMenu</include>
 		<include>HomeWeatherAndClock</include>
+		<include>FredHomeWidgets</include>
 	</controls>	
 </window>
