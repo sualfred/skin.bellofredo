@@ -1,3 +1,5 @@
+Official Bello Skin changes, which are ported to this version:
+
 [B][COLOR=FF56ADDA]v3.0.2 - BETA[/COLOR][/B]
 • Added new Netflix View for Movies and TV Shows.
 • Added new 3D backgrounds for Home Menu.

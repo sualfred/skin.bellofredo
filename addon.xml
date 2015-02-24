@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.bello" version="3.0.2 BETA" name="Bello" provider-name="Nessus">
+<addon id="skin.bellofred" version="4.0.0 BETA" name="Bello Fredo" provider-name="Sualfred">
   <requires>
-		<import addon="xbmc.gui" version="5.3.0"/>
+		<import addon="xbmc.gui" version="5.8.0"/>
 		<import addon="service.skin.widgets" version="0.0.29"/>
     <import addon="service.library.data.provider" version="0.0.1"/>
 		<import addon="script.tvtunes" version="3.0.6"/>
@@ -114,7 +114,7 @@
     <platform>all</platform>
     <license>Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported License</license>
     <forum>http://forum.xbmc.org/showthread.php?tid=158577</forum>
-    <email>nessus85100 at hotmail dot com</email>
-    <source>https://github.com/Nessus85100/Bello</source>
+    <email></email>
+    <source>https://github.com/sualfred/Bello-Kodi-15.x-Nightlies</source>
   </extension>
 </addon>
