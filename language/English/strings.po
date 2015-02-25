@@ -180,6 +180,49 @@ msgctxt "#31041"
 msgid "Creator"
 msgstr ""
 
+#empty strings from id 31042 to 31069
+#ExtendedInfoLabels
+
+msgctxt "#31070"
+msgid "Film Info"
+msgstr ""
+
+msgctxt "#31071"
+msgid "Recommended Movies"
+msgstr ""
+
+msgctxt "#31072"
+msgid "Crew List"
+msgstr ""
+
+msgctxt "#31073"
+msgid "Cast List"
+msgstr ""
+
+msgctxt "#31074"
+msgid "About"
+msgstr ""
+
+msgctxt "#31075"
+msgid "Recommended videos by TMDB"
+msgstr ""
+
+msgctxt "#31076"
+msgid "Photos"
+msgstr ""
+
+msgctxt "#31077"
+msgid "Online Videos"
+msgstr ""
+
+msgctxt "#31078"
+msgid "TV Show Roles"
+msgstr ""
+
+msgctxt "#31079"
+msgid "Movie Actor Roles"
+msgstr ""
+
 #empty strings from id 31042 to 31079
 #View Type labels
 

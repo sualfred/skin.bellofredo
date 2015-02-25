@@ -1320,10 +1320,22 @@
 		<value condition="Container.Content(Episodes)">$LOCALIZE[20360]</value>
 	</variable>
 
-	<variable name="MetadataActorsInfoContentInfoLabels">
-		<value condition="StringCompare(Window(movieinformation).Property(MetadataActors.Type),actor) + !Control.HasFocus(150)">$LOCALIZE[344]</value>
-		<value condition="StringCompare(Window(movieinformation).Property(MetadataActors.Type),director) + !Control.HasFocus(150)">$LOCALIZE[20348]</value>
-		<value condition="[StringCompare(Window(movieinformation).Property(MetadataActors.Type),actor) | StringCompare(Window(movieinformation).Property(MetadataActors.Type),director)] + Control.HasFocus(150)">$LOCALIZE[31164]</value>
+	<variable name="ExtendedInfoActorContentInfoLabels">
+		<value condition="StringCompare(Window.Property(switchcontent),1)">$LOCALIZE[31079]</value>
+		<value condition="StringCompare(Window.Property(switchcontent),2)">$LOCALIZE[31078]</value>
+		<value condition="StringCompare(Window.Property(switchcontent),3)">$LOCALIZE[31077]</value>
+		<value condition="StringCompare(Window.Property(switchcontent),4)">$LOCALIZE[31076]</value>
+		<value condition="StringCompare(Window.Property(switchcontent),5)">$LOCALIZE[20445]</value>
+		<value>$LOCALIZE[31074]</value>
+	</variable>
+	
+	<variable name="ExtendedInfoVideoContentInfoLabels">
+		<value condition="StringCompare(Window.Property(switchcontent),1)">$LOCALIZE[31073]</value>
+		<value condition="StringCompare(Window.Property(switchcontent),5)">$LOCALIZE[31072]</value>
+		<value condition="StringCompare(Window.Property(switchcontent),2)">$LOCALIZE[31075]</value>
+		<value condition="StringCompare(Window.Property(switchcontent),3)">$LOCALIZE[31077]</value>
+		<value condition="StringCompare(Window.Property(switchcontent),4)">$LOCALIZE[20445]</value>
+		<value>$LOCALIZE[31074]</value>
 	</variable>
 
   <variable name="VideoInfoStarRating">

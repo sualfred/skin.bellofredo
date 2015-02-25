@@ -298,8 +298,8 @@
 				| Window.IsActive(songinformation)
 				| Window.IsActive(addoninformation)
 				| [Window.IsActive(script-globalsearch-main.xml) + Skin.HasSetting(HideBGFanart)]
-				| [Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(movieinformation)]
-				| [Window.IsActive(script-Actors-DialogVideoInfo.xml) + !Window.IsActive(movieinformation)]
+				| [Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(movieinformation)]
+				| [Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(movieinformation)]
 			</visible>
 		</control>
 	</include>

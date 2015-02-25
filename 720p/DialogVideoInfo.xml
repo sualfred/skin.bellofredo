@@ -6,7 +6,7 @@
 
 		<control type="group">
 			<visible>![Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(yesnodialog) | Window.IsActive(FileBrowser) | Window.IsActive(SelectDialog) | Window.IsActive(DialogSelect.xml)]</visible>
-      <visible>!Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + IsEmpty(Window(Home).Property(script.metadata.actors.hasparent)) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)]</visible>
+      <visible>!Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + IsEmpty(Window(Home).Property(script.metadata.actors.hasparent)) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)]</visible>
 	    <include>DialogAnimation</include>
 
 			<control type="group">
@@ -512,8 +512,9 @@
 				<onleft>50</onleft>
 				<onright>50</onright>
 				<onup>9000</onup>
-				<ondown condition="System.HasAddon(script.metadata.actors) + IsEmpty(Window(Home).Property(script.metadata.actors.isactive)) + !Container.Content(musicvideos)">SetProperty(MetadataActors.Type,actor,movieinformation)</ondown>
-				<ondown condition="System.HasAddon(script.metadata.actors) + IsEmpty(Window(Home).Property(script.metadata.actors.isactive)) + !Container.Content(musicvideos)">RunScript(script.metadata.actors,$INFO[Container(50).ListItem.Label])</ondown>
+				<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</ondown>
+				<!--<ondown condition="System.HasAddon(script.metadata.actors) + IsEmpty(Window(Home).Property(script.metadata.actors.isactive)) + !Container.Content(musicvideos)">SetProperty(MetadataActors.Type,actor,movieinformation)</ondown>
+				<ondown condition="System.HasAddon(script.metadata.actors) + IsEmpty(Window(Home).Property(script.metadata.actors.isactive)) + !Container.Content(musicvideos)">RunScript(script.metadata.actors,$INFO[Container(50).ListItem.Label])</ondown>-->
 				<itemlayout width="143" height="250">
 					<control type="group">
 						<animation reversible="true" effect="slide" end="32,0" time="150" condition="Control.HasFocus(50)">Conditional</animation>
@@ -572,7 +573,7 @@
 						</control>
 					</control>
 				  <control type="label">
-						<posx>180</posx>
+						<posx>185</posx>
 						<posy>185</posy>
 						<width>670</width>
 						<height>40</height>
@@ -599,7 +600,7 @@
 						<animation reversible="false" effect="fade" start="100" end="0" time="0">Unfocus</animation>
 				  </control>
 				  <control type="fadelabel.">
-						<posx>180</posx>
+						<posx>185</posx>
 						<posy>185</posy>
 						<width>670</width>
 						<height>40</height>
@@ -631,7 +632,7 @@
 	  <control type="group">
 			<posx>45</posx>
 			<posy>25</posy>
-			<visible>!Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + IsEmpty(Window(Home).Property(script.metadata.actors.hasparent)) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]</visible>
+			<visible>!Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + IsEmpty(Window(Home).Property(script.metadata.actors.hasparent)) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]</visible>
 	    <animation type="WindowOpen" reversible="false">
         <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
         <effect type="slide" start="0,-55" end="0,0" time="350" tween="cubic" easing="out" />
@@ -957,7 +958,7 @@
         <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
         <effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="out" />
 	    </animation>
-			<visible>!Window.IsActive(script-Actors-DialogInfo.xml) + IsEmpty(Window(Home).Property(script.metadata.actors.hasparent)) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]</visible>
+			<visible>!Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]</visible>
 			<control type="label">
 				<width>300</width>
 				<height>20</height>
