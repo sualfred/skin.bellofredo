@@ -621,7 +621,9 @@ msgctxt "#31233"
 msgid "Chance of Precipitation"
 msgstr ""
 
-#empty string with id 31234
+msgctxt "#31234"
+msgid "Person"
+msgstr ""
 
 msgctxt "#31235"
 msgid "Current Forecast"

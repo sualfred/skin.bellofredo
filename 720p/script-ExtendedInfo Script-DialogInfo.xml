@@ -36,6 +36,14 @@
 			<include>FullscreenDimensions</include>
 			<texture background="true">$INFO[Window.Property(actor.ImageFilter)]</texture>
 			<include>BackgroundFade</include>	
+			<visible>IsEmpty(Container(750).ListItem.Property(Original))</visible>
+		</control>
+		<control type="image">
+			<description>background</description>
+			<include>FullscreenDimensions</include>
+			<texture background="true">$INFO[Container(750).ListItem.Property(Original)]</texture>
+			<include>BackgroundFade</include>
+			<visible>!IsEmpty(Container(750).ListItem.Property(Original))</visible>
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>
@@ -836,6 +844,12 @@
 				<control type="label">
 					<include>TopBigLabel</include>
 					<label>20337</label>
+					<visible>!IsEmpty(Container(150).ListItem.Label)</visible>
+				</control>
+				<control type="label">
+					<include>TopBigLabel</include>
+					<label>$LOCALIZE[31234]</label>
+					<visible>IsEmpty(Container(150).ListItem.Label)</visible>
 				</control>
 				<control type="label">
 					<description>Plot</description>

@@ -132,9 +132,8 @@
 			        <onleft>9000</onleft>
 					    <onright>9000</onright>
 							<onup>9000</onup>
-				      <ondown condition="System.HasAddon(script.metadata.actors) + IsEmpty(Window(Home).Property(script.metadata.actors.isactive)) + !Container.Content(musicvideos)">SetProperty(MetadataActors.Type,director,movieinformation)</ondown>
-				      <ondown condition="System.HasAddon(script.metadata.actors) + IsEmpty(Window(Home).Property(script.metadata.actors.isactive)) + !Container.Content(musicvideos)">RunScript(script.metadata.actors,$INFO[ListItem.Director])</ondown>
 					    <include>TopButton</include>
+							<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Listitem.Director])</ondown>
 							<onclick>SendClick(2003,13)</onclick>
 						  <enable>!IsEmpty(ListItem.Director)</enable>
 						</control>
@@ -513,8 +512,6 @@
 				<onright>50</onright>
 				<onup>9000</onup>
 				<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</ondown>
-				<!--<ondown condition="System.HasAddon(script.metadata.actors) + IsEmpty(Window(Home).Property(script.metadata.actors.isactive)) + !Container.Content(musicvideos)">SetProperty(MetadataActors.Type,actor,movieinformation)</ondown>
-				<ondown condition="System.HasAddon(script.metadata.actors) + IsEmpty(Window(Home).Property(script.metadata.actors.isactive)) + !Container.Content(musicvideos)">RunScript(script.metadata.actors,$INFO[Container(50).ListItem.Label])</ondown>-->
 				<itemlayout width="143" height="250">
 					<control type="group">
 						<animation reversible="true" effect="slide" end="32,0" time="150" condition="Control.HasFocus(50)">Conditional</animation>
@@ -719,6 +716,13 @@
           <onclick>XBMC.RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick>
           <visible>System.HasAddon(script.cinema.experience) + Container.Content(movies) + !SubString(Container.FolderPath,plugin)</visible>
 				</control>
+				<control type="button" id="104">
+					<description>ExtendedInfo</description>
+					<label>Extended Info</label>
+					<onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Listitem.Title])</onclick>
+				  <include>TopButton</include>
+					<visible>!substring(Container.FolderPath,plugin://plugin.video,left)</visible>
+				</control>
 				<control type="button" id="105">
 					<description>Cast/Plot</description>
 					<label>-</label>
@@ -778,6 +782,14 @@
 					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(80)" reversible="true">Conditional</animation>
           <animation effect="zoom" start="100" end="90" time="200" tween="cubic" easing="inout" center="auto" condition="!Control.HasFocus(80)" reversible="true">Conditional</animation>
           <visible>System.HasAddon(script.cinema.experience) + Container.Content(movies) + !SubString(Container.FolderPath,plugin)</visible>
+				</control>
+				<control type="label">
+					<description>ExtendedInfo</description>
+				  <include>TopSmallLabel</include>
+          <label>$INFO[Control.GetLabel(104)]</label>
+					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(104)" reversible="true">Conditional</animation>
+          <animation effect="zoom"  start="100" end="90" time="200" tween="cubic" easing="inout" center="auto" condition="!Control.HasFocus(104)" reversible="true">Conditional</animation>
+					<visible>!substring(Container.FolderPath,plugin://plugin.video,left)</visible>
 				</control>
 				<control type="label">
 					<description>Cast/Plot</description>
