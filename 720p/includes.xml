@@ -1183,6 +1183,10 @@
 		<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),3)">plugin://service.library.data.provider?type=randomalbums&amp;reload=$INFO[Window(Home).Property(randomalbums)]</value>
 		<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">plugin://script.extendedinfo?info=topartists&amp;&amp;limit=20</value>
 	</variable>
+	<variable name="QuickNav_WidgetListContentTuneIn">
+		<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">plugin://plugin.audio.tuneinradio/?path=recents</value>
+		<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">plugin://plugin.audio.tuneinradio/?path=browse&amp;id=presets</value>
+	</variable>
 
 	<variable name="RSSVideoFeedURL">
 		<value condition="stringcompare(Skin.String(RSSVideoFeedURL),Euronews)">Euronews</value>
@@ -1214,6 +1218,7 @@
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + stringcompare(Skin.String(QuickNavWidgetMusicType),2)">$LOCALIZE[2] $LOCALIZE[575]</value>
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + stringcompare(Skin.String(QuickNavWidgetMusicType),3)">$LOCALIZE[31249]</value>
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + stringcompare(Skin.String(QuickNavWidgetMusicType),4)">$LOCALIZE[31259]</value>
+		<value condition="Control.HasFocus(550)">$LOCALIZE[31138]</value>
 		<value condition="[[Control.HasFocus(65) | Control.HasFocus(650)] + !stringcompare(Skin.String(RSSVideoFeedName),Custom)]">$INFO[Skin.String(RSSVideoFeedName)]</value>
 		<value condition="[[Control.HasFocus(65) | Control.HasFocus(650)] + stringcompare(Skin.String(RSSVideoFeedName),Custom)]">$INFO[Skin.String(SearchStringName)]</value>
 	</variable>
@@ -1224,6 +1229,7 @@
 		<value condition="[Control.HasFocus(35) | Control.HasFocus(350)] + !IsEmpty(Container(350).ListItem.Label)">$INFO[Container(350).ListItem.Label]</value>
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + !IsEmpty(Container(450).ListItem.Label)">$INFO[Container(450).ListItem.Label]$INFO[Container(450).ListItem.Year, (,)]</value>
 		<value condition="[Control.HasFocus(65) | Control.HasFocus(650)] + !IsEmpty(Container(650).ListItem.Label)">$INFO[Container(650).ListItem.Label]</value>
+		<value condition="Control.HasFocus(550) + !IsEmpty(Container(550).ListItem.Label)">$INFO[Container(550).ListItem.Label]</value>
 	</variable>
 
 	<variable name="QuickNavWidgetListItemLabel2">
@@ -1233,6 +1239,8 @@
 		<value condition="[Control.HasFocus(35) | Control.HasFocus(350)] + !IsEmpty(Container(350).ListItem.TVShowTitle)">$INFO[Container(350).ListItem.Premiered]$INFO[Container(350).ListItem.Rating, • ]</value>
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + !stringcompare(Skin.String(QuickNavWidgetMusicType),4) + !IsEmpty(Container(450).ListItem.Artist)">$INFO[Container(450).ListItem.Artist]</value>
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)]">$INFO[Container(450).ListItem.Property(Listeners),,  $LOCALIZE[15200] $LOCALIZE[20455]]</value>
+		<value condition="Control.HasFocus(550) + stringcompare(Skin.String(QuickNavWidgetTuneInType),1">$LOCALIZE[31286]</value>
+		<value condition="Control.HasFocus(550) + stringcompare(Skin.String(QuickNavWidgetTuneInType),2">$LOCALIZE[31287]</value>
 	</variable>
 
 	<variable name="QuickNavWidgetThumb">

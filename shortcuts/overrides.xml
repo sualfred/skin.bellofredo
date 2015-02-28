@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <overrides>
 	<groupings>
-
     <!-- ====== -->
     <!-- Common -->
     <!-- ====== -->
@@ -124,13 +123,13 @@
 		</node>
 	</groupings>
 
-
+	
   <!-- =============== -->
   <!-- Shortcuts Check -->
   <!-- =============== -->
   <checkforshortcut property="trailers">ActivateWindow(videos,plugin://$INFO[Skin.String(TrailersAddon_Path)])</checkforshortcut>
-
-
+  
+  
   <!-- =========== -->
   <!-- Backgrounds -->
   <!-- =========== -->

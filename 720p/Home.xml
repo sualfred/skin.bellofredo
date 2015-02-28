@@ -1,20 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window  id="0">
-	<defaultcontrol always="true">20</defaultcontrol>
+	<defaultcontrol always="true">20</defaultcontrol>	
 	<onload>SetProperty(RefreshList,1,Home)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;options=clonewidgets&amp;mainmenuID=20)</onload>
   <allowoverlay>yes</allowoverlay>
   <backgroundcolor>0</backgroundcolor>
-	<controls>
+	<controls>		
 		<include>BackgroundContent</include>
-		<include>BackgroundVignette</include>
-		<include>HomeMenuWraplist</include>
-		<include>HomeSubMenus</include>
-		<include>CommonDialogsFadeOutBG</include>
-		<include>CommonNowPlaying</include>
-		<!-- <include>HomeMenuSubLabels</include> -->
-		<include>TopHomeMenu</include>
-		<include>HomeWeatherAndClock</include>
-		<include>FredHomeWidgets</include>
+		<include>BackgroundVignette</include>		
+		<control type="group">
+			<animation type="Conditional" condition="Window.Previous(startup) + !Skin.HasSetting(KodiIntro.disabled) + !Skin.HasSetting(Use_Startup_Playlist)" reversible="false">
+				<effect type="fade" start="0" end="100" time="1000" delay="10500" tween="sine" easing="in"  />					
+			</animation>
+			<include>HomeMenuWraplist</include>
+			<include>HomeSubMenus</include>
+			<include>CommonDialogsFadeOutBG</include>
+			<include>CommonNowPlaying</include>
+			<include>TopHomeMenu</include>
+			<include>HomeWeatherAndClock</include>
+			<include>FredHomeWidgets</include>
+		</control>	
+		<!-- debug stuff
+		<control type="grouplist">
+			<posx>15</posx>
+			<posy>15</posy>
+			<width>780</width>
+			<height>450</height>
+			<itemgap>12</itemgap>			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>DefaultID: $INFO[Container(20).ListItem.Property(defaultID)]</label>
+			</control>
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>labelID: $INFO[Container(20).ListItem.Property(labelID)]</label>
+			</control>
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>Path property: $INFO[Container(20).ListItem.Property(path)]</label>
+			</control>
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>Found substring: SubString(Container(20).ListItem.Property(path),tuneinradio)</label>
+				<visible>SubString(Container(20).ListItem.Property(path),tuneinradio)</visible>
+			</control>
+		</control>
+		-->
 	</controls>	
 </window>

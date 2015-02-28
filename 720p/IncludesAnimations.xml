@@ -637,6 +637,14 @@
     <animation effect="zoom" start="100" end="80" time="450" center="auto" tween="back" easing="out" condition="![Control.HasFocus(45) | Control.HasFocus(450)] + !IsEmpty(Window.Property(Movement))" reversible="false">Conditional</animation>
     <animation effect="zoom" start="100" end="80" time="450" center="auto" tween="back" easing="out" condition="![Control.HasFocus(45) | Control.HasFocus(450)] + IsEmpty(Window.Property(Movement))" reversible="false">Conditional</animation>
 	</include>
+	<include name="QuickNavTuneInWidgetAnimation">
+    <animation effect="fade" start="0" end="100" time="300" tween="sine" easing="out">Visible</animation>
+    <animation effect="fade" start="100" end="0" time="300" tween="sine" easing="out">Hidden</animation>
+    <animation effect="zoom" start="80" end="100" time="450" center="auto" tween="back" easing="out" condition="Control.HasFocus(550) + IsEmpty(Window.Property(Movement))" reversible="false">Conditional</animation>
+    <animation effect="zoom" start="80" end="100" time="450" center="auto" tween="back" easing="out" condition="Control.HasFocus(550) + !IsEmpty(Window.Property(Movement))" reversible="false">Conditional</animation>
+    <animation effect="zoom" start="100" end="80" time="450" center="auto" tween="back" easing="out" condition="!Control.HasFocus(550) + !IsEmpty(Window.Property(Movement))" reversible="false">Conditional</animation>
+    <animation effect="zoom" start="100" end="80" time="450" center="auto" tween="back" easing="out" condition="!Control.HasFocus(550) + IsEmpty(Window.Property(Movement))" reversible="false">Conditional</animation>
+	</include>
 	<include name="QuickNavMiscWidgetAnimation">
     <animation effect="fade" start="0" end="100" time="300" tween="sine" easing="out">Visible</animation>
     <animation effect="fade" start="100" end="0" time="300" tween="sine" easing="out">Hidden</animation>

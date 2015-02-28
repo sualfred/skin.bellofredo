@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.bellofredo" version="4.0.3" name="Bello Fredo" provider-name="sualfred">
+<addon id="skin.bellofredo" version="4.0.4" name="Bello Fredo" provider-name="sualfred">
   <requires>
 		<import addon="xbmc.gui" version="5.8.0" />
-		<import addon="service.skin.widgets" version="0.0.27 "/>
+		<import addon="service.skin.widgets" version="0.0.29 "/>
 		<import addon="service.library.data.provider" version="0.0.1" />
 		<import addon="script.tvtunes" version="3.0.6" />
 		<import addon="script.tv.show.next.aired" version="6.0.10" />
@@ -16,6 +16,7 @@
 		<import addon="script.skinshortcuts" version="0.4.4" />
 		<import addon="script.cinema.experience" version="4.0.10" />
 		<import addon="weather.openweathermap.extended" version="1.0.1" />
+		<import addon="plugin.audio.radiotunes.com" version="3.0.0" />
 	</requires>
 	<extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="0.75" debugging="false">
 	    <res width="1280" height="720" aspect="16:9" default="true" folder="720p"/>

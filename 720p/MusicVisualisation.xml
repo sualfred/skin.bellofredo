@@ -264,7 +264,16 @@
 				 <include>CDImageAnim</include>
          <animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="![Player.ShowInfo | Window.IsActive(MusicOSD)]" reversible="true">Conditional</animation>
 				 <visible>!Player.IsInternetStream</visible>
-      </control>				
+      </control>
+			<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>160</width>
+					<height>160</height>
+					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+					<texture diffuse="thumbs/music_diffuse.png">thumbs/thumb_back.png</texture>
+					<fadetime>800</fadetime>
+			</control>
 			<control type="image">
 					<left>0</left>
 					<top>0</top>

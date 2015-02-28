@@ -4,7 +4,7 @@
 		<item id="1">
 			<label>Serien</label>
 			<label2>Gewöhnliche Abkürzung</label2>
-			<icon>DefaultTVShows.png</icon>
+			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">31002</property>
 			<property name="defaultID">tvshows</property>
@@ -21,7 +21,7 @@
 		<item id="2">
 			<label>$LOCALIZE[342]</label>
 			<label2>Gewöhnliche Abkürzung</label2>
-			<icon>DefaultMovies.png</icon>
+			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">movies</property>
 			<property name="defaultID">movies</property>
@@ -87,7 +87,7 @@
 		<item id="6">
 			<label>$LOCALIZE[10005]</label>
 			<label2>Gewöhnliche Abkürzung</label2>
-			<icon>DefaultMusicAlbums.png</icon>
+			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">music</property>
 			<property name="defaultID">music</property>
@@ -101,20 +101,20 @@
 			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="7">
-			<label>Radio</label>
+			<label>TuneIn Radio</label>
 			<label2>Musik Add-On</label2>
 			<icon>DefaultShortcut.png</icon>
-			<thumb>image://C%3a%5cUsers%5csualfred%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.audio.radio_de%5cicon.png/</thumb>
-			<property name="labelID">plugin.audio.radio_de</property>
-			<property name="defaultID">plugin.audio.radio_de</property>
-			<onclick>ActivateWindow(10501,"plugin://plugin.audio.radio_de",return)</onclick>
-			<property name="path">ActivateWindow(10501,"plugin://plugin.audio.radio_de",return)</property>
+			<thumb>image://C%3a%5cUsers%5csualfred%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.audio.tuneinradio%5cicon.png/</thumb>
+			<property name="labelID">plugin.audio.tuneinradio</property>
+			<property name="defaultID">plugin.audio.tuneinradio</property>
+			<onclick>ActivateWindow(10501,"plugin://plugin.audio.tuneinradio",return)</onclick>
+			<property name="path">ActivateWindow(10501,"plugin://plugin.audio.tuneinradio",return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">plugin-audio-radio-de</property>
+			<property name="submenuVisibility">plugin-audio-tuneinradio</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/extras/backgrounds/addons.jpg</property>
 			<property name="backgroundName">special://skin/extras/backgrounds/addons.jpg</property>
-			<property name="hasSubmenu">True</property>
+			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="8">
 			<label>Trailers</label>
@@ -195,20 +195,6 @@
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/extras/backgrounds/programs.jpg</property>
 			<property name="backgroundName">special://skin/extras/backgrounds/programs.jpg</property>
-			<property name="hasSubmenu">True</property>
-		</item>
-		<item id="13">
-			<label>$LOCALIZE[744]</label>
-			<label2>Musik</label2>
-			<icon>DefaultFile.png</icon>
-			<thumb />
-			<property name="labelID">744</property>
-			<property name="defaultID">744</property>
-			<onclick>ActivateWindow(MusicFiles)</onclick>
-			<property name="path">ActivateWindow(MusicFiles)</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">num-744</property>
-			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
 		</item>
 	</include>
@@ -843,84 +829,6 @@
 			<property name="group">music</property>
 		</item>
 		<item id="1">
-			<label>STAR FM Berlin</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/28/b6/2452/t100.png</thumb>
-			<property name="labelID" />
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/2452",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/2452",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(20).ListItem.Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="2">
-			<label>STAR FM From Hell</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/c6/10/6615/t100.png</thumb>
-			<property name="labelID">--0</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/6615",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/6615",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(20).ListItem.Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="3">
-			<label>STAR FM Alternative</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/be/ff/9434/t100.png</thumb>
-			<property name="labelID">--1</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/9434",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/9434",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(20).ListItem.Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="4">
-			<label>Top 100 Station</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/81/8d/3396/t100.png</thumb>
-			<property name="labelID">--2</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/3396",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/3396",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(20).ListItem.Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="5">
-			<label>ANTENNE BAYERN</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/81/d7/9111/t100.png</thumb>
-			<property name="labelID">--3</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/9111",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/9111",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(20).ListItem.Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="6">
-			<label>Bayern 3</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/df/1f/2247/t100.png</thumb>
-			<property name="labelID">--4</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/2247",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/2247",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(20).ListItem.Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="1">
 			<label>$LOCALIZE[20077]</label>
 			<label2 />
 			<icon />
@@ -1129,25 +1037,12 @@
 			<property name="isSubmenu">True</property>
 			<property name="group">programs</property>
 		</item>
-		<item id="1">
-			<label>$LOCALIZE[744]</label>
-			<label2>Musik</label2>
-			<icon>DefaultFile.png</icon>
-			<thumb />
-			<property name="labelID">744</property>
-			<property name="defaultID">744</property>
-			<onclick>ActivateWindow(MusicFiles)</onclick>
-			<property name="path">ActivateWindow(MusicFiles)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(20).ListItem.Property(submenuVisibility),num-744)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">744</property>
-		</item>
 	</include>
 	<include name="skinshortcuts-allmenus">
 		<item id="1">
 			<label>Serien</label>
 			<label2>Gewöhnliche Abkürzung</label2>
-			<icon>DefaultTVShows.png</icon>
+			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">31002</property>
 			<property name="defaultID">tvshows</property>
@@ -1314,7 +1209,7 @@
 		<item id="2">
 			<label>$LOCALIZE[342]</label>
 			<label2>Gewöhnliche Abkürzung</label2>
-			<icon>DefaultMovies.png</icon>
+			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">movies</property>
 			<property name="defaultID">movies</property>
@@ -1695,7 +1590,7 @@
 		<item id="6">
 			<label>$LOCALIZE[10005]</label>
 			<label2>Gewöhnliche Abkürzung</label2>
-			<icon>DefaultMusicAlbums.png</icon>
+			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">music</property>
 			<property name="defaultID">music</property>
@@ -1877,99 +1772,20 @@
 			<property name="group">music</property>
 		</item>
 		<item id="7">
-			<label>Radio</label>
+			<label>TuneIn Radio</label>
 			<label2>Musik Add-On</label2>
 			<icon>DefaultShortcut.png</icon>
-			<thumb>image://C%3a%5cUsers%5csualfred%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.audio.radio_de%5cicon.png/</thumb>
-			<property name="labelID">plugin.audio.radio_de</property>
-			<property name="defaultID">plugin.audio.radio_de</property>
-			<onclick condition="StringCompare(Window(10000).Property(submenuVisibility),plugin-audio-radio-de)">ActivateWindow(10501,"plugin://plugin.audio.radio_de",return)</onclick>
-			<property name="path">ActivateWindow(10501,"plugin://plugin.audio.radio_de",return)</property>
+			<thumb>image://C%3a%5cUsers%5csualfred%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.audio.tuneinradio%5cicon.png/</thumb>
+			<property name="labelID">plugin.audio.tuneinradio</property>
+			<property name="defaultID">plugin.audio.tuneinradio</property>
+			<onclick>ActivateWindow(10501,"plugin://plugin.audio.tuneinradio",return)</onclick>
+			<property name="path">ActivateWindow(10501,"plugin://plugin.audio.tuneinradio",return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">plugin-audio-radio-de</property>
+			<property name="submenuVisibility">plugin-audio-tuneinradio</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/extras/backgrounds/addons.jpg</property>
 			<property name="backgroundName">special://skin/extras/backgrounds/addons.jpg</property>
-			<property name="hasSubmenu">True</property>
-			<onclick>SetProperty(submenuVisibility,plugin-audio-radio-de,10000)</onclick>
-		</item>
-		<item id="1">
-			<label>STAR FM Berlin</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/28/b6/2452/t100.png</thumb>
-			<property name="labelID" />
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/2452",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/2452",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="2">
-			<label>STAR FM From Hell</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/c6/10/6615/t100.png</thumb>
-			<property name="labelID">--0</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/6615",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/6615",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="3">
-			<label>STAR FM Alternative</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/be/ff/9434/t100.png</thumb>
-			<property name="labelID">--1</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/9434",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/9434",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="4">
-			<label>Top 100 Station</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/81/8d/3396/t100.png</thumb>
-			<property name="labelID">--2</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/3396",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/3396",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="5">
-			<label>ANTENNE BAYERN</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/81/d7/9111/t100.png</thumb>
-			<property name="labelID">--3</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/9111",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/9111",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="6">
-			<label>Bayern 3</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/df/1f/2247/t100.png</thumb>
-			<property name="labelID">--4</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/2247",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/2247",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
+			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="8">
 			<label>Trailers</label>
@@ -2262,34 +2078,6 @@
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),programs)]</visible>
 			<property name="isSubmenu">True</property>
 			<property name="group">programs</property>
-		</item>
-		<item id="13">
-			<label>$LOCALIZE[744]</label>
-			<label2>Musik</label2>
-			<icon>DefaultFile.png</icon>
-			<thumb />
-			<property name="labelID">744</property>
-			<property name="defaultID">744</property>
-			<onclick condition="StringCompare(Window(10000).Property(submenuVisibility),num-744)">ActivateWindow(MusicFiles)</onclick>
-			<property name="path">ActivateWindow(MusicFiles)</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">num-744</property>
-			<property name="group">mainmenu</property>
-			<property name="hasSubmenu">True</property>
-			<onclick>SetProperty(submenuVisibility,num-744,10000)</onclick>
-		</item>
-		<item id="1">
-			<label>$LOCALIZE[744]</label>
-			<label2>Musik</label2>
-			<icon>DefaultFile.png</icon>
-			<thumb />
-			<property name="labelID">744</property>
-			<property name="defaultID">744</property>
-			<onclick>ActivateWindow(MusicFiles)</onclick>
-			<property name="path">ActivateWindow(MusicFiles)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),num-744)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">744</property>
 		</item>
 	</include>
 	<include name="skinshortcuts-group-31002">
@@ -3524,160 +3312,8 @@
 			<property name="group">music</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-plugin-audio-radio-de">
-		<item id="1">
-			<label>STAR FM Berlin</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/28/b6/2452/t100.png</thumb>
-			<property name="labelID" />
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/2452",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/2452",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="2">
-			<label>STAR FM From Hell</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/c6/10/6615/t100.png</thumb>
-			<property name="labelID">--0</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/6615",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/6615",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="3">
-			<label>STAR FM Alternative</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/be/ff/9434/t100.png</thumb>
-			<property name="labelID">--1</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/9434",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/9434",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="4">
-			<label>Top 100 Station</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/81/8d/3396/t100.png</thumb>
-			<property name="labelID">--2</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/3396",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/3396",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="5">
-			<label>ANTENNE BAYERN</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/81/d7/9111/t100.png</thumb>
-			<property name="labelID">--3</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/9111",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/9111",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="6">
-			<label>Bayern 3</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/df/1f/2247/t100.png</thumb>
-			<property name="labelID">--4</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/2247",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/2247",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-	</include>
-	<include name="skinshortcuts-group-alt-plugin-audio-radio-de">
-		<item id="1">
-			<label>STAR FM Berlin</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/28/b6/2452/t100.png</thumb>
-			<property name="labelID" />
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/2452",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/2452",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="2">
-			<label>STAR FM From Hell</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/c6/10/6615/t100.png</thumb>
-			<property name="labelID">--0</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/6615",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/6615",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="3">
-			<label>STAR FM Alternative</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/be/ff/9434/t100.png</thumb>
-			<property name="labelID">--1</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/9434",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/9434",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="4">
-			<label>Top 100 Station</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/81/8d/3396/t100.png</thumb>
-			<property name="labelID">--2</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/3396",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/3396",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="5">
-			<label>ANTENNE BAYERN</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/81/d7/9111/t100.png</thumb>
-			<property name="labelID">--3</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/9111",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/9111",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-		<item id="6">
-			<label>Bayern 3</label>
-			<label2>Favorit</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb>http://static.radio.de/images/broadcasts/df/1f/2247/t100.png</thumb>
-			<property name="labelID">--4</property>
-			<property name="defaultID" />
-			<onclick>PlayMedia("plugin://plugin.audio.radio_de/station/2247",return)</onclick>
-			<property name="path">PlayMedia("plugin://plugin.audio.radio_de/station/2247",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),plugin-audio-radio-de)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">plugin.audio.radio_de</property>
-		</item>
-	</include>
+	<include name="skinshortcuts-group-plugin-audio-tuneinradio" />
+	<include name="skinshortcuts-group-alt-plugin-audio-tuneinradio" />
 	<include name="skinshortcuts-group-info-skin-string-trailersaddon-path" />
 	<include name="skinshortcuts-group-alt-info-skin-string-trailersaddon-path" />
 	<include name="skinshortcuts-group-weather" />
@@ -4092,35 +3728,6 @@
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),programs)]</visible>
 			<property name="isSubmenu">True</property>
 			<property name="group">programs</property>
-		</item>
-	</include>
-	<include name="skinshortcuts-group-744">
-		<item id="1">
-			<label>$LOCALIZE[744]</label>
-			<label2>Musik</label2>
-			<icon>DefaultFile.png</icon>
-			<thumb />
-			<property name="labelID">744</property>
-			<property name="defaultID">744</property>
-			<onclick>ActivateWindow(MusicFiles)</onclick>
-			<property name="path">ActivateWindow(MusicFiles)</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">744</property>
-		</item>
-	</include>
-	<include name="skinshortcuts-group-alt-744">
-		<item id="1">
-			<label>$LOCALIZE[744]</label>
-			<label2>Musik</label2>
-			<icon>DefaultFile.png</icon>
-			<thumb />
-			<property name="labelID">744</property>
-			<property name="defaultID">744</property>
-			<onclick>ActivateWindow(MusicFiles)</onclick>
-			<property name="path">ActivateWindow(MusicFiles)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),num-744)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">744</property>
 		</item>
 	</include>
 </includes>

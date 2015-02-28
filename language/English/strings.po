@@ -74,7 +74,9 @@ msgctxt "#31013"
 msgid "Enable Home Menu Animation"
 msgstr ""
 
-#empty strings from id 31014 to 31015
+msgctxt "#31014"
+msgid "Disable Startup Intro Video"
+msgstr ""
 
 msgctxt "#31016"
 msgid "File Manager"
@@ -351,7 +353,9 @@ msgctxt "#31137"
 msgid "Enable Notifications"
 msgstr ""
 
-#empty string with id 31138
+msgctxt "#31138"
+msgid "TuneIn Radio"
+msgstr ""
 
 msgctxt "#31139"
 msgid "Enable Add-ons Notifications"
@@ -776,7 +780,19 @@ msgctxt "#31285"
 msgid "Playlist Options"
 msgstr ""
 
-#empty strings from id 31286 to 31299
+msgctxt "#31286"
+msgid "Recent Streams"
+msgstr ""
+
+msgctxt "#31287"
+msgid "Favourite Streams"
+msgstr ""
+
+msgctxt "#31288"
+msgid "TuneIn Plugin Home Widgets"
+msgstr ""
+
+#empty strings from id 31289 to 31299
 #Video and Music OSD Labels
 
 msgctxt "#31300"
