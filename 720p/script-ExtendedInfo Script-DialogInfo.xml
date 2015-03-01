@@ -36,7 +36,6 @@
 			<include>FullscreenDimensions</include>
 			<texture background="true">$INFO[Window.Property(actor.ImageFilter)]</texture>
 			<include>BackgroundFade</include>	
-			<visible>IsEmpty(Container(750).ListItem.Property(Original))</visible>
 		</control>
 		<control type="image">
 			<description>background</description>

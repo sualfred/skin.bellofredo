@@ -3677,7 +3677,7 @@
 				<scrolltime tween="Cubic" easing="out">350</scrolltime>
 				<orientation>horizontal</orientation>
 				<include condition="Window.IsVisible(videolibrary)">LoveFilmVideos</include>
-				<visible>[Container.Content(movies) | Container.Content(tvshows)] + ![SubString(Container.Folderpath,plugin://) | IsEmpty(Container.Folderpath)]</visible>
+				<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
 			</control>
 		</control>
 
@@ -3821,7 +3821,7 @@
 				<width>185</width>
 				<height>258</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-				<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="thumbs/poster_diffuse.png">$VAR[LoveFilmPoster]</texture>
+				<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="thumbs/poster_diffuse.png">$VAR[VarArtPoster]</texture>
 				<fadetime>800</fadetime>
 			</control>
 			<control type="image">
@@ -3879,14 +3879,286 @@
 			<visible>Control.IsVisible(59)</visible>
 			<include>DialogZoomInOutAnimation</include>
 			<include>CommonSlideAnimations</include>
-			<control type="wraplist" id="59">
+			
+			<!-- Plot Info -->
+			<control type="button" id="5901">
+				<description>Get Plot</description>
+				<onup>100</onup>
+				<ondown>59</ondown>
+				<onleft>59</onleft>
+				<onright>59</onright>
+				<visible allowhiddenfocus="true">false</visible>				
+			</control>
+			<control type="group" id="5902">
+				<left>47</left>
+				<top>215</top>
+				<visible>[!Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.HasFocus(5901)] | Skin.HasSetting(NetfilxAlwaysShowPlot)</visible>
+				<animation type="Conditional" reversible="false" condition="![Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)]">
+					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+				</animation>
+				<animation type="Conditional" reversible="false" condition="Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)">
+					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+				</animation>
+				<animation type="Visible" reversible="true">
+					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+					<effect type="slide" start="0,55" end="0,0" time="350" tween="cubic" easing="out" />
+				</animation>
+				<animation type="Hidden" reversible="true">
+					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
+					<effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="inout" />
+				</animation>
+				<control type="button" id="5901">
+					<description>Get Plot</description>
+				  <visible>false</visible>
+				</control>
+				<control type="textbox">
+					<top>35</top>
+					<width>550</width>
+					<height>155</height>
+					<font>FontSize_22</font>
+					<textcolor>99white</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<align>left</align>
+					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+					<label>$VAR[GlobalPlotDescription]</label>
+					<visible>Container.Content(Movies) + !Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
+				</control>
+				<control type="textbox">
+					<top>-5</top>
+					<width>450</width>
+					<height>180</height>
+					<font>FontSize_22</font>
+					<textcolor>99white</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<align>left</align>
+					<label>$VAR[GlobalPlotDescription]</label>
+					<autoscroll delay="8000" time="2000" repeat="8000">[Substring(ListItem.Path,videodb://movies/sets/,left) + IntegerGreaterThan(Window(home).Property(Set.Movies.Count),1)]</autoscroll>
+					<visible>Container.Content(Sets) | Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
+				</control>
+				<control type="textbox">
+					<top>35</top>
+					<width>450</width>
+					<height>180</height>
+					<font>FontSize_22</font>
+					<textcolor>99white</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<align>left</align>
+					<label>$VAR[GlobalPlotDescription]</label>
+					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+					<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
+				</control>
+				<control type="group">
+					<top>160</top>
+					<control type="image">
+						<left>1004</left>
+						<top>0</top>
+						<width>183</width>
+						<height>28</height>
+						<aspectratio aligny="center" align="center">stretch</aspectratio>
+						<texture background="true" border="3">views/other/imdb.png</texture>
+						<visible>!IsEmpty(ListItem.Top250)</visible>
+					</control>
+					<control type="label">
+						<left>1010</left>
+						<top>3</top>
+						<height>23</height>
+						<width>110</width>
+						<font>FontSize_16B</font>
+						<textcolor>FFF2BE42</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Top250,Top 250 #]</label>
+					</control>
+				</control>
+			</control>
+			
+			<!-- label subinfo logo -->
+			<control type="group">
+				<left>25</left>
+				<top>310</top>				
+				<visible>Control.IsVisible(59)</visible>
+				<animation type="Conditional" reversible="false" condition="![Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)]">
+					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+				</animation>
+				<animation type="Conditional" reversible="false" condition="Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)">
+					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+				</animation>				
+				<animation type="Conditional" reversible="true" condition="Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.IsVisible(5902)">
+					<effect type="slide" end="0,-140" time="0" tween="sine" easing="in"  />
+				</animation>
+				<animation type="Conditional" reversible="true" condition="!Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.HasFocus(5901)">
+					<effect type="slide" end="0,-140" time="250" tween="sine" easing="in"  />
+				</animation>				
+				<control type="image">
+					<animation type="Conditional" reversible="true" condition="Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.IsVisible(5902)">
+						<effect type="zoom" start="100" end="60" center="20,20" time="0" tween="sine" easing="in"  />
+					</animation>
+					<animation type="Conditional" reversible="true" condition="!Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.HasFocus(5901)">
+						<effect type="zoom" start="100" end="60" center="20,20" time="250" tween="sine" easing="in"  />
+					</animation>
+					<left>20</left>
+					<top>-90</top>
+					<width>290</width>
+					<height>110</height>
+					<fadetime>100</fadetime>
+					<aspectratio align="left" aligny="bottom">keep</aspectratio>
+					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+					<visible>Skin.HasSetting(ShowLogoAsTtile) + !Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
+				</control>
+				<control type="label">
+					<left>20</left>
+					<top>-30</top>
+					<height>50</height>
+					<width>730</width>
+					<textcolor>white</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<font>FontSize_50B</font>
+					<scroll>false</scroll>
+					<align>left</align>
+					<label>$VAR[ListItem.label]</label>
+					<visible>![Skin.HasSetting(ShowLogoAsTtile) + ![IsEmpty(ListItem.Art(clearlogo)) | Substring(ListItem.Path,videodb://movies/sets/,left)]] + !stringcompare(ListItem.Label,..)</visible>
+				</control>
+				<!-- Sublabel Info -->
+				<control type="grouplist">
+					<left>18</left>
+					<top>38</top>
+					<width>850</width>
+					<height>30</height>
+					<itemgap>10</itemgap>
+					<orientation>horizontal</orientation>
+					<!--<animation effect="slide" start="0,0" end="0,50" condition="[Skin.HasSetting(ShowLogoAsTtile) + ![IsEmpty(ListItem.Art(clearlogo)) | Substring(ListItem.Path,videodb://movies/sets/,left)]]">Conditional</animation>-->
+					<control type="group">
+						<width>115</width>
+						<visible>!Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
+						<control type="image">
+							<left>0</left>
+							<top>-2</top>
+							<width>118</width>
+							<height>26</height>
+							<aspectratio align="left" aligny="center">keep</aspectratio>
+							<texture background="true">rating/$INFO[ListItem.StarRating]</texture>
+						</control>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>38</width>
+						<height>23</height>
+						<colordiffuse>77white</colordiffuse>
+						<aspectratio align="left" aligny="center">stretch</aspectratio>
+						<texture background="true">flags/sets/sets.png</texture>
+						<visible>Substring(ListItem.Path,videodb://movies/sets/,left) + ListItem.IsFolder + !IsEmpty(ListItem.Title)</visible>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width min="0" max="150">auto</width>
+						<height>22</height>
+						<textcolor>99white</textcolor>
+						<shadowcolor>77000000</shadowcolor>
+						<font>FontSize_22</font>
+						<scroll>false</scroll>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$VAR[NetFlixSubLabelInfo]</label>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>53</width>
+						<height>22</height>
+						<colordiffuse>77white</colordiffuse>
+						<aspectratio align="left" aligny="center">stretch</aspectratio>
+						<texture background="true" fallback="flags/mpaa/tv/tv-na.png">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
+						<visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !stringcompare(ListItem.Label,..) + !IsEmpty(ListItem.Premiered)</visible>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>53</width>
+						<height>22</height>
+						<colordiffuse>77white</colordiffuse>
+						<aspectratio align="left" aligny="center">stretch</aspectratio>
+						<texture>$VAR[MPAAFilmRating]</texture>
+						<visible>[Container.Content(Movies) + !Substring(ListItem.Path,videodb://movies/sets/,left)] + !stringcompare(ListItem.Label,..)</visible>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width min="0" max="150">auto</width>
+						<height>21</height>
+						<textcolor>99white</textcolor>
+						<shadowcolor>77000000</shadowcolor>
+						<font>FontSize_22</font>
+						<scroll>false</scroll>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$VAR[ListItem.Duration]</label>
+						<visible>[Container.Content(Movies) | Container.Content(Episodes)] + !IsEmpty(ListItem.Duration)</visible>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>45</width>
+						<height>22</height>
+						<colordiffuse>77white</colordiffuse>
+						<aspectratio align="left" aligny="center">keep</aspectratio>
+						<texture>$VAR[ViewsDef3DFlags]</texture>
+						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width min="0" max="150">auto</width>
+						<height>21</height>
+						<textcolor>99white</textcolor>
+						<shadowcolor>77000000</shadowcolor>
+						<font>FontSize_22</font>
+						<scroll>false</scroll>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$VAR[NetFlixSeasonsLabel]</label>
+						<visible>Container.Content(TVShows)</visible>
+						<!-- <label>$VAR[NetFlixSeasonsLabel]$INFO[ListItem.Property(UnWatchedEpisodes), (, $LOCALIZE[16101])]</label> -->
+					</control>
+					<control type="group">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>53</width>
+							<height>22</height>
+							<colordiffuse>77white</colordiffuse>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>
+							<texture>flags/empty.png</texture>
+							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png) + IntegerGreaterThan(ListItem.Property(unWatchedEpisodes),0) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<width>53</width>
+							<height>22</height>
+							<font>FontSize_16B</font>
+							<textcolor>99white</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(unWatchedEpisodes)]</label>
+							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
+						</control>
+					</control>
+				</control>
+			</control>
+			
+			<!-- content container -->
+			<control type="fixedlist" id="59">
 				<left>47</left>
 				<top>420</top>
 				<width>2495</width>
 				<height>800</height>
 				<onleft>59</onleft>
 				<onright>59</onright>
-				<onup>100</onup>
+				<onup condition="Skin.HasSetting(NetfilxAlwaysShowPlot)">100</onup>
+				<onup condition="!Skin.HasSetting(NetfilxAlwaysShowPlot)">5901</onup>				
 				<ondown>60</ondown>
 				<viewtype label="Netflix">List</viewtype>
 				<scrolltime tween="Quadratic" easing="out">300</scrolltime>
@@ -4130,319 +4402,11 @@
 				<texture border="15" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png">views/other/focus_blue.png</texture>
 				<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
 			</control>
-			<control type="group">
-				<left>25</left>
-				<top>130</top>
-				<visible>Control.IsVisible(59)</visible>
-				<animation type="Conditional" reversible="false" condition="![Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)]">
-					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
-				</animation>
-				<animation type="Conditional" reversible="false" condition="Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)">
-					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-				</animation>
-				<control type="image">
-					<left>20</left>
-					<top>-30</top>
-					<width>290</width>
-					<height>110</height>
-					<fadetime>100</fadetime>
-					<aspectratio align="left" aligny="center">keep</aspectratio>
-					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-					<visible>Skin.HasSetting(ShowLogoAsTtile) + !Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
-				</control>
-				<control type="label">
-					<left>20</left>
-					<top>0</top>
-					<height>30</height>
-					<width>550</width>
-					<textcolor>white</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<font>FontSize_28B</font>
-					<scroll>false</scroll>
-					<align>left</align>
-					<label>$VAR[ListItem.label]</label>
-					<visible>![Skin.HasSetting(ShowLogoAsTtile) + ![IsEmpty(ListItem.Art(clearlogo)) | Substring(ListItem.Path,videodb://movies/sets/,left)]] + !stringcompare(ListItem.Label,..)</visible>
-				</control>
-				<!-- Sublabel Info -->
-				<control type="grouplist">
-					<left>18</left>
-					<top>38</top>
-					<width>850</width>
-					<height>30</height>
-					<itemgap>10</itemgap>
-					<orientation>horizontal</orientation>
-					<animation effect="slide" start="0,0" end="0,50" condition="[Skin.HasSetting(ShowLogoAsTtile) + ![IsEmpty(ListItem.Art(clearlogo)) | Substring(ListItem.Path,videodb://movies/sets/,left)]]">Conditional</animation>
-					<control type="group">
-						<width>115</width>
-						<visible>!Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
-						<control type="image">
-							<left>0</left>
-							<top>-2</top>
-							<width>118</width>
-							<height>26</height>
-							<aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture background="true">rating/$INFO[ListItem.StarRating]</texture>
-						</control>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<width>38</width>
-						<height>23</height>
-						<colordiffuse>77white</colordiffuse>
-						<aspectratio align="left" aligny="center">stretch</aspectratio>
-						<texture background="true">flags/sets/sets.png</texture>
-						<visible>Substring(ListItem.Path,videodb://movies/sets/,left) + ListItem.IsFolder + !IsEmpty(ListItem.Title)</visible>
-					</control>
-					<control type="label">
-						<left>0</left>
-						<top>0</top>
-						<width min="0" max="150">auto</width>
-						<height>22</height>
-						<textcolor>99white</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<font>FontSize_22</font>
-						<scroll>false</scroll>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$VAR[NetFlixSubLabelInfo]</label>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<width>53</width>
-						<height>22</height>
-						<colordiffuse>77white</colordiffuse>
-						<aspectratio align="left" aligny="center">stretch</aspectratio>
-						<texture background="true" fallback="flags/mpaa/tv/tv-na.png">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
-						<visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !stringcompare(ListItem.Label,..) + !IsEmpty(ListItem.Premiered)</visible>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<width>53</width>
-						<height>22</height>
-						<colordiffuse>77white</colordiffuse>
-						<aspectratio align="left" aligny="center">stretch</aspectratio>
-						<texture>$VAR[MPAAFilmRating]</texture>
-						<visible>[Container.Content(Movies) + !Substring(ListItem.Path,videodb://movies/sets/,left)] + !stringcompare(ListItem.Label,..)</visible>
-					</control>
-					<control type="label">
-						<left>0</left>
-						<top>0</top>
-						<width min="0" max="150">auto</width>
-						<height>21</height>
-						<textcolor>99white</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<font>FontSize_22</font>
-						<scroll>false</scroll>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$VAR[ListItem.Duration]</label>
-						<visible>[Container.Content(Movies) | Container.Content(Episodes)] + !IsEmpty(ListItem.Duration)</visible>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<width>45</width>
-						<height>22</height>
-						<colordiffuse>77white</colordiffuse>
-						<aspectratio align="left" aligny="center">keep</aspectratio>
-						<texture>$VAR[ViewsDef3DFlags]</texture>
-						<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
-					</control>
-					<control type="label">
-						<left>0</left>
-						<top>0</top>
-						<width min="0" max="150">auto</width>
-						<height>21</height>
-						<textcolor>99white</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<font>FontSize_22</font>
-						<scroll>false</scroll>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$VAR[NetFlixSeasonsLabel]</label>
-						<visible>Container.Content(TVShows)</visible>
-						<!-- <label>$VAR[NetFlixSeasonsLabel]$INFO[ListItem.Property(UnWatchedEpisodes), (, $LOCALIZE[16101])]</label> -->
-					</control>
-					<control type="group">
-						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>53</width>
-							<height>22</height>
-							<colordiffuse>77white</colordiffuse>
-							<aspectratio align="center" aligny="center">stretch</aspectratio>
-							<texture>flags/empty.png</texture>
-							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png) + IntegerGreaterThan(ListItem.Property(unWatchedEpisodes),0) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
-						</control>
-						<control type="label">
-							<left>0</left>
-							<top>0</top>
-							<width>53</width>
-							<height>22</height>
-							<font>FontSize_16B</font>
-							<textcolor>99white</textcolor>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Property(unWatchedEpisodes)]</label>
-							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
-						</control>
-					</control>
-				</control>
-			</control>
-
-			<!-- Plot Info -->
-			<control type="group">
-				<left>47</left>
-				<top>215</top>
-				<visible>Control.IsVisible(59)</visible>
-				<animation type="Conditional" reversible="false" condition="![Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)]">
-					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
-				</animation>
-				<animation type="Conditional" reversible="false" condition="Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)">
-					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-				</animation>
-				<control type="label">
-					<top>0</top>
-					<height>30</height>
-					<width>450</width>
-					<textcolor>99white</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<font>FontSize_22B</font>
-					<scrollspeed>30</scrollspeed>
-					<align>left</align>
-					<label>$INFO[ListItem.Genre]</label>
-					<visible>![Skin.HasSetting(ShowLogoAsTtile) + !IsEmpty(ListItem.Art(clearlogo))]</visible>
-				</control>
-				<control type="label">
-					<top>0</top>
-					<height>30</height>
-					<width>450</width>
-					<textcolor>99white</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<font>FontSize_22B</font>
-					<scrollspeed>30</scrollspeed>
-					<align>left</align>
-					<label>$INFO[ListItem.TVShowTitle] $INFO[ListItem.Season,,x]$INFO[ListItem.Episode]</label>
-					<visible>[Container.Content(Episodes) + !SubString(Container.FolderPath,plugin://plugin.video,left)] + ![Skin.HasSetting(ShowLogoAsTtile) + !IsEmpty(ListItem.Art(clearlogo))]</visible>
-				</control>
-				<control type="textbox">
-					<top>35</top>
-					<width>450</width>
-					<height>155</height>
-					<font>FontSize_22</font>
-					<textcolor>99white</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<align>left</align>
-					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-					<label>$VAR[GlobalPlotDescription]</label>
-					<visible>Container.Content(Movies) + !Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
-				</control>
-				<control type="textbox">
-					<top>-5</top>
-					<width>450</width>
-					<height>180</height>
-					<font>FontSize_22</font>
-					<textcolor>99white</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<align>left</align>
-					<label>$VAR[GlobalPlotDescription]</label>
-					<autoscroll delay="8000" time="2000" repeat="8000">[Substring(ListItem.Path,videodb://movies/sets/,left) + IntegerGreaterThan(Window(home).Property(Set.Movies.Count),1)]</autoscroll>
-					<visible>Container.Content(Sets) | Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
-				</control>
-				<control type="textbox">
-					<top>35</top>
-					<width>450</width>
-					<height>180</height>
-					<font>FontSize_22</font>
-					<textcolor>99white</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<align>left</align>
-					<label>$VAR[GlobalPlotDescription]</label>
-					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-					<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
-				</control>
-				<control type="group">
-					<top>160</top>
-					<control type="image">
-						<left>1004</left>
-						<top>0</top>
-						<width>183</width>
-						<height>28</height>
-						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture background="true" border="3">views/other/imdb.png</texture>
-						<visible>!IsEmpty(ListItem.Top250)</visible>
-					</control>
-					<control type="label">
-						<left>1010</left>
-						<top>3</top>
-						<height>23</height>
-						<width>110</width>
-						<font>FontSize_16B</font>
-						<textcolor>FFF2BE42</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Top250,Top 250 #]</label>
-					</control>
-				</control>
-				<!--
-				<control type="group">
-  		    <top>160</top>
-  				<control type="image">
-  		      <left>942</left>
-  		      <top>0</top>
-  					<width>243</width>
-  					<height>28</height>
-  					<aspectratio aligny="center" align="center">stretch</aspectratio>
-  					<texture background="true" border="3">views/other/imdb.png</texture>
-  					<visible>![IsEmpty(ListItem.Top250) + IsEmpty(ListItem.RatingAndVotes)]</visible>
-  				</control>
-  				<control type="label">
-  		      <left>948</left>
-  		      <top>3</top>
-  					<height>23</height>
-  				  <width>150</width>
-  					<font>FontSize_16B</font>
-  					<textcolor>FFF2BE42</textcolor>
-  	        <shadowcolor>99000000</shadowcolor>
-  			    <align>center</align>
-  			    <aligny>center</aligny>
-  		      <label>$VAR[NetFlixIMDBInfo]</label>
-  				</control>
-				</control>
-				
-				<control type="group">
-  		    <top>160</top>
-  				<control type="image">
-  		      <left>1145</left>
-  		      <top>0</top>
-  					<width>47</width>
-  					<height>37</height>
-  					<aspectratio aligny="center" align="center">keep</aspectratio>
-  					<texture background="true" border="3">views/other/imdb.png</texture>
-  					<visible>!IsEmpty(ListItem.Top250)</visible>
-  				</control>
-  				<control type="label">
-  		      <left>945</left>
-  		      <top>8</top>
-  					<height>23</height>
-  				  <width>200</width>
-  					<font>FontSize_40B</font>
-  					<textcolor>FFE3B71E</textcolor>
-  	        <shadowcolor>99000000</shadowcolor>
-  			    <align>right</align>
-  			    <aligny>center</aligny>
-  		      <label>$INFO[ListItem.Top250]</label>
-  				</control>
-				</control>
--->
-			</control>
+			
+			
 			<control type="scrollbar" id="60">
 				<left>45</left>
-				<top>622</top>
+				<top>702</top>
 				<width>1188</width>
 				<height>8</height>
 				<texturesliderbackground>-</texturesliderbackground>

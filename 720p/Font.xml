@@ -220,6 +220,12 @@
 			<filename>OpenSans-Light.ttf</filename>
 			<size>50</size>
 		</font>
+		<font>
+		  <name>FontSize_50B</name>
+			<filename>OpenSans-Light.ttf</filename>
+			<size>50</size>
+			<style>bold</style>
+		</font>
 	  <font>
 		  <name>FontSize_60</name>
 			<filename>OpenSans-Light.ttf</filename>

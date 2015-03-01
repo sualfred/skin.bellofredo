@@ -182,7 +182,11 @@ msgctxt "#31041"
 msgid "Creator"
 msgstr ""
 
-#empty strings from id 31042 to 31069
+msgctxt "#31042"
+msgid "Always show plot"
+msgstr ""
+
+#empty strings from id 31043 to 31069
 #ExtendedInfoLabels
 
 msgctxt "#31070"

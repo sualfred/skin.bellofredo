@@ -525,11 +525,7 @@
       <value condition="Container.Content(Episodes) + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
       <value>$INFO[ListItem.ActualIcon,thumbs/,/folderback_episode_tp.png]</value>
   	</variable>
-	
-	<variable name="LoveFilmPoster">		
-		<value>$INFO[ListItem.Art(poster)]</value>
-	</variable>
-  
+	  
   	<variable name="LandscapeVars">
   		<value condition="[Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Sets)] + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
   		<value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>

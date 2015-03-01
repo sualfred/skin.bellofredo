@@ -142,6 +142,15 @@
 					<selected>Skin.HasSetting(ShowLogoAsTtile)</selected>
 					<visible>Control.IsVisible(59) + [Container.Content(Movies) | Container.Content(TVShows)]</visible>
 				</control>
+				<control type="togglebutton" id="298">
+					<description>Show Logo As Ttile</description>
+					<include>TopLeftMenusButton</include>
+					<label>$LOCALIZE[31042]: $LOCALIZE[31012]</label>
+					<altlabel>$LOCALIZE[31042]: $LOCALIZE[31011]</altlabel>
+					<onclick>Skin.ToggleSetting(NetfilxAlwaysShowPlot)</onclick>
+					<selected>Skin.HasSetting(NetfilxAlwaysShowPlot)</selected>
+					<visible>Control.IsVisible(59)</visible>
+				</control>
 				<control type="button" id="3">
 					<description>Sort by</description>
 					<include>TopLeftMenusButton</include>
