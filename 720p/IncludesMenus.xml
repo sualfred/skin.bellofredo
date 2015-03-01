@@ -108,7 +108,7 @@
 	<include name="HomeSubMenus">
 		<control type="wraplist" id="23">
 			<description>SubMenu Container Movies</description>
-			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-Actors-DialogInfo.xml) | Window.IsActive(script-Actors-DialogVideoInfo.xml) | Container(20).OnNext | Container(20).OnPrevious]</visible>
+			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Container(20).OnNext | Container(20).OnPrevious]</visible>
 			<include>SubMenuWraplistVarsDown</include>
 			<itemlayout width="580" height="52">
 				<control type="label">

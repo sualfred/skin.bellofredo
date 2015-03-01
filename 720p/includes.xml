@@ -1318,9 +1318,9 @@
   </variable>
 
 	<variable name="VideoInfoContentInfoLabels">
-		<value condition="[Container.Content(TVShows) + [[StringCompare(Container.FolderPath,videodb://tvshows/titles/) | !SubString(Container.FolderPath,videodb://tvshows/titles/,left)]] + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + !Control.HasFocus(50)]">$LOCALIZE[31002]</value>
-		<value condition="[[Container.Content(TVShows) + SubString(Container.FolderPath,videodb://tvshows/titles/,left) + [!StringCompare(Container.FolderPath,videodb://tvshows/titles/)]] + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + !Control.HasFocus(50)]">$LOCALIZE[33054]</value>
-		<value condition="Container.Content(Episodes) + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + !Control.HasFocus(50) + !Control.HasFocus(61)">$LOCALIZE[20360]</value>
+		<value condition="[Container.Content(TVShows) + [[StringCompare(Container.FolderPath,videodb://tvshows/titles/) | !SubString(Container.FolderPath,videodb://tvshows/titles/,left)]] + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Control.HasFocus(50)]">$LOCALIZE[31002]</value>
+		<value condition="[[Container.Content(TVShows) + SubString(Container.FolderPath,videodb://tvshows/titles/,left) + [!StringCompare(Container.FolderPath,videodb://tvshows/titles/)]] + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Control.HasFocus(50)]">$LOCALIZE[33054]</value>
+		<value condition="Container.Content(Episodes) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Control.HasFocus(50) + !Control.HasFocus(61)">$LOCALIZE[20360]</value>
 		<value condition="[Control.HasFocus(50) | Control.HasFocus(150) | Control.HasFocus(61)] + System.HasAddon(script.metadata.actors)">$LOCALIZE[31164]</value>
 		<value condition="Container.Content(Movies)">$LOCALIZE[20342]</value>
 		<value condition="Container.Content(TVShows) + [[StringCompare(Container.FolderPath,videodb://tvshows/titles/) | !SubString(Container.FolderPath,videodb://tvshows/titles/,left)]]">$LOCALIZE[31002]</value>

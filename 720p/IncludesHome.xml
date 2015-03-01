@@ -5,7 +5,7 @@
 	<!-- ====================== -->
 	<include name="HomeMenuWraplist">
 		<control type="group">
-			<visible allowhiddenfocus="true">!Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
+			<visible allowhiddenfocus="true">!Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
 			<include>HomeSlideAnimations</include>
 			<control type="group">
 				<include>HomeSlideAnimations</include>
@@ -25,21 +25,18 @@
 					<visible>Skin.HasSetting(HomeMenuAnimation)</visible>
 				</control>					
 				<control type="wraplist" id="20">
-					<animation type="Conditional" condition="Control.HasFocus(250) | Control.HasFocus(350) | Control.HasFocus(450) | Control.HasFocus(550)" reversible="true">
-						<effect type="fade" start="100" end="0" time="400" />
-					</animation>
+					<include>WidgetMainMenuSlideAnimations</include>
 					<description>Home Container</description>
 					<left>-10</left>
 					<top>110</top>
 					<width>1500</width>
 					<height>720</height>
 					<align>center</align>
-					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),movies)">SetFocus(250)</onup>
-					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),tvshows)">SetFocus(350)</onup>
-					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),music)">SetFocus(450)</onup>
-					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(labelID),favourites)">SetFocus(550)</onup>
-					<onup condition="!Skin.HasSetting(DisableQuickNav) + SubString(Container(20).ListItem.Property(path),tuneinradio)">SetFocus(550)</onup>
-					<onup condition="Skin.HasSetting(DisableQuickNav) | [!StringCompare(Container(20).ListItem.Property(defaultID),movies) + !StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(20).ListItem.Property(defaultID),music) + !SubString(Container(20).ListItem.Property(path),tuneinradio)]">SetFocus(21)</onup>
+					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(250)</onup>
+					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)">SetFocus(350)</onup>
+					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)">SetFocus(450)</onup>
+					<onup condition="!Skin.HasSetting(DisableQuickNav) + SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)">SetFocus(550)</onup>
+					<onup condition="Skin.HasSetting(DisableQuickNav) | [![StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)] + ![StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] + ![SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)] + ![StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)]]">SetFocus(21)</onup>
 					<ondown condition="IntegerGreaterThan(Container(23).NumItems,0)">SetFocus(23)</ondown>
 					<onleft>20</onleft>
 					<onright>20</onright>
@@ -90,7 +87,7 @@
 									<visible>IntegerGreaterThan(Container(23).NumItems,0)</visible>		          
 									<animation effect="fade" time="100" reversible="false">Visible</animation>
 									<animation effect="fade" time="100" reversible="false">Hidden</animation>
-									<animation effect="slide" end="-10,0" time="0" condition="[!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),movies)] | [!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),tvshows)] | [!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),music)] | [!Skin.HasSetting(DisableQuickNav) + SubString(Container(20).ListItem.Property(path),tuneinradio)]" reversible="false">Conditional</animation>
+									<animation effect="slide" end="-10,0" time="0" condition="!Skin.HasSetting(DisableQuickNav) + [StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)] | [StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] | [StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)] | [SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)]" reversible="false">Conditional</animation>
 								</control>
 								<control type="image" id="202">
 									<left>240</left>
@@ -100,7 +97,7 @@
 									<texture background="true">buttons/arrow_top.png</texture>
 									<colordiffuse>CCFFFFFF</colordiffuse>brawl
 									<visible>!Control.HasFocus(250) + !Control.HasFocus(350) + !Control.HasFocus(450) + !Control.HasFocus(550)</visible>
-									<visible>[!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),movies)] | [!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),tvshows)] | [!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),music)] | [!Skin.HasSetting(DisableQuickNav) + SubString(Container(20).ListItem.Property(path),tuneinradio)]</visible>		          
+									<visible>!Skin.HasSetting(DisableQuickNav) + [StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)] | [StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] | [StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)] | [SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)]</visible>		          
 									<animation effect="fade" time="100" reversible="false">Visible</animation>
 									<animation effect="fade" time="100" reversible="false">Hidden</animation>
 									<animation effect="slide" end="10,0" time="0" condition="IntegerGreaterThan(Container(23).NumItems,0)" reversible="false">Conditional</animation>
@@ -120,9 +117,10 @@
 	<!-- Widgets	   -->
 	<!-- =========== --> 
 	<include name="FredHomeWidgets">
+	
 		<control type="group" id="9050">
-			<include>QuickNavMoviesWidgetAnimation</include>
-			<visible allowhiddenfocus="true">!Window.IsActive(progressdialog) + !Window.IsActive(yesnodialog) + !Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml) + Control.HasFocus(250)</visible>
+			<include>HomeMoviesWidgetAnimation</include>			
+			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>	
 			<control type="image">
 				<include>FullscreenDimensions</include>
 				<texture background="true">views/list/shine.png</texture>					
@@ -274,8 +272,8 @@
 		</control>
 
 		<control type="group" id="9060">
-			<include>QuickNavTVShowsWidgetAnimation</include>
-			<visible allowhiddenfocus="true">!Window.IsActive(progressdialog) + !Window.IsActive(yesnodialog) + !Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml) + Control.HasFocus(350)</visible>
+			<include>HomeTVShowsWidgetAnimation</include>			
+			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>	
 			<control type="image">
 				<include>FullscreenDimensions</include>
 				<texture background="true">views/list/shine.png</texture>					
@@ -427,8 +425,8 @@
 		</control>
 
 		<control type="group" id="9070">
-			<include>QuickNavMusicWidgetAnimation</include>
-			<visible allowhiddenfocus="true">!Window.IsActive(progressdialog) + !Window.IsActive(yesnodialog) + !Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml) + Control.HasFocus(450)</visible>
+			<include>HomeMusicWidgetAnimation</include>			
+			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>	
 			<control type="image">
 				<include>FullscreenDimensions</include>
 				<texture background="true">views/list/shine.png</texture>					
@@ -481,7 +479,7 @@
 				<onup>SetFocus(21)</onup>
 				<ondown>SetFocus(20)</ondown>
 				<onback>SetFocus(20)</onback>
-				<movement>4</movement>
+				<movement>3</movement>
 				<orientation>horizontal</orientation>
 				<scrolltime tween="Quadratic" easing="out">300</scrolltime>
 				<itemlayout height="200" width="180">
@@ -581,8 +579,8 @@
 
 		<control type="group" id="9080">
 			<description>tunein radio widget</description>
-			<include>QuickNavTuneInWidgetAnimation</include>
-			<visible allowhiddenfocus="true">!Window.IsActive(progressdialog) + !Window.IsActive(yesnodialog) + !Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml) + Control.HasFocus(550)</visible>
+			<include>HomeTuneInWidgetAnimation</include>
+			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>			
 			<control type="image">
 				<include>FullscreenDimensions</include>
 				<texture background="true">views/list/shine.png</texture>					
@@ -635,7 +633,7 @@
 				<onup>SetFocus(21)</onup>
 				<ondown>SetFocus(20)</ondown>
 				<onback>SetFocus(20)</onback>
-				<movement>4</movement>
+				<movement>3</movement>
 				<orientation>horizontal</orientation>
 				<scrolltime tween="Quadratic" easing="out">300</scrolltime>
 				<itemlayout height="200" width="180">

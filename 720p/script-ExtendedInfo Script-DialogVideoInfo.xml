@@ -670,7 +670,7 @@
 							<textcolor>white</textcolor>
 							<shadowcolor>99000000</shadowcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label,Fanart ,]</label>
+							<label>Fanart</label>
 							<visible>Control.HasFocus(1350)</visible>
 							<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(1350)">Conditional</animation>
 							<animation reversible="false" effect="fade" start="0" end="100" time="400">Focus</animation>

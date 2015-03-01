@@ -204,7 +204,7 @@
 			<include>FanartFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>![[Control.IsVisible(55) | Control.IsVisible(59)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580)</visible>
+			<visible>![[Control.IsVisible(55) | Control.IsVisible(504)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580)</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>
 		<control type="image">
@@ -212,7 +212,7 @@
 			<texture background="true">windows/bg/black.jpg</texture>
 			<include>FanartFade</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>[Control.IsVisible(59) + !Window.IsActive(movieinformation)]</visible>
+			<visible>[Control.IsVisible(504) + !Window.IsActive(movieinformation)]</visible>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>
@@ -227,7 +227,7 @@
 			<include>FanartFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>[Control.IsVisible(59) + !Window.IsActive(movieinformation)]</visible>
+			<visible>[Control.IsVisible(504) + !Window.IsActive(movieinformation)]</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>
 		<control type="image">

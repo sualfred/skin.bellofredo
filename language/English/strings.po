@@ -186,19 +186,19 @@ msgstr ""
 #ExtendedInfoLabels
 
 msgctxt "#31070"
-msgid "Film Info"
+msgid "Video Info"
 msgstr ""
 
 msgctxt "#31071"
-msgid "Recommended Movies"
+msgid "Recommended by TMDB"
 msgstr ""
 
 msgctxt "#31072"
-msgid "Crew List"
+msgid "Crew"
 msgstr ""
 
 msgctxt "#31073"
-msgid "Cast List"
+msgid "Cast"
 msgstr ""
 
 msgctxt "#31074"

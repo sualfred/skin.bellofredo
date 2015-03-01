@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window  id="2003">
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+	<allowoverlay>yes</allowoverlay>	
 	<controls>
 
 		<control type="group">
@@ -134,6 +134,7 @@
 							<onup>9000</onup>
 					    <include>TopButton</include>
 							<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Listitem.Director])</ondown>
+							<ondown>Dialog.Close(movieinformation)</ondown>
 							<onclick>SendClick(2003,13)</onclick>
 						  <enable>!IsEmpty(ListItem.Director)</enable>
 						</control>
@@ -512,6 +513,7 @@
 				<onright>50</onright>
 				<onup>9000</onup>
 				<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</ondown>
+				<ondown>Dialog.Close(movieinformation)</ondown>
 				<itemlayout width="143" height="250">
 					<control type="group">
 						<animation reversible="true" effect="slide" end="32,0" time="150" condition="Control.HasFocus(50)">Conditional</animation>
@@ -720,6 +722,7 @@
 					<description>ExtendedInfo</description>
 					<label>Extended Info</label>
 					<onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Listitem.Title])</onclick>
+					<onclick>Dialog.Close(movieinformation)</onclick>
 				  <include>TopButton</include>
 					<visible>!substring(Container.FolderPath,plugin://plugin.video,left)</visible>
 				</control>

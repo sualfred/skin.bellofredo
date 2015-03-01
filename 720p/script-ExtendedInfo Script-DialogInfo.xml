@@ -43,6 +43,7 @@
 			<include>FullscreenDimensions</include>
 			<texture background="true">$INFO[Container(750).ListItem.Property(Original)]</texture>
 			<include>BackgroundFade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!IsEmpty(Container(750).ListItem.Property(Original))</visible>
 		</control>
 		<control type="image">
@@ -633,7 +634,7 @@
 							<textcolor>white</textcolor>
 							<shadowcolor>99000000</shadowcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$ADDON[script.extendedinfo 32119] $INFO[ListItem.Label]</label>
+							<label>$ADDON[script.extendedinfo 32119]</label>
 							<visible>Control.HasFocus(450)</visible>
 							<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(450)">Conditional</animation>
 							<animation reversible="false" effect="fade" start="0" end="100" time="400">Focus</animation>
@@ -726,7 +727,7 @@
 							<textcolor>white</textcolor>
 							<shadowcolor>99000000</shadowcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label,Fanart ,]</label>
+							<label>Fanart</label>
 							<visible>Control.HasFocus(750)</visible>
 							<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(750)">Conditional</animation>
 							<animation reversible="false" effect="fade" start="0" end="100" time="400">Focus</animation>
