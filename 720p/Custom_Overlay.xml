@@ -26,7 +26,8 @@
 			<width>780</width>
 			<height>450</height>
 			<itemgap>12</itemgap>
-			<visible>!Skin.HasSetting(HideDebugInfo)</visible>
+			<!--<visible>!Skin.HasSetting(HideDebugInfo)</visible>-->
+			<visible>false</visible>
 
 			<!-- Window labels -->
 			<control type="label">
