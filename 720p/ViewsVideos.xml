@@ -4364,6 +4364,28 @@
 						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
 						<bordersize>8</bordersize>
 					</control>
+					
+					<control type="image">
+						<left>213</left>
+						<top>157</top>
+						<width>61</width>
+						<height>24</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="1">views/other/episode_number.png</texture>
+						<visible>[Container.Content(Episodes) | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)] + !stringcompare(ListItem.Label,..)</visible>
+					</control>
+					<control type="label">
+						<left>213</left>
+						<top>147</top>
+						<width>61</width>
+						<height>43</height>
+						<font>FontSize_16B</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$VAR[ThumbnailsOnThumbLabel]</label>
+					</control>
 				</focusedlayout>
 			</control>
 			<control type="image">
