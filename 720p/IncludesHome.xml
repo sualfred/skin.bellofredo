@@ -34,7 +34,7 @@
 					<align>center</align>
 					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(250)</onup>
 					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)">SetFocus(350)</onup>
-					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)">SetFocus(450)</onup>
+					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)">SetFocus(45)</onup>
 					<onup condition="!Skin.HasSetting(DisableQuickNav) + SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)">SetFocus(550)</onup>
 					<onup condition="Skin.HasSetting(DisableQuickNav) | [![StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)] + ![StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] + ![SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)] + ![StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)]]">SetFocus(21)</onup>
 					<ondown condition="IntegerGreaterThan(Container(23).NumItems,0)">SetFocus(23)</ondown>
@@ -96,7 +96,7 @@
 									<height>18</height>
 									<texture background="true">buttons/arrow_top.png</texture>
 									<colordiffuse>CCFFFFFF</colordiffuse>brawl
-									<visible>!Control.HasFocus(250) + !Control.HasFocus(350) + !Control.HasFocus(450) + !Control.HasFocus(550)</visible>
+									<visible>!Control.HasFocus(250) + !Control.HasFocus(350) + !Control.HasFocus(450) + !Control.HasFocus(45) + !Control.HasFocus(550)</visible>
 									<visible>!Skin.HasSetting(DisableQuickNav) + [StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)] | [StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] | [StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)] | [SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)]</visible>		          
 									<animation effect="fade" time="100" reversible="false">Visible</animation>
 									<animation effect="fade" time="100" reversible="false">Hidden</animation>
@@ -469,6 +469,19 @@
 					<colordiffuse>CCFFFFFF</colordiffuse>						
 				</control>
 			</control>
+			<control type="button" id="45">
+				<description>invisible control button for music widgets</description>
+				<onleft>Control.Move(450,-1)</onleft>
+				<onright>Control.Move(450,1)</onright>
+				<onup>SetFocus(21)</onup>
+				<ondown>SetFocus(20)</ondown>
+				<onback>SetFocus(20)</onback>				
+				<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(450).ListItem.Label],return)</onclick>
+				<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5)">RunScript(script.playalbum,albumid=$INFO[Container(450).ListItem.DBID])</onclick>
+				<onclick condition="!stringcompare(Skin.String(QuickNavWidgetMusicType),4) + !stringcompare(Skin.String(QuickNavWidgetMusicType),5)">SetFocus(450)</onclick>
+				<onclick condition="!stringcompare(Skin.String(QuickNavWidgetMusicType),4) + !stringcompare(Skin.String(QuickNavWidgetMusicType),5)">Select</onclick>
+				<include>TopButton</include>
+			</control>
 			<control type="fixedlist" id="450">
 				<left>275</left>
 				<top>262</top>
@@ -556,7 +569,7 @@
 						</animation>
 					</control>
 				</focusedlayout>
-				<content>$VAR[QuickNav_WidgetListContentMusic]</content>
+				<content target="music">$VAR[QuickNav_WidgetListContentMusic]</content>
 			</control>
 			<control type="button">
 				<left>288</left>
@@ -832,4 +845,4 @@
 		</control>
 	</include>
 
-</includes>
+</includes>>

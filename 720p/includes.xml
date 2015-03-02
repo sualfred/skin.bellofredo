@@ -1182,6 +1182,7 @@
 		<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window(Home).Property(recommendedalbums)]</value>
 		<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),3)">plugin://service.library.data.provider?type=randomalbums&amp;reload=$INFO[Window(Home).Property(randomalbums)]</value>
 		<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">plugin://script.extendedinfo?info=topartists&amp;&amp;limit=20</value>
+		<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5)">special://skin/extras/playlists/RecentlyPlayedAlbums.xsp</value>
 	</variable>
 	<variable name="QuickNav_WidgetListContentTuneIn">
 		<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">plugin://plugin.audio.tuneinradio/?path=recents</value>
@@ -1218,6 +1219,7 @@
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + stringcompare(Skin.String(QuickNavWidgetMusicType),2)">$LOCALIZE[2] $LOCALIZE[575]</value>
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + stringcompare(Skin.String(QuickNavWidgetMusicType),3)">$LOCALIZE[31249]</value>
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + stringcompare(Skin.String(QuickNavWidgetMusicType),4)">$LOCALIZE[31259]</value>
+		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + stringcompare(Skin.String(QuickNavWidgetMusicType),5)">$LOCALIZE[517]</value>
 		<value condition="Control.HasFocus(550)">$LOCALIZE[31138]</value>
 		<value condition="[[Control.HasFocus(65) | Control.HasFocus(650)] + !stringcompare(Skin.String(RSSVideoFeedName),Custom)]">$INFO[Skin.String(RSSVideoFeedName)]</value>
 		<value condition="[[Control.HasFocus(65) | Control.HasFocus(650)] + stringcompare(Skin.String(RSSVideoFeedName),Custom)]">$INFO[Skin.String(SearchStringName)]</value>

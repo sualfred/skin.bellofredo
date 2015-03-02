@@ -672,18 +672,31 @@
 								<visible>!Skin.HasSetting(DisableQuickNav)</visible>
 								<texturefocus>-</texturefocus>
 								<texturenofocus>-</texturenofocus>
-								<onclick condition="!System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetMusicType),3)">Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[31243])</onclick>
-								<onclick condition="!System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetMusicType),3)">Skin.SetString(QuickNavWidgetMusicType,1)</onclick>
-								<onclick condition="System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetMusicType),4)">Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[31243])</onclick>
-								<onclick condition="System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetMusicType),4)">Skin.SetString(QuickNavWidgetMusicType,1)</onclick>
+								
+								<!--<onclick condition="!System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetMusicType),3)">Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[31243])</onclick>
+								<onclick condition="!System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetMusicType),3)">Skin.SetString(QuickNavWidgetMusicType,5)</onclick>
 								<onclick condition="System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetMusicType),3)">Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[31259])</onclick>
 								<onclick condition="System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetMusicType),3)">Skin.SetString(QuickNavWidgetMusicType,4)</onclick>
-								<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[31249])</onclick>
-								<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">Skin.SetString(QuickNavWidgetMusicType,3)</onclick>
+								
+								<onclick condition="System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetMusicType),4)">Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[517])</onclick>
+								<onclick condition="System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetMusicType),4)">Skin.SetString(QuickNavWidgetMusicType,5)</onclick>-->
+								
+								
 								<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),1)">Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[2] $LOCALIZE[575])</onclick>
 								<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),1)">Skin.SetString(QuickNavWidgetMusicType,2)</onclick>
-								<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[31243])</onclick>
-								<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">Skin.SetString(QuickNavWidgetMusicType,1)</onclick>
+								<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[31249])</onclick>
+								<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">Skin.SetString(QuickNavWidgetMusicType,3)</onclick>
+								<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),3)">Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[31259])</onclick>
+								<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),3)">Skin.SetString(QuickNavWidgetMusicType,4)</onclick>
+								<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[517])</onclick>
+								<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">Skin.SetString(QuickNavWidgetMusicType,5)</onclick>
+								<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5)">Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[31243])</onclick>
+								<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5)">Skin.SetString(QuickNavWidgetMusicType,1)</onclick>
+								
+								
+								<!--<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[31243])</onclick>
+								<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">Skin.SetString(QuickNavWidgetMusicType,1)</onclick>-->
+								
 							</control>
 							<control type="button">
 								<width>780</width>

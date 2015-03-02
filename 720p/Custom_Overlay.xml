@@ -38,6 +38,38 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
+				<label>Temporary Info Test: </label>				
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>Container path: $INFO[Container.FolderPath]</label>
+				<visible>!IsEmpty(Container.FolderPath)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>Player path: $INFO[Player.Filenameandpath]</label>
+				<visible>!IsEmpty(Player.Filenameandpath)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
 				<label>Player path: $INFO[Player.Filenameandpath]</label>
 				<visible>!IsEmpty(Player.Filenameandpath)</visible>
 			</control>
