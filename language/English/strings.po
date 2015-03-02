@@ -186,7 +186,11 @@ msgctxt "#31042"
 msgid "Always show plot"
 msgstr ""
 
-#empty strings from id 31043 to 31069
+msgctxt "#31043"
+msgid "Transparent background"
+msgstr ""
+
+#empty strings from id 31044 to 31069
 #ExtendedInfoLabels
 
 msgctxt "#31070"
@@ -796,7 +800,19 @@ msgctxt "#31288"
 msgid "TuneIn Plugin Home Widgets"
 msgstr ""
 
-#empty strings from id 31289 to 31299
+msgctxt "#31289"
+msgid "Toggle debug grid"
+msgstr ""
+
+msgctxt "#31290"
+msgid "Toggle debug info"
+msgstr ""
+
+msgctxt "#31291"
+msgid "Enable skin debug tools"
+msgstr ""
+
+#empty strings from id 31292 to 31299
 #Video and Music OSD Labels
 
 msgctxt "#31300"

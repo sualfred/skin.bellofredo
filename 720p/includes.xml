@@ -1352,6 +1352,11 @@
   </variable>
 
 	<variable name="VideoPlayerThumb">
+		<value condition="SubString(Player.Filenameandpath,rtmp://) + !IsEmpty(Player.Art(fanart)">$INFO[Player.Art(fanart)]</value>
+		<value condition="SubString(Player.Filenameandpath,rtmp://) + !IsEmpty(Player.Art(thumb)">$INFO[Player.Art(thumb)]</value>
+		<value condition="SubString(Player.Filenameandpath,rtmp://)">$INFO[VideoPlayer.Cover]</value>
+		<value condition="SubString(Player.Filenameandpath,http) + !IsEmpty(Player.Art(thumb)">$INFO[Player.Art(thumb)]</value>
+		<value condition="SubString(Player.Filenameandpath,http)">$INFO[VideoPlayer.Cover]</value>
 		<value condition="!IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
 		<value condition="VideoPlayer.Content(Episodes) + !IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
 		<value condition="!IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
@@ -1383,7 +1388,7 @@
 
 	<variable name="OSDInfoUnderTitleLabel">
 		<value condition="VideoPlayer.Content(Movies)">$INFO[VideoPlayer.Genre]</value>
-		<value condition="VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Season, · $LOCALIZE[20373] ,]$INFO[VideoPlayer.Episode, · $LOCALIZE[20359] ,]</value>
+		<value condition="VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.TVShowTitle,, · ]$INFO[VideoPlayer.Season,$LOCALIZE[20373] , · ]$INFO[VideoPlayer.Episode,$LOCALIZE[20359] ,]</value>
 		<value condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + !IsEmpty(VideoPlayer.Genre)">$INFO[VideoPlayer.Genre]</value>
 		<value>$INFO[Player.FolderPath]</value>
 	</variable>

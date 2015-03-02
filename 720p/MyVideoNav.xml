@@ -151,6 +151,15 @@
 					<selected>Skin.HasSetting(NetfilxAlwaysShowPlot)</selected>
 					<visible>Control.IsVisible(59)</visible>
 				</control>
+				<control type="togglebutton" id="299">
+					<description>NetFilx Semi Trans Toggle</description>
+					<include>TopLeftMenusButton</include>
+					<label>$LOCALIZE[31043]: $LOCALIZE[31012]</label>
+					<altlabel>$LOCALIZE[31043]: $LOCALIZE[31011]</altlabel>
+					<onclick>Skin.ToggleSetting(NetFilxSemiTrans)</onclick>
+					<selected>Skin.HasSetting(NetFilxSemiTrans)</selected>
+					<visible>Control.IsVisible(59)</visible>
+				</control>
 				<control type="button" id="3">
 					<description>Sort by</description>
 					<include>TopLeftMenusButton</include>

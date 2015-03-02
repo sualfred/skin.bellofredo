@@ -15,8 +15,10 @@
 	<onload condition="IsEmpty(Skin.String(QuickNavWidgetTVShowsName))">Skin.SetString(QuickNavWidgetTVShowsName,$LOCALIZE[31242])</onload>
 	<onload condition="IsEmpty(Skin.String(QuickNavWidgetMusicType))">Skin.SetString(QuickNavWidgetMusicType,1)</onload>
 	<onload condition="IsEmpty(Skin.String(QuickNavWidgetMusicName))">Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[31243])</onload>
-	<onload condition="IsEmpty(Skin.String(QuickNavWidgetTuneInType))">Skin.SetString(QuickNavWidgetTuneInType,2)</onload>
-	<onload condition="IsEmpty(Skin.String(QuickNavWidgetTuneInName))">Skin.SetString(QuickNavWidgetTuneInName,$LOCALIZE[31287])</onload>
+	<onload condition="IsEmpty(Skin.String(QuickNavWidgetTuneInType))">Skin.SetString(QuickNavWidgetTuneInType,1)</onload>
+	<onload condition="IsEmpty(Skin.String(QuickNavWidgetTuneInName))">Skin.SetString(QuickNavWidgetTuneInName,$LOCALIZE[31286])</onload>
+	<onload condition="Skin.HasSetting(DebugGrid)">Skin.ToggleSetting(DebugGrid)</onload>
+	<onload condition="Skin.HasSetting(BelloFredoDebug)">Skin.ToggleSetting(BelloFredoDebug)</onload>
 	<onload condition="[System.HasAddon(script.extendedinfo) + IsEmpty(Skin.String(RSSVideoFeedName))]">Skin.SetString(RSSVideoFeedName,Euronews)</onload>
 	<onload condition="[System.HasAddon(script.extendedinfo) + IsEmpty(Skin.String(RSSVideoFeedURL))]">Skin.SetString(RSSVideoFeedURL,Euronews)</onload>
 	<controls>

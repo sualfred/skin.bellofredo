@@ -7,7 +7,7 @@
 		<!-- Global debug grid -->
 
 		<control type="image">
-			<visible>Skin.HasSetting(DebugGrid)</visible>
+			<visible>Skin.HasSetting(ShowSkinDebugTools) + Skin.HasSetting(DebugGrid)</visible>
 			<posx>0</posx>
 			<posy>0</posy>
 			<width>1280</width>
@@ -26,9 +26,55 @@
 			<width>780</width>
 			<height>450</height>
 			<itemgap>12</itemgap>
-			<!--<visible>!Skin.HasSetting(HideDebugInfo)</visible>-->
-			<visible>false</visible>
-
+			<visible>Skin.HasSetting(ShowSkinDebugTools) + Skin.HasSetting(BelloFredoDebug)</visible>
+			<visible>true</visible>
+			
+			<!-- player content information -->
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>Player path: $INFO[Player.Filenameandpath]</label>
+				<visible>!IsEmpty(Player.Filenameandpath)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>Player content is Episodes</label>
+				<visible>VideoPlayer.Content(Episodes)</visible>
+			</control>			
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>Player content is Movies</label>
+				<visible>VideoPlayer.Content(Movies)</visible>
+			</control>
+			
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>Player content is LiveTV</label>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control>
+			
 			<!-- Window labels -->
 			<control type="label">
 				<width>780</width>

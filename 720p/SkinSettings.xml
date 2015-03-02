@@ -202,6 +202,12 @@
 							<onclick>Skin.ToggleSetting(KodiIntro.disabled)</onclick>
 							<selected>Skin.HasSetting(KodiIntro.disabled)</selected>
 						</control>
+						<control type="radiobutton" id="8110">
+							<include>SettingsRadioButton</include>
+							<label>31291</label>
+							<onclick>Skin.ToggleSetting(ShowSkinDebugTools)</onclick>
+							<selected>Skin.HasSetting(ShowSkinDebugTools)</selected>
+						</control>
 					</control>
 
 					<!-- ================= -->

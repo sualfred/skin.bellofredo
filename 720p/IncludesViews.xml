@@ -521,8 +521,11 @@
   	<variable name="NetFlixLandscapeThumb">
   		<value condition="Container.Content(TVShows) + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
   		<value condition="Container.Content(TVShows) + !IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
+  		<value condition="Container.Content(TVShows) + IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(landscape)) + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
   		<value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
-      <value condition="Container.Content(Episodes) + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+  		<value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
+		<value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(landscape)) + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+      <value condition="Container.Content(Episodes) + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>	  
       <value>$INFO[ListItem.ActualIcon,thumbs/,/folderback_episode_tp.png]</value>
   	</variable>
 	  

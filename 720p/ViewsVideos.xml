@@ -4053,7 +4053,7 @@
 					<control type="label">
 						<left>0</left>
 						<top>0</top>
-						<width min="0" max="150">auto</width>
+						<width min="0" max="250">auto</width>
 						<height>22</height>
 						<textcolor>99white</textcolor>
 						<shadowcolor>77000000</shadowcolor>
@@ -4095,7 +4095,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$VAR[ListItem.Duration]</label>
-						<visible>[Container.Content(Movies) | Container.Content(Episodes)] + !IsEmpty(ListItem.Duration)</visible>
+						<visible>[Container.Content(Movies) | Container.Content(Episodes)] + [!IsEmpty(ListItem.Duration) + IntegerGreaterThan(ListItem.Duration,0)]</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -4242,6 +4242,16 @@
 					</control>
 					<control type="image">
 						<left>0</left>
+						<top>32</top>
+						<width>287</width>
+						<height>161</height>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+						<visible>IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(landscape))</visible>
+						<bordersize>40</bordersize>
+					</control>
+					<control type="image">
+						<left>0</left>
 						<top>197</top>
 						<width>287</width>
 						<height>161</height>
@@ -4250,6 +4260,22 @@
 						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
 						<bordersize>6</bordersize>
 					</control>
+					
+					<control type="image">
+						<left>0</left>
+						<top>197</top>
+						<width>287</width>
+						<height>161</height>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" >$INFO[ListItem.Art(clearlogo)]</texture>
+						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(landscape))</visible>
+						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
+						<bordersize>40</bordersize>
+						<animation type="Conditional" reversible="false" condition="true">
+							<effect type="fade" start="100" end="30" time="0" tween="sine" easing="out" />
+						</animation>
+					</control>
+					
 					<control type="image">
 						<left>0</left>
 						<top>32</top>
@@ -4347,12 +4373,36 @@
 					</control>
 					<control type="image">
 						<left>0</left>
+						<top>32</top>
+						<width>287</width>
+						<height>161</height>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(landscape))</visible>
+						<bordersize>40</bordersize>
+					</control>
+					<control type="image">
+						<left>0</left>
 						<top>196</top>
 						<width>287</width>
 						<height>161</height>
 						<aspectratio align="center" aligny="center">scale</aspectratio>
 						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
 						<bordersize>8</bordersize>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>197</top>
+						<width>287</width>
+						<height>161</height>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" >$INFO[ListItem.Art(clearlogo)]</texture>
+						<visible>IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(landscape))</visible>
+						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
+						<bordersize>40</bordersize>
+						<animation type="Conditional" reversible="false" condition="true">
+							<effect type="fade" start="100" end="30" time="0" tween="sine" easing="out" />
+						</animation>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -4363,8 +4413,7 @@
 						<texture>overlays/unwatched/banners/UnWatched_Episodes.png</texture>
 						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
 						<bordersize>8</bordersize>
-					</control>
-					
+					</control>					
 					<control type="image">
 						<left>213</left>
 						<top>157</top>
