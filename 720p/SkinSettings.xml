@@ -241,6 +241,13 @@
 							<selected>Skin.HasSetting(HomeMenuAnimation)</selected>
 						</control>
 						<control type="radiobutton" id="8203">
+							<description>Enable HomeMenu Arrow Animation</description>
+							<include>SettingsRadioButton</include>
+							<label>31045</label>
+							<onclick>Skin.ToggleSetting(HomeMenuArrowAnimation)</onclick>
+							<selected>Skin.HasSetting(HomeMenuArrowAnimation)</selected>
+						</control>
+						<control type="radiobutton" id="8204">
 							<description>Hide Library Totals</description>
 							<include>SettingsRadioButton</include>
 							<label>31161</label>
@@ -248,14 +255,14 @@
 							<selected>Skin.HasSetting(ShowLibraryTotals)</selected>
 						</control>
 						<!-- Hide Now Playing -->
-						<control type="radiobutton" id="8204">
+						<control type="radiobutton" id="8205">
 							<description>Hide Home NP VideoInfo</description>
 							<include>SettingsRadioButton</include>
 							<label>31102</label>
 							<onclick>Skin.ToggleSetting(HideHomeNPVideoInfo)</onclick>
 							<selected>Skin.HasSetting(HideHomeNPVideoInfo)</selected>
 						</control>
-						<control type="radiobutton" id="8205">
+						<control type="radiobutton" id="8206">
 							<description>Hide Home NP MusicInfo</description>
 							<include>SettingsRadioButton</include>
 							<label>31103</label>

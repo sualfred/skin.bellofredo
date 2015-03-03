@@ -194,7 +194,11 @@ msgctxt "#31044"
 msgid "Play all recently played albums"
 msgstr ""
 
-#empty strings from id 31045 to 31069
+msgctxt "#31045"
+msgid "Enable home menu arrow up/down animation"
+msgstr ""
+
+#empty strings from id 31046 to 31069
 #ExtendedInfoLabels
 
 msgctxt "#31070"

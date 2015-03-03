@@ -87,7 +87,13 @@
 									<visible>IntegerGreaterThan(Container(23).NumItems,0)</visible>		          
 									<animation effect="fade" time="100" reversible="false">Visible</animation>
 									<animation effect="fade" time="100" reversible="false">Hidden</animation>
-									<animation effect="slide" end="-10,0" time="100" condition="!Skin.HasSetting(DisableQuickNav) + [StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)] | [StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] | [StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)] | [SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)]" reversible="false">Conditional</animation>
+									<animation effect="slide" end="-12,0" time="200" condition="!Skin.HasSetting(DisableQuickNav) + [StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)] | [StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] | [StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)] | [SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)]" reversible="false">Conditional</animation>
+									
+									<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
+										<effect type="fade" start="0" end="100" delay="900" time="900"  />
+										<effect type="slide" start="0,-2" end="0,4" tween="sine" easing="inout" delay="900" time="900" />
+									</animation>
+									
 								</control>
 								<control type="image" id="202">
 									<left>240</left>
@@ -96,11 +102,17 @@
 									<height>18</height>
 									<texture background="true">buttons/arrow_top.png</texture>
 									<colordiffuse>CCFFFFFF</colordiffuse>brawl
-									<visible>!Control.HasFocus(250) + !Control.HasFocus(350) + !Control.HasFocus(450) + !Control.HasFocus(45) + !Control.HasFocus(550)</visible>
+									<visible>!Skin.HasSetting(DisableQuickNav) + !Control.HasFocus(250) + !Control.HasFocus(350) + !Control.HasFocus(450) + !Control.HasFocus(45) + !Control.HasFocus(550)</visible>
 									<visible>!Skin.HasSetting(DisableQuickNav) + [StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)] | [StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] | [StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)] | [SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)]</visible>		          
 									<animation effect="fade" time="100" reversible="false">Visible</animation>
 									<animation effect="fade" time="100" reversible="false">Hidden</animation>
-									<animation effect="slide" end="10,0" time="100" condition="IntegerGreaterThan(Container(23).NumItems,0)" reversible="false">Conditional</animation>
+									<animation effect="slide" end="12,0" time="200" condition="IntegerGreaterThan(Container(23).NumItems,0)" reversible="false">Conditional</animation>
+									
+									<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
+										<effect type="fade" start="0" end="100" delay="900" time="900"  />
+										<effect type="slide" start="0,2" end="0,-4" tween="sine" easing="inout" delay="900" time="900" />
+									</animation>
+									
 								</control>
 							</control>							
 						</control>

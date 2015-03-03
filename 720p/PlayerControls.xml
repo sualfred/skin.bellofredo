@@ -154,17 +154,30 @@
 				</content>
 			</control>
 			<control type="image">
-				<left>629</left>
-				<top>482</top>
+				<left>617</left>
+				<top>489</top>
 				<width>25</width>
 				<height>22</height>
 				<colordiffuse>99ffffff</colordiffuse>
 				<texture>buttons/arrow.png</texture>
 				<animation type="Conditional" condition="true" pulse="true">
 					<effect type="fade" start="0" end="100" delay="1000" time="1000"  />
-					<effect type="slide" start="0,0" end="0,4" tween="sine" easing="inout" delay="1000" time="1000" />
+					<effect type="slide" start="0,-2" end="0,2" tween="sine" easing="inout" delay="1000" time="1000" />
 				</animation>
-				<visible>IntegerGreaterThan(Container(250).NumItems,0) | IntegerGreaterThan(Container(350).NumItems,0) | IntegerGreaterThan(Container(450).NumItems,0)</visible>
+				<visible>!Skin.HasSetting(DisableQuickNav)</visible>
+			</control>
+			<control type="image">
+				<left>641</left>
+				<top>489</top>
+				<width>25</width>
+				<height>22</height>
+				<colordiffuse>99ffffff</colordiffuse>
+				<texture>buttons/arrow_top.png</texture>
+				<animation type="Conditional" condition="true" pulse="true">
+					<effect type="fade" start="0" end="100" delay="1000" time="1000"  />
+					<effect type="slide" start="0,2" end="0,-2" tween="sine" easing="inout" delay="1000" time="1000" />
+				</animation>
+				<visible>!Skin.HasSetting(DisableQuickNav)</visible>
 			</control>
 		</control>
 
@@ -303,17 +316,30 @@
 				<label2>$VAR[QuickNavWidgetListItemLabel2]</label2>
 			</control>
 			<control type="image">
-				<left>629</left>
-				<top>498</top>
+				<left>617</left>
+				<top>497</top>
 				<width>25</width>
 				<height>22</height>
 				<colordiffuse>99ffffff</colordiffuse>
 				<texture>buttons/arrow.png</texture>
 				<animation type="Conditional" condition="true" pulse="true">
 					<effect type="fade" start="0" end="100" delay="1000" time="1000"  />
-					<effect type="slide" start="0,0" end="0,4" tween="sine" easing="inout" delay="1000" time="1000" />
+					<effect type="slide" start="0,-2" end="0,2" tween="sine" easing="inout" delay="1000" time="1000" />
 				</animation>
-				<visible>IntegerGreaterThan(Container(350).NumItems,0) | IntegerGreaterThan(Container(450).NumItems,0)</visible>
+				<visible>!Skin.HasSetting(DisableQuickNav)</visible>
+			</control>
+			<control type="image">
+				<left>641</left>
+				<top>497</top>
+				<width>25</width>
+				<height>22</height>
+				<colordiffuse>99ffffff</colordiffuse>
+				<texture>buttons/arrow_top.png</texture>
+				<animation type="Conditional" condition="true" pulse="true">
+					<effect type="fade" start="0" end="100" delay="1000" time="1000"  />
+					<effect type="slide" start="0,2" end="0,-2" tween="sine" easing="inout" delay="1000" time="1000" />
+				</animation>
+				<visible>!Skin.HasSetting(DisableQuickNav)</visible>
 			</control>
 		</control>
 
@@ -451,17 +477,30 @@
 				<label2>$VAR[QuickNavWidgetListItemLabel2]</label2>
 			</control>
 			<control type="image">
-				<left>629</left>
-				<top>498</top>
+				<left>617</left>
+				<top>497</top>
 				<width>25</width>
 				<height>22</height>
 				<colordiffuse>99ffffff</colordiffuse>
 				<texture>buttons/arrow.png</texture>
 				<animation type="Conditional" condition="true" pulse="true">
 					<effect type="fade" start="0" end="100" delay="1000" time="1000"  />
-					<effect type="slide" start="0,0" end="0,4" tween="sine" easing="inout" delay="1000" time="1000" />
+					<effect type="slide" start="0,-2" end="0,2" tween="sine" easing="inout" delay="1000" time="1000" />
 				</animation>
-				<visible>IntegerGreaterThan(Container(300).NumItems,0)</visible>
+				<visible>!Skin.HasSetting(DisableQuickNav)</visible>
+			</control>
+			<control type="image">
+				<left>641</left>
+				<top>497</top>
+				<width>25</width>
+				<height>22</height>
+				<colordiffuse>99ffffff</colordiffuse>
+				<texture>buttons/arrow_top.png</texture>
+				<animation type="Conditional" condition="true" pulse="true">
+					<effect type="fade" start="0" end="100" delay="1000" time="1000"  />
+					<effect type="slide" start="0,2" end="0,-2" tween="sine" easing="inout" delay="1000" time="1000" />
+				</animation>
+				<visible>!Skin.HasSetting(DisableQuickNav)</visible>
 			</control>
 		</control>
 
@@ -621,7 +660,7 @@
 				<label2>$VAR[QuickNavWidgetListItemLabel2]</label2>
 			</control>
 			<control type="image">
-				<left>629</left>
+				<left>617</left>
 				<top>482</top>
 				<width>25</width>
 				<height>22</height>
@@ -629,9 +668,22 @@
 				<texture>buttons/arrow.png</texture>
 				<animation type="Conditional" condition="true" pulse="true">
 					<effect type="fade" start="0" end="100" delay="1000" time="1000"  />
-					<effect type="slide" start="0,0" end="0,4" tween="sine" easing="inout" delay="1000" time="1000" />
+					<effect type="slide" start="0,-2" end="0,2" tween="sine" easing="inout" delay="1000" time="1000" />
 				</animation>
-				<visible>IntegerGreaterThan(Container(650).NumItems,0)</visible>
+				<visible>!Skin.HasSetting(DisableQuickNav)</visible>
+			</control>
+			<control type="image">
+				<left>641</left>
+				<top>482</top>
+				<width>25</width>
+				<height>22</height>
+				<colordiffuse>99ffffff</colordiffuse>
+				<texture>buttons/arrow_top.png</texture>
+				<animation type="Conditional" condition="true" pulse="true">
+					<effect type="fade" start="0" end="100" delay="1000" time="1000"  />
+					<effect type="slide" start="0,2" end="0,-2" tween="sine" easing="inout" delay="1000" time="1000" />
+				</animation>
+				<visible>!Skin.HasSetting(DisableQuickNav)</visible>
 			</control>
 		</control>
 
@@ -772,17 +824,30 @@
 				<label>$VAR[QuickNavWidgetListItemLabel]</label>
 			</control>
 			<control type="image">
-				<left>629</left>
-				<top>482</top>
+				<left>617</left>
+				<top>487</top>
 				<width>25</width>
 				<height>22</height>
 				<colordiffuse>99ffffff</colordiffuse>
 				<texture>buttons/arrow.png</texture>
 				<animation type="Conditional" condition="true" pulse="true">
 					<effect type="fade" start="0" end="100" delay="1000" time="1000"  />
-					<effect type="slide" start="0,0" end="0,4" tween="sine" easing="inout" delay="1000" time="1000" />
+					<effect type="slide" start="0,-2" end="0,2" tween="sine" easing="inout" delay="1000" time="1000" />
 				</animation>
-				<visible>IntegerGreaterThan(Container(150).NumItems,0)</visible>
+				<visible>!Skin.HasSetting(DisableQuickNav)</visible>
+			</control>
+			<control type="image">
+				<left>641</left>
+				<top>487</top>
+				<width>25</width>
+				<height>22</height>
+				<colordiffuse>99ffffff</colordiffuse>
+				<texture>buttons/arrow_top.png</texture>
+				<animation type="Conditional" condition="true" pulse="true">
+					<effect type="fade" start="0" end="100" delay="1000" time="1000"  />
+					<effect type="slide" start="0,2" end="0,-2" tween="sine" easing="inout" delay="1000" time="1000" />
+				</animation>
+				<visible>!Skin.HasSetting(DisableQuickNav)</visible>
 			</control>
 		</control>
 
@@ -1664,16 +1729,30 @@
 				</control>
 			</control>
 			<control type="image">
-				<left>629</left>
-				<top>482</top>
+				<left>617</left>
+				<top>487</top>
 				<width>25</width>
 				<height>22</height>
 				<colordiffuse>99ffffff</colordiffuse>
 				<texture>buttons/arrow.png</texture>
 				<animation type="Conditional" condition="true" pulse="true">
 					<effect type="fade" start="0" end="100" delay="1000" time="1000"  />
-					<effect type="slide" start="0,0" end="0,4" tween="sine" easing="inout" delay="1000" time="1000" />
+					<effect type="slide" start="0,-2" end="0,2" tween="sine" easing="inout" delay="1000" time="1000" />
 				</animation>
+				<visible>!Skin.HasSetting(DisableQuickNav)</visible>
+			</control>
+			<control type="image">
+				<left>641</left>
+				<top>487</top>
+				<width>25</width>
+				<height>22</height>
+				<colordiffuse>99ffffff</colordiffuse>
+				<texture>buttons/arrow_top.png</texture>
+				<animation type="Conditional" condition="true" pulse="true">
+					<effect type="fade" start="0" end="100" delay="1000" time="1000"  />
+					<effect type="slide" start="0,2" end="0,-2" tween="sine" easing="inout" delay="1000" time="1000" />
+				</animation>
+				<visible>!Skin.HasSetting(DisableQuickNav)</visible>
 			</control>
 		</control>
 
