@@ -179,7 +179,7 @@
 							<width min="10" max="780">auto</width>
 							<height>30</height>
 						  <label>$INFO[ListItem.Duration]</label>
-						  <visible>substring(listitem.Duration,Mins)</visible>
+						  <visible>substring(ListItem.Duration,Mins)</visible>
 			      </control>
 			      <control type="label">
 							<textcolor>99white</textcolor>
@@ -188,7 +188,7 @@
 							<width min="10" max="780">auto</width>
 							<height>30</height>
 							<label>$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
-							<visible>!substring(listitem.Duration,Mins)</visible>
+							<visible>!substring(ListItem.Duration,Mins)</visible>
 			      </control>
 					</control>
 					<!-- Path label -->

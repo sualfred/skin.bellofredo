@@ -190,7 +190,11 @@ msgctxt "#31043"
 msgid "Transparent background"
 msgstr ""
 
-#empty strings from id 31044 to 31069
+msgctxt "#31044"
+msgid "Play all recently played albums"
+msgstr ""
+
+#empty strings from id 31045 to 31069
 #ExtendedInfoLabels
 
 msgctxt "#31070"

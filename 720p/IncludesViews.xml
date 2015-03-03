@@ -326,8 +326,8 @@
 
   	<variable name="ListItem.Duration">
   		<value condition="!IntegerGreaterThan(ListItem.Duration,0)">$LOCALIZE[195]</value>
-		<value condition="!SubString(listitem.Duration,Mins)">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
-  		<value condition="SubString(listitem.Duration,Mins)">$INFO[ListItem.Duration]</value>
+		<value condition="!SubString(ListItem.Duration,Mins)">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
+  		<value condition="SubString(ListItem.Duration,Mins)">$INFO[ListItem.Duration]</value>
 		<value condition="!IntegerGreaterThan(ListItem.Duration,0)">$LOCALIZE[195]</value>
 		<value>$INFO[ListItem.Duration]</value>
   	</variable>

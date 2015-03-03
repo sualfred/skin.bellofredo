@@ -34,39 +34,17 @@
 			<control type="label">
 				<width>780</width>
 				<height>21</height>
-				<textcolor>FF0000FF</textcolor>
+				<textcolor>FFFF0000</textcolor>
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>Temporary Info Test: </label>				
+				<label>Temporary Info Test: $INFO[ListItem.Label2]</label>				
 			</control>
 			
 			<control type="label">
 				<width>780</width>
 				<height>21</height>
-				<textcolor>FF0000FF</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
-				<label>Container path: $INFO[Container.FolderPath]</label>
-				<visible>!IsEmpty(Container.FolderPath)</visible>
-			</control>
-			
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FF0000FF</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
-				<label>Player path: $INFO[Player.Filenameandpath]</label>
-				<visible>!IsEmpty(Player.Filenameandpath)</visible>
-			</control>
-			
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FF0000FF</textcolor>
+				<textcolor>FFFF0000</textcolor>
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
@@ -993,7 +971,7 @@
 			<font>font13</font>
 			<align>right</align>
 			<label>$INFO[System.CurrentControl]</label>
-			<visible>Skin.HasSetting(DebugInfo)</visible>
+			<visible>Skin.HasSetting(ShowSkinDebugTools) + Skin.HasSetting(BelloFredoDebug)</visible>
 		</control>
 
 		<!-- Path label -->
@@ -1008,7 +986,7 @@
 			<font>font13</font>
 			<align>right</align>
 			<label>[COLOR=FF00FF00]$INFO[Container.FolderName,, - ][/COLOR]$INFO[Container.FolderPath]</label>
-			<visible>Skin.HasSetting(DebugInfo)</visible>
+			<visible>Skin.HasSetting(ShowSkinDebugTools) + Skin.HasSetting(BelloFredoDebug)</visible>
 		</control>
 
 	</controls>
