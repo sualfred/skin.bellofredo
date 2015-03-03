@@ -650,13 +650,11 @@
 	</include>
 
 	<include name="HomeMoviesWidgetAnimation">
-		<animation effect="fade" start="0" end="100" time="300" tween="sine" easing="out">Visible</animation>
-		<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="out">Hidden</animation>
 		<animation type="Conditional" condition="Control.HasFocus(250)">
-			<effect type="fade" start="0" end="100" time="0" tween="sine" easing="in"  />			  
+			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />			  
 		</animation>
 		<animation type="Conditional" condition="!Control.HasFocus(250)">
-			<effect type="fade" start="100" end="0" time="0" tween="sine" easing="out" />
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 		</animation> 
 		<animation effect="zoom" start="80" end="100" time="450" center="auto" tween="back" easing="out" condition="Control.HasFocus(250)" reversible="false">Conditional</animation>
 		<animation effect="zoom" start="80" end="100" time="450" center="auto" tween="back" easing="out" condition="Control.HasFocus(250)" reversible="false">Conditional</animation>
@@ -665,13 +663,11 @@
 	</include>
 
 	<include name="HomeTVShowsWidgetAnimation">
-		<animation effect="fade" start="0" end="100" time="300" tween="sine" easing="out">Visible</animation>
-		<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="out">Hidden</animation>
 		<animation type="Conditional" condition="Control.HasFocus(350)">
-			<effect type="fade" start="0" end="100" time="0" tween="sine" easing="in"  />			  
+			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />			  
 		</animation>
 		<animation type="Conditional" condition="!Control.HasFocus(350)">
-			<effect type="fade" start="100" end="0" time="0" tween="sine" easing="out" />
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 		</animation> 
 		<animation effect="zoom" start="80" end="100" time="450" center="auto" tween="back" easing="out" condition="Control.HasFocus(350)" reversible="false">Conditional</animation>
 		<animation effect="zoom" start="80" end="100" time="450" center="auto" tween="back" easing="out" condition="Control.HasFocus(350)" reversible="false">Conditional</animation>
@@ -680,33 +676,29 @@
 	</include>
 
 	<include name="HomeTuneInWidgetAnimation">
-		<animation effect="fade" start="0" end="100" time="300" tween="sine" easing="out">Visible</animation>
-		<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="out">Hidden</animation>
 		<animation type="Conditional" condition="Control.HasFocus(550)">
-			<effect type="fade" start="0" end="100" time="0" tween="sine" easing="in"  />			  
+			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />			  
 		</animation>
 		<animation type="Conditional" condition="!Control.HasFocus(550) + !Control.HasFocus(55)">
-			<effect type="fade" start="100" end="0" time="0" tween="sine" easing="out" />
-		</animation> 
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+		</animation>
 		<animation effect="zoom" start="80" end="100" time="450" center="auto" tween="back" easing="out" condition="[Control.HasFocus(550) | Control.HasFocus(55)]" reversible="false">Conditional</animation>
 		<animation effect="zoom" start="80" end="100" time="450" center="auto" tween="back" easing="out" condition="[Control.HasFocus(550) | Control.HasFocus(55)]" reversible="false">Conditional</animation>
-		<animation effect="zoom" start="100" end="80" time="450" center="auto" tween="back" easing="out" condition="!Control.HasFocus(550) + !Control.HasFocus(55)" reversible="false">Conditional</animation>
-		<animation effect="zoom" start="100" end="80" time="450" center="auto" tween="back" easing="out" condition="!Control.HasFocus(550) + !Control.HasFocus(55)" reversible="false">Conditional</animation>
+		<animation effect="zoom" start="100" end="80" time="450" center="auto" tween="back" easing="out" condition="![Control.HasFocus(550) | Control.HasFocus(55)]" reversible="false">Conditional</animation>
+		<animation effect="zoom" start="100" end="80" time="450" center="auto" tween="back" easing="out" condition="![Control.HasFocus(550) | Control.HasFocus(55)]" reversible="false">Conditional</animation>
 	</include>
 
 	<include name="HomeMusicWidgetAnimation">
-		<animation effect="fade" start="0" end="100" time="300" tween="sine" easing="out">Visible</animation>
-		<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="out">Hidden</animation>
 		<animation type="Conditional" condition="Control.HasFocus(450) | Control.HasFocus(45)">
-			<effect type="fade" start="0" end="100" time="0" tween="sine" easing="in"  />			  
+			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />			  
 		</animation>
 		<animation type="Conditional" condition="!Control.HasFocus(450) + !Control.HasFocus(45)">
-			<effect type="fade" start="100" end="0" time="0" tween="sine" easing="out" />
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 		</animation> 
 		<animation effect="zoom" start="80" end="100" time="450" center="auto" tween="back" easing="out" condition="[Control.HasFocus(450) | Control.HasFocus(45)]" reversible="false">Conditional</animation>
 		<animation effect="zoom" start="80" end="100" time="450" center="auto" tween="back" easing="out" condition="[Control.HasFocus(450) | Control.HasFocus(45)]" reversible="false">Conditional</animation>
-		<animation effect="zoom" start="100" end="80" time="450" center="auto" tween="back" easing="out" condition="!Control.HasFocus(450) + !Control.HasFocus(45)" reversible="false">Conditional</animation>
-		<animation effect="zoom" start="100" end="80" time="450" center="auto" tween="back" easing="out" condition="!Control.HasFocus(450) + !Control.HasFocus(45)" reversible="false">Conditional</animation>
+		<animation effect="zoom" start="100" end="80" time="450" center="auto" tween="back" easing="out" condition="![Control.HasFocus(450) | Control.HasFocus(45)]" reversible="false">Conditional</animation>
+		<animation effect="zoom" start="100" end="80" time="450" center="auto" tween="back" easing="out" condition="![Control.HasFocus(450) | Control.HasFocus(45)]" reversible="false">Conditional</animation>
 	</include>
 
 	<include name="QuickNavMiscWidgetAnimation">
