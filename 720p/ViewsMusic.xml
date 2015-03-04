@@ -1502,7 +1502,6 @@
 			<label>$INFO[ListItem.Label]</label>
 			<label2>$VAR[MusicLabel2]</label2>
 			<visible>Control.IsVisible(560)</visible>
-			<visible>!stringcompare(Container.FolderPath,playlistmusic://)</visible>
 			<animation effect="slide" start="0,0" end="0,-6" time="0" condition="!stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicThumbs)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-6" time="0" condition="stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicAddonsThumbs)">Conditional</animation>
 	</control>

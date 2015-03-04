@@ -39,7 +39,8 @@
 					<onup condition="Skin.HasSetting(DisableQuickNav) | [![StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)] + ![StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] + ![SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)] + ![StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)]]">SetFocus(21)</onup>
 					<ondown condition="IntegerGreaterThan(Container(23).NumItems,0)">SetFocus(23)</ondown>
 					<onleft>20</onleft>
-					<onright>20</onright>
+					<onright>20</onright>					
+					<!--<onup>ClearProperty(WMovement)</onup>-->					
 					<itemgap>0</itemgap>
 					<orientation>horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -131,6 +132,7 @@
 	<include name="FredHomeWidgets">
 	
 		<control type="group" id="9050">
+			<include>HomeSlideAnimations</include>
 			<include>HomeMoviesWidgetAnimation</include>			
 			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>	
 			<control type="image">
@@ -182,7 +184,11 @@
 				<height>360</height>
 				<preloaditems>3</preloaditems>
 				<focusposition>0</focusposition>
-				<onup>SetFocus(21)</onup>
+				<!--
+				<onup>SetProperty(WMovement,1)</onup>				
+				<ondown>ClearProperty(WMovement)</ondown>
+				-->
+				<onup>SetFocus(21)</onup>				
 				<ondown>SetFocus(20)</ondown>
 				<onback>SetFocus(20)</onback>
 				<movement>4</movement>
@@ -284,6 +290,7 @@
 		</control>
 
 		<control type="group" id="9060">
+			<include>HomeSlideAnimations</include>
 			<include>HomeTVShowsWidgetAnimation</include>			
 			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>	
 			<control type="image">
@@ -437,6 +444,7 @@
 		</control>
 
 		<control type="group" id="9070">
+			<include>HomeSlideAnimations</include>
 			<include>HomeMusicWidgetAnimation</include>			
 			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>	
 			<control type="image">
@@ -606,6 +614,7 @@
 
 		<control type="group" id="9080">
 			<description>tunein radio widget</description>
+			<include>HomeSlideAnimations</include>
 			<include>HomeTuneInWidgetAnimation</include>
 			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>			
 			<control type="image">

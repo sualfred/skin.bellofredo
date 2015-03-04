@@ -35,7 +35,7 @@
 	<controls>
 		<control type="button" id="10">
 			<description>trigger</description>
-			<onfocus condition="system.getbool(input.enablemouse) + !Skin.HasSetting(KodiIntro.disabled)">ActivateWindow(1110)</onfocus>
+			<onfocus condition="system.getbool(input.enablemouse) + Skin.HasSetting(KodiIntro.disabled)">ActivateWindow(1110)</onfocus>
 			<onfocus condition="!Skin.HasSetting(KodiIntro.disabled)">XBMC.PlayMedia(special://skin/extras/intro/intro.mp4,1)</onfocus>
 			<onfocus condition="!Skin.HasSetting(KodiIntro.disabled)">AlarmClock(IntroDelay,ReplaceWindow($INFO[System.StartupWindow]),00:6,silent)</onfocus>			
 			<onfocus condition="Skin.HasSetting(KodiIntro.disabled)">ReplaceWindow($INFO[System.StartupWindow])</onfocus>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window  id="0">
 	<defaultcontrol always="true">20</defaultcontrol>	
+	<onload condition="!Skin.HasSetting(BelloFredoFirstRun)">ActivateWindow(startup)</onload>
 	<onload>SetProperty(RefreshList,1,Home)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;options=clonewidgets&amp;mainmenuID=20)</onload>
 	<onload>RunScript(script.lastplayedalbums,type=Music,limit=10,method=Last,menu=Menu1)</onload>

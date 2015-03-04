@@ -18,7 +18,7 @@
 			<include>BackgroundFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!Window.IsActive(SliderDialog)</visible>
-			<visible>Player.ShowInfo | Window.IsActive(ShutdownMenu) | Window.IsActive(VideoOSD) | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(VideoBookmarks) | Window.IsActive(SelectDialog) | Window.IsActive(SubtitleSearch) | Window.IsActive(NumericInput)</visible>
+			<visible>[Player.ShowInfo | [Player.Paused + Skin.HasSetting(ShowVideoInfo)]] | Window.IsActive(ShutdownMenu) | Window.IsActive(VideoOSD) | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(VideoBookmarks) | Window.IsActive(SelectDialog) | Window.IsActive(SubtitleSearch) | Window.IsActive(NumericInput)</visible>
 		</control>
 		<control type="image" id="1">
 			<description>Diffuse</description>
