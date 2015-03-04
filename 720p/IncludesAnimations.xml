@@ -30,22 +30,14 @@
 			<effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="inout" />
 		</animation>
 	</include>
-
+	
+	<include name="ArrowPulseFade">
+		<animation type="Conditional" condition="true" pulse="true">
+			<effect type="fade" start="0" end="100" delay="1000" time="1000"  />						
+		</animation>
+	</include>
+	
 	<include name="WidgetMainMenuSlideAnimations">
-		<!--Widget Movement-Direction detecteion 
-		<animation type="Conditional" condition="[Control.HasFocus(250) | Control.HasFocus(350) | Control.HasFocus(450) | Control.HasFocus(45) | Control.HasFocus(550)]" reversible="false">     
-			<effect type="fade" start="100" end="0" time="200" tween="sine" easing="inout" />
-			<effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="inout" />
-		</animation>				
-		<animation type="Conditional" condition="!Control.HasFocus(250) + !Control.HasFocus(350) + !Control.HasFocus(450) + !Control.HasFocus(45) + !Control.HasFocus(550) + IsEmpty(Window.Property(WMovement))" reversible="false">
-			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
-			<effect type="slide" start="0,55" end="0,0" time="350" tween="cubic" easing="out" />
-		</animation>				
-		<animation type="Conditional" condition="!Control.HasFocus(250) + !Control.HasFocus(350) + !Control.HasFocus(450) + !Control.HasFocus(45)+ !Control.HasFocus(550) + !IsEmpty(Window.Property(WMovement))" reversible="false">
-			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
-			<effect type="slide" start="0,-55" end="0,0" time="350" tween="cubic" easing="out" />
-		</animation>-->		
-		
 		<animation type="Conditional" condition="[Control.HasFocus(250) | Control.HasFocus(350) | Control.HasFocus(450) | Control.HasFocus(45) | Control.HasFocus(550)]" reversible="false">     
 			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
 			<effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="inout" />
@@ -53,8 +45,7 @@
 		<animation type="Conditional" condition="!Control.HasFocus(250) + !Control.HasFocus(350) + !Control.HasFocus(450) + !Control.HasFocus(45) + !Control.HasFocus(550)" reversible="false">
 			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
 			<effect type="slide" start="0,55" end="0,0" time="350" tween="cubic" easing="out" />
-		</animation>	
-		
+		</animation>		
 	</include>
 
 	<include name="TopRightSlideAnimations">

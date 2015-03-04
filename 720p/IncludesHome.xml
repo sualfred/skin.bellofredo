@@ -39,8 +39,7 @@
 					<onup condition="Skin.HasSetting(DisableQuickNav) | [![StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)] + ![StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] + ![SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)] + ![StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)]]">SetFocus(21)</onup>
 					<ondown condition="IntegerGreaterThan(Container(23).NumItems,0)">SetFocus(23)</ondown>
 					<onleft>20</onleft>
-					<onright>20</onright>					
-					<!--<onup>ClearProperty(WMovement)</onup>-->					
+					<onright>20</onright>				
 					<itemgap>0</itemgap>
 					<orientation>horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -155,9 +154,6 @@
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
-				<visible>IntegerGreaterThan(Container(250).NumItems,5)</visible>		          
-				<animation effect="fade" time="500" reversible="false">Visible</animation>
-				<animation effect="fade" time="500" reversible="false">Hidden</animation>
 				<left>246</left>
 				<top>337</top>
 				<width>788</width>
@@ -168,13 +164,17 @@
 					<height>25</height>
 					<texture background="true">buttons/arrow_left.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>						
+					<visible>Container(250).HasPrevious</visible>
+					<include>ArrowPulseFade</include>
 				</control>
 				<control type="image">  					
 					<left>763</left>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
+					<colordiffuse>CCFFFFFF</colordiffuse>
+					<visible>Container(250).HasNext</visible>
+					<include>ArrowPulseFade</include>
 				</control>
 			</control>
 			<control type="fixedlist" id="250">
@@ -184,10 +184,6 @@
 				<height>360</height>
 				<preloaditems>3</preloaditems>
 				<focusposition>0</focusposition>
-				<!--
-				<onup>SetProperty(WMovement,1)</onup>				
-				<ondown>ClearProperty(WMovement)</ondown>
-				-->
 				<onup>SetFocus(21)</onup>				
 				<ondown>SetFocus(20)</ondown>
 				<onback>SetFocus(20)</onback>
@@ -313,9 +309,6 @@
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
-				<visible>IntegerGreaterThan(Container(350).NumItems,5)</visible>		          
-				<animation effect="fade" time="500" reversible="false">Visible</animation>
-				<animation effect="fade" time="500" reversible="false">Hidden</animation>
 				<left>246</left>
 				<top>337</top>
 				<width>788</width>
@@ -326,13 +319,17 @@
 					<height>25</height>
 					<texture background="true">buttons/arrow_left.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>						
+					<visible>Container(350).HasPrevious</visible>
+					<include>ArrowPulseFade</include>
 				</control>
 				<control type="image">  					
 					<left>763</left>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
+					<colordiffuse>CCFFFFFF</colordiffuse>
+					<visible>Container(350).HasNext</visible>
+					<include>ArrowPulseFade</include>
 				</control>
 			</control>
 			<control type="fixedlist" id="350">
@@ -467,9 +464,6 @@
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
-				<visible>IntegerGreaterThan(Container(450).NumItems,4)</visible>		          
-				<animation effect="fade" time="500" reversible="false">Visible</animation>
-				<animation effect="fade" time="500" reversible="false">Hidden</animation>
 				<left>246</left>
 				<top>337</top>
 				<width>788</width>
@@ -480,13 +474,17 @@
 					<height>25</height>
 					<texture background="true">buttons/arrow_left.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>						
+					<visible>Container(450).HasPrevious</visible>
+					<include>ArrowPulseFade</include>
 				</control>
 				<control type="image">  					
 					<left>763</left>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
+					<colordiffuse>CCFFFFFF</colordiffuse>
+					<visible>Container(450).HasNext</visible>
+					<include>ArrowPulseFade</include>
 				</control>
 			</control>
 			<control type="button" id="45">
@@ -637,9 +635,6 @@
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
-				<visible>IntegerGreaterThan(Container(550).NumItems,4)</visible>		          
-				<animation effect="fade" time="500" reversible="false">Visible</animation>
-				<animation effect="fade" time="500" reversible="false">Hidden</animation>
 				<left>246</left>
 				<top>337</top>
 				<width>788</width>
@@ -650,13 +645,17 @@
 					<height>25</height>
 					<texture background="true">buttons/arrow_left.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>						
+					<visible>Container(550).HasPrevious</visible>
+					<include>ArrowPulseFade</include>
 				</control>
 				<control type="image">  					
 					<left>763</left>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
+					<colordiffuse>CCFFFFFF</colordiffuse>
+					<visible>Container(550).HasNext</visible>
+					<include>ArrowPulseFade</include>
 				</control>
 			</control>
 			<control type="fixedlist" id="550">
