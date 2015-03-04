@@ -196,7 +196,6 @@
 		</control>
 		<include condition="[Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))]">BackgroundWeather</include>
 	</include>
-
 	<include name="GlobalFanart">
 		<control type="image">
 			<description>Global Fanart</description>
