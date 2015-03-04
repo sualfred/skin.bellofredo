@@ -316,7 +316,7 @@
 				<control type="radiobutton" id="8521">
 					<width>425</width>
 					<include>DialogsButton</include>
-					<label>Netflix</label>
+					<label>NetFilx</label>
 					<onclick>Skin.ToggleSetting(NetfilxViewVideos)</onclick>
 					<selected>!Skin.HasSetting(NetfilxViewVideos)</selected>
 					<visible>StringCompare(Window(SkinSettings).Property(ManageButtons),managevideoviews)</visible>

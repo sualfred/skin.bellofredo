@@ -73,9 +73,9 @@
 								<label>$INFO[ListItem.Label]</label>
 							</control>
 							<control type="group">
-							<visible>Control.HasFocus(20)</visible>
-							<animation effect="fade" time="250">Visible</animation>
-							<animation effect="fade" time="0">Hidden</animation>
+								<visible>Control.HasFocus(20)</visible>
+								<animation effect="fade" time="250">Visible</animation>
+								<animation effect="fade" time="0">Hidden</animation>
 								<control type="image" id="201">
 									<left>240</left>
 									<top>265</top>
@@ -88,12 +88,12 @@
 									<animation effect="fade" time="100" reversible="false">Visible</animation>
 									<animation effect="fade" time="100" reversible="false">Hidden</animation>
 									<animation effect="slide" end="-12,0" time="200" condition="!Skin.HasSetting(DisableQuickNav) + [StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)] | [StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] | [StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)] | [SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)]" reversible="false">Conditional</animation>
-									
+
 									<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
 										<effect type="fade" start="0" end="100" delay="900" time="900"  />
 										<effect type="slide" start="0,-2" end="0,4" tween="sine" easing="inout" delay="900" time="900" />
 									</animation>
-									
+
 								</control>
 								<control type="image" id="202">
 									<left>240</left>
@@ -107,12 +107,12 @@
 									<animation effect="fade" time="100" reversible="false">Visible</animation>
 									<animation effect="fade" time="100" reversible="false">Hidden</animation>
 									<animation effect="slide" end="12,0" time="200" condition="IntegerGreaterThan(Container(23).NumItems,0)" reversible="false">Conditional</animation>
-									
+
 									<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
 										<effect type="fade" start="0" end="100" delay="900" time="900"  />
 										<effect type="slide" start="0,2" end="0,-4" tween="sine" easing="inout" delay="900" time="900" />
 									</animation>
-									
+
 								</control>
 							</control>							
 						</control>
@@ -129,7 +129,7 @@
 	<!-- Widgets	   -->
 	<!-- =========== --> 
 	<include name="FredHomeWidgets">
-	
+
 		<control type="group" id="9050">
 			<include>HomeSlideAnimations</include>
 			<include>HomeMoviesWidgetAnimation</include>			
@@ -165,7 +165,7 @@
 					<texture background="true">buttons/arrow_left.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>						
 					<visible>Container(250).HasPrevious</visible>
-					<include>ArrowPulseFade</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
 				</control>
 				<control type="image">  					
 					<left>763</left>
@@ -174,7 +174,7 @@
 					<texture background="true">buttons/arrow_right.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>
 					<visible>Container(250).HasNext</visible>
-					<include>ArrowPulseFade</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
 				</control>
 			</control>
 			<control type="fixedlist" id="250">
@@ -320,7 +320,7 @@
 					<texture background="true">buttons/arrow_left.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>						
 					<visible>Container(350).HasPrevious</visible>
-					<include>ArrowPulseFade</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
 				</control>
 				<control type="image">  					
 					<left>763</left>
@@ -329,7 +329,7 @@
 					<texture background="true">buttons/arrow_right.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>
 					<visible>Container(350).HasNext</visible>
-					<include>ArrowPulseFade</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
 				</control>
 			</control>
 			<control type="fixedlist" id="350">
@@ -475,7 +475,7 @@
 					<texture background="true">buttons/arrow_left.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>						
 					<visible>Container(450).HasPrevious</visible>
-					<include>ArrowPulseFade</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
 				</control>
 				<control type="image">  					
 					<left>763</left>
@@ -484,7 +484,7 @@
 					<texture background="true">buttons/arrow_right.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>
 					<visible>Container(450).HasNext</visible>
-					<include>ArrowPulseFade</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
 				</control>
 			</control>
 			<control type="button" id="45">
@@ -646,7 +646,7 @@
 					<texture background="true">buttons/arrow_left.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>						
 					<visible>Container(550).HasPrevious</visible>
-					<include>ArrowPulseFade</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
 				</control>
 				<control type="image">  					
 					<left>763</left>
@@ -655,7 +655,7 @@
 					<texture background="true">buttons/arrow_right.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>
 					<visible>Container(550).HasNext</visible>
-					<include>ArrowPulseFade</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
 				</control>
 			</control>
 			<control type="fixedlist" id="550">
@@ -867,4 +867,4 @@
 		</control>
 	</include>
 
-</includes>>
+</includes>

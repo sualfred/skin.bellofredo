@@ -362,7 +362,7 @@ msgstr "Ansichten"
 
 msgctxt "#31159"
 msgid "Show FullScreenInfo instead of the SeekBar"
-msgstr "Zeige Vollbildinfo statt der Suchleiste"
+msgstr "Zeige Pause in der Suchleiste"
 
 msgctxt "#31160"
 msgid "Download [COLOR=selected]logo.png[/COLOR] for all Movies"

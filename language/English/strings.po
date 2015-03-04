@@ -16,7 +16,7 @@ msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#Misc labels
+#: Misc labels
 
 msgctxt "#31000"
 msgid "Live TV"
@@ -198,8 +198,12 @@ msgctxt "#31045"
 msgid "Enable home menu arrow up/down animation"
 msgstr ""
 
-#empty strings from id 31046 to 31069
-#ExtendedInfoLabels
+msgctxt "#31046"
+msgid "Enable home widgets arrow left/right animation"
+msgstr ""
+
+#: empty strings from id 31047 to 31069
+#: extendedInfoLabels
 
 msgctxt "#31070"
 msgid "Video Info"
@@ -241,8 +245,8 @@ msgctxt "#31079"
 msgid "Movie Actor Roles"
 msgstr ""
 
-#empty strings from id 31042 to 31079
-#View Type labels
+#: empty strings from id 31042 to 31079
+#: view Type labels
 
 msgctxt "#31080"
 msgid "Slide"
@@ -284,8 +288,8 @@ msgctxt "#31089"
 msgid "LoveFilm"
 msgstr ""
 
-#empty strings from id 31090 to 31093
-#Skin Settings labels
+#: empty strings from id 31090 to 31093
+#: skin Settings labels
 
 msgctxt "#31094"
 msgid "Choose Movies Widget"
@@ -311,7 +315,7 @@ msgctxt "#31099"
 msgid "Show Big Thumbs"
 msgstr ""
 
-#empty string with id 31100
+#: empty string with id 31100
 
 msgctxt "#31101"
 msgid "Show Weather Info"
@@ -325,7 +329,7 @@ msgctxt "#31103"
 msgid "Hide Now Playing Music Info"
 msgstr ""
 
-#empty strings from id 31104 to 31123
+#: empty strings from id 31104 to 31123
 
 msgctxt "#31124"
 msgid "Flashing Lights"
@@ -335,7 +339,7 @@ msgctxt "#31125"
 msgid "Edit Info"
 msgstr ""
 
-#empty strings from id 31126 to 31129
+#: empty strings from id 31126 to 31129
 
 msgctxt "#31130"
 msgid "Disable Fanart in all sections"
@@ -425,7 +429,7 @@ msgctxt "#31151"
 msgid "Show RSS feed in whole skin"
 msgstr ""
 
-#empty string with id 31152
+#: empty string with id 31152
 
 msgctxt "#31153"
 msgid "Enable login screen"
@@ -435,7 +439,7 @@ msgctxt "#31154"
 msgid "Choose Trailers Add-on"
 msgstr ""
 
-#empty string with id 31155
+#: empty string with id 31155
 
 msgctxt "#31156"
 msgid "Manage Video Views"
@@ -450,7 +454,7 @@ msgid "Views"
 msgstr ""
 
 msgctxt "#31159"
-msgid "Show FullScreenInfo instead of the SeekBar"
+msgid "Show SeekBar instead of the fullscreen info for videos"
 msgstr ""
 
 msgctxt "#31160"
@@ -501,9 +505,8 @@ msgctxt "#31171"
 msgid "Update Art"
 msgstr ""
 
-#empty strings from id 31172 to 31199
-
-#Scripts labels
+#: empty strings from id 31172 to 31199
+#: scripts labels
 
 msgctxt "#31200"
 msgid "My Movies"
@@ -769,8 +772,8 @@ msgctxt "#31265"
 msgid "Unwatched Episodes"
 msgstr ""
 
-#empty strings from id 31266 to 31279
-#Playlist Editor labels
+#: empty strings from id 31266 to 31279
+#: Playlist Editor labels
 
 msgctxt "#31280"
 msgid "Open Playlist"
@@ -820,8 +823,8 @@ msgctxt "#31291"
 msgid "Enable skin debug tools"
 msgstr ""
 
-#empty strings from id 31292 to 31299
-#Video and Music OSD Labels
+#: empty strings from id 31292 to 31299
+#: video and Music OSD Labels
 
 msgctxt "#31300"
 msgid "Muted"
@@ -895,8 +898,8 @@ msgctxt "#31317"
 msgid "Deactivate Vignette (Better for Ambilight)"
 msgstr ""
 
-#empty strings from id 31318 to 31349
-#PVR
+#: empty strings from id 31318 to 31349
+#: PVR
 
 msgctxt "#31350"
 msgid "Available Groups"
@@ -914,8 +917,8 @@ msgctxt "#31353"
 msgid "Delete Group"
 msgstr ""
 
-#empty strings from id 31354 to 31369
-#Quick Navigation labels
+#: empty strings from id 31354 to 31369
+#: Quick Navigation labels
 
 msgctxt "#31370"
 msgid "Update Video Library"
@@ -957,9 +960,9 @@ msgctxt "#31379"
 msgid "Custom Items"
 msgstr ""
 
-#empty strings from id 31380 to 31408
+#: empty strings from id 31380 to 31408
+#: settings Category Description & Header Labels
 
-#Settings Category Description & Header Labels
 msgctxt "#31409"
 msgid "Choose from a variety of settings and customization options to make \"Bello\" fit your needs and taste."
 msgstr ""
@@ -1008,9 +1011,9 @@ msgctxt "#31420"
 msgid "Configure Skin Settings"
 msgstr ""
 
-#empty strings from id 31421 to 31430
+#: empty strings from id 31421 to 31430
+#: Help Messages
 
-#Help Messages
 msgctxt "#31431"
 msgid "You haven't added any items to Favorites yet.[CR]Highlight an item, and choose \"Add to favorites\" from the context menu."
 msgstr ""
