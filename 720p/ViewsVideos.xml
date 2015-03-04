@@ -3913,7 +3913,7 @@
 				</control>
 				<control type="textbox">
 					<top>35</top>
-					<width>550</width>
+					<width>500</width>
 					<height>155</height>
 					<font>FontSize_22</font>
 					<textcolor>99white</textcolor>
@@ -3925,7 +3925,7 @@
 				</control>
 				<control type="textbox">
 					<top>-5</top>
-					<width>450</width>
+					<width>500</width>
 					<height>180</height>
 					<font>FontSize_22</font>
 					<textcolor>99white</textcolor>
@@ -3937,7 +3937,7 @@
 				</control>
 				<control type="textbox">
 					<top>35</top>
-					<width>450</width>
+					<width>500</width>
 					<height>180</height>
 					<font>FontSize_22</font>
 					<textcolor>99white</textcolor>
