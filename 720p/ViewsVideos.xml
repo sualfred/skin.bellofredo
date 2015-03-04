@@ -3879,7 +3879,7 @@
 			<visible>Control.IsVisible(59)</visible>
 			<include>DialogZoomInOutAnimation</include>
 			<include>CommonSlideAnimations</include>
-			
+
 			<!-- Plot Info -->
 			<control type="button" id="5901">
 				<description>Get Plot</description>
@@ -3909,7 +3909,7 @@
 				</animation>
 				<control type="button" id="5901">
 					<description>Get Plot</description>
-				  <visible>false</visible>
+					<visible>false</visible>
 				</control>
 				<control type="textbox">
 					<top>35</top>
@@ -3972,7 +3972,7 @@
 					</control>
 				</control>
 			</control>
-			
+
 			<!-- label subinfo logo -->
 			<control type="group">
 				<left>25</left>
@@ -4160,7 +4160,7 @@
 					</control>
 				</control>
 			</control>
-			
+
 			<!-- content container -->
 			<control type="fixedlist" id="59">
 				<left>47</left>
@@ -4272,7 +4272,7 @@
 						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
 						<bordersize>6</bordersize>
 					</control>
-					
+
 					<control type="image">
 						<left>0</left>
 						<top>197</top>
@@ -4287,7 +4287,7 @@
 							<effect type="fade" start="100" end="30" time="0" tween="sine" easing="out" />
 						</animation>
 					</control>
-					
+
 					<control type="image">
 						<left>0</left>
 						<top>32</top>
@@ -4485,8 +4485,8 @@
 				<texture border="15" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png">views/other/focus_blue.png</texture>
 				<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
 			</control>
-			
-			
+
+
 			<control type="scrollbar" id="60">
 				<left>45</left>
 				<top>702</top>
