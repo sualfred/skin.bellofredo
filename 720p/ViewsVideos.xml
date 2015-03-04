@@ -3984,19 +3984,31 @@
 				<animation type="Conditional" reversible="false" condition="Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)">
 					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 				</animation>				
-				<animation type="Conditional" reversible="true" condition="Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.IsVisible(5902)">
-					<effect type="slide" end="0,-140" time="0" tween="sine" easing="in"  />
+				<animation type="Conditional" reversible="false" condition="Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.IsVisible(5902)">
+					<effect type="slide" start="0,0" end="0,-140" time="0" tween="sine" easing="in"  />
 				</animation>
-				<animation type="Conditional" reversible="true" condition="!Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.HasFocus(5901)">
-					<effect type="slide" end="0,-140" time="250" tween="sine" easing="in"  />
+				<animation type="Conditional" reversible="false" condition="!Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.HasFocus(5901)">
+					<effect type="slide" start="0,0" end="0,-140" time="250" tween="sine" easing="in"  />
 				</animation>				
-				<control type="image">
-					<animation type="Conditional" reversible="true" condition="Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.IsVisible(5902)">
+				<animation type="Conditional" reversible="false" condition="Skin.HasSetting(NetfilxAlwaysShowPlot) + !Control.IsVisible(5902)">
+					<effect type="slide" start="0,-140" end="0,0" time="0" delay="100" tween="sine" easing="out"  />
+				</animation>
+				<animation type="Conditional" reversible="false" condition="!Skin.HasSetting(NetfilxAlwaysShowPlot) + !Control.HasFocus(5901)">
+					<effect type="slide" start="0,-140" end="0,0" time="250" delay="100" tween="sine" easing="out"  />
+				</animation>				
+				<control type="image">					
+					<animation type="Conditional" reversible="false" condition="Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.IsVisible(5902)">
 						<effect type="zoom" start="100" end="60" center="20,20" time="0" tween="sine" easing="in"  />
 					</animation>
-					<animation type="Conditional" reversible="true" condition="!Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.HasFocus(5901)">
+					<animation type="Conditional" reversible="false" condition="!Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.HasFocus(5901)">
 						<effect type="zoom" start="100" end="60" center="20,20" time="250" tween="sine" easing="in"  />
+					</animation>					
+					<animation type="Conditional" reversible="false" condition="Skin.HasSetting(NetfilxAlwaysShowPlot) + !Control.IsVisible(5902)">
+						<effect type="zoom" start="60" end="100" center="20,20" delay="100" time="0" tween="sine" easing="out"  />
 					</animation>
+					<animation type="Conditional" reversible="false" condition="!Skin.HasSetting(NetfilxAlwaysShowPlot) + !Control.HasFocus(5901)">
+						<effect type="zoom" start="60" end="100" center="20,20" delay="100" time="250" tween="sine" easing="out"  />
+					</animation>					
 					<left>20</left>
 					<top>-90</top>
 					<width>290</width>
