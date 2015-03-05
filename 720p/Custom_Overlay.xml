@@ -985,9 +985,9 @@
 			<shadowcolor>FF000000</shadowcolor>
 			<font>font13</font>
 			<align>right</align>
+			<scroll>true</scroll>
 			<label>[COLOR=FF00FF00]$INFO[Container.FolderName,, - ][/COLOR]$INFO[Container.FolderPath]</label>
 			<visible>Skin.HasSetting(ShowSkinDebugTools) + Skin.HasSetting(BelloFredoDebug)</visible>
 		</control>
-
 	</controls>
 </window>
