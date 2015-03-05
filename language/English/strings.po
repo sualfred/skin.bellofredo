@@ -202,7 +202,11 @@ msgctxt "#31046"
 msgid "Enable home widgets arrow left/right animation"
 msgstr ""
 
-#: empty strings from id 31047 to 31069
+msgctxt "#31047"
+msgid "Automatically download extra artwork if a library has been updated"
+msgstr ""
+
+#: empty strings from id 31048 to 31069
 #: extendedInfoLabels
 
 msgctxt "#31070"
@@ -1011,7 +1015,11 @@ msgctxt "#31420"
 msgid "Configure Skin Settings"
 msgstr ""
 
-#: empty strings from id 31421 to 31430
+msgctxt "#31421"
+msgid "Library"
+msgstr ""
+
+#: empty strings from id 31422 to 31430
 #: Help Messages
 
 msgctxt "#31431"

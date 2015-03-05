@@ -111,7 +111,7 @@
 						</item>
 						<!-- Views -->
 						<item id="5">
-							<label>$LOCALIZE[31158]</label>
+							<label>$LOCALIZE[31421]</label>
 							<onclick>noop</onclick>
 						</item>
 						<!-- Addons -->
@@ -370,6 +370,57 @@
 							<onclick>SetProperty(ManageButtons,managemusicviews)</onclick>
 							<onclick>ActivateWindow(1118)</onclick>
 						</control>
+						<!-- Artwork Downloader -->
+						<control type="radiobutton" id="8529">
+							<description>Artwork Downloader</description>
+							<include>SettingsRadioButton</include>
+							<label>$LOCALIZE[31047]</label>
+							<onclick>Skin.ToggleSetting(AutoUpdateArt)</onclick>
+							<selected>Skin.HasSetting(AutoUpdateArt)</selected>
+							<enable>System.HasAddon(script.artwork.downloader)</enable>
+						</control>
+						<control type="button" id="8530">
+							<include>SettingsButton</include>
+							<label> • $LOCALIZE[31146]</label>
+							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,clearlogo)</onclick>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>
+						<control type="button" id="8531">
+							<include>SettingsButton</include>
+							<label> • $LOCALIZE[31147]</label>
+							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,clearart)</onclick>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>
+						<control type="button" id="8532">
+							<include>SettingsButton</include>
+							<label> • $LOCALIZE[31148]</label>
+							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,landscape)</onclick>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>
+						<control type="button" id="8533">
+							<include>SettingsButton</include>
+							<label> • $LOCALIZE[31149]</label>
+							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,banner)</onclick>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>
+						<control type="button" id="8534">
+							<include>SettingsButton</include>
+							<label> • $LOCALIZE[31150]</label>
+							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,poster)</onclick>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>
+						<control type="button" id="8535">
+							<include>SettingsButton</include>
+							<label> • $LOCALIZE[31165]</label>
+							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,discart)</onclick>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>
+						<control type="button" id="8536">
+							<include>SettingsButton</include>
+							<label> • $LOCALIZE[31160]</label>
+							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,clearlogo)</onclick>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>
 					</control>
 
 					<!-- ============ -->
@@ -432,49 +483,7 @@
 							<onclick>Skin.ToggleSetting(EnableNextAiredNotifications)</onclick>
 							<selected>Skin.HasSetting(EnableNextAiredNotifications)</selected>
 							<visible>Skin.HasSetting(NextAiredEnabled) + System.HasAddon(script.tv.show.next.aired)</visible>
-						</control>
-						<control type="button" id="8608">
-							<include>SettingsButton</include>
-							<label> • $LOCALIZE[31146]</label>
-							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,clearlogo)</onclick>
-							<visible>Skin.HasSetting(NextAiredEnabled) + System.HasAddon(script.tv.show.next.aired)</visible>
-						</control>
-						<control type="button" id="8609">
-							<include>SettingsButton</include>
-							<label> • $LOCALIZE[31147]</label>
-							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,clearart)</onclick>
-							<visible>Skin.HasSetting(NextAiredEnabled) + System.HasAddon(script.tv.show.next.aired)</visible>
-						</control>
-						<control type="button" id="8610">
-							<include>SettingsButton</include>
-							<label> • $LOCALIZE[31148]</label>
-							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,landscape)</onclick>
-							<visible>Skin.HasSetting(NextAiredEnabled) + System.HasAddon(script.tv.show.next.aired)</visible>
-						</control>
-						<control type="button" id="8611">
-							<include>SettingsButton</include>
-							<label> • $LOCALIZE[31149]</label>
-							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,banner)</onclick>
-							<visible>Skin.HasSetting(NextAiredEnabled) + System.HasAddon(script.tv.show.next.aired)</visible>
-						</control>
-						<control type="button" id="8612">
-							<include>SettingsButton</include>
-							<label> • $LOCALIZE[31150]</label>
-							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,poster)</onclick>
-							<visible>Skin.HasSetting(NextAiredEnabled) + System.HasAddon(script.tv.show.next.aired)</visible>
-						</control>
-						<control type="button" id="8618">
-							<include>SettingsButton</include>
-							<label> • $LOCALIZE[31165]</label>
-							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,discart)</onclick>
-							<visible>Skin.HasSetting(NextAiredEnabled) + System.HasAddon(script.tv.show.next.aired)</visible>
-						</control>
-						<control type="button" id="8619">
-							<include>SettingsButton</include>
-							<label> • $LOCALIZE[31160]</label>
-							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,clearlogo)</onclick>
-							<visible>Skin.HasSetting(NextAiredEnabled) + System.HasAddon(script.tv.show.next.aired)</visible>
-						</control>
+						</control>						
 						<control type="radiobutton" id="8613">
 							<include>SettingsRadioButton</include>
 							<label>$LOCALIZE[31144]</label>

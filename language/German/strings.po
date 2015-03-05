@@ -203,7 +203,10 @@ msgctxt "#31046"
 msgid "Enable home widgets arrow left/right animation"
 msgstr "Aktiviere Widget links/rechts Pfeilanimation "
 
-#: empty strings from id 31047 to 31069 extendedInfoLabels
+msgctxt "#31047"
+msgid "Automatically download extra artwork if a library has been updated"
+msgstr "Automatischer Download von Extra-Artworks nach Datenbankaktualisierung"
+
 msgctxt "#31070"
 msgid "Video Info"
 msgstr "Video Info"
@@ -473,7 +476,7 @@ msgstr "Drücken Sie HERUNTER für weitere Informationen"
 
 msgctxt "#31165"
 msgid "Download [COLOR=selected]disc.png[/COLOR] for all Movies"
-msgstr "Für alle Filme herunterladen [COLOR=selected]disc.png[/COLOR]"
+msgstr "Lade [COLOR=selected]disc.png[/COLOR] für alle Filme"
 
 msgctxt "#31166"
 msgid "Local subtitle available"
@@ -1000,7 +1003,10 @@ msgctxt "#31420"
 msgid "Configure Skin Settings"
 msgstr "Skin-Einstellungen konfigurieren"
 
-#: empty strings from id 31421 to 31430 Help Messages
+msgctxt "#31421"
+msgid "Library"
+msgstr "Bibliothek"
+
 msgctxt "#31431"
 msgid ""
 "You haven't added any items to Favorites yet.[CR]Highlight an item, and "
