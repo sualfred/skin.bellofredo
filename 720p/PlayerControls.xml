@@ -541,7 +541,8 @@
 				<onup>SetProperty(Movement,1)</onup>
 				<onup>35</onup>
 				<ondown>ClearProperty(Movement)</ondown>
-				<ondown>650</ondown>				
+				<ondown condition="!System.HasAddon(plugin.audio.tuneinradio)">650</ondown>				
+				<ondown condition="System.HasAddon(plugin.audio.tuneinradio)">550</ondown>							
 				<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(450).ListItem.Label],return)</onclick>
 				<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5) + !IsEmpty(Container(450).ListItem.DBID)">RunScript(script.playalbum,albumid=$INFO[Container(450).ListItem.DBID])</onclick>
 				<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5) + IsEmpty(Container(450).ListItem.DBID)">PlayMedia("musicdb://recentlyplayedalbums/-1/")</onclick>
@@ -595,27 +596,6 @@
 						<aspectratio align="center" aligny="center">scale</aspectratio>
 						<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[QuickNavWidgetThumb]</texture>
 						<bordersize>5</bordersize>
-					</control>
-					<control type="label.">
-						<left>118</left>
-						<top>168</top>
-						<width>275</width>
-						<height>35</height>
-						<textcolor>blue</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<font>FontSize_24</font>
-						<scrollspeed>35</scrollspeed>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
-						<animation type="Focus">
-							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
-							<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
-						</animation>
-						<animation type="Unfocus">
-							<effect type="zoom" start="100" end="95" time="200" tween="sine" easing="inout" center="auto" />
-							<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
-						</animation>
 					</control>
 					<control type="image">
 						<left>20</left>
@@ -687,6 +667,151 @@
 			</control>
 		</control>
 
+		<!-- TuneIn -->
+		<control type="group">
+			<include>QuickNavTuneInWidgetAnimation</include>
+			<visible allowhiddenfocus="true">Control.HasFocus(550) + !Skin.HasSetting(DisableQuickNav) + !Window.IsActive(progressdialog)</visible>
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture background="true">views/list/shine.png</texture>
+				<!-- <colordiffuse>ccffffff</colordiffuse> -->
+			</control>
+			<control type="image">
+				<left>256</left>
+				<top>238</top>
+				<width>767</width>
+				<height>233</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture background="true" border="39">views/other/panel.png</texture>
+			</control>
+			<control type="label">
+				<description>header label</description>
+				<left>270</left>
+				<top>185</top>
+				<height>50</height>
+				<width>745</width>
+				<font>FontSize_40</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>77000000</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label>$VAR[QuickNavWidgetHeaderTitle]</label>
+			</control>
+			<control type="fixedlist" id="550">
+				<left>261</left>
+				<top>263</top>
+				<width>745</width>
+				<height>360</height>
+				<preloaditems>3</preloaditems>
+				<focusposition>0</focusposition>
+				<movement>3</movement>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="Quadratic" easing="out">300</scrolltime>
+				<onup>SetProperty(Movement,1)</onup>
+				<onup>45</onup>
+				<ondown>ClearProperty(Movement)</ondown>
+				<ondown>650</ondown>				
+				<itemlayout height="200" width="184">
+					<control type="image">
+						<left>20</left>
+						<top>0</top>
+						<width>165</width>
+						<height>165</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="3,2,3,2">osd/quicknav/nofocus_square.png</texture>
+					</control>
+					<control type="image">
+						<left>25</left>
+						<top>5</top>
+						<width>155</width>
+						<height>155</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[QuickNavWidgetThumb]</texture>
+						<bordersize>5</bordersize>
+					</control>
+				</itemlayout>
+				<focusedlayout height="200" width="184">
+					<control type="image">
+						<left>20</left>
+						<top>0</top>
+						<width>165</width>
+						<height>165</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="3,2,3,2">osd/quicknav/nofocus_square.png</texture>
+					</control>
+					<control type="image">
+						<left>25</left>
+						<top>5</top>
+						<width>155</width>
+						<height>155</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[QuickNavWidgetThumb]</texture>
+						<bordersize>5</bordersize>
+					</control>
+					<control type="image">
+						<left>20</left>
+						<top>0</top>
+						<width>165</width>
+						<height>165</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="3,2,3,2">osd/quicknav/focus_square.png</texture>
+						<animation type="Focus">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="100" end="95" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+						</animation>
+					</control>
+				</focusedlayout>
+				<content>$VAR[QuickNav_WidgetListContentTuneIn]</content>
+			</control>
+			<control type="button">
+				<left>280</left>
+				<top>430</top>
+				<width>722</width>
+				<height>35</height>
+				<font>FontSize_22</font>
+				<textcolor>bbwhite</textcolor>
+				<focusedcolor>bbwhite</focusedcolor>
+				<disabledcolor>bbwhite</disabledcolor>
+				<shadowcolor>77000000</shadowcolor>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$VAR[QuickNavWidgetListItemLabel]</label>
+				<label2>$VAR[QuickNavWidgetListItemLabel2]</label2>
+			</control>
+			<control type="image">
+				<left>617</left>
+				<top>482</top>
+				<width>25</width>
+				<height>22</height>
+				<colordiffuse>99ffffff</colordiffuse>
+				<texture>buttons/arrow.png</texture>
+				<animation type="Conditional" condition="true" pulse="true">
+					<effect type="fade" start="0" end="100" delay="1000" time="1000"  />
+					<effect type="slide" start="0,-2" end="0,2" tween="sine" easing="inout" delay="1000" time="1000" />
+				</animation>
+				<visible>!Skin.HasSetting(DisableQuickNav)</visible>
+			</control>
+			<control type="image">
+				<left>641</left>
+				<top>482</top>
+				<width>25</width>
+				<height>22</height>
+				<colordiffuse>99ffffff</colordiffuse>
+				<texture>buttons/arrow_top.png</texture>
+				<animation type="Conditional" condition="true" pulse="true">
+					<effect type="fade" start="0" end="100" delay="1000" time="1000"  />
+					<effect type="slide" start="0,2" end="0,-2" tween="sine" easing="inout" delay="1000" time="1000" />
+				</animation>
+				<visible>!Skin.HasSetting(DisableQuickNav)</visible>
+			</control>
+		</control>
 
 		<!-- Video Feeds -->
 		<control type="group">
@@ -695,7 +820,6 @@
 			<control type="image">
 				<include>FullscreenDimensions</include>
 				<texture background="true">views/list/shine.png</texture>
-				<!-- <colordiffuse>ccffffff</colordiffuse> -->
 			</control>
 			<control type="image">
 				<left>256</left>
@@ -741,7 +865,8 @@
 				<onleft>650</onleft>
 				<onright>650</onright>
 				<onup>SetProperty(Movement,1)</onup>
-				<onup>45</onup>
+				<onup condition="!System.HasAddon(plugin.audio.tuneinradio)">45</onup>				
+				<onup condition="System.HasAddon(plugin.audio.tuneinradio)">550</onup>
 				<ondown>ClearProperty(Movement)</ondown>
 				<ondown condition="Player.HasMedia">100</ondown>
 				<ondown condition="!Player.HasMedia">150</ondown>

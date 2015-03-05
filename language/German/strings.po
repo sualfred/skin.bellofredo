@@ -803,8 +803,8 @@ msgid "Favourite Streams"
 msgstr "Favouriten Streams"
 
 msgctxt "#31288"
-msgid "TuneIn Plugin Home Widgets"
-msgstr "TuneIn Radio Home Widget"
+msgid "TuneIn Radio Widget"
+msgstr "TuneIn Radio Widget"
 
 msgctxt "#31289"
 msgid "Toggle debug grid"

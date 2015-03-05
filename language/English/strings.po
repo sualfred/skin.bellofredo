@@ -812,7 +812,7 @@ msgid "Favourite Streams"
 msgstr ""
 
 msgctxt "#31288"
-msgid "TuneIn Plugin Home Widgets"
+msgid "TuneIn Radio Widget"
 msgstr ""
 
 msgctxt "#31289"
