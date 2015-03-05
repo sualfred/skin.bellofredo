@@ -32,11 +32,15 @@
 					<width>1500</width>
 					<height>720</height>
 					<align>center</align>
-					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(250)</onup>
-					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)">SetFocus(350)</onup>
-					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)">SetFocus(45)</onup>
-					<onup condition="!Skin.HasSetting(DisableQuickNav) + SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)">SetFocus(550)</onup>
-					<onup condition="Skin.HasSetting(DisableQuickNav) | [![StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)] + ![StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] + ![SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)] + ![StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)]]">SetFocus(21)</onup>
+					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(widget),movies) + IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(250)</onup>
+					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(widget),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)">SetFocus(350)</onup>
+					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(widget),music) + IntegerGreaterThan(Container(450).NumItems,0)">SetFocus(45)</onup>
+					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(widget),tunein) + IntegerGreaterThan(Container(550).NumItems,0)">SetFocus(550)</onup>
+					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(widget),widgetgroup1) + IntegerGreaterThan(Container(551).NumItems,0)">SetFocus(551)</onup>
+					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(widget),widgetgroup2) + IntegerGreaterThan(Container(552).NumItems,0)">SetFocus(552)</onup>
+					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(widget),widgetgroup3) + IntegerGreaterThan(Container(553).NumItems,0)">SetFocus(553)</onup>
+					<onup condition="!Skin.HasSetting(DisableQuickNav) + StringCompare(Container(20).ListItem.Property(widget),widgetgroup4) + IntegerGreaterThan(Container(554).NumItems,0)">SetFocus(554)</onup>
+					<onup condition="Skin.HasSetting(DisableQuickNav) | [![StringCompare(Container(20).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(250).NumItems,0)] + ![StringCompare(Container(20).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] + ![SubString(Container(20).ListItem.Property(path),tuneinradio) + IntegerGreaterThan(Container(550).NumItems,0)] + ![StringCompare(Container(20).ListItem.Property(defaultID),music) + IntegerGreaterThan(Container(450).NumItems,0)]] + ![StringCompare(Container(20).ListItem.Property(widget),widgetgroup1) + IntegerGreaterThan(Container(551).NumItems,0)]] + ![StringCompare(Container(20).ListItem.Property(widget),widgetgroup2) + IntegerGreaterThan(Container(552).NumItems,0)]] + ![StringCompare(Container(20).ListItem.Property(widget),widgetgroup3) + IntegerGreaterThan(Container(553).NumItems,0)]] + ![StringCompare(Container(20).ListItem.Property(widget),widgetgroup4) + IntegerGreaterThan(Container(554).NumItems,0)]]">SetFocus(21)</onup>
 					<ondown condition="IntegerGreaterThan(Container(23).NumItems,0)">SetFocus(23)</ondown>
 					<onleft>20</onleft>
 					<onright>20</onright>				
@@ -766,6 +770,635 @@
 				<label2>$VAR[QuickNavWidgetListItemLabel2]</label2>
 			</control>
 		</control>
+		
+		<control type="group" id="9090">
+			<description>custom widget group</description>
+			<include>HomeSlideAnimations</include>
+			<include>HomeCustomWidgetAnimation</include>
+			<!--<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)</visible>-->
+			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)] + System.HasAddon(plugin.audio.tuneinradio)</visible>
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture background="true">views/list/shine.png</texture>					
+			</control>
+			<control type="label">
+				<description>header title</description>
+				<left>275</left>
+				<top>185</top>
+				<height>50</height>
+				<width>730</width>
+				<font>FontSize_40</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>77000000</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label>$VAR[QuickNavWidgetHeaderTitle]</label>
+			</control>
+			<control type="group">
+				<description>arrows left right</description>
+				<left>246</left>
+				<top>337</top>
+				<width>788</width>
+				<height>25</height>
+				<control type="image">  					
+					<left>0</left>
+					<width>25</width>
+					<height>25</height>
+					<texture background="true">buttons/arrow_left.png</texture>
+					<colordiffuse>CCFFFFFF</colordiffuse>						
+					<visible>Container(551).HasPrevious</visible>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+				</control>
+				<control type="image">  					
+					<left>763</left>
+					<width>25</width>
+					<height>25</height>
+					<texture background="true">buttons/arrow_right.png</texture>
+					<colordiffuse>CCFFFFFF</colordiffuse>
+					<visible>Container(551).HasNext</visible>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+				</control>
+			</control>
+			<control type="fixedlist" id="551">	
+				<left>275</left>
+				<top>262</top>
+				<width>734</width>
+				<height>360</height>
+				<preloaditems>3</preloaditems>
+				<focusposition>0</focusposition>
+				<onup>SetFocus(21)</onup>
+				<ondown>SetFocus(20)</ondown>
+				<onback>SetFocus(20)</onback>
+				<movement>3</movement>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="Quadratic" easing="out">300</scrolltime>
+				<itemlayout height="200" width="180">
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>14</left>
+						<top>-1</top>
+						<width>165</width>
+						<height>165</height>
+						<texture background="true">osd/widgets/square_overlay.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<fadetime>800</fadetime>
+					</control>
+				</itemlayout>
+				<focusedlayout height="200" width="180">
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>14</left>
+						<top>-1</top>
+						<width>165</width>
+						<height>165</height>
+						<texture background="true">osd/widgets/square_overlay.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>14</left>
+						<top>-1</top>
+						<width>165</width>
+						<height>165</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="3,2,3,2">osd/widgets/square_focus.png</texture>
+						<animation type="Focus">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="100" end="95" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+						</animation>
+					</control>
+				</focusedlayout>
+				<content><include>skinshortcuts-group-widgetgroup1</include></content>
+			</control>
+			<control type="button">
+				<left>288</left>
+				<top>445</top>
+				<width>707</width>
+				<height>35</height>
+				<font>FontSize_22</font>
+				<textcolor>bbwhite</textcolor>
+				<focusedcolor>bbwhite</focusedcolor>
+				<disabledcolor>bbwhite</disabledcolor>
+				<shadowcolor>77000000</shadowcolor>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$VAR[QuickNavWidgetListItemLabel]</label>
+				<label2>$VAR[QuickNavWidgetListItemLabel2]</label2>
+			</control>
+		</control>
+		
+		<control type="group" id="9091">
+			<description>custom widget group2</description>
+			<include>HomeSlideAnimations</include>
+			<include>HomeCustomWidget2Animation</include>
+			<!--<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)</visible>-->
+			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)] + System.HasAddon(plugin.audio.tuneinradio)</visible>
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture background="true">views/list/shine.png</texture>					
+			</control>
+			<control type="label">
+				<description>header title</description>
+				<left>275</left>
+				<top>185</top>
+				<height>50</height>
+				<width>730</width>
+				<font>FontSize_40</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>77000000</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label>$VAR[QuickNavWidgetHeaderTitle]</label>
+			</control>
+			<control type="group">
+				<description>arrows left right</description>
+				<left>246</left>
+				<top>337</top>
+				<width>788</width>
+				<height>25</height>
+				<control type="image">  					
+					<left>0</left>
+					<width>25</width>
+					<height>25</height>
+					<texture background="true">buttons/arrow_left.png</texture>
+					<colordiffuse>CCFFFFFF</colordiffuse>						
+					<visible>Container(552).HasPrevious</visible>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+				</control>
+				<control type="image">  					
+					<left>763</left>
+					<width>25</width>
+					<height>25</height>
+					<texture background="true">buttons/arrow_right.png</texture>
+					<colordiffuse>CCFFFFFF</colordiffuse>
+					<visible>Container(552).HasNext</visible>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+				</control>
+			</control>
+			<control type="fixedlist" id="552">	
+				<left>275</left>
+				<top>262</top>
+				<width>734</width>
+				<height>360</height>
+				<preloaditems>3</preloaditems>
+				<focusposition>0</focusposition>
+				<onup>SetFocus(21)</onup>
+				<ondown>SetFocus(20)</ondown>
+				<onback>SetFocus(20)</onback>
+				<movement>3</movement>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="Quadratic" easing="out">300</scrolltime>
+				<itemlayout height="200" width="180">
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>14</left>
+						<top>-1</top>
+						<width>165</width>
+						<height>165</height>
+						<texture background="true">osd/widgets/square_overlay.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<fadetime>800</fadetime>
+					</control>
+				</itemlayout>
+				<focusedlayout height="200" width="180">
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>14</left>
+						<top>-1</top>
+						<width>165</width>
+						<height>165</height>
+						<texture background="true">osd/widgets/square_overlay.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>14</left>
+						<top>-1</top>
+						<width>165</width>
+						<height>165</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="3,2,3,2">osd/widgets/square_focus.png</texture>
+						<animation type="Focus">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="100" end="95" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+						</animation>
+					</control>
+				</focusedlayout>
+				<content><include>skinshortcuts-group-widgetgroup2</include></content>
+			</control>
+			<control type="button">
+				<left>288</left>
+				<top>445</top>
+				<width>707</width>
+				<height>35</height>
+				<font>FontSize_22</font>
+				<textcolor>bbwhite</textcolor>
+				<focusedcolor>bbwhite</focusedcolor>
+				<disabledcolor>bbwhite</disabledcolor>
+				<shadowcolor>77000000</shadowcolor>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$VAR[QuickNavWidgetListItemLabel]</label>
+				<label2>$VAR[QuickNavWidgetListItemLabel2]</label2>
+			</control>
+		</control>
+		
+		<control type="group" id="9093">
+			<description>custom widget group3</description>
+			<include>HomeSlideAnimations</include>
+			<include>HomeCustomWidget3Animation</include>
+			<!--<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)</visible>-->
+			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)] + System.HasAddon(plugin.audio.tuneinradio)</visible>
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture background="true">views/list/shine.png</texture>					
+			</control>
+			<control type="label">
+				<description>header title</description>
+				<left>275</left>
+				<top>185</top>
+				<height>50</height>
+				<width>730</width>
+				<font>FontSize_40</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>77000000</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label>$VAR[QuickNavWidgetHeaderTitle]</label>
+			</control>
+			<control type="group">
+				<description>arrows left right</description>
+				<left>246</left>
+				<top>337</top>
+				<width>788</width>
+				<height>25</height>
+				<control type="image">  					
+					<left>0</left>
+					<width>25</width>
+					<height>25</height>
+					<texture background="true">buttons/arrow_left.png</texture>
+					<colordiffuse>CCFFFFFF</colordiffuse>						
+					<visible>Container(553).HasPrevious</visible>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+				</control>
+				<control type="image">  					
+					<left>763</left>
+					<width>25</width>
+					<height>25</height>
+					<texture background="true">buttons/arrow_right.png</texture>
+					<colordiffuse>CCFFFFFF</colordiffuse>
+					<visible>Container(553).HasNext</visible>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+				</control>
+			</control>
+			<control type="fixedlist" id="553">	
+				<left>275</left>
+				<top>262</top>
+				<width>734</width>
+				<height>360</height>
+				<preloaditems>3</preloaditems>
+				<focusposition>0</focusposition>
+				<onup>SetFocus(21)</onup>
+				<ondown>SetFocus(20)</ondown>
+				<onback>SetFocus(20)</onback>
+				<movement>3</movement>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="Quadratic" easing="out">300</scrolltime>
+				<itemlayout height="200" width="180">
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>14</left>
+						<top>-1</top>
+						<width>165</width>
+						<height>165</height>
+						<texture background="true">osd/widgets/square_overlay.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<fadetime>800</fadetime>
+					</control>
+				</itemlayout>
+				<focusedlayout height="200" width="180">
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>14</left>
+						<top>-1</top>
+						<width>165</width>
+						<height>165</height>
+						<texture background="true">osd/widgets/square_overlay.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>14</left>
+						<top>-1</top>
+						<width>165</width>
+						<height>165</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="3,2,3,2">osd/widgets/square_focus.png</texture>
+						<animation type="Focus">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="100" end="95" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+						</animation>
+					</control>
+				</focusedlayout>
+				<content><include>skinshortcuts-group-widgetgroup3</include></content>
+			</control>
+			<control type="button">
+				<left>288</left>
+				<top>445</top>
+				<width>707</width>
+				<height>35</height>
+				<font>FontSize_22</font>
+				<textcolor>bbwhite</textcolor>
+				<focusedcolor>bbwhite</focusedcolor>
+				<disabledcolor>bbwhite</disabledcolor>
+				<shadowcolor>77000000</shadowcolor>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$VAR[QuickNavWidgetListItemLabel]</label>
+				<label2>$VAR[QuickNavWidgetListItemLabel2]</label2>
+			</control>
+		</control>
+		
+		<control type="group" id="9094">
+			<description>custom widget group4</description>
+			<include>HomeSlideAnimations</include>
+			<include>HomeCustomWidget4Animation</include>
+			<!--<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)</visible>-->
+			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)] + System.HasAddon(plugin.audio.tuneinradio)</visible>
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture background="true">views/list/shine.png</texture>					
+			</control>
+			<control type="label">
+				<description>header title</description>
+				<left>275</left>
+				<top>185</top>
+				<height>50</height>
+				<width>730</width>
+				<font>FontSize_40</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>77000000</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label>$VAR[QuickNavWidgetHeaderTitle]</label>
+			</control>
+			<control type="group">
+				<description>arrows left right</description>
+				<left>246</left>
+				<top>337</top>
+				<width>788</width>
+				<height>25</height>
+				<control type="image">  					
+					<left>0</left>
+					<width>25</width>
+					<height>25</height>
+					<texture background="true">buttons/arrow_left.png</texture>
+					<colordiffuse>CCFFFFFF</colordiffuse>						
+					<visible>Container(554).HasPrevious</visible>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+				</control>
+				<control type="image">  					
+					<left>763</left>
+					<width>25</width>
+					<height>25</height>
+					<texture background="true">buttons/arrow_right.png</texture>
+					<colordiffuse>CCFFFFFF</colordiffuse>
+					<visible>Container(554).HasNext</visible>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+				</control>
+			</control>
+			<control type="fixedlist" id="554">	
+				<left>275</left>
+				<top>262</top>
+				<width>734</width>
+				<height>360</height>
+				<preloaditems>3</preloaditems>
+				<focusposition>0</focusposition>
+				<onup>SetFocus(21)</onup>
+				<ondown>SetFocus(20)</ondown>
+				<onback>SetFocus(20)</onback>
+				<movement>3</movement>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="Quadratic" easing="out">300</scrolltime>
+				<itemlayout height="200" width="180">
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>14</left>
+						<top>-1</top>
+						<width>165</width>
+						<height>165</height>
+						<texture background="true">osd/widgets/square_overlay.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<fadetime>800</fadetime>
+					</control>
+				</itemlayout>
+				<focusedlayout height="200" width="180">
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>154</width>
+						<height>154</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>14</left>
+						<top>-1</top>
+						<width>165</width>
+						<height>165</height>
+						<texture background="true">osd/widgets/square_overlay.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>14</left>
+						<top>-1</top>
+						<width>165</width>
+						<height>165</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="3,2,3,2">osd/widgets/square_focus.png</texture>
+						<animation type="Focus">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="100" end="95" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+						</animation>
+					</control>
+				</focusedlayout>
+				<content><include>skinshortcuts-group-widgetgroup4</include></content>
+			</control>
+			<control type="button">
+				<left>288</left>
+				<top>445</top>
+				<width>707</width>
+				<height>35</height>
+				<font>FontSize_22</font>
+				<textcolor>bbwhite</textcolor>
+				<focusedcolor>bbwhite</focusedcolor>
+				<disabledcolor>bbwhite</disabledcolor>
+				<shadowcolor>77000000</shadowcolor>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$VAR[QuickNavWidgetListItemLabel]</label>
+				<label2>$VAR[QuickNavWidgetListItemLabel2]</label2>
+			</control>
+		</control>
+
 
 	</include>
 

@@ -122,7 +122,19 @@
 			<content>commands</content>
 		</node>
 	</groupings>
-
+	
+	<!-- ============= -->
+    <!-- Widgets	   -->
+    <!-- ============= -->
+	<widget label="31094">movies</widget>
+	<widget label="31095">tvshows</widget>
+	<widget label="31096">music</widget>
+	<widget label="31288">tunein</widget>
+	<widget label="31173">widgetgroup1</widget>
+	<widget label="31174">widgetgroup2</widget>
+	<widget label="31175">widgetgroup3</widget>
+	<widget label="31176">widgetgroup4</widget>
+	<widgetdefault labelID="livetv">widgetgroup1</widgetdefault>
 	
   <!-- =============== -->
   <!-- Shortcuts Check -->

@@ -99,11 +99,11 @@
 							<label>$LOCALIZE[513]</label>
 							<onclick>noop</onclick>
 						</item>
-						<!-- Custom Items
-					<item id="3">
-						<label>$LOCALIZE[31379]</label>
-						<onclick>noop</onclick>
-					</item> -->
+						<!-- Custom Items -->
+						<item id="3">
+							<label>$LOCALIZE[31379]</label>
+							<onclick>noop</onclick>
+						</item>
 						<!-- Backgrounds -->
 						<item id="4">
 							<label>$LOCALIZE[33069]</label>
@@ -276,6 +276,53 @@
 							<onclick>Skin.ToggleSetting(HideHomeNPMusicInfo)</onclick>
 							<selected>Skin.HasSetting(HideHomeNPMusicInfo)</selected>
 						</control>
+					</control>
+					
+					<!-- =========== -->
+					<!-- == Views == -->
+					<!-- =========== -->
+					<control type="grouplist" id="8300">
+						<include>CloseAnimation</include>
+						<visible>Container(8800).Hasfocus(3)</visible>
+						<left>297</left>
+						<top>0</top>
+						<width>782</width>
+						<height>414</height>
+						<itemgap>2</itemgap>
+						<pagecontrol>60</pagecontrol>
+						<onleft>8800</onleft>
+						<onright>9000</onright>
+						<onup>8500</onup>
+						<ondown>8500</ondown>
+						<control type="button" id="8301">							
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[31380] #1</label>
+							<label2>$LOCALIZE[31172] [COLOR=selected]$INFO[Skin.String(widgetgroup1)][/COLOR]</label2>
+							<onclick>Skin.SetString(widgetgroup1)</onclick>
+							<onclick>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup1)</onclick>
+						</control>
+						<control type="button" id="8302">							
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[31380] #2</label>
+							<label2>$LOCALIZE[31172] [COLOR=selected]$INFO[Skin.String(widgetgroup2)][/COLOR]</label2>
+							<onclick>Skin.SetString(widgetgroup2)</onclick>
+							<onclick>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup2)</onclick>
+						</control>
+						<control type="button" id="8303">							
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[31380] #3</label>
+							<label2>$LOCALIZE[31172] [COLOR=selected]$INFO[Skin.String(widgetgroup3)][/COLOR]</label2>
+							<onclick>Skin.SetString(widgetgroup3)</onclick>
+							<onclick>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup3)</onclick>
+						</control>
+						<control type="button" id="8304">							
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[31380] #4</label>
+							<label2>$LOCALIZE[31172] [COLOR=selected]$INFO[Skin.String(widgetgroup4)][/COLOR]</label2>
+							<onclick>Skin.SetString(widgetgroup4)</onclick>
+							<onclick>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup4)</onclick>
+						</control>
+						
 					</control>
 
 					<!-- ================= -->
