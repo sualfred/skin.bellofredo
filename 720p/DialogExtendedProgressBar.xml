@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window  id="151">
 	<defaultcontrol></defaultcontrol>
+	<onload condition="Library.IsScanningVideo">SetProperty(UpdateArt,1)</onload>
+	<onunload condition="!IsEmpty(Window.Property(UpdateArt))">XBMC.RunScript(script.artwork.downloader,silent=true)</onunload>
+	<onunload condition="!IsEmpty(Window.Property(UpdateArt))">ClearProperty(UpdateArt)</onunload>
 	<controls>
 
 	 <control type="group">
