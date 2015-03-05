@@ -614,7 +614,7 @@
 			<description>tunein radio widget</description>
 			<include>HomeSlideAnimations</include>
 			<include>HomeTuneInWidgetAnimation</include>
-			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>			
+			<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)] + System.HasAddon(plugin.audio.tuneinradio)</visible>			
 			<control type="image">
 				<include>FullscreenDimensions</include>
 				<texture background="true">views/list/shine.png</texture>					
@@ -658,7 +658,8 @@
 					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
 				</control>
 			</control>
-			<control type="fixedlist" id="550">
+			<control type="fixedlist" id="550">	
+				<visible>System.HasAddon(plugin.audio.tuneinradio)</visible>
 				<left>275</left>
 				<top>262</top>
 				<width>734</width>

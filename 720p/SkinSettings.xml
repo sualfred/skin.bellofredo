@@ -768,6 +768,7 @@
 								<onclick condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">Skin.SetString(QuickNavWidgetTuneInName,$LOCALIZE[31287])</onclick>
 								<onclick condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">Skin.SetString(QuickNavWidgetTuneInType,1)</onclick>
 								<onclick condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">Skin.SetString(QuickNavWidgetTuneInName,$LOCALIZE[31286])</onclick>
+								<enable>System.HasAddon(plugin.audio.tuneinradio)</enable>
 							</control>
 							<control type="button">
 								<width>780</width>
@@ -782,6 +783,7 @@
 								<label2>[COLOR=selected]$INFO[Skin.String(QuickNavWidgetTuneInName)][/COLOR]</label2>
 								<visible>!ControlGroup(8760).HasFocus</visible>
 								<visible>!Skin.HasSetting(DisableQuickNav)</visible>
+								<enable>System.HasAddon(plugin.audio.tuneinradio)</enable>
 							</control>
 							<control type="button">
 								<width>780</width>
@@ -796,6 +798,7 @@
 								<label2>[COLOR=selected]$INFO[Skin.String(QuickNavWidgetTuneInName)][/COLOR]</label2>
 								<visible>ControlGroup(8760).HasFocus</visible>
 								<visible>!Skin.HasSetting(DisableQuickNav)</visible>
+								<enable>System.HasAddon(plugin.audio.tuneinradio)</enable>
 							</control>
 						</control>
 
