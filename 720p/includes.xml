@@ -1187,6 +1187,7 @@
 	<variable name="QuickNav_WidgetListContentTuneIn">
 		<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">plugin://plugin.audio.tuneinradio/?path=recents</value>
 		<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">plugin://plugin.audio.tuneinradio/?path=browse&amp;id=presets</value>
+		<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">plugin://plugin.audio.tuneinradio/?path=browse&amp;c=local</value>
 	</variable>
 
 	<variable name="RSSVideoFeedURL">
@@ -1246,6 +1247,7 @@
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)]">$INFO[Container(450).ListItem.Property(Listeners),,  $LOCALIZE[15200] $LOCALIZE[20455]]</value>
 		<value condition="Control.HasFocus(550) + stringcompare(Skin.String(QuickNavWidgetTuneInType),1">$LOCALIZE[31286]</value>
 		<value condition="Control.HasFocus(550) + stringcompare(Skin.String(QuickNavWidgetTuneInType),2">$LOCALIZE[31287]</value>
+		<value condition="Control.HasFocus(550) + stringcompare(Skin.String(QuickNavWidgetTuneInType),3">$LOCALIZE[31292]</value>
 	</variable>
 
 	<variable name="QuickNavWidgetThumb">

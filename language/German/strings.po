@@ -796,7 +796,7 @@ msgstr "Wiedergabelistenoptionen"
 
 msgctxt "#31286"
 msgid "Recent Streams"
-msgstr "Letze Streams"
+msgstr "Letzte Streams"
 
 msgctxt "#31287"
 msgid "Favourite Streams"
@@ -818,7 +818,11 @@ msgctxt "#31291"
 msgid "Enable skin debug tools"
 msgstr "Aktiviere Skin Debug Tools"
 
-#: empty strings from id 31292 to 31299 video and Music OSD Labels
+msgctxt "#31292"
+msgid "Local Streams"
+msgstr "Lokale Streams"
+
+#: empty strings from id 31293 to 31299 video and Music OSD Labels
 msgctxt "#31300"
 msgid "Muted"
 msgstr "Stumm"

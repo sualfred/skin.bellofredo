@@ -827,7 +827,11 @@ msgctxt "#31291"
 msgid "Enable skin debug tools"
 msgstr ""
 
-#: empty strings from id 31292 to 31299
+msgctxt "#31292"
+msgid "Local Streams"
+msgstr "Lokale Streams"
+
+#: empty strings from id 31293 to 31299
 #: video and Music OSD Labels
 
 msgctxt "#31300"

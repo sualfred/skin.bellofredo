@@ -773,10 +773,16 @@
 								<visible>!Skin.HasSetting(DisableQuickNav)</visible>
 								<texturefocus>-</texturefocus>
 								<texturenofocus>-</texturenofocus>								
+								
 								<onclick condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">Skin.SetString(QuickNavWidgetTuneInType,2)</onclick>
 								<onclick condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">Skin.SetString(QuickNavWidgetTuneInName,$LOCALIZE[31287])</onclick>
-								<onclick condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">Skin.SetString(QuickNavWidgetTuneInType,1)</onclick>
-								<onclick condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">Skin.SetString(QuickNavWidgetTuneInName,$LOCALIZE[31286])</onclick>
+								
+								<onclick condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">Skin.SetString(QuickNavWidgetTuneInType,3)</onclick>
+								<onclick condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">Skin.SetString(QuickNavWidgetTuneInName,$LOCALIZE[31292])</onclick>
+								
+								<onclick condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">Skin.SetString(QuickNavWidgetTuneInType,1)</onclick>
+								<onclick condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">Skin.SetString(QuickNavWidgetTuneInName,$LOCALIZE[31286])</onclick>
+								
 								<enable>System.HasAddon(plugin.audio.tuneinradio)</enable>
 							</control>
 							<control type="button">
