@@ -211,7 +211,7 @@ msgid "Manage Menu Items"
 msgstr ""
 
 msgctxt "#31049"
-msgid "Manage Widget"
+msgid "Manage Widgets"
 msgstr ""
 
 msgctxt "#31050"
@@ -308,19 +308,19 @@ msgstr ""
 #: skin Settings labels
 
 msgctxt "#31094"
-msgid "Choose Movies Widget"
+msgid "Movies Widget"
 msgstr ""
 
 msgctxt "#31095"
-msgid "Choose TV Shows Widget"
+msgid "TV Shows Widget"
 msgstr ""
 
 msgctxt "#31096"
-msgid "Choose Music Widget"
+msgid "Music Widget"
 msgstr ""
 
 msgctxt "#31097"
-msgid "Choose RSS Video Feed Widget"
+msgid "RSS Video Feed Widget"
 msgstr ""
 
 msgctxt "#31098"
@@ -526,22 +526,26 @@ msgid "Label:"
 msgstr ""
 
 msgctxt "#31173"
-msgid "Choose Custom Widget #1"
+msgid "Custom Widgets #1"
 msgstr ""
 
 msgctxt "#31174"
-msgid "Choose Custom Widget #2"
+msgid "Custom Widgets #2"
 msgstr ""
 
 msgctxt "#31175"
-msgid "Choose Custom Widget #3"
+msgid "Custom Widgets #3"
 msgstr ""
 
 msgctxt "#31176"
-msgid "Choose Custom Widget #4"
+msgid "Custom Widgets #4"
 msgstr ""
 
-#: empty strings from id 31177 to 31199
+msgctxt "#31177"
+msgid "Currently"
+msgstr ""
+
+#: empty strings from id 31178 to 31199
 #: scripts labels
 
 msgctxt "#31200"
@@ -844,7 +848,7 @@ msgid "Favourite Streams"
 msgstr ""
 
 msgctxt "#31288"
-msgid "Choose TuneIn Radio Widget"
+msgid "TuneIn Radio Widget"
 msgstr ""
 
 msgctxt "#31289"
@@ -997,11 +1001,11 @@ msgid "Custom Item"
 msgstr ""
 
 msgctxt "#31379"
-msgid "Custom Items"
+msgid "Edit Home Menu"
 msgstr ""
 
 msgctxt "#31380"
-msgid "Custom widget"
+msgid "Custom Widgets"
 msgstr ""
 
 #: empty strings from id 31381 to 31408

@@ -290,20 +290,20 @@ msgstr "LoveFilm"
 
 #: empty strings from id 31090 to 31093 skin Settings labels
 msgctxt "#31094"
-msgid "Choose Movies Widget"
-msgstr "Filme-Widget auswählen"
+msgid "Movies Widget"
+msgstr "Filme Widget"
 
 msgctxt "#31095"
-msgid "Choose TV Shows Widget"
-msgstr "Fernsehshows-Widget auswählen"
+msgid "TV Shows Widget"
+msgstr "Serien Widget"
 
 msgctxt "#31096"
-msgid "Choose Music Widget"
-msgstr "Musik-Widget auswählen"
+msgid "Music Widget"
+msgstr "Musik Widget "
 
 msgctxt "#31097"
-msgid "Choose RSS Video Feed Widget"
-msgstr "RSS-Video-Feed-Widget auswählen"
+msgid "RSS Video Feed Widget"
+msgstr "RSS-Video-Feed-Widget"
 
 msgctxt "#31098"
 msgid "Show Small Thumbs"
@@ -950,8 +950,8 @@ msgid "Custom Item"
 msgstr "Benutzerdefiniertes Element"
 
 msgctxt "#31379"
-msgid "Custom Items"
-msgstr "Benutzerdefinierte Elemente"
+msgid "Edit Home Menu"
+msgstr "Hauptmenü bearbeiten"
 
 #: empty strings from id 31380 to 31408 settings Category Description & Header
 #: Labels

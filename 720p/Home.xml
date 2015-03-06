@@ -3,7 +3,7 @@
 	<defaultcontrol always="true">20</defaultcontrol>	
 	<onload condition="!Skin.HasSetting(BelloFredoFirstRun)">ActivateWindow(startup)</onload>
 	<onload>SetProperty(RefreshList,1,Home)</onload>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=20&amp;group=mainmenu|submenu|widgetgroup1|widgetgroup2|widgetgroup3|widgetgroup4)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=20&amp;group=mainmenu|widgetgroup1|widgetgroup2|widgetgroup3|widgetgroup4)</onload>
 	<onload>RunScript(script.lastplayedalbums,type=Music,limit=10,method=Last,menu=Menu1)</onload>
 	<onload>RunScript(script.lastplayedalbums,type=Music,limit=10,method=Last,menu=Menu1)</onload>
 	<onload>RunScript(script.lastplayedalbums,type=Music,method=Last,limit=10,property=LastPlayed1)</onload>
