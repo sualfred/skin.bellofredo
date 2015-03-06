@@ -1101,6 +1101,15 @@
 		</control>
 	</include>
 
+	<variable name="MenuGroupHeader">
+		<value condition="!StringCompare(Window.Property(groupname),mainmenu) + !IsEmpty(Window.Property(groupDisplayName))">$LOCALIZE[31050] $INFO[Window.Property(groupDisplayName),","]</value>			
+		<value condition="StringCompare(Window.Property(groupname),widgetgroup1)">$LOCALIZE[31049] $INFO[Skin.String(widgetgroup1),","]</value>		
+		<value condition="StringCompare(Window.Property(groupname),widgetgroup2)">$LOCALIZE[31049] $INFO[Skin.String(widgetgroup2),","]</value>		
+		<value condition="StringCompare(Window.Property(groupname),widgetgroup3)">$LOCALIZE[31049] $INFO[Skin.String(widgetgroup3),","]</value>		
+		<value condition="StringCompare(Window.Property(groupname),widgetgroup4)">$LOCALIZE[31049] $INFO[Skin.String(widgetgroup4),","]</value>	
+		<value>$LOCALIZE[31048]</value>
+	</variable>
+	
 	<variable name="CustomItemNumber">
 		<value condition="StringCompare(Window(SkinSettings).Property(EditCustomItems),customitem1)">1</value>
 		<value condition="StringCompare(Window(SkinSettings).Property(EditCustomItems),customitem2)">2</value>

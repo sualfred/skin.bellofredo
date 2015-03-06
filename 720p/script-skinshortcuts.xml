@@ -3,6 +3,7 @@
 	<defaultcontrol always="true">30000</defaultcontrol>
   <onunload condition="Window.IsVisible(home) + !StringCompare(Window.Property(groupname),mainmenu)">ReplaceWindow(home)</onunload>
 	<onunload condition="![Window.IsVisible(home) | StringCompare(Window.Property(groupname),mainmenu)]">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=20&amp;group=mainmenu|submenu|widgetgroup1|widgetgroup2|widgetgroup3|widgetgroup4)</onunload>
+	<onload>SetProperty(level)</onload>
 	<controls>
 
 	 <control type="group">
@@ -37,13 +38,13 @@
 			<include>FullscreenDimensions</include>
 			<texture background="true">dialogs/other/bg_manageshortcuts.png</texture>
 		</control>
-		<control type="label" id="500">
+		<control type="label" id="5001">
 			<description>header label</description>
 			<left>225</left>
 			<top>132</top>
 			<width>775</width>
 	    <include>DialogsHeaderLabel</include>
-      <label>-</label>
+			<label>$VAR[MenuGroupHeader]</label>
 		</control>
 		<control type="label">
 			<description>Page Count Label</description>
@@ -70,7 +71,7 @@
 				<ondown>211</ondown>
 				<onleft>20000</onleft>
 				<onright>30000</onright>
-  			<onback>RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;options=clonewidgets&amp;mainmenuID=20)</onback>
+  			
 			  <scrolltime tween="quadratic" easing="out">200</scrolltime>
       	<visible>!Window.IsActive(contextmenu)</visible>
 				<itemlayout height="44" width="400">
@@ -303,7 +304,24 @@
 					<textoffsetx>10</textoffsetx>
 					<label>$ADDON[script.skinshortcuts 32044]</label>
 					<label2>[COLOR=selected]$INFO[Container(211).ListItem.Property(widgetName)][/COLOR]</label2>
-					<visible>StringCompare(Window.Property("groupname"),mainmenu)</visible>
+					<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+				</control>
+				<control type="button" id="306">
+					<description>add widget</description>
+					<width>400</width>
+			    <height>40</height>
+					<font>FontSize_20</font>
+					<textcolor>77white</textcolor>
+					<focusedcolor>white</focusedcolor>
+				  <disabledcolor>33white</disabledcolor>
+					<shadowcolor>99000000</shadowcolor>
+					<texturefocus>buttons/focus.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<align>left</align>
+					<textoffsetx>10</textoffsetx>
+					<label>$ADDON[script.skinshortcuts 32026]</label>
+					<label2>[COLOR=selected]$INFO[Container(211).ListItem.Property(widgetName)][/COLOR]</label2>
+					<visible>SubString(Window.Property(groupname),widgetgroup)</visible>
 				</control>
 
 <!-- *NOT USED*				

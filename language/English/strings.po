@@ -206,7 +206,19 @@ msgctxt "#31047"
 msgid "Automatically download extra artwork if a library has been updated"
 msgstr ""
 
-#: empty strings from id 31048 to 31069
+msgctxt "#31048"
+msgid "Manage Menu Items"
+msgstr ""
+
+msgctxt "#31049"
+msgid "Manage Widget"
+msgstr ""
+
+msgctxt "#31050"
+msgid "Manage Sub Menu of"
+msgstr ""
+
+#: empty strings from id 31051 to 31069
 #: extendedInfoLabels
 
 msgctxt "#31070"
