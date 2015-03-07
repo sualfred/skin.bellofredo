@@ -59,13 +59,13 @@
 		<!-- === -->
 		<!-- PVR -->
 		<!-- === -->
-		<node label="32017" condition="PVR.HasTVChannels" version="14">
+		<node label="32017" condition="PVR.HasTVChannels" version="15">
 			<content>pvr</content>
 			<node label="19023">
 				<content>pvr-tv</content>
 			</node>
 		</node>
-		<node label="32087" condition="PVR.HasRadioChannels" version="14">
+		<node label="32087" condition="PVR.HasRadioChannels" version="15">
 			<content>radio</content>
 			<node label="19024">
 				<content>pvr-radio</content>
