@@ -522,7 +522,7 @@ msgid "Update Art"
 msgstr ""
 
 msgctxt "#31172"
-msgid "Label:"
+msgid "Empty Label"
 msgstr ""
 
 msgctxt "#31173"
@@ -542,10 +542,14 @@ msgid "Custom Widgets #4"
 msgstr ""
 
 msgctxt "#31177"
-msgid "Currently"
+msgid "Manage [COLOR=selected]Custom Widgets[/COLOR]"
 msgstr ""
 
-#: empty strings from id 31178 to 31199
+msgctxt "#31178"
+msgid "Manage [COLOR=selected]Common Widgets[/COLOR]"
+msgstr ""
+
+#: empty strings from id 31179 to 31199
 #: scripts labels
 
 msgctxt "#31200"
@@ -848,7 +852,7 @@ msgid "Favourite Streams"
 msgstr ""
 
 msgctxt "#31288"
-msgid "TuneIn Radio Widget"
+msgid "TuneIn Radio Widget [COLOR=55white](Requires TuneIn Radio Plugin)[/COLOR]"
 msgstr ""
 
 msgctxt "#31289"
@@ -1001,7 +1005,7 @@ msgid "Custom Item"
 msgstr ""
 
 msgctxt "#31379"
-msgid "Edit Home Menu"
+msgid "Menu & Widgets"
 msgstr ""
 
 msgctxt "#31380"
@@ -1012,7 +1016,7 @@ msgstr ""
 #: settings Category Description & Header Labels
 
 msgctxt "#31409"
-msgid "Choose from a variety of settings and customization options to make \"Bello\" fit your needs and taste."
+msgid "Choose from a variety of settings and customization options to make \"Bello Fredo\" fit your needs and taste."
 msgstr ""
 
 msgctxt "#31410"

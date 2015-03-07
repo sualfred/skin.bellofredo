@@ -259,7 +259,7 @@
 	<include name="DialogSelect">
 	 <control type="group">
 	  <include>DialogAnimation</include>
-		<visible>![Window.IsActive(yesnodialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(textviewer)]</visible>
+		<visible>![Window.IsActive(ShutdownMenu) | Window.IsActive(Playercontrols) | Window.IsActive(yesnodialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(textviewer)]</visible>
 	  <control type="image">
 			<left>347</left>
 			<top>138</top>

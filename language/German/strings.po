@@ -460,7 +460,7 @@ msgstr "Lade [COLOR=selected]logo.png[/COLOR] für alle Filme"
 
 msgctxt "#31161"
 msgid "Show Library Totals"
-msgstr "Bibliothekswerkzeuge anzeigen"
+msgstr "Zeige Gesamtinhalte der Datenbank"
 
 msgctxt "#31162"
 msgid "Enable Kiosk Mode"
@@ -504,7 +504,34 @@ msgctxt "#31171"
 msgid "Update Art"
 msgstr "Kunst aktualisieren"
 
-#: empty strings from id 31172 to 31199 scripts labels
+msgctxt "#31172"
+msgid "Empty Label"
+msgstr "Kein Label"
+
+msgctxt "#31173"
+msgid "Eigene Widgets #1"
+msgstr ""
+
+msgctxt "#31174"
+msgid "Eigene Widgets #2"
+msgstr ""
+
+msgctxt "#31175"
+msgid "Eigene Widgets #3"
+msgstr ""
+
+msgctxt "#31176"
+msgid "Eigene Widgets #4"
+msgstr ""
+
+msgctxt "#31177"
+msgid "Manage [COLOR=selected]Custom Widgets[/COLOR]"
+msgstr "Bearbeite [COLOR=selected]Eigene Widgets[/COLOR]"
+
+msgctxt "#31178"
+msgid "Manage [COLOR=selected]Common Widgets[/COLOR]"
+msgstr "Bearbeite [COLOR=selected]Gewöhnliche Widgets[/COLOR]"
+
 msgctxt "#31200"
 msgid "My Movies"
 msgstr "Meine Filme"
@@ -803,8 +830,8 @@ msgid "Favourite Streams"
 msgstr "Favouriten Streams"
 
 msgctxt "#31288"
-msgid "TuneIn Radio Widget"
-msgstr "TuneIn Radio Widget"
+msgid "TuneIn Radio Widget [COLOR=55white](Requires TuneIn Radio Plugin)[/COLOR]"
+msgstr "TuneIn Radio Widget [COLOR=55white](Benötigt TuneIn Radio Plugin)[/COLOR]"
 
 msgctxt "#31289"
 msgid "Toggle debug grid"
@@ -950,16 +977,16 @@ msgid "Custom Item"
 msgstr "Benutzerdefiniertes Element"
 
 msgctxt "#31379"
-msgid "Edit Home Menu"
-msgstr "Hauptmenü bearbeiten"
+msgid "Menu & Widgets"
+msgstr "Menü & Widgets"
 
 #: empty strings from id 31380 to 31408 settings Category Description & Header
 #: Labels
 msgctxt "#31409"
 msgid ""
 "Choose from a variety of settings and customization options to make "
-"\"Bello\" fit your needs and taste."
-msgstr "Wählen Sie aus einer Vielzahl von fortgeschrittenen Einstellungs- und Anpassungsoptionen um \"Bello\" auf Ihre Bedürfnisse und Ihren Geschmack anzupassen."
+"\"Bello Fredo\" fit your needs and taste."
+msgstr "Wählen Sie aus einer Vielzahl von fortgeschrittenen Einstellungs- und Anpassungsoptionen um \"Bello Fredo\" auf Ihre Bedürfnisse und Ihren Geschmack anzupassen."
 
 msgctxt "#31410"
 msgid ""
