@@ -145,7 +145,13 @@
 						<onleft>8800</onleft>
 						<onright>9000</onright>
 						<onup>8100</onup>
-						<ondown>8100</ondown>
+						<ondown>8100</ondown>						
+						<control type="radiobutton" id="8109">
+							<include>SettingsRadioButton</include>
+							<label>31014</label>
+							<onclick>Skin.ToggleSetting(KodiIntro.disabled)</onclick>
+							<selected>Skin.HasSetting(KodiIntro.disabled)</selected>
+						</control>
 						<control type="radiobutton" id="8101">
 							<include>SettingsRadioButton</include>
 							<label>20189</label>
@@ -196,12 +202,6 @@
 							<label>31159</label>
 							<onclick>Skin.ToggleSetting(ShowVideoInfo)</onclick>
 							<selected>Skin.HasSetting(ShowVideoInfo)</selected>
-						</control>
-						<control type="radiobutton" id="8109">
-							<include>SettingsRadioButton</include>
-							<label>31014</label>
-							<onclick>Skin.ToggleSetting(KodiIntro.disabled)</onclick>
-							<selected>Skin.HasSetting(KodiIntro.disabled)</selected>
 						</control>
 						<control type="radiobutton" id="8205">
 							<description>Hide Library Totals</description>
