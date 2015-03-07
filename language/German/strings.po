@@ -4,12 +4,13 @@
 # Addon Provider: Nessus
 # Translators:
 # sualfred <su4lfred@gmail.com>, 2015
+# sualfred <su4lfred@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-03-04 20:55+0000\n"
+"PO-Revision-Date: 2015-03-07 00:53+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -207,6 +208,19 @@ msgctxt "#31047"
 msgid "Automatically download extra artwork if a library has been updated"
 msgstr "Automatischer Download von Extra-Artworks nach Datenbankaktualisierung"
 
+msgctxt "#31048"
+msgid "Manage Menu Items"
+msgstr "Bearbeite Menü Einträge"
+
+msgctxt "#31049"
+msgid "Manage Widget"
+msgstr "Bearbeite Widget"
+
+msgctxt "#31050"
+msgid "Manage Sub Menu of"
+msgstr "Bearbeite das Submenü von"
+
+#: empty strings from id 31051 to 31069 extendedInfoLabels
 msgctxt "#31070"
 msgid "Video Info"
 msgstr "Video Info"
@@ -290,20 +304,20 @@ msgstr "LoveFilm"
 
 #: empty strings from id 31090 to 31093 skin Settings labels
 msgctxt "#31094"
-msgid "Movies Widget"
-msgstr "Filme Widget"
+msgid "Choose Movies Widget"
+msgstr "Filme-Widget auswählen"
 
 msgctxt "#31095"
-msgid "TV Shows Widget"
-msgstr "Serien Widget"
+msgid "Choose TV Shows Widget"
+msgstr "Fernsehshows-Widget auswählen"
 
 msgctxt "#31096"
-msgid "Music Widget"
-msgstr "Musik Widget "
+msgid "Choose Music Widget"
+msgstr "Musik-Widget auswählen"
 
 msgctxt "#31097"
-msgid "RSS Video Feed Widget"
-msgstr "RSS-Video-Feed-Widget"
+msgid "Choose RSS Video Feed Widget"
+msgstr "RSS-Video-Feed-Widget auswählen"
 
 msgctxt "#31098"
 msgid "Show Small Thumbs"
@@ -505,33 +519,26 @@ msgid "Update Art"
 msgstr "Kunst aktualisieren"
 
 msgctxt "#31172"
-msgid "Empty Label"
-msgstr "Kein Label"
+msgid "Label:"
+msgstr "Label:"
 
 msgctxt "#31173"
-msgid "Eigene Widgets #1"
-msgstr ""
+msgid "Choose Custom Widget #1"
+msgstr "Setze eigenes Widget #1"
 
 msgctxt "#31174"
-msgid "Eigene Widgets #2"
-msgstr ""
+msgid "Choose Custom Widget #2"
+msgstr "Setze eigenes Widget #2"
 
 msgctxt "#31175"
-msgid "Eigene Widgets #3"
-msgstr ""
+msgid "Choose Custom Widget #3"
+msgstr "Setze eigenes Widget #3"
 
 msgctxt "#31176"
-msgid "Eigene Widgets #4"
-msgstr ""
+msgid "Choose Custom Widget #4"
+msgstr "Setze eigenes Widget #4"
 
-msgctxt "#31177"
-msgid "Manage [COLOR=selected]Custom Widgets[/COLOR]"
-msgstr "Bearbeite [COLOR=selected]Eigene Widgets[/COLOR]"
-
-msgctxt "#31178"
-msgid "Manage [COLOR=selected]Common Widgets[/COLOR]"
-msgstr "Bearbeite [COLOR=selected]Gewöhnliche Widgets[/COLOR]"
-
+#: empty strings from id 31177 to 31199 scripts labels
 msgctxt "#31200"
 msgid "My Movies"
 msgstr "Meine Filme"
@@ -830,8 +837,8 @@ msgid "Favourite Streams"
 msgstr "Favouriten Streams"
 
 msgctxt "#31288"
-msgid "TuneIn Radio Widget [COLOR=55white](Requires TuneIn Radio Plugin)[/COLOR]"
-msgstr "TuneIn Radio Widget [COLOR=55white](Benötigt TuneIn Radio Plugin)[/COLOR]"
+msgid "Choose TuneIn Radio Widget"
+msgstr "Setze TuneIN Radio Widget"
 
 msgctxt "#31289"
 msgid "Toggle debug grid"
@@ -977,16 +984,20 @@ msgid "Custom Item"
 msgstr "Benutzerdefiniertes Element"
 
 msgctxt "#31379"
-msgid "Menu & Widgets"
-msgstr "Menü & Widgets"
+msgid "Custom Items"
+msgstr "Benutzerdefinierte Elemente"
 
-#: empty strings from id 31380 to 31408 settings Category Description & Header
+msgctxt "#31380"
+msgid "Custom widget"
+msgstr "Eigenes Widget"
+
+#: empty strings from id 31381 to 31408 settings Category Description & Header
 #: Labels
 msgctxt "#31409"
 msgid ""
 "Choose from a variety of settings and customization options to make "
-"\"Bello Fredo\" fit your needs and taste."
-msgstr "Wählen Sie aus einer Vielzahl von fortgeschrittenen Einstellungs- und Anpassungsoptionen um \"Bello Fredo\" auf Ihre Bedürfnisse und Ihren Geschmack anzupassen."
+"\"Bello\" fit your needs and taste."
+msgstr "Wählen Sie aus einer Vielzahl von fortgeschrittenen Einstellungs- und Anpassungsoptionen um \"Bello\" auf Ihre Bedürfnisse und Ihren Geschmack anzupassen."
 
 msgctxt "#31410"
 msgid ""
@@ -1038,6 +1049,7 @@ msgctxt "#31421"
 msgid "Library"
 msgstr "Bibliothek"
 
+#: empty strings from id 31422 to 31430 Help Messages
 msgctxt "#31431"
 msgid ""
 "You haven't added any items to Favorites yet.[CR]Highlight an item, and "
