@@ -1238,7 +1238,7 @@
 		<value condition="Control.HasFocus(554)">$INFO[Skin.String(widgetgroup4)]</value>		
 		<value condition="[[Control.HasFocus(65) | Control.HasFocus(650)] + !stringcompare(Skin.String(RSSVideoFeedName),Custom)]">$INFO[Skin.String(RSSVideoFeedName)]</value>
 		<value condition="[[Control.HasFocus(65) | Control.HasFocus(650)] + stringcompare(Skin.String(RSSVideoFeedName),Custom)]">$INFO[Skin.String(SearchStringName)]</value>
-		<value condition="StringCompare(Container(20).ListItem.Property(widget),Playlist)">$LOCALIZE[559]$INFO[Container(20).ListItem.Property(widgetName),: [COLOR=selected],[/COLOR]]</value>		
+		<value condition="StringCompare(Container(20).ListItem.Property(widget),Playlist)">$INFO[Container(20).ListItem.Property(widgetName)]</value>		
 	</variable>
 
 	<variable name="QuickNavWidgetListItemLabel">
@@ -1273,9 +1273,13 @@
 		<value condition="Control.HasFocus(552)">$LOCALIZE[31174]</value>
 		<value condition="Control.HasFocus(553)">$LOCALIZE[31175]</value>
 		<value condition="Control.HasFocus(554)">$LOCALIZE[31176]</value>
-		<value condition="Control.HasFocus(651) + !IsEmpty(Container(651).ListItem.Label2)">$INFO[Container(651).ListItem.Label2]</value>		
-		<value condition="Control.HasFocus(652) + !IsEmpty(Container(652).ListItem.Label2)">$INFO[Container(652).ListItem.Label2]</value>
-		<value condition="Control.HasFocus(652) + IsEmpty(Container(652).ListItem.Label2) + !IsEmpty(Container(652).ListItem.TVShowTitle)">$INFO[Container(652).ListItem.TVShowTitle]</value>
+		<value condition="Control.HasFocus(651) + !IsEmpty(Container(651).ListItem.Label2)">$INFO[Container(651).ListItem.Label2,,[CR]][COLOR=selected]$LOCALIZE[559][/COLOR]</value>		
+		<value condition="Control.HasFocus(651)">[COLOR=selected]$LOCALIZE[559][/COLOR]</value>		
+		<value condition="Control.HasFocus(652) + !IsEmpty(Container(652).ListItem.Label2)">$INFO[Container(652).ListItem.Label2,,[CR]][COLOR=selected]$LOCALIZE[559][/COLOR]</value>
+		<value condition="Control.HasFocus(652) + IsEmpty(Container(652).ListItem.Label2) + !IsEmpty(Container(652).ListItem.TVShowTitle)">$INFO[Container(652).ListItem.TVShowTitle,,[CR]][COLOR=selected]$LOCALIZE[559][/COLOR]</value>
+		<value condition="Control.HasFocus(652)">[COLOR=selected]$LOCALIZE[559][/COLOR]</value>	
+		<!--<value condition="Control.HasFocus(652) + IsEmpty(Container(652).ListItem.Label2) + IsEmpty(Container(652).ListItem.TVShowTitle)">$INFO[Container(652).ListItem.TVShowTitle]</value>
+		<value condition="Control.HasFocus(652) + !IsEmpty(Container(652).ListItem.Label2) + !IsEmpty(Container(652).ListItem.TVShowTitle)">$INFO[Container(652).ListItem.TVShowTitle]</value>-->
 	</variable>
 
 	<variable name="QuickNavWidgetThumb">
