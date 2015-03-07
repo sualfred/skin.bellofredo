@@ -462,7 +462,7 @@
 				<control type="fixedlist" id="350">
 					<description>youtube</description>
 					<posx>0</posx>
-					<posy>18</posy>
+					<posy>19</posy>
 					<width>960</width>
 					<height>250</height>
 					<orientation>horizontal</orientation>
@@ -475,7 +475,7 @@
 					<visible>StringCompare(Window.Property(switchcontent),3)</visible>
 					<itemlayout width="296" height="250">
 						<control type="group">
-							<animation reversible="true" effect="slide" end="67,5" time="150" condition="Control.HasFocus(350)">Conditional</animation>
+							<animation reversible="true" effect="slide" end="70,5" time="150" condition="Control.HasFocus(350)">Conditional</animation>
 							<control type="image">
 								<left>7</left>
 								<top>7</top>
@@ -504,7 +504,7 @@
 					</itemlayout>
 					<focusedlayout width="296" height="250">
 						<control type="group">
-							<animation reversible="true" effect="zoom" start="100" end="125" center="10,-11" time="150" condition="Control.HasFocus(350)">Conditional</animation>
+							<animation reversible="true" effect="zoom" start="100" end="125" center="6,-11" time="150" condition="Control.HasFocus(350)">Conditional</animation>
 							<control type="image">
 								<left>7</left>
 								<top>7</top>
@@ -647,7 +647,7 @@
 				<control type="fixedlist" id="750">
 					<description>fanart</description>
 					<posx>0</posx>
-					<posy>18</posy>
+					<posy>19</posy>
 					<width>960</width>
 					<height>250</height>
 					<orientation>horizontal</orientation>
@@ -659,7 +659,7 @@
 					<visible>StringCompare(Window.Property(switchcontent),5)</visible>
 					<itemlayout width="296" height="250">
 						<control type="group">
-							<animation reversible="true" effect="slide" end="67,5" time="150" condition="Control.HasFocus(750)">Conditional</animation>
+							<animation reversible="true" effect="slide" end="70,5" time="150" condition="Control.HasFocus(750)">Conditional</animation>
 							<control type="image">
 								<left>7</left>
 								<top>7</top>
@@ -688,7 +688,7 @@
 					</itemlayout>
 					<focusedlayout width="296" height="250">
 						<control type="group">
-							<animation reversible="true" effect="zoom" start="100" end="125" center="10,-11" time="150" condition="Control.HasFocus(750)">Conditional</animation>
+							<animation reversible="true" effect="zoom" start="100" end="125" center="6,-11" time="150" condition="Control.HasFocus(750)">Conditional</animation>
 							<control type="image">
 								<left>7</left>
 								<top>7</top>

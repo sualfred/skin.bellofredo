@@ -408,7 +408,7 @@
 					<visible>StringCompare(Window.Property(switchcontent),2)</visible>
 					<itemlayout width="143" height="250">
 						<control type="group">
-							<animation reversible="true" effect="slide" end="32,0" time="150" condition="Control.HasFocus(150)">Conditional</animation>
+							<animation reversible="true" effect="slide" end="33,0" time="150" condition="Control.HasFocus(150)">Conditional</animation>
 							<control type="image">
 								<posx>10</posx>
 								<posy>10</posy>
@@ -501,11 +501,11 @@
 					</focusedlayout>
 				</control>
 
-				<!-- yt list -->
+				<!-- youtube video list -->
 				<control type="fixedlist" id="350">
-					<description>yt</description>
+					<description>youtube</description>
 					<posx>0</posx>
-					<posy>18</posy>
+					<posy>19</posy>
 					<width>960</width>
 					<height>250</height>
 					<orientation>horizontal</orientation>
@@ -518,7 +518,7 @@
 					<visible>StringCompare(Window.Property(switchcontent),3)</visible>
 					<itemlayout width="296" height="250">
 						<control type="group">
-							<animation reversible="true" effect="slide" end="67,5" time="150" condition="Control.HasFocus(350)">Conditional</animation>
+							<animation reversible="true" effect="slide" end="70,5" time="150" condition="Control.HasFocus(350)">Conditional</animation>
 							<control type="image">
 								<left>7</left>
 								<top>7</top>
@@ -547,7 +547,7 @@
 					</itemlayout>
 					<focusedlayout width="296" height="250">
 						<control type="group">
-							<animation reversible="true" effect="zoom" start="100" end="125" center="10,-11" time="150" condition="Control.HasFocus(350)">Conditional</animation>
+							<animation reversible="true" effect="zoom" start="100" end="125" center="6,-11" time="150" condition="Control.HasFocus(350)">Conditional</animation>
 							<control type="image">
 								<left>7</left>
 								<top>7</top>
@@ -599,7 +599,7 @@
 				<control type="fixedlist" id="1350">
 					<description>fanart</description>
 					<posx>0</posx>
-					<posy>18</posy>
+					<posy>19</posy>
 					<width>960</width>
 					<height>250</height>
 					<orientation>horizontal</orientation>
@@ -611,7 +611,7 @@
 					<visible>StringCompare(Window.Property(switchcontent),4)</visible>
 					<itemlayout width="296" height="250">
 						<control type="group">
-							<animation reversible="true" effect="slide" end="67,5" time="150" condition="Control.HasFocus(1350)">Conditional</animation>
+							<animation reversible="true" effect="slide" end="70,5" time="150" condition="Control.HasFocus(1350)">Conditional</animation>
 							<control type="image">
 								<left>7</left>
 								<top>7</top>
@@ -640,7 +640,7 @@
 					</itemlayout>
 					<focusedlayout width="296" height="250">
 						<control type="group">
-							<animation reversible="true" effect="zoom" start="100" end="125" center="10,-11" time="150" condition="Control.HasFocus(1350)">Conditional</animation>
+							<animation reversible="true" effect="zoom" start="100" end="125" center="6,-11" time="150" condition="Control.HasFocus(1350)">Conditional</animation>
 							<control type="image">
 								<left>7</left>
 								<top>7</top>
@@ -961,7 +961,7 @@
 					<animation effect="zoom" start="100" end="90" time="200" tween="cubic" easing="inout" center="auto" condition="!Control.HasFocus(22)" reversible="true">Conditional</animation>
 				</control>
 				<control type="label">
-					<description>yt videos</description>
+					<description>youtube videos</description>
 					<include>TopSmallLabel</include>
 					<label>$INFO[Control.GetLabel(23)]</label>
 					<visible>IntegerGreaterThan(Container(350).NumItems,0)</visible>
