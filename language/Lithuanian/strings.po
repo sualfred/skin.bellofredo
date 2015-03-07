@@ -76,7 +76,7 @@ msgid "Enable Home Menu Animation"
 msgstr "Įjungti pagrindinio meniu animaciją"
 
 msgctxt "#31014"
-msgid "Disable Startup Intro Video"
+msgid "Enable Startup Intro Video"
 msgstr "Įžanginį vaizdo įrašą"
 
 msgctxt "#31016"

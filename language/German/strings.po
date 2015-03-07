@@ -78,7 +78,7 @@ msgstr "Hauptmenüanimation aktivieren"
 
 msgctxt "#31014"
 msgid "Enable Startup Intro Video"
-msgstr "Deaktiviere Intro Video"
+msgstr "Enable Intro Video"
 
 msgctxt "#31016"
 msgid "File Manager"
