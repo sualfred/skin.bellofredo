@@ -1,3 +1,7 @@
+[B][COLOR=FF56ADDA]v4.0.9[/COLOR][/B]
+• Added: "Currently playing..." covers on home screen (can be deactivated)
+• Removed: "Hide now playing video/music" options from settings. They had no function O_o
+
 [B][COLOR=FF56ADDA]v4.0.8b[/COLOR][/B]
 • Fix: Some widget background conditions
 • Changed: Converted complete media folder to the Kodi texture package
