@@ -250,7 +250,7 @@
 					<font>FontSize_26B</font>
 					<scroll>false</scroll>
 					<align>left</align>
-					<label>$INFO[Container(500).ListItem.label]</label>										
+					<label>$INFO[Container(500).ListItem.label] $INFO[Container(500).ListItem.Property(User_Rating),[COLOR=selected]  |  ,[/COLOR]]</label>										
 				</control>				
 				<!-- filter rules -->
 				<control type="grouplist">
