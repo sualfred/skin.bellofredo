@@ -340,7 +340,10 @@ msgctxt "#31103"
 msgid "Hide Now Playing Music Info"
 msgstr "Verstecke 'Läuft gerade' Musik-Info"
 
-#: empty strings from id 31104 to 31123
+msgctxt "#31104"
+msgid "Hide Now Playing Covers on Home"
+msgstr "Verberge 'Läuft gerade' Covers"
+
 msgctxt "#31124"
 msgid "Flashing Lights"
 msgstr "Blinkende Lichter"

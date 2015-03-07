@@ -105,6 +105,7 @@
 						<texture background="true" diffuse="thumbs/poster_diffuse.png">osd/paused-overlay.png</texture>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 						<visible>Player.Paused</visible>
+						<include>VisibleFadeEffect</include>
 						<animation type="conditional" condition="Player.Paused" reversible="true">
 							<effect type="fade" start="0" end="50" time="300" />
 						</animation>
@@ -118,6 +119,7 @@
 						<texture background="true" diffuse="thumbs/poster_diffuse.png">osd/ff-overlay.png</texture>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 						<visible>Player.Forwarding</visible>
+						<include>VisibleFadeEffect</include>
 						<animation type="conditional" condition="Player.Forwarding" reversible="true">
 							<effect type="fade" start="0" end="50" time="300" />
 						</animation>
@@ -131,6 +133,7 @@
 						<texture background="true" diffuse="thumbs/poster_diffuse.png">osd/rw-overlay.png</texture>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 						<visible>Player.Rewinding</visible>
+						<include>VisibleFadeEffect</include>
 						<animation type="conditional" condition="Player.Rewinding" reversible="true">
 							<effect type="fade" start="0" end="50" time="300" />
 						</animation>
@@ -187,6 +190,7 @@
 						<texture background="true" diffuse="thumbs/video_diffuse.png">osd/paused-overlay.png</texture>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 						<visible>Player.Paused</visible>
+						<include>VisibleFadeEffect</include>
 						<animation type="conditional" condition="Player.Paused" reversible="true">
 							<effect type="fade" start="0" end="50" time="300" />
 						</animation>
@@ -199,7 +203,8 @@
 						<height>199</height>
 						<texture background="true" diffuse="thumbs/video_diffuse.png">osd/ff-overlay.png</texture>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-						<visible>Player.Forwarding</visible>
+						<visible>Player.Forwarding</visible>						
+						<include>VisibleFadeEffect</include>
 						<animation type="conditional" condition="Player.Forwarding" reversible="true">
 							<effect type="fade" start="0" end="50" time="300" />
 						</animation>
@@ -213,6 +218,7 @@
 						<texture background="true" diffuse="thumbs/video_diffuse.png">osd/rw-overlay.png</texture>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 						<visible>Player.Rewinding</visible>
+						<include>VisibleFadeEffect</include>
 						<animation type="conditional" condition="Player.Rewinding" reversible="true">
 							<effect type="fade" start="0" end="50" time="300" />
 						</animation>
@@ -258,6 +264,7 @@
 						<texture background="true" diffuse="thumbs/music_diffuse.png">osd/paused-overlay.png</texture>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 						<visible>Player.Paused</visible>
+						<include>VisibleFadeEffect</include>
 						<animation type="conditional" condition="Player.Paused" reversible="true">
 							<effect type="fade" start="0" end="50" time="300" />
 						</animation>
@@ -271,6 +278,7 @@
 						<texture background="true" diffuse="thumbs/music_diffuse.png">osd/ff-overlay.png</texture>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 						<visible>Player.Forwarding</visible>
+						<include>VisibleFadeEffect</include>
 						<animation type="conditional" condition="Player.Forwarding" reversible="true">
 							<effect type="fade" start="0" end="50" time="300" />
 						</animation>
@@ -284,6 +292,7 @@
 						<texture background="true" diffuse="thumbs/music_diffuse.png">osd/rw-overlay.png</texture>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 						<visible>Player.Rewinding</visible>
+						<include>VisibleFadeEffect</include>
 						<animation type="conditional" condition="Player.Rewinding" reversible="true">
 							<effect type="fade" start="0" end="50" time="300" />
 						</animation>

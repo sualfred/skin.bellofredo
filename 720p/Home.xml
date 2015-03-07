@@ -16,10 +16,11 @@
 			<include>HomeMenuWraplist</include>
 			<include>HomeSubMenus</include>
 			<include>CommonDialogsFadeOutBG</include>
-			<include>CommonNowPlaying</include>
+			<include condition="!Skin.HasSetting(HideHomeNPCovers)">CoversNowPlaying</include>
+			<include condition="Skin.HasSetting(HideHomeNPCovers)">CommonNowPlaying</include>
 			<include>TopHomeMenu</include>
 			<include>HomeWeatherAndClock</include>
-			<include>FredHomeWidgets</include>
+			<include>FredHomeWidgets</include>			
 		</control>	
 	</controls>	
 </window>

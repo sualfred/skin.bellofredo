@@ -349,7 +349,11 @@ msgctxt "#31103"
 msgid "Hide Now Playing Music Info"
 msgstr ""
 
-#: empty strings from id 31104 to 31123
+msgctxt "#31104"
+msgid "Hide Now Playing Covers on Home"
+msgstr ""
+
+#: empty strings from id 31105 to 31123
 
 msgctxt "#31124"
 msgid "Flashing Lights"

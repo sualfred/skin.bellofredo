@@ -157,6 +157,13 @@
 							<label>20189</label>
 							<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
 							<selected>Skin.HasSetting(AutoScroll)</selected>
+						</control>						
+						<control type="radiobutton" id="8206">
+							<description>Hide Home NP VideoInfo</description>
+							<include>SettingsRadioButton</include>
+							<label>31104</label>
+							<onclick>Skin.ToggleSetting(HideHomeNPCovers)</onclick>
+							<selected>Skin.HasSetting(HideHomeNPCovers)</selected>
 						</control>
 						<control type="radiobutton" id="8102">
 							<include>SettingsRadioButton</include>
@@ -209,20 +216,6 @@
 							<label>31161</label>
 							<onclick>Skin.ToggleSetting(ShowLibraryTotals)</onclick>
 							<selected>Skin.HasSetting(ShowLibraryTotals)</selected>
-						</control>
-						<control type="radiobutton" id="8206">
-							<description>Hide Home NP VideoInfo</description>
-							<include>SettingsRadioButton</include>
-							<label>31102</label>
-							<onclick>Skin.ToggleSetting(HideHomeNPVideoInfo)</onclick>
-							<selected>Skin.HasSetting(HideHomeNPVideoInfo)</selected>
-						</control>
-						<control type="radiobutton" id="8207">
-							<description>Hide Home NP MusicInfo</description>
-							<include>SettingsRadioButton</include>
-							<label>31103</label>
-							<onclick>Skin.ToggleSetting(HideHomeNPMusicInfo)</onclick>
-							<selected>Skin.HasSetting(HideHomeNPMusicInfo)</selected>
 						</control>
 						<control type="radiobutton" id="8110">
 							<include>SettingsRadioButton</include>
