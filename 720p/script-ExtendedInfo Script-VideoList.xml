@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">500</defaultcontrol>
+	<controls>
+		<!-- ============================= -->
+		<!-- == Background		 == -->
+		<!-- ============================= -->
+		<control type="image">
+			<description>background</description>
+			<include>FullscreenDimensions</include>
+			<texture background="true">special://skin/extras/backgrounds/SKINDEFAULT.jpg</texture>
+			<include>BackgroundFade</include>	
+		</control>
+		<control type="image">
+			<description>background</description>
+			<include>FullscreenDimensions</include>
+			<texture background="true">$INFO[Container(500).ListItem.Art(fanart)]</texture>
+			<include>BackgroundFade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>			
+		</control>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture background="true">windows/bg/bg_diffuse.png</texture>
+			<include>BackgroundFade</include>		
+		</control>
+
+		<!-- ============================= -->
+		<!-- == Header					 == -->
+		<!-- ============================= -->
+		<control type="group">
+			<left>45</left>
+			<top>25</top>
+			<include>SettingsSlideAnimations</include>
+			<visible allowhiddenfocus="true">!Window.IsActive(ShutdownMenu) + !Window.IsActive(ContextMenu) + !Window.IsActive(Playercontrols) + !ControlGroup(9000).HasFocus</visible>
+			<animation type="Visible">
+				<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+				<effect type="slide" start="0,35" end="0,0" time="350" tween="cubic" easing="out" />
+			</animation>
+			<animation type="Hidden">
+				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+				<effect type="slide" start="0,0" end="0,35" time="350" tween="sine" easing="out" />
+			</animation>			
+			<control type="groupList">
+				<animation type="Conditional" condition="true">
+					<effect type="fade" start="0" end="100" tween="sine" easing="in" time="250" />
+					<effect type="zoom" start="100,0,1700,1" end="100,150,1700,60" tween="cubic" easing="out" time="300" />
+				</animation>
+				<left>0</left>
+				<top>0</top>
+				<width>1700</width>
+				<height>60</height>
+				<itemgap>5</itemgap>
+				<orientation>horizontal</orientation>
+				<include>SettingsSlideAnimations</include>
+				<control type="label">
+					<include>TopBigLabel</include>
+					<label>ExtendedInfo</label>
+				</control>
+			</control>
+			<!-- ============================= -->
+			<!-- == Small Info Down 		 == -->
+			<!-- ============================= -->
+			<control type="grouplist">
+				<width>1700</width>
+				<top>45</top>
+				<height>25</height>
+				<itemgap>2</itemgap>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<top>45</top>
+					<width>auto</width>
+					<height>25</height>
+					<font>FontSize_18</font>
+					<textcolor>blue</textcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[Window.Property(TotalItems),, Items  • ]</label>
+				</control>	
+				<control type="label">
+					<top>45</top>
+					<width>auto</width>
+					<height>25</height>
+					<font>FontSize_18</font>
+					<textcolor>blue</textcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[Window.Property(CurrentPage),Page ,]$INFO[Window.Property(TotalPages), of ,  • ]</label>				
+				</control>	
+				<control type="label">
+					<top>45</top>
+					<width>auto</width>
+					<height>25</height>
+					<font>FontSize_18</font>
+					<textcolor>blue</textcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[Control.GetLabel(5001),,  • ]</label>
+				</control>	
+				<control type="label">
+					<top>45</top>
+					<width>auto</width>
+					<height>25</height>
+					<font>FontSize_18</font>
+					<textcolor>blue</textcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[Control.GetLabel(5004),,  • ]</label>
+				</control>	
+				<control type="label">
+					<top>45</top>
+					<width>auto</width>
+					<height>25</height>
+					<font>FontSize_18</font>
+					<textcolor>blue</textcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[Control.GetLabel(5007),,  • ]</label>
+				</control>	
+				<control type="label">
+					<top>45</top>
+					<width>auto</width>
+					<height>25</height>
+					<font>FontSize_18</font>
+					<textcolor>blue</textcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$ADDON[script.extendedinfo 32023]:</label>
+				</control>	
+				<control type="label">
+					<top>45</top>
+					<width>auto</width>
+					<height>25</height>
+					<font>FontSize_18</font>
+					<textcolor>blue</textcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label fallback="16018">$INFO[Window.Property(Filter_Label)]</label>
+				</control>	
+			</control>			
+		</control>
+
+		<!-- ============================= -->
+		<!-- == Video ListItem			 == -->
+		<!-- ============================= -->
+		<control type="group">
+			<include>ThumbnailsAnimations</include>
+			<include>DialogZoomInOutAnimation</include>
+			<control type="panel" id="500">
+				<left>40</left>
+				<top>95</top>
+				<height>495</height>
+				<width>1200</width>
+				<preloaditems>2</preloaditems>
+				<scrolltime tween="quadratic">300</scrolltime>
+				<onleft>9000</onleft>
+				<onright>500</onright>
+				<onup>700</onup>
+				<ondown>600</ondown>				
+				<orientation>vertical</orientation>
+				<itemlayout height="246" width="171">
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>163</width>
+						<height>238</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="31">views/other/panel.png</texture>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>230</height>
+						<aspectratio aligny="center" align="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_poster_tp.png">$INFO[ListItem.Art(poster)]</texture>
+						<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>230</height>
+						<texture background="true">overlays/unwatched/thumbs/UnWatched_Poster.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<bordersize>6</bordersize>
+						<visible>!IsEmpty(ListItem.Property(DBID))</visible>
+					</control>					
+				</itemlayout>
+				<focusedlayout height="246" width="171">
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>163</width>
+						<height>238</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="31">views/other/panel.png</texture>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>230</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_poster_tp.png">$INFO[ListItem.Art(poster)]</texture>
+						<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>230</height>
+						<texture background="true">overlays/unwatched/thumbs/UnWatched_Poster.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<bordersize>6</bordersize>
+						<visible>!IsEmpty(ListItem.Property(DBID))</visible>
+					</control>
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>163</width>
+						<height>238</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="31">views/other/focus_blue.png</texture>
+						<include>ThumbnailsFocusAnimation</include>
+					</control>					
+				</focusedlayout>
+			</control>
+			<!-- ============================= -->
+			<!-- == Bottom Info			 == -->
+			<!-- ============================= -->   
+			<control type="group">
+				<left>23</left>
+				<top>590</top>
+				<control type="label">
+					<left>24</left>
+					<top>0</top>
+					<height>30</height>
+					<width>900</width>
+					<textcolor>bbwhite</textcolor>
+					<shadowcolor>99000000</shadowcolor>
+					<font>FontSize_26B</font>
+					<scroll>false</scroll>
+					<align>left</align>
+					<label>$INFO[Container(500).ListItem.label]</label>										
+				</control>				
+				<!-- filter rules -->
+				<control type="grouplist">
+					<right>47</right>
+					<top>7</top>
+					<width>900</width>
+					<height>30</height>
+					<align>right</align>
+					<itemgap>7</itemgap>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<width>auto</width>
+						<height>20</height>                           
+						<textcolor>bbwhite</textcolor>
+						<shadowcolor>77000000</shadowcolor>
+						<font>FontSize_24B</font>
+						<scroll>false</scroll>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$ADDON[script.extendedinfo 32023]:</label>
+					</control>
+					<control type="label">
+						<width>auto</width>
+						<height>20</height>
+						<textcolor>bbwhite</textcolor>
+						<shadowcolor>77000000</shadowcolor>
+						<font>FontSize_24B</font>
+						<scroll>false</scroll>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label fallback="16018">$INFO[Window.Property(Filter_Label)]</label>
+					</control>
+				</control>				
+			</control>			           
+		</control>
+
+		<include>CommonDialogsFadeOutBG</include>			
+		<include>CommonWeatherAndClock</include>
+		<control type="button" id="600">
+			<onfocus>SetFocus(500)</onfocus>
+			<width>1</width>
+			<height>1</height>
+			<left>-7</left>
+		</control>
+		<control type="button" id="700">
+			<onfocus>SetFocus(500)</onfocus>
+			<width>1</width>
+			<height>1</height>
+			<left>-7</left>
+		</control> 
+
+		<!-- ============================= -->
+		<!-- == Menu					 == -->
+		<!-- ============================= -->
+		<control type="group">
+			<left>45</left>
+			<top>25</top>
+			<include>TopOptionsSlideAnimations</include>
+			<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus + [!Window.IsActive(ShutdownMenu) + !Window.IsActive(Playercontrols) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog) + !Window.IsActive(yesnodialog) + !Window.IsActive(selectdialog)]</visible>
+			<control type="grouplist" id="9000">
+				<top>25</top>
+				<left>0</left>
+				<width>460</width>
+				<height max="520">auto</height>
+				<itemgap>0</itemgap>
+				<onleft>500</onleft>
+				<onright>500</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<control type="button" id="5001">
+					<description>Sort by:</description>
+					<include>TopLeftMenusButton</include>
+					<label>$INFO[Window.Property(Sort_Label),$LOCALIZE[581]: ,]</label>
+				</control>
+				<control type="button" id="5004">
+					<description>Order by:</description>
+					<label>$INFO[Window.Property(Order_Label),$LOCALIZE[21429]: ,]</label>
+					<include>TopLeftMenusButton</include>
+				</control>
+				<control type="button" id="201">
+					<description>Filter Heading</description>
+					<label>587</label>
+					<enable>false</enable>
+					<disabledcolor>selected</disabledcolor>
+					<include>TopLeftMenusButtonNonListPoint</include>
+				</control>				
+				<control type="button" id="5007">
+					<description>Type</description>
+					<label>$INFO[Window.Property(Type),$LOCALIZE[146] ,]</label>
+					<include>TopLeftMenusButton</include>
+				</control>				
+				<control type="button" id="5002">
+					<description>Genre</description>
+					<label>515</label>
+					<include>TopLeftMenusButton</include>
+				</control>				
+				<control type="button" id="5003">
+					<description>Release Date</description>
+					<label>172</label>
+					<include>TopLeftMenusButton</include>
+				</control>				
+				<control type="button" id="5006">
+					<description>Certification</description>
+					<label>$ADDON[script.extendedinfo 32127]</label>
+					<include>TopLeftMenusButton</include>
+				</control>			
+				<control type="button" id="5008">
+					<description>Actor/Crew</description>
+					<label>$LOCALIZE[20337] / $ADDON[script.extendedinfo 32115]</label>
+					<include>TopLeftMenusButton</include>
+				</control>		
+				<control type="button" id="5009">
+					<description>Keywords</description>
+					<label>21861</label>
+					<include>TopLeftMenusButton</include>
+				</control>		
+				<control type="button" id="5010">
+					<description>Studio</description>
+					<label>572</label>
+					<include>TopLeftMenusButton</include>
+				</control>
+				<control type="button" id="202">
+					<description>Misc Options Heading</description>
+					<label>31069</label>
+					<enable>false</enable>
+					<disabledcolor>selected</disabledcolor>
+					<include>TopLeftMenusButtonNonListPoint</include>
+				</control>		
+				<control type="button" id="6000">
+					<description>Search</description>
+					<label>137</label>
+					<include>TopLeftMenusButton</include>
+				</control>	
+				<control type="button" id="5005">
+					<description>Clear Filter</description>
+					<label>$ADDON[script.extendedinfo 32022]</label>
+					<include>TopLeftMenusButton</include>
+				</control>
+				<control type="button" id="7000">
+					<description>My Account</description>
+					<label>$ADDON[script.extendedinfo 32024]</label>
+					<include>TopLeftMenusButton</include>
+				</control>
+			</control>
+
+			<!-- ================ -->
+			<!-- Top Content Info -->
+			<!-- ================ -->
+			<control type="grouplist">
+				<left>0</left>
+				<top>-25</top>
+				<height>70</height>
+				<width>1000</width>
+				<align>left</align>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<include>TopBigLabel</include>
+					<label>$LOCALIZE[33061]</label>
+				</control>
+			</control>
+		</control>		
+	</controls>
+</window>
