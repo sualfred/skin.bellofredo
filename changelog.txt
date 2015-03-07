@@ -1,3 +1,9 @@
+[B][COLOR=FF56ADDA]v4.0.8b[/COLOR][/B]
+• Fix: Some widget background conditions
+• Changed: Converted complete media folder to the Kodi texture package
+• Fix: Animation of landscape container in ExtendedInfo Dialogs
+• Reverted: Kodi Intro is not enabled by default anymore because of Kodi 15.x stability issues. Can be enabled through skin settings.
+• Fix: Wrong addon requirement
 
 [B][COLOR=FF56ADDA]v4.0.8[/COLOR][/B]
 • ExtendedInfo: Added video list support of the addon
