@@ -1316,17 +1316,22 @@
 	<variable name="QuickNavWidgetFanart">
 		<value condition="[Control.HasFocus(25) | Control.HasFocus(250)] + !IsEmpty(Container(250).ListItem.Art(fanart))">$INFO[Container(250).ListItem.Art(fanart)]</value>
 		<value condition="[Control.HasFocus(25) | Control.HasFocus(250)] + !IsEmpty(Container(250).ListItem.Property(FanartImage))">$INFO[Container(250).ListItem.Property(FanartImage)]</value>
+		<value condition="[Control.HasFocus(25) | Control.HasFocus(250)] + IsEmpty(Container(250).ListItem.Art(fanart)) + IsEmpty(Container(250).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>
 		<value condition="[Control.HasFocus(35) | Control.HasFocus(350)] + !IsEmpty(Container(350).ListItem.Art(fanart))">$INFO[Container(350).ListItem.Art(fanart)]</value>
 		<value condition="[Control.HasFocus(35) | Control.HasFocus(350)] + !IsEmpty(Container(350).ListItem.Property(FanartImage))">$INFO[Container(350).ListItem.Property(FanartImage)]</value>
+		<value condition="[Control.HasFocus(35) | Control.HasFocus(350)] + IsEmpty(Container(350).ListItem.Art(fanart)) + IsEmpty(Container(350).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + !IsEmpty(Container(450).ListItem.Art(fanart))">$INFO[Container(450).ListItem.Art(fanart)]</value>
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + !IsEmpty(Container(450).ListItem.Property(FanartImage))">$INFO[Container(450).ListItem.Property(FanartImage)]</value>
+		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + IsEmpty(Container(450).ListItem.Art(fanart)) + IsEmpty(Container(450).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>
 		<value condition="[Control.HasFocus(65) | Control.HasFocus(650)] + !IsEmpty(Container(650).ListItem.Art(fanart))">$INFO[Container(650).ListItem.Art(fanart)]</value>
 		<value condition="[Control.HasFocus(65) | Control.HasFocus(650)] + !IsEmpty(Container(650).ListItem.Property(FanartImage))">$INFO[Container(650).ListItem.Property(FanartImage)]</value>    
 		<value condition="Control.HasFocus(651) + !IsEmpty(Container(651).ListItem.Art(fanart))">$INFO[Container(651).ListItem.Art(fanart)]</value>
 		<value condition="Control.HasFocus(651) + !IsEmpty(Container(651).ListItem.Property(FanartImage))">$INFO[Container(651).ListItem.Property(FanartImage)]</value>
+		<value condition="Control.HasFocus(651) + IsEmpty(Container(651).ListItem.Art(fanart)) + IsEmpty(Container(651).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>		
 		<value condition="Control.HasFocus(652) + !IsEmpty(Container(652).ListItem.Art(fanart))">$INFO[Container(652).ListItem.Art(fanart)]</value>
 		<value condition="Control.HasFocus(652) + !IsEmpty(Container(652).ListItem.Property(FanartImage))">$INFO[Container(652).ListItem.Property(FanartImage)]</value>
-		<value>special://skin/extras/backgrounds/SKINDEFAULT.jpg</value>
+		<value condition="Control.HasFocus(652) + IsEmpty(Container(652).ListItem.Art(fanart)) + IsEmpty(Container(652).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>
+
 	</variable>
 
 	<variable name="CustomDialogOKHeadLabel">

@@ -471,6 +471,7 @@
 					<onright>350</onright>
 					<onup>9000</onup>
 					<ondown>Action(select)</ondown>
+					<preloaditems>2</preloaditems>
 					<visible>StringCompare(Window.Property(switchcontent),3)</visible>
 					<itemlayout width="296" height="250">
 						<control type="group">
