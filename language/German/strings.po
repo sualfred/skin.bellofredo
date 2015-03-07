@@ -77,7 +77,7 @@ msgid "Enable Home Menu Animation"
 msgstr "Hauptmenüanimation aktivieren"
 
 msgctxt "#31014"
-msgid "Disable Startup Intro Video"
+msgid "Enable Startup Intro Video"
 msgstr "Deaktiviere Intro Video"
 
 msgctxt "#31016"

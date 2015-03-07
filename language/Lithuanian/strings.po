@@ -77,7 +77,7 @@ msgstr "Įjungti pagrindinio meniu animaciją"
 
 msgctxt "#31014"
 msgid "Disable Startup Intro Video"
-msgstr "Išjungti Įžanginį vaizdo įrašą"
+msgstr "Įžanginį vaizdo įrašą"
 
 msgctxt "#31016"
 msgid "File Manager"

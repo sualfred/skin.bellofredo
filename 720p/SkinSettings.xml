@@ -149,8 +149,8 @@
 						<control type="radiobutton" id="8109">
 							<include>SettingsRadioButton</include>
 							<label>31014</label>
-							<onclick>Skin.ToggleSetting(KodiIntro.disabled)</onclick>
-							<selected>Skin.HasSetting(KodiIntro.disabled)</selected>
+							<onclick>Skin.ToggleSetting(KodiIntro.enabled)</onclick>
+							<selected>Skin.HasSetting(KodiIntro.enabled)</selected>
 						</control>
 						<control type="radiobutton" id="8101">
 							<include>SettingsRadioButton</include>

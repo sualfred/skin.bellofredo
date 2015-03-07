@@ -17,7 +17,7 @@
 		<import addon="script.cinema.experience" version="4.0.10" />
 		<import addon="script.playalbum" version="2.0.1" />
 		<import addon="weather.openweathermap.extended" version="1.0.1" />
-		<import addon="plugin.audio.radiotunes.com" version="2.1.0" />
+		<import addon="plugin.audio.tuneinradio" version="2.1.0" />
 	</requires>
 	<extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="0.75" debugging="false">
 	    <res width="1280" height="720" aspect="16:9" default="true" folder="720p"/>
