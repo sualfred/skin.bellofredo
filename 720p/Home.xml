@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window  id="0">
 	<defaultcontrol always="true">20</defaultcontrol>	
-	<onload condition="!Skin.HasSetting(BelloFredoFirstRun)">ActivateWindow(startup)</onload>	
+	<onload condition="!Skin.HasSetting(BelloFredoFirstRun)">ActivateWindow(startup)</onload>
+	<onload>Dialog.Close(movieinformation)</onload>
+	<onload>Dialog.Close(musicinformation)</onload>
+	<onload>Dialog.Close(pvrguideinfo)</onload>
+	<onload>Dialog.Close(pvrrecordinginfo)</onload>
+	<onload>Dialog.Close(addoninformation)</onload>
+	<onload>Dialog.Close(songinformation)</onload>
+	<onload>Dialog.Close(pictureinfo)</onload>
 	<onload>SetProperty(RefreshList,1,Home)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=20&amp;group=mainmenu|widgetgroup1|widgetgroup2|widgetgroup3|widgetgroup4)</onload>
   <allowoverlay>yes</allowoverlay>

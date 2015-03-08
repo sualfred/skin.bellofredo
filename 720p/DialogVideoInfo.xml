@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window  id="2003">
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<allowoverlay>yes</allowoverlay>	
-	<visible>!Window.IsActive(home)</visible>
+	<allowoverlay>yes</allowoverlay>
 	<controls>
 
 		<control type="group">
