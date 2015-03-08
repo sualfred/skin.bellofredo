@@ -786,7 +786,7 @@
 			</control>
 			<control type="fixedlist" id="651">	
 				<include>WidgetSquareLayout</include>
-				<content target="music">$INFO[Container(20).ListItem.Property(widgetPlaylist)]</content>
+				<content target="music">$VAR[QuickNav_WidgetListContentPlaylists]</content>
 			</control>
 			<include>WidgetBottomLabels</include>
 		</control>
@@ -831,7 +831,7 @@
 			</control>
 			<control type="fixedlist" id="652">	
 				<include>WidgetPosterLayout</include>
-				<content target="videos">$INFO[Container(20).ListItem.Property(widgetPlaylist)]</content>
+				<content target="videos">$VAR[QuickNav_WidgetListContentPlaylists]</content>
 			</control>
 			<include>WidgetBottomLabels</include>
 		</control>

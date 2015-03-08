@@ -1813,6 +1813,9 @@
 		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">plugin://plugin.audio.tuneinradio/?path=browse&amp;id=presets</value>
 		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">plugin://plugin.audio.tuneinradio/?path=browse&amp;c=local</value>
 	</variable>
+	<variable name="QuickNav_WidgetListContentPlaylists">
+		<value condition="!Window.IsVisible(3050)">$INFO[Container(20).ListItem.Property(widgetPlaylist)]</value>
+	</variable>
 
 	<variable name="RSSVideoFeedURL">
 		<value condition="stringcompare(Skin.String(RSSVideoFeedURL),Euronews)">Euronews</value>
