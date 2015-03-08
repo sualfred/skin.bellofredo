@@ -2,11 +2,12 @@
 <window  id="2901">
 	<onload condition="!VideoPlayer.Content(LiveTV)">SetFocus(103)</onload>
 	<onload condition="VideoPlayer.Content(LiveTV)">SetFocus(109)</onload>
+	
 	<onunload>ClearProperty(ShowPlot,VideoOSD)</onunload>
 	<controls>
 		<control type="group">
 			<visible>Player.HasVideo</visible>
-			<visible>!Window.IsActive(SliderDialog) + !Window.IsActive(OSDVideoSettings) + !Window.IsActive(OSDAudioSettings) + !Window.IsActive(VideoBookmarks) + !Window.IsActive(SelectDialog) + !Window.IsActive(SubtitleSearch) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites) + !Window.IsActive(NumericInput) + !Window.IsActive(PVROSDChannels) + !Window.IsActive(PVROSDGuide)</visible>
+			<visible>!Window.IsActive(SliderDialog) + !Window.IsActive(OSDVideoSettings) + !Window.IsActive(OSDAudioSettings) + !Window.IsActive(VideoBookmarks) + !Window.IsActive(SelectDialog) + !Window.IsActive(SubtitleSearch) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites) + !Window.IsActive(NumericInput) + !Window.IsActive(PVROSDChannels) + !Window.IsActive(PVROSDGuide) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<animation type="WindowOpen" reversible="false">
 				<effect type="slide" start="150,0" end="0,0" time="450" delay="0" tween="sine" easing="out" />
 				<effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="out" />
@@ -180,7 +181,7 @@
 		<top>25</top>
 		<include>OSDSlideAnimations</include>
 		<visible>Window.IsActive(VideoOSD)</visible>
-		<visible>Player.HasVideo + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites) + !Window.IsActive(NumericInput) + !Window.IsActive(SliderDialog) + !Window.IsActive(videobookmarks) + !Window.IsActive(PVROSDChannels) + !Window.IsActive(PVROSDGuide)</visible>
+		<visible>Player.HasVideo + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites) + !Window.IsActive(NumericInput) + !Window.IsActive(SliderDialog) + !Window.IsActive(videobookmarks) + !Window.IsActive(PVROSDChannels) + !Window.IsActive(PVROSDGuide) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 		<control type="grouplist">
 			<left>0</left>
 			<top>0</top>
@@ -248,6 +249,14 @@
 				<animation effect="zoom"  start="100" end="90" time="200" tween="cubic" easing="in" center="auto" condition="!Control.HasFocus(1007)" reversible="true">Conditional</animation>
 				<visible>VideoPlayer.Content(LiveTV)</visible>
 			</control>
+			<control type="label">
+				<description>ExtendedInfo</description>
+				<include>TopSmallLabel</include>
+				<label>$INFO[Control.GetLabel(1008)]</label>
+				<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="in" condition="!Control.HasFocus(1008)" reversible="true">Conditional</animation>
+				<animation effect="zoom"  start="100" end="90" time="200" tween="cubic" easing="in" center="auto" condition="!Control.HasFocus(1008)" reversible="true">Conditional</animation>
+				<visible>VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)</visible>
+			</control>
 		</control>
 		<control type="grouplist" id="1000">
 			<left>0</left>
@@ -308,6 +317,14 @@
 				<onclick>ActivateWindow(Teletext)</onclick>
 				<visible>VideoPlayer.Content(LiveTV)</visible>
 			</control>
+			<control type="button" id="1008">
+				<description>Teletext</description>
+				<include>TopButton</include>
+				<label>$LOCALIZE[31068]</label>
+				<onclick condition="VideoPlayer.Content(Movies)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[VideoPlayer.Title])</onclick>				
+				<onclick condition="VideoPlayer.Content(Episodes)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[VideoPlayer.TVShowTitle])</onclick>
+				<visible>VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)</visible>
+			</control>
 		</control>
 	</control>
 
@@ -316,7 +333,7 @@
 		<top>445</top>
 		<include>OSDPlotAnimation</include>
 		<visible>Window.IsActive(VideoOSD)</visible>
-		<visible>![Window.IsActive(ShutdownMenu) | Window.IsActive(favourites) | IsEmpty(VideoPlayer.Plot)] + Control.HasFocus(200)</visible>
+		<visible>![Window.IsActive(ShutdownMenu) | Window.IsActive(favourites) | IsEmpty(VideoPlayer.Plot)] + Control.HasFocus(200) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 		<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] | SubString(Player.Filenameandpath,rtmp://) | SubString(Player.Filenameandpath,http)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="-75,0" condition="VideoPlayer.Content(LiveTV)">Conditional</animation>
 		<control type="label">

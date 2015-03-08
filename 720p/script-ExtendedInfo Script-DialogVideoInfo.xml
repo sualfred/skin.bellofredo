@@ -60,11 +60,11 @@
 				<include>hiddenlist</include>
 			</control>		
 		</control>
-
+		
 		<control type="image">
 			<description>background</description>
 			<include>FullscreenDimensions</include>
-			<texture background="true">$INFO[Window.Property(movie.ImageFilter)]</texture>
+			<texture background="true">special://skin/extras/backgrounds/SKINDEFAULT.jpg</texture>
 			<include>BackgroundFade</include>	
 		</control>
 		<control type="image">

@@ -222,6 +222,10 @@ msgstr "Bearbeite das Submenü von"
 
 #: empty strings from id 31051 to 31069 extendedInfoLabels
 msgctxt "#31070"
+msgid "Online Video Information"
+msgstr "Online Video Informationen"
+
+msgctxt "#31070"
 msgid "Video Info"
 msgstr "Video Info"
 

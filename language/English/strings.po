@@ -218,8 +218,12 @@ msgctxt "#31050"
 msgid "Manage Sub Menu of"
 msgstr ""
 
-#: empty strings from id 31051 to 31068
+#: empty strings from id 31051 to 31067
 #: extendedInfoLabels
+
+msgctxt "#31068"
+msgid "Online Video Information"
+msgstr ""
 
 msgctxt "#31069"
 msgid "Misc"
