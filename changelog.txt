@@ -1,4 +1,9 @@
 [B][COLOR=FF56ADDA]v4.0.9a[/COLOR][/B]
+• Fixed: Overlapping issues with info dialogs and Home, if the startscreen is accessed directly with an keymapping/remote
+• Fixed: ExtendedInfo for TV shows
+• Added: ExtendedInfo on the VideoOSD top panel
+
+[B][COLOR=FF56ADDA]v4.0.9a[/COLOR][/B]
 • Added: Library update button on home
 • Improved: VideoOSD artwork detection
 • Improved: Now playing labels based on conditions (stream, local, etc)
