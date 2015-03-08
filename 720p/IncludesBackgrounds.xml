@@ -204,9 +204,23 @@
 			<include>FanartFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>![[Control.IsVisible(55) | Control.IsVisible(59)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580)</visible>
+			<visible>![[Control.IsVisible(55) | Control.IsVisible(59)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + IsEmpty(Control.GetLabel(5901))</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>
+		<control type="multiimage" id="5901">
+			<description>Fanart extrafanart</description>
+			<include>FullscreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<randomize>true</randomize>
+			<timeperimage>5000</timeperimage>
+			<fadetime>650</fadetime>
+			<imagepath background="true">$INFO[ListItem.Path,,/extrafanart/]</imagepath>
+			<include>FanartFade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<visible>!Skin.HasSetting(HideBGFanart)</visible>
+			<visible>![[Control.IsVisible(55) | Control.IsVisible(59)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + Skin.HasSetting(ViewsExtraFanart)</visible>
+			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
+		</control>	
 		<control type="image">
 			<include>NetFilx Fanart Transparency</include>
 			<texture background="true">special://skin/extras/backgrounds/SKINDEFAULT.jpg</texture>
@@ -235,7 +249,24 @@
 			<include>FanartFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>[Control.IsVisible(59) + !Window.IsActive(movieinformation)]</visible>
+			<visible>[Control.IsVisible(59) + !Window.IsActive(movieinformation) + IsEmpty(Control.GetLabel(5900))]</visible>
+			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
+		</control>	
+		<control type="multiimage" id="5900">
+			<description>NetFilx Fanart extrafanart</description>
+			<left>340</left>
+			<top>0</top>
+			<width>940</width>
+			<height>550</height>
+			<aspectratio>scale</aspectratio>
+			<randomize>true</randomize>
+			<timeperimage>5000</timeperimage>
+			<fadetime>650</fadetime>
+			<imagepath background="true" diffuse="views/netfilx/fanart_diffuse.png">$INFO[ListItem.Path,,/extrafanart/]</imagepath>
+			<include>FanartFade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<visible>!Skin.HasSetting(HideBGFanart)</visible>
+			<visible>[Control.IsVisible(59) + !Window.IsActive(movieinformation)] + Skin.HasSetting(ViewsExtraFanart)</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>		
 		<control type="image">

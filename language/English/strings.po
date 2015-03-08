@@ -218,7 +218,11 @@ msgctxt "#31050"
 msgid "Manage Sub Menu of"
 msgstr ""
 
-#: empty strings from id 31051 to 31067
+msgctxt "#31051"
+msgid "Use Extra-Fanarts"
+msgstr ""
+
+#: empty strings from id 31052 to 31067
 #: extendedInfoLabels
 
 msgctxt "#31068"

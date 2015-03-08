@@ -446,12 +446,19 @@
 						<onleft>8800</onleft>
 						<onright>9000</onright>
 						<onup>8400</onup>
-						<ondown>8400</ondown>
+						<ondown>8400</ondown>						
 						<control type="radiobutton" id="8401">
 							<include>SettingsRadioButton</include>
 							<label>31130</label>
 							<onclick>Skin.ToggleSetting(HideBGFanart)</onclick>
 							<selected>Skin.HasSetting(HideBGFanart)</selected>
+						</control>						
+						<control type="radiobutton" id="8407">
+							<include>SettingsRadioButton</include>
+							<label>31051</label>
+							<onclick>Skin.ToggleSetting(ViewsExtraFanart)</onclick>
+							<selected>Skin.HasSetting(ViewsExtraFanart)</selected>
+							<enable>!Skin.HasSetting(HideBGFanart)</enable>
 						</control>
 						<control type="radiobutton" id="8402">
 							<include>SettingsRadioButton</include>
