@@ -68,7 +68,8 @@
 				</animation>
 				<!-- Movies/Episodes Cover -->
 				<control type="group" id="1">
-					<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + !SubString(Player.Filenameandpath,rtmp://) + !SubString(Player.Filenameandpath,http)</visible>
+					<!--<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + !SubString(Player.Filenameandpath,rtmp://) + !SubString(Player.Filenameandpath,http)</visible>-->
+					<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
 					<control type="image" id="1">
 						<left>10</left>
 						<top>10</top>
@@ -142,7 +143,8 @@
 				<!-- Videos -->
 				<control type="group" id="1">
 					<top>60</top>
-					<visible>[!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(LiveTV)] | SubString(Player.Filenameandpath,rtmp://) | SubString(Player.Filenameandpath,http)</visible>
+					<!--<visible>[!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(LiveTV)] | SubString(Player.Filenameandpath,rtmp://) | SubString(Player.Filenameandpath,http)</visible>-->
+					<visible>[!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(LiveTV)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)]</visible>
 					<control type="image" id="1">
 						<left>8</left>
 						<top>8</top>
@@ -306,7 +308,8 @@
 					<include>OSDPlotAnimation</include>
 					<visible>[IsEmpty(Window(VideoOSD).Property(ShowPlot)) | IsEmpty(VideoPlayer.Plot)]</visible>
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
-					<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] | SubString(Player.Filenameandpath,rtmp://) | SubString(Player.Filenameandpath,http)">Conditional</animation>
+					<!--<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] | SubString(Player.Filenameandpath,rtmp://) | SubString(Player.Filenameandpath,http)">Conditional</animation>-->
+					<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)]">Conditional</animation>
 					<control type="label" id="1">
 						<description>Title label</description>
 						<left>0</left>
@@ -431,7 +434,8 @@
 					<top>240</top>
 					<include>OSDPlotAnimation</include>
 					<visible>[IsEmpty(Window(VideoOSD).Property(ShowPlot)) | IsEmpty(VideoPlayer.Plot)]</visible>					
-					<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(LiveTV)] | SubString(Player.Filenameandpath,rtmp://) | SubString(Player.Filenameandpath,http)">Conditional</animation>
+					<!--<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(LiveTV)] | SubString(Player.Filenameandpath,rtmp://) | SubString(Player.Filenameandpath,http)">Conditional</animation>-->
+					<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(LiveTV)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)]">Conditional</animation>
 					<animation effect="slide" start="0,0" end="15,0" condition="VideoPlayer.Content(LiveTV)">Conditional</animation>
 					<control type="label" id="1">
 						<left>367</left>
