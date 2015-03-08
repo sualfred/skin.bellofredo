@@ -972,9 +972,9 @@
 					<shadowcolor>77000000</shadowcolor>
 				</control>				
 				<control type="group">
-					<left>500</left>
+					<left>500</left>					
 					<include>KaiToastSlideAnimations</include>
-					<include>ScanSlideAnimations</include>					
+					<include>ScanSlideAnimations</include>				
 					<control type="group">
 						<animation type="Conditional" reversible="false" condition="MusicPlayer.HasNext" loop="true">
 							<effect type="fade" start="0" end="100" time="500" delay="0" />
@@ -998,7 +998,7 @@
 							<top>20</top>
 							<width>540</width>
 							<height>35</height>
-							<label>$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Title, · ] $INFO[MusicPlayer.Album, (,) ]</label>
+							<label>$VAR[NowPlayingInfoLabels]</label>
 							<align>left</align>
 							<aligny>center</aligny>
 							<font>NotificationsFont</font>
@@ -1064,7 +1064,7 @@
 				<control type="group">
 					<left>500</left>
 					<include>KaiToastSlideAnimations</include>
-					<include>ScanSlideAnimations</include>										
+					<include>ScanSlideAnimations</include>
 					<control type="label">
 						<left>0</left>
 						<top>0</top>
@@ -1116,7 +1116,7 @@
 				<control type="group">
 					<left>500</left>
 					<include>KaiToastSlideAnimations</include>
-					<include>ScanSlideAnimations</include>										
+					<include>ScanSlideAnimations</include>				
 					<control type="group">
 						<animation type="Conditional" reversible="false" condition="Pvr.IsPlayingTv" loop="true">
 							<effect type="fade" start="0" end="100" time="500" delay="0" />
@@ -1241,7 +1241,7 @@
 							<top>20</top>
 							<width>540</width>
 							<height>35</height>
-							<label>$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Title, · ] $INFO[MusicPlayer.Album, (,) ]</label>
+							<label>$VAR[NowPlayingInfoLabels]</label>
 							<align>left</align>
 							<aligny>center</aligny>
 							<font>NotificationsFont</font>
@@ -2055,11 +2055,12 @@
 	</variable>
 
 	<variable name="NowPlayingInfoLabels">	
+		<value condition="Player.HasAudio + Player.IsInternetStream">$INFO[MusicPlayer.Title]</value>
+		<value condition="Player.HasAudio + !Player.IsInternetStream">$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Title, · ] $INFO[MusicPlayer.Album, (,) ]</value>
 		<value condition="Player.IsInternetStream + !IsEmpty(VideoPlayer.TVShowTitle)">$INFO[VideoPlayer.TVShowTitle,, · ]$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E, · ]$INFO[VideoPlayer.Title]</value>
-		<value condition="Player.IsInternetStream">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Genre, (,) ]</value>	
+		<value condition="Player.HasVideo + Player.IsInternetStream">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Genre, (,) ]</value>	
 		<value condition="VideoPlayer.Content(Movies)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,) ]</value>
 		<value condition="VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.TVShowTitle,, · ]$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E, · ]$INFO[VideoPlayer.Title]</value>
-
 	</variable>
 
 	<variable name="OSDInfoUnderTitleLabel">

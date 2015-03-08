@@ -648,7 +648,7 @@
 							<shadowcolor>99000000</shadowcolor>
 							<font>FontSize_38</font>
 							<align>left</align>
-							<label>$INFO[ListItem.label]</label>
+							<label>$INFO[ListItem.Label]</label>
 							<animation effect="slide" start="0,0" end="0,-228" time="250" tween="sine" easing="inout" condition="Control.HasFocus(100)">Conditional</animation>
 						</control>
 						<!-- Small Down Info -->
@@ -875,7 +875,7 @@
 						<angle>90</angle>
 						<align>left</align>
 						<aligny>top</aligny>
-						<label>$INFO[ListItem.label]</label>
+						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="695" height="380">
@@ -953,7 +953,7 @@
 							<shadowcolor>99000000</shadowcolor>
 							<font>FontSize_38</font>
 							<align>left</align>
-							<label>$INFO[ListItem.label]</label>
+							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<!-- Small Down Info -->
 						<control type="group">
@@ -2190,7 +2190,7 @@
 				<pauseatend>2000</pauseatend>
 				<scrollspeed>30</scrollspeed>
 				<align>center</align>
-				<label>$INFO[ListItem.label]</label>
+				<label>$INFO[ListItem.Label]</label>
 				<visible>!Stringcompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="wraplist" id="55">
@@ -2680,7 +2680,7 @@
 					<font>FontSize_26B</font>
 					<scroll>false</scroll>
 					<align>left</align>
-					<label>$INFO[ListItem.label]</label>
+					<label>$INFO[ListItem.Label]</label>
 				</control>
 				<!-- Small Down Info -->
 				<control type="group">
@@ -2871,7 +2871,7 @@
 					<font>FontSize_26B</font>
 					<scroll>false</scroll>
 					<align>left</align>
-					<label>$INFO[ListItem.label]</label>
+					<label>$INFO[ListItem.Label]</label>
 					<visible>!Stringcompare(ListItem.Label,..)</visible>
 				</control>
 				<!-- Small Down Info -->
@@ -3523,7 +3523,7 @@
 				<font>FontSize_38</font>
 				<scroll>false</scroll>
 				<align>left</align>
-				<label>$VAR[ListItem.label]</label>
+				<label>$VAR[ListItem.Label]</label>
 			</control>
 			<control type="image">
 				<left>21</left>
@@ -3717,7 +3717,7 @@
 				<font>FontSize_38</font>
 				<scroll>false</scroll>
 				<align>left</align>
-				<label>$VAR[ListItem.label]</label>
+				<label>$VAR[ListItem.Label]</label>
 			</control>
 			<control type="image">
 				<left>21</left>
@@ -4028,7 +4028,7 @@
 					<font>FontSize_50B</font>
 					<scroll>false</scroll>
 					<align>left</align>
-					<label>$VAR[ListItem.label]</label>
+					<label>$VAR[ListItem.Label]</label>
 					<visible>![Skin.HasSetting(ShowLogoAsTtile) + ![IsEmpty(ListItem.Art(clearlogo)) | Substring(ListItem.Path,videodb://movies/sets/,left)]] + !stringcompare(ListItem.Label,..)</visible>
 				</control>
 				<!-- Sublabel Info -->
