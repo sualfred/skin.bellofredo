@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <colors>
-	<color name="white">FFF1F1F1</color>
-	<color name="grey">FFb4b4b4</color>
-	<color name="grey2">FF999999</color>
-	<color name="grey3">FF505050</color>
-	<color name="black">FF000000</color>
+	<!--colors for theming-->
 	<color name="red">FFCE2221</color>
 	<color name="blue">FF04AEDA</color>
 	<color name="blue1">FF56ADDA</color>
@@ -16,9 +12,15 @@
 	<color name="purple1">FFBB19B9</color>
 	<color name="selected">FF04AEDA</color>
 	<color name="invalid">FFCE2221</color>
+	<!--other values-->		
 	<color name="osdinfo">FFd0d0d0</color>
-  <color name="OSDColorsDiffuse">BBFFFFFF</color>  
-  <color name="FanartDiffuse">22FFFFFF</color>
+	<color name="white">FFF1F1F1</color>
+	<color name="grey">FFb4b4b4</color>
+	<color name="grey2">FF999999</color>
+	<color name="grey3">FF505050</color>
+	<color name="black">FF000000</color>	
+    <color name="OSDColorsDiffuse">BBFFFFFF</color>  
+    <color name="FanartDiffuse">22FFFFFF</color>
 	<color name="33white">33FFFFFF</color>
 	<color name="44white">44FFFFFF</color>
 	<color name="55white">55FFFFFF</color>
