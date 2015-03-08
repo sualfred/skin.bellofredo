@@ -1,3 +1,9 @@
+[B][COLOR=FF56ADDA]v4.0.9a[/COLOR][/B]
+• Added: Library update button on home
+• Improved: VideoOSD artwork detection
+• Improved: Now playing labels based on conditions (stream, local, etc)
+• Fixed: Content refresh issues of some widget variants (eg: playlists, recently played albums)
+
 [B][COLOR=FF56ADDA]v4.0.9[/COLOR][/B]
 • Added: "Currently playing..." covers on home screen (can be deactivated)
 • Removed: "Hide now playing video/music" options from settings. They had no function O_o
