@@ -894,7 +894,7 @@
 			</control>
 		</control>	
 		<!-- labels -->
-		<control type="group">
+		<control type="group" id="30">
 			<left>45</left>
 			<top>640</top>
 			<!-- Movies and episodes -->			
@@ -1806,12 +1806,12 @@
 		<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window(Home).Property(recommendedalbums)]</value>
 		<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),3)">plugin://service.library.data.provider?type=randomalbums&amp;reload=$INFO[Window(Home).Property(randomalbums)]</value>
 		<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">plugin://script.extendedinfo?info=topartists&amp;&amp;limit=20</value>
-		<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5)">musicdb://recentlyplayedalbums/</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMusicType),5)">musicdb://recentlyplayedalbums/</value>
 	</variable>
 	<variable name="QuickNav_WidgetListContentTuneIn">
-		<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">plugin://plugin.audio.tuneinradio/?path=recents</value>
-		<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">plugin://plugin.audio.tuneinradio/?path=browse&amp;id=presets</value>
-		<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">plugin://plugin.audio.tuneinradio/?path=browse&amp;c=local</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">plugin://plugin.audio.tuneinradio/?path=recents</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">plugin://plugin.audio.tuneinradio/?path=browse&amp;id=presets</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">plugin://plugin.audio.tuneinradio/?path=browse&amp;c=local</value>
 	</variable>
 
 	<variable name="RSSVideoFeedURL">

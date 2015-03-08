@@ -38,7 +38,7 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>Temporary Info Test: $INFO[ListItem.Label2]</label>				
+				<label>Temporary Info Test: $INFO[Window(Home).Property(RefreshInfo)]</label>				
 			</control>
 			
 			<control type="label">

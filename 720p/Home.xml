@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window  id="0">
 	<defaultcontrol always="true">20</defaultcontrol>	
-	<onload condition="!Skin.HasSetting(BelloFredoFirstRun)">ActivateWindow(startup)</onload>
+	<onload condition="!Skin.HasSetting(BelloFredoFirstRun)">ActivateWindow(startup)</onload>	
 	<onload>SetProperty(RefreshList,1,Home)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=20&amp;group=mainmenu|widgetgroup1|widgetgroup2|widgetgroup3|widgetgroup4)</onload>
   <allowoverlay>yes</allowoverlay>
   <backgroundcolor>0</backgroundcolor>
 	<controls>		
 		<include>BackgroundContent</include>
-		<include>BackgroundVignette</include>		
+		<include>BackgroundVignette</include>			
 		<control type="group">
 			<animation type="Conditional" condition="Window.Previous(startup) + Skin.HasSetting(KodiIntro.enabled) + !Skin.HasSetting(Use_Startup_Playlist)" reversible="false">
 				<effect type="fade" start="0" end="100" time="1000" delay="10500" tween="sine" easing="in"  />					
