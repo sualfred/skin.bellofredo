@@ -102,7 +102,7 @@
 					<control type="label">
 						<description>Title</description>					
 						<posy>0</posy>
-						<width max="800">auto</width>
+						<width max="740">auto</width>
 						<height>45</height>
 						<font>FontSize_40</font>
 						<label>$INFO[Window.Property(movie.title)]</label>						
