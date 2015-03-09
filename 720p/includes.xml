@@ -1715,9 +1715,11 @@
 			</control>
 		</control>
 	</include>
-	
-	
-	
+			
+	<variable name="ExtendedInfoPlot">
+		<value condition="IsEmpty(Window.Property(movie.Plot))">No plot information available...</value>
+		<value>[COLOR=selected]$INFO[Window.Property(movie.TagLine),, ][/COLOR]$INFO[Window.Property(movie.Plot)]</value>
+	</variable>
 	
 	<variable name="MenuGroupHeader">
 		<value condition="!StringCompare(Window.Property(groupname),mainmenu) + !IsEmpty(Window.Property(groupDisplayName))">$LOCALIZE[31050] $INFO[Window.Property(groupDisplayName),","]</value>			
