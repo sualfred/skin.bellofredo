@@ -475,7 +475,6 @@
 							<scroll>true</scroll>
 							<scrolltime>50</scrolltime>
 							<visible>!IsEmpty(Window.Property(movie.omdb.tomatoConsensus))</visible>
-							<include>VisibleFadeEffect</include>
 						</control>
 						<control type="label">
 							<top>25</top>
