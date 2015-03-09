@@ -1,34 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window  id="3000">
-	<defaultcontrol always="true">9000</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
-	<includes>
-		<include name="hiddenlist">
-			<description>container</description>
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>1</width>
-			<height>1</height>
-			<onleft>9000</onleft>
-			<onright>9000</onright>
-			<onup>9000</onup>
-			<ondown>9000</ondown>
-			<viewtype label="Actor">list</viewtype>
-			<pagecontrol>-</pagecontrol>
-			<itemlayout height="1" width="1" />
-			<focusedlayout height="1" width="1" />
-		</include>
-	</includes>
+	<defaultcontrol always="true">8000</defaultcontrol>
+	<allowoverlay>no</allowoverlay>		
+	
 	<controls>
 		<control type="group">
 			<description>addon required lists</description>
-			<visible>false</visible>							
-			<control type="list" id="150">
-				<include>hiddenlist</include>
-			</control>
-			<control type="list" id="250">
-				<include>hiddenlist</include>
-			</control>
+			<visible>false</visible>
 			<control type="list" id="1150">
 				<include>hiddenlist</include>
 			</control>		
@@ -55,51 +33,105 @@
 			</control>					
 			<control type="list" id="450">
 				<include>hiddenlist</include>
-			</control>							
-			<control type="list" id="2000">
-				<include>hiddenlist</include>
-			</control>		
+			</control>	
 		</control>
-		
-		<control type="image">
-			<description>background</description>
-			<include>FullscreenDimensions</include>
-			<texture background="true">special://skin/extras/backgrounds/SKINDEFAULT.jpg</texture>
-			<include>BackgroundFade</include>	
+		<!-- ================== -->
+		<!-- background -->
+		<!-- ================== --> 
+		<control type="group">
+			<control type="image">
+				<description>background</description>
+				<include>FullscreenDimensions</include>
+				<texture background="true">special://skin/extras/backgrounds/SKINDEFAULT.jpg</texture>
+				<include>BackgroundFade</include>	
+			</control>
+			<control type="image">
+				<description>background</description>
+				<include>FullscreenDimensions</include>
+				<texture background="true">$INFO[Window.Property(movie.fanart)]</texture>
+				<include>BackgroundFade</include>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<visible>!IsEmpty(Window.Property(movie.fanart)) + IsEmpty(Container(1350).ListItem.Property(Original))</visible>
+			</control>
+			<control type="image">
+				<description>background</description>
+				<include>FullscreenDimensions</include>
+				<texture background="true">$INFO[Window.Property(movie.set.fanart)]</texture>
+				<include>BackgroundFade</include>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<visible>!IsEmpty(Window.Property(movie.set.fanart)) + IsEmpty(Container(1350).ListItem.Property(Original))</visible>
+			</control>			
+			<control type="image">
+				<description>background</description>
+				<include>FullscreenDimensions</include>
+				<texture background="true">$INFO[Container(1350).ListItem.Property(Original)]</texture>
+				<include>BackgroundFade</include>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<visible>!IsEmpty(Container(1350).ListItem.Property(Original))</visible>
+			</control>
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture background="true">windows/bg/bg_diffuse.png</texture>
+				<include>BackgroundFade</include>		
+			</control>
+			<control type="image">
+				<description>background</description>
+				<include>FullscreenDimensions</include>
+				<texture background="true">windows/bg/bg_vignette.png</texture>
+				<include>BackgroundFade</include>			
+			</control>
 		</control>
-		<control type="image">
-			<description>background</description>
-			<include>FullscreenDimensions</include>
-			<texture background="true">$INFO[Container(1350).ListItem.Property(Original)]</texture>
-			<include>BackgroundFade</include>
-			<fadetime>FanartCrossfadeTime</fadetime>
-			<visible>!IsEmpty(Container(1350).ListItem.Property(Original))</visible>
-		</control>
-		<control type="image">
-			<include>FullscreenDimensions</include>
-			<texture background="true">windows/bg/bg_diffuse.png</texture>
-			<include>BackgroundFade</include>		
-		</control>
-		<control type="image">
-			<description>background</description>
-			<include>FullscreenDimensions</include>
-			<texture background="true">windows/bg/bg_vignette.png</texture>
-			<include>BackgroundFade</include>			
-		</control>
-		
+
 		<control type="group">
 			<visible>![Window.IsActive(playercontrols) | Window.IsActive(progressdialog) | Window.IsActive(shutdownmenu) | Window.IsActive(okdialog) | Window.IsActive(yesnodialog) | Window.IsActive(FileBrowser) | Window.IsActive(SelectDialog)]</visible>
 			<include>DialogAnimation</include>
+
+			<!-- ================== -->
+			<!-- Infos + Plot Labels -->
+			<!-- ================== --> 
 			<control type="group">
 				<posx>45</posx>
 				<posy>140</posy>
+				<control type="grouplist">
+					<posx>330</posx>
+					<posy>6</posy>
+					<height>0</height>
+					<width>1190</width>
+					<itemgap>5</itemgap>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<description>Title</description>					
+						<posy>0</posy>
+						<width max="800">auto</width>
+						<height>45</height>
+						<font>FontSize_40</font>
+						<label>$INFO[Window.Property(movie.title)]</label>						
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+					</control>
+				</control>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
 					<width>308</width>
 					<height>453</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-					<texture background="true" fallback="thumbs/fallback_poster_big.png" diffuse="thumbs/poster_diffuse_big.png">$INFO[Window.Property(movie.thumb)]</texture>
+					<texture background="true" fallback="thumbs/fallback_poster_big.png" diffuse="thumbs/poster_diffuse_big.png">$INFO[Window.Property(movie.thumb)]</texture>		
+					<include>BackgroundFade</include>
+					<fadetime>FanartCrossfadeTime</fadetime>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>308</width>
+					<height>453</height>
+					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+					<texture background="true" fallback="thumbs/fallback_poster_big.png" diffuse="thumbs/poster_diffuse_big.png">$INFO[Container(1350).ListItem.Property(Original)]</texture>
+					<include>BackgroundFade</include>
+					<fadetime>FanartCrossfadeTime</fadetime>
+					<visible>!IsEmpty(Container(1350).ListItem.Property(Original) + StringCompare(Window.Property(type),episode)</visible>
 				</control>
 				<control type="image">
 					<posx>-11</posx>
@@ -109,181 +141,371 @@
 					<aspectratio align="center" aligny="center">stretch</aspectratio>
 					<texture background="true">thumbs/poster_overlay_big.png</texture>
 				</control>
-				<control type="label">
-					<description>Title</description>
+				
+				<control type="group">
+				<top>10</top>
+					<control type="image">
+					<texture>info/infopanel_line.png</texture>
+						<posx>330</posx>
+						<posy>54</posy>
+						<height>1</height>
+						<width>840</width>
+						<colordiffuse>66grey</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="image">
+					<texture>info/infopanel_line.png</texture>
+						<posx>330</posx>
+						<posy>110</posy>
+						<height>1</height>
+						<width>840</width>
+						<colordiffuse>66grey</colordiffuse>
+						<aspectratio>stretch</aspectratio>				
+						<visible>!StringCompare(Window.Property(type),episode)</visible>
+					</control>
+				
+				<!--- vertikale infos-->
+				<control type="grouplist">
 					<posx>330</posx>
-					<posy>0</posy>
-					<width>870</width>
-					<height>45</height>
-					<font>FontSize_40</font>
-					<label>$INFO[Window.Property(movie.title)]</label>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textcolor>white</textcolor>
-					<shadowcolor>99000000</shadowcolor>
-				</control>
-				<!-- duration label -->
-				<control type="grouplist">
-					<posx>333</posx>
-					<posy>55</posy>
-					<width>775</width>
-					<height>30</height>
+					<posy>40</posy>
+					<width>900</width>
+					<itemgap>0</itemgap>
 					<orientation>horizontal</orientation>
-					<control type="label">
-						<textcolor>white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<font>FontSize_22</font>
-						<width min="10" max="595">auto</width>
-						<label>$LOCALIZE[2050]:</label>
+					<usecontrolcoords>true</usecontrolcoords> 					
+					<visible>!StringCompare(Window.Property(type),episode)</visible>
+					<control type="group">
+						<width>60</width>
+						<control type="image">
+							<posx>0</posx>
+							<posy>22</posy>
+							<height>20</height>
+							<aspectratio align="bottom">keep</aspectratio>
+							<texture fallback="flags/mpaa/rating-nr.png">$VAR[MPAAFilmRatingExtendedInfo]</texture>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>37</posy>
+							<height>38</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label fallback="Rating">$INFO[Window.Property(movie.mpaa)]</label>
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_14B</font>
+						</control>
 					</control>
-					<control type="label">
-						<textcolor>99white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<font>FontSize_22</font>
-						<width min="10" max="595">auto</width>
-						<height>30</height>
-						<label fallback="195">$INFO[Window.Property(movie.Duration),, $LOCALIZE[12391]] </label>
+					<control type="group">
+						<width>140</width>
+						<visible>!Stringcompare(Window.Property(movie.Rating),0.0) + !IsEmpty(Window.Property(movie.Rating))</visible>
+						<control type="label">
+							<posx>0</posx>
+							<posy>12</posy>
+							<height>38</height>
+							<align>center</align>
+							<label fallback="?">$INFO[Window.Property(movie.Rating)]</label>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>37</posy>
+							<height>38</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label fallback="Rating">$INFO[Window.Property(movie.Votes),, Votes]</label>
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_14B</font>
+						</control>
+					</control>
+					<control type="group">
+						<posx>0</posx>
+						<width>100</width>
+						<visible>!Stringcompare(Window.Property(movie.Duration),0) + !IsEmpty(Window.Property(movie.Duration))</visible>
+						<control type="label">
+							<posx>0</posx>
+							<posy>12</posy>
+							<height>38</height>
+							<align>center</align>
+							<label>$INFO[Window.Property(movie.Duration)]</label>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>37</posy>
+							<height>38</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>Minutes</label>
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_14B</font>
+						</control>
+					</control>
+					<control type="group">
+						<width>160</width>
+						<visible>!IsEmpty(Window.Property(movie.ReleaseDate))</visible>
+						<control type="label">
+							<posx>0</posx>
+							<posy>12</posy>
+							<height>38</height>
+							<align>center</align>
+							<label fallback="?">$INFO[Window.Property(movie.ReleaseDate)]</label>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>37</posy>
+							<height>38</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label fallback="Release Date">$INFO[Window.Property(movie.Status)]</label>
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_14B</font>
+						</control>
+					</control>
+					<control type="group">
+						<posx>0</posx>
+						<width>160</width>
+						<visible>!IsEmpty(Window.Property(movie.Budget))</visible>
+						<control type="label">
+							<posx>0</posx>
+							<posy>12</posy>
+							<height>38</height>
+							<align>center</align>
+							<label>$INFO[Window.Property(movie.Budget),$]</label>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>37</posy>
+							<height>38</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>Budget</label>
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_14B</font>
+						</control>
+					</control>
+					<control type="group" id="3300">
+						<posx>0</posx>
+						<width>160</width>
+						<visible>!IsEmpty(Window.Property(movie.Revenue))</visible>
+						<control type="label">
+							<posx>0</posx>
+							<posy>12</posy>
+							<height>38</height>
+							<align>center</align>
+							<label fallback="?">$INFO[Window.Property(movie.Revenue),$]</label>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>37</posy>
+							<height>38</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>Revenue</label>
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_14B</font>
+						</control>
 					</control>
 				</control>
-				<!-- premiered label -->
+				
+				</control>
+				<control type="group">	
+					<visible>false</visible>
+					<!-- duration label -->
+					<control type="grouplist">
+						<posx>333</posx>
+						<posy>55</posy>
+						<width>775</width>
+						<height>30</height>
+						<orientation>horizontal</orientation>
+						<control type="label">
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+							<width min="10" max="595">auto</width>
+							<label>$LOCALIZE[2050]:</label>
+						</control>
+						<control type="label">
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+							<width min="10" max="595">auto</width>
+							<height>30</height>
+							<label fallback="195">$INFO[Window.Property(movie.Duration),, $LOCALIZE[12391]] </label>
+						</control>
+					</control>
+					<!-- premiered label -->
+					<control type="grouplist">
+						<posx>333</posx>
+						<posy>80</posy>
+						<width>775</width>
+						<height>30</height>
+						<orientation>horizontal</orientation>
+						<control type="label">
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+							<width min="10" max="595">auto</width>
+							<label>$INFO[Window.Property(movie.Status)]:</label>
+						</control>
+						<control type="label">
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+							<width min="10" max="595">auto</width>
+							<height>30</height>
+							<label fallback="195">$INFO[Window.Property(movie.ReleaseDate)]</label>
+						</control>
+					</control>
+					<!-- Budget label -->
+					<control type="grouplist">
+						<posx>333</posx>
+						<posy>105</posy>
+						<width>775</width>
+						<height>30</height>
+						<orientation>horizontal</orientation>
+						<control type="label">
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+							<width min="10" max="595">auto</width>
+							<label>Budget:</label>
+						</control>
+						<control type="label">
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+							<width min="10" max="595">auto</width>
+							<height>30</height>
+							<label>$INFO[Window.Property(movie.Budget)]</label>
+						</control>
+					</control>
+					<!-- Revenue label -->
+					<control type="grouplist">
+						<posx>333</posx>
+						<posy>130</posy>
+						<width>775</width>
+						<height>30</height>
+						<orientation>horizontal</orientation>
+						<control type="label">
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+							<width min="10" max="595">auto</width>
+							<label>Revenue:</label>
+						</control>
+						<control type="label">
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+							<width min="10" max="595">auto</width>
+							<height>30</height>
+							<label fallback="195">$INFO[Window.Property(movie.Revenue)]</label>
+						</control>
+					</control>
+					<!-- rating label -->
+					<control type="grouplist">
+						<posx>333</posx>
+						<posy>155</posy>
+						<width>775</width>
+						<height>30</height>
+						<orientation>horizontal</orientation>
+						<control type="label">
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+							<width min="10" max="595">auto</width>
+							<label>$LOCALIZE[563]:</label>
+						</control>
+						<control type="label">
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+							<width min="10" max="595">auto</width>
+							<height>30</height>
+							<label fallback="195">$INFO[Window.Property(movie.Rating)] / $INFO[Window.Property(movie.Votes),, Votes]</label>
+						</control>
+					</control>					
+				</control>
+				
+		
+				
+				<!-- awards groups -->
 				<control type="grouplist">
-					<posx>333</posx>
-					<posy>80</posy>
-					<width>775</width>
-					<height>30</height>
-					<orientation>horizontal</orientation>
-					<control type="label">
-						<textcolor>white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<font>FontSize_22</font>
-						<width min="10" max="595">auto</width>
-						<label>$INFO[Window.Property(movie.Status)]:</label>
-					</control>
-					<control type="label">
-						<textcolor>99white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<font>FontSize_22</font>
-						<width min="10" max="595">auto</width>
-						<height>30</height>
-						<label fallback="195">$INFO[Window.Property(movie.ReleaseDate)]</label>
-					</control>
-				</control>
-				<!-- Budget label -->
-				<control type="grouplist">
-					<posx>333</posx>
-					<posy>105</posy>
-					<width>775</width>
-					<height>30</height>
-					<orientation>horizontal</orientation>
-					<control type="label">
-						<textcolor>white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<font>FontSize_22</font>
-						<width min="10" max="595">auto</width>
-						<label>Budget:</label>
-					</control>
-					<control type="label">
-						<textcolor>99white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<font>FontSize_22</font>
-						<width min="10" max="595">auto</width>
-						<height>30</height>
-						<label>$INFO[Window.Property(movie.Budget)]</label>
-					</control>
-				</control>
-				<!-- Revenue label -->
-				<control type="grouplist">
-					<posx>333</posx>
-					<posy>130</posy>
-					<width>775</width>
-					<height>30</height>
-					<orientation>horizontal</orientation>
-					<control type="label">
-						<textcolor>white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<font>FontSize_22</font>
-						<width min="10" max="595">auto</width>
-						<label>Revenue:</label>
-					</control>
-					<control type="label">
-						<textcolor>99white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<font>FontSize_22</font>
-						<width min="10" max="595">auto</width>
-						<height>30</height>
-						<label fallback="195">$INFO[Window.Property(movie.Revenue)]</label>
-					</control>
-				</control>
-				<!-- rating label -->
-				<control type="grouplist">
-					<posx>333</posx>
-					<posy>155</posy>
-					<width>775</width>
-					<height>30</height>
-					<orientation>horizontal</orientation>
-					<control type="label">
-						<textcolor>white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<font>FontSize_22</font>
-						<width min="10" max="595">auto</width>
-						<label>$LOCALIZE[563]:</label>
-					</control>
-					<control type="label">
-						<textcolor>99white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<font>FontSize_22</font>
-						<width min="10" max="595">auto</width>
-						<height>30</height>
-						<label fallback="195">$INFO[Window.Property(movie.Rating)] / $INFO[Window.Property(movie.Votes),, Votes]</label>
-					</control>
-				</control>
-				<!-- awards label -->
-				<control type="grouplist">
-					<posx>333</posx>
-					<posy>180</posy>
-					<width>775</width>
-					<height>30</height>
-					<orientation>horizontal</orientation>
-					<control type="label">
-						<textcolor>white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<font>FontSize_22</font>
-						<width min="10" max="595">auto</width>
-						<label>Awards:</label>
-					</control>
-					<control type="label">
-						<textcolor>99white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<font>FontSize_22</font>
-						<width min="10" max="595">auto</width>
-						<height>30</height>
-						<label fallback="195">$INFO[Window.Property(movie.omdb.Awards)]</label>
-					</control>
-				</control>
-				<control type="textbox" id="400">
-					<description>Description Value</description>
 					<posx>330</posx>
-					<posy>225</posy>
+					<posy>145</posy>
 					<width>840</width>
-					<height>220</height>
-					<font>FontSize_22</font>
-					<align>justify</align>
-					<textcolor>99white</textcolor>
-					<shadowcolor>99000000</shadowcolor>
-					<label>$INFO[Window.Property(movie.Plot)]</label>
-					<autoscroll time="3000" delay="5000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
-					<visible>IsEmpty(Window.Property(switchcontent))</visible>
-				</control>
-
+					<height>310</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+						<control type="label">
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+							<width>840</width>
+							<height>25</height>
+							<wrapmultiline>true</wrapmultiline>
+							<label>$INFO[Window.Property(movie.omdb.Awards),[COLOR=white]Awards:[/COLOR][COLOR=selected] ,[/COLOR]]</label>		
+							<visible>!IsEmpty(Window.Property(movie.omdb.Awards))</visible>
+						</control>
+						<control type="label">
+							<top>25</top>
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+							<width>840</width>
+							<height>25</height>
+							<label>$INFO[Window.Property(movie.omdb.tomatoConsensus)]</label>
+							<scroll>true</scroll>
+							<scrolltime>50</scrolltime>
+							<visible>!IsEmpty(Window.Property(movie.omdb.tomatoConsensus))</visible>
+						</control>
+						<control type="label">
+							<top>25</top>							
+							<width>840</width>
+							<height>25</height>
+							<label>-</label>
+						</control>				
+					<control type="textbox" id="400">
+						<description>plot</description>
+						<width>840</width>
+						<height>auto</height>
+						<font>FontSize_22</font>
+						<align>justify</align>
+						<textcolor>99white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<label fallback="No info available">[B]$INFO[Window.Property(movie.TagLine),,[CR]][/B]$INFO[Window.Property(movie.Plot)]</label>
+						<autoscroll time="3000" delay="5000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+						<visible>IsEmpty(Window.Property(switchcontent))</visible>
+					</control>
+				</control>				
 			</control>
-
+			
 			<!-- switched view -->
 			<control type="group">
 				<posx>366</posx>
 				<posy>400</posy>
-				<animation effect="slide" start="0,0" end="0,-47" time="150" condition="Control.HasFocus(1000) | Control.HasFocus(150) | Control.HasFocus(350) | Control.HasFocus(1350) | Control.HasFocus(750)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-47" time="150" condition="Control.HasFocus(1000) | Control.HasFocus(150) | Control.HasFocus(350) | Control.HasFocus(1350) | Control.HasFocus(750) | Control.HasFocus(250) | Control.HasFocus(2000)">Conditional</animation>
 
-				<!-- movie list -->
+				<!-- ================== -->
+				<!-- Actors 		 -->
+				<!-- ================== --> 
 				<control type="fixedlist" id="1000">
 					<description>Known Movies</description>
 					<posx>0</posx>
@@ -296,81 +518,17 @@
 					<onright>150</onright>
 					<onup>9000</onup>
 					<ondown>Action(select)</ondown>
-					<visible>StringCompare(Window.Property(switchcontent),1)</visible>
+					<visible>StringCompare(Window.Property(switchcontent),1) | [StringCompare(Window.Property(type),episode)+ IsEmpty(Window.Property(switchcontent))]</visible>
 					<itemlayout width="143" height="250">
 						<control type="group">
 							<animation reversible="true" effect="slide" end="32,0" time="150" condition="Control.HasFocus(1000)">Conditional</animation>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
-							</control>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">overlays/in_library.png</texture>
-								<visible>!IsEmpty(ListItem.Property(LibraryHasMovie))</visible>
-							</control>
-							<control type="image">
-								<posx>3</posx>
-								<posy>3</posy>
-								<width>142</width>
-								<height>199</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/poster_overlay_noglass.png</texture>
-							</control>
+							<include>ExtendedPosterLayout-nf</include>
 						</control>
 					</itemlayout>
 					<focusedlayout width="143" height="250">
 						<control type="group">
 							<animation reversible="true" effect="zoom" start="100" end="125" center="10,10" time="150" condition="Control.HasFocus(1000)">Conditional</animation>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
-							</control>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">overlays/in_library.png</texture>
-								<visible>!IsEmpty(ListItem.Property(LibraryHasMovie))</visible>
-							</control>
-							<control type="image">
-								<posx>3</posx>
-								<posy>3</posy>
-								<width>142</width>
-								<height>199</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/poster_overlay_noglass.png</texture>
-							</control>
+							<include>ExtendedPosterLayout-fo</include>
 						</control>
 						<control type="label">
 							<posx>185</posx>
@@ -392,7 +550,9 @@
 					</focusedlayout>
 				</control>
 
-				<!-- recommended list -->
+				<!-- ================== -->
+				<!-- Recommended Similar List -->
+				<!-- ================== --> 
 				<control type="fixedlist" id="150">
 					<description>recommended</description>
 					<posx>0</posx>
@@ -409,77 +569,13 @@
 					<itemlayout width="143" height="250">
 						<control type="group">
 							<animation reversible="true" effect="slide" end="33,0" time="150" condition="Control.HasFocus(150)">Conditional</animation>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
-							</control>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">overlays/in_library.png</texture>
-								<visible>!IsEmpty(ListItem.Property(LibraryHasMovie))</visible>
-							</control>
-							<control type="image">
-								<posx>3</posx>
-								<posy>3</posy>
-								<width>142</width>
-								<height>199</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/poster_overlay_noglass.png</texture>
-							</control>
+							<include>ExtendedPosterLayout-nf</include>
 						</control>
 					</itemlayout>
 					<focusedlayout width="143" height="250">
 						<control type="group">
 							<animation reversible="true" effect="zoom" start="100" end="125" center="10,10" time="150" condition="Control.HasFocus(150)">Conditional</animation>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
-							</control>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">overlays/in_library.png</texture>
-								<visible>!IsEmpty(ListItem.Property(LibraryHasMovie))</visible>
-							</control>
-							<control type="image">
-								<posx>3</posx>
-								<posy>3</posy>
-								<width>142</width>
-								<height>199</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/poster_overlay_noglass.png</texture>
-							</control>
+							<include>ExtendedPosterLayout-fo</include>
 						</control>
 						<control type="label">
 							<posx>185</posx>
@@ -501,7 +597,9 @@
 					</focusedlayout>
 				</control>
 
-				<!-- youtube video list -->
+				<!-- ================== -->
+				<!-- YouTube List 		 -->
+				<!-- ================== --> 
 				<control type="fixedlist" id="350">
 					<description>youtube</description>
 					<posx>0</posx>
@@ -519,59 +617,13 @@
 					<itemlayout width="296" height="250">
 						<control type="group">
 							<animation reversible="true" effect="slide" end="70,5" time="150" condition="Control.HasFocus(350)">Conditional</animation>
-							<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
-							</control>
-							<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/music_diffuse.png">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="image">
-								<left>0</left>
-								<top>0</top>
-								<width>290</width>
-								<height>182</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/video_overlay_noglass.png</texture>
-							</control>
+							<include>ExtendedLandscapeLayout-nf</include>
 						</control>
 					</itemlayout>
 					<focusedlayout width="296" height="250">
 						<control type="group">
 							<animation reversible="true" effect="zoom" start="100" end="125" center="6,-11" time="150" condition="Control.HasFocus(350)">Conditional</animation>
-							<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
-							</control>
-							<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/video_diffuse.png">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="image">
-								<left>0</left>
-								<top>0</top>
-								<width>290</width>
-								<height>182</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/video_overlay_noglass.png</texture>
-							</control>
+							<include>ExtendedLandscapeLayout-fo</include>
 						</control>
 						<control type="label">
 							<posx>372</posx>
@@ -595,7 +647,9 @@
 					</focusedlayout>
 				</control>
 
-				<!-- fanart list -->
+				<!-- ================== -->
+				<!-- Fanart List 		 -->
+				<!-- ================== --> 
 				<control type="fixedlist" id="1350">
 					<description>fanart</description>
 					<posx>0</posx>
@@ -612,59 +666,13 @@
 					<itemlayout width="296" height="250">
 						<control type="group">
 							<animation reversible="true" effect="slide" end="70,5" time="150" condition="Control.HasFocus(1350)">Conditional</animation>
-							<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
-							</control>
-							<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="top" scalediffuse="false">scale</aspectratio>
-								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/music_diffuse.png">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="image">
-								<left>0</left>
-								<top>0</top>
-								<width>290</width>
-								<height>182</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/video_overlay_noglass.png</texture>
-							</control>
+							<include>ExtendedLandscapeLayout-nf</include>
 						</control>
 					</itemlayout>
 					<focusedlayout width="296" height="250">
 						<control type="group">
 							<animation reversible="true" effect="zoom" start="100" end="125" center="6,-11" time="150" condition="Control.HasFocus(1350)">Conditional</animation>
-							<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
-							</control>
-							<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="top" scalediffuse="false">scale</aspectratio>
-								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/video_diffuse.png">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="image">
-								<left>0</left>
-								<top>0</top>
-								<width>290</width>
-								<height>182</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/video_overlay_noglass.png</texture>
-							</control>
+							<include>ExtendedLandscapeLayout-fo</include>
 						</control>
 						<control type="label">
 							<posx>372</posx>
@@ -687,8 +695,59 @@
 						</control>
 					</focusedlayout>
 				</control>
+				
+				<!-- ================== -->
+				<!-- Episode List 		 -->
+				<!-- ================== --> 
+				<control type="fixedlist" id="2000">
+					<description>fanart</description>
+					<posx>0</posx>
+					<posy>19</posy>
+					<width>960</width>
+					<height>250</height>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="cubic" easing="out">350</scrolltime>
+					<onleft>1350</onleft>
+					<onright>1350</onright>
+					<onup>9000</onup>
+					<ondown>Action(select)</ondown>
+					<visible>StringCompare(Window.Property(switchcontent),7)</visible>
+					<itemlayout width="296" height="250">
+						<control type="group">
+							<animation reversible="true" effect="slide" end="70,5" time="150" condition="Control.HasFocus(2000)">Conditional</animation>
+							<include>ExtendedLandscapeLayout-nf</include>
+						</control>
+					</itemlayout>
+					<focusedlayout width="296" height="250">
+						<control type="group">
+							<animation reversible="true" effect="zoom" start="100" end="125" center="6,-11" time="150" condition="Control.HasFocus(2000)">Conditional</animation>
+							<include>ExtendedLandscapeLayout-fo</include>
+						</control>
+						<control type="label">
+							<posx>372</posx>
+							<posy>190</posy>
+							<width>500</width>
+							<height>40</height>
+							<font>FontSize_22</font>
+							<scroll>true</scroll>
+							<scrollspeed>50</scrollspeed>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<selectedcolor>white</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>Control.HasFocus(2000)</visible>
+							<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(2000)">Conditional</animation>
+							<animation reversible="false" effect="fade" start="0" end="100" time="400">Focus</animation>
+							<animation reversible="false" effect="fade" start="100" end="0" time="0">Unfocus</animation>
+						</control>
+					</focusedlayout>
+				</control>
 
-				<!-- crew list -->
+				<!-- ================== -->
+				<!-- Crew List 		 -->
+				<!-- ================== --> 
 				<control type="fixedlist" id="750">
 					<description>crew</description>
 					<posx>0</posx>
@@ -705,59 +764,13 @@
 					<itemlayout width="143" height="250">
 						<control type="group">
 							<animation reversible="true" effect="slide" end="32,0" time="150" condition="Control.HasFocus(750)">Conditional</animation>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
-							</control>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="image">
-								<posx>3</posx>
-								<posy>3</posy>
-								<width>142</width>
-								<height>199</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/poster_overlay_noglass.png</texture>
-							</control>
+							<include>ExtendedPosterLayout-nf</include>
 						</control>
 					</itemlayout>
 					<focusedlayout width="143" height="250">
 						<control type="group">
 							<animation reversible="true" effect="zoom" start="100" end="125" center="10,10" time="150" condition="Control.HasFocus(750)">Conditional</animation>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
-							</control>
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>128</width>
-								<height>185</height>
-								<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="image">
-								<posx>3</posx>
-								<posy>3</posy>
-								<width>142</width>
-								<height>199</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/poster_overlay_noglass.png</texture>
-							</control>
+							<include>ExtendedPosterLayout-fo</include>
 						</control>
 						<control type="label">
 							<posx>185</posx>
@@ -779,42 +792,63 @@
 					</focusedlayout>
 				</control>
 
+				<!-- ================== -->
+				<!-- Sets / Seasons List -->
+				<!-- ================== --> 
+				<control type="fixedlist" id="250">
+					<description>crew</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>860</width>
+					<height>250</height>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="cubic" easing="out">350</scrolltime>
+					<onleft>150</onleft>
+					<onright>150</onright>
+					<onup>9000</onup>
+					<ondown>Action(select)</ondown>
+					<visible>StringCompare(Window.Property(switchcontent),6)</visible>
+					<itemlayout width="143" height="250">
+						<control type="group">
+							<animation reversible="true" effect="slide" end="32,0" time="150" condition="Control.HasFocus(250)">Conditional</animation>
+							<include>ExtendedPosterLayout-nf</include>
+						</control>
+					</itemlayout>
+					<focusedlayout width="143" height="250">
+						<control type="group">
+							<animation reversible="true" effect="zoom" start="100" end="125" center="10,10" time="150" condition="Control.HasFocus(250)">Conditional</animation>
+							<include>ExtendedPosterLayout-fo</include>
+						</control>
+						<control type="label">
+							<posx>185</posx>
+							<posy>195</posy>
+							<width>670</width>
+							<height>40</height>
+							<font>FontSize_22</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<selectedcolor>white</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>Control.HasFocus(250)</visible>
+							<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(250)">Conditional</animation>
+							<animation reversible="false" effect="fade" start="0" end="100" time="400">Focus</animation>
+							<animation reversible="false" effect="fade" start="100" end="0" time="0">Unfocus</animation>
+						</control>
+					</focusedlayout>
+				</control>
 			</control>
 		</control>
 
-
 		<!-- ================== -->
-		<!-- Top Buttons Labels -->
+		<!-- Star Rating		 -->
 		<!-- ================== -->    
-		<control type="group">
-			<posx>45</posx>
-			<posy>25</posy>
-			<animation type="WindowOpen" reversible="false">
-				<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
-				<effect type="slide" start="0,-55" end="0,0" time="350" tween="cubic" easing="out" />
-			</animation>
-			<animation type="WindowClose" condition="!Window.IsActive(shutdownmenu)" reversible="false">
-				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-				<effect type="slide" start="0,0" end="0,-55" time="350" tween="sine" easing="out" />
-			</animation>
-			<animation type="Conditional" condition="Window.IsActive(playercontrols) | Window.IsActive(shutdownmenu)" reversible="false">
-				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-				<effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="out" />
-			</animation>
-			<animation type="Visible" reversible="false">
-				<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
-				<effect type="slide" start="0,55" end="0,0" time="350" tween="cubic" easing="out" />
-			</animation>
-			<animation type="Hidden" reversible="false">
-				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-				<effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="out" />
-			</animation>
-			<!-- NumberRating -->
 			<control type="grouplist">
 				<posx>0</posx>
-				<posy>6</posy>
+				<posy>150</posy>
 				<height>0</height>
-				<width>1190</width>
+				<width>1218</width>
 				<itemgap>5</itemgap>
 				<align>right</align>
 				<orientation>horizontal</orientation>
@@ -844,7 +878,39 @@
 					<label fallback="0.0">$INFO[Window.Property(movie.Rating)]</label>
 				</control>
 			</control>
+		<!-- ================== -->
+		<!-- Top Buttons Labels -->
+		<!-- ================== -->    
+		<control type="group">
+			<posx>45</posx>
+			<posy>25</posy>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+				<effect type="slide" start="0,-55" end="0,0" time="350" tween="cubic" easing="out" />
+			</animation>
+			<animation type="WindowClose" condition="!Window.IsActive(shutdownmenu)" reversible="false">
+				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+				<effect type="slide" start="0,0" end="0,-55" time="350" tween="sine" easing="out" />
+			</animation>
+			<animation type="Conditional" condition="Window.IsActive(playercontrols) | Window.IsActive(shutdownmenu)" reversible="false">
+				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+				<effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="out" />
+			</animation>
+			<animation type="Visible" reversible="false">
+				<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+				<effect type="slide" start="0,55" end="0,0" time="350" tween="cubic" easing="out" />
+			</animation>
+			<animation type="Hidden" reversible="false">
+				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+				<effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="out" />
+			</animation>
+
 			<!-- Buttons -->
+			<control type="button" id="8000">
+				<onfocus condition="StringCompare(Window.Property(type),episode)">SetProperty(switchcontent,1)</onfocus>
+				<onfocus condition="StringCompare(Window.Property(type),episode)">SetFocus(9000)</onfocus>
+				<onfocus condition="!StringCompare(Window.Property(type),episode)">SetFocus(9000)</onfocus>
+			</control>
 			<control type="grouplist" id="9000">
 				<posx>0</posx>
 				<posy>0</posy>
@@ -860,12 +926,15 @@
 				<ondown condition="StringCompare(Window.Property(switchcontent),3)">350</ondown>
 				<ondown condition="StringCompare(Window.Property(switchcontent),4)">1350</ondown>
 				<ondown condition="StringCompare(Window.Property(switchcontent),5)">750</ondown>				
+				<ondown condition="StringCompare(Window.Property(switchcontent),6)">250</ondown>
+				<ondown condition="StringCompare(Window.Property(switchcontent),7)">2000</ondown>
 
 				<control type="button" id="20">
 					<description>About</description>
 					<label>$LOCALIZE[31074]</label>
 					<onclick>ClearProperty(switchcontent)</onclick>
-					<include>TopButton</include>
+					<include>TopButton</include>					
+					<visible>!StringCompare(Window.Property(type),episode)</visible>
 				</control>
 				<control type="button" id="21">
 					<description>cast</description>
@@ -880,6 +949,20 @@
 					<onclick>SetProperty(switchcontent,5)</onclick>
 					<include>TopButton</include>
 					<visible>IntegerGreaterThan(Container(750).NumItems,0)</visible>
+				</control>				
+				<control type="button" id="26">
+					<description>sets seasons</description>
+					<label>$LOCALIZE[31090]$INFO[Container(250).NumItems, (,)]</label>
+					<onclick>SetProperty(switchcontent,6)</onclick>
+					<include>TopButton</include>
+					<visible>IntegerGreaterThan(Container(250).NumItems,0)</visible>
+				</control>					
+				<control type="button" id="27">
+					<description>episodes</description>
+					<label>$LOCALIZE[31091]$INFO[Container(2000).NumItems, (,)]</label>
+					<onclick>SetProperty(switchcontent,7)</onclick>
+					<include>TopButton</include>
+					<visible>IntegerGreaterThan(Container(2000).NumItems,0)</visible>
 				</control>		
 				<control type="button" id="22">
 					<description>recommended</description>
@@ -929,6 +1012,7 @@
 					<description>Plot</description>
 					<include>TopSmallLabel</include>
 					<label>$INFO[Control.GetLabel(20)]</label>
+					<visible>!StringCompare(Window.Property(type),episode)</visible>
 					<animation effect="fade" start="100" end="60" time="200" tween="cubic" easing="inout" condition="!Control.IsEnabled(20)" reversible="true">Conditional</animation>
 					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(20)" reversible="true">Conditional</animation>
 					<animation effect="zoom" start="100" end="90" time="200" tween="cubic" easing="inout" center="auto" condition="!Control.HasFocus(20)" reversible="true">Conditional</animation>
@@ -950,6 +1034,24 @@
 					<animation effect="fade" start="100" end="60" time="200" tween="cubic" easing="inout" condition="!Control.IsEnabled(25)" reversible="true">Conditional</animation>
 					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(25)" reversible="true">Conditional</animation>
 					<animation effect="zoom" start="100" end="90" time="200" tween="cubic" easing="inout" center="auto" condition="!Control.HasFocus(25)" reversible="true">Conditional</animation>
+				</control>				
+				<control type="label">
+					<description>sets seasons</description>
+					<include>TopSmallLabel</include>
+					<label>$INFO[Control.GetLabel(26)]</label>
+					<visible>IntegerGreaterThan(Container(250).NumItems,0)</visible>
+					<animation effect="fade" start="100" end="60" time="200" tween="cubic" easing="inout" condition="!Control.IsEnabled(26)" reversible="true">Conditional</animation>
+					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(26)" reversible="true">Conditional</animation>
+					<animation effect="zoom" start="100" end="90" time="200" tween="cubic" easing="inout" center="auto" condition="!Control.HasFocus(26)" reversible="true">Conditional</animation>
+				</control>
+				<control type="label">
+					<description>episodes</description>
+					<include>TopSmallLabel</include>
+					<label>$INFO[Control.GetLabel(27)]</label>
+					<visible>IntegerGreaterThan(Container(2000).NumItems,0)</visible>
+					<animation effect="fade" start="100" end="60" time="200" tween="cubic" easing="inout" condition="!Control.IsEnabled(27)" reversible="true">Conditional</animation>
+					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(27)" reversible="true">Conditional</animation>
+					<animation effect="zoom" start="100" end="90" time="200" tween="cubic" easing="inout" center="auto" condition="!Control.HasFocus(27)" reversible="true">Conditional</animation>
 				</control>
 				<control type="label">
 					<description>tvshows</description>

@@ -14,6 +14,42 @@
 		<value condition="substring(ListItem.mpaa,Rated 0) | substring(ListItem.mpaa,Germany:0) | substring(ListItem.mpaa,FSK 0) | substring(ListItem.mpaa,ab 0)">flags/mpaa/fsk/fsk0.png</value>
 		<value>flags/mpaa/film/rating-nr.png</value>
 	</variable>
+	<variable name="MPAAFilmRatingExtendedInfo">
+		<!--international ratings-->
+		<value condition="StringCompare(Window.Property(movie.mpaa),G)">flags/mpaa/film/rating-g.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),Rated G)">flags/mpaa/film/rating-g.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),NC-17)">flags/mpaa/film/rating-nc17.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),Rated NC-17)">flags/mpaa/film/rating-nc17.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),NC17)">flags/mpaa/film/rating-nc17.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),Rated NC17)">flags/mpaa/film/rating-nc17.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),PG)">flags/mpaa/film/rating-pg.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),Rated PG)">flags/mpaa/film/rating-pg.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),PG13)">flags/mpaa/film/rating-pg13.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),Rated PG13)">flags/mpaa/film/rating-pg13.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),PG-13)">flags/mpaa/film/rating-pg13.png</value>rating-pg13
+		<value condition="StringCompare(Window.Property(movie.mpaa),Rated PG-13)">flags/mpaa/film/rating-pg13.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),R)">flags/mpaa/film/rating-r.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),Rated R)">flags/mpaa/film/rating-r.png</value>	
+		<!--tv ratings-->
+		<value condition="StringCompare(Window.Property(movie.mpaa),TV-14)">flags/mpaa/tv/tv-14.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),TV-14_Certificate_US)">flags/mpaa/tv/tv-14.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),TV-MA)">flags/mpaa/tv/tv-ma.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),TV-MA_Certificate_US)">flags/mpaa/tv/tv-ma.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),TV-PG)">flags/mpaa/tv/tv-pg.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),TV-PG_Certificate_US)">flags/mpaa/tv/tv-pg.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),TV-G)">flags/mpaa/tv/tv-g.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),TV-G_Certificate_US)">flags/mpaa/tv/tv-g.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),ty-y)">flags/mpaa/tv/tv-y.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),tv-y_Certificate_US)">flags/mpaa/tv/tv-y.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),ty-y7)">flags/mpaa/tv/tv-y7.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),tv-y7_Certificate_US)">flags/mpaa/tv/tv-y7.png</value>
+		<!--german rating-->
+		<value condition="StringCompare(Window.Property(movie.mpaa),Rated FSK-18) | StringCompare(Window.Property(movie.mpaa),FASK-18) | StringCompare(Window.Property(movie.mpaa),FSK 18) | StringCompare(Window.Property(movie.mpaa),ab 18)">flags/mpaa/fsk/fsk18.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),Rated FSK-16) | StringCompare(Window.Property(movie.mpaa),Germany:FSK-16) | StringCompare(Window.Property(movie.mpaa),FSK 16) | StringCompare(Window.Property(movie.mpaa),ab 16)">flags/mpaa/fsk/fsk16.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),Rated FSK-12) | StringCompare(Window.Property(movie.mpaa),Germany:FSK-12) | StringCompare(Window.Property(movie.mpaa),FSK 12) | StringCompare(Window.Property(movie.mpaa),ab 12)">flags/mpaa/fsk/fsk12.png</value>
+		<value condition="StringCompare(Window.Property(movie.mpaa),Rated FSK-0) | StringCompare(Window.Property(movie.mpaa),Germany:FSK-0) | StringCompare(Window.Property(movie.mpaa),FSK-0) | StringCompare(Window.Property(movie.mpaa),ab 0)">flags/mpaa/fsk/fsk0.png</value>
+		<value>flags/mpaa/film/rating-nr.png</value>
+	</variable>
 	<variable name="VideoCodec">
 		<value condition="[substring(ListItem.VideoCodec,div,left) | stringcompare(ListItem.VideoCodec,dx50)]">divx</value>
 		<value>$INFO[ListItem.VideoCodec]</value>

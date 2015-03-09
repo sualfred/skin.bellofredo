@@ -38,7 +38,16 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>Temporary Info Test: $INFO[VideoPlayer.TVShowTitle]</label>				
+				<label>Temporary Info Test: $INFO[Window(3000).Property(type)]</label>				
+			</control>
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>Temporary Info Test: $INFO[ListItem.Property(type)]</label>				
 			</control>
 			
 			<control type="label">

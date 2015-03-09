@@ -1715,7 +1715,10 @@
 			</control>
 		</control>
 	</include>
-
+	
+	
+	
+	
 	<variable name="MenuGroupHeader">
 		<value condition="!StringCompare(Window.Property(groupname),mainmenu) + !IsEmpty(Window.Property(groupDisplayName))">$LOCALIZE[31050] $INFO[Window.Property(groupDisplayName),","]</value>			
 		<value condition="StringCompare(Window.Property(groupname),widgetgroup1)">$LOCALIZE[31049] $INFO[Skin.String(widgetgroup1),","]</value>		
@@ -2341,5 +2344,145 @@
 		<onclick condition="Window.IsActive(3098)">Dialog.Close(3098)</onclick>
 		<onclick condition="Window.IsActive(3099)">Dialog.Close(3099)</onclick>		
 	</include>
+	
+	
+	
+		<include name="hiddenlist">
+			<description>container</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1</width>
+			<height>1</height>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<viewtype label="Actor">list</viewtype>
+			<pagecontrol>-</pagecontrol>
+			<itemlayout height="1" width="1" />
+			<focusedlayout height="1" width="1" />
+		</include>
+		<include name="ExtendedPosterLayout-nf">
+			<control type="image">
+				<posx>10</posx>
+				<posy>10</posy>
+				<width>128</width>
+				<height>185</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
+			</control>
+			<control type="image">
+				<posx>10</posx>
+				<posy>10</posy>
+				<width>128</width>
+				<height>185</height>
+				<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="image">
+				<posx>10</posx>
+				<posy>10</posy>
+				<width>128</width>
+				<height>185</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="thumbs/poster_diffuse.png">overlays/in_library.png</texture>
+				<visible>!IsEmpty(ListItem.Property(LibraryHasMovie))</visible>
+			</control>
+			<control type="image">
+				<posx>3</posx>
+				<posy>3</posy>
+				<width>142</width>
+				<height>199</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/poster_overlay_noglass.png</texture>
+			</control>
+		</include>
+		<include name="ExtendedPosterLayout-fo">
+			<control type="image">
+				<posx>10</posx>
+				<posy>10</posy>
+				<width>128</width>
+				<height>185</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
+			</control>
+			<control type="image">
+				<posx>10</posx>
+				<posy>10</posy>
+				<width>128</width>
+				<height>185</height>
+				<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="image">
+				<posx>10</posx>
+				<posy>10</posy>
+				<width>128</width>
+				<height>185</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="thumbs/poster_diffuse.png">overlays/in_library.png</texture>
+				<visible>!IsEmpty(ListItem.Property(LibraryHasMovie))</visible>
+			</control>
+			<control type="image">
+				<posx>3</posx>
+				<posy>3</posy>
+				<width>142</width>
+				<height>199</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/poster_overlay_noglass.png</texture>
+			</control>
+		</include>
+		<include name="ExtendedLandscapeLayout-nf">
+		<control type="image">
+								<left>7</left>
+								<top>7</top>
+								<width>276</width>
+								<height>168</height>
+								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
+							</control>
+							<control type="image">
+								<left>7</left>
+								<top>7</top>
+								<width>276</width>
+								<height>168</height>
+								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/music_diffuse.png">$INFO[ListItem.Icon]</texture>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<width>290</width>
+								<height>182</height>
+								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/video_overlay_noglass.png</texture>
+							</control>
+		</include>
+		<include name="ExtendedLandscapeLayout-fo">
+		<control type="image">
+								<left>7</left>
+								<top>7</top>
+								<width>276</width>
+								<height>168</height>
+								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
+							</control>
+							<control type="image">
+								<left>7</left>
+								<top>7</top>
+								<width>276</width>
+								<height>168</height>
+								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/video_diffuse.png">$INFO[ListItem.Icon]</texture>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<width>290</width>
+								<height>182</height>
+								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/video_overlay_noglass.png</texture>
+							</control>
+		</include>
 
 </includes>

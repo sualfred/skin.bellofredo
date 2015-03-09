@@ -234,8 +234,8 @@ msgid "Video Info"
 msgstr "Video Info"
 
 msgctxt "#31071"
-msgid "Recommended by TMDB"
-msgstr "Empfohlen von TMDB"
+msgid "Similar"
+msgstr "Ähnlich"
 
 msgctxt "#31072"
 msgid "Crew"
@@ -250,8 +250,8 @@ msgid "About"
 msgstr "Über"
 
 msgctxt "#31075"
-msgid "Recommended videos by TMDB"
-msgstr "Empfohlene Videos von TMDB"
+msgid "Recommended by TMDB"
+msgstr "Empfohlen von TMDB"
 
 msgctxt "#31076"
 msgid "Photos"
@@ -310,7 +310,14 @@ msgctxt "#31089"
 msgid "LoveFilm"
 msgstr "LoveFilm"
 
-#: empty strings from id 31090 to 31093 skin Settings labels
+msgctxt "#31090"
+msgid "Sets & Seasons"
+msgstr "Sets & Staffeln"
+
+msgctxt "#31091"
+msgid "Episodes"
+msgstr "Episoden"
+
 msgctxt "#31094"
 msgid "Choose Movies Widget"
 msgstr "Filme-Widget auswählen"

@@ -238,7 +238,7 @@ msgid "Video Info"
 msgstr ""
 
 msgctxt "#31071"
-msgid "Recommended by TMDB"
+msgid "Similar"
 msgstr ""
 
 msgctxt "#31072"
@@ -254,7 +254,7 @@ msgid "About"
 msgstr ""
 
 msgctxt "#31075"
-msgid "Recommended videos by TMDB"
+msgid "Recommended by TMDB"
 msgstr ""
 
 msgctxt "#31076"
@@ -316,7 +316,15 @@ msgctxt "#31089"
 msgid "LoveFilm"
 msgstr ""
 
-#: empty strings from id 31090 to 31093
+msgctxt "#31090"
+msgid "Sets & Seasons"
+msgstr ""
+
+msgctxt "#31091"
+msgid "Episodes"
+msgstr ""
+
+#: empty strings from id 31092 to 31093
 #: skin Settings labels
 
 msgctxt "#31094"

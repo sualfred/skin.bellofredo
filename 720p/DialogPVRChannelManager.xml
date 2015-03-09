@@ -223,14 +223,14 @@
 				<control type="group">
 					<left>0</left>
 					<top>308</top>
-					<control type="button" id ="34">
+					<control type="button" id ="31">
 						<description>Create channel Button</description>
 						<width>131</width>
-				    <height>40</height>
+						<height>40</height>
 						<font>FontSize_16B</font>
 						<textcolor>77white</textcolor>
 						<focusedcolor>white</focusedcolor>
-					  <disabledcolor>33white</disabledcolor>
+						<disabledcolor>33white</disabledcolor>
 						<shadowcolor>99000000</shadowcolor>
 						<texturefocus>buttons/focus.png</texturefocus>
 						<texturenofocus>-</texturenofocus>
