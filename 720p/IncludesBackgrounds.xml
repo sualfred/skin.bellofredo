@@ -213,10 +213,9 @@
 			<aspectratio>scale</aspectratio>
 			<randomize>true</randomize>
 			<timeperimage>5000</timeperimage>
-			<fadetime>650</fadetime>
+			<fadetime>1000</fadetime>
 			<imagepath background="true">$INFO[ListItem.Path,,/extrafanart/]</imagepath>
 			<include>FanartFade</include>
-			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
 			<visible>![[Control.IsVisible(55) | Control.IsVisible(59)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + Skin.HasSetting(ViewsExtraFanart)</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
@@ -261,10 +260,9 @@
 			<aspectratio>scale</aspectratio>
 			<randomize>true</randomize>
 			<timeperimage>5000</timeperimage>
-			<fadetime>650</fadetime>
+			<fadetime>1000</fadetime>
 			<imagepath background="true" diffuse="views/netfilx/fanart_diffuse.png">$INFO[ListItem.Path,,/extrafanart/]</imagepath>
-			<include>FanartFade</include>
-			<fadetime>FanartCrossfadeTime</fadetime>
+			<include>FanartFade</include>			
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
 			<visible>[Control.IsVisible(59) + !Window.IsActive(movieinformation)] + Skin.HasSetting(ViewsExtraFanart)</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>

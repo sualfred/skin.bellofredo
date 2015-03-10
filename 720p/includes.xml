@@ -1715,10 +1715,10 @@
 			</control>
 		</control>
 	</include>
-	
-	
-	
-	
+
+
+
+
 	<variable name="MenuGroupHeader">
 		<value condition="!StringCompare(Window.Property(groupname),mainmenu) + !IsEmpty(Window.Property(groupDisplayName))">$LOCALIZE[31050] $INFO[Window.Property(groupDisplayName),","]</value>			
 		<value condition="StringCompare(Window.Property(groupname),widgetgroup1)">$LOCALIZE[31049] $INFO[Skin.String(widgetgroup1),","]</value>		
@@ -1792,23 +1792,23 @@
 	</variable>
 
 	<variable name="QuickNav_WidgetListContentMovies">
-		<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),1)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window(Home).Property(recentmovies)]</value>
-		<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),2)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window(Home).Property(recommendedmovies)]</value>
-		<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),3)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window(Home).Property(randommovies)]</value>
-		<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">plugin://script.extendedinfo?info=incinemas</value>
-		<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">plugin://script.extendedinfo?info=trendingmovies</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),1)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window(Home).Property(recentmovies)]</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),2)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window(Home).Property(recommendedmovies)]</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),3)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window(Home).Property(randommovies)]</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">plugin://script.extendedinfo?info=incinemas</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">plugin://script.extendedinfo?info=trendingmovies</value>
 	</variable>
 	<variable name="QuickNav_WidgetListContentTVShows">
-		<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window(Home).Property(recentepisodes)]</value>
-		<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),2)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window(Home).Property(recommendedepisodes)]</value>
-		<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),3)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window(Home).Property(randomepisodes)]</value>
-		<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),4)">plugin://script.extendedinfo?info=trendingshows</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window(Home).Property(recentepisodes)]</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTVShowsType),2)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window(Home).Property(recommendedepisodes)]</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTVShowsType),3)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window(Home).Property(randomepisodes)]</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTVShowsType),4)">plugin://script.extendedinfo?info=trendingshows</value>
 	</variable>
 	<variable name="QuickNav_WidgetListContentMusic">
-		<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),1)">plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window(Home).Property(recentalbums)]</value>
-		<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window(Home).Property(recommendedalbums)]</value>
-		<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),3)">plugin://service.library.data.provider?type=randomalbums&amp;reload=$INFO[Window(Home).Property(randomalbums)]</value>
-		<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">plugin://script.extendedinfo?info=topartists&amp;&amp;limit=20</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMusicType),1)">plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window(Home).Property(recentalbums)]</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMusicType),2)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window(Home).Property(recommendedalbums)]</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMusicType),3)">plugin://service.library.data.provider?type=randomalbums&amp;reload=$INFO[Window(Home).Property(randomalbums)]</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMusicType),4)">plugin://script.extendedinfo?info=topartists&amp;&amp;limit=20</value>
 		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMusicType),5)">musicdb://recentlyplayedalbums/</value>
 	</variable>
 	<variable name="QuickNav_WidgetListContentTuneIn">
@@ -1819,31 +1819,35 @@
 	<variable name="QuickNav_WidgetListContentPlaylists">
 		<value condition="!Window.IsVisible(3050)">$INFO[Container(20).ListItem.Property(widgetPlaylist)]</value>
 	</variable>
+
+	<!--sandmann-->
 	<variable name="QuickNav_WidgetListContentAmazonDB">
 		<!--watchlist-->
-		<value condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),1)">plugin://plugin.video.amazon/?url=&lt;&gt;&amp;mode=&lt;appfeed&gt;&amp;sitemode=&lt;WatchList&gt;&amp;name=&lt;Watchlist&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
-		<!-- popular movies -->
-		<value condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),2)">plugin://plugin.video.amazon/?url=&lt;popularity&gt;&amp;mode=&lt;listmovie&gt;&amp;sitemode=&lt;LIST_MOVIES_SORTED&gt;&amp;name=&lt;Beliebt&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetAmazonDBType),1)">plugin://plugin.video.amazon/?url=&lt;&gt;&amp;mode=&lt;appfeed&gt;&amp;sitemode=&lt;WatchList&gt;&amp;name=&lt;Watchlist&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
 		<!-- new movies -->
-		<value condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),3)">plugin://plugin.video.amazon/?url=&lt;recent&gt;&amp;mode=&lt;listmovie&gt;&amp;sitemode=&lt;LIST_MOVIES_SORTED&gt;&amp;name=&lt;Neuerscheinungen&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetAmazonDBType),2)">plugin://plugin.video.amazon/?url=&lt;recent&gt;&amp;mode=&lt;listmovie&gt;&amp;sitemode=&lt;LIST_MOVIES_SORTED&gt;&amp;name=&lt;Recently+Added&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+		<!-- new shows -->
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetAmazonDBType),3)">plugin://plugin.video.amazon/?url=&lt;recent&gt;&amp;mode=&lt;listtv&gt;&amp;sitemode=&lt;LIST_TVSEASON_SORTED&gt;&amp;name=&lt;Recently+Added&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+		<!-- popular movies -->
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetAmazonDBType),4)">plugin://plugin.video.amazon/?url=&lt;popularity&gt;&amp;mode=&lt;listmovie&gt;&amp;sitemode=&lt;LIST_MOVIES_SORTED&gt;&amp;name=&lt;Popular&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
 		<!-- popular tv shows -->
-		<value condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),4)">plugin://plugin.video.amazon/?url=&lt;popularity&gt;&amp;mode=&lt;listtv&gt;&amp;sitemode=&lt;LIST_TVSHOWS_SORTED&gt;&amp;name=&lt;Beliebt&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
-		<!-- new tv shows -->
-		<value condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),5)">plugin://plugin.video.amazon/?url=&lt;recent&gt;&amp;mode=&lt;listtv&gt;&amp;sitemode=&lt;LIST_TVSEASON_SORTED&gt;&amp;name=&lt;Neuerscheinungen&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetAmazonDBType),5)">plugin://plugin.video.amazon/?url=&lt;popularity&gt;&amp;mode=&lt;listtv&gt;&amp;sitemode=&lt;LIST_TVSHOWS_SORTED&gt;&amp;name=&lt;Popular&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
 	</variable>
+
+	<!-- addonscriptor-->
 	<variable name="QuickNav_WidgetListContentAmazon">
 		<!--watchlist movies -->
-		<value condition="stringcompare(Skin.String(QuickNavWidgetAmazonType),1)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fvideo%2Fwatchlist%2Fmovie%2F%3Fie%3DUTF8%26show%3Dall%26sort%3DDATE_ADDED_DESC&amp;mode=listWatchList&amp;thumb=&amp;videoType=</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetAmazonType),1)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fvideo%2Fwatchlist%2Fmovie%2F%3Fie%3DUTF8%26show%3Dall%26sort%3DDATE_ADDED_DESC&amp;mode=listWatchList&amp;thumb=&amp;videoType=</value>
 		<!--watchlist shows -->
-		<value condition="stringcompare(Skin.String(QuickNavWidgetAmazonType),2)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fvideo%2Fwatchlist%2Ftv%2F%3Fie%3DUTF8%26show%3Dall%26sort%3DDATE_ADDED_DESC&amp;mode=listWatchList&amp;thumb=&amp;videoType=</value>
-		<!-- popular movies -->
-		<value condition="stringcompare(Skin.String(QuickNavWidgetAmazonType),3)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3010075031%252Cn%253A3356018031%26sort%3Dpopularity-rank&amp;mode=listMovies&amp;thumb=&amp;videoType=</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetAmazonType),2)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fvideo%2Fwatchlist%2Ftv%2F%3Fie%3DUTF8%26show%3Dall%26sort%3DDATE_ADDED_DESC&amp;mode=listWatchList&amp;thumb=&amp;videoType=</value>
 		<!-- new movies -->
-		<value condition="stringcompare(Skin.String(QuickNavWidgetAmazonType),4)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3279204031%252Cn%253A%213010076031%252Cn%253A3356018031%26sort%3Ddate-desc-rank&amp;mode=listMovies&amp;thumb=&amp;videoType=</value>
-		<!-- popular tv shows -->
-		<value condition="stringcompare(Skin.String(QuickNavWidgetAmazonType),5)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3010075031%252Cn%253A3356019031%26sort%3Dpopularity-rank&amp;mode=listShows&amp;thumb=&amp;videoType=</value>
-		<!-- new tv shows -->
-		<value condition="stringcompare(Skin.String(QuickNavWidgetAmazonType),6)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3279204031%252Cn%253A3010075031%252Cn%253A3015916031%26sort%3Ddate-desc-rank&amp;mode=listShows&amp;thumb=&amp;videoType=</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetAmazonType),3)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3279204031%252Cn%253A%213010076031%252Cn%253A3356018031%26sort%3Ddate-desc-rank&amp;mode=listMovies&amp;thumb=&amp;videoType=</value>
+		<!-- new shows -->
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetAmazonType),4)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3279204031%252Cn%253A3010075031%252Cn%253A3015916031%26sort%3Ddate-desc-rank&amp;mode=listShows&amp;thumb=&amp;videoType=</value>
+		<!-- popular movies -->
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetAmazonType),5)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3010075031%252Cn%253A3356018031%26sort%3Dpopularity-rank&amp;mode=listMovies&amp;thumb=&amp;videoType=</value>
+		<!-- popular shows -->
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetAmazonType),6)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3010075031%252Cn%253A3356019031%26sort%3Dpopularity-rank&amp;mode=listShows&amp;thumb=&amp;videoType=</value>
 	</variable>
 
 	<variable name="RSSVideoFeedURL">
@@ -1918,14 +1922,14 @@
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + stringcompare(Skin.String(QuickNavWidgetMusicType),5) + !IsEmpty(Container(450).ListItem.DBID)">$INFO[Container(450).ListItem.Artist]</value>
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + stringcompare(Skin.String(QuickNavWidgetMusicType),5) + IsEmpty(Container(450).ListItem.DBID)">$LOCALIZE[340]</value>
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)]">$INFO[Container(450).ListItem.Property(Listeners),,  $LOCALIZE[15200] $LOCALIZE[20455]]</value>
-		
+
 		<value condition="Control.HasFocus(550) + stringcompare(Skin.String(QuickNavWidgetTuneInType),1">$LOCALIZE[31286]</value>
 		<value condition="Control.HasFocus(550) + stringcompare(Skin.String(QuickNavWidgetTuneInType),2">$LOCALIZE[31287]</value>
 		<value condition="Control.HasFocus(550) + stringcompare(Skin.String(QuickNavWidgetTuneInType),3">$LOCALIZE[31292]</value>
-		
+
 		<value condition="Control.HasFocus(750)">$LOCALIZE[31052]</value>
 		<value condition="Control.HasFocus(751)">$LOCALIZE[31052]</value>
-		
+
 		<value condition="Control.HasFocus(551)">$LOCALIZE[31173]</value>
 		<value condition="Control.HasFocus(552)">$LOCALIZE[31174]</value>
 		<value condition="Control.HasFocus(553)">$LOCALIZE[31175]</value>
@@ -2379,145 +2383,145 @@
 		<onclick condition="Window.IsActive(3098)">Dialog.Close(3098)</onclick>
 		<onclick condition="Window.IsActive(3099)">Dialog.Close(3099)</onclick>		
 	</include>
-	
-	
-	
-		<include name="hiddenlist">
-			<description>container</description>
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>1</width>
-			<height>1</height>
-			<onleft>9000</onleft>
-			<onright>9000</onright>
-			<onup>9000</onup>
-			<ondown>9000</ondown>
-			<viewtype label="Actor">list</viewtype>
-			<pagecontrol>-</pagecontrol>
-			<itemlayout height="1" width="1" />
-			<focusedlayout height="1" width="1" />
-		</include>
-		<include name="ExtendedPosterLayout-nf">
-			<control type="image">
-				<posx>10</posx>
-				<posy>10</posy>
-				<width>128</width>
-				<height>185</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
-			</control>
-			<control type="image">
-				<posx>10</posx>
-				<posy>10</posy>
-				<width>128</width>
-				<height>185</height>
-				<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
-				<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
-			</control>
-			<control type="image">
-				<posx>10</posx>
-				<posy>10</posy>
-				<width>128</width>
-				<height>185</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture background="true" diffuse="thumbs/poster_diffuse.png">overlays/in_library.png</texture>
-				<visible>!IsEmpty(ListItem.Property(LibraryHasMovie))</visible>
-			</control>
-			<control type="image">
-				<posx>3</posx>
-				<posy>3</posy>
-				<width>142</width>
-				<height>199</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/poster_overlay_noglass.png</texture>
-			</control>
-		</include>
-		<include name="ExtendedPosterLayout-fo">
-			<control type="image">
-				<posx>10</posx>
-				<posy>10</posy>
-				<width>128</width>
-				<height>185</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
-			</control>
-			<control type="image">
-				<posx>10</posx>
-				<posy>10</posy>
-				<width>128</width>
-				<height>185</height>
-				<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
-				<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
-			</control>
-			<control type="image">
-				<posx>10</posx>
-				<posy>10</posy>
-				<width>128</width>
-				<height>185</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture background="true" diffuse="thumbs/poster_diffuse.png">overlays/in_library.png</texture>
-				<visible>!IsEmpty(ListItem.Property(LibraryHasMovie))</visible>
-			</control>
-			<control type="image">
-				<posx>3</posx>
-				<posy>3</posy>
-				<width>142</width>
-				<height>199</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/poster_overlay_noglass.png</texture>
-			</control>
-		</include>
-		<include name="ExtendedLandscapeLayout-nf">
+
+
+
+	<include name="hiddenlist">
+		<description>container</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1</width>
+		<height>1</height>
+		<onleft>9000</onleft>
+		<onright>9000</onright>
+		<onup>9000</onup>
+		<ondown>9000</ondown>
+		<viewtype label="Actor">list</viewtype>
+		<pagecontrol>-</pagecontrol>
+		<itemlayout height="1" width="1" />
+		<focusedlayout height="1" width="1" />
+	</include>
+	<include name="ExtendedPosterLayout-nf">
 		<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
-							</control>
-							<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/music_diffuse.png">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="image">
-								<left>0</left>
-								<top>0</top>
-								<width>290</width>
-								<height>182</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/video_overlay_noglass.png</texture>
-							</control>
-		</include>
-		<include name="ExtendedLandscapeLayout-fo">
+			<posx>10</posx>
+			<posy>10</posy>
+			<width>128</width>
+			<height>185</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
+		</control>
 		<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
-							</control>
-							<control type="image">
-								<left>7</left>
-								<top>7</top>
-								<width>276</width>
-								<height>168</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-								<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/video_diffuse.png">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="image">
-								<left>0</left>
-								<top>0</top>
-								<width>290</width>
-								<height>182</height>
-								<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-								<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/video_overlay_noglass.png</texture>
-							</control>
-		</include>
+			<posx>10</posx>
+			<posy>10</posy>
+			<width>128</width>
+			<height>185</height>
+			<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
+		</control>
+		<control type="image">
+			<posx>10</posx>
+			<posy>10</posy>
+			<width>128</width>
+			<height>185</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="thumbs/poster_diffuse.png">overlays/in_library.png</texture>
+			<visible>!IsEmpty(ListItem.Property(LibraryHasMovie))</visible>
+		</control>
+		<control type="image">
+			<posx>3</posx>
+			<posy>3</posy>
+			<width>142</width>
+			<height>199</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/poster_overlay_noglass.png</texture>
+		</control>
+	</include>
+	<include name="ExtendedPosterLayout-fo">
+		<control type="image">
+			<posx>10</posx>
+			<posy>10</posy>
+			<width>128</width>
+			<height>185</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
+		</control>
+		<control type="image">
+			<posx>10</posx>
+			<posy>10</posy>
+			<width>128</width>
+			<height>185</height>
+			<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
+		</control>
+		<control type="image">
+			<posx>10</posx>
+			<posy>10</posy>
+			<width>128</width>
+			<height>185</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="thumbs/poster_diffuse.png">overlays/in_library.png</texture>
+			<visible>!IsEmpty(ListItem.Property(LibraryHasMovie))</visible>
+		</control>
+		<control type="image">
+			<posx>3</posx>
+			<posy>3</posy>
+			<width>142</width>
+			<height>199</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/poster_overlay_noglass.png</texture>
+		</control>
+	</include>
+	<include name="ExtendedLandscapeLayout-nf">
+		<control type="image">
+			<left>7</left>
+			<top>7</top>
+			<width>276</width>
+			<height>168</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
+		</control>
+		<control type="image">
+			<left>7</left>
+			<top>7</top>
+			<width>276</width>
+			<height>168</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/music_diffuse.png">$INFO[ListItem.Icon]</texture>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>290</width>
+			<height>182</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/video_overlay_noglass.png</texture>
+		</control>
+	</include>
+	<include name="ExtendedLandscapeLayout-fo">
+		<control type="image">
+			<left>7</left>
+			<top>7</top>
+			<width>276</width>
+			<height>168</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
+		</control>
+		<control type="image">
+			<left>7</left>
+			<top>7</top>
+			<width>276</width>
+			<height>168</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/video_diffuse.png">$INFO[ListItem.Icon]</texture>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>290</width>
+			<height>182</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/video_overlay_noglass.png</texture>
+		</control>
+	</include>
 
 </includes>
