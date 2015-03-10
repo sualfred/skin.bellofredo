@@ -130,6 +130,8 @@
 	<widget label="31095">tvshows</widget>
 	<widget label="31096">music</widget>
 	<widget label="31288">tunein</widget>
+	<widget label="31105">amazondb</widget>
+	<widget label="31106">amazon</widget>
 	<widget label="31097">rssvideowidget</widget>
 	<widget label="31173">widgetgroup1</widget>
 	<widget label="31174">widgetgroup2</widget>
@@ -139,8 +141,9 @@
 	<widgetdefault defaultID="tvshows">tvshows</widgetdefault>
 	<widgetdefault defaultID="music">music</widgetdefault>
 	<widgetdefault defaultID="plugin.audio.tuneinradio">tunein</widgetdefault>
+	<widgetdefault defaultID="plugin.video.amazon">amazondb</widgetdefault>
+	<widgetdefault defaultID="plugin.video.prime_instant">amazon</widgetdefault>
 	<widgetPlaylists>True</widgetPlaylists>
-
 
 	<!-- =============== -->
 	<!-- Shortcuts Check -->

@@ -404,7 +404,7 @@
 			</control>
 			<control type="fixedlist" id="350">
 				<include>WidgetPosterLayout</include>
-				<content>$VAR[QuickNav_WidgetListContentTVShows]</content>
+				<content>$VAR[QuickNav_WidgetListContentTVShows]</content>				
 			</control>
 			<include>WidgetBottomLabels</include>
 		</control>
@@ -463,6 +463,92 @@
 			<control type="fixedlist" id="450">
 				<include>WidgetSquareLayout</include>
 				<content target="music">$VAR[QuickNav_WidgetListContentMusic]</content>
+			</control>
+			<include>WidgetBottomLabels</include>
+		</control>
+		
+		<!-- =========== -->
+		<!-- Amazon Sandmann Plugin 	 -->
+		<!-- =========== --> 
+		<control type="group" id="9070">
+			<include>HomeSlideAnimations</include>
+			<include>HomeAmazonDBWidgetAnimation</include>			
+			<include>WidgetContainer</include>	
+			<control type="group">
+				<visible>!IntegerGreaterThan(Container(750).NumItems,5)</visible>
+				<include>WidgetEmptyPosters</include>
+			</control>
+			<control type="group">
+				<description>arrows left right</description>
+				<left>246</left>
+				<top>337</top>
+				<width>788</width>
+				<height>25</height>
+				<control type="image">  					
+					<left>0</left>
+					<width>25</width>
+					<height>25</height>
+					<texture background="true">buttons/arrow_left.png</texture>
+					<colordiffuse>CCFFFFFF</colordiffuse>						
+					<visible>Container(750).HasPrevious</visible>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+				</control>
+				<control type="image">  					
+					<left>763</left>
+					<width>25</width>
+					<height>25</height>
+					<texture background="true">buttons/arrow_right.png</texture>
+					<colordiffuse>CCFFFFFF</colordiffuse>
+					<visible>Container(750).HasNext</visible>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+				</control>
+			</control>
+			<control type="fixedlist" id="750">
+				<include>WidgetPosterLayout</include>
+				<content limit="15" target="video">$VAR[QuickNav_WidgetListContentAmazonDB]</content>				
+			</control>
+			<include>WidgetBottomLabels</include>
+		</control>
+		
+		<!-- =========== -->
+		<!-- Amazon AddonScriptorDE Plugin 	 -->
+		<!-- =========== --> 
+		<control type="group" id="9071">
+			<include>HomeSlideAnimations</include>
+			<include>HomeAmazonWidgetAnimation</include>			
+			<include>WidgetContainer</include>	
+			<control type="group">
+				<visible>!IntegerGreaterThan(Container(751).NumItems,5)</visible>
+				<include>WidgetEmptyPosters</include>
+			</control>
+			<control type="group">
+				<description>arrows left right</description>
+				<left>246</left>
+				<top>337</top>
+				<width>788</width>
+				<height>25</height>
+				<control type="image">  					
+					<left>0</left>
+					<width>25</width>
+					<height>25</height>
+					<texture background="true">buttons/arrow_left.png</texture>
+					<colordiffuse>CCFFFFFF</colordiffuse>						
+					<visible>Container(751).HasPrevious</visible>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+				</control>
+				<control type="image">  					
+					<left>763</left>
+					<width>25</width>
+					<height>25</height>
+					<texture background="true">buttons/arrow_right.png</texture>
+					<colordiffuse>CCFFFFFF</colordiffuse>
+					<visible>Container(751).HasNext</visible>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+				</control>
+			</control>
+			<control type="fixedlist" id="751">
+				<include>WidgetPosterLayout</include>
+				<content limit="15" target="video">$VAR[QuickNav_WidgetListContentAmazon]</content>				
 			</control>
 			<include>WidgetBottomLabels</include>
 		</control>

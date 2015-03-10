@@ -38,7 +38,7 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>Temporary Info Test: $INFO[Window(home).Property(SeasonNumber)]</label>
+				<label>Temporary Info Test: $INFO[Window(3000).Property(type)]</label>				
 			</control>
 			<control type="label">
 				<width>780</width>
@@ -47,38 +47,7 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>List Container: tv shows</label>
-				<visible>Container.Content(tvshows)</visible>
-			</control>
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
-				<label>List Container:movies</label>
-				<visible>Container.Content(movies)</visible>
-			</control>
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
-				<label>List Container:seasons</label>
-				<visible>Container.Content(seasons)</visible>
-			</control>
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
-				<label>List Container:episodes</label>
-				<visible>Container.Content(episodes)</visible>
+				<label>Temporary Info Test: $INFO[ListItem.Property(type)]</label>				
 			</control>
 			
 			<control type="label">

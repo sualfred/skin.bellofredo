@@ -102,7 +102,7 @@
 					<control type="label">
 						<description>Title</description>					
 						<posy>0</posy>
-						<width max="740">auto</width>
+						<width max="800">auto</width>
 						<height>45</height>
 						<font>FontSize_40</font>
 						<label>$INFO[Window.Property(movie.title)]</label>						
@@ -142,9 +142,6 @@
 					<texture background="true">thumbs/poster_overlay_big.png</texture>
 				</control>
 				
-				<!-- ================== -->
-				<!-- Vertical Info Line -->
-				<!-- ================== --> 
 				<control type="group">
 				<top>10</top>
 					<control type="image">
@@ -166,6 +163,8 @@
 						<aspectratio>stretch</aspectratio>				
 						<visible>!StringCompare(Window.Property(type),episode)</visible>
 					</control>
+				
+				<!--- vertikale infos-->
 				<control type="grouplist">
 					<posx>330</posx>
 					<posy>40</posy>
@@ -323,7 +322,8 @@
 							<font>FontSize_14B</font>
 						</control>
 					</control>
-				</control>				
+				</control>
+				
 				</control>
 				<control type="group">	
 					<visible>false</visible>
@@ -442,11 +442,11 @@
 							<label fallback="195">$INFO[Window.Property(movie.Rating)] / $INFO[Window.Property(movie.Votes),, Votes]</label>
 						</control>
 					</control>					
-				</control>		
+				</control>
 				
-				<!-- ================== -->
-				<!-- awards + plot -->
-				<!-- ================== --> 
+		
+				
+				<!-- awards groups -->
 				<control type="grouplist">
 					<posx>330</posx>
 					<posy>145</posy>
@@ -477,29 +477,27 @@
 							<visible>!IsEmpty(Window.Property(movie.omdb.tomatoConsensus))</visible>
 						</control>
 						<control type="label">
-							<top>25</top>
-							<height>22</height>
-							<width>840</width>							
+							<top>25</top>							
+							<width>840</width>
+							<height>25</height>
 							<label>-</label>
 						</control>				
 					<control type="textbox" id="400">
 						<description>plot</description>
 						<width>840</width>
-						<height>238</height>		
+						<height>auto</height>
 						<font>FontSize_22</font>
 						<align>justify</align>
 						<textcolor>99white</textcolor>
 						<shadowcolor>99000000</shadowcolor>
-						<label fallback="No info available">$VAR[ExtendedInfoPlot]</label>
+						<label fallback="No info available">[B]$INFO[Window.Property(movie.TagLine),,[CR]][/B]$INFO[Window.Property(movie.Plot)]</label>
 						<autoscroll time="3000" delay="5000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
-						<visible>IsEmpty(Window.Property(switchcontent))</visible>						
+						<visible>IsEmpty(Window.Property(switchcontent))</visible>
 					</control>
 				</control>				
 			</control>
 			
-			<!-- ================== -->
-			<!-- Container part -->
-			<!-- ================== --> 
+			<!-- switched view -->
 			<control type="group">
 				<posx>366</posx>
 				<posy>400</posy>
@@ -630,7 +628,7 @@
 						<control type="label">
 							<posx>372</posx>
 							<posy>190</posy>
-							<width>475</width>
+							<width>500</width>
 							<height>40</height>
 							<font>FontSize_22</font>
 							<scroll>true</scroll>
@@ -1122,6 +1120,8 @@
 				<label>$VAR[ExtendedInfoVideoContentInfoLabels]</label>
 			</control>
 		</control>
+
+
 
 	</controls>
 </window>

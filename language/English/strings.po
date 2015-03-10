@@ -222,7 +222,35 @@ msgctxt "#31051"
 msgid "Use Extra-Fanarts"
 msgstr ""
 
-#: empty strings from id 31052 to 31067
+msgctxt "#31052"
+msgid "Amazon Prime"
+msgstr ""
+
+msgctxt "#31053"
+msgid "[COLOR=55white](AddonScriptorDE's Plugin)[/COLOR]"
+msgstr ""
+
+msgctxt "#31054"
+msgid "[COLOR=55white](Sandmanns's Plugin)[/COLOR]"
+msgstr ""
+
+msgctxt "#31055"
+msgid "Watchlist"
+msgstr ""
+
+msgctxt "#31056"
+msgid "Popular"
+msgstr ""
+
+msgctxt "#31057"
+msgid "New at Amazon"
+msgstr ""
+
+msgctxt "#31058"
+msgid "Widget"
+msgstr ""
+
+#: empty strings from id 31058 to 31067
 #: extendedInfoLabels
 
 msgctxt "#31068"
@@ -369,7 +397,15 @@ msgctxt "#31104"
 msgid "Hide Now Playing Covers on Home"
 msgstr ""
 
-#: empty strings from id 31105 to 31123
+msgctxt "#31105"
+msgid "Amazon [COLOR=55white](Sandmann's Plugin)[/COLOR]"
+msgstr ""
+
+msgctxt "#31106"
+msgid "Amazon [COLOR=55white](AddonScriptorDE's Plugin)[/COLOR]"
+msgstr ""
+
+#: empty strings from id 31107 to 31123
 
 msgctxt "#31124"
 msgid "Flashing Lights"
@@ -876,7 +912,7 @@ msgid "Favourite Streams"
 msgstr ""
 
 msgctxt "#31288"
-msgid "TuneIn Radio Widget [COLOR=55white](Requires TuneIn Radio Plugin)[/COLOR]"
+msgid "TuneIn Radio Widget"
 msgstr ""
 
 msgctxt "#31289"
@@ -893,7 +929,11 @@ msgstr ""
 
 msgctxt "#31292"
 msgid "Local Streams"
-msgstr "Lokale Streams"
+msgstr ""
+
+msgctxt "#31293"
+msgid "[COLOR=55white](TuneIn Plugin)[/COLOR]"
+msgstr ""
 
 #: empty strings from id 31293 to 31299
 #: video and Music OSD Labels

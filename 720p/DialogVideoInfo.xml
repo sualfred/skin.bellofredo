@@ -722,11 +722,8 @@
 					<description>ExtendedInfo</description>
 					<label>$LOCALIZE[31068]</label>
 					<onclick condition="Container.Content(movies)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Listitem.Title])</onclick>
-					<onclick condition="Container.Content(movies)">Dialog.Close(movieinformation)</onclick>
-					<onclick condition="Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Listitem.TVShowTitle])</onclick>
-					<onclick condition="Container.Content(tvshows)">Dialog.Close(movieinformation)</onclick>
-					<onclick condition="Container.Content(seasons) | Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TVShowTitle],season=$INFO[Window(home).Property(SeasonNumber)])</onclick>
-					<onclick condition="Container.Content(seasons) | Container.Content(episodes)">Dialog.Close(movieinformation)</onclick>
+					<onclick condition="!Container.Container(movies)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Listitem.TVShowTitle])</onclick>
+					<onclick>Dialog.Close(movieinformation)</onclick>
 					<include>TopButton</include>
 					<visible>Container.Content(movies) | Container.Content(tvshows) | [Container.Content(episodes) + !substring(Container.FolderPath,plugin://plugin.video,left)] | Container.Content(seasons)</visible>
 				</control>
