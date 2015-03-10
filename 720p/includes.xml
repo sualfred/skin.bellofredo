@@ -1969,7 +1969,13 @@
 		<value condition="Control.HasFocus(651) + IsEmpty(Container(651).ListItem.Art(fanart)) + IsEmpty(Container(651).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>		
 		<value condition="Control.HasFocus(652) + !IsEmpty(Container(652).ListItem.Art(fanart))">$INFO[Container(652).ListItem.Art(fanart)]</value>
 		<value condition="Control.HasFocus(652) + !IsEmpty(Container(652).ListItem.Property(FanartImage))">$INFO[Container(652).ListItem.Property(FanartImage)]</value>
-		<value condition="Control.HasFocus(652) + IsEmpty(Container(652).ListItem.Art(fanart)) + IsEmpty(Container(652).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>
+		<value condition="Control.HasFocus(652) + IsEmpty(Container(652).ListItem.Art(fanart)) + IsEmpty(Container(652).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>		
+		<value condition="Control.HasFocus(750) + !IsEmpty(Container(750).ListItem.Art(fanart))">$INFO[Container(750).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(750) + !IsEmpty(Container(750).ListItem.Property(FanartImage))">$INFO[Container(750).ListItem.Property(FanartImage)]</value>
+		<!--<value condition="Control.HasFocus(750) + IsEmpty(Container(750).ListItem.Art(fanart)) + IsEmpty(Container(750).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>	-->
+		<value condition="Control.HasFocus(751) + !IsEmpty(Container(751).ListItem.Art(fanart))">$INFO[Container(751).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(751) + !IsEmpty(Container(751).ListItem.Property(FanartImage))">$INFO[Container(751).ListItem.Property(FanartImage)]</value>
+		<!--<value condition="Control.HasFocus(751) + IsEmpty(Container(751).ListItem.Art(fanart)) + IsEmpty(Container(751).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>-->
 
 	</variable>
 

@@ -470,7 +470,7 @@
 		<!-- =========== -->
 		<!-- Amazon Sandmann Plugin 	 -->
 		<!-- =========== --> 
-		<control type="group" id="9070">
+		<control type="group" id="9073">
 			<include>HomeSlideAnimations</include>
 			<include>HomeAmazonDBWidgetAnimation</include>			
 			<include>WidgetContainer</include>	
@@ -513,7 +513,7 @@
 		<!-- =========== -->
 		<!-- Amazon AddonScriptorDE Plugin 	 -->
 		<!-- =========== --> 
-		<control type="group" id="9071">
+		<control type="group" id="9074">
 			<include>HomeSlideAnimations</include>
 			<include>HomeAmazonWidgetAnimation</include>			
 			<include>WidgetContainer</include>	
