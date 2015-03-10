@@ -41,7 +41,7 @@
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3) + IntegerGreaterThan(Container(553).NumItems,0)">SetFocus(553)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4) + IntegerGreaterThan(Container(554).NumItems,0)">SetFocus(554)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + IntegerGreaterThan(Container(650).NumItems,0)">SetFocus(650)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),amazondb) + IntegerGreaterThan(Container(751).NumItems,0)">SetFocus(750)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),amazondb) + IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(750)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),amazon) + IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(751)</onup>
 					<onup condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music) + IntegerGreaterThan(Container(651).NumItems,0)">SetFocus(651)</onup>
 					<onup condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video) + IntegerGreaterThan(Container(652).NumItems,0)">SetFocus(652)</onup>
