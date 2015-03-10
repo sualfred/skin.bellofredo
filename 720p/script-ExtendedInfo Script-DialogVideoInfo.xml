@@ -630,7 +630,7 @@
 						<control type="label">
 							<posx>372</posx>
 							<posy>190</posy>
-							<width>500</width>
+							<width>475</width>
 							<height>40</height>
 							<font>FontSize_22</font>
 							<scroll>true</scroll>
