@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-03-07 00:53+0000\n"
+"PO-Revision-Date: 2015-03-10 22:10+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr "Hauptmenüanimation aktivieren"
 
 msgctxt "#31014"
 msgid "Enable Startup Intro Video"
-msgstr "Enable Intro Video"
+msgstr "Aktiviere Intro Video"
 
 msgctxt "#31016"
 msgid "File Manager"
@@ -213,8 +213,8 @@ msgid "Manage Menu Items"
 msgstr "Bearbeite Menü Einträge"
 
 msgctxt "#31049"
-msgid "Manage Widget"
-msgstr "Bearbeite Widget"
+msgid "Manage Widgets"
+msgstr "Bearbeite Widgets"
 
 msgctxt "#31050"
 msgid "Manage Sub Menu of"
@@ -222,12 +222,44 @@ msgstr "Bearbeite das Submenü von"
 
 msgctxt "#31051"
 msgid "Use Extra-Fanarts"
-msgstr "Benutze Extra-Fanarts"
+msgstr "Nutze Extra Fanarts"
 
-#: empty strings from id 31052 to 31069 extendedInfoLabels
-msgctxt "#31070"
+msgctxt "#31052"
+msgid "Amazon Prime"
+msgstr "Amazon Prime"
+
+msgctxt "#31053"
+msgid "[COLOR=55white](AddonScriptorDE's Plugin)[/COLOR]"
+msgstr "[COLOR=55white](AddonScriptorDE's Plugin)[/COLOR]"
+
+msgctxt "#31054"
+msgid "[COLOR=55white](Sandmanns's Plugin)[/COLOR]"
+msgstr "[COLOR=55white](Sandmanns's Plugin)[/COLOR]"
+
+msgctxt "#31055"
+msgid "Watchlist"
+msgstr "Watchlist"
+
+msgctxt "#31056"
+msgid "Popular"
+msgstr "Beliebt"
+
+msgctxt "#31057"
+msgid "New at Amazon"
+msgstr "Neu auf Amazon"
+
+msgctxt "#31058"
+msgid "Widget"
+msgstr "Widget"
+
+#: empty strings from id 31058 to 31067 extendedInfoLabels
+msgctxt "#31068"
 msgid "Online Video Information"
-msgstr "Online Video Informationen"
+msgstr "Online Video Information"
+
+msgctxt "#31069"
+msgid "Misc"
+msgstr "Misc"
 
 msgctxt "#31070"
 msgid "Video Info"
@@ -235,7 +267,7 @@ msgstr "Video Info"
 
 msgctxt "#31071"
 msgid "Similar"
-msgstr "Ähnlich"
+msgstr "Ähnliche"
 
 msgctxt "#31072"
 msgid "Crew"
@@ -318,21 +350,22 @@ msgctxt "#31091"
 msgid "Episodes"
 msgstr "Episoden"
 
+#: empty strings from id 31092 to 31093 skin Settings labels
 msgctxt "#31094"
-msgid "Choose Movies Widget"
-msgstr "Filme-Widget auswählen"
+msgid "Movies Widget"
+msgstr "Movies Widget"
 
 msgctxt "#31095"
-msgid "Choose TV Shows Widget"
-msgstr "Fernsehshows-Widget auswählen"
+msgid "TV Shows Widget"
+msgstr "Serien Widget"
 
 msgctxt "#31096"
-msgid "Choose Music Widget"
-msgstr "Musik-Widget auswählen"
+msgid "Music Widget"
+msgstr "Musik Widget"
 
 msgctxt "#31097"
-msgid "Choose RSS Video Feed Widget"
-msgstr "RSS-Video-Feed-Widget auswählen"
+msgid "RSS Video Feed Widget"
+msgstr "RSS Video Feed Widget"
 
 msgctxt "#31098"
 msgid "Show Small Thumbs"
@@ -357,8 +390,17 @@ msgstr "Verstecke 'Läuft gerade' Musik-Info"
 
 msgctxt "#31104"
 msgid "Hide Now Playing Covers on Home"
-msgstr "Verberge 'Läuft gerade' Covers"
+msgstr "Verberge Covers von aktueller Wiedergabe"
 
+msgctxt "#31105"
+msgid "Amazon [COLOR=55white](Sandmann's Plugin)[/COLOR]"
+msgstr "Amazon [COLOR=55white](Sandmann's Plugin)[/COLOR]"
+
+msgctxt "#31106"
+msgid "Amazon [COLOR=55white](AddonScriptorDE's Plugin)[/COLOR]"
+msgstr "Amazon [COLOR=55white](AddonScriptorDE's Plugin)[/COLOR]"
+
+#: empty strings from id 31107 to 31123
 msgctxt "#31124"
 msgid "Flashing Lights"
 msgstr "Blinkende Lichter"
@@ -537,26 +579,34 @@ msgid "Update Art"
 msgstr "Kunst aktualisieren"
 
 msgctxt "#31172"
-msgid "Label:"
-msgstr "Label:"
+msgid "Empty Label"
+msgstr "Kein Label"
 
 msgctxt "#31173"
-msgid "Choose Custom Widget #1"
-msgstr "Setze eigenes Widget #1"
+msgid "Custom Widgets #1"
+msgstr "Custom Widgets #1"
 
 msgctxt "#31174"
-msgid "Choose Custom Widget #2"
-msgstr "Setze eigenes Widget #2"
+msgid "Custom Widgets #2"
+msgstr "Custom Widgets #2"
 
 msgctxt "#31175"
-msgid "Choose Custom Widget #3"
-msgstr "Setze eigenes Widget #3"
+msgid "Custom Widgets #3"
+msgstr "Custom Widgets #3"
 
 msgctxt "#31176"
-msgid "Choose Custom Widget #4"
-msgstr "Setze eigenes Widget #4"
+msgid "Custom Widgets #4"
+msgstr "Custom Widgets #4"
 
-#: empty strings from id 31177 to 31199 scripts labels
+msgctxt "#31177"
+msgid "Manage [COLOR=selected]Custom Widgets[/COLOR]"
+msgstr "Bearbeite [COLOR=selected]Custom Widgets[/COLOR]"
+
+msgctxt "#31178"
+msgid "Manage [COLOR=selected]Common Widgets[/COLOR]"
+msgstr "Bearbeite [COLOR=selected]Common Widgets[/COLOR]"
+
+#: empty strings from id 31179 to 31199 scripts labels
 msgctxt "#31200"
 msgid "My Movies"
 msgstr "Meine Filme"
@@ -855,8 +905,8 @@ msgid "Favourite Streams"
 msgstr "Favouriten Streams"
 
 msgctxt "#31288"
-msgid "Choose TuneIn Radio Widget"
-msgstr "Setze TuneIN Radio Widget"
+msgid "TuneIn Radio Widget"
+msgstr "TuneIn Radio Widget"
 
 msgctxt "#31289"
 msgid "Toggle debug grid"
@@ -873,6 +923,10 @@ msgstr "Aktiviere Skin Debug Tools"
 msgctxt "#31292"
 msgid "Local Streams"
 msgstr "Lokale Streams"
+
+msgctxt "#31293"
+msgid "[COLOR=55white](TuneIn Plugin)[/COLOR]"
+msgstr "[COLOR=55white](TuneIn Plugin)[/COLOR]"
 
 #: empty strings from id 31293 to 31299 video and Music OSD Labels
 msgctxt "#31300"
@@ -1002,19 +1056,19 @@ msgid "Custom Item"
 msgstr "Benutzerdefiniertes Element"
 
 msgctxt "#31379"
-msgid "Custom Items"
-msgstr "Benutzerdefinierte Elemente"
+msgid "Menu & Widgets"
+msgstr "Menü & Widgets"
 
 msgctxt "#31380"
-msgid "Custom widget"
-msgstr "Eigenes Widget"
+msgid "Custom Widgets"
+msgstr "Custom Widgets"
 
 #: empty strings from id 31381 to 31408 settings Category Description & Header
 #: Labels
 msgctxt "#31409"
 msgid ""
-"Choose from a variety of settings and customization options to make "
-"\"Bello\" fit your needs and taste."
+"Choose from a variety of settings and customization options to make \"Bello "
+"Fredo\" fit your needs and taste."
 msgstr "Wählen Sie aus einer Vielzahl von fortgeschrittenen Einstellungs- und Anpassungsoptionen um \"Bello\" auf Ihre Bedürfnisse und Ihren Geschmack anzupassen."
 
 msgctxt "#31410"
