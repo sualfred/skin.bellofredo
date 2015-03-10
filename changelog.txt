@@ -1,3 +1,9 @@
+[B][COLOR=FF56ADDA]v4.0.10[/COLOR][/B]
+• Reworked: ExtendedInfo info panels and extended support for seasons/sets/episodes
+• Added: script.toolbox addon for widget content selection
+• Added: Amazon Prime Instant Video Addon widgets (for both plugins: plugin.video.amazon and plugin.video.prime_instant)
+• Other fixes that I forgot
+
 [B][COLOR=FF56ADDA]v4.0.9a[/COLOR][/B]
 • Fixed: Overlapping issues with info dialogs and Home, if the startscreen is accessed directly with an keymapping/remote
 • Fixed: ExtendedInfo for TV shows
