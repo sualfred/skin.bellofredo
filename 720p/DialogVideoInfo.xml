@@ -725,10 +725,15 @@
 					<onclick condition="Container.Content(movies)">Dialog.Close(movieinformation)</onclick>
 					<onclick condition="Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Listitem.TVShowTitle])</onclick>
 					<onclick condition="Container.Content(tvshows)">Dialog.Close(movieinformation)</onclick>
-					<onclick condition="Container.Content(seasons) | Container.Content(episodes)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TVShowTitle],season=$INFO[Window(home).Property(SeasonNumber)])</onclick>
-					<onclick condition="Container.Content(seasons) | Container.Content(episodes)">Dialog.Close(movieinformation)</onclick>
+					<onclick condition="[Container.Content(seasons) | Container.Content(episodes)] + !IsEmpty(Window(home).Property(SeasonNumber))">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TVShowTitle],season=$INFO[Window(home).Property(SeasonNumber)])</onclick>
+					<onclick condition="[Container.Content(seasons) | Container.Content(episodes)] + !IsEmpty(Window(home).Property(SeasonNumber))">Dialog.Close(movieinformation)</onclick>
 					<include>TopButton</include>
-					<visible>Container.Content(movies) | Container.Content(tvshows) | [Container.Content(episodes) + !substring(Container.FolderPath,plugin://plugin.video,left)] | Container.Content(seasons)</visible>
+					<visible>
+					Container.Content(movies) 
+					| Container.Content(tvshows) 
+					| [Container.Content(episodes) + !substring(Container.FolderPath,plugin://plugin.video,left) + !IsEmpty(Window(home).Property(SeasonNumber)] 
+					| [Container.Content(seasons) + !IsEmpty(Window(home).Property(SeasonNumber))]
+					</visible>
 				</control>
 				<control type="button" id="105">
 					<description>Cast/Plot</description>
@@ -796,7 +801,12 @@
 					<label>$INFO[Control.GetLabel(104)]</label>
 					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(104)" reversible="true">Conditional</animation>
 					<animation effect="zoom"  start="100" end="90" time="200" tween="cubic" easing="inout" center="auto" condition="!Control.HasFocus(104)" reversible="true">Conditional</animation>
-					<visible>Container.Content(movies) | Container.Content(tvshows) | [Container.Content(episodes) + !substring(Container.FolderPath,plugin://plugin.video,left)] | Container.Content(seasons)</visible>
+					<visible>
+					Container.Content(movies) 
+					| Container.Content(tvshows) 
+					| [Container.Content(episodes) + !substring(Container.FolderPath,plugin://plugin.video,left) + !IsEmpty(Window(home).Property(SeasonNumber)] 
+					| [Container.Content(seasons) + !IsEmpty(Window(home).Property(SeasonNumber))]
+					</visible>
 				</control>
 				<control type="label">
 					<description>Cast/Plot</description>
