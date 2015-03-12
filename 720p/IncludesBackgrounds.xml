@@ -239,10 +239,10 @@
 		</control>
 		<control type="image">
 			<description>NetFilx Fanart</description>
-			<left>340</left>
+			<left>360</left>
 			<top>0</top>
-			<width>940</width>
-			<height>550</height>
+			<width>920</width>
+			<height>530</height>
 			<aspectratio>scale</aspectratio>
 			<texture background="true" diffuse="views/netfilx/fanart_diffuse.png">$INFO[ListItem.Art(fanart)]</texture>
 			<include>FanartFade</include>
