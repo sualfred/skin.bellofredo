@@ -23,8 +23,8 @@
 	<onload condition="IsEmpty(Skin.String(widgetgroup3))">Skin.SetString(widgetgroup3,$LOCALIZE[31172])</onload>
 	<onload condition="IsEmpty(Skin.String(widgetgroup4))">Skin.SetString(widgetgroup4,$LOCALIZE[31172])</onload>
 	
-	<onload condition="IsEmpty(Skin.String(QuickNavWidgetAmazonType))">Skin.SetString(QuickNavWidgetAmazonDBName,$LOCALIZE[31257])</onload>
-	<onload condition="IsEmpty(Skin.String(QuickNavWidgetAmazonType))">Skin.SetString(QuickNavWidgetAmazonDBType,5)</onload>
+	<onload condition="IsEmpty(Skin.String(QuickNavWidgetAmazonType))">Skin.SetString(QuickNavWidgetAmazonName,$LOCALIZE[31257])</onload>
+	<onload condition="IsEmpty(Skin.String(QuickNavWidgetAmazonType))">Skin.SetString(QuickNavWidgetAmazonType,5)</onload>
 	<onload condition="IsEmpty(Skin.String(QuickNavWidgetAmazonDBType))">Skin.SetString(QuickNavWidgetAmazonDBName,$LOCALIZE[31257])</onload>
 	<onload condition="IsEmpty(Skin.String(QuickNavWidgetAmazonDBType))">Skin.SetString(QuickNavWidgetAmazonDBType,4)</onload>
 	
