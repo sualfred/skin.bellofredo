@@ -1,4 +1,11 @@
-﻿[B][COLOR=FF56ADDA]v4.0.10a[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.0.11[/COLOR][/B]
+• Fixed: Amazon widgets causing viewtype change
+• Fixed: Amazon widgets wrong settings conditions
+• Changed: Context menu for widgets
+• Fixed: Poster positions for NetFilx viewtype
+• Changed: Home library update button in the top menu will open an dialog now with various options
+
+[B][COLOR=FF56ADDA]v4.0.10a[/COLOR][/B]
 • Reworked: ExtendedInfo info panels and extended support for seasons/sets/episodes
 • Added: script.toolbox addon for widget content selection
 • Added: Amazon Prime Instant Video Addon widgets (for both plugins: plugin.video.amazon and plugin.video.prime_instant)
