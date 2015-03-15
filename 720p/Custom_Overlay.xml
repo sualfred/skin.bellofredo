@@ -38,7 +38,27 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>Temporary Info Test: $INFO[Window(home).Property(SeasonNumber)]</label>
+				<label>Temporary Info Test: $INFO[ListItem.FileNameAndPath]</label>
+			</control>
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>Player: tv shows</label>
+				<visible>VideoPlayer.Content(episodes)</visible>
+			</control>
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>Player :movies</label>
+				<visible>VideoPlayer.Content(movie)</visible>
 			</control>
 			<control type="label">
 				<width>780</width>

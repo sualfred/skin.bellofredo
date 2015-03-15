@@ -742,5 +742,55 @@
 				<font>FontSize_22</font>
 			</control>
 	</include>
-
+	
+	<!-- ====================================== -->
+	<!-- == Context Menu Widgets			 == -->
+	<!-- ====================================== -->
+	<include name="ContextMenuWidgets">
+      <control type="group">
+	  <include>TopOptionsSlideAnimations</include>
+	  <top>65</top>
+	  <left>0</left>
+		  <control type="image" id="999">
+			<description>background image</description>
+					<left>0</left>
+					<top>0</top>
+			<width>350</width>
+			<height>304</height>
+			<texture>-</texture>
+			<aspectratio aligny="center">stretch</aspectratio>
+			<visible>false</visible>
+		  </control>
+				<control type="grouplist" id="996">
+					<left>0</left>
+					<top>0</top>
+					<width>350</width>
+					<height max="294">auto</height>
+					<itemgap>0</itemgap>
+					<onleft>Close</onleft>
+					<onright>Close</onright>
+					<!--<animation effect="fade" start="0" end="100" time="250" reversible="true">WindowOpen</animation>
+					<animation effect="fade" start="100" end="0" time="200" reversible="true">WindowClose</animation>-->
+				</control>
+				<control type="button" id="1000">
+					<description>button template</description>
+					<width>350</width>
+					<height>40</height>
+					<textcolor>77white</textcolor>
+					<focusedcolor>white</focusedcolor>
+				  <disabledcolor>33white</disabledcolor>
+				<shadowcolor>99000000</shadowcolor>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textwidth>320</textwidth>
+					<textoffsetx>23</textoffsetx>
+					<textoffsety>7</textoffsety>
+					<texturefocus border="23">windows/filemanager/contextmenu_fo.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<pulseonselect>no</pulseonselect>
+					<font>FontSize_22</font>
+				</control>
+				</control>
+		</include>
+	
 </includes>

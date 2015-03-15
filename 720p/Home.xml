@@ -22,12 +22,20 @@
 			</animation>
 			<include>HomeMenuWraplist</include>
 			<include>HomeSubMenus</include>
-			<include>CommonDialogsFadeOutBG</include>
 			<include condition="!Skin.HasSetting(HideHomeNPCovers)">CoversNowPlaying</include>
 			<include condition="Skin.HasSetting(HideHomeNPCovers)">CommonNowPlaying</include>
 			<include>TopHomeMenu</include>
 			<include>HomeWeatherAndClock</include>
-			<include>FredHomeWidgets</include>			
+			<control type="group">
+			<animation type="Conditional" condition="Window.IsVisible(contextmenu)" reversible="false">
+				<effect type="slide" end="0,-25" time="350" tween="cubic" easing="out" />			
+			</animation>
+			<animation type="Conditional" condition="!Window.IsVisible(contextmenu)" reversible="false">
+				<effect type="slide" start="0,-25" end="0,0" time="350" tween="sine" easing="out" />			
+			</animation>
+				<include>FredHomeWidgets</include>			
+			</control>
+			<include>CommonDialogsFadeOutBG</include>
 		</control>	
 	</controls>	
 </window>

@@ -250,6 +250,22 @@ msgctxt "#31058"
 msgid "Widget"
 msgstr ""
 
+msgctxt "#31059"
+msgid "Scan for new videos"
+msgstr ""
+
+msgctxt "#31060"
+msgid "Scan for new music"
+msgstr ""
+
+msgctxt "#31061"
+msgid "Cleanup video database"
+msgstr ""
+
+msgctxt "#31062"
+msgid "Cleanup music database"
+msgstr ""
+
 #: empty strings from id 31058 to 31067
 #: extendedInfoLabels
 

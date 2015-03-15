@@ -180,7 +180,7 @@
 		<control type="group">
 			<left>45</left>
 			<top>25</top>
-			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ContextMenu) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)]</visible>
+			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)]</visible>
 			<include>HomeSlideAnimations</include>
 			<control type="grouplist" id="21">
 				<left>0</left>
@@ -209,16 +209,17 @@
 				<control type="button" id="212">
 					<description>Refresh Library</description>
 					<include>TopButton</include>
+					<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31059])</onclick>								
+					<onclick>SetProperty(Dialog.1.BuiltIn,UpdateLibrary(video))</onclick>
+					<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31060])</onclick>
+					<onclick>SetProperty(Dialog.2.BuiltIn,UpdateLibrary(music))</onclick>
+					<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31061])</onclick>								
+					<onclick>SetProperty(Dialog.3.BuiltIn,CleanLibrary(video))</onclick>
+					<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31062])</onclick>
+					<onclick>SetProperty(Dialog.4.BuiltIn,CleanLibrary(music))</onclick>
+					<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[799])</onclick>
 					<onclick>SetFocus(20)</onclick>
-					<onclick>UpdateLibrary(video)</onclick>
-					<onclick>UpdateLibrary(music)</onclick>
 				</control>
-				<!--<control type="button" id="213">
-					<description>Refresh Library</description>
-					<include>TopButton</include>
-					<onclick>SetFocus(20)</onclick>
-					<onclick>UpdateLibrary(music)</onclick>
-				</control>-->
 				<control type="button" id="214">
 					<description>Power</description>
 					<include>TopButton</include>
@@ -257,12 +258,6 @@
 					<animation effect="fade" start="100" end="70" time="100" tween="sine" easing="in" condition="!Control.HasFocus(212)" reversible="true">Conditional</animation>
 					<animation effect="zoom"  start="100" end="95" time="100" tween="sine" easing="in" center="auto" condition="!Control.HasFocus(212)" reversible="true">Conditional</animation>
 				</control>
-				<!--<control type="label">
-					<include>TopSmallLabel</include>
-					<label>$LOCALIZE[799]</label>
-					<animation effect="fade" start="100" end="70" time="100" tween="sine" easing="in" condition="!Control.HasFocus(213)" reversible="true">Conditional</animation>
-					<animation effect="zoom"  start="100" end="95" time="100" tween="sine" easing="in" center="auto" condition="!Control.HasFocus(213)" reversible="true">Conditional</animation>
-				</control>-->
 				<control type="label">
 					<include>TopSmallLabel</include>
 					<label>$LOCALIZE[33060]</label>

@@ -9,7 +9,6 @@
 		<control type="group">
 			<visible>Control.IsVisible(50)</visible>
 			<include>DialogZoomInOutAnimation</include>
-
 			<!-- ==== Poster/Fanart/Info ==== -->
 			<control type="group">
 				<include>ListViewAnimationsRight</include>
@@ -4195,7 +4194,7 @@
 						<texture border="30" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png">views/other/panel.png</texture>
 					</control>
 					<control type="image">
-						<left>0</left>
+						<left>1</left>
 						<top>2</top>
 						<width>138</width>
 						<height>199</height>
@@ -4205,7 +4204,7 @@
 						<bordersize>6</bordersize>
 					</control>
 					<control type="image">
-						<left>0</left>
+						<left>1</left>
 						<top>204</top>
 						<width>138</width>
 						<height>199</height>
@@ -4215,7 +4214,7 @@
 						<bordersize>6</bordersize>
 					</control>
 					<control type="image">
-						<left>0</left>
+						<left>1</left>
 						<top>2</top>
 						<width>138</width>
 						<height>199</height>
@@ -4464,8 +4463,7 @@
 						<animation type="Focus" reversible="false" condition="Container(59).OnPrevious">
 							<effect type="slide" start="-26,0" end="0,0" time="150" tween="Cubic" easing="out" />
 							<effect type="fade" start="20" end="100" time="750" delay="0" tween="sine" easing="out" />
-						</animation>
-				<!--<animation effect="slide" start="0" end="100"  time="200" delay="100" reversible="false">Visible</animation>-->					
+						</animation>			
 			</control>
 			<control type="image">
 				<left>45</left>
@@ -4515,5 +4513,4 @@
 			</control>
 		</control>
 	</include>
-
 </includes>

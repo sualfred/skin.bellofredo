@@ -233,7 +233,7 @@
 			<texture background="true">windows/bg/bg_diffuse.png</texture>
 			<include>FanartFade</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>[Control.IsVisible(59) + !Window.IsActive(movieinformation)]</visible>
+			<visible>Control.IsVisible(59) + !Window.IsActive(movieinformation)</visible>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>
@@ -248,15 +248,15 @@
 			<include>FanartFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>[Control.IsVisible(59) + !Window.IsActive(movieinformation) + IsEmpty(Control.GetLabel(5900))]</visible>
+			<visible>Control.IsVisible(59) + !Window.IsActive(movieinformation) + IsEmpty(Control.GetLabel(5900))</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>	
 		<control type="multiimage" id="5900">
 			<description>NetFilx Fanart extrafanart</description>
-			<left>340</left>
+			<left>360</left>
 			<top>0</top>
-			<width>940</width>
-			<height>550</height>
+			<width>920</width>
+			<height>530</height>
 			<aspectratio>scale</aspectratio>
 			<randomize>true</randomize>
 			<timeperimage>5000</timeperimage>
@@ -264,7 +264,7 @@
 			<imagepath background="true" diffuse="views/netfilx/fanart_diffuse.png">$INFO[ListItem.Path,,/extrafanart/]</imagepath>
 			<include>FanartFade</include>			
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>[Control.IsVisible(59) + !Window.IsActive(movieinformation)] + Skin.HasSetting(ViewsExtraFanart)</visible>
+			<visible>Control.IsVisible(59) + !Window.IsActive(movieinformation) + Skin.HasSetting(ViewsExtraFanart)</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>		
 		<control type="image">

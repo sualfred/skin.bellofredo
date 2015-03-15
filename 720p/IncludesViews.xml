@@ -16,7 +16,7 @@
       <include condition="!Skin.HasSetting(ListWallViewVideos)">ListWallView_Videos</include> <!-- id = 58 -->
       <include condition="!Skin.HasSetting(VideoWallFanartViewVideos)">VideoWallFanartView</include> <!-- id = 580 -->
 	  <include condition="!Skin.HasSetting(LoveFilmViewVideos)">LoveFilmView</include> <!-- id = 581 -->
-      <include condition="!Skin.HasSetting(NetfilxViewVideos)">NetfilxView_Videos</include> <!-- id = 59 -->
+      <include condition="!Skin.HasSetting(NetfilxViewVideos)">NetfilxView_Videos</include> <!-- id = 59 -->     
       <include condition="!Skin.HasSetting(PostersViewVideos)">PostersView_Videos</include> <!-- id = 55 -->
       <include condition="!Skin.HasSetting(ThumbnailsVideos)">ThumbnailsView</include> <!-- id = 56 -->
       <include condition="!Skin.HasSetting(ThumbnailsVideos)">ThumbnailsView_Videos</include> <!-- id = 560 -->
@@ -472,6 +472,7 @@
   		<value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
   		<value condition="Container.Content(Episodes) + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
   		<value condition="Container.Content(Episodes) + IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(poster)]</value>
+  		<value condition="Container.Content(Episodes) + IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(season.poster)]</value>
   		<value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
   		<value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(season.poster)) + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
   		<value condition="[IsEmpty(ListItem.Art(poster)) | IsEmpty(ListItem.Art(season.poster)) | IsEmpty(ListItem.Art(tvshow.poster))] + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>

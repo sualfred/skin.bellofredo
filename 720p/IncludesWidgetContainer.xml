@@ -594,7 +594,7 @@
 			<control type="fixedlist" id="550">	
 				<visible>System.HasAddon(plugin.audio.tuneinradio)</visible>
 				<include>WidgetSquareLayout</include>
-				<content>$VAR[QuickNav_WidgetListContentTuneIn]</content>
+				<content target="music">$VAR[QuickNav_WidgetListContentTuneIn]</content>
 			</control>
 			<include>WidgetBottomLabels</include>
 		</control>
