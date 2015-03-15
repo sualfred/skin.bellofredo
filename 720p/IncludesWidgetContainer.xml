@@ -8,11 +8,10 @@
 			<texture background="true">views/list/shine.png</texture>					
 		</control>
 		<control type="label">
-			<description>header title</description>
-			<left>275</left>
+			<description>header title</description>			
 			<top>185</top>
 			<height>50</height>
-			<width>730</width>
+			<width>1280</width>
 			<font>FontSize_40</font>
 			<textcolor>white</textcolor>
 			<shadowcolor>77000000</shadowcolor>
