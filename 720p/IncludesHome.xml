@@ -81,7 +81,7 @@
 					</itemlayout>
 					<focusedlayout width="500">
 						<control type="group">
-							<animation type="Conditional" condition="!ControlGroup(21).HasFocus">
+							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
 								<effect type="zoom" start="80" end="100" time="200" tween="sine" easing="out" center="318,200" />
 								<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
 							</animation>
@@ -209,16 +209,17 @@
 				<control type="button" id="212">
 					<description>Refresh Library</description>
 					<include>TopButton</include>
+					
 					<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31059])</onclick>								
-					<onclick>SetProperty(Dialog.1.BuiltIn,UpdateLibrary(video))</onclick>
+					<onclick>SetProperty(Dialog.1.BuiltIn,UpdateLibrary(video)||SetFocus(20))</onclick>
 					<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31060])</onclick>
-					<onclick>SetProperty(Dialog.2.BuiltIn,UpdateLibrary(music))</onclick>
+					<onclick>SetProperty(Dialog.2.BuiltIn,UpdateLibrary(music)||SetFocus(20))</onclick>
 					<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31061])</onclick>								
-					<onclick>SetProperty(Dialog.3.BuiltIn,CleanLibrary(video))</onclick>
+					<onclick>SetProperty(Dialog.3.BuiltIn,CleanLibrary(video)||SetFocus(20))</onclick>
 					<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31062])</onclick>
-					<onclick>SetProperty(Dialog.4.BuiltIn,CleanLibrary(music))</onclick>
+					<onclick>SetProperty(Dialog.4.BuiltIn,CleanLibrary(music)||SetFocus(20))</onclick>
 					<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[799])</onclick>
-					<onclick>SetFocus(20)</onclick>
+					
 				</control>
 				<control type="button" id="214">
 					<description>Power</description>
