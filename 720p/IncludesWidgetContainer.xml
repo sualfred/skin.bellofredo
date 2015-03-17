@@ -319,10 +319,11 @@
 		</focusedlayout>
 	</include>
 
-	<!-- =========== -->
-	<!-- Movies 	 -->
-	<!-- =========== --> 
 	<include name="FredHomeWidgets">
+	
+		<!-- =========== -->
+		<!-- Movies 	 -->
+		<!-- =========== --> 
 		<control type="group" id="9050">
 			<visible>StringCompare(Container(20).ListItem.Property(widget),movies)</visible>
 			<include>HomeSlideAnimations</include>

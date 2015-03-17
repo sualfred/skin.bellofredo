@@ -155,6 +155,7 @@
 	<!-- Backgrounds -->
 	<!-- =========== -->
 	<backgroundBrowse default="special://skin/extras/backgrounds/">True</backgroundBrowse>
+	<background label="31293">DefaultAddon</background>
 	<background label="Movies Fanart" condition="System.HasAddon(script.grab.fanart)">$INFO[Window(Home).Property(script.grab.fanart.Movie.FanArt)]</background>
 	<background label="TV Shows Fanart" condition="System.HasAddon(script.grab.fanart)">$INFO[Window(Home).Property(script.grab.fanart.TV.FanArt)]</background>
 	<background label="Videos Fanart" condition="System.HasAddon(script.grab.fanart)">$INFO[Window(Home).Property(script.grab.fanart.Video.FanArt)]</background>

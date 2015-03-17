@@ -948,7 +948,7 @@ msgid "Local Streams"
 msgstr ""
 
 msgctxt "#31293"
-msgid "[COLOR=55white](TuneIn Plugin)[/COLOR]"
+msgid "Default Addon Fanart [COLOR=55white](if available)[/COLOR]"
 msgstr ""
 
 #: empty strings from id 31293 to 31299

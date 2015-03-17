@@ -941,10 +941,9 @@ msgid "Local Streams"
 msgstr "Lokale Streams"
 
 msgctxt "#31293"
-msgid "[COLOR=55white](TuneIn Plugin)[/COLOR]"
-msgstr "[COLOR=55white](TuneIn Plugin)[/COLOR]"
+msgid "Default Addon Fanart [COLOR=55white](if available)[/COLOR]"
+msgstr "Standard Addon-Fanart [COLOR=55white](falls verfügbar)[/COLOR]"
 
-#: empty strings from id 31293 to 31299 video and Music OSD Labels
 msgctxt "#31300"
 msgid "Muted"
 msgstr "Stumm"

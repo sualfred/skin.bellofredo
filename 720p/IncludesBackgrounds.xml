@@ -101,7 +101,8 @@
 					<description>HomeMenu Single-Background</description>
 					<include>FullscreenDimensions</include>
 					<include>FanartFade</include>
-					<texture background="true">$INFO[Container(20).ListItem.Property(Background)]</texture>
+					<!--<texture background="true">$INFO[Container(20).ListItem.Property(Background)]</texture>-->
+					<texture background="true">$VAR[backgroundMainmenu]</texture>
 					<fadetime>500</fadetime>
 					<visible>![SubString(Container(20).ListItem.Property(background),\,Right) | SubString(Container(20).ListItem.Property(background),/,Right)]</visible>
 				</control>
