@@ -22,7 +22,7 @@
 				<preloaditems>2</preloaditems>
 				<viewtype label="31085">icons</viewtype>
         <scrolltime tween="Quadratic" easing="out">250</scrolltime>
-        <visible>Container.Content(addons) + Container.HasFiles</visible>
+        <!--<visible>Container.Content(addons) + Container.HasFiles</visible>-->
 				<itemlayout condition="!Skin.HasSetting(ShowSmallProgramsThumbs)" height="248" width="239.5">
 					<control type="image">
 						<left>5</left>
