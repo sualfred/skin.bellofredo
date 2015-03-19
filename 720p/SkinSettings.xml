@@ -563,6 +563,21 @@
 							<onclick>SetProperty(ManageButtons,managemusicviews)</onclick>
 							<onclick>ActivateWindow(1118)</onclick>
 						</control>
+						<!-- Use local artworks CURRENTLY NOT USED-->
+						<!--<control type="radiobutton" id="8537">
+							<description>Use Local Artowrks</description>
+							<include>SettingsRadioButton</include>
+							<label>$LOCALIZE[31063]</label>							
+							<onclick>Skin.ToggleSetting(LocalArtworks)</onclick>
+							<selected>Skin.HasSetting(LocalArtworks)</selected>
+							<enable>System.HasAddon(script.artwork.downloader)</enable>
+						</control>
+						<control type="button" id="8538">
+							<include>SettingsButton</include>
+							<label> • $LOCALIZE[31152]</label>
+							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,seasonposter,seasonthumb,seasonbanner)</onclick>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>-->
 						<!-- Artwork Downloader -->
 						<control type="radiobutton" id="8529">
 							<description>Artwork Downloader</description>

@@ -38,7 +38,7 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>Temporary Info Test: $INFO[ListItem.FileNameAndPath]</label>
+				<label>Temporary Info Test: $INFO[ListItem.Path]$INFO[ListItem.Season,season0,-poster.jpg]</label>
 			</control>
 			<control type="label">
 				<width>780</width>

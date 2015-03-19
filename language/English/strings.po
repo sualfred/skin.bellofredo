@@ -266,7 +266,11 @@ msgctxt "#31062"
 msgid "Cleanup music database"
 msgstr ""
 
-#: empty strings from id 31058 to 31067
+msgctxt "#31063"
+msgid "Force use of local stored season art [COLOR=55white](eg: seasonXX-poster.jpg)[/COLOR]"
+msgstr ""
+
+#: empty strings from id 31064 to 31067
 #: extendedInfoLabels
 
 msgctxt "#31068"
@@ -521,7 +525,9 @@ msgctxt "#31151"
 msgid "Show RSS feed in whole skin"
 msgstr ""
 
-#: empty string with id 31152
+msgctxt "#31152"
+msgid "Download [COLOR=selected]season art[/COLOR] for all TV Shows (enable local files!)"
+msgstr ""
 
 msgctxt "#31153"
 msgid "Enable login screen"
