@@ -1,4 +1,10 @@
-﻿[B][COLOR=FF56ADDA]v4.0.11[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.0.12[/COLOR][/B]
+• Reverted: Refresh logic for TuneIn Widget
+• Added: Background option for various widget variants
+• Added: ExtendedInfo and Get Extra Art context menu addon
+• And lot of things I forgot
+
+[B][COLOR=FF56ADDA]v4.0.11[/COLOR][/B]
 • Fixed: Amazon widgets causing viewtype change
 • Fixed: Amazon widgets wrong settings conditions
 • Changed: Context menu for widgets
