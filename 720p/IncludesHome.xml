@@ -219,7 +219,7 @@
 					<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31062])</onclick>
 					<onclick>SetProperty(Dialog.4.BuiltIn,CleanLibrary(music)||SetFocus(20))</onclick>
 					<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[799])</onclick>
-					
+					<visible>!Skin.HasSetting(DisableLibraryRefreshButton)</visible>
 				</control>
 				<control type="button" id="214">
 					<description>Power</description>
@@ -258,6 +258,7 @@
 					<label>$LOCALIZE[799]</label>
 					<animation effect="fade" start="100" end="70" time="100" tween="sine" easing="in" condition="!Control.HasFocus(212)" reversible="true">Conditional</animation>
 					<animation effect="zoom"  start="100" end="95" time="100" tween="sine" easing="in" center="auto" condition="!Control.HasFocus(212)" reversible="true">Conditional</animation>
+					<visible>!Skin.HasSetting(DisableLibraryRefreshButton)</visible>
 				</control>
 				<control type="label">
 					<include>TopSmallLabel</include>

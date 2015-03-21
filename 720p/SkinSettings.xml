@@ -461,6 +461,13 @@
 							<label>31046</label>
 							<onclick>Skin.ToggleSetting(HomeWidgetArrowAnimation)</onclick>
 							<selected>Skin.HasSetting(HomeWidgetArrowAnimation)</selected>
+						</control>
+						<control type="radiobutton" id="8205">
+							<description>Disable libary refresh button</description>
+							<include>SettingsRadioButton</include>
+							<label>31064</label>
+							<onclick>Skin.ToggleSetting(DisableLibraryRefreshButton)</onclick>
+							<selected>!Skin.HasSetting(DisableLibraryRefreshButton)</selected>
 						</control>						
 					</control>
 
