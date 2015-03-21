@@ -33,7 +33,7 @@
 				<description>Default Background</description>
 				<include>FullscreenDimensions</include>
 				<include>BackgroundFade</include>
-				<texture background="true">special://skin/extras/backgrounds/SKINDEFAULT.jpg</texture>
+				<texture background="true">SKINDEFAULT.jpg</texture>
 				<visible>![Skin.HasSetting(CustomBackground) + !IsEmpty(Skin.String(CustomImageBackgroundPath))]</visible>
 				<visible>![Skin.HasSetting(CustomBackground) + ![IsEmpty(Skin.String(CustomFolderBackgroundPath)) | Skin.HasSetting(ShowCustomBackgroundOnHomeOnly)]]</visible>
 				<fadetime>FanartCrossfadeTime</fadetime>
@@ -223,7 +223,7 @@
 		</control>	
 		<control type="image">
 			<include>NetFilx Fanart Transparency</include>
-			<texture background="true">special://skin/extras/backgrounds/SKINDEFAULT.jpg</texture>
+			<texture background="true">SKINDEFAULT.jpg</texture>
 			<include>FanartFade</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
 			<visible>[!Skin.HasSetting(NetFilxSemiTrans) + Control.IsVisible(59) + !Window.IsActive(movieinformation)]</visible>
