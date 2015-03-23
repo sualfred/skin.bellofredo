@@ -21,7 +21,8 @@
       <include condition="!Skin.HasSetting(ThumbnailsVideos)">ThumbnailsView</include> <!-- id = 56 -->
       <include condition="!Skin.HasSetting(ThumbnailsVideos)">ThumbnailsView_Videos</include> <!-- id = 560 -->
       <include condition="!Skin.HasSetting(ThumbnailsVideos)">ThumbnailsView_Videos_Posters</include> <!-- id = 561 -->
-      <include condition="!Skin.HasSetting(BannersViewVideos)">BannersView_Videos</include> <!-- id = 57 -->
+      <include condition="!Skin.HasSetting(BannersViewVideos)">BannersView_Videos</include> <!-- id = 57 -->      
+      <include condition="!Skin.HasSetting(BannersViewVideos)">EpisodeView</include> <!-- id = 57 -->      
     </include>
     
     <include name="MusicLibraryViews">
@@ -92,17 +93,19 @@
     <include name="ListView_Arrows">
 			<control type="image">
 				<left>58</left>
-				<top>135</top>
+				<top>130</top>
 				<width>24</width>
 				<height>21</height>
 				<texture>views/scrollbar/arrow.png</texture>
+        <visible>Container.HasPrevious</visible>
 		  </control>
 		  <control type="image">
 				<left>58</left>
-				<top>595</top>
+				<top>600</top>
 				<width>24</width>
 				<height>21</height>
 				<texture flipy="true">views/scrollbar/arrow.png</texture>
+        <visible>Container.HasNext</visible>
 		  </control>
     </include>
     
@@ -568,5 +571,48 @@
       <value condition="Container.Content(MusicVideos)">$LOCALIZE[20389]</value>
     </variable>
 
+  <variable name="EpisodeLabel">
+      <value condition="Container.Content(Episodes) + !IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+      <value condition="Container.Content(Episodes) + IsEmpty(ListItem.Title)">$INFO[ListItem.Label]</value>
+      <value>$INFO[ListItem.Label]</value>
+  </variable>
+
+  <variable name="EpisodeSmallInfoLabel">
+    <value condition="Container.Content(Episodes)">$INFO[ListItem.Episode]</value>
+    <value condition="!Container.Content(Episodes)">$INFO[ListItem.Year]</value>
+  </variable>
+
+  <variable name="EpisodeThumbTitle">
+    <value condition="Container.Content(Episodes) | Container.Content(Seasons) | Container.Content(TVShows)">$INFO[ListItem.TVShowTitle]</value>
+    <value>$INFO[ListItem.Label]</value>
+  </variable>
+
+  <variable name="EpisodeThumbInfo">
+    <value condition="[Container.Content(Episodes) | Container.Content(Seasons)] + !StringCompare(ListItem.Title,$LOCALIZE[20366])">[CAPITALIZE]$LOCALIZE[20373] $INFO[ListItem.Season][/CAPITALIZE]</value>
+    <value condition="[Container.Content(Episodes) | Container.Content(Seasons)] + StringCompare(ListItem.Title,$LOCALIZE[20366])">[CAPITALIZE]$LOCALIZE[20366][/CAPITALIZE]</value>
+    <value condition="Container.Content(TVShows)">[CAPITALIZE]$LOCALIZE[36902][/CAPITALIZE]</value>
+    <value condition="Container.Content(Movies)">[CAPITALIZE]$LOCALIZE[36900][/CAPITALIZE]</value>
+    <value condition="Container.Content(Playlists)">[CAPITALIZE]$LOCALIZE[559][/CAPITALIZE]</value>
+    <value condition="Container.Content(Plugins)">[CAPITALIZE]$LOCALIZE[559][/CAPITALIZE]</value>
+    <value condition="Container.Content(Sets)">[CAPITALIZE]$LOCALIZE[20457][/CAPITALIZE]</value>
+    <value>$LOCALIZE[19499]</value>
+  </variable>
+
+  <variable name="EpisodeThumb">
+    <value condition="Container.Content(TVShows) + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+      <value condition="Container.Content(TVShows) + !IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
+      <value condition="Container.Content(TVShows) + IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(landscape)) + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+      
+    <value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+    <value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
+      <value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
+    <value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(landscape)) + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+    
+    <value condition="Container.Content(Episodes) + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>   
+    <value condition="Container.Content(Movies) + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>   
+    <value condition="Container.Content(Movies) + IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(fanart)]</value>   
+    <value condition="!IsEmpty(ListItem.Art(fanart)">$INFO[ListItem.Art(fanart)]</value>       
+    <value>$INFO[ListItem.ActualIcon,thumbs/,/folderback_episode_tp.png]</value>
+  </variable>
 
 </includes>    
