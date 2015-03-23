@@ -1,4 +1,12 @@
-﻿[B][COLOR=FF56ADDA]v4.0.12[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.0.13[/COLOR][/B]
+• Added: Viewtype "Thumb List" for videos and programs
+• Changed: Netfilx non-logo label size for long titles
+• Added: Extra Fanart toggle to the sideblade menu
+• Merged: Transiflex translations
+• Changed: Recently added movies/episodes are based on Kodi's internal smartplaylist instead of an plugin
+• Other small fixes
+
+[B][COLOR=FF56ADDA]v4.0.12[/COLOR][/B]
 • Reverted: Refresh logic for TuneIn Widget
 • Added: Background option for various widget variants
 • Added: ExtendedInfo and Get Extra Art context menu addon
