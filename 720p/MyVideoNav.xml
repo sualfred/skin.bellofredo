@@ -160,6 +160,24 @@
 					<selected>Skin.HasSetting(NetFilxSemiTrans)</selected>
 					<visible>Control.IsVisible(59)</visible>
 				</control>
+				<control type="togglebutton" id="300">
+					<description>Episode View Landscape Toggle</description>
+					<include>TopLeftMenusButton</include>
+					<label>$LOCALIZE[31085]: $LOCALIZE[31217]</label>
+					<altlabel>$LOCALIZE[31085]: $LOCALIZE[31218]</altlabel>
+					<onclick>Skin.ToggleSetting(EpisodeViewLandscape)</onclick>
+					<selected>Skin.HasSetting(EpisodeViewLandscape)</selected>
+					<visible>Control.IsVisible(582) + !Container.Content(Episodes)</visible>
+				</control>
+				<control type="togglebutton" id="301">
+					<description>Extra Fanart Toggle</description>
+					<include>TopLeftMenusButton</include>
+					<label>$LOCALIZE[31051]: $LOCALIZE[31066]</label>
+					<altlabel>$LOCALIZE[31051]: $LOCALIZE[31065]</altlabel>
+					<onclick>Skin.ToggleSetting(ViewsExtraFanart)</onclick>
+					<selected>Skin.HasSetting(ViewsExtraFanart)</selected>
+					<visible>[Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(58) + !Control.IsVisible(580) + !Control.IsVisible(581)</visible>
+				</control>
 				<control type="button" id="3">
 					<description>Sort by</description>
 					<include>TopLeftMenusButton</include>

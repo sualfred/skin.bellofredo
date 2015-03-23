@@ -3873,16 +3873,16 @@
 
 	<include name="EpisodeView">
 		
-	
-		<!-- artwork -->
+	<!-- artwork -->
 		<control type="group">
 			<left>0</left>
 			<top>162</top>
 			<include>DialogZoomInOutAnimation</include>
+			<include>EpisodeViewAnimationsLeft</include>
 			<visible>Control.IsVisible(582)</visible>
 					<control type="image">
 						<left>-75</left>
-						<top>-133</top>
+						<top>-136</top>
 						<width>687</width>
 						<height>524</height>
 						<texture background="true">views/episode/episode_blue_shadow.png</texture>
@@ -3900,7 +3900,8 @@
 						<width>441</width>
 						<height>248</height>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-						<texture background="true" diffuse="views/episode/episode_diffuse.png">$VAR[EpisodeThumb]</texture>
+						<texture background="true" diffuse="views/episode/episode_diffuse.png" fallback="thumbs/fallback_episode_tp.png">$VAR[EpisodeThumb]</texture>
+						<fadetime>FanartCrossfadeTime</fadetime>
 					</control>	
 					<control type="image">
 						<left>46</left>
@@ -3944,7 +3945,6 @@
 						<label>$VAR[EpisodeThumbInfo]</label>
 						<visible>!Stringcompare(ListItem.Label,..)</visible>
 					</control>
-
 					<control type="image">
 						<left>440</left>
 						<top>210</top>
@@ -3956,8 +3956,6 @@
 						<visible>!Stringcompare(ListItem.Label,..)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist)</visible>
 					</control>
-
-
 					<control type="image">
 						<left>420</left>
 						<top>210</top>
@@ -3967,6 +3965,7 @@
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<texture>flags/empty.png</texture>
 						<visible>!Stringcompare(ListItem.Label,..)</visible>
+						<visible>!IsEmpty(ListItem.Property(unWatchedEpisodes))</visible>
 						<visible>[Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 					</control>
 					<control type="label">
@@ -3981,7 +3980,6 @@
 						<label>$INFO[ListItem.Property(unWatchedEpisodes)]</label>
 						<visible>[Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 					</control>
-
 					<!-- info labels -->
 					<control type="group">
 						<left>46</left>
@@ -4007,22 +4005,41 @@
 							<label>$VAR[GlobalPlotDescription]</label>
 						</control>
 					</control>
-
-					<control type="image">
-						<left>540</left>
-						<top>-37</top>
-						<texture>info/infopanel_line_v.png</texture>
-						<colordiffuse>33white</colordiffuse>
-						<width>1</width>
-						<height>500</height>
-					</control>
 				</control>
 
+		<!-- vertical line -->
+		<control type="image">
+			<include>DialogZoomInOutAnimation</include>
+			<left>540</left>
+			<top>125</top>
+			<texture>info/infopanel_line_v.png</texture>
+			<colordiffuse>33white</colordiffuse>
+			<width>1</width>
+			<height>500</height>
+			<animation type="WindowOpen" tween="sine" easing="out">
+				<effect type="zoom" start="0" end="100" center="auto" time="450" delay="200" />
+				<effect type="fade" start="0" end="80" time="450" delay="200" />
+			</animation>
+			<animation type="WindowClose" tween="sine" easing="out">
+				<effect type="zoom" start="100" end="0" center="auto" time="350" delay="0"/>
+				<effect type="fade" start="80" end="0" time="350" delay="0"/>
+			</animation>
+
+			<animation type="Visible" tween="sine" easing="out">
+				<effect type="zoom" start="0" end="100" center="auto" time="450" delay="200" />
+				<effect type="fade" start="0" end="80" time="450" delay="200" />
+			</animation>
+			<animation type="Hidden" tween="sine" easing="out">
+				<effect type="zoom" start="100" end="0" center="auto" time="350" delay="0"/>
+				<effect type="fade" start="80" end="0" time="350" delay="0"/>
+			</animation>
+			<visible>Control.IsVisible(582)</visible>
+		</control>
 		<!--list-->
-		
 		<control type="group">
 				<include>DialogZoomInOutAnimation</include>
-				
+				<include>ListViewAnimationsRight</include>
+				<visible>Control.IsVisible(582)</visible>				
 				<control type="list" id="582">
 					<left>570</left>
 		  			<top>150</top>
@@ -4032,7 +4049,7 @@
 		  			<onleft>9111</onleft>
 		  			<onup>50</onup>
 		  			<ondown>50</ondown>
-		  			<viewtype label="Episode">List</viewtype>
+		  			<viewtype label="31268">List</viewtype>
 		  			<pagecontrol>60</pagecontrol>
 		  		  	<scrolltime tween="cubic" easing="out">300</scrolltime>
 					<itemlayout height="45" width="710">
@@ -4089,6 +4106,7 @@
 							<colordiffuse>55ffffff</colordiffuse>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
 							<texture>flags/empty.png</texture>
+							<visible>!IsEmpty(ListItem.Property(unWatchedEpisodes))</visible>
 							<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + !IsEmpty(ListItem.Title)</visible>
 						</control>
 						<control type="label">
@@ -4112,7 +4130,18 @@
 							<textcolor>55ffffff</textcolor>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 							<label>$INFO[ListItem.Duration,, Min.]</label>
-							<visible>IntegerGreaterThan(ListItem.Duration,0)</visible>
+							<visible>IntegerGreaterThan(ListItem.Duration,0) + !SubString(Container.FolderPath,plugin.video.youtube)</visible>
+						</control>
+						<control type="label">
+							<left>583</left>
+							<top>11</top>
+							<width>80</width>
+							<height>22</height>
+							<align>right</align>
+							<textcolor>55ffffff</textcolor>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>SubString(Container.FolderPath,plugin.video.youtube)</visible>
 						</control>
 						<control type="image">
 							<left>624</left>
@@ -4193,6 +4222,7 @@
 							<colordiffuse>white</colordiffuse>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
 							<texture>flags/empty.png</texture>
+							<visible>!IsEmpty(ListItem.Property(unWatchedEpisodes))</visible>
 							<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + !IsEmpty(ListItem.Title)</visible>
 						</control>
 						<control type="label">
@@ -4216,7 +4246,18 @@
 							<textcolor>white</textcolor>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 							<label>$INFO[ListItem.Duration,, Min.]</label>
-							<visible>IntegerGreaterThan(ListItem.Duration,0)</visible>
+							<visible>IntegerGreaterThan(ListItem.Duration,0) + !SubString(Container.FolderPath,plugin.video.youtube)</visible>
+						</control>
+						<control type="label">
+							<left>583</left>
+							<top>11</top>
+							<width>80</width>
+							<height>22</height>
+							<align>right</align>
+							<textcolor>white</textcolor>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>SubString(Container.FolderPath,plugin.video.youtube)</visible>
 						</control>
 						<control type="image">
 							<left>624</left>
@@ -4699,7 +4740,6 @@
 						<aspectratio align="center" aligny="center">scale</aspectratio>
 						<texture background="true" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
 						<bordertexture border="15">thumbs/thumb_border.png</bordertexture>
-						<visible>IsEmpty(Control.GetLabel(1234))</visible>
 						<bordersize>6</bordersize>
 					</control>
 					<control type="image">
@@ -4709,7 +4749,7 @@
 						<height>161</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>"Skin.HasSetting(LocalArtworks) + IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(landscape))</visible>
+						<visible>IsEmpty(ListItem.Art(landscape))</visible>
 						<bordersize>40</bordersize>
 					</control>
 					<control type="image">
@@ -4729,7 +4769,7 @@
 						<height>161</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" >$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>!Skin.HasSetting(LocalArtworks) + !Container.Content(Episodes) + IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(landscape))</visible>
+						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape))</visible>
 						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
 						<bordersize>40</bordersize>
 						<animation type="Conditional" reversible="false" condition="true">
@@ -4794,7 +4834,7 @@
 						<height>161</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(landscape))</visible>
+						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape))</visible>
 						<bordersize>40</bordersize>
 					</control>
 					<control type="image">
@@ -4813,7 +4853,7 @@
 						<height>161</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" >$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>IsEmpty(ListItem.Art(clearart)) + IsEmpty(ListItem.Art(landscape))</visible>
+						<visible>IsEmpty(ListItem.Art(landscape))</visible>
 						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
 						<bordersize>40</bordersize>
 						<animation type="Conditional" reversible="false" condition="true">
