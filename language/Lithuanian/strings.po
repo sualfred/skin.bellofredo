@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-03-06 10:39+0000\n"
+"PO-Revision-Date: 2015-03-19 10:39+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/bello-fredo/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -77,7 +77,7 @@ msgstr "Įjungti pagrindinio meniu animaciją"
 
 msgctxt "#31014"
 msgid "Enable Startup Intro Video"
-msgstr "Įžanginį vaizdo įrašą"
+msgstr "Išjungti Įžanginį vaizdo įrašą"
 
 msgctxt "#31016"
 msgid "File Manager"
@@ -205,28 +205,90 @@ msgstr "Įjungti pagrindinio meniu valdiklių rodyklės aukštyn/žemyn animacij
 
 msgctxt "#31047"
 msgid "Automatically download extra artwork if a library has been updated"
-msgstr ""
+msgstr "Automatiškai atsiųsti papildomas iliustracijas po bibliotekos atnaujinimo"
 
 msgctxt "#31048"
 msgid "Manage Menu Items"
-msgstr ""
+msgstr "Tvarkyti meniu elementus"
 
 msgctxt "#31049"
-msgid "Manage Widget"
-msgstr ""
+msgid "Manage Widgets"
+msgstr "Tvarkyti valdiklius"
 
 msgctxt "#31050"
 msgid "Manage Sub Menu of"
+msgstr "Tvarkyti submeniu, priklausantį"
+
+msgctxt "#31051"
+msgid "Use Extra-Fanarts"
+msgstr "Naudoti papildomus Fanart"
+
+msgctxt "#31052"
+msgid "Amazon Prime"
+msgstr "Amazon Prime"
+
+msgctxt "#31053"
+msgid "[COLOR=55white](AddonScriptorDE's Plugin)[/COLOR]"
+msgstr "[COLOR=55white](AddonScriptorDE's įskiepis)[/COLOR]"
+
+msgctxt "#31054"
+msgid "[COLOR=55white](Sandmanns's Plugin)[/COLOR]"
+msgstr "[COLOR=55white](Sandmanns's įskiepis)[/COLOR]"
+
+msgctxt "#31055"
+msgid "Watchlist"
+msgstr "Peržiūros sąrašas"
+
+msgctxt "#31056"
+msgid "Popular"
+msgstr "Populiaru"
+
+msgctxt "#31057"
+msgid "New at Amazon"
+msgstr "Amazon naujienos"
+
+msgctxt "#31058"
+msgid "Widget"
+msgstr "Valdiklis"
+
+msgctxt "#31059"
+msgid "Scan for new videos"
+msgstr "Nuskaityti naujus vaizdo įrašus"
+
+msgctxt "#31060"
+msgid "Scan for new music"
+msgstr "Nuskaityti naujus muzikos įrašus"
+
+msgctxt "#31061"
+msgid "Cleanup video database"
+msgstr "Išvalyti vaizdo įrašų duomenų bazę"
+
+msgctxt "#31062"
+msgid "Cleanup music database"
+msgstr "Išvalyti muzikos duomenų bazę"
+
+msgctxt "#31063"
+msgid ""
+"Force use of local stored season art [COLOR=55white](eg: seasonXX-"
+"poster.jpg)[/COLOR]"
 msgstr ""
 
-#: empty strings from id 31051 to 31069 extendedInfoLabels
+#: empty strings from id 31064 to 31067 extendedInfoLabels
+msgctxt "#31068"
+msgid "Online Video Information"
+msgstr "Internetinio vaizdo įrašo informacija"
+
+msgctxt "#31069"
+msgid "Misc"
+msgstr "Įvairūs"
+
 msgctxt "#31070"
 msgid "Video Info"
 msgstr "Vaizdo informacija"
 
 msgctxt "#31071"
-msgid "Recommended by TMDB"
-msgstr "Rekomenduojama TMDB"
+msgid "Similar"
+msgstr "Panašūs"
 
 msgctxt "#31072"
 msgid "Crew"
@@ -241,8 +303,8 @@ msgid "About"
 msgstr "Apie"
 
 msgctxt "#31075"
-msgid "Recommended videos by TMDB"
-msgstr "TMDB rekomenduojami vaizdo įrašai"
+msgid "Recommended by TMDB"
+msgstr "Rekomenduojama TMDB"
 
 msgctxt "#31076"
 msgid "Photos"
@@ -301,22 +363,30 @@ msgctxt "#31089"
 msgid "LoveFilm"
 msgstr "LoveFilm"
 
-#: empty strings from id 31090 to 31093 skin Settings labels
+msgctxt "#31090"
+msgid "Sets & Seasons"
+msgstr "Rinkiniai ir sezonai"
+
+msgctxt "#31091"
+msgid "Episodes"
+msgstr "Epizodai"
+
+#: empty strings from id 31092 to 31093 skin Settings labels
 msgctxt "#31094"
-msgid "Choose Movies Widget"
-msgstr "Pasirinkti filmo valdiklį"
+msgid "Movies Widget"
+msgstr "Filmų valdiklis"
 
 msgctxt "#31095"
-msgid "Choose TV Shows Widget"
-msgstr "Pasirinkti TV laidų valdiklį"
+msgid "TV Shows Widget"
+msgstr "TV laidų valdiklis"
 
 msgctxt "#31096"
-msgid "Choose Music Widget"
-msgstr "Pasirinkti muzikos valdiklį"
+msgid "Music Widget"
+msgstr "Muzikos valdiklis"
 
 msgctxt "#31097"
-msgid "Choose RSS Video Feed Widget"
-msgstr "Pasirinkti RSS vaizdo sklaidos kanalo valdiklį"
+msgid "RSS Video Feed Widget"
+msgstr "RSS vaizdo įrašų sklaidos kanalų valdiklis"
 
 msgctxt "#31098"
 msgid "Show Small Thumbs"
@@ -339,7 +409,19 @@ msgctxt "#31103"
 msgid "Hide Now Playing Music Info"
 msgstr "Slėpti dabar atkuriamos muzikos informaciją"
 
-#: empty strings from id 31104 to 31123
+msgctxt "#31104"
+msgid "Hide Now Playing Covers on Home"
+msgstr "Slėpti dabar atkuriamo įrašo viršelius pradiniame ekrane"
+
+msgctxt "#31105"
+msgid "Amazon [COLOR=55white](Sandmann's Plugin)[/COLOR]"
+msgstr "Amazon [COLOR=55white](Sandmann's įskiepis)[/COLOR]"
+
+msgctxt "#31106"
+msgid "Amazon [COLOR=55white](AddonScriptorDE's Plugin)[/COLOR]"
+msgstr "Amazon [COLOR=55white](AddonScriptorDE's įskiepis)[/COLOR]"
+
+#: empty strings from id 31107 to 31123
 msgctxt "#31124"
 msgid "Flashing Lights"
 msgstr "Švyturėliai"
@@ -441,7 +523,12 @@ msgctxt "#31151"
 msgid "Show RSS feed in whole skin"
 msgstr "Rodyti RSS sklaidos kanalą visoje teminėje išvaizdoje"
 
-#: empty string with id 31152
+msgctxt "#31152"
+msgid ""
+"Download [COLOR=selected]season art[/COLOR] for all TV Shows (enable local "
+"files!)"
+msgstr ""
+
 msgctxt "#31153"
 msgid "Enable login screen"
 msgstr "Įjungti prisijungimo langą"
@@ -518,26 +605,34 @@ msgid "Update Art"
 msgstr "Atnaujinti iliustracijas"
 
 msgctxt "#31172"
-msgid "Label:"
-msgstr ""
+msgid "Empty Label"
+msgstr "Tuščia etiketė"
 
 msgctxt "#31173"
-msgid "Choose Custom Widget #1"
-msgstr ""
+msgid "Custom Widgets #1"
+msgstr "Savi valdikliai #1"
 
 msgctxt "#31174"
-msgid "Choose Custom Widget #2"
-msgstr ""
+msgid "Custom Widgets #2"
+msgstr "Savi valdikliai #2"
 
 msgctxt "#31175"
-msgid "Choose Custom Widget #3"
-msgstr ""
+msgid "Custom Widgets #3"
+msgstr "Savi valdikliai #3"
 
 msgctxt "#31176"
-msgid "Choose Custom Widget #4"
-msgstr ""
+msgid "Custom Widgets #4"
+msgstr "Savi valdikliai #4"
 
-#: empty strings from id 31177 to 31199 scripts labels
+msgctxt "#31177"
+msgid "Manage [COLOR=selected]Custom Widgets[/COLOR]"
+msgstr "Tvarkyti [COLOR=selected]savus valdiklius[/COLOR]"
+
+msgctxt "#31178"
+msgid "Manage [COLOR=selected]Common Widgets[/COLOR]"
+msgstr "Tvarkyti [COLOR=selected]savus valdiklius[/COLOR]"
+
+#: empty strings from id 31179 to 31199 scripts labels
 msgctxt "#31200"
 msgid "My Movies"
 msgstr "Mano filmai"
@@ -836,8 +931,8 @@ msgid "Favourite Streams"
 msgstr "Mėgstamiausi srautai"
 
 msgctxt "#31288"
-msgid "Choose TuneIn Radio Widget"
-msgstr ""
+msgid "TuneIn Radio Widget"
+msgstr "TuneIn radijo valdiklis"
 
 msgctxt "#31289"
 msgid "Toggle debug grid"
@@ -853,8 +948,13 @@ msgstr "Įjungti teminės išvaizdos derinimo įrankius"
 
 msgctxt "#31292"
 msgid "Local Streams"
-msgstr ""
+msgstr "Lokalūs srautai"
 
+msgctxt "#31293"
+msgid "Default Addon Fanart [COLOR=55white](if available)[/COLOR]"
+msgstr "Numatytasis priedo Fanart [COLOR=55white](jei prieinama)[/COLOR]"
+
+#: empty strings from id 31293 to 31299 video and Music OSD Labels
 msgctxt "#31300"
 msgid "Muted"
 msgstr "Nutildyta"
@@ -982,20 +1082,20 @@ msgid "Custom Item"
 msgstr "Savas elementas"
 
 msgctxt "#31379"
-msgid "Custom Items"
-msgstr "Savi elementai"
+msgid "Menu & Widgets"
+msgstr "Meniu ir valdikliai"
 
 msgctxt "#31380"
-msgid "Custom widget"
-msgstr ""
+msgid "Custom Widgets"
+msgstr "Savi valdikliai"
 
 #: empty strings from id 31381 to 31408 settings Category Description & Header
 #: Labels
 msgctxt "#31409"
 msgid ""
-"Choose from a variety of settings and customization options to make "
-"\"Bello\" fit your needs and taste."
-msgstr "Pasirinkite iš nustatymų ir tinkinimo parinkčių įvairovės, kad \"Bello\" atitiktų jūsų poreikius ir skonį."
+"Choose from a variety of settings and customization options to make \"Bello "
+"Fredo\" fit your needs and taste."
+msgstr "Pasirinkite iš nustatymų ir pritaikymo parinkčių įvairovės, kad pritaikytumėte \"Bello Fredo\" prie savo poreikių ir skonio."
 
 msgctxt "#31410"
 msgid ""
@@ -1045,7 +1145,7 @@ msgstr "Konfigūruoti teminės išvaizdos nustatymus"
 
 msgctxt "#31421"
 msgid "Library"
-msgstr ""
+msgstr "Biblioteka"
 
 #: empty strings from id 31422 to 31430 Help Messages
 msgctxt "#31431"

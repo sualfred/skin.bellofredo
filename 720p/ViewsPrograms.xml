@@ -253,4 +253,234 @@
 			</control>
 		</control>
 	</include>
+
+	<!-- ===================================== -->
+	<!-- ==== Thumb List View "582" ==== -->
+	<!-- ===================================== -->
+
+	<include name="ThumbListView_Programs">		
+	<!-- artwork -->
+		<control type="group">
+			<left>0</left>
+			<top>162</top>
+			<include>DialogZoomInOutAnimation</include>
+			<include>EpisodeViewAnimationsLeft</include>
+			<visible>Control.IsVisible(582)</visible>
+					<control type="image">
+						<left>-75</left>
+						<top>-136</top>
+						<width>687</width>
+						<height>524</height>
+						<texture background="true">views/episode/episode_blue_shadow.png</texture>
+						<animation effect="fade" time="0" end="60" condition="true">Conditional</animation>
+					</control>
+					<control type="image">
+						<left>46</left>
+						<width>441</width>
+						<height>248</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+						<texture background="true" diffuse="views/episode/episode_diffuse.png">thumbs/thumb_back.png</texture>
+					</control>
+					<control type="image">
+						<left>46</left>
+						<width>441</width>
+						<height>248</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+						<texture background="true" diffuse="views/episode/episode_diffuse.png" fallback="thumbs/fallback_episode_tp.png">$VAR[EpisodeThumb]</texture>
+						<fadetime>FanartCrossfadeTime</fadetime>
+					</control>	
+					<control type="image">
+						<left>46</left>
+						<width>441</width>
+						<height>248</height>
+						<aspectratio aligny="center" align="center">stretch</aspectratio>
+						<texture background="true">views/episode/episode_overlay.png</texture>
+					</control>	
+					<control type="image">
+						<left>46</left>
+						<width>441</width>
+						<height>248</height>
+						<aspectratio aligny="center" align="center">stretch</aspectratio>
+						<texture background="true">views/episode/episode_label.png</texture>
+						<visible>!Stringcompare(ListItem.Label,..)</visible>
+					</control>
+					<!-- thumb label -->
+					<control type="label">
+						<left>60</left>
+						<top>165</top>
+						<width>410</width>
+						<height>50</height>
+						<font>font30</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>77000000</shadowcolor>
+						<align>left</align>
+						<aligny>bottom</aligny>
+						<label>$VAR[EpisodeThumbTitle]</label>
+						<visible>!Stringcompare(ListItem.Label,..)</visible>
+					</control>
+					<control type="label">
+						<left>60</left>
+						<top>195</top>
+						<width>300</width>
+						<height>50</height>
+						<font>font11</font>
+						<textcolor>77white</textcolor>
+						<shadowcolor>77000000</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$VAR[EpisodeThumbInfo]</label>
+						<visible>!Stringcompare(ListItem.Label,..)</visible>
+					</control>					
+					<!-- info labels -->
+					<control type="group">
+						<left>46</left>
+						<top>266</top>
+						<control type="label">
+							<width>436</width>
+							<font>FontSize_20</font>
+							<textcolor>blue</textcolor>
+							<align>center</align>
+							<shadowcolor>77000000</shadowcolor>
+							<label>$VAR[GlobalInfo]</label>
+							<scroll>true</scroll>
+						</control>
+						<control type="textbox">
+							<top>35</top>
+							<width>436</width>
+							<height>140</height>
+							<font>FontSize_20</font>
+							<textcolor>99white</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+							<align>justify</align>
+							<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+							<label>$VAR[GlobalPlotDescription]</label>
+						</control>
+					</control>
+				</control>
+
+		<!-- vertical line -->
+		<control type="image">
+			<include>DialogZoomInOutAnimation</include>
+			<left>540</left>
+			<top>125</top>
+			<texture>info/infopanel_line_v.png</texture>
+			<colordiffuse>33white</colordiffuse>
+			<width>1</width>
+			<height>500</height>
+			<animation type="WindowOpen" tween="sine" easing="out">
+				<effect type="zoom" start="0" end="100" center="auto" time="450" delay="200" />
+				<effect type="fade" start="0" end="80" time="450" delay="200" />
+			</animation>
+			<animation type="WindowClose" tween="sine" easing="out">
+				<effect type="zoom" start="100" end="0" center="auto" time="350" delay="0"/>
+				<effect type="fade" start="80" end="0" time="350" delay="0"/>
+			</animation>
+
+			<animation type="Visible" tween="sine" easing="out">
+				<effect type="zoom" start="0" end="100" center="auto" time="450" delay="200" />
+				<effect type="fade" start="0" end="80" time="450" delay="200" />
+			</animation>
+			<animation type="Hidden" tween="sine" easing="out">
+				<effect type="zoom" start="100" end="0" center="auto" time="350" delay="0"/>
+				<effect type="fade" start="80" end="0" time="350" delay="0"/>
+			</animation>
+			<visible>Control.IsVisible(582)</visible>
+		</control>
+		<!--list-->
+		<control type="group">
+				<include>DialogZoomInOutAnimation</include>
+				<include>ListViewAnimationsRight</include>
+				<visible>Control.IsVisible(582)</visible>				
+				<control type="list" id="582">
+					<left>570</left>
+		  			<top>150</top>
+		  			<width>1190</width>
+		  			<height>450</height>
+		  			<onright>60</onright>
+		  			<onleft>9111</onleft>
+		  			<onup>50</onup>
+		  			<ondown>50</ondown>
+		  			<viewtype label="31268">List</viewtype>
+		  			<pagecontrol>60</pagecontrol>
+		  		  	<scrolltime tween="cubic" easing="out">300</scrolltime>
+					<itemlayout height="45" width="710">
+						<control type="label">
+							<left>12</left>
+							<top>0</top>
+							<width>55</width>
+							<height>45</height>
+							<font>FontSize_22</font>
+							<textcolor>77white</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label fallback="․  ․  ․">$VAR[EpisodeSmallInfoLabel]</label>
+							<visible>!Stringcompare(ListItem.Label,..)</visible>
+						</control>
+						<control type="label">
+							<left>95</left>
+							<top>0</top>
+							<width>435</width>
+							<height>43</height>
+							<font>FontSize_22</font>
+							<textcolor>77white</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label fallback="193">$VAR[EpisodeLabel]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="45" width="710">
+						<control type="label">
+							<left>12</left>
+							<top>0</top>
+							<width>55</width>
+							<height>45</height>
+							<font>FontSize_22</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label fallback="․  ․  ․">$VAR[EpisodeSmallInfoLabel]</label>
+							<visible>!Stringcompare(ListItem.Label,..)</visible>
+						</control>
+						<control type="label">
+							<left>95</left>
+							<top>0</top>
+							<width>435</width>
+							<height>43</height>
+							<font>FontSize_22</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label fallback="193">$VAR[EpisodeLabel]</label>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="scrollbar" id="60">
+					<right>25</right>
+					<top>165</top>
+					<width>9</width>
+					<height>425</height>
+					<texturesliderbackground>-</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbarfocus>
+					<textureslidernib>-</textureslidernib>
+					<textureslidernibfocus>-</textureslidernibfocus>
+					<onleft>582</onleft>
+					<onright>582</onright>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+					<visible>Control.IsVisible(582)</visible>
+				</control>
+				<control type="group">
+					<left>850</left>
+					<include>ListView_Arrows</include>
+				</control>
+			</control>
+	</include>
+
+	
 </includes>

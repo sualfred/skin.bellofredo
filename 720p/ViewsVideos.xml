@@ -4462,14 +4462,14 @@
 					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
 					<visible>Skin.HasSetting(ShowLogoAsTtile) + !Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
 				</control>
-				<control type="label">
+				<control type="textbox">
 					<left>20</left>
-					<top>-30</top>
+					<top>-20</top>
 					<height>50</height>
-					<width>730</width>
+					<width>1000</width>
 					<textcolor>white</textcolor>
 					<shadowcolor>77000000</shadowcolor>
-					<font>FontSize_50B</font>
+					<font>FontSize_36B</font>
 					<scroll>false</scroll>
 					<align>left</align>
 					<label>$VAR[ListItem.Label]</label>

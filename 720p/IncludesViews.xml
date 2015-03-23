@@ -52,6 +52,7 @@
       <include>ListView_Addons</include> <!-- id = 50 -->
       <include>ThumbnailsView</include> <!-- id = 56 -->
       <include>ThumbnailsView_Programs</include> <!-- id = 560 -->
+      <include>ThumbListView_Programs</include> <!-- id = 582 -->
     </include>
     
     <include name="AddonsViews">
@@ -417,8 +418,9 @@
   		<value condition="Container.Content(Albums)">$INFO[ListItem.Property(Album_Style)]</value>
   		<value condition="Container.Content(Songs)">$INFO[ListItem.Album]$INFO[ListItem.Artist, - ]</value>
   		<value condition="Window.IsActive(AddonBrowser)">$INFO[ListItem.Property(Addon.Summary)]</value>
+      <value condition="SubString(Container.FolderPath,plugin.program.advanced.launcher)">$INFO[ListItem.Genre,,  •  ]$INFO[ListItem.Studio]</value>
   		<value condition="Container.Content(Addons) + !IsEmpty(ListItem.Property(Addon.Summary))">$INFO[ListItem.Property(Addon.Summary)]</value>
-  		<value condition="Window.IsActive(Pictures)">$INFO[ListItem.PictureDateTime,, • ]$INFO[ListItem.PictureResolution]$INFO[ListItem.PictureCamModel, • ]</value>
+  		<value condition="Window.IsActive(Pictures)">$INFO[ListItem.PictureDateTime,,  •  ]$INFO[ListItem.PictureResolution]$INFO[ListItem.PictureCamModel,  •  ]</value>
   		<value condition="Window.IsActive(Programs)">$INFO[ListItem.Property(Addon.Summary)]</value>
   	</variable>
   
@@ -596,12 +598,17 @@
     <value condition="Container.Content(Playlists)">[CAPITALIZE]$LOCALIZE[559][/CAPITALIZE]</value>
     <value condition="Container.Content(Plugins)">[CAPITALIZE]$LOCALIZE[559][/CAPITALIZE]</value>
     <value condition="Container.Content(Sets)">[CAPITALIZE]$LOCALIZE[20457][/CAPITALIZE]</value>
-    <value condition="SubString(Container.FolderPath,plugin.video.amazon) | SubString(Container.FolderPath,plugin.video.prime_instant)">Amazon Instant Video</value>
+    <value condition="SubString(Container.FolderPath,plugin,left) ">$INFO[Container.FolderName]</value>
     <value>$LOCALIZE[19499]</value>
   </variable>
 
   <variable name="EpisodeThumb">
     <value condition="StringCompare(ListItem.Label,..)">thumbs/DefaultFolderBack.png/folderback_fanart_tp.png</value>
+
+    <value condition="SubString(Container.FolderPath,plugin.program.advanced.launcher) +  !Skin.HasSetting(AddonViewThumb) + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+    <value condition="SubString(Container.FolderPath,plugin.program.advanced.launcher) +  !Skin.HasSetting(AddonViewThumb) + IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(fanart)]</value>
+    <value condition="SubString(Container.FolderPath,plugin.program.advanced.launcher) +  Skin.HasSetting(AddonViewThumb) + IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(fanart)]</value>
+
     <value condition="Container.Content(TVShows) + Skin.HasSetting(EpisodeViewLandscape) + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>    
     <value condition="Container.Content(TVShows) + Skin.HasSetting(EpisodeViewLandscape) + IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(fanart)]</value>    
     <value condition="Container.Content(TVShows) + !Skin.HasSetting(EpisodeViewLandscape) + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>

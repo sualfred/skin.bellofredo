@@ -1798,14 +1798,16 @@
 	</variable>
 
 	<variable name="QuickNav_WidgetListContentMovies">
-		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),1)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window(Home).Property(recentmovies)]</value>
+		<!--<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),1)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window(Home).Property(recentmovies)]</value>-->
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),1)">videodb://recentlyaddedmovies/</value>
 		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),2)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window(Home).Property(recommendedmovies)]</value>
 		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),3)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window(Home).Property(randommovies)]</value>
 		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">plugin://script.extendedinfo?info=incinemas</value>
 		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">plugin://script.extendedinfo?info=trendingmovies</value>
 	</variable>
 	<variable name="QuickNav_WidgetListContentTVShows">
-		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window(Home).Property(recentepisodes)]</value>
+		<!--<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window(Home).Property(recentepisodes)]</value>-->
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">videodb://recentlyaddedepisodes</value>
 		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTVShowsType),2)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window(Home).Property(recommendedepisodes)]</value>
 		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTVShowsType),3)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window(Home).Property(randomepisodes)]</value>
 		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTVShowsType),4)">plugin://script.extendedinfo?info=trendingshows</value>
