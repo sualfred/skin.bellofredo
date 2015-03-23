@@ -1,4 +1,7 @@
-﻿[B][COLOR=FF56ADDA]v4.0.13[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.0.13a[/COLOR][/B]
+• Fixed: Textures.xbt Damn u 16bit PNG's ....
+
+[B][COLOR=FF56ADDA]v4.0.13[/COLOR][/B]
 • Added: Viewtype "Thumb List" for videos and programs
 • Changed: Netfilx non-logo label size for long titles
 • Added: Extra Fanart toggle to the sideblade menu
