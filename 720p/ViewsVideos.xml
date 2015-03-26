@@ -4142,6 +4142,17 @@
 							<label>$INFO[ListItem.Label2]</label>
 							<visible>SubString(Container.FolderPath,plugin.video.youtube)</visible>
 						</control>
+						<control type="label">
+							<left>583</left>
+							<top>11</top>
+							<width>80</width>
+							<height>22</height>
+							<align>right</align>
+							<textcolor>55ffffff</textcolor>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<label>․  ․  ․</label>
+							<visible>!SubString(Container.FolderPath,plugin.video.youtube) + !Substring(ListItem.Path,videodb://movies/sets/) + !IntegerGreaterThan(ListItem.Duration,0) + !Stringcompare(ListItem.Label,..)</visible>
+						</control>
 						<control type="image">
 							<left>624</left>
 							<top>10</top>
@@ -4257,6 +4268,17 @@
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 							<label>$INFO[ListItem.Label2]</label>
 							<visible>SubString(Container.FolderPath,plugin.video.youtube)</visible>
+						</control>
+						<control type="label">
+							<left>583</left>
+							<top>11</top>
+							<width>80</width>
+							<height>22</height>
+							<align>right</align>
+							<textcolor>white</textcolor>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<label>․  ․  ․</label>
+							<visible>!SubString(Container.FolderPath,plugin.video.youtube) + !Substring(ListItem.Path,videodb://movies/sets/) + !IntegerGreaterThan(ListItem.Duration,0) + !Stringcompare(ListItem.Label,..)</visible>
 						</control>
 						<control type="image">
 							<left>624</left>

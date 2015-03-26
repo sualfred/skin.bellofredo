@@ -389,11 +389,11 @@
 							<include>TopBigLabel</include>
 							<label>$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]</label>
 						</control>
-						<control type="label" id="1">
+						<!--<control type="label" id="1">
 							<include>TopSmallLabel</include>
 							<label>$INFO[VideoPlayer.Title]</label>
 							<animation effect="fade" end="65" condition="true">Conditional</animation>
-						</control>
+						</control>-->
 					</control>
 					<control type="label" id="1">
 						<description>Label</description>
@@ -401,7 +401,7 @@
 						<top>55</top>
 						<height>30</height>
 						<width>730</width>
-						<label>$INFO[VideoPlayer.Genre]</label>
+						<label>$INFO[VideoPlayer.Title]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>FontSize_22</font>
@@ -410,17 +410,18 @@
 					</control>
 					<control type="fadelabel" id="1">
 						<left>0</left>
-						<top>110</top>
+						<top>90</top>
 						<width>420</width>
 						<height>45</height>
 						<font>FontSize_20</font>
 						<align>left</align>
 						<aligny>center</aligny>
 						<textcolor>99white</textcolor>
-						<shadowcolor>55000000</shadowcolor>
+						<shadowcolor>55000000</shadowcolor>						
+						<label>$INFO[VideoPlayer.Genre,[COLOR=white]$LOCALIZE[515]:[/COLOR] ]</label>
 						<label>$INFO[VideoPlayer.ChannelGroup,[COLOR=white]$LOCALIZE[31033]:[/COLOR] ]</label>
 						<label>$INFO[VideoPlayer.NextTitle,[COLOR=white]$LOCALIZE[19031]:[/COLOR] ,]$INFO[VideoPlayer.NextStartTime, (,)]</label>
-						<label>$INFO[VideoPlayer.NextStartTime,[COLOR=white]$LOCALIZE[19080][/COLOR] ,]$INFO[VideoPlayer.NextEndTime,  [COLOR=white]$LOCALIZE[19081][/COLOR] ,]</label>
+						<!--<label>$INFO[VideoPlayer.NextStartTime,[COLOR=white]$LOCALIZE[19080][/COLOR] ,]$INFO[VideoPlayer.NextEndTime,  [COLOR=white]$LOCALIZE[19081][/COLOR] ,]</label>-->
 						<scroll>false</scroll>
 						<scrollout>false</scrollout>
 						<scrollspeed>100</scrollspeed>
@@ -436,7 +437,33 @@
 					<visible>[IsEmpty(Window(VideoOSD).Property(ShowPlot)) | IsEmpty(VideoPlayer.Plot)]</visible>					
 					<!--<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(LiveTV)] | SubString(Player.Filenameandpath,rtmp://) | SubString(Player.Filenameandpath,http)">Conditional</animation>-->
 					<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(LiveTV)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)]">Conditional</animation>
-					<animation effect="slide" start="0,0" end="15,0" condition="VideoPlayer.Content(LiveTV)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="15,-20" condition="VideoPlayer.Content(LiveTV)">Conditional</animation>
+					<control type="group" id="1">
+						<visible>VideoPlayer.Content(LiveTV)</visible>
+						<top>10</top>
+						<control type="label" id="1">
+							<left>3</left>							
+							<width>175</width>
+							<height>40</height>
+							<font>FontSize_18</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Player.StartTime]</label>
+							<textcolor>99white</textcolor>
+							<shadowcolor>55000000</shadowcolor>
+						</control>
+						<control type="label" id="1">
+							<left>422</left>							
+							<width>175</width>
+							<height>40</height>
+							<font>FontSize_18</font>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[Player.FinishTime]</label>
+							<textcolor>99white</textcolor>
+							<shadowcolor>55000000</shadowcolor>							
+						</control>
+					</control>
 					<control type="label" id="1">
 						<left>367</left>
 						<top>-25</top>
