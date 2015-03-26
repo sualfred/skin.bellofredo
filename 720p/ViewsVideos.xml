@@ -4151,7 +4151,8 @@
 							<textcolor>55ffffff</textcolor>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 							<label>․  ․  ․</label>
-							<visible>!SubString(Container.FolderPath,plugin.video.youtube) + !Substring(ListItem.Path,videodb://movies/sets/) + !IntegerGreaterThan(ListItem.Duration,0) + !Stringcompare(ListItem.Label,..)</visible>
+							<font>FontSize_22</font>
+							<visible>!SubString(Container.FolderPath,plugin.video.youtube) + !Substring(ListItem.Path,videodb://movies/sets/) + !IntegerGreaterThan(ListItem.Duration,0) + !Stringcompare(ListItem.Label,..) + IsEmpty(ListItem.Property(unWatchedEpisodes))</visible>
 						</control>
 						<control type="image">
 							<left>624</left>
@@ -4173,7 +4174,7 @@
 							<shadowcolor>77000000</shadowcolor>
 							<align>right</align>
 							<aligny>center</aligny>
-							<label fallback="․  ․  ․">$VAR[ListItemLabel2]</label>
+							<label>$VAR[ListItemLabel2]</label>
 							<visible>![Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Window.IsVisible(VideoPlaylist) | Substring(ListItem.Path,videodb://movies/sets/)]</visible>
 							<visible>!Stringcompare(ListItem.Label,..)</visible>
 						</control>
@@ -4276,9 +4277,10 @@
 							<height>22</height>
 							<align>right</align>
 							<textcolor>white</textcolor>
+							<font>FontSize_22</font>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 							<label>․  ․  ․</label>
-							<visible>!SubString(Container.FolderPath,plugin.video.youtube) + !Substring(ListItem.Path,videodb://movies/sets/) + !IntegerGreaterThan(ListItem.Duration,0) + !Stringcompare(ListItem.Label,..)</visible>
+							<visible>!SubString(Container.FolderPath,plugin.video.youtube) + !Substring(ListItem.Path,videodb://movies/sets/) + !IntegerGreaterThan(ListItem.Duration,0) + !Stringcompare(ListItem.Label,..) + IsEmpty(ListItem.Property(unWatchedEpisodes))</visible>
 						</control>
 						<control type="image">
 							<left>624</left>
@@ -4300,7 +4302,7 @@
 							<shadowcolor>77000000</shadowcolor>
 							<align>right</align>
 							<aligny>center</aligny>
-							<label fallback="․  ․  ․">$VAR[ListItemLabel2]</label>
+							<label>$VAR[ListItemLabel2]</label>
 							<visible>![Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Window.IsVisible(VideoPlaylist) | Substring(ListItem.Path,videodb://movies/sets/)]</visible>
 							<visible>!Stringcompare(ListItem.Label,..)</visible>
 						</control>
