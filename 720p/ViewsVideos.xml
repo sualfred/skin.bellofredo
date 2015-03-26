@@ -4546,8 +4546,8 @@
 							<texture background="true">rating/$INFO[ListItem.StarRating]</texture>
 						</control>						
 					</control>
-
 					<control type="group">
+						<visible>!IsEmpty(ListItem.Rating)</visible>
 						<width>68</width>						
 						<control type="image">							
 							<width>68</width>
@@ -4568,7 +4568,6 @@
 							<label>$INFO[ListItem.Rating]</label>							
 						</control>
 					</control>
-
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
