@@ -3944,40 +3944,66 @@
 						<label>$VAR[EpisodeThumbInfo]</label>
 						<visible>!Stringcompare(ListItem.Label,..)</visible>
 					</control>
-					<control type="image">
+					<control type="image" id="5821">
 						<left>440</left>
-						<top>210</top>
-						<width>33</width>
-						<height>22</height>
+						<top>209</top>
+						<width>35</width>
+						<height>24</height>
 						<colordiffuse>55ffffff</colordiffuse>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture>$VAR[ViewsDef3DFlags]</texture>
 						<visible>!Stringcompare(ListItem.Label,..)</visible>
 						<visible>Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist)</visible>
 					</control>
-					<control type="image">
-						<left>420</left>
-						<top>210</top>
-						<width>53</width>
-						<height>22</height>
-						<colordiffuse>55ffffff</colordiffuse>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture>flags/empty.png</texture>
+					<control type="group">
+						<visible>!IsEmpty(ListItem.Rating)</visible>
+						<animation effect="slide" time="0" end="-61,0" condition="Control.IsVisible(5822)">Conditional</animation>
+						<animation effect="slide" time="0" end="-41,0" condition="Control.IsVisible(5821)">Conditional</animation>
+						<control type="image">
+							<left>406</left>
+							<top>210</top>
+							<width>68</width>
+							<height>22</height>
+							<colordiffuse>55ffffff</colordiffuse>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>
+							<texture>flags/imdb.png</texture>						
+						</control>
+						<control type="label">
+							<left>432</left>
+							<top>199</top>
+							<width>50</width>
+							<height>43</height>
+							<font>FontSize_15B</font>
+							<textcolor>55ffffff</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Rating]</label>							
+						</control>
+					</control>
+					<control type="group" id="5822">
 						<visible>!Stringcompare(ListItem.Label,..)</visible>
 						<visible>!IsEmpty(ListItem.Property(unWatchedEpisodes))</visible>
 						<visible>[Container.Content(TVShows) | Container.Content(Seasons)]</visible>
-					</control>
-					<control type="label">
-						<left>422</left>
-						<top>199</top>
-						<width>50</width>
-						<height>43</height>
-						<font>FontSize_16B</font>
-						<textcolor>55ffffff</textcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Property(unWatchedEpisodes)]</label>
-						<visible>[Container.Content(TVShows) | Container.Content(Seasons)]</visible>
+						<control type="image">
+							<left>420</left>
+							<top>210</top>
+							<width>53</width>
+							<height>22</height>
+							<colordiffuse>55ffffff</colordiffuse>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>
+							<texture>flags/empty.png</texture>							
+						</control>
+						<control type="label">
+							<left>422</left>
+							<top>199</top>
+							<width>50</width>
+							<height>43</height>
+							<font>FontSize_16B</font>
+							<textcolor>55ffffff</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(unWatchedEpisodes)]</label>							
+						</control>
 					</control>
 					<!-- info labels -->
 					<control type="group">
