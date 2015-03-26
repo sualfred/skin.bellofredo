@@ -4541,11 +4541,34 @@
 							<left>0</left>
 							<top>-2</top>
 							<width>118</width>
-							<height>26</height>
+							<height>25</height>
 							<aspectratio align="left" aligny="center">keep</aspectratio>
 							<texture background="true">rating/$INFO[ListItem.StarRating]</texture>
+						</control>						
+					</control>
+
+					<control type="group">
+						<width>68</width>						
+						<control type="image">							
+							<width>68</width>
+							<height>22</height>
+							<colordiffuse>77white</colordiffuse>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>
+							<texture>flags/imdb.png</texture>						
+						</control>
+						<control type="label">
+							<left>26</left>
+							<top>-11</top>
+							<width>50</width>
+							<height>43</height>
+							<font>FontSize_15B</font>
+							<textcolor>77white</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Rating]</label>							
 						</control>
 					</control>
+
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
