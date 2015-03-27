@@ -195,15 +195,15 @@ msgid "Play all recently played albums"
 msgstr ""
 
 msgctxt "#31045"
-msgid "Enable home menu arrow up/down animation"
+msgid "Enable Home Menu Arrow Up/Down Animation"
 msgstr ""
 
 msgctxt "#31046"
-msgid "Enable home widgets arrow left/right animation"
+msgid "Enable Home Widgets Arrow Left/Right Animation"
 msgstr ""
 
 msgctxt "#31047"
-msgid "Automatically download extra artwork if a library has been updated"
+msgid "Automatically download Extra Artwork if a Library has been updated"
 msgstr ""
 
 msgctxt "#31048"
@@ -271,7 +271,7 @@ msgid "Force use of local stored season art [COLOR=55white](eg: seasonXX-poster.
 msgstr ""
 
 msgctxt "#31064"
-msgid "Enable library refresh button on the home screen"
+msgid "Enable Library Refresh Button on the Home Screen"
 msgstr ""
 
 msgctxt "#31065"
@@ -280,6 +280,10 @@ msgstr ""
 
 msgctxt "#31066"
 msgid "Disabled"
+msgstr ""
+
+msgctxt "#31067"
+msgid "Enable Home Menu Pulse-Bar-Background"
 msgstr ""
 
 #: empty strings from id 31065 to 31067

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<includes> 
-	<!-- ====================== -->
-	<!-- Main Home List Buttons -->
-	<!-- ====================== -->
+<includes>
+	<!--======================-->
+	<!--Main Home List Buttons-->
+	<!--======================-->
 	<include name="HomeMenuWraplist">
 		<control type="group">
 			<visible allowhiddenfocus="true">!Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
@@ -11,8 +11,14 @@
 				<include>HomeSlideAnimations</include>
 				<control type="image">
 					<include>FullscreenDimensions</include>
+					<texture background="true">windows/bg/black_pulse.png</texture>
+					<animation effect="fade" time="0" end="70" condition="true">Conditional</animation>
+					<visible>Skin.HasSetting(DisablePurpleBar)</visible>
+				</control>
+				<control type="image">
+					<include>FullscreenDimensions</include>
 					<texture background="true">windows/bg/colors_pulse.png</texture>
-					<visible>!Skin.HasSetting(HomeMenuAnimation)</visible>
+					<visible>!Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar)</visible>
 				</control>
 				<control type="image">
 					<height>720</height>
@@ -22,8 +28,8 @@
 						<effect type="slide" start="0,0" end="-2000,0" time="20350" />
 						<effect type="slide" start="0,0" end="2000,0" time="20350" delay="20350"/>
 					</animation>
-					<visible>Skin.HasSetting(HomeMenuAnimation)</visible>
-				</control>					
+					<visible>Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar)</visible>
+				</control>
 				<control type="wraplist" id="20">
 					<include>WidgetMainMenuSlideAnimations</include>
 					<description>Home Container</description>
@@ -62,7 +68,7 @@
 					">SetFocus(21)</onup>
 					<ondown condition="IntegerGreaterThan(Container(23).NumItems,0)">SetFocus(23)</ondown>
 					<onleft>20</onleft>
-					<onright>20</onright>				
+					<onright>20</onright>
 					<itemgap>0</itemgap>
 					<orientation>horizontal</orientation>
 					<focusposition>1</focusposition>
@@ -107,7 +113,7 @@
 									<texture background="true">buttons/arrow.png</texture>
 									<colordiffuse>CCFFFFFF</colordiffuse>
 									<visible>!ControlGroup(21).HasFocus + !Control.HasFocus(23)</visible>
-									<visible>IntegerGreaterThan(Container(23).NumItems,0)</visible>		          
+									<visible>IntegerGreaterThan(Container(23).NumItems,0)</visible>
 									<animation effect="fade" time="100" reversible="false">Visible</animation>
 									<animation effect="fade" time="100" reversible="false">Hidden</animation>
 									<animation effect="slide" end="-12,0" time="200" condition="
@@ -137,8 +143,7 @@
 									<height>18</height>
 									<texture background="true">buttons/arrow_top.png</texture>
 									<colordiffuse>CCFFFFFF</colordiffuse>
-									<visible>
-									[StringCompare(Container(20).ListItem.Property(widget),movies) + IntegerGreaterThan(Container(250).NumItems,0)] 
+									<visible>[StringCompare(Container(20).ListItem.Property(widget),movies) + IntegerGreaterThan(Container(250).NumItems,0)] 
 									| [StringCompare(Container(20).ListItem.Property(widget),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] 
 									| [StringCompare(Container(20).ListItem.Property(widget),tunein) + IntegerGreaterThan(Container(550).NumItems,0)] 
 									| [StringCompare(Container(20).ListItem.Property(widget),music) + IntegerGreaterThan(Container(450).NumItems,0)] 
@@ -150,8 +155,7 @@
 									| [StringCompare(Container(20).ListItem.Property(widget),amazondb) + IntegerGreaterThan(Container(750).NumItems,0)]
 									| [StringCompare(Container(20).ListItem.Property(widget),amazon) + IntegerGreaterThan(Container(751).NumItems,0)]
 									| [SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music) + IntegerGreaterThan(Container(651).NumItems,0)]
-									| [SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video) + IntegerGreaterThan(Container(652).NumItems,0)]
-									</visible>		          
+									| [SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video) + IntegerGreaterThan(Container(652).NumItems,0)]</visible>
 									<animation effect="fade" time="100" reversible="false">Visible</animation>
 									<animation effect="fade" time="100" reversible="false">Hidden</animation>
 									<animation effect="slide" end="12,0" time="200" condition="IntegerGreaterThan(Container(23).NumItems,0)" reversible="false">Conditional</animation>
@@ -160,22 +164,19 @@
 										<effect type="slide" start="0,2" end="0,-4" tween="sine" easing="inout" delay="900" time="900" />
 									</animation>
 								</control>
-							</control>							
+							</control>
 						</control>
 					</focusedlayout>
 					<content>
 						<include>skinshortcuts-mainmenu</include>
 					</content>
 				</control>
-			</control>		  
+			</control>
 		</control>
 	</include>
-
-	
-
-	<!-- =========== -->
-	<!-- TopHomeMenu -->
-	<!-- =========== -->
+	<!--===========-->
+	<!--TopHomeMenu-->
+	<!--===========-->
 	<include name="TopHomeMenu">
 		<control type="group">
 			<left>45</left>
@@ -209,12 +210,11 @@
 				<control type="button" id="212">
 					<description>Refresh Library</description>
 					<include>TopButton</include>
-					
-					<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31059])</onclick>								
+					<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31059])</onclick>
 					<onclick>SetProperty(Dialog.1.BuiltIn,UpdateLibrary(video)||SetFocus(20))</onclick>
 					<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31060])</onclick>
 					<onclick>SetProperty(Dialog.2.BuiltIn,UpdateLibrary(music)||SetFocus(20))</onclick>
-					<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31061])</onclick>								
+					<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31061])</onclick>
 					<onclick>SetProperty(Dialog.3.BuiltIn,CleanLibrary(video)||SetFocus(20))</onclick>
 					<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31062])</onclick>
 					<onclick>SetProperty(Dialog.4.BuiltIn,CleanLibrary(music)||SetFocus(20))</onclick>
@@ -293,5 +293,4 @@
 			</control>
 		</control>
 	</include>
-
 </includes>

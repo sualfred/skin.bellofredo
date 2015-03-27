@@ -441,13 +441,21 @@
 							<onclick>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup4)</onclick>
 							<visible>stringcompare(Window.Property(ManageWidgets),1)</visible>
 						</control>	
+						<control type="radiobutton" id="8206">
+							<description>Disable PurpleBar</description>
+							<include>SettingsRadioButton</include>
+							<label>31067</label>
+							<onclick>Skin.ToggleSetting(DisablePurpleBar)</onclick>
+							<selected>!Skin.HasSetting(DisablePurpleBar)</selected>
+						</control>						
 						<control type="radiobutton" id="8202">
 							<description>Enable HomeMenu Animation</description>
 							<include>SettingsRadioButton</include>
 							<label>31013</label>
 							<onclick>Skin.ToggleSetting(HomeMenuAnimation)</onclick>
-							<selected>Skin.HasSetting(HomeMenuAnimation)</selected>
-						</control>
+							<selected>Skin.HasSetting(HomeMenuAnimation)</selected>							
+							<enable>!Skin.HasSetting(DisablePurpleBar)</enable>
+						</control>	
 						<control type="radiobutton" id="8203">
 							<description>Enable HomeMenu Arrow Animation</description>
 							<include>SettingsRadioButton</include>
