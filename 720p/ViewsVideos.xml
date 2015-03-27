@@ -3693,8 +3693,6 @@
 			</control>
 		</control>
 
-
-
 		<control type="group">
 			<left>25</left>
 			<top>485</top>
@@ -3715,137 +3713,142 @@
 				<texture background="true">views/lovefilm/video_grid.png</texture>
 				<colordiffuse>CCFFFFFF</colordiffuse>
 			</control>
-			<control type="label">
-				<left>20</left>
-				<top>0</top>
-				<height>26</height>
-				<width>840</width>
-				<textcolor>white</textcolor>
-				<shadowcolor>77000000</shadowcolor>
-				<font>FontSize_38</font>
-				<scroll>false</scroll>
-				<align>left</align>
-				<label>$VAR[ListItem.Label]</label>
-			</control>
-			<control type="image">
-				<left>21</left>
-				<top>37</top>
-				<width>18</width>
-				<height>18</height>
-				<colordiffuse>99white</colordiffuse>
-				<aspectratio align="left" aligny="center">stretch</aspectratio>
-				<texture background="true">overlays/unwatched/list/unwatched.png</texture>
-				<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
-			</control>
-			<control type="label">
-				<left>21</left>
-				<top>30</top>
-				<width>840</width>
-				<height>30</height>
-				<label>$INFO[ListItem.Genre]</label>
-				<font>FontSize_22</font>
-				<textcolor>99white</textcolor>
-				<shadowcolor>77000000</shadowcolor>
-				<scroll>false</scroll>
-				<visible>!stringcompare(ListItem.Label,..) + IsEmpty(ListItem.Tagline)</visible>
-				<animation effect="slide" start="0,0" end="25,0" time="60" tween="sine" easing="inout" condition="stringcompare(ListItem.Overlay,OverlayUnWatched.png)">Conditional</animation>
-			</control>
-			<control type="label">
-				<left>21</left>
-				<top>30</top>
-				<width>840</width>
-				<height>30</height>
-				<label>$VAR[TagLineInfo]</label>
-				<font>FontSize_22</font>
-				<textcolor>99white</textcolor>
-				<shadowcolor>77000000</shadowcolor>
-				<scroll>false</scroll>
-				<visible>!stringcompare(ListItem.Label,..)</visible>
-				<animation effect="slide" start="0,0" end="25,0" time="60" tween="sine" easing="inout" condition="stringcompare(ListItem.Overlay,OverlayUnWatched.png)">Conditional</animation>
-			</control>
-			<!-- Small Down Info -->
-			<control type="grouplist">
-				<left>20</left>
-				<top>80</top>
-				<width>1000</width>
-				<orientation>horizontal</orientation>
-				<itemgap>10</itemgap>
+			<control type="group">				
+				<!--<animation type="Conditional" condition="[Control.IsVisible(6013) | Control.IsVisible(6014)]">
+					<effect type="fade" start="100" end="0" time="200" delay="0" tween="sine" easing="out"/>
+					<effect type="slide" start="0,0" end="-75,0" time="200" delay="0" tween="sine" easing="in"/>
+				</animation>-->
 				<control type="group">
-					<width>115</width>
-					<visible>!Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
+					<!--<animation effect="fade" start="100" end="0" time="350" delay="0">Hidden</animation>
+					<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
+					<animation type="WindowOpen">
+						<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>							
+						<effect type="slide" start="-80,0" end="0,0" time="980" delay="750" tween="sine" easing="out"/>								
+					</animation>
+					<animation type="WindowClose">
+						<effect type="fade" start="100" end="0" time="400" delay="200" tween="sine" easing="out"/>								
+						<effect type="slide" start="0,0" end="-80,0" time="780" delay="0" tween="sine" easing="out"/>
+					</animation>-->
+					<control type="label">
+						<left>20</left>
+						<top>0</top>
+						<height>26</height>
+						<width>840</width>
+						<textcolor>white</textcolor>
+						<shadowcolor>77000000</shadowcolor>
+						<font>FontSize_38</font>
+						<scroll>false</scroll>
+						<align>left</align>
+						<label>$VAR[ListItem.Label]</label>
+					</control>
 					<control type="image">
-						<left>0</left>
-						<top>-2</top>
-						<width>118</width>
-						<height>25</height>
-						<aspectratio align="left" aligny="center">keep</aspectratio>
-						<texture background="true">rating/$INFO[ListItem.StarRating]</texture>
-					</control>						
-				</control>
-				<control type="group">
-					<visible>!IsEmpty(ListItem.Rating)</visible>
-					<width>68</width>						
-					<control type="image">							
-						<width>68</width>
-						<height>22</height>
-						<colordiffuse>77white</colordiffuse>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture>flags/imdb.png</texture>						
+						<left>21</left>
+						<top>37</top>
+						<width>18</width>
+						<height>18</height>
+						<colordiffuse>99white</colordiffuse>
+						<aspectratio align="left" aligny="center">stretch</aspectratio>
+						<texture background="true">overlays/unwatched/list/unwatched.png</texture>
+						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
 					</control>
 					<control type="label">
-						<left>26</left>
-						<top>-11</top>
-						<width>50</width>
-						<height>43</height>
-						<font>FontSize_15B</font>
-						<textcolor>77white</textcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Rating]</label>							
+						<left>21</left>
+						<top>30</top>
+						<width>840</width>
+						<height>30</height>
+						<label>$VAR[TagLineInfo]</label>
+						<font>FontSize_22</font>
+						<textcolor>99white</textcolor>
+						<shadowcolor>77000000</shadowcolor>
+						<scroll>true</scroll>
+						<visible>!stringcompare(ListItem.Label,..)</visible>
+						<animation effect="slide" start="0,0" end="25,0" time="60" tween="sine" easing="inout" condition="stringcompare(ListItem.Overlay,OverlayUnWatched.png)">Conditional</animation>
 					</control>
-				</control>				
-				<control type="image">
-					<left>0</left>
-					<top>0</top>
-					<width>38</width>
-					<height>22</height>
-					<colordiffuse>77white</colordiffuse>
-					<aspectratio align="left" aligny="center">stretch</aspectratio>
-					<texture background="true">flags/sets/sets.png</texture>
-					<visible>Substring(ListItem.Path,videodb://movies/sets/)</visible>
-				</control>
-				<control type="image">
-					<left>0</left>
-					<top>0</top>
-					<width>50</width>
-					<height>22</height>
-					<colordiffuse>77white</colordiffuse>
-					<aspectratio align="left" aligny="center">stretch</aspectratio>
-					<texture background="true">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
-					<visible>Container.Content(TVShows) + !IsEmpty(ListItem.mpaa)</visible>
-				</control>
-				<control type="label">
-					<left>45</left>
-					<top>0</top>
-					<height>20</height>
-					<width>auto</width>
-					<textcolor>99white</textcolor>
-					<shadowcolor>99000000</shadowcolor>
-					<font>FontSize_22</font>
-					<scroll>false</scroll>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label>$VAR[SmallGlobalInfoWORating]</label>
-				</control>
-				<control type="image">
-					<left>0</left>
-					<top>0</top>
-					<width>34</width>
-					<height>22</height>
-					<colordiffuse>77white</colordiffuse>
-					<aspectratio align="left" aligny="center">stretch</aspectratio>
-					<texture>$VAR[ViewsDef3DFlags]</texture>
-					<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+					<!-- Small Down Info -->
+					<control type="grouplist">
+						<left>20</left>
+						<top>80</top>
+						<width>1000</width>
+						<orientation>horizontal</orientation>
+						<itemgap>10</itemgap>
+						<control type="group">
+							<width>115</width>
+							<visible>!Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
+							<control type="image">
+								<left>0</left>
+								<top>-2</top>
+								<width>118</width>
+								<height>25</height>
+								<aspectratio align="left" aligny="center">keep</aspectratio>
+								<texture background="true">rating/$INFO[ListItem.StarRating]</texture>
+							</control>						
+						</control>
+						<control type="group">
+							<visible>!IsEmpty(ListItem.Rating)</visible>
+							<width>68</width>						
+							<control type="image">							
+								<width>68</width>
+								<height>22</height>
+								<colordiffuse>77white</colordiffuse>
+								<aspectratio align="center" aligny="center">stretch</aspectratio>
+								<texture>flags/imdb.png</texture>						
+							</control>
+							<control type="label">
+								<left>26</left>
+								<top>-11</top>
+								<width>50</width>
+								<height>43</height>
+								<font>FontSize_15B</font>
+								<textcolor>77white</textcolor>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Rating]</label>							
+							</control>
+						</control>				
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>38</width>
+							<height>22</height>
+							<colordiffuse>77white</colordiffuse>
+							<aspectratio align="left" aligny="center">stretch</aspectratio>
+							<texture background="true">flags/sets/sets.png</texture>
+							<visible>Substring(ListItem.Path,videodb://movies/sets/)</visible>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>50</width>
+							<height>22</height>
+							<colordiffuse>77white</colordiffuse>
+							<aspectratio align="left" aligny="center">stretch</aspectratio>
+							<texture background="true">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
+							<visible>Container.Content(TVShows) + !IsEmpty(ListItem.mpaa)</visible>
+						</control>
+						<control type="label">
+							<left>45</left>
+							<top>0</top>
+							<height>20</height>
+							<width>auto</width>
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<font>FontSize_22</font>
+							<scroll>false</scroll>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$VAR[SmallGlobalInfoWORating]</label>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>34</width>
+							<height>22</height>
+							<colordiffuse>77white</colordiffuse>
+							<aspectratio align="left" aligny="center">stretch</aspectratio>
+							<texture>$VAR[ViewsDef3DFlags]</texture>
+							<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+						</control>
+					</control>
 				</control>
 			</control>
 			<control type="group">
@@ -3881,7 +3884,7 @@
 						<height>258</height>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 						<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="thumbs/poster_diffuse.png">$INFO[Window(home).Property(Set.Movie.3.Art(poster))]</texture>
-						<animation effect="fade" time="0"end="40" condition="true">Conditional</animation>
+						<animation effect="fade" time="0" end="40" condition="true">Conditional</animation>
 					</control>
 					<control type="image">
 						<left>1005</left>
@@ -3927,7 +3930,7 @@
 						<height>258</height>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 						<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="thumbs/poster_diffuse.png">$INFO[Window(home).Property(Set.Movie.2.Art(poster))]</texture>
-						<animation effect="fade" time="0"end="80" condition="true">Conditional</animation>
+						<animation effect="fade" time="0" end="80" condition="true">Conditional</animation>
 					</control>
 					<control type="image">
 						<left>1005</left>
@@ -3971,7 +3974,7 @@
 					<width>186</width>
 					<height>186</height>
 					<aspectratio aligny="center" align="center">stretch</aspectratio>
-					<texture background="true">views/wall/disc_shadow.png</texture>
+					<texture background="true">views/lovefilm/disc_shadow.png</texture>
 					<animation type="WindowOpen">
 						<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>								
 						<effect type="slide" start="0,0" end="-80,0" time="980" delay="750" tween="sine" easing="out"/>

@@ -1,4 +1,13 @@
-﻿[B][COLOR=FF56ADDA]v4.0.13a[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.0.14[/COLOR][/B]
+• Fixed: NetFilx movie sets
+• Added: IMDb flags for several view types
+• Added: LoveFilm disc art and movie set support
+• Fixed/Changed: A lot of sub label information and conditions
+• Added: Option to disable the pulse bar background on the home menu
+• Fixed: Skin Info Service load condition
+• A lot of more that I forgot again.... I'm gettin old
+
+[B][COLOR=FF56ADDA]v4.0.13a[/COLOR][/B]
 • Fixed: Textures.xbt Damn u 16bit PNG's ....
 
 [B][COLOR=FF56ADDA]v4.0.13[/COLOR][/B]
