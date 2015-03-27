@@ -642,4 +642,10 @@
     <value condition="!IsEmpty(ListItem.Art(fanart)">$INFO[ListItem.Art(fanart)]</value>           
   </variable>
 
+  <variable name="DiscArtType">
+    <value condition="!IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>
+    <value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">views/wall/bluray.png</value>
+    <value condition="!IntegerGreaterThan(ListItem.VideoResolution,719)">views/wall/dvd.png</value>
+  </variable>
+
 </includes>    

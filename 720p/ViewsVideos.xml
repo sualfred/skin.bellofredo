@@ -3700,10 +3700,10 @@
 			<top>485</top>
 			<include>VideoWallAnimations</include>
 			<visible>Control.IsVisible(581)</visible>
-			<animation type="Conditional" reversible="false" condition="![Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(contextmenu) | Window.IsActive(playercontrols)]">
+			<animation type="Conditional" reversible="false" condition="![Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)]">
 				<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
 			</animation>
-			<animation type="Conditional" reversible="false" condition="Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(contextmenu) | Window.IsActive(playercontrols)">
+			<animation type="Conditional" reversible="false" condition="Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) |  Window.IsActive(playercontrols)">
 				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 			</animation>
 			<control type="image">
@@ -3849,12 +3849,11 @@
 				</control>
 			</control>
 			<control type="group">
-				
+				<visible>Substring(ListItem.Path,videodb://movies/sets/)</visible>
 				<animation type="Conditional" condition="[Control.IsVisible(6013) | Control.IsVisible(6014)]">
 					<effect type="fade" start="100" end="0" time="0" delay="0" tween="sine" easing="out"/>
 					<effect type="slide" start="0,0" end="75,0" time="980" delay="0" tween="sine" easing="in"/>
-				</animation>
-				
+				</animation>				
 				<control type="group">
 					<animation effect="fade" start="100" end="0" time="350" delay="350">Hidden</animation>
 					<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
@@ -3896,12 +3895,11 @@
 				</control>
 			</control>
 			<control type="group">
-			
+				<visible>Substring(ListItem.Path,videodb://movies/sets/)</visible>
 				<animation type="Conditional" condition="[Control.IsVisible(6013) | Control.IsVisible(6014)]">
 					<effect type="fade" start="100" end="0" time="0" delay="0" tween="sine" easing="out"/>
 					<effect type="slide" start="0,0" end="75,0" time="980" delay="0" tween="sine" easing="in"/>
-				</animation>
-				
+				</animation>				
 				<control type="group">
 					<animation effect="fade" start="100" end="0" time="350" delay="350">Hidden</animation>
 					<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
@@ -3943,8 +3941,8 @@
 				</control>
 			</control>
 			<control type="group">
-				<visible>!Substring(ListItem.Path,videodb://movies/sets/,left) + !StringCompare(ListItem.Label,..)</visible>
-				<animation type="Conditional" condition="[Control.IsVisible(6013) | Control.IsVisible(6014)]">
+				<visible>!Substring(ListItem.Path,videodb://movies/sets/,left) + !StringCompare(ListItem.Label,..) + Container.Content(movies)</visible>
+				<animation type="Conditional" condition="[Control.IsVisible(6013) | Control.IsVisible(6014) | Window.IsVisible(Shutdownmenu) | Window.IsVisible(Playercontrols)]">
 					<effect type="fade" start="100" end="0" time="200" delay="0" tween="sine" easing="out"/>
 					<effect type="slide" start="0,0" end="75,0" time="200" delay="0" tween="sine" easing="in"/>
 				</animation>
@@ -3954,8 +3952,8 @@
 					<width>186</width>
 					<height>186</height>
 					<aspectratio aligny="center" align="center">stretch</aspectratio>
-					<texture background="true" fallback="views/wall/bluray.png">$INFO[ListItem.Art(discart)]</texture>
-					<animation effect="fade" start="100" end="0" time="350" delay="350">Hidden</animation>
+					<texture background="true" fallback="views/wall/bluray.png">$VAR[DiscArtType]</texture>
+					<animation effect="fade" start="100" end="0" time="350" delay="0">Hidden</animation>
 					<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
 					<animation type="WindowOpen">
 						<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>							
@@ -4335,7 +4333,7 @@
 					<control type="label">
 						<left>583</left>
 						<top>11</top>
-						<width>80</width>
+						<width>85</width>
 						<height>22</height>
 						<align>right</align>
 						<textcolor>55ffffff</textcolor>
