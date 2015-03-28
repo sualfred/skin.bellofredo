@@ -76,6 +76,7 @@
 			<animation effect="fade" time="300" start="0" end="100" tween="sine" easing="out">Visible</animation>
 			<animation effect="fade" time="300" start="100" end="0" tween="sine" easing="in">Hidden</animation>
 			<colordiffuse>ddFFFFFF</colordiffuse>
+			<visible>!Window.IsVisible(home) + !Window.IsVisible(Favourites) + !Window.IsVisible(playercontrols)</visible>
 			<visible>Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(yesnodialog) | [Window.IsActive(contextmenu)]</visible>	
 		</control>
 		<control type="image">

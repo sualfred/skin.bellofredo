@@ -164,6 +164,7 @@
 					<texture background="true">$VAR[QuickNavWidgetFanart]</texture>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<visible>!Skin.HasSetting(HideBGFanart)</visible>
+					<visible>!Window.IsActive(playercontrols)</visible>
 					<visible>ControlGroup(9050).HasFocus() | ControlGroup(9060).HasFocus() | ControlGroup(9070).HasFocus() | ControlGroup(9071).HasFocus() | ControlGroup(9072).HasFocus() | ControlGroup(9090).HasFocus() | ControlGroup(9091).HasFocus() | ControlGroup(9094).HasFocus() | ControlGroup(9093).HasFocus() | ControlGroup(9073).HasFocus() | ControlGroup(9074).HasFocus()</visible>
 				</control>
 			</control>

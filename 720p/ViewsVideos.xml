@@ -4466,19 +4466,19 @@
 					<control type="label">
 						<left>583</left>
 						<top>11</top>
-						<width>80</width>
+						<width>85</width>
 						<height>22</height>
 						<align>right</align>
 						<textcolor>white</textcolor>
+						<font>FontSize_22</font>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<label>$INFO[ListItem.Duration,, Min.]</label>
-						<font>FontSize_22</font>
 						<visible>IntegerGreaterThan(ListItem.Duration,0) + !SubString(Container.FolderPath,plugin.video.youtube)</visible>
 					</control>
 					<control type="label">
 						<left>583</left>
 						<top>11</top>
-						<width>80</width>
+						<width>85</width>
 						<height>22</height>
 						<align>right</align>
 						<textcolor>white</textcolor>
@@ -4490,7 +4490,7 @@
 					<control type="label">
 						<left>583</left>
 						<top>11</top>
-						<width>80</width>
+						<width>85</width>
 						<height>22</height>
 						<align>right</align>
 						<textcolor>white</textcolor>
