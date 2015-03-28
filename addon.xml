@@ -19,6 +19,7 @@
 		<import addon="weather.openweathermap.extended" version="1.0.1" />
 		<import addon="plugin.audio.tuneinradio" version="2.1.0" />
 		<import addon="script.toolbox" version="1.0.0" />		
+		<import addon="script.imdbupdate" version="0.5.3" />		
 		<import addon="context.extendedinfo.dialog" version="0.1.0" />		
 		<import addon="context.getextraart.dialog" version="0.1.0" />		
 	</requires>

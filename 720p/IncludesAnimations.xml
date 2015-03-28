@@ -31,6 +31,25 @@
 		</animation>
 	</include>
 
+	<include name="Top250">
+		<animation type="WindowOpen" reversible="true">
+			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+			<effect type="slide" start="0,55" end="0,0" time="350" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose" reversible="true">
+			<effect type="fade" start="100" end="0" time="300" delay="250" tween="sine" easing="inout" />
+			<effect type="slide" start="0,0" end="0,-55" time="350" delay="250" tween="sine" easing="inout" />
+		</animation>
+		<animation type="Visible" reversible="true">
+			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+			<effect type="slide" start="0,55" end="0,0" time="350" tween="cubic" easing="out" />
+		</animation>
+		<animation type="Hidden" reversible="true">
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
+			<effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="inout" />
+		</animation>
+	</include>
+
 	<include name="HomeNowPlayingSlideAnimations">
 		<animation type="WindowOpen" reversible="false" condition="Window.Previous(Visualisation) | Window.Previous(FullscreenVideo) | [Window.Previous(Home) + !Skin.HasSetting(HideHomeNPCovers)]">
 			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="in"  />

@@ -3704,6 +3704,36 @@
 			<animation type="Conditional" reversible="false" condition="Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) |  Window.IsActive(playercontrols)">
 				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 			</animation>
+
+			<!-- imdb top 250 -->
+			<control type="group">
+				<left>20</left>					
+				<top>-55</top>
+				<width>183</width>
+				<include>Top250</include>				
+				<visible>!IsEmpty(ListItem.Top250)</visible>
+				<control type="image">
+					<top>0</top>
+					<width>183</width>
+					<height>28</height>
+					<aspectratio aligny="center" align="center">stretch</aspectratio>
+					<colordiffuse>grey</colordiffuse>
+					<texture background="true">info/imdb.png</texture>					
+				</control>
+				<control type="label">
+					<left>6</left>
+					<top>2</top>
+					<height>23</height>
+					<width>110</width>
+					<font>FontSize_16B</font>
+					<textcolor>99white</textcolor>
+					<shadowcolor>99000000</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Top250,Top 250 #]</label>
+				</control>
+			</control>
+
 			<control type="image">
 				<left>-25</left>
 				<top>-485</top>
@@ -3713,6 +3743,7 @@
 				<texture background="true">views/lovefilm/video_grid.png</texture>
 				<colordiffuse>CCFFFFFF</colordiffuse>
 			</control>
+
 			<control type="group">				
 				<!--<animation type="Conditional" condition="[Control.IsVisible(6013) | Control.IsVisible(6014)]">
 					<effect type="fade" start="100" end="0" time="200" delay="0" tween="sine" easing="out"/>
@@ -4631,9 +4662,36 @@
 					<label>$VAR[GlobalPlotDescription]</label>
 					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
+				</control>				
+			</control>
+			<!-- imdb top 250 -->
+			<control type="group">
+				<right>50</right>					
+				<top>345</top>
+				<width>183</width>
+				<visible>!IsEmpty(ListItem.Top250)</visible>
+				<include>Top250</include>
+				<control type="image">
+					<top>0</top>
+					<width>183</width>
+					<height>28</height>
+					<aspectratio aligny="center" align="center">stretch</aspectratio>
+					<colordiffuse>grey</colordiffuse>
+					<texture background="true">info/imdb.png</texture>					
+				</control>
+				<control type="label">
+					<left>6</left>
+					<top>2</top>
+					<height>23</height>
+					<width>110</width>
+					<font>FontSize_16B</font>
+					<textcolor>99white</textcolor>
+					<shadowcolor>99000000</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Top250,Top 250 #]</label>
 				</control>
 			</control>
-
 			<!-- label subinfo logo -->
 			<control type="group">
 				<left>25</left>
@@ -4691,7 +4749,7 @@
 					<align>left</align>
 					<label>$VAR[ListItem.Label]</label>
 					<visible>![Skin.HasSetting(ShowLogoAsTtile) + ![IsEmpty(ListItem.Art(clearlogo)) | Substring(ListItem.Path,videodb://movies/sets/,left)]] + !stringcompare(ListItem.Label,..)</visible>
-				</control>
+				</control>				
 				<!-- Sublabel Info -->
 				<control type="grouplist">
 					<left>18</left>

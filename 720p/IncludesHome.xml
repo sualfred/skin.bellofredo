@@ -220,6 +220,10 @@
 					<onclick>SetProperty(Dialog.4.BuiltIn,CleanLibrary(music)||SetFocus(20))</onclick>
 					<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[799])</onclick>
 					<visible>!Skin.HasSetting(DisableLibraryRefreshButton)</visible>
+					<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31092])</onclick>
+					<onclick>SetProperty(Dialog.5.BuiltIn,RunScript(script.imdbupdate,movies)||SetFocus(20))</onclick>
+					<onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31093])</onclick>
+					<onclick>SetProperty(Dialog.6.BuiltIn,RunScript(script.imdbupdate,top250)||SetFocus(20))</onclick>					
 				</control>
 				<control type="button" id="214">
 					<description>Power</description>

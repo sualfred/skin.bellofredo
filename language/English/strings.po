@@ -286,9 +286,6 @@ msgctxt "#31067"
 msgid "Enable Home Menu Pulse-Bar-Background"
 msgstr ""
 
-#: empty strings from id 31065 to 31067
-#: extendedInfoLabels
-
 msgctxt "#31068"
 msgid "Online Video Information"
 msgstr ""
@@ -336,9 +333,6 @@ msgstr ""
 msgctxt "#31079"
 msgid "Movie Actor Roles"
 msgstr ""
-
-#: empty strings from id 31042 to 31079
-#: view Type labels
 
 msgctxt "#31080"
 msgid "Slide"
@@ -388,8 +382,13 @@ msgctxt "#31091"
 msgid "Episodes"
 msgstr ""
 
-#: empty strings from id 31092 to 31093
-#: skin Settings labels
+msgctxt "#31092"
+msgid "Update IMDb Ratings"
+msgstr ""
+
+msgctxt "#31093"
+msgid "Update IMDb Top 250"
+msgstr ""
 
 msgctxt "#31094"
 msgid "Movies Widget"
@@ -415,7 +414,9 @@ msgctxt "#31099"
 msgid "Show Big Thumbs"
 msgstr ""
 
-#: empty string with id 31100
+msgctxt "#31100"
+msgid "Unknown Genre"
+msgstr ""
 
 msgctxt "#31101"
 msgid "Show Weather Info"
@@ -441,7 +442,11 @@ msgctxt "#31106"
 msgid "Amazon [COLOR=55white](AddonScriptorDE's Plugin)[/COLOR]"
 msgstr ""
 
-#: empty strings from id 31107 to 31123
+msgctxt "#31107"
+msgid "Released"
+msgstr ""
+
+#: empty strings from id 31108 to 31123
 
 msgctxt "#31124"
 msgid "Flashing Lights"

@@ -959,580 +959,955 @@
 					<animation type="WindowOpen" tween="sine" easing="out">
 						<effect type="fade" start="0" end="100" time="1000"/>
 						<effect type="rotatex" center="720,12" start="0" end="20" time="1000" delay="750"/> -->
-				</animation>
-				<animation type="WindowClose" tween="sine" easing="out">
-					<effect type="rotatex" center="720,12" start="20" end="0" time="1000"/>
-					<effect type="fade" start="100" end="0" time="1000" delay="800"/>
-				</animation>
-				<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
-				<include>Includes_Static_MusicWall</include>
-			</control>
-		</control>
-
-		<control type="group">
-			<visible>Control.IsVisible(59)</visible>
-			<control type="group">
-				<include>DialogFadeInOutAnimation</include>
-				<animation effect="fade" start="0" end="100" time="400" tween="sine" easing="out">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="2000" tween="sine" easing="out">WindowClose</animation>
-				<control type="image.">
-					<include>FullscreenDimensions</include>
-					<texture>views/wall/wall_overlay.png</texture>
-					<fadetime>FanartCrossfadeTime</fadetime>
-					<colordiffuse>A9FFFFFF</colordiffuse>
-				</control>
-				<control type="image">
-					<include>FullscreenDimensions</include>
-					<texture>views/wall/wall_mask.png</texture>
-					<fadetime>FanartCrossfadeTime</fadetime>
+					</animation>
+					<animation type="WindowClose" tween="sine" easing="out">
+						<effect type="rotatex" center="720,12" start="20" end="0" time="1000"/>
+						<effect type="fade" start="100" end="0" time="1000" delay="800"/>
+					</animation>
+					<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
+					<include>Includes_Static_MusicWall</include>
 				</control>
 			</control>
 
 			<control type="group">
-				<include>DialogZoomInOutAnimation</include>
-				<animation reversible="true" effect="zoom" start="100" end="95" center="640,260" time="300" tween="quadratic" easing="in" condition="Control.IsVisible(6013) | Control.IsVisible(6014)">Conditional</animation>
-				<control type="image">
-					<left>302</left>
-					<top>21</top>
-					<width>672</width>
-					<height>654</height>
-					<aspectratio aligny="center" align="center">stretch</aspectratio>
-					<texture background="true">views/wall/square_blue_shadow.png</texture>
-					<animation type="WindowOpen">
-						<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>
-						<effect type="zoom" start="398,108,485,472" end="302,21,672,654" time="1000" delay="750" tween="sine" easing="out"/>
-					</animation>
-					<animation type="WindowClose">
-						<effect type="zoom" start="302,21,672,654" end="398,108,485,472" time="1000" delay="0" tween="sine" easing="out"/>
-						<effect type="fade" start="100" end="0" time="500" delay="650" tween="sine" easing="out"/>
-					</animation>
-				</control>
-				<control type="image">
-					<left>460</left>
-					<top>161</top>
-					<width>356</width>
-					<height>356</height>
-					<aspectratio aligny="center" align="center">stretch</aspectratio>
-					<texture background="true" diffuse="views/wall/square_diffuse.png" >$INFO[ListItem.Icon]</texture>
-					<animation type="WindowOpen">
-						<effect type="fade" start="0" end="100" time="500" delay="500"  tween="sine" easing="out"/>
-						<effect type="zoom" start="512,210,256,256" end="460,161,356,356" time="1000" delay="750" tween="sine" easing="out"/>
-					</animation>
-					<animation type="WindowClose">
-						<effect type="zoom" start="460,161,356,356" end="512,210,256,256" time="1000" delay="0" tween="sine" easing="out"/>
-						<effect type="fade" start="100" end="0" time="500" delay="800"  tween="sine" easing="out"/>
-					</animation>
-				</control>
-				<control type="image">
-					<left>460</left>
-					<top>161</top>
-					<width>356</width>
-					<height>356</height>
-					<aspectratio aligny="center" align="center">stretch</aspectratio>
-					<texture background="true">views/wall/square_overlay.png</texture>
-					<animation type="WindowOpen">
-						<effect type="fade" start="0" end="100" time="500" delay="500"  tween="sine" easing="out"/>
-						<effect type="zoom" start="512,210,256,256" end="460,161,356,356" time="1000" delay="750" tween="sine" easing="out"/>
-					</animation>
-					<animation type="WindowClose">
-						<effect type="zoom" start="460,161,356,356" end="512,210,256,256" time="1000" delay="0" tween="sine" easing="out"/>
-						<effect type="fade" start="100" end="0" time="500" delay="800"  tween="sine" easing="out"/>
-					</animation>
-				</control>
-				<control type="image">
-					<left>460</left>
-					<top>161</top>
-					<width>356</width>
-					<height>356</height>
-					<aspectratio aligny="center" align="center">stretch</aspectratio>
-					<texture background="true" diffuse="views/wall/square_diffuse.png">$INFO[ListItem(-1).Icon]</texture>
-					<animation effect="fade" start="100" end="0" time="200" delay="200" condition="Control.IsVisible(6013)">Conditional</animation>
-					<visible>Control.IsVisible(6013) + !stringcompare(ListItem(-1).Label,..)</visible>
-				</control>
-				<control type="image">
-					<left>460</left>
-					<top>161</top>
-					<width>356</width>
-					<height>356</height>
-					<aspectratio aligny="center" align="center">stretch</aspectratio>
-					<texture background="true">views/wall/square_overlay.png</texture>
-					<animation effect="fade" start="100" end="0" time="200" delay="200" condition="Control.IsVisible(6013)">Conditional</animation>
-					<visible>Control.IsVisible(6013) + !stringcompare(ListItem(-1).Label,..)</visible>
-				</control>
-				<control type="image">
-					<left>460</left>
-					<top>161</top>
-					<width>356</width>
-					<height>356</height>
-					<aspectratio aligny="center" align="center">stretch</aspectratio>
-					<texture background="true" diffuse="views/wall/square_diffuse.png">$INFO[ListItem(1).Icon]</texture>
-					<animation effect="fade" start="100" end="0" time="200" delay="200" condition="Control.IsVisible(6014)">Conditional</animation>
-					<visible>Control.IsVisible(6014) + !stringcompare(ListItem(1).Label,..)</visible>
-				</control>
-				<control type="image">
-					<left>460</left>
-					<top>161</top>
-					<width>356</width>
-					<height>356</height>
-					<aspectratio aligny="center" align="center">stretch</aspectratio>
-					<texture background="true">views/wall/square_overlay.png</texture>
-					<animation effect="fade" start="100" end="0" time="200" delay="200" condition="Control.IsVisible(6014)">Conditional</animation>
-					<visible>Control.IsVisible(6014) + !stringcompare(ListItem(1).Label,..)</visible>
-				</control>
-			</control>
-		</control>
-
-		<control type="group">
-			<control type="fixedlist" id="59">
-				<left>25</left>
-				<top>165</top>
-				<width>1190</width>
-				<height>356</height>
-				<onleft>9000</onleft>
-				<onright>9000</onright>
-				<onup>59</onup>
-				<ondown>59</ondown>
-				<focusposition>3</focusposition>
-				<preloaditems>2</preloaditems>
-				<viewtype label="31082">Multiple Walls</viewtype>
-				<pagecontrol>60</pagecontrol>
-				<scrolltime>200</scrolltime>
-				<visible>Container.Content(Albums) | Container.Content(Songs)</visible>
-				<itemlayout height="356" width="356"/>
-				<focusedlayout height="356" width="356">
+				<visible>Control.IsVisible(59)</visible>
+				<control type="group">
+					<include>DialogFadeInOutAnimation</include>
+					<animation effect="fade" start="0" end="100" time="400" tween="sine" easing="out">WindowOpen</animation>
+					<animation effect="fade" start="100" end="0" time="2000" tween="sine" easing="out">WindowClose</animation>
+					<control type="image.">
+						<include>FullscreenDimensions</include>
+						<texture>views/wall/wall_overlay.png</texture>
+						<fadetime>FanartCrossfadeTime</fadetime>
+						<colordiffuse>A9FFFFFF</colordiffuse>
+					</control>
 					<control type="image">
-						<left>0</left>
-						<top>0</top>
+						<include>FullscreenDimensions</include>
+						<texture>views/wall/wall_mask.png</texture>
+						<fadetime>FanartCrossfadeTime</fadetime>
+					</control>
+				</control>
+
+				<control type="group">
+					<include>DialogZoomInOutAnimation</include>
+					<animation reversible="true" effect="zoom" start="100" end="95" center="640,260" time="300" tween="quadratic" easing="in" condition="Control.IsVisible(6013) | Control.IsVisible(6014)">Conditional</animation>
+					<control type="image">
+						<left>302</left>
+						<top>21</top>
+						<width>672</width>
+						<height>654</height>
+						<aspectratio aligny="center" align="center">stretch</aspectratio>
+						<texture background="true">views/wall/square_blue_shadow.png</texture>
+						<animation type="WindowOpen">
+							<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>
+							<effect type="zoom" start="398,108,485,472" end="302,21,672,654" time="1000" delay="750" tween="sine" easing="out"/>
+						</animation>
+						<animation type="WindowClose">
+							<effect type="zoom" start="302,21,672,654" end="398,108,485,472" time="1000" delay="0" tween="sine" easing="out"/>
+							<effect type="fade" start="100" end="0" time="500" delay="650" tween="sine" easing="out"/>
+						</animation>
+					</control>
+					<control type="image">
+						<left>460</left>
+						<top>161</top>
 						<width>356</width>
 						<height>356</height>
-						<texture>-</texture>
-					</control>					
-				</focusedlayout>
+						<aspectratio aligny="center" align="center">stretch</aspectratio>
+						<texture background="true" diffuse="views/wall/square_diffuse.png" >$INFO[ListItem.Icon]</texture>
+						<animation type="WindowOpen">
+							<effect type="fade" start="0" end="100" time="500" delay="500"  tween="sine" easing="out"/>
+							<effect type="zoom" start="512,210,256,256" end="460,161,356,356" time="1000" delay="750" tween="sine" easing="out"/>
+						</animation>
+						<animation type="WindowClose">
+							<effect type="zoom" start="460,161,356,356" end="512,210,256,256" time="1000" delay="0" tween="sine" easing="out"/>
+							<effect type="fade" start="100" end="0" time="500" delay="800"  tween="sine" easing="out"/>
+						</animation>
+					</control>
+					<control type="image">
+						<left>460</left>
+						<top>161</top>
+						<width>356</width>
+						<height>356</height>
+						<aspectratio aligny="center" align="center">stretch</aspectratio>
+						<texture background="true">views/wall/square_overlay.png</texture>
+						<animation type="WindowOpen">
+							<effect type="fade" start="0" end="100" time="500" delay="500"  tween="sine" easing="out"/>
+							<effect type="zoom" start="512,210,256,256" end="460,161,356,356" time="1000" delay="750" tween="sine" easing="out"/>
+						</animation>
+						<animation type="WindowClose">
+							<effect type="zoom" start="460,161,356,356" end="512,210,256,256" time="1000" delay="0" tween="sine" easing="out"/>
+							<effect type="fade" start="100" end="0" time="500" delay="800"  tween="sine" easing="out"/>
+						</animation>
+					</control>
+					<control type="image">
+						<left>460</left>
+						<top>161</top>
+						<width>356</width>
+						<height>356</height>
+						<aspectratio aligny="center" align="center">stretch</aspectratio>
+						<texture background="true" diffuse="views/wall/square_diffuse.png">$INFO[ListItem(-1).Icon]</texture>
+						<animation effect="fade" start="100" end="0" time="200" delay="200" condition="Control.IsVisible(6013)">Conditional</animation>
+						<visible>Control.IsVisible(6013) + !stringcompare(ListItem(-1).Label,..)</visible>
+					</control>
+					<control type="image">
+						<left>460</left>
+						<top>161</top>
+						<width>356</width>
+						<height>356</height>
+						<aspectratio aligny="center" align="center">stretch</aspectratio>
+						<texture background="true">views/wall/square_overlay.png</texture>
+						<animation effect="fade" start="100" end="0" time="200" delay="200" condition="Control.IsVisible(6013)">Conditional</animation>
+						<visible>Control.IsVisible(6013) + !stringcompare(ListItem(-1).Label,..)</visible>
+					</control>
+					<control type="image">
+						<left>460</left>
+						<top>161</top>
+						<width>356</width>
+						<height>356</height>
+						<aspectratio aligny="center" align="center">stretch</aspectratio>
+						<texture background="true" diffuse="views/wall/square_diffuse.png">$INFO[ListItem(1).Icon]</texture>
+						<animation effect="fade" start="100" end="0" time="200" delay="200" condition="Control.IsVisible(6014)">Conditional</animation>
+						<visible>Control.IsVisible(6014) + !stringcompare(ListItem(1).Label,..)</visible>
+					</control>
+					<control type="image">
+						<left>460</left>
+						<top>161</top>
+						<width>356</width>
+						<height>356</height>
+						<aspectratio aligny="center" align="center">stretch</aspectratio>
+						<texture background="true">views/wall/square_overlay.png</texture>
+						<animation effect="fade" start="100" end="0" time="200" delay="200" condition="Control.IsVisible(6014)">Conditional</animation>
+						<visible>Control.IsVisible(6014) + !stringcompare(ListItem(1).Label,..)</visible>
+					</control>
+				</control>
+			</control>
+
+			<control type="group">
+				<control type="fixedlist" id="59">
+					<left>25</left>
+					<top>165</top>
+					<width>1190</width>
+					<height>356</height>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>59</onup>
+					<ondown>59</ondown>
+					<focusposition>3</focusposition>
+					<preloaditems>2</preloaditems>
+					<viewtype label="31082">Multiple Walls</viewtype>
+					<pagecontrol>60</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<visible>Container.Content(Albums) | Container.Content(Songs)</visible>
+					<itemlayout height="356" width="356"/>
+					<focusedlayout height="356" width="356">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>356</width>
+							<height>356</height>
+							<texture>-</texture>
+						</control>					
+					</focusedlayout>
+				</control>
 			</control>
 		</control>
-	</control>
-</include>
+	</include>
 
-<!-- ===================================== -->
-<!-- ==== Thumbnails View Music "560" ==== -->
-<!-- ===================================== -->
-<include name="ThumbnailsView_Music">
-	<control type="group">
-		<visible>Control.IsVisible(560)</visible>
-		<include>ThumbnailsAnimations</include>
-		<include>DialogZoomInOutAnimation</include>
-		<control type="panel" id="560">
-			<left>40</left>
-			<top>95</top>
-			<width>1200</width>
-			<height>501</height>
-			<onleft>9111</onleft>
-			<onright>60</onright>
-			<onup>560</onup>
-			<ondown>560</ondown>
-			<orientation>vertical</orientation>
-			<pagecontrol>60</pagecontrol>
-			<preloaditems>2</preloaditems>
-			<viewtype label="31085">icons</viewtype>
-			<scrolltime tween="Quadratic" easing="out">250</scrolltime>
-			<visible>Container.Content(Albums) | Container.Content(Artists) | Container.Content(Songs) | Window.IsVisible(MusicPlaylist) | stringcompare(Container.FolderPath,addons://sources/audio/) | [substring(Container.FolderPath,plugin,left) + Container.HasFiles]</visible>
-			<itemlayout condition="!stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicThumbs)" height="248" width="239.5">
-				<control type="image">
-					<left>5</left>
-					<top>5</top>
-					<width>231</width>
-					<height>240</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture border="31">views/other/panel.png</texture>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>223</width>
-					<height>232</height>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
-					<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
-					<bordersize>6</bordersize>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>223</width>
-					<height>232</height>
-					<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<bordersize>6</bordersize>
-					<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>223</width>
-					<height>232</height>
-					<texture background="true">$VAR[AddonStatus]</texture>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<bordersize>6</bordersize>
-				</control>
-			</itemlayout>
-			<itemlayout condition="!stringcompare(Container.FolderPath,addons://sources/audio/) + Skin.HasSetting(ShowSmallMusicThumbs)" height="167" width="171">
-				<control type="image">
-					<left>5</left>
-					<top>5</top>
-					<width>163</width>
-					<height>158</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture border="31">views/other/panel.png</texture>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>155</width>
-					<height>150</height>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
-					<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
-					<bordersize>6</bordersize>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>155</width>
-					<height>150</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
-					<bordersize>6</bordersize>
-					<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>155</width>
-					<height>150</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture background="true">$VAR[AddonStatus]</texture>
-					<bordersize>6</bordersize>
-				</control>
-			</itemlayout>
-			<itemlayout condition="stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicAddonsThumbs)" height="248" width="239.5">
-				<control type="image">
-					<left>5</left>
-					<top>5</top>
-					<width>231</width>
-					<height>240</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture border="31">views/other/panel.png</texture>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>223</width>
-					<height>232</height>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
-					<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
-					<bordersize>6</bordersize>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>223</width>
-					<height>232</height>
-					<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<bordersize>6</bordersize>
-					<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>223</width>
-					<height>232</height>
-					<texture background="true">$VAR[AddonStatus]</texture>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<bordersize>6</bordersize>
-				</control>
-			</itemlayout>
-			<itemlayout condition="stringcompare(Container.FolderPath,addons://sources/audio/) + Skin.HasSetting(ShowSmallMusicAddonsThumbs)" height="167" width="171">
-				<control type="image">
-					<left>5</left>
-					<top>5</top>
-					<width>163</width>
-					<height>158</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture border="31">views/other/panel.png</texture>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>155</width>
-					<height>150</height>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
-					<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
-					<bordersize>6</bordersize>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>155</width>
-					<height>150</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
-					<bordersize>6</bordersize>
-					<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>155</width>
-					<height>150</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture background="true">$VAR[AddonStatus]</texture>
-					<bordersize>6</bordersize>
-				</control>
-			</itemlayout>
-			<focusedlayout condition="!stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicThumbs)" height="248" width="239.5">
-				<control type="image">
-					<left>5</left>
-					<top>5</top>
-					<width>231</width>
-					<height>240</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture border="31">views/other/panel.png</texture>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>223</width>
-					<height>232</height>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
-					<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
-					<bordersize>6</bordersize>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>223</width>
-					<height>232</height>
-					<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<bordersize>6</bordersize>
-					<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>223</width>
-					<height>232</height>
-					<texture background="true">$VAR[AddonStatus]</texture>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<bordersize>6</bordersize>
-				</control>
-				<control type="image">
-					<left>5</left>
-					<top>5</top>
-					<width>231</width>
-					<height>240</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture border="31">views/other/focus_blue.png</texture>
-					<include>ThumbnailsFocusAnimation</include>
-				</control>
-			</focusedlayout>
-			<focusedlayout condition="!stringcompare(Container.FolderPath,addons://sources/audio/) + Skin.HasSetting(ShowSmallMusicThumbs)" height="167" width="171">
-				<control type="image">
-					<left>5</left>
-					<top>5</top>
-					<width>163</width>
-					<height>158</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture border="31">views/other/panel.png</texture>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>155</width>
-					<height>150</height>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
-					<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
-					<bordersize>6</bordersize>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>155</width>
-					<height>150</height>
-					<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<bordersize>6</bordersize>
-					<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>155</width>
-					<height>150</height>
-					<texture background="true">$VAR[AddonStatus]</texture>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<bordersize>6</bordersize>
-				</control>
-				<control type="image">
-					<left>5</left>
-					<top>5</top>
-					<width>163</width>
-					<height>158</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture border="31">views/other/focus_blue.png</texture>
-					<include>ThumbnailsFocusAnimation</include>
-				</control>
-			</focusedlayout>
-			<focusedlayout condition="stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicAddonsThumbs)" height="248" width="239.5">
-				<control type="image">
-					<left>5</left>
-					<top>5</top>
-					<width>231</width>
-					<height>240</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture border="31">views/other/panel.png</texture>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>223</width>
-					<height>232</height>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
-					<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
-					<bordersize>6</bordersize>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>223</width>
-					<height>232</height>
-					<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<bordersize>6</bordersize>
-					<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>223</width>
-					<height>232</height>
-					<texture background="true">$VAR[AddonStatus]</texture>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<bordersize>6</bordersize>
-				</control>
-				<control type="image">
-					<left>5</left>
-					<top>5</top>
-					<width>231</width>
-					<height>240</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture border="31">views/other/focus_blue.png</texture>
-					<include>ThumbnailsFocusAnimation</include>
-				</control>
-			</focusedlayout>
-			<focusedlayout condition="stringcompare(Container.FolderPath,addons://sources/audio/) + Skin.HasSetting(ShowSmallMusicAddonsThumbs)" height="167" width="171">
-				<control type="image">
-					<left>5</left>
-					<top>5</top>
-					<width>163</width>
-					<height>158</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture border="31">views/other/panel.png</texture>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>155</width>
-					<height>150</height>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
-					<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
-					<bordersize>6</bordersize>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>155</width>
-					<height>150</height>
-					<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<bordersize>6</bordersize>
-					<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
-				</control>
-				<control type="image">
-					<left>9</left>
-					<top>9</top>
-					<width>155</width>
-					<height>150</height>
-					<texture background="true">$VAR[AddonStatus]</texture>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<bordersize>6</bordersize>
-				</control>
-				<control type="image">
-					<left>5</left>
-					<top>5</top>
-					<width>163</width>
-					<height>158</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture border="31">views/other/focus_blue.png</texture>
-					<include>ThumbnailsFocusAnimation</include>
-				</control>
-			</focusedlayout>
-		</control>
-		<control type="button">
-			<left>40</left>
-			<top>598</top>
-			<width>1200</width>
-			<height>35</height>
-			<font>FontSize_26B</font>
-			<textcolor>bbwhite</textcolor>
-			<focusedcolor>bbwhite</focusedcolor>
-			<disabledcolor>bbwhite</disabledcolor>
-			<shadowcolor>77000000</shadowcolor>
-			<texturefocus>-</texturefocus>
-			<texturenofocus>-</texturenofocus>
-			<align>left</align>
-			<aligny>top</aligny>
-			<label>$INFO[ListItem.Label]</label>
-			<label2>$VAR[MusicLabel2]</label2>
+	<!-- ===================================== -->
+	<!-- ==== Thumbnails View Music "560" ==== -->
+	<!-- ===================================== -->
+	<include name="ThumbnailsView_Music">
+		<control type="group">
 			<visible>Control.IsVisible(560)</visible>
-			<animation effect="slide" start="0,0" end="0,-6" time="0" condition="!stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicThumbs)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-6" time="0" condition="stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicAddonsThumbs)">Conditional</animation>
-	</control>
-	<control type="scrollbar" id="60">
-		<right>30</right>
-		<top>100</top>
-		<width>9</width>
-		<include condition="!stringcompare(Container.FolderPath,addons://sources/audio/) + Skin.HasSetting(ShowSmallMusicThumbs)">ThumbnailsViewScrollbarHeight</include>
-		<include condition="!stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicThumbs)">ThumbnailsViewScrollbarHeightSmall</include>
-		<include condition="stringcompare(Container.FolderPath,addons://sources/audio/) + Skin.HasSetting(ShowSmallMusicAddonsThumbs)">ThumbnailsViewScrollbarHeight</include>
-		<include condition="stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicAddonsThumbs)">ThumbnailsViewScrollbarHeightSmall</include>
-		<texturesliderbackground>-</texturesliderbackground>
-		<texturesliderbar border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbar>
-		<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbarfocus>
-		<textureslidernib>-</textureslidernib>
-		<textureslidernibfocus>-</textureslidernibfocus>
-		<onleft>560</onleft>
-		<onright>9111</onright>
-		<showonepage>false</showonepage>
-		<orientation>vertical</orientation>
-		<animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-		<visible>Control.IsVisible(560)</visible>
-	</control>
-</control>
-</include>
+			<include>ThumbnailsAnimations</include>
+			<include>DialogZoomInOutAnimation</include>
+			<control type="panel" id="560">
+				<left>40</left>
+				<top>95</top>
+				<width>1200</width>
+				<height>501</height>
+				<onleft>9111</onleft>
+				<onright>60</onright>
+				<onup>560</onup>
+				<ondown>560</ondown>
+				<orientation>vertical</orientation>
+				<pagecontrol>60</pagecontrol>
+				<preloaditems>2</preloaditems>
+				<viewtype label="31085">icons</viewtype>
+				<scrolltime tween="Quadratic" easing="out">250</scrolltime>
+				<visible>Container.Content(Albums) | Container.Content(Artists) | Container.Content(Songs) | Window.IsVisible(MusicPlaylist) | stringcompare(Container.FolderPath,addons://sources/audio/) | [substring(Container.FolderPath,plugin,left) + Container.HasFiles]</visible>
+				<itemlayout condition="!stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicThumbs)" height="248" width="239.5">
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>231</width>
+						<height>240</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="31">views/other/panel.png</texture>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>223</width>
+						<height>232</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
+						<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>223</width>
+						<height>232</height>
+						<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<bordersize>6</bordersize>
+						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>223</width>
+						<height>232</height>
+						<texture background="true">$VAR[AddonStatus]</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<bordersize>6</bordersize>
+					</control>
+				</itemlayout>
+				<itemlayout condition="!stringcompare(Container.FolderPath,addons://sources/audio/) + Skin.HasSetting(ShowSmallMusicThumbs)" height="167" width="171">
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>163</width>
+						<height>158</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="31">views/other/panel.png</texture>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>150</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
+						<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>150</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
+						<bordersize>6</bordersize>
+						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>150</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture background="true">$VAR[AddonStatus]</texture>
+						<bordersize>6</bordersize>
+					</control>
+				</itemlayout>
+				<itemlayout condition="stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicAddonsThumbs)" height="248" width="239.5">
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>231</width>
+						<height>240</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="31">views/other/panel.png</texture>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>223</width>
+						<height>232</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
+						<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>223</width>
+						<height>232</height>
+						<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<bordersize>6</bordersize>
+						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>223</width>
+						<height>232</height>
+						<texture background="true">$VAR[AddonStatus]</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<bordersize>6</bordersize>
+					</control>
+				</itemlayout>
+				<itemlayout condition="stringcompare(Container.FolderPath,addons://sources/audio/) + Skin.HasSetting(ShowSmallMusicAddonsThumbs)" height="167" width="171">
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>163</width>
+						<height>158</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="31">views/other/panel.png</texture>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>150</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
+						<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>150</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
+						<bordersize>6</bordersize>
+						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>150</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture background="true">$VAR[AddonStatus]</texture>
+						<bordersize>6</bordersize>
+					</control>
+				</itemlayout>
+				<focusedlayout condition="!stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicThumbs)" height="248" width="239.5">
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>231</width>
+						<height>240</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="31">views/other/panel.png</texture>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>223</width>
+						<height>232</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
+						<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>223</width>
+						<height>232</height>
+						<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<bordersize>6</bordersize>
+						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>223</width>
+						<height>232</height>
+						<texture background="true">$VAR[AddonStatus]</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>231</width>
+						<height>240</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="31">views/other/focus_blue.png</texture>
+						<include>ThumbnailsFocusAnimation</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout condition="!stringcompare(Container.FolderPath,addons://sources/audio/) + Skin.HasSetting(ShowSmallMusicThumbs)" height="167" width="171">
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>163</width>
+						<height>158</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="31">views/other/panel.png</texture>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>150</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
+						<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>150</height>
+						<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<bordersize>6</bordersize>
+						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>150</height>
+						<texture background="true">$VAR[AddonStatus]</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>163</width>
+						<height>158</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="31">views/other/focus_blue.png</texture>
+						<include>ThumbnailsFocusAnimation</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout condition="stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicAddonsThumbs)" height="248" width="239.5">
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>231</width>
+						<height>240</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="31">views/other/panel.png</texture>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>223</width>
+						<height>232</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
+						<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>223</width>
+						<height>232</height>
+						<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<bordersize>6</bordersize>
+						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>223</width>
+						<height>232</height>
+						<texture background="true">$VAR[AddonStatus]</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>231</width>
+						<height>240</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="31">views/other/focus_blue.png</texture>
+						<include>ThumbnailsFocusAnimation</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout condition="stringcompare(Container.FolderPath,addons://sources/audio/) + Skin.HasSetting(ShowSmallMusicAddonsThumbs)" height="167" width="171">
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>163</width>
+						<height>158</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="31">views/other/panel.png</texture>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>150</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
+						<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>150</height>
+						<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<bordersize>6</bordersize>
+						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>155</width>
+						<height>150</height>
+						<texture background="true">$VAR[AddonStatus]</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>163</width>
+						<height>158</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="31">views/other/focus_blue.png</texture>
+						<include>ThumbnailsFocusAnimation</include>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="button">
+				<left>40</left>
+				<top>598</top>
+				<width>1200</width>
+				<height>35</height>
+				<font>FontSize_26B</font>
+				<textcolor>bbwhite</textcolor>
+				<focusedcolor>bbwhite</focusedcolor>
+				<disabledcolor>bbwhite</disabledcolor>
+				<shadowcolor>77000000</shadowcolor>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$INFO[ListItem.Label]</label>
+				<label2>$VAR[MusicLabel2]</label2>
+				<visible>Control.IsVisible(560)</visible>
+				<animation effect="slide" start="0,0" end="0,-6" time="0" condition="!stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicThumbs)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-6" time="0" condition="stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicAddonsThumbs)">Conditional</animation>
+			</control>
+			<control type="scrollbar" id="60">
+				<right>30</right>
+				<top>100</top>
+				<width>9</width>
+				<include condition="!stringcompare(Container.FolderPath,addons://sources/audio/) + Skin.HasSetting(ShowSmallMusicThumbs)">ThumbnailsViewScrollbarHeight</include>
+				<include condition="!stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicThumbs)">ThumbnailsViewScrollbarHeightSmall</include>
+				<include condition="stringcompare(Container.FolderPath,addons://sources/audio/) + Skin.HasSetting(ShowSmallMusicAddonsThumbs)">ThumbnailsViewScrollbarHeight</include>
+				<include condition="stringcompare(Container.FolderPath,addons://sources/audio/) + !Skin.HasSetting(ShowSmallMusicAddonsThumbs)">ThumbnailsViewScrollbarHeightSmall</include>
+				<texturesliderbackground>-</texturesliderbackground>
+				<texturesliderbar border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbar>
+				<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<onleft>560</onleft>
+				<onright>9111</onright>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+				<visible>Control.IsVisible(560)</visible>
+			</control>
+		</control>
+	</include>
 
-<include name="ThumbnailsViewScrollbarHeight">
-	<height>495</height>
-</include>
-<include name="ThumbnailsViewScrollbarHeightSmall">
-	<height>489</height>
-</include>
+	<include name="ThumbnailsViewScrollbarHeight">
+		<height>495</height>
+	</include>
+	<include name="ThumbnailsViewScrollbarHeightSmall">
+		<height>489</height>
+	</include>
+
+	<!-- ===================================== -->
+	<!-- ==== Thumb List View "582" ==== -->
+	<!-- ===================================== -->
+
+	<include name="ThumbListMusicView">		
+		<!-- artwork -->
+		<control type="group">
+			<visible>!Container.Content(Albums) + !Container.Content(Songs)</visible>
+			<left>0</left>
+			<top>162</top>
+			<include>DialogZoomInOutAnimation</include>
+			<include>EpisodeViewAnimationsLeft</include>
+			<visible>Control.IsVisible(582)</visible>
+			<control type="image">
+				<left>-75</left>
+				<top>-136</top>
+				<width>687</width>
+				<height>524</height>
+				<texture background="true">views/episode/episode_blue_shadow.png</texture>
+				<animation effect="fade" time="0" end="60" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>46</left>
+				<width>441</width>
+				<height>248</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views/episode/episode_diffuse.png">thumbs/thumb_back.png</texture>
+			</control>
+			<control type="image">
+				<left>46</left>
+				<width>441</width>
+				<height>248</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views/episode/episode_diffuse.png" fallback="thumbs/fallback_episode_tp.png">$VAR[EpisodeThumb]</texture>
+				<fadetime>FanartCrossfadeTime</fadetime>
+			</control>	
+			<control type="image">
+				<left>46</left>
+				<width>441</width>
+				<height>248</height>
+				<aspectratio aligny="center" align="center">stretch</aspectratio>
+				<texture background="true">views/episode/episode_overlay.png</texture>
+			</control>	
+			<control type="image">
+				<left>46</left>
+				<width>441</width>
+				<height>248</height>
+				<aspectratio aligny="center" align="center">stretch</aspectratio>
+				<texture background="true">views/episode/episode_label.png</texture>
+				<visible>!Stringcompare(ListItem.Label,..)</visible>
+			</control>
+			<!-- thumb label -->
+			<control type="label">
+				<left>60</left>
+				<top>165</top>
+				<width>410</width>
+				<height>50</height>
+				<font>font30</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>77000000</shadowcolor>
+				<align>left</align>
+				<aligny>bottom</aligny>
+				<label>$VAR[EpisodeThumbTitle]</label>
+				<visible>!Stringcompare(ListItem.Label,..)</visible>
+			</control>
+			<control type="label">
+				<left>60</left>
+				<top>195</top>
+				<width>300</width>
+				<height>50</height>
+				<font>font11</font>
+				<textcolor>77white</textcolor>
+				<shadowcolor>77000000</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$VAR[EpisodeThumbInfo]</label>
+				<visible>!Stringcompare(ListItem.Label,..)</visible>
+			</control>
+			<control type="image" id="5821">
+				<left>440</left>
+				<top>209</top>
+				<width>35</width>
+				<height>24</height>
+				<colordiffuse>55ffffff</colordiffuse>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture>$VAR[ViewsDef3DFlags]</texture>
+				<visible>!Stringcompare(ListItem.Label,..)</visible>
+				<visible>Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | Window.IsVisible(MusicPlaylist)</visible>
+			</control>
+			<control type="group" id="5822">
+				<visible>!Stringcompare(ListItem.Label,..)</visible>
+				<visible>!IsEmpty(ListItem.Property(unWatchedEpisodes))</visible>
+				<visible>[Container.Content(TVShows) | Container.Content(Seasons)]</visible>
+				<control type="image">
+					<left>420</left>
+					<top>210</top>
+					<width>53</width>
+					<height>22</height>
+					<colordiffuse>55ffffff</colordiffuse>
+					<aspectratio align="center" aligny="center">stretch</aspectratio>
+					<texture>flags/empty.png</texture>							
+				</control>
+				<control type="label">
+					<left>422</left>
+					<top>199</top>
+					<width>50</width>
+					<height>43</height>
+					<font>FontSize_16B</font>
+					<textcolor>55ffffff</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(unWatchedEpisodes)]</label>							
+				</control>
+			</control>
+			<!-- info labels -->
+			<control type="group">
+				<left>46</left>
+				<top>266</top>
+				<control type="label">
+					<width>436</width>
+					<font>FontSize_20</font>
+					<textcolor>blue</textcolor>
+					<align>center</align>
+					<shadowcolor>77000000</shadowcolor>
+					<label>$VAR[GlobalInfo]</label>
+					<scroll>true</scroll>
+				</control>
+				<control type="textbox">
+					<top>35</top>
+					<width>436</width>
+					<height>140</height>
+					<font>FontSize_20</font>
+					<textcolor>99white</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<align>justify</align>
+					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+					<label>$VAR[GlobalPlotDescription]</label>
+				</control>
+			</control>
+		</control>
+		<!-- album artwork -->
+		<control type="group">
+			<visible>Container.Content(Albums) | Container.Content(Songs)</visible>
+			<left>0</left>
+			<top>162</top>			
+			<include>DialogZoomInOutAnimation</include>
+			<include>EpisodeViewAnimationsLeft</include>
+			<visible>Control.IsVisible(582)</visible>
+			<control type="image">
+				<left>40</left>
+				<top>-80</top>
+				<width>447</width>
+				<height>429</height>
+				<aspectratio aligny="center" align="center">stretch</aspectratio>
+				<texture background="true">views/episode/square_blue_shadow.png</texture>
+			</control>			
+			<control type="image">
+				<left>140</left>
+				<top>0</top>
+				<width>248</width>
+				<height>248</height>
+				<aspectratio aligny="center" align="center">stretch</aspectratio>
+				<texture background="true" diffuse="views/episode/square_diffuse.png" >thumbs/thumb_back.png</texture>				
+			</control>
+			<control type="image">
+				<left>140</left>
+				<top>0</top>
+				<width>248</width>
+				<height>248</height>
+				<aspectratio aligny="center" align="center">stretch</aspectratio>
+				<texture background="true" diffuse="views/episode/square_diffuse.png" >$INFO[ListItem.Icon]</texture>
+				<fadetime>250</fadetime>
+			</control>
+			<control type="image">
+				<left>140</left>
+				<top>0</top>
+				<width>248</width>
+				<height>248</height>
+				<aspectratio aligny="center" align="center">stretch</aspectratio>
+				<texture background="true">views/episode/square_overlay.png</texture>					
+			</control>
+			<!-- info labels -->
+			<control type="group">
+				<left>46</left>
+				<top>266</top>
+				<control type="label">
+					<width>436</width>
+					<font>FontSize_20</font>
+					<textcolor>blue</textcolor>
+					<align>center</align>
+					<shadowcolor>77000000</shadowcolor>
+					<label>$VAR[GlobalInfo]</label>
+					<scroll>true</scroll>
+				</control>
+				<control type="label">
+					<top>35</top>
+					<width>436</width>
+					<height>30</height>
+					<font>FontSize_20</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<align>center</align>
+					<aligny>top</aligny>
+					<label>$INFO[Window(home).Property(Album.Songs.Count),, $LOCALIZE[182]  •  ]$INFO[Window(home).Property(Album.Songs.Duration),, $LOCALIZE[180]  •  ]$INFO[ListItem.Year,$LOCALIZE[31107] ]</label>
+				</control>
+				<control type="textbox">
+					<top>70</top>
+					<width>436</width>
+					<height>105</height>
+					<font>FontSize_20</font>
+					<textcolor>99white</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<align>center</align>
+					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+					<label>$VAR[GlobalPlotDescription]</label>
+				</control>
+			</control>
+		</control>
+		<!-- vertical line -->
+		<control type="image">
+			<include>DialogZoomInOutAnimation</include>
+			<left>540</left>
+			<top>125</top>
+			<texture>info/infopanel_line_v.png</texture>
+			<colordiffuse>33white</colordiffuse>
+			<width>1</width>
+			<height>500</height>
+			<animation type="WindowOpen" tween="sine" easing="out">
+				<effect type="zoom" start="0" end="100" center="auto" time="450" delay="200" />
+				<effect type="fade" start="0" end="80" time="450" delay="200" />
+			</animation>
+			<animation type="WindowClose" tween="sine" easing="out">
+				<effect type="zoom" start="100" end="0" center="auto" time="350" delay="0"/>
+				<effect type="fade" start="80" end="0" time="350" delay="0"/>
+			</animation>
+
+			<animation type="Visible" tween="sine" easing="out">
+				<effect type="zoom" start="0" end="100" center="auto" time="450" delay="200" />
+				<effect type="fade" start="0" end="80" time="450" delay="200" />
+			</animation>
+			<animation type="Hidden" tween="sine" easing="out">
+				<effect type="zoom" start="100" end="0" center="auto" time="350" delay="0"/>
+				<effect type="fade" start="80" end="0" time="350" delay="0"/>
+			</animation>
+			<visible>Control.IsVisible(582)</visible>
+		</control>
+		<!--list-->
+		<control type="group">
+			<include>DialogZoomInOutAnimation</include>
+			<include>ListViewAnimationsRight</include>
+			<visible>Control.IsVisible(582)</visible>				
+			<control type="list" id="582">
+				<left>570</left>
+				<top>150</top>
+				<width>1190</width>
+				<height>450</height>
+				<onright>60</onright>
+				<onleft>9111</onleft>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<viewtype label="31268">List</viewtype>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime tween="cubic" easing="out">300</scrolltime>
+				<itemlayout height="45" width="710">
+					<control type="label">
+						<left>12</left>
+						<top>0</top>
+						<width>55</width>
+						<height>45</height>
+						<font>FontSize_22</font>
+						<textcolor>77white</textcolor>
+						<shadowcolor>77000000</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$VAR[FirstMusicLabel]</label>
+						<visible>!Stringcompare(ListItem.Label,..)</visible>
+					</control>
+					<control type="label">
+						<left>95</left>
+						<top>0</top>
+						<width>480</width>
+						<height>45</height>
+						<font>FontSize_22</font>
+						<textcolor>77white</textcolor>
+						<shadowcolor>77000000</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$VAR[MusicLabel]</label>
+					</control>
+					<control type="label">
+						<left>362</left>
+						<top>0</top>
+						<width>300</width>
+						<height>45</height>
+						<font>FontSize_22</font>
+						<textcolor>77white</textcolor>
+						<shadowcolor>77000000</shadowcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label fallback="․  ․  ․">$VAR[MusicLabel2]</label>
+						<visible>!Stringcompare(ListItem.Label,..)</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout height="45" width="710">
+					<control type="group">
+						<include>ListFocusAnimation</include>
+						<control type="label">
+							<left>12</left>
+							<top>0</top>
+							<width>55</width>
+							<height>45</height>
+							<font>FontSize_22</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$VAR[FirstMusicLabel]</label>
+							<visible>!Stringcompare(ListItem.Label,..)</visible>
+						</control>
+						<control type="label">
+							<left>95</left>
+							<top>0</top>
+							<width>480</width>
+							<height>45</height>
+							<font>FontSize_22</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<scroll>true</scroll>
+							<label>$VAR[MusicLabel]</label>
+						</control>
+						<control type="label">
+							<left>362</left>
+							<top>0</top>
+							<width>300</width>
+							<height>45</height>
+							<font>FontSize_22</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<scroll>true</scroll>
+							<label fallback="․  ․  ․">$VAR[MusicLabel2]</label>
+							<visible>!Stringcompare(ListItem.Label,..)</visible>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<right>25</right>
+				<top>165</top>
+				<width>9</width>
+				<height>425</height>
+				<texturesliderbackground>-</texturesliderbackground>
+				<texturesliderbar border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbar>
+				<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<onleft>582</onleft>
+				<onright>582</onright>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+				<visible>Control.IsVisible(582)</visible>
+			</control>
+			<control type="group">
+				<left>850</left>
+				<include>ListView_Arrows</include>
+			</control>
+		</control>
+
+		
+	</include>
 
 </includes>
