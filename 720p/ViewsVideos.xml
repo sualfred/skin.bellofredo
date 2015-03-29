@@ -3774,7 +3774,7 @@
 					</control>
 					<control type="image">
 						<left>21</left>
-						<top>37</top>
+						<top>38</top>
 						<width>18</width>
 						<height>18</height>
 						<colordiffuse>99white</colordiffuse>
@@ -3784,7 +3784,7 @@
 					</control>
 					<control type="label">
 						<left>21</left>
-						<top>30</top>
+						<top>31</top>
 						<width>840</width>
 						<height>30</height>
 						<label>$VAR[TagLineInfo]</label>
@@ -3882,173 +3882,218 @@
 					</control>
 				</control>
 			</control>
+			<!-- posters -->
 			<control type="group">
-				<visible>Substring(ListItem.Path,videodb://movies/sets/)</visible>
-				<animation type="Conditional" condition="[Control.IsVisible(6013) | Control.IsVisible(6014)]">
-					<effect type="fade" start="100" end="0" time="0" delay="0" tween="sine" easing="out"/>
-					<effect type="slide" start="0,0" end="75,0" time="980" delay="0" tween="sine" easing="in"/>
-				</animation>				
+				<left>-14</left>
+				<!-- 4th poster -->
 				<control type="group">
-					<animation effect="fade" start="100" end="0" time="350" delay="350">Hidden</animation>
-					<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
-					<animation type="WindowOpen">
-						<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>							
-						<effect type="slide" start="0,0" end="-65,0" time="980" delay="750" tween="sine" easing="out"/>								
-					</animation>
-					<animation type="WindowClose">
-						<effect type="fade" start="100" end="0" time="400" delay="200" tween="sine" easing="out"/>								
-						<effect type="slide" start="-65,0" end="0,0" time="780" delay="0" tween="sine" easing="out"/>
-					</animation>
-					<control type="image">
+					<visible>Substring(ListItem.Path,videodb://movies/sets/) + !IsEmpty(Window(home).Property(Set.Movie.4.Art(poster)))</visible>
+					<animation type="Conditional" condition="[Control.IsVisible(6013) | Control.IsVisible(6014)]">
+						<effect type="fade" start="100" end="0" time="0" delay="0" tween="sine" easing="out"/>
+						<effect type="slide" start="0,0" end="75,0" time="980" delay="0" tween="sine" easing="in"/>
+					</animation>	
+					<control type="group">
 						<left>1015</left>
-						<top>-156</top>
-						<width>185</width>
-						<height>258</height>
-						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-						<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
-						<fadetime>350</fadetime>
-					</control>
-					<control type="image">
-						<left>1015</left>
-						<top>-156</top>
-						<width>185</width>
-						<height>258</height>
-						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-						<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="thumbs/poster_diffuse.png">$INFO[Window(home).Property(Set.Movie.3.Art(poster))]</texture>
-						<animation effect="fade" time="0" end="40" condition="true">Conditional</animation>
-					</control>
-					<control type="image">
-						<left>1005</left>
-						<top>-166</top>
-						<width>206</width>
-						<height>280</height>
-						<texture background="true">thumbs/poster_overlay_noglass.png</texture>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<fadetime>350</fadetime>
+						<top>-183</top>
+						<animation effect="fade" start="100" end="0" time="350" delay="350">Hidden</animation>
+						<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
+						<animation type="WindowOpen">
+							<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>							
+							<effect type="slide" start="0,0" end="-90,0" time="980" delay="750" tween="sine" easing="out"/>								
+						</animation>
+						<animation type="WindowClose">
+							<effect type="fade" start="100" end="0" time="400" delay="200" tween="sine" easing="out"/>								
+							<effect type="slide" start="-90,0" end="0,0" time="780" delay="0" tween="sine" easing="out"/>
+						</animation>
+						<control type="image">						
+							<width>205</width>
+							<height>286</height>
+							<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+							<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>						
+						</control>
+						<control type="image">
+							<width>205</width>
+							<height>286</height>
+							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+							<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="thumbs/poster_diffuse.png">$INFO[Window(home).Property(Set.Movie.4.Art(poster))]</texture>							
+							<fadetime>350</fadetime>
+							<animation effect="fade" time="0" end="40" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+							<left>-12</left>
+							<top>-12</top>
+							<width>231</width>
+							<height>308</height>
+							<texture background="true">thumbs/poster_overlay_noglass.png</texture>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>						
+							<animation effect="fade" time="0" end="50" condition="true">Conditional</animation>
+						</control>
 					</control>
 				</control>
-			</control>
-			<control type="group">
-				<visible>Substring(ListItem.Path,videodb://movies/sets/)</visible>
-				<animation type="Conditional" condition="[Control.IsVisible(6013) | Control.IsVisible(6014)]">
-					<effect type="fade" start="100" end="0" time="0" delay="0" tween="sine" easing="out"/>
-					<effect type="slide" start="0,0" end="75,0" time="980" delay="0" tween="sine" easing="in"/>
-				</animation>				
+				<!-- third poster -->
 				<control type="group">
-					<animation effect="fade" start="100" end="0" time="350" delay="350">Hidden</animation>
-					<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
-					<animation type="WindowOpen">
-						<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>							
-						<effect type="slide" start="0,0" end="-35,0" time="980" delay="750" tween="sine" easing="out"/>								
-					</animation>
-					<animation type="WindowClose">
-						<effect type="fade" start="100" end="0" time="400" delay="200" tween="sine" easing="out"/>								
-						<effect type="slide" start="-35,0" end="0,0" time="780" delay="0" tween="sine" easing="out"/>
-					</animation>
-					<control type="image">
+					<visible>Substring(ListItem.Path,videodb://movies/sets/) + !IsEmpty(Window(home).Property(Set.Movie.3.Art(poster)))</visible>
+					<animation type="Conditional" condition="[Control.IsVisible(6013) | Control.IsVisible(6014)]">
+						<effect type="fade" start="100" end="0" time="0" delay="0" tween="sine" easing="out"/>
+						<effect type="slide" start="0,0" end="75,0" time="980" delay="0" tween="sine" easing="in"/>
+					</animation>	
+					<control type="group">
 						<left>1015</left>
-						<top>-156</top>
-						<width>185</width>
-						<height>258</height>
-						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-						<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
-						<fadetime>350</fadetime>
-					</control>
-					<control type="image">
-						<left>1015</left>
-						<top>-156</top>
-						<width>185</width>
-						<height>258</height>
-						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-						<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="thumbs/poster_diffuse.png">$INFO[Window(home).Property(Set.Movie.2.Art(poster))]</texture>
-						<animation effect="fade" time="0" end="80" condition="true">Conditional</animation>
-					</control>
-					<control type="image">
-						<left>1005</left>
-						<top>-166</top>
-						<width>206</width>
-						<height>280</height>
-						<texture background="true" >thumbs/poster_overlay_noglass.png</texture>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<fadetime>350</fadetime>
+						<top>-183</top>
+						<animation effect="fade" start="100" end="0" time="350" delay="350">Hidden</animation>
+						<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
+						<animation type="WindowOpen">
+							<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>							
+							<effect type="slide" start="0,0" end="-65,0" time="980" delay="750" tween="sine" easing="out"/>								
+						</animation>
+						<animation type="WindowClose">
+							<effect type="fade" start="100" end="0" time="400" delay="200" tween="sine" easing="out"/>								
+							<effect type="slide" start="-65,0" end="0,0" time="780" delay="0" tween="sine" easing="out"/>
+						</animation>
+						<control type="image">						
+							<width>205</width>
+							<height>286</height>
+							<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+							<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>						
+						</control>
+						<control type="image">
+							<width>205</width>
+							<height>286</height>
+							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+							<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="thumbs/poster_diffuse.png">$INFO[Window(home).Property(Set.Movie.3.Art(poster))]</texture>							
+							<fadetime>350</fadetime>
+							<animation effect="fade" time="0" end="60" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+							<left>-12</left>
+							<top>-12</top>
+							<width>231</width>
+							<height>308</height>
+							<texture background="true">thumbs/poster_overlay_noglass.png</texture>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>		
+							<animation effect="fade" time="0" end="60" condition="true">Conditional</animation>				
+						</control>
 					</control>
 				</control>
-			</control>
-			<control type="group">
-				<visible>!Substring(ListItem.Path,videodb://movies/sets/,left) + !StringCompare(ListItem.Label,..) + Container.Content(movies)</visible>
-				<animation type="Conditional" condition="[Control.IsVisible(6013) | Control.IsVisible(6014) | Window.IsVisible(Shutdownmenu) | Window.IsVisible(Playercontrols)]">
-					<effect type="fade" start="100" end="0" time="200" delay="0" tween="sine" easing="out"/>
-					<effect type="slide" start="0,0" end="75,0" time="200" delay="0" tween="sine" easing="in"/>
-				</animation>
-				<control type="image">
-					<left>1015</left>
-					<top>-120</top>
-					<width>186</width>
-					<height>186</height>
-					<aspectratio aligny="center" align="center">stretch</aspectratio>
-					<texture background="true" fallback="views/wall/bluray.png">$VAR[DiscArtType]</texture>
-					<animation effect="fade" start="100" end="0" time="350" delay="0">Hidden</animation>
-					<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
-					<animation type="WindowOpen">
-						<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>							
-						<effect type="slide" start="0,0" end="-80,0" time="980" delay="750" tween="sine" easing="out"/>								
-					</animation>
-					<animation type="WindowClose">
-						<effect type="fade" start="100" end="0" time="400" delay="200" tween="sine" easing="out"/>								
-						<effect type="slide" start="-80,0" end="0,0" time="780" delay="0" tween="sine" easing="out"/>
-					</animation>
-					<animation effect="rotate" time="20000" delay="0" start="0" end="360" loop="true" center="auto" condition="true" reversible="true">Conditional</animation>
+				<!-- second poster -->
+				<control type="group">
+					<visible>Substring(ListItem.Path,videodb://movies/sets/) + !IsEmpty(Window(home).Property(Set.Movie.2.Art(poster)))</visible>
+					<animation type="Conditional" condition="[Control.IsVisible(6013) | Control.IsVisible(6014)]">
+						<effect type="fade" start="100" end="0" time="0" delay="0" tween="sine" easing="out"/>
+						<effect type="slide" start="0,0" end="75,0" time="980" delay="0" tween="sine" easing="in"/>
+					</animation>				
+					<control type="group">
+						<left>1015</left>
+						<top>-183</top>						
+						<animation effect="fade" start="100" end="0" time="350" delay="350">Hidden</animation>
+						<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
+						<animation type="WindowOpen">
+							<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>							
+							<effect type="slide" start="0,0" end="-35,0" time="980" delay="750" tween="sine" easing="out"/>								
+						</animation>
+						<animation type="WindowClose">
+							<effect type="fade" start="100" end="0" time="400" delay="200" tween="sine" easing="out"/>								
+							<effect type="slide" start="-35,0" end="0,0" time="780" delay="0" tween="sine" easing="out"/>
+						</animation>
+						<control type="image">						
+							<width>205</width>
+							<height>286</height>
+							<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+							<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>						
+						</control>
+						<control type="image">
+							<width>205</width>
+							<height>286</height>
+							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+							<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="thumbs/poster_diffuse.png">$INFO[Window(home).Property(Set.Movie.2.Art(poster))]</texture>
+							<fadetime>350</fadetime>
+							<animation effect="fade" time="0" end="80" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+							<left>-12</left>
+							<top>-12</top>
+							<width>231</width>
+							<height>308</height>
+							<texture background="true">thumbs/poster_overlay_noglass.png</texture>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>		
+							<animation effect="fade" time="0" end="80" condition="true">Conditional</animation>				
+						</control>
+					</control>
 				</control>
-				<control type="image">
-					<left>1015</left>
-					<top>-120</top>
-					<width>186</width>
-					<height>186</height>
-					<aspectratio aligny="center" align="center">stretch</aspectratio>
-					<texture background="true">views/lovefilm/disc_shadow.png</texture>
-					<animation type="WindowOpen">
-						<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>								
-						<effect type="slide" start="0,0" end="-80,0" time="980" delay="750" tween="sine" easing="out"/>
-					</animation>
-					<animation type="WindowClose">
-						<effect type="fade" start="100" end="0" time="400" delay="200" tween="sine" easing="out"/>								
-						<effect type="slide" start="-80,0" end="0,0" time="780" delay="0" tween="sine" easing="out"/>
-					</animation>
-					<animation type="Conditional" condition="IsEmpty(ListItem.VideoResolution)">
+				<!-- discart -->
+				<control type="group">
+					<visible>!Substring(ListItem.Path,videodb://movies/sets/,left) + !StringCompare(ListItem.Label,..) + Container.Content(movies)</visible>
+					<animation type="Conditional" condition="[Control.IsVisible(6013) | Control.IsVisible(6014) | Window.IsVisible(Shutdownmenu) | Window.IsVisible(Playercontrols)]" reversible="true">
 						<effect type="fade" start="100" end="0" time="200" delay="0" tween="sine" easing="out"/>
+						<effect type="slide" start="0,0" end="125,0" time="200" delay="0" tween="sine" easing="in"/>
 					</animation>
+					<control type="image">
+						<left>1005</left>
+						<top>-142</top>
+						<width>206</width>
+						<height>206</height>
+						<aspectratio aligny="center" align="center">stretch</aspectratio>
+						<texture background="true" fallback="views/wall/bluray.png">$VAR[DiscArtType]</texture>
+						<animation effect="fade" start="100" end="0" time="350" delay="0">Hidden</animation>
+						<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
+						<animation type="WindowOpen">
+							<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>							
+							<effect type="slide" start="0,0" end="-80,0" time="980" delay="750" tween="sine" easing="out"/>								
+						</animation>
+						<animation type="WindowClose">
+							<effect type="fade" start="100" end="0" time="400" delay="200" tween="sine" easing="out"/>								
+							<effect type="slide" start="-80,0" end="0,0" time="780" delay="0" tween="sine" easing="out"/>
+						</animation>
+						<animation effect="rotate" time="20000" delay="0" start="0" end="360" loop="true" center="auto" condition="true" reversible="true">Conditional</animation>
+					</control>
+					<control type="image">
+						<left>1005</left>
+						<top>-142</top>
+						<width>206</width>
+						<height>206</height>
+						<aspectratio aligny="center" align="center">stretch</aspectratio>
+						<texture background="true">views/lovefilm/disc_shadow.png</texture>
+						<animation type="WindowOpen">
+							<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>								
+							<effect type="slide" start="0,0" end="-80,0" time="980" delay="750" tween="sine" easing="out"/>
+						</animation>
+						<animation type="WindowClose">
+							<effect type="fade" start="100" end="0" time="400" delay="200" tween="sine" easing="out"/>								
+							<effect type="slide" start="-80,0" end="0,0" time="780" delay="0" tween="sine" easing="out"/>
+						</animation>
+						<animation type="Conditional" condition="IsEmpty(ListItem.VideoResolution)">
+							<effect type="fade" start="100" end="0" time="200" delay="0" tween="sine" easing="out"/>
+						</animation>
+					</control>
+				</control>
+				<!-- first poster -->
+				<control type="group">
+					<left>1015</left>
+					<top>-183</top>
+					<control type="image">						
+						<width>205</width>
+						<height>286</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>						
+					</control>
+					<control type="image">
+						<width>205</width>
+						<height>286</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="thumbs/poster_diffuse.png">$VAR[VarArtPoster]</texture>
+						<fadetime>350</fadetime>
+					</control>
+					<control type="image">
+						<left>-12</left>
+						<top>-12</top>
+						<width>231</width>
+						<height>308</height>
+						<texture background="true">thumbs/poster_overlay.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>						
+					</control>
 				</control>
 			</control>
-
-			<control type="group">
-				<control type="image">
-					<left>1015</left>
-					<top>-156</top>
-					<width>185</width>
-					<height>258</height>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
-					<fadetime>350</fadetime>
-				</control>
-				<control type="image">
-					<left>1015</left>
-					<top>-156</top>
-					<width>185</width>
-					<height>258</height>
-					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-					<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="thumbs/poster_diffuse.png">$VAR[VarArtPoster]</texture>
-					<fadetime>350</fadetime>
-				</control>
-				<control type="image">
-					<left>1005</left>
-					<top>-166</top>
-					<width>206</width>
-					<height>280</height>
-					<texture background="true">thumbs/poster_overlay.png</texture>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<fadetime>350</fadetime>
-				</control>
-			</control>
+			<!-- scrollbar-->
 			<control type="scrollbar" id="60">
 				<left>20</left>
 				<top>125</top>
