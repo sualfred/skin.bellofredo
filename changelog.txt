@@ -1,4 +1,10 @@
-﻿[B][COLOR=FF56ADDA]v4.0.15[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.0.16[/COLOR][/B]
+• Fixed: Thumb List focuslayout
+• Added: IMDb Top250 on Thumb List
+• Added: ElegantDark theme for those guys who don't like the purple
+• Changed: Bigger posters for LoveFilm
+
+[B][COLOR=FF56ADDA]v4.0.15[/COLOR][/B]
 • Added: IMDB Top250 indicator for NetFilx + LoveFilm
 • Added: Library update options for refreshing Top250 list and updating movie ratings (new addon requirement: script.imdbupdate)
 • Added: Thumb List view for music
