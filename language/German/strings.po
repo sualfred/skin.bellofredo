@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-03-23 19:07+0000\n"
+"PO-Revision-Date: 2015-03-29 12:48+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -197,15 +197,15 @@ msgid "Play all recently played albums"
 msgstr "Spiele alle zuletzt gespielten Alben ab"
 
 msgctxt "#31045"
-msgid "Enable home menu arrow up/down animation"
+msgid "Enable Home Menu Arrow Up/Down Animation"
 msgstr "Aktiviere Home hoch/runter Pfeilanimation "
 
 msgctxt "#31046"
-msgid "Enable home widgets arrow left/right animation"
+msgid "Enable Home Widgets Arrow Left/Right Animation"
 msgstr "Aktiviere Widget links/rechts Pfeilanimation "
 
 msgctxt "#31047"
-msgid "Automatically download extra artwork if a library has been updated"
+msgid "Automatically download Extra Artwork if a Library has been updated"
 msgstr "Automatischer Download von Extra-Artworks nach Datenbankaktualisierung"
 
 msgctxt "#31048"
@@ -275,7 +275,7 @@ msgid ""
 msgstr "Erzwinge lokal gespeicherte Staffel-Fanarts [COLOR=55white](zB: seasonXX-poster.jpg)[/COLOR]"
 
 msgctxt "#31064"
-msgid "Enable library refresh button on the home screen"
+msgid "Enable Library Refresh Button on the Home Screen"
 msgstr "Button zur Bibliotheks-Aktualisierung auf der Startseite anzeigen"
 
 msgctxt "#31065"
@@ -286,7 +286,10 @@ msgctxt "#31066"
 msgid "Disabled"
 msgstr "Deaktiviert"
 
-#: empty strings from id 31065 to 31067 extendedInfoLabels
+msgctxt "#31067"
+msgid "Enable Home Menu Pulse-Bar-Background"
+msgstr "Hauptmenüanimation aktivieren"
+
 msgctxt "#31068"
 msgid "Online Video Information"
 msgstr "Online Video Information"
@@ -335,7 +338,6 @@ msgctxt "#31079"
 msgid "Movie Actor Roles"
 msgstr "Film Rollen"
 
-#: empty strings from id 31042 to 31079 view Type labels
 msgctxt "#31080"
 msgid "Slide"
 msgstr "Seite"
@@ -384,7 +386,14 @@ msgctxt "#31091"
 msgid "Episodes"
 msgstr "Episoden"
 
-#: empty strings from id 31092 to 31093 skin Settings labels
+msgctxt "#31092"
+msgid "Update IMDb Ratings"
+msgstr "Update IMDb Bewertungen"
+
+msgctxt "#31093"
+msgid "Update IMDb Top 250"
+msgstr "Update IMDb Top 250"
+
 msgctxt "#31094"
 msgid "Movies Widget"
 msgstr "Movies Widget"
@@ -409,7 +418,10 @@ msgctxt "#31099"
 msgid "Show Big Thumbs"
 msgstr "Große Vorschaubilder anzeigen"
 
-#: empty string with id 31100
+msgctxt "#31100"
+msgid "Unknown Genre"
+msgstr "Unbekanntes Genre"
+
 msgctxt "#31101"
 msgid "Show Weather Info"
 msgstr "Wetterinformationen anzeigen"
@@ -434,7 +446,11 @@ msgctxt "#31106"
 msgid "Amazon [COLOR=55white](AddonScriptorDE's Plugin)[/COLOR]"
 msgstr "Amazon [COLOR=55white](AddonScriptorDE's Plugin)[/COLOR]"
 
-#: empty strings from id 31107 to 31123
+msgctxt "#31107"
+msgid "Released"
+msgstr "Veröffentlicht"
+
+#: empty strings from id 31108 to 31123
 msgctxt "#31124"
 msgid "Flashing Lights"
 msgstr "Blinkende Lichter"
