@@ -4183,10 +4183,9 @@
 			<!-- imdb top 250 -->
 			<control type="group">
 				<left>60</left>					
-				<top>15</top>
+				<top>13</top>
 				<width>183</width>
-				<visible>!IsEmpty(ListItem.Top250)</visible>				
-				<!--<include>Top250</include>-->
+				<visible>!IsEmpty(ListItem.Top250)</visible>
 				<control type="image">
 					<top>0</top>
 					<width>150</width>

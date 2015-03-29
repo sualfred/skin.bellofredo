@@ -1727,6 +1727,9 @@
 					<align>center</align>
 					<shadowcolor>77000000</shadowcolor>
 					<label>$VAR[GlobalInfo]</label>
+					<animation effect="fade" time="250" delay="120">Visible</animation>
+					<animation effect="fade" time="0">Hidden</animation>
+					<visible>!IsEmpty(ListItem.Album)</visible>
 					<scroll>true</scroll>
 				</control>
 				<control type="label">
@@ -1738,7 +1741,10 @@
 					<shadowcolor>77000000</shadowcolor>
 					<align>center</align>
 					<aligny>top</aligny>
-					<label>$INFO[Window(home).Property(Album.Songs.Count),, $LOCALIZE[182]  •  ]$INFO[Window(home).Property(Album.Songs.Duration),, $LOCALIZE[180]  •  ]$INFO[ListItem.Year,$LOCALIZE[31107] ]</label>
+					<label>$INFO[Window(home).Property(Album.Songs.Count),, $LOCALIZE[182]  •  ]$INFO[ListItem.Year,$LOCALIZE[31107] ]$INFO[Window(home).Property(Album.Songs.Duration),  •  , $LOCALIZE[180]]</label>
+					<animation effect="fade" time="250" delay="120">Visible</animation>
+					<animation effect="fade" time="0">Hidden</animation>
+					<visible>!IsEmpty(ListItem.Album)</visible>
 				</control>
 				<control type="textbox">
 					<top>70</top>
@@ -1747,7 +1753,7 @@
 					<font>FontSize_20</font>
 					<textcolor>99white</textcolor>
 					<shadowcolor>77000000</shadowcolor>
-					<align>center</align>
+					<align>justify</align>
 					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<label>$VAR[GlobalPlotDescription]</label>
 				</control>
