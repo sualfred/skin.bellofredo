@@ -4455,7 +4455,7 @@
 						<width>14</width>
 						<height>14</height>
 						<aspectratio align="left" aligny="center">stretch</aspectratio>
-						<texture background="true" colordiffuse="white">overlays/unwatched/list/unwatched.png</texture>
+						<texture background="true" colordiffuse="77white">overlays/unwatched/list/unwatched.png</texture>
 						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
 						<visible>!ListItem.IsPlaying</visible>
 					</control>
@@ -4509,25 +4509,25 @@
 					<control type="label">
 						<left>583</left>
 						<top>11</top>
-						<width>85</width>
+						<width>80</width>
 						<height>22</height>
 						<align>right</align>
+						<font>FontSize_22</font>
 						<textcolor>white</textcolor>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<label>$INFO[ListItem.Label2]</label>
-						<font>FontSize_22</font>
 						<visible>SubString(Container.FolderPath,plugin.video.youtube)</visible>
 					</control>
 					<control type="label">
 						<left>583</left>
 						<top>11</top>
-						<width>85</width>
+						<width>80</width>
 						<height>22</height>
 						<align>right</align>
 						<textcolor>white</textcolor>
-						<font>FontSize_22</font>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<label>․  ․  ․</label>
+						<font>FontSize_22</font>
 						<visible>!SubString(Container.FolderPath,plugin.video.youtube) + !Substring(ListItem.Path,videodb://movies/sets/) + !IntegerGreaterThan(ListItem.Duration,0) + !Stringcompare(ListItem.Label,..) + IsEmpty(ListItem.Property(unWatchedEpisodes))</visible>
 					</control>
 					<control type="image">
