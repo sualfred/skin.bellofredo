@@ -1,4 +1,13 @@
-﻿[B][COLOR=FF56ADDA]v4.0.16[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.0.17a[/COLOR][/B]
+• Fixed: Bug with textures.xbt
+
+[B][COLOR=FF56ADDA]v4.0.17[/COLOR][/B]
+• Added: New default theme
+• Added: Original-Bello theme
+• Fixed: FSK6 rating flag
+• Fixed: LoveFilm CDArt animation
+
+[B][COLOR=FF56ADDA]v4.0.16[/COLOR][/B]
 • Fixed: Thumb List focuslayout
 • Added: IMDb Top250 on Thumb List
 • Added: ElegantDark theme for those guys who don't like the purple
