@@ -5,7 +5,8 @@
 		<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>	
 		<control type="image">
 			<include>FullscreenDimensions</include>
-			<texture background="true">views/list/shine.png</texture>					
+			<texture background="true">views/list/shine.png</texture>	
+			<visible>Skin.HasTheme(Original-Bello)</visible>				
 		</control>
 		<control type="label">
 			<description>header title</description>			

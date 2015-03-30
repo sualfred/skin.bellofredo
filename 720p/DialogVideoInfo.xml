@@ -442,7 +442,7 @@
 							<autoscroll time="3000" delay="5000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 							<visible>Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)</visible>
 						</control>					
-						<control type="label">
+						<!--<control type="label">
 							<description>Rated</description>
 							<posx>0</posx>
 							<posy>410</posy>
@@ -469,7 +469,7 @@
 							<textcolor>white</textcolor>
 							<shadowcolor>99000000</shadowcolor>
 							<visible>!Container.Content(Movies)</visible>
-						</control>
+						</control>-->
 					</control>
 				</control>
 			</control>

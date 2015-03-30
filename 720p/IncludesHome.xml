@@ -10,6 +10,13 @@
 			<control type="group">
 				<include>HomeSlideAnimations</include>
 				<control type="image">
+					<include>FullscreenDimensions</include>			
+					<texture background="true">views/list/shine.png</texture>
+					<visible>!Skin.HasTheme(Original-Bello) + !Window.IsActive(playercontrols)</visible>
+					<animation effect="fade" time="0" start="100" end="75" condition="Skin.HasTheme(SKINDEFAULT) + [Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)]">Conditional</animation>
+					<animation effect="fade" time="0" start="100" end="50" condition="Skin.HasTheme(ElegantDark) + [Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)]">Conditional</animation>
+				</control>
+				<control type="image">
 					<include>FullscreenDimensions</include>
 					<texture background="true">windows/bg/black_pulse.png</texture>
 					<animation effect="fade" time="0" end="70" condition="true">Conditional</animation>

@@ -11,6 +11,7 @@
 		<value condition="substring(ListItem.mpaa,Rated 18) | substring(ListItem.mpaa,Germany:18) | substring(ListItem.mpaa,FSK 18) | substring(ListItem.mpaa,ab 18)">flags/mpaa/fsk/fsk18.png</value>
 		<value condition="substring(ListItem.mpaa,Rated 16) | substring(ListItem.mpaa,Germany:16) | substring(ListItem.mpaa,FSK 16) | substring(ListItem.mpaa,ab 16)">flags/mpaa/fsk/fsk16.png</value>
 		<value condition="substring(ListItem.mpaa,Rated 12) | substring(ListItem.mpaa,Germany:12) | substring(ListItem.mpaa,FSK 12) | substring(ListItem.mpaa,ab 12)">flags/mpaa/fsk/fsk12.png</value>
+		<value condition="substring(ListItem.mpaa,Rated 12) | substring(ListItem.mpaa,Germany:6) | substring(ListItem.mpaa,FSK 6) | substring(ListItem.mpaa,ab 6)">flags/mpaa/fsk/fsk6.png</value>
 		<value condition="substring(ListItem.mpaa,Rated 0) | substring(ListItem.mpaa,Germany:0) | substring(ListItem.mpaa,FSK 0) | substring(ListItem.mpaa,ab 0)">flags/mpaa/fsk/fsk0.png</value>
 		<value>flags/mpaa/film/rating-nr.png</value>
 	</variable>

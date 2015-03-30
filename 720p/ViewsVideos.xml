@@ -3895,8 +3895,6 @@
 					<control type="group">
 						<left>1015</left>
 						<top>-183</top>
-						<animation effect="fade" start="100" end="0" time="350" delay="350">Hidden</animation>
-						<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
 						<animation type="WindowOpen">
 							<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>							
 							<effect type="slide" start="0,0" end="-90,0" time="980" delay="750" tween="sine" easing="out"/>								
@@ -3940,8 +3938,6 @@
 					<control type="group">
 						<left>1015</left>
 						<top>-183</top>
-						<animation effect="fade" start="100" end="0" time="350" delay="350">Hidden</animation>
-						<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
 						<animation type="WindowOpen">
 							<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>							
 							<effect type="slide" start="0,0" end="-65,0" time="980" delay="750" tween="sine" easing="out"/>								
@@ -3984,9 +3980,7 @@
 					</animation>				
 					<control type="group">
 						<left>1015</left>
-						<top>-183</top>						
-						<animation effect="fade" start="100" end="0" time="350" delay="350">Hidden</animation>
-						<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
+						<top>-183</top>	
 						<animation type="WindowOpen">
 							<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>							
 							<effect type="slide" start="0,0" end="-35,0" time="980" delay="750" tween="sine" easing="out"/>								
@@ -4023,9 +4017,10 @@
 				<!-- discart -->
 				<control type="group">
 					<visible>!Substring(ListItem.Path,videodb://movies/sets/,left) + !StringCompare(ListItem.Label,..) + Container.Content(movies)</visible>
-					<animation type="Conditional" condition="[Control.IsVisible(6013) | Control.IsVisible(6014) | Window.IsVisible(Shutdownmenu) | Window.IsVisible(Playercontrols)]" reversible="true">
-						<effect type="fade" start="100" end="0" time="200" delay="0" tween="sine" easing="out"/>
-						<effect type="slide" start="0,0" end="125,0" time="200" delay="0" tween="sine" easing="in"/>
+					<animation effect="fade" start="0" end="100" time="350" delay="70">Visible</animation>
+					<animation type="Conditional" condition="![Control.IsVisible(6013) | Control.IsVisible(6014) | Window.IsVisible(Shutdownmenu) | Window.IsVisible(Playercontrols)]" reversible="true">
+						<effect type="fade" start="0" end="100" time="200" delay="0" tween="sine" easing="out"/>
+						<effect type="slide" start="75,0" end="0,0" time="200" delay="0" tween="sine" easing="in"/>
 					</animation>
 					<control type="image">
 						<left>1005</left>
@@ -4034,8 +4029,6 @@
 						<height>206</height>
 						<aspectratio aligny="center" align="center">stretch</aspectratio>
 						<texture background="true" fallback="views/wall/bluray.png">$VAR[DiscArtType]</texture>
-						<animation effect="fade" start="100" end="0" time="350" delay="0">Hidden</animation>
-						<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
 						<animation type="WindowOpen">
 							<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>							
 							<effect type="slide" start="0,0" end="-80,0" time="980" delay="750" tween="sine" easing="out"/>								
@@ -4085,8 +4078,8 @@
 					</control>
 					<control type="image">
 						<left>-12</left>
-						<top>-12</top>
-						<width>231</width>
+						<top>-11</top>
+						<width>230</width>
 						<height>308</height>
 						<texture background="true">thumbs/poster_overlay.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>						
