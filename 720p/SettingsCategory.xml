@@ -32,7 +32,7 @@
 					<aligny>center</aligny>
 					<textwidth>250</textwidth>
 					<textoffsetx>40</textoffsetx>
-					<pulseonselect>false</pulseonselect>
+					<pulseonselect>false</pulseonselect>										
 				</control>
 				<control type="button" id="7">
 					<description>Default Button</description>
@@ -88,12 +88,12 @@
 					<pagecontrol>60</pagecontrol>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>1072</left>
-					<top>0</top>
-					<width>7</width>
-					<height>414</height>
+					<left>1074</left>
+					<top>2</top>
+					<width>5</width>
+					<height>410</height>
 					<texturesliderbackground>thumbs/thumb75_back.png</texturesliderbackground>
-					<texturesliderbar border="0,20,0,20">views/scrollbar/scrollbar.png</texturesliderbar>
+					<texturesliderbar colordiffuse="22grey" border="0,20,0,20">white.png</texturesliderbar>
 					<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbarfocus>
 					<textureslidernib>-</textureslidernib>
 					<textureslidernibfocus>-</textureslidernibfocus>
@@ -105,6 +105,40 @@
 					<include>CloseAnimation</include>
 				</control>
 			</control>
+
+			<!--<control type="group">
+				<control type="image">
+					<left>100</left>
+					<top>531</top>
+					<width>295</width>
+					<height>50</height>
+					<texture>buttons/catbullet_nf.png</texture>
+					<visible>!Control.HasFocus(93)</visible>
+				</control>
+				<control type="image">
+					<left>100</left>
+					<top>531</top>
+					<width>295</width>
+					<height>50</height>
+					<texture>buttons/catbullet_fo.png</texture>
+					<visible>Control.HasFocus(93)</visible>
+				</control>
+				<control type="button" id="93">
+					<left>100</left>
+					<top>531</top>
+					<width>295</width>
+					<textoffsetx>40</textoffsetx>
+					<description>Settings Level</description>
+					<label>$INFO[Control.GetLabel(20),$LOCALIZE[31167][COLOR=blue] ,[/COLOR] ]</label>
+					<onup>3</onup>
+					<ondown>3</ondown>
+					<onclick>SettingsLevelChange</onclick>
+					<include>SettingsButton</include>
+					<visible>Window.IsVisible(SettingsCategory.xml)</visible>
+				</control>
+			</control>-->
+
+			
 
 			<control type="button" id="20">
 				<description>Settings Level Button</description>

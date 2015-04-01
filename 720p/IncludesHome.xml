@@ -239,6 +239,14 @@
 					<onclick>ActivateWindow(shutdownmenu)</onclick>
 				</control>
 			</control>
+			<control type="image">
+					<width>60</width>
+					<top>-2</top>
+					<height>60</height>
+					<texture background="true" colordiffuse="blue">kodo-symbol-white.png</texture>
+
+					<aspectratio>keep</aspectratio>
+				</control>
 			<control type="grouplist">
 				<left>0</left>
 				<top>0</top>
@@ -248,6 +256,11 @@
 				<align>left</align>
 				<orientation>horizontal</orientation>
 				<include>HomeSlideAnimations</include>
+				
+				<control type="label">
+					<width>43</width>
+					<label>-</label>
+				</control>
 				<control type="label">
 					<include>TopBigLabel</include>
 					<label>10000</label>
@@ -283,8 +296,8 @@
 				<animation effect="slide" end="-3,3" reversible="false" condition="stringcompare(System.Language,Greek) | stringcompare(System.Language,Italian)">Conditional</animation>
 				<include>HomeSlideAnimations</include>
 				<control type="fadelabel">
-					<left>3</left>
-					<top>45</top>
+					<left>66</left>
+					<top>47</top>
 					<width>500</width>
 					<height>20</height>
 					<font>FontSize_18</font>

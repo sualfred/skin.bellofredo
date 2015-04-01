@@ -768,12 +768,12 @@
 					</control>
 
 					<control type="scrollbar" id="60">
-						<left>1072</left>
-						<top>0</top>
-						<width>7</width>
-						<height>414</height>
+						<left>1074</left>
+						<top>2</top>
+						<width>5</width>
+						<height>410</height>
 						<texturesliderbackground>thumbs/thumb75_back.png</texturesliderbackground>
-						<texturesliderbar border="0,20,0,20">views/scrollbar/scrollbar.png</texturesliderbar>
+						<texturesliderbar colordiffuse="22grey" border="0,20,0,20">white.png</texturesliderbar>
 						<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbarfocus>
 						<textureslidernib>-</textureslidernib>
 						<textureslidernibfocus>-</textureslidernibfocus>
