@@ -1805,6 +1805,7 @@
 		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),3)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window(Home).Property(randommovies)]</value>
 		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">plugin://script.extendedinfo?info=incinemas</value>
 		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">plugin://script.extendedinfo?info=trendingmovies</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMoviesType),6)">special://skin/extras/playlists/Top250.xsp</value>
 	</variable>
 	<variable name="QuickNav_WidgetListContentTVShows">
 		<!--<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window(Home).Property(recentepisodes)]</value>-->
@@ -1881,6 +1882,7 @@
 		<value condition="[Control.HasFocus(25) | Control.HasFocus(250)] + stringcompare(Skin.String(QuickNavWidgetMoviesType),3)">$LOCALIZE[31247]</value>
 		<value condition="[Control.HasFocus(25) | Control.HasFocus(250)] + stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">$LOCALIZE[31256]</value>
 		<value condition="[Control.HasFocus(25) | Control.HasFocus(250)] + stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">$LOCALIZE[31257]</value>
+		<value condition="[Control.HasFocus(25) | Control.HasFocus(250)] + stringcompare(Skin.String(QuickNavWidgetMoviesType),6)">$LOCALIZE[31269]</value>
 		<value condition="[Control.HasFocus(35) | Control.HasFocus(350)] + stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">$LOCALIZE[31242]</value>
 		<value condition="[Control.HasFocus(35) | Control.HasFocus(350)] + stringcompare(Skin.String(QuickNavWidgetTVShowsType),2)">$LOCALIZE[31002] $LOCALIZE[575]</value>
 		<value condition="[Control.HasFocus(35) | Control.HasFocus(350)] + stringcompare(Skin.String(QuickNavWidgetTVShowsType),3)">$LOCALIZE[31248]</value>

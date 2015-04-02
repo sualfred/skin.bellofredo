@@ -959,7 +959,11 @@ msgctxt "#31268"
 msgid "Thumb List"
 msgstr ""
 
-#: empty strings from id 31269 to 31279
+msgctxt "#31269"
+msgid "My IMDb Top250 Movies"
+msgstr ""
+
+#: empty strings from id 31270 to 31279
 #: Playlist Editor labels
 
 msgctxt "#31280"
