@@ -28,12 +28,12 @@
 	</extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">A GUI for Kodi Media Center</summary>
-    <description lang="en">Mod for Kodi 15 Nightlies of Nessus's Bello skin with some additional features</description>
+    <description lang="en">Mod for Kodi 15 Isengard of Nessus's Bello skin with a lot of modifications, such as 100% customizable widgets, new themes, modded elements, hundreds of improvements, and much more...</description>
     <disclaimer lang="en">Mouse usage is not supported</disclaimer>
     <platform>all</platform>
     <license>Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported License</license>
-    <forum></forum>
+    <forum>http://forum.kodi.tv/showthread.php?tid=219378</forum>
     <email></email>
-    <source></source>
+    <source>https://github.com/sualfred/Bello-Kodi-15.x-Nightlies</source>
   </extension>
 </addon>

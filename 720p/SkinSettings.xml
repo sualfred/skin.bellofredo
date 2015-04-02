@@ -542,7 +542,7 @@
 						</control>
 						<control type="button" id="8404">
 							<include>SettingsButton</include>
-							<label>• $LOCALIZE[31135]</label>
+							<label>- $LOCALIZE[31135]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(CustomImageBackgroundPath)][/COLOR]</label2>
 							<onclick>Skin.Reset(CustomFolderBackgroundPath)</onclick>
 							<onclick>Skin.SetImage(CustomImageBackgroundPath)</onclick>
@@ -550,7 +550,7 @@
 						</control>
 						<control type="button" id="8405">
 							<include>SettingsButton</include>
-							<label>• $LOCALIZE[31136]</label>
+							<label>- $LOCALIZE[31136]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(CustomFolderBackgroundPath)][/COLOR]</label2>
 							<onclick>Skin.Reset(CustomImageBackgroundPath)</onclick>
 							<onclick>Skin.SetPath(CustomFolderBackgroundPath)</onclick>
@@ -558,7 +558,7 @@
 						</control>
 						<control type="radiobutton" id="8406">
 							<include>SettingsRadioButton</include>
-							<label>• $LOCALIZE[31131]</label>
+							<label>- $LOCALIZE[31131]</label>
 							<onclick>Skin.ToggleSetting(ShowCustomBackgroundOnHomeOnly)</onclick>
 							<selected>Skin.HasSetting(ShowCustomBackgroundOnHomeOnly)</selected>
 							<visible>Skin.HasSetting(CustomBackground)</visible>
@@ -580,12 +580,18 @@
 						<onleft>8800</onleft>
 						<onright>9000</onright>
 						<onup>8500</onup>
-						<ondown>8500</ondown>
+						<ondown>8500</ondown>						
+						<control type="button" id="8599">
+							<disabledcolor>55white</disabledcolor>
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[31179]</label>
+							<enable>false</enable>
+						</control>
 						<!--Video Views-->
 						<control type="button" id="8510">
 							<description>Hide Video Views</description>
 							<include>SettingsButton</include>
-							<label>$LOCALIZE[31156]</label>
+							<label>- $LOCALIZE[31156]</label>
 							<onclick>SetProperty(ManageButtons,managevideoviews)</onclick>
 							<onclick>ActivateWindow(1118)</onclick>
 						</control>
@@ -593,31 +599,21 @@
 						<control type="button" id="8520">
 							<description>Hide Music Views</description>
 							<include>SettingsButton</include>
-							<label>$LOCALIZE[31157]</label>
+							<label>- $LOCALIZE[31157]</label>
 							<onclick>SetProperty(ManageButtons,managemusicviews)</onclick>
 							<onclick>ActivateWindow(1118)</onclick>
-						</control>
-						<!--Use local artworks CURRENTLY NOT USED-->
-						<!--
-						<control type="radiobutton" id="8537">
-							<description>Use Local Artowrks</description>
-							<include>SettingsRadioButton</include>
-							<label>$LOCALIZE[31063]</label>
-							<onclick>Skin.ToggleSetting(LocalArtworks)</onclick>
-							<selected>Skin.HasSetting(LocalArtworks)</selected>
-							<enable>System.HasAddon(script.artwork.downloader)</enable>
-						</control>
-						<control type="button" id="8538">
+						</control>											
+						<control type="button" id="8598">
+							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
-							<label>• $LOCALIZE[31152]</label>
-							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,seasonposter,seasonthumb,seasonbanner)</onclick>
-							<visible>System.HasAddon(script.artwork.downloader)</visible>
-						</control>-->
-						<!--IMDb Rating Updat-->
+							<label>$LOCALIZE[31180]</label>
+							<enable>false</enable>
+						</control>
+						<!--IMDb Rating Update-->
 						<control type="radiobutton" id="8528">
 							<description>IMDb Rating Updater</description>
 							<include>SettingsRadioButton</include>
-							<label>$LOCALIZE[31092]</label>
+							<label>- $LOCALIZE[31092]</label>
 							<onclick>Skin.ToggleSetting(AutoUpdateRatings)</onclick>
 							<selected>Skin.HasSetting(AutoUpdateRatings)</selected>
 							<enable>System.HasAddon(script.imdbupdate)</enable>
@@ -626,10 +622,16 @@
 						<control type="radiobutton" id="8529">
 							<description>Artwork Downloader</description>
 							<include>SettingsRadioButton</include>
-							<label>$LOCALIZE[31047]</label>
+							<label>- $LOCALIZE[31047]</label>
 							<onclick>Skin.ToggleSetting(AutoUpdateArt)</onclick>
 							<selected>Skin.HasSetting(AutoUpdateArt)</selected>
 							<enable>System.HasAddon(script.artwork.downloader)</enable>
+						</control>																	
+						<control type="button" id="8597">
+							<disabledcolor>55white</disabledcolor>
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[31181]</label>
+							<enable>false</enable>
 						</control>
 						<control type="button" id="8530">
 							<include>SettingsButton</include>
@@ -698,7 +700,7 @@
 						</control>
 						<control type="button" id="8602">
 							<include>SettingsButton</include>
-							<label>• $LOCALIZE[1045]</label>
+							<label>- $LOCALIZE[1045]</label>
 							<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
 							<visible>!IsEmpty(Skin.String(LyricScript_Path))</visible>
 						</control>
@@ -711,7 +713,7 @@
 						</control>
 						<control type="button" id="8604">
 							<include>SettingsButton</include>
-							<label>• $LOCALIZE[1045]</label>
+							<label>- $LOCALIZE[1045]</label>
 							<onclick>Addon.OpenSettings($INFO[Skin.String(TrailersAddon_Path)])</onclick>
 							<visible>Skin.HasSetting(trailers) + !IsEmpty(Skin.String(TrailersAddon_Path))</visible>
 						</control>
@@ -724,13 +726,13 @@
 						</control>
 						<control type="button" id="8606">
 							<include>SettingsButton</include>
-							<label>• $LOCALIZE[1045]</label>
+							<label>- $LOCALIZE[1045]</label>
 							<onclick>Addon.OpenSettings(script.tv.show.next.aired)</onclick>
 							<visible>Skin.HasSetting(NextAiredEnabled) + System.HasAddon(script.tv.show.next.aired)</visible>
 						</control>
 						<control type="radiobutton" id="8607">
 							<include>SettingsRadioButton</include>
-							<label>• $LOCALIZE[31137]</label>
+							<label>- $LOCALIZE[31137]</label>
 							<onclick>Skin.ToggleSetting(EnableNextAiredNotifications)</onclick>
 							<selected>Skin.HasSetting(EnableNextAiredNotifications)</selected>
 							<visible>Skin.HasSetting(NextAiredEnabled) + System.HasAddon(script.tv.show.next.aired)</visible>
@@ -744,13 +746,13 @@
 						</control>
 						<control type="button" id="8614">
 							<include>SettingsButton</include>
-							<label>• $LOCALIZE[1045]</label>
+							<label>- $LOCALIZE[1045]</label>
 							<onclick>Addon.OpenSettings(script.tvtunes)</onclick>
 							<visible>Skin.HasSetting(TVTunesEnabled) + System.HasAddon(script.tvtunes)</visible>
 						</control>
 						<control type="button" id="8615">
 							<include>SettingsButton</include>
-							<label>• $LOCALIZE[31145]</label>
+							<label>- $LOCALIZE[31145]</label>
 							<onclick>XBMC.RunScript(script.tvtunes)</onclick>
 							<visible>Skin.HasSetting(TVTunesEnabled) + System.HasAddon(script.tvtunes)</visible>
 						</control>
@@ -780,7 +782,7 @@
 						<control type="button" id="8702">
 							<description>Default QuickNav Buttons</description>
 							<include>SettingsButton</include>
-							<label>• $LOCALIZE[31376]</label>
+							<label>- $LOCALIZE[31376]</label>
 							<onclick>SetProperty(ManageButtons,defualtquicknav)</onclick>
 							<onclick>ActivateWindow(1118)</onclick>
 							<visible>!Skin.HasSetting(DisableQuickNav)</visible>
@@ -788,7 +790,7 @@
 						<control type="button" id="8703">
 							<description>Custom QuickNav Buttons</description>
 							<include>SettingsButton</include>
-							<label>• $LOCALIZE[31377]</label>
+							<label>- $LOCALIZE[31377]</label>
 							<onclick>ActivateWindow(1119)</onclick>
 							<visible>!Skin.HasSetting(DisableQuickNav)</visible>
 						</control>

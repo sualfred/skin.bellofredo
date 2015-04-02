@@ -668,7 +668,19 @@ msgctxt "#31178"
 msgid "Manage [COLOR=selected]Common Widgets[/COLOR]"
 msgstr ""
 
-#: empty strings from id 31179 to 31199
+msgctxt "#31179"
+msgid "Manage Views"
+msgstr ""
+
+msgctxt "#31180"
+msgid "Library Tools"
+msgstr ""
+
+msgctxt "#31181"
+msgid "Download Art"
+msgstr ""
+
+#: empty strings from id 31182 to 31199
 #: scripts labels
 
 msgctxt "#31200"
