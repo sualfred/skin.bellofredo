@@ -389,7 +389,7 @@ msgstr "Episoden"
 msgctxt "#31092"
 msgid ""
 "Automatically update IMDb Top250 & Ratings if the Library has been updated"
-msgstr "Automatischer Update von IMDb Top250 & Bewertungen nach Datenbankaktualisierung"
+msgstr "Automatischer Update von IMDb Bewertungen nach Datenbankaktualisierung"
 
 msgctxt "#31093"
 msgid "Update IMDb Top250 & Movie Ratings"
