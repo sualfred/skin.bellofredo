@@ -4139,7 +4139,7 @@
 				<left>-75</left>
 				<top>-136</top>
 				<width>687</width>
-				<height>524</height>
+				<height>520</height>
 				<texture background="true">views/episode/episode_blue_shadow.png</texture>
 				<animation effect="fade" time="0" end="60" condition="true">Conditional</animation>
 			</control>
@@ -4170,7 +4170,7 @@
 				<width>441</width>
 				<height>248</height>
 				<aspectratio aligny="center" align="center">stretch</aspectratio>
-				<texture background="true">views/episode/episode_label.png</texture>
+				<texture background="true" diffuse="views/episode/episode_diffuse.png">views/episode/episode_label.png</texture>
 				<visible>!Stringcompare(ListItem.Label,..)</visible>
 			</control>
 			<!-- imdb top 250 -->

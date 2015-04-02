@@ -1,4 +1,15 @@
-﻿[B][COLOR=FF56ADDA]v4.0.17a[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.1.0[/COLOR][/B]
+• Reworked: Settings and skin settings windows for an buddy - Andre... I mean you! - is too much noob to find some settings. Damn noobs :P
+• Replaced: Navigation sounds (THX to ReFocus skin)
+• Added: Option to run IMDb rating updates automatically
+• Added: Optional Kodi Symbol on Home
+• Fixed: Missing Option to disable ThumbList for Music Views
+• Fixed: ThumbList blue shine texture
+• Fixed: Some addon widgets were available even the required addon was not installed
+• Updated: Latest GER + LT + IT translations
+• Updated: Script.imdbupdate version requirement pushed to 0.6.0
+
+[B][COLOR=FF56ADDA]v4.0.17a[/COLOR][/B]
 • Fixed: Bug with textures.xbt
 
 [B][COLOR=FF56ADDA]v4.0.17[/COLOR][/B]
