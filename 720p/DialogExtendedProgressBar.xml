@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window  id="151">
 	<defaultcontrol></defaultcontrol>
-	<onload condition="!IsEmpty(Window.Property(UpdateArt))">ClearProperty(UpdateArt)</onload>
-	<onload condition="Library.IsScanningVideo">SetProperty(UpdateArt,1)</onload>
-	<onunload condition="!IsEmpty(Window.Property(UpdateArt)) + Skin.HasSetting(AutoUpdateArt)">XBMC.RunScript(script.artwork.downloader,silent=true)</onunload>
-	<onunload condition="!IsEmpty(Window.Property(UpdateArt))">ClearProperty(UpdateArt)</onunload>
+	<onload condition="!IsEmpty(Window.Property(UpdateInProgress))">ClearProperty(UpdateInProgress)</onload>
+	<onload condition="Library.IsScanningVideo">SetProperty(UpdateInProgress,1)</onload>
+	<onunload condition="!IsEmpty(Window.Property(UpdateInProgress)) + Skin.HasSetting(AutoUpdateArt)">XBMC.RunScript(script.artwork.downloader,silent=true)</onunload>
+	<onunload condition="!IsEmpty(Window.Property(UpdateInProgress)) + Skin.HasSetting(AutoUpdateRatings)">RunScript(script.imdbupdate,top250)</onunload>
+	<onunload condition="!IsEmpty(Window.Property(UpdateInProgress)) + Skin.HasSetting(AutoUpdateRatings)">AlarmClock(test,RunScript(script.imdbupdate,movies),00:15,silent)</onunload>
+	<onunload condition="!IsEmpty(Window.Property(UpdateInProgress))">ClearProperty(UpdateInProgress)</onunload>
 	<controls>
 
 	 <control type="group">

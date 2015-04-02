@@ -227,10 +227,8 @@
 					<onclick>SetProperty(Dialog.4.BuiltIn,CleanLibrary(music)||SetFocus(20))</onclick>
 					<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[799])</onclick>
 					<visible>!Skin.HasSetting(DisableLibraryRefreshButton)</visible>
-					<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31092])</onclick>
-					<onclick>SetProperty(Dialog.5.BuiltIn,RunScript(script.imdbupdate,movies)||SetFocus(20))</onclick>
-					<onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31093])</onclick>
-					<onclick>SetProperty(Dialog.6.BuiltIn,RunScript(script.imdbupdate,top250)||SetFocus(20))</onclick>					
+					<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31093])</onclick>
+					<onclick>SetProperty(Dialog.5.BuiltIn,RunScript(script.imdbupdate,top250)||AlarmClock(test,RunScript(script.imdbupdate,movies),00:15,silent)||SetFocus(20))</onclick>	
 				</control>
 				<control type="button" id="214">
 					<description>Power</description>
@@ -240,14 +238,18 @@
 				</control>
 			</control>
 			<control type="image">
-					<width>60</width>
-					<top>-2</top>
-					<height>60</height>
+					<include>HomeSlideAnimations</include>
+					<width>50</width>
+					<top>2</top>
+					<left>-3</left>
+					<height>50</height>
 					<texture background="true" colordiffuse="blue">kodo-symbol-white.png</texture>
-
 					<aspectratio>keep</aspectratio>
+					<!--<animation effect="slide" time="0" start="0,0" end="0,8" condition="Skin.HasSetting(ShowLibraryTotals)">Conditional</animation>-->
+					<visible>!Skin.HasSetting(ShowKodiSymbol)</visible>ShowLibraryTotals
 				</control>
 			<control type="grouplist">
+				<animation effect="slide" time="0" start="0,0" end="50,0" condition="!Skin.HasSetting(ShowKodiSymbol)">Conditional</animation>
 				<left>0</left>
 				<top>0</top>
 				<height>70</height>
@@ -255,12 +257,7 @@
 				<itemgap>20</itemgap>
 				<align>left</align>
 				<orientation>horizontal</orientation>
-				<include>HomeSlideAnimations</include>
-				
-				<control type="label">
-					<width>43</width>
-					<label>-</label>
-				</control>
+				<include>HomeSlideAnimations</include>		
 				<control type="label">
 					<include>TopBigLabel</include>
 					<label>10000</label>
@@ -296,8 +293,9 @@
 				<animation effect="slide" end="-3,3" reversible="false" condition="stringcompare(System.Language,Greek) | stringcompare(System.Language,Italian)">Conditional</animation>
 				<include>HomeSlideAnimations</include>
 				<control type="fadelabel">
-					<left>66</left>
-					<top>47</top>
+					<animation effect="slide" time="0" start="0,0" end="0,0" condition="!Skin.HasSetting(ShowKodiSymbol)">Conditional</animation>
+					<left>3</left>
+					<top>48</top>
 					<width>500</width>
 					<height>20</height>
 					<font>FontSize_18</font>

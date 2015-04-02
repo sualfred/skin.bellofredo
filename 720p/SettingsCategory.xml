@@ -87,23 +87,38 @@
 					<ondown>5</ondown>
 					<pagecontrol>60</pagecontrol>
 				</control>
-				<control type="scrollbar" id="60">
-					<left>1074</left>
-					<top>2</top>
-					<width>5</width>
-					<height>410</height>
-					<texturesliderbackground>thumbs/thumb75_back.png</texturesliderbackground>
-					<texturesliderbar colordiffuse="22grey" border="0,20,0,20">white.png</texturesliderbar>
-					<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbarfocus>
-					<textureslidernib>-</textureslidernib>
-					<textureslidernibfocus>-</textureslidernibfocus>
-					<onleft>8400</onleft>
-					<onright>8800</onright>
-					<showonepage>false</showonepage>
-					<orientation>vertical</orientation>
-					<animation effect="fade" start="100" end="0" time="300" condition="!ControlGroup(5).HasFocus()">Conditional</animation>					
-					<include>CloseAnimation</include>
-				</control>
+					<control type="scrollbar" id="60">
+						<left>1076</left>
+						<top>2</top>
+						<width>2</width>
+						<height>410</height>
+						<texturesliderbackground>thumbs/thumb75_back.png</texturesliderbackground>
+						<texturesliderbar colordiffuse="22grey" border="0,0,0,0">white.png</texturesliderbar>
+						<texturesliderbarfocus>views/scrollbar/scrollbar.png</texturesliderbarfocus>
+						<textureslidernib>-</textureslidernib>
+						<textureslidernibfocus>-</textureslidernibfocus>
+						<onleft>8400</onleft>
+						<onright>8800</onright>
+						<showonepage>false</showonepage>
+						<orientation>vertical</orientation>
+						<animation effect="fade" start="100" end="0" time="0" condition="true">Conditional</animation>
+					</control>
+					<control type="label">
+						<description>Page Count Label</description>
+						<left>511</left>
+						<top>-33</top>
+						<width>553</width>
+						<height>35</height>
+						<font>FontSize_16B</font>
+						<textcolor>88white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<scroll>false</scroll>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31111]</label>
+						<visible>Control.IsVisible(60)</visible>
+						<include>VisibleFadeEffect3</include>
+					</control>
 			</control>
 
 			<!--<control type="group">
@@ -158,13 +173,13 @@
 				<height>40</height>
 				<control type="label">
 					<description>Header Category Label</description>
-					<left>0</left>
+					<left>-5</left>
 					<top>-50</top>
 					<width>1075</width>
 					<height>50</height>
 					<font>FontSize_36</font>
 					<label>$VAR[SettingsCategoryHeadLabels]</label>
-					<align>center</align>
+					<align>left</align>
 					<aligny>center</aligny>
 					<textcolor>white</textcolor>
 					<shadowcolor>99000000</shadowcolor>

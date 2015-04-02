@@ -283,7 +283,7 @@ msgid "Disabled"
 msgstr ""
 
 msgctxt "#31067"
-msgid "Enable Home Menu Pulse-Bar-Background"
+msgid "Enable Aurora-Pulse-Bar behind the Mainmenu"
 msgstr ""
 
 msgctxt "#31068"
@@ -383,11 +383,11 @@ msgid "Episodes"
 msgstr ""
 
 msgctxt "#31092"
-msgid "Update IMDb Ratings"
+msgid "Automatically update IMDb Top250 & Ratings if the Library has been updated"
 msgstr ""
 
 msgctxt "#31093"
-msgid "Update IMDb Top 250"
+msgid "Update IMDb Top250 & Movie Ratings"
 msgstr ""
 
 msgctxt "#31094"
@@ -431,7 +431,7 @@ msgid "Hide Now Playing Music Info"
 msgstr ""
 
 msgctxt "#31104"
-msgid "Hide Now Playing Covers on Home"
+msgid "Hide Now Playing Cover on Home"
 msgstr ""
 
 msgctxt "#31105"
@@ -446,7 +446,23 @@ msgctxt "#31107"
 msgid "Released"
 msgstr ""
 
-#: empty strings from id 31108 to 31123
+msgctxt "#31108"
+msgid "Enable Kodi Icon in the Upper-Left Corner"
+msgstr ""
+
+msgctxt "#31109"
+msgid "Edit Menu/Assign Widgets"
+msgstr ""
+
+msgctxt "#31110"
+msgid "Animations"
+msgstr ""
+
+msgctxt "#31111"
+msgid "Scroll down for more options"
+msgstr ""
+
+#: empty strings from id 31112 to 31123
 
 msgctxt "#31124"
 msgid "Flashing Lights"
@@ -1124,7 +1140,7 @@ msgid "Custom Item"
 msgstr ""
 
 msgctxt "#31379"
-msgid "Menu & Widgets"
+msgid "Home & Menu"
 msgstr ""
 
 msgctxt "#31380"

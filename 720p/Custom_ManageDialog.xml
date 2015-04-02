@@ -370,6 +370,14 @@
 					<selected>!Skin.HasSetting(3DWallViewMusic)</selected>
 					<visible>StringCompare(Window(SkinSettings).Property(ManageButtons),managemusicviews)</visible>
 				</control>
+				<control type="radiobutton" id="8528">
+					<width>425</width>
+					<include>DialogsButton</include>
+					<label>$LOCALIZE[31268]</label>
+					<onclick>Skin.ToggleSetting(ThumbListMusicView)</onclick>
+					<selected>!Skin.HasSetting(ThumbListMusicView)</selected>
+					<visible>StringCompare(Window(SkinSettings).Property(ManageButtons),managemusicviews)</visible>
+				</control>
 			</control>
 
 

@@ -892,6 +892,10 @@
 		<animation effect="fade" time="50">Visible</animation>
 		<animation effect="fade" time="50">Hidden</animation>
 	</include>
+	<include name="VisibleFadeEffect3">
+		<animation effect="fade" time="20">Visible</animation>
+		<animation effect="fade" time="20">Hidden</animation>
+	</include>
 	<include name="FocusVisibleFadeEffect">
 		<animation effect="fade" time="170">Visible</animation>
 		<animation effect="fade" time="170">Hidden</animation>
