@@ -1,4 +1,13 @@
-﻿[B][COLOR=FF56ADDA]v4.1.0[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.1.1[/COLOR][/B]
+• Added: Option to change the common widget content on the fly without moving to the skin settings menu
+• Added: IMDb250 movie widget
+• Added: Recently Watched Episodes widget (for people like me, who alwasy fell asleep while watching an episode :P)
+• Fixed: Wrong conditions for AddonScriptorDE's widget
+• Fixed: Wrong IMDb flag icon dimensions
+• Fixed: Fake OnNext/OnPrevious music widget animation
+• Changed: Hundreds of conditions/animations/code lines
+
+[B][COLOR=FF56ADDA]v4.1.0[/COLOR][/B]
 • Reworked: Settings and skin settings windows for an buddy - Andre... I mean you! - is too much noob to find some settings. Damn noobs :P
 • Replaced: Navigation sounds (THX to ReFocus skin)
 • Added: Option to run IMDb rating updates automatically

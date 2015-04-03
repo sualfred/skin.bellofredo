@@ -32,7 +32,6 @@
 			<control type="image">
 				<include>FullscreenDimensions</include>
 				<texture background="true">views/list/shine.png</texture>
-				<!-- <colordiffuse>ccffffff</colordiffuse> -->
 			</control>
 			<control type="image">
 				<left>293</left>

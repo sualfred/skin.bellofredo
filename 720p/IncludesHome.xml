@@ -46,34 +46,20 @@
 					<width>1500</width>
 					<height>720</height>
 					<align>center</align>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),movies) + IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(250)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)">SetFocus(350)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),music) + IntegerGreaterThan(Container(450).NumItems,0)">SetFocus(45)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),tunein) + IntegerGreaterThan(Container(550).NumItems,0)">SetFocus(550)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1) + IntegerGreaterThan(Container(551).NumItems,0)">SetFocus(551)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2) + IntegerGreaterThan(Container(552).NumItems,0)">SetFocus(552)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3) + IntegerGreaterThan(Container(553).NumItems,0)">SetFocus(553)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4) + IntegerGreaterThan(Container(554).NumItems,0)">SetFocus(554)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + IntegerGreaterThan(Container(650).NumItems,0)">SetFocus(650)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),amazondb) + IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(750)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),amazon) + IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(751)</onup>
-					<onup condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music) + IntegerGreaterThan(Container(651).NumItems,0)">SetFocus(651)</onup>
-					<onup condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video) + IntegerGreaterThan(Container(652).NumItems,0)">SetFocus(652)</onup>
-					<onup condition="					
-					![StringCompare(Container(20).ListItem.Property(widget),movies) + IntegerGreaterThan(Container(250).NumItems,0)] 
-					+ ![StringCompare(Container(20).ListItem.Property(widget),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] 
-					+ ![StringCompare(Container(20).ListItem.Property(widget),tunein) + IntegerGreaterThan(Container(550).NumItems,0)] 
-					+ ![StringCompare(Container(20).ListItem.Property(widget),music) + IntegerGreaterThan(Container(450).NumItems,0)] 
-					+ ![StringCompare(Container(20).ListItem.Property(widget),widgetgroup1) + IntegerGreaterThan(Container(551).NumItems,0)] 
-					+ ![StringCompare(Container(20).ListItem.Property(widget),widgetgroup2) + IntegerGreaterThan(Container(552).NumItems,0)] 
-					+ ![StringCompare(Container(20).ListItem.Property(widget),widgetgroup3) + IntegerGreaterThan(Container(553).NumItems,0)]
-					+ ![StringCompare(Container(20).ListItem.Property(widget),widgetgroup4) + IntegerGreaterThan(Container(554).NumItems,0)] 
-					+ ![StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + IntegerGreaterThan(Container(650).NumItems,0)] 
-					+ ![StringCompare(Container(20).ListItem.Property(widget),amazondb) + IntegerGreaterThan(Container(750).NumItems,0)] 
-					+ ![StringCompare(Container(20).ListItem.Property(widget),amazon) + IntegerGreaterThan(Container(751).NumItems,0)]
-					+ ![SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music) + IntegerGreaterThan(Container(651).NumItems,0)]
-					+ ![SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video) + IntegerGreaterThan(Container(652).NumItems,0)]
-					">SetFocus(21)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),movies)">SetFocus(9050)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),tvshows)">SetFocus(9060)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),music)">SetFocus(9070)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),tunein)">SetFocus(9080)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)">SetFocus(9090)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)">SetFocus(9091)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)">SetFocus(9093)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)">SetFocus(9094)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget)">SetFocus(9099)</onup>					
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),amazondb)">SetFocus(9073)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),amazon)">SetFocus(9074)</onup>					
+					<onup condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)">SetFocus(9071)</onup>
+					<onup condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)">SetFocus(9072)</onup>
+					<onup condition="IsEmpty(Container(20).ListItem.Property(widget))">SetFocus(21)</onup>
 					<ondown condition="IntegerGreaterThan(Container(23).NumItems,0)">SetFocus(23)</ondown>
 					<onleft>20</onleft>
 					<onright>20</onright>
@@ -124,21 +110,7 @@
 									<visible>IntegerGreaterThan(Container(23).NumItems,0)</visible>
 									<animation effect="fade" time="100" reversible="false">Visible</animation>
 									<animation effect="fade" time="100" reversible="false">Hidden</animation>
-									<animation effect="slide" end="-12,0" time="200" condition="
-									[StringCompare(Container(20).ListItem.Property(widget),movies) + IntegerGreaterThan(Container(250).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),tunein) + IntegerGreaterThan(Container(550).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),music) + IntegerGreaterThan(Container(450).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),widgetgroup1) + IntegerGreaterThan(Container(551).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),widgetgroup2) + IntegerGreaterThan(Container(552).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),widgetgroup3) + IntegerGreaterThan(Container(553).NumItems,0)]
-									| [StringCompare(Container(20).ListItem.Property(widget),widgetgroup4) + IntegerGreaterThan(Container(554).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + IntegerGreaterThan(Container(650).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),amazondb) + IntegerGreaterThan(Container(750).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),amazon) + IntegerGreaterThan(Container(751).NumItems,0)]
-									| [SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music) + IntegerGreaterThan(Container(651).NumItems,0)]
-									| [SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video) + IntegerGreaterThan(Container(652).NumItems,0)]
-									" reversible="false">Conditional</animation>
+									<animation effect="slide" end="-12,0" time="200" condition="!IsEmpty(Container(20).ListItem.Property(widget))" reversible="false">Conditional</animation>
 									<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
 										<effect type="fade" start="0" end="100" delay="900" time="900"  />
 										<effect type="slide" start="0,-2" end="0,4" tween="sine" easing="inout" delay="900" time="900" />
@@ -151,19 +123,7 @@
 									<height>18</height>
 									<texture background="true">buttons/arrow_top.png</texture>
 									<colordiffuse>CCFFFFFF</colordiffuse>
-									<visible>[StringCompare(Container(20).ListItem.Property(widget),movies) + IntegerGreaterThan(Container(250).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),tvshows) + IntegerGreaterThan(Container(350).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),tunein) + IntegerGreaterThan(Container(550).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),music) + IntegerGreaterThan(Container(450).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),widgetgroup1) + IntegerGreaterThan(Container(551).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),widgetgroup2) + IntegerGreaterThan(Container(552).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),widgetgroup3) + IntegerGreaterThan(Container(553).NumItems,0)]
-									| [StringCompare(Container(20).ListItem.Property(widget),widgetgroup4) + IntegerGreaterThan(Container(554).NumItems,0)] 
-									| [StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + IntegerGreaterThan(Container(650).NumItems,0)]
-									| [StringCompare(Container(20).ListItem.Property(widget),amazondb) + IntegerGreaterThan(Container(750).NumItems,0)]
-									| [StringCompare(Container(20).ListItem.Property(widget),amazon) + IntegerGreaterThan(Container(751).NumItems,0)]
-									| [SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music) + IntegerGreaterThan(Container(651).NumItems,0)]
-									| [SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video) + IntegerGreaterThan(Container(652).NumItems,0)]</visible>
+									<visible>!IsEmpty(Container(20).ListItem.Property(widget))</visible>
 									<animation effect="fade" time="100" reversible="false">Visible</animation>
 									<animation effect="fade" time="100" reversible="false">Hidden</animation>
 									<animation effect="slide" end="12,0" time="200" condition="IntegerGreaterThan(Container(23).NumItems,0)" reversible="false">Conditional</animation>

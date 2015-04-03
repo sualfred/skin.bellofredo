@@ -239,6 +239,13 @@
 							<onclick>Skin.ToggleSetting(DisablePurpleBar)</onclick>
 							<selected>!Skin.HasSetting(DisablePurpleBar)</selected>
 						</control>
+						<control type="radiobutton" id="8312">
+							<description>Lock widget content switch</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31271]</label>
+							<onclick>Skin.ToggleSetting(LockWidgetSwitch)</onclick>
+							<selected>!Skin.HasSetting(LockWidgetSwitch)</selected>
+						</control>
 						<control type="button" id="8304">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
@@ -363,108 +370,110 @@
 						<control type="button" id="8506">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31094]</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(QuickNavWidgetMoviesName)][/COLOR]</label2>
+							<label2>[COLOR=selected]$VAR[QuickNavSettingsMovieName][/COLOR]</label2>
 							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31241])</onclick>
-							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(QuickNavWidgetMoviesType,1)||Skin.SetString(QuickNavWidgetMoviesName,$LOCALIZE[31241]))</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(QuickNavWidgetMoviesType,1))</onclick>
 							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[342] $LOCALIZE[575])</onclick>
-							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(QuickNavWidgetMoviesType,2)||Skin.SetString(QuickNavWidgetMoviesName,$LOCALIZE[342] $LOCALIZE[575]))</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(QuickNavWidgetMoviesType,2))</onclick>
 							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31248])</onclick>
-							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(QuickNavWidgetMoviesType,3)||Skin.SetString(QuickNavWidgetMoviesName,$LOCALIZE[31247]))</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(QuickNavWidgetMoviesType,3))</onclick>
 							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31256])</onclick>
-							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(QuickNavWidgetMoviesType,4)||Skin.SetString(QuickNavWidgetMoviesName,$LOCALIZE[31256]))</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(QuickNavWidgetMoviesType,4))</onclick>
 							<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31257])</onclick>
-							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(QuickNavWidgetMoviesType,5)||Skin.SetString(QuickNavWidgetMoviesName,$LOCALIZE[31257]))</onclick>
+							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(QuickNavWidgetMoviesType,5))</onclick>
 							<onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31269])</onclick>
-							<onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(QuickNavWidgetMoviesType,6)||Skin.SetString(QuickNavWidgetMoviesName,$LOCALIZE[31269]))</onclick>
+							<onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(QuickNavWidgetMoviesType,6))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31094])</onclick>
 						</control>
 						<control type="button" id="8507">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31095]</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(QuickNavWidgetTVShowsName)][/COLOR]</label2>
+							<label2>[COLOR=selected]$VAR[QuickNavSettingsTVShowName][/COLOR]</label2>
 							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31242])</onclick>
-							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(QuickNavWidgetTVShowsType,1)||Skin.SetString(QuickNavWidgetTVShowsName,$LOCALIZE[31242]))</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(QuickNavWidgetTVShowsType,1))</onclick>
 							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31002] $LOCALIZE[575])</onclick>
-							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(QuickNavWidgetTVShowsType,2)||Skin.SetString(QuickNavWidgetTVShowsName,$LOCALIZE[31002] $LOCALIZE[575]))</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(QuickNavWidgetTVShowsType,2))</onclick>
 							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31248])</onclick>
-							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(QuickNavWidgetTVShowsType,3)||Skin.SetString(QuickNavWidgetTVShowsName,$LOCALIZE[31248]))</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(QuickNavWidgetTVShowsType,3))</onclick>
 							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31258])</onclick>
-							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(QuickNavWidgetTVShowsType,4)||Skin.SetString(QuickNavWidgetTVShowsName,$LOCALIZE[31258]))</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(QuickNavWidgetTVShowsType,4))</onclick>
+							<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31270])</onclick>
+							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(QuickNavWidgetTVShowsType,5))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31095])</onclick>
 						</control>
 						<control type="button" id="8508">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31096]</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(QuickNavWidgetMusicName)][/COLOR]</label2>
+							<label2>[COLOR=selected]$VAR[QuickNavSettingsMusicName][/COLOR]</label2>
 							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31243])</onclick>
-							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(QuickNavWidgetMusicType,1)||Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[31243]))</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(QuickNavWidgetMusicType,1))</onclick>
 							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[2] $LOCALIZE[575])</onclick>
-							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(QuickNavWidgetMusicType,2)||Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[2] $LOCALIZE[575]))</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(QuickNavWidgetMusicType,2))</onclick>
 							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31249])</onclick>
-							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(QuickNavWidgetMusicType,3)||Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[31249]))</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(QuickNavWidgetMusicType,3))</onclick>
 							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31259])</onclick>
-							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(QuickNavWidgetMusicType,4)||Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[31259]))</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(QuickNavWidgetMusicType,4))</onclick>
 							<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[517])</onclick>
-							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(QuickNavWidgetMusicType,5)||Skin.SetString(QuickNavWidgetMusicName,$LOCALIZE[517]))</onclick>
+							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(QuickNavWidgetMusicType,5))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31096])</onclick>
 						</control>
 						<control type="button" id="8509">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31288]</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(QuickNavWidgetTuneInName)][/COLOR]</label2>
+							<label2>[COLOR=selected]$VAR[QuickNavSettingsTuneInName][/COLOR]</label2>
 							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31286])</onclick>
-							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(QuickNavWidgetTuneInType,1)||Skin.SetString(QuickNavWidgetTuneInName,$LOCALIZE[31286]))</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(QuickNavWidgetTuneInType,1))</onclick>
 							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31287])</onclick>
-							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(QuickNavWidgetTuneInType,2)||Skin.SetString(QuickNavWidgetTuneInName,$LOCALIZE[31287]))</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(QuickNavWidgetTuneInType,2))</onclick>
 							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31292])</onclick>
-							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(QuickNavWidgetTuneInType,3)||Skin.SetString(QuickNavWidgetTuneInName,$LOCALIZE[31292]))</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(QuickNavWidgetTuneInType,3))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31288])</onclick>
 							<visible>System.HasAddon(plugin.audio.tuneinradio)</visible>
 						</control>
 						<control type="button" id="8510">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31105] $LOCALIZE[31058]</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(QuickNavWidgetAmazonDBName)][/COLOR]</label2>
+							<label2>[COLOR=selected]$VAR[QuickNavSettingsAmazonDBName][/COLOR]</label2>
 							<!--watchlist-->
 							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31055])</onclick>
-							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,1)||Skin.SetString(QuickNavWidgetAmazonDBName,$LOCALIZE[31055]))</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,1))</onclick>
 							<!--new movies-->
 							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31241])</onclick>
-							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,2)||Skin.SetString(QuickNavWidgetAmazonDBName,$LOCALIZE[31241]))</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,2))</onclick>
 							<!--new shows-->
 							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31242])</onclick>
-							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,3)||Skin.SetString(QuickNavWidgetAmazonDBName,$LOCALIZE[31242]))</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,3))</onclick>
 							<!--popular movies-->
 							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31257])</onclick>
-							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,4)||Skin.SetString(QuickNavWidgetAmazonDBName,$LOCALIZE[31257]))</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,4)</onclick>
 							<!--popular shows-->
 							<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31258])</onclick>
-							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,5)||Skin.SetString(QuickNavWidgetAmazonDBName,$LOCALIZE[31258]))</onclick>
+							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,5))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31052] $LOCALIZE[31058])</onclick>
 							<visible>System.HasAddon(plugin.video.amazon)</visible>
 						</control>
 						<control type="button" id="8511">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31106] $LOCALIZE[31058]</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(QuickNavWidgetAmazonName)][/COLOR]</label2>
+							<label2>[COLOR=selected]$VAR[QuickNavSettingsAmazonName][/COLOR]</label2>
 							<!--watchlist movies-->
 							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31055]: $LOCALIZE[36901])</onclick>
-							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(QuickNavWidgetAmazonType,1)||Skin.SetString(QuickNavWidgetAmazonName,$LOCALIZE[31055]: $LOCALIZE[36901]))</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(QuickNavWidgetAmazonType,1))</onclick>
 							<!--watchlist shows-->
 							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31055]: $LOCALIZE[36903])</onclick>
-							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(QuickNavWidgetAmazonType,2)||Skin.SetString(QuickNavWidgetAmazonName,$LOCALIZE[31055]: $LOCALIZE[36903]))</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(QuickNavWidgetAmazonType,2))</onclick>
 							<!--new movies-->
 							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31241])</onclick>
-							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(QuickNavWidgetAmazonType,3)||Skin.SetString(QuickNavWidgetAmazonName,$LOCALIZE[31241]))</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(QuickNavWidgetAmazonType,3))</onclick>
 							<!--new shows-->
 							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31242])</onclick>
-							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(QuickNavWidgetAmazonType,4)||Skin.SetString(QuickNavWidgetAmazonName,$LOCALIZE[31242]))</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(QuickNavWidgetAmazonType,4))</onclick>
 							<!--popular movies-->
 							<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31257])</onclick>
-							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(QuickNavWidgetAmazonType,5)||Skin.SetString(QuickNavWidgetAmazonName,$LOCALIZE[31257]))</onclick>
+							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(QuickNavWidgetAmazonType,5))</onclick>
 							<!--popular shows-->
 							<onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31258])</onclick>
-							<onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(QuickNavWidgetAmazonType,6)||Skin.SetString(QuickNavWidgetAmazonName,$LOCALIZE[31258]))</onclick>
+							<onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(QuickNavWidgetAmazonType,6))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31052] $LOCALIZE[31058])</onclick>
 							<visible>System.HasAddon(plugin.video.prime_instant)</visible>
 						</control>
@@ -473,7 +482,7 @@
 							<label>- $LOCALIZE[31097]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(RSSVideoFeedURL)][/COLOR]</label2>
 							<onclick>SetProperty(Dialog.1.Label,Custom)</onclick>
-							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(RSSVideoFeedURL)||Skin.SetString(RSSVideoFeedName,Custom))</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(SearchStringURL)||Skin.SetString(RSSVideoFeedName,Custom)||Skin.SetString(RSSVideoFeedURL,Custom))</onclick>
 							<onclick>SetProperty(Dialog.2.Label,GameTrailers)</onclick>
 							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(RSSVideoFeedURL,GameTrailers)||Skin.SetString(RSSVideoFeedName,GameTrailers))</onclick>
 							<onclick>SetProperty(Dialog.3.Label,NBA)</onclick>
