@@ -3809,7 +3809,7 @@
 								<left>0</left>
 								<top>-2</top>
 								<width>118</width>
-								<height>25</height>
+								<height>24</height>
 								<aspectratio align="left" aligny="center">keep</aspectratio>
 								<texture background="true">rating/$INFO[ListItem.StarRating]</texture>
 							</control>						
@@ -3818,22 +3818,22 @@
 							<visible>!IsEmpty(ListItem.Rating)</visible>
 							<width>68</width>						
 							<control type="image">							
-								<width>68</width>
-								<height>22</height>
+								<width>71</width>
+								<height>24</height>
 								<colordiffuse>77white</colordiffuse>
-								<aspectratio align="center" aligny="center">stretch</aspectratio>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
 								<texture>flags/imdb.png</texture>						
 							</control>
 							<control type="label">
-								<left>26</left>
+								<left>25</left>
 								<top>-11</top>
-								<width>50</width>
+								<width>53</width>
 								<height>43</height>
-								<font>FontSize_15B</font>
+								<font>font11_title</font>
 								<textcolor>77white</textcolor>
 								<align>center</align>
 								<aligny>center</aligny>
-								<label>$INFO[ListItem.Rating]</label>							
+								<label>$INFO[ListItem.Rating]</label>								
 							</control>
 						</control>				
 						<control type="image">
@@ -4243,20 +4243,20 @@
 				<animation effect="slide" time="0" end="-61,0" condition="Control.IsVisible(5822)">Conditional</animation>
 				<animation effect="slide" time="0" end="-41,0" condition="Control.IsVisible(5821)">Conditional</animation>
 				<control type="image">
-					<left>406</left>
+					<left>405</left>
 					<top>210</top>
-					<width>68</width>
-					<height>22</height>
+					<width>71</width>
+					<height>24</height>
 					<colordiffuse>55ffffff</colordiffuse>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<texture>flags/imdb.png</texture>						
 				</control>
 				<control type="label">
-					<left>432</left>
+					<left>430</left>
 					<top>199</top>
-					<width>50</width>
+					<width>53</width>
 					<height>43</height>
-					<font>FontSize_15B</font>
+					<font>font11_title</font>
 					<textcolor>55ffffff</textcolor>
 					<align>center</align>
 					<aligny>center</aligny>
@@ -4829,7 +4829,7 @@
 							<left>0</left>
 							<top>-2</top>
 							<width>118</width>
-							<height>25</height>
+							<height>24</height>
 							<aspectratio align="left" aligny="center">keep</aspectratio>
 							<texture background="true">rating/$INFO[ListItem.StarRating]</texture>
 						</control>						
@@ -4837,23 +4837,23 @@
 					<control type="group">
 						<visible>!IsEmpty(ListItem.Rating)</visible>
 						<width>68</width>						
-						<control type="image">							
-							<width>68</width>
-							<height>22</height>
+						<control type="image">	
+							<width>71</width>
+							<height>24</height>
 							<colordiffuse>77white</colordiffuse>
-							<aspectratio align="center" aligny="center">stretch</aspectratio>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
 							<texture>flags/imdb.png</texture>						
 						</control>
 						<control type="label">
-							<left>26</left>
+							<left>25</left>
 							<top>-11</top>
-							<width>50</width>
+							<width>53</width>
 							<height>43</height>
-							<font>FontSize_15B</font>
+							<font>font11_title</font>
 							<textcolor>77white</textcolor>
 							<align>center</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.Rating]</label>							
+							<label>$INFO[ListItem.Rating]</label>					
 						</control>
 					</control>
 					<control type="image">
