@@ -46,21 +46,21 @@
 					<width>1500</width>
 					<height>720</height>
 					<align>center</align>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),movies)">SetFocus(9050)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),tvshows)">SetFocus(9060)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),music)">SetFocus(9070)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),tunein)">SetFocus(9080)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)">SetFocus(9090)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)">SetFocus(9091)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)">SetFocus(9093)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)">SetFocus(9094)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget)">SetFocus(9099)</onup>					
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),amazondb)">SetFocus(9073)</onup>
-					<onup condition="StringCompare(Container(20).ListItem.Property(widget),amazon)">SetFocus(9074)</onup>					
-					<onup condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)">SetFocus(9071)</onup>
-					<onup condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)">SetFocus(9072)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),movies)">SetFocus(90501)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),tvshows)">SetFocus(90601)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),music)">SetFocus(45)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),tunein)">SetFocus(90801)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)">SetFocus(90901)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)">SetFocus(90911)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)">SetFocus(90931)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)">SetFocus(90941)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget)">SetFocus(90991)</onup>					
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),amazondb)">SetFocus(90731)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),amazon)">SetFocus(90741)</onup>					
+					<onup condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)">SetFocus(90711)</onup>
+					<onup condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)">SetFocus(90721)</onup>
 					<onup condition="IsEmpty(Container(20).ListItem.Property(widget))">SetFocus(21)</onup>
-					<ondown condition="IntegerGreaterThan(Container(23).NumItems,0)">SetFocus(23)</ondown>
+					<ondown condition="IntegerGreaterThan(Container(23).NumItems,0)">SetFocus(23)</ondown>					
 					<onleft>20</onleft>
 					<onright>20</onright>
 					<itemgap>0</itemgap>
@@ -200,16 +200,16 @@
 				</control>
 			</control>
 			<control type="image">
-					<include>HomeSlideAnimations</include>
-					<width>50</width>
-					<top>2</top>
-					<left>-3</left>
-					<height>50</height>
-					<texture background="true" colordiffuse="blue">kodo-symbol-white.png</texture>
-					<aspectratio>keep</aspectratio>
-					<!--<animation effect="slide" time="0" start="0,0" end="0,8" condition="Skin.HasSetting(ShowLibraryTotals)">Conditional</animation>-->
-					<visible>!Skin.HasSetting(ShowKodiSymbol)</visible>ShowLibraryTotals
-				</control>
+				<include>HomeSlideAnimations</include>
+				<width>50</width>
+				<top>2</top>
+				<left>-3</left>
+				<height>50</height>
+				<texture background="true" colordiffuse="blue">kodo-symbol-white.png</texture>
+				<aspectratio>keep</aspectratio>
+				<!--<animation effect="slide" time="0" start="0,0" end="0,8" condition="Skin.HasSetting(ShowLibraryTotals)">Conditional</animation>-->
+				<visible>!Skin.HasSetting(ShowKodiSymbol)</visible>ShowLibraryTotals
+			</control>
 			<control type="grouplist">
 				<animation effect="slide" time="0" start="0,0" end="50,0" condition="!Skin.HasSetting(ShowKodiSymbol)">Conditional</animation>
 				<left>0</left>
