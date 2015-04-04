@@ -243,10 +243,10 @@
 				<fadetime>800</fadetime>
 			</control>
 			<control type="image">
-				<left>16</left>
-				<top>-2</top>
-				<width>130</width>
-				<height>178</height>
+				<left>18</left>
+				<top>2</top>
+				<width>126</width>
+				<height>173</height>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 				<texture>osd/widgets/poster_focus.png</texture>
 				<animation type="Focus">
@@ -345,10 +345,10 @@
 				<fadetime>800</fadetime>
 			</control>
 			<control type="image">
-				<left>14</left>
-				<top>-1</top>
-				<width>165</width>
-				<height>165</height>
+				<left>16</left>
+				<top>1</top>
+				<width>161</width>
+				<height>161</height>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 				<texture border="3,2,3,2">osd/widgets/square_focus.png</texture>
 				<animation type="Focus">
