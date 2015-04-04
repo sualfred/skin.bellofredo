@@ -158,14 +158,23 @@
 					<visible>StringCompare(Container(20).ListItem.Property(background),3DWallBG_Artists)</visible>
 				</control>
 				<control type="image">
+					<description>Widget Fanart Fallback Diffuse</description>
+					<include>FullscreenDimensions</include>
+					<texture background="true">SKINDEFAULT.jpg</texture>
+					<include>BackgroundFade</include>
+					<visible>!Skin.HasSetting(HideBGFanart)</visible>
+					<visible>!Window.IsActive(playercontrols)</visible>
+					<visible>ControlGroup(9050).HasFocus() | ControlGroup(9060).HasFocus() | ControlGroup(9070).HasFocus() | ControlGroup(9071).HasFocus() | ControlGroup(9072).HasFocus() | ControlGroup(9090).HasFocus() | ControlGroup(9091).HasFocus() | ControlGroup(9094).HasFocus() | ControlGroup(9093).HasFocus() | ControlGroup(9073).HasFocus() | ControlGroup(9074).HasFocus() | ControlGroup(9098).HasFocus()</visible>
+				</control>
+				<control type="image">
 					<description>Widget Fanart</description>
 					<include>FullscreenDimensions</include>
 					<include>BackgroundFade</include>
-					<texture background="true">$VAR[QuickNavWidgetFanart]</texture>
+					<texture background="true" fallback="SKINDEFAULT.jpg">$VAR[QuickNavWidgetFanart]</texture>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<visible>!Skin.HasSetting(HideBGFanart)</visible>
 					<visible>!Window.IsActive(playercontrols)</visible>
-					<visible>ControlGroup(9050).HasFocus() | ControlGroup(9060).HasFocus() | ControlGroup(9070).HasFocus() | ControlGroup(9071).HasFocus() | ControlGroup(9072).HasFocus() | ControlGroup(9090).HasFocus() | ControlGroup(9091).HasFocus() | ControlGroup(9094).HasFocus() | ControlGroup(9093).HasFocus() | ControlGroup(9073).HasFocus() | ControlGroup(9074).HasFocus()</visible>
+					<visible>ControlGroup(9050).HasFocus() | ControlGroup(9060).HasFocus() | ControlGroup(9070).HasFocus() | ControlGroup(9071).HasFocus() | ControlGroup(9072).HasFocus() | ControlGroup(9090).HasFocus() | ControlGroup(9091).HasFocus() | ControlGroup(9094).HasFocus() | ControlGroup(9093).HasFocus() | ControlGroup(9073).HasFocus() | ControlGroup(9074).HasFocus() | ControlGroup(9098).HasFocus()</visible>
 				</control>
 			</control>
 		</control>

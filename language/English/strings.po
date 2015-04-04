@@ -462,7 +462,23 @@ msgctxt "#31111"
 msgid "Scroll down for more options"
 msgstr ""
 
-#: empty strings from id 31112 to 31123
+msgctxt "#31112"
+msgid "Popular Right Now"
+msgstr ""
+
+msgctxt "#31113"
+msgid "New Uploaded Videos"
+msgstr ""
+
+msgctxt "#31114"
+msgid "My Channel"
+msgstr ""
+
+msgctxt "#31115"
+msgid "My Subscriptions"
+msgstr ""
+
+#: empty strings from id 31116 to 31123
 
 msgctxt "#31124"
 msgid "Flashing Lights"

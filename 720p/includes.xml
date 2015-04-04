@@ -1859,6 +1859,13 @@
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazon) + StringCompare(Skin.String(QuickNavWidgetAmazonType),6)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3010075031%252Cn%253A3356019031%26sort%3Dpopularity-rank&amp;mode=listShows&amp;thumb=&amp;videoType=</value>
 </variable>
 
+<variable name="QuickNav_WidgetListContentYouTube">
+	<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetYouTubeType),1)">plugin://plugin.video.youtube/special/popular_right_now/</value>
+	<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">plugin://plugin.video.youtube/special/new_uploaded_videos/</value>
+	<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetYouTubeType),3)">plugin://plugin.video.youtube/channel/mine/</value>
+	<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetYouTubeType),4)">plugin://plugin.video.youtube/subscriptions/list/</value>
+</variable>
+
 <variable name="RSSVideoFeedURL">
 	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),Euronews)">Euronews</value>
 	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),BBC News)">bbcnews</value>
@@ -1917,6 +1924,12 @@
 	<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">[CAPITALIZE]$LOCALIZE[31287][/CAPITALIZE]</value>
 	<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">[CAPITALIZE]$LOCALIZE[31292][/CAPITALIZE]</value>		
 </variable>
+<variable name="QuickNavSettingsYouTubeName">
+	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),1)">[CAPITALIZE]$LOCALIZE[31112][/CAPITALIZE]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">[CAPITALIZE]$LOCALIZE[31113][/CAPITALIZE]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),3)">[CAPITALIZE]$LOCALIZE[31114][/CAPITALIZE]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),4)">[CAPITALIZE]$LOCALIZE[31115][/CAPITALIZE]</value>
+</variable>
 <variable name="QuickNavSettingsAmazonDBName">
 	<!--watchlist-->
 	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),1)">[CAPITALIZE]$LOCALIZE[31055][/CAPITALIZE]</value>
@@ -1957,6 +1970,7 @@
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)">$INFO[Skin.String(widgetgroup3)]</value>		
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)">$INFO[Skin.String(widgetgroup4)]</value>		
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget)">$VAR[RSSVideoFeedName]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),youtube)">$VAR[QuickNavSettingsYouTubeName]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),Playlist)">$INFO[Container(20).ListItem.Property(widgetName)]</value>		
 </variable>
 
@@ -1967,6 +1981,7 @@
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),music) + !IsEmpty(Container(450).ListItem.Thumb)">$INFO[Container(450).ListItem.Label]$INFO[Container(450).ListItem.Year, (,)]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),music) + IsEmpty(Container(450).ListItem.DBID)">$LOCALIZE[31044]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + !IsEmpty(Container(650).ListItem.Label)">$INFO[Container(650).ListItem.Label]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),youtube) + !IsEmpty(Container(653).ListItem.Label)">$INFO[Container(653).ListItem.Label]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),tunein) + !IsEmpty(Container(550).ListItem.Label)">$INFO[Container(550).ListItem.Label]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb) + !IsEmpty(Container(750).ListItem.Label)">$INFO[Container(750).ListItem.Label]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazon) + !IsEmpty(Container(751).ListItem.Label)">$INFO[Container(751).ListItem.Label]</value>
@@ -1977,9 +1992,6 @@
 	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music) + !IsEmpty(Container(651).ListItem.Label)">$INFO[Container(651).ListItem.Label]</value>		
 	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video) + !IsEmpty(Container(652).ListItem.TVShowTitle)">$INFO[Container(652).ListItem.TVShowTitle]</value>		
 	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video) + IsEmpty(Container(652).ListItem.TVShowTitle) + !IsEmpty(Container(652).ListItem.Label)">$INFO[Container(652).ListItem.Label]</value>
-	<value> $LOCALIZE[195]</value>
-
-
 </variable>
 
 <variable name="QuickNavWidgetListItemLabel2">
@@ -1994,6 +2006,7 @@
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),tunein)">$LOCALIZE[31138]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb)">$LOCALIZE[31052]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazon)">$LOCALIZE[31052]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),youtube)">YouTube</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)">$LOCALIZE[31173]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)">$LOCALIZE[31174]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)">$LOCALIZE[31175]</value>
@@ -2032,6 +2045,9 @@
 	<value condition="ControlGroup(9071).HasFocus + IsEmpty(Container(651).ListItem.Art(fanart))">SKINDEFAULT.jpg</value>		
 	<value condition="ControlGroup(9072).HasFocus + !IsEmpty(Container(652).ListItem.Art(fanart))">$INFO[Container(652).ListItem.Art(fanart)]</value>
 	<value condition="ControlGroup(9072).HasFocus + IsEmpty(Container(652).ListItem.Art(fanart))">SKINDEFAULT.jpg</value>	
+	<!--YouTube -->
+	<value condition="ControlGroup(9098).HasFocus + !IsEmpty(Container(653).ListItem.Art(fanart))">$INFO[Container(653).ListItem.Art(fanart)]</value>	
+	<value condition="ControlGroup(9098).HasFocus + IsEmpty(Container(653).ListItem.Art(fanart))">SKINDEFAULT.jpg</value>
 	<!--Amazon Sandmann -->
 	<value condition="ControlGroup(9073).HasFocus + !IsEmpty(Container(750).ListItem.Art(fanart))">$INFO[Container(750).ListItem.Art(fanart)]</value>	
 	<value condition="ControlGroup(9073).HasFocus + IsEmpty(Container(750).ListItem.Art(fanart))">SKINDEFAULT.jpg</value>

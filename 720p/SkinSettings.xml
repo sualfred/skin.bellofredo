@@ -476,6 +476,21 @@
 							<onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(QuickNavWidgetAmazonType,6))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31052] $LOCALIZE[31058])</onclick>
 							<visible>System.HasAddon(plugin.video.prime_instant)</visible>
+						</control>						
+						<control type="button" id="8513">
+							<include>SettingsButton</include>
+							<label>- YouTube $LOCALIZE[31058]</label>
+							<label2>[COLOR=selected]$VAR[QuickNavSettingsYouTubeName][/COLOR]</label2>
+							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31112])</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(QuickNavWidgetYouTubeType,1))</onclick>
+							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31113])</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(QuickNavWidgetYouTubeType,2))</onclick>
+							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31114])</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(QuickNavWidgetYouTubeType,3))</onclick>
+							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31115])</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(QuickNavWidgetYouTubeType,4)</onclick>
+							<onclick>RunScript(script.toolbox,info=selectdialog,header=YouTube $LOCALIZE[31058])</onclick>
+							<visible>System.HasAddon(plugin.video.youtube)</visible>
 						</control>
 						<control type="button" id="8512">
 							<include>SettingsButton</include>
