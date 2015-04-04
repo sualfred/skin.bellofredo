@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-04-02 13:37+0000\n"
+"PO-Revision-Date: 2015-04-04 11:35+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -467,7 +467,23 @@ msgctxt "#31111"
 msgid "Scroll down for more options"
 msgstr "Scrolle runter für mehr Optionen"
 
-#: empty strings from id 31112 to 31123
+msgctxt "#31112"
+msgid "Popular Right Now"
+msgstr "Empfohlene Videos"
+
+msgctxt "#31113"
+msgid "New Uploaded Videos"
+msgstr "Neue hochgeladene Videos"
+
+msgctxt "#31114"
+msgid "My Channel"
+msgstr "Mein Kanal"
+
+msgctxt "#31115"
+msgid "My Subscriptions"
+msgstr "Meine Abos"
+
+#: empty strings from id 31116 to 31123
 msgctxt "#31124"
 msgid "Flashing Lights"
 msgstr "Blinkende Lichter"
@@ -676,9 +692,21 @@ msgstr "Bearbeite [COLOR=selected]Custom Widgets[/COLOR]"
 
 msgctxt "#31178"
 msgid "Manage [COLOR=selected]Common Widgets[/COLOR]"
-msgstr "Bearbeite [COLOR=selected]Common Widgets[/COLOR]"
+msgstr "Bearbeite [COLOR=selected]Standard Widgets[/COLOR]"
 
-#: empty strings from id 31179 to 31199 scripts labels
+msgctxt "#31179"
+msgid "Manage Views"
+msgstr "Bearbeite Views"
+
+msgctxt "#31180"
+msgid "Library Tools"
+msgstr "Bibliothek-Tools"
+
+msgctxt "#31181"
+msgid "Download Art"
+msgstr "Download Art"
+
+#: empty strings from id 31182 to 31199 scripts labels
 msgctxt "#31200"
 msgid "My Movies"
 msgstr "Meine Filme"
@@ -955,7 +983,19 @@ msgctxt "#31268"
 msgid "Thumb List"
 msgstr "Thumb List"
 
-#: empty strings from id 31269 to 31279 Playlist Editor labels
+msgctxt "#31269"
+msgid "My IMDb Top250 Movies"
+msgstr "Meine IMDb Top250 Filme"
+
+msgctxt "#31270"
+msgid "Recently watched episodes"
+msgstr "Zuletzt gesehene Episoden"
+
+msgctxt "#31271"
+msgid "Enable Widget Content Switch Function"
+msgstr "Aktiviere Widget Content Switch Funktion"
+
+#: empty strings from id 31272 to 31279 Playlist Editor labels
 msgctxt "#31280"
 msgid "Open Playlist"
 msgstr "Wiedergabeliste öffnen"

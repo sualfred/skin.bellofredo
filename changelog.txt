@@ -1,4 +1,8 @@
-﻿[B][COLOR=FF56ADDA]v4.1.1[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.1.1a[/COLOR][/B]
+• Fixed: Wrong addon requirement
+• Fixed: Missing GER translations
+
+[B][COLOR=FF56ADDA]v4.1.1[/COLOR][/B]
 • Added: Option to change the common widget content on the fly without moving to the skin settings menu (can be locked)
 • Added: IMDb250 for the movie widgets
 • Added: YouTube Widget

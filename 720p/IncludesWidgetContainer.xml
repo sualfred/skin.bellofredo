@@ -345,10 +345,10 @@
 				<fadetime>800</fadetime>
 			</control>
 			<control type="image">
-				<left>16</left>
+				<left>17</left>
 				<top>1</top>
-				<width>161</width>
-				<height>161</height>
+				<width>160</width>
+				<height>160</height>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 				<texture border="3,2,3,2">osd/widgets/square_focus.png</texture>
 				<animation type="Focus">
