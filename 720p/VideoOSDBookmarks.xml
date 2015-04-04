@@ -56,6 +56,15 @@
 						<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
 						<include>VisibleFadeEffect</include>
 					</control>
+						<control type="image">
+							<left>7</left>
+							<top>7</top>
+							<width>276</width>
+							<height>168</height>
+							<texture diffuse="thumbs/video_diffuse.png">views/episode/episode_label.png</texture>
+							<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
+							<include>VisibleFadeEffect</include>
+						</control>
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -76,7 +85,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<info>ListItem.Label</info>
+						<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, - ]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="306">
@@ -87,6 +96,15 @@
 							<width>276</width>
 							<height>168</height>
 							<texture diffuse="thumbs/video_diffuse.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
+							<include>VisibleFadeEffect</include>
+						</control>
+						<control type="image">
+							<left>7</left>
+							<top>7</top>
+							<width>276</width>
+							<height>168</height>
+							<texture diffuse="thumbs/video_diffuse.png">views/episode/episode_label.png</texture>
 							<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
 							<include>VisibleFadeEffect</include>
 						</control>
@@ -119,7 +137,7 @@
 							<selectedcolor>selected</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
-							<info>ListItem.Label</info>
+							<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, - ]</label>
 							<visible>!Control.HasFocus(11)</visible>
 						</control>
 						<control type="label">
@@ -133,7 +151,7 @@
 							<selectedcolor>blue</selectedcolor>
 							<align>center</align>
 							<aligny>center</aligny>
-							<info>ListItem.Label</info>
+							<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, - ]</label>
 							<visible>Control.HasFocus(11)</visible>
 						</control>
 					</control>
