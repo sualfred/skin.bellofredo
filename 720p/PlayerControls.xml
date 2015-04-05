@@ -1048,7 +1048,7 @@
 						<top>0</top>
 						<width>144</width>
 						<height>194</height>
-						<aspectratio aligny="center" scalediffuse="false">stretch</aspectratio>
+						<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
 						<texture background="true" fallback="thumbs/fallback_poster_tp.png">$VAR[VideoPlayerThumb]</texture>
 						<bordersize>6</bordersize>
 					</control>
@@ -1256,7 +1256,7 @@
 						<top>45</top>
 						<height>30</height>
 						<width>510</width>
-						<label>$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Season,  •  $LOCALIZE[20373] ,]$INFO[VideoPlayer.Episode,  •  $LOCALIZE[20359] ,]</label>
+						<label>$INFO[VideoPlayer.TVShowTitle,,  •  ]$INFO[VideoPlayer.Season,$LOCALIZE[20373] ,]$INFO[VideoPlayer.Episode,  •  $LOCALIZE[20359] ,]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>FontSize_18</font>
