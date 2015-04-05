@@ -117,31 +117,31 @@
 					<include>VisibleFadeEffect3</include>
 				</control>
 			</control>
-			<control type="group">
+			<!--<control type="group">
 				<control type="button" id="93">
 					<description>Settings Level</description>
 					<left>100</left>
-					<top>511</top>
+					<top>531</top>
 					<width>295</width>
-					<height>70</height>
+					<height>50</height>
 					<onup>3</onup>					
-					<label>$LOCALIZE[31167][CR][COLOR=blue]$INFO[Control.GetLabel(20)][/COLOR]</label>					
+					<label>$LOCALIZE[31167] [COLOR=blue]$INFO[Control.GetLabel(20)][/COLOR]</label>					
 					<onclick>SettingsLevelChange</onclick>					
-					<font>FontSize_20</font>
-					<textcolor>77white</textcolor>
+					<font>FontSize_16</font>
+					<textcolor>55white</textcolor>
 					<focusedcolor>white</focusedcolor>
 					<disabledcolor>33white</disabledcolor>
 					<shadowcolor>99000000</shadowcolor>
 					<texturefocus>buttons/focus.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<align>left</align>
+					<align>center</align>
 					<aligny>center</aligny>
 					<textoffsetx>15</textoffsetx>
 					<textoffsety>12</textoffsety>
 					<pulseonselect>false</pulseonselect>
-					<visible>Window.IsVisible(SettingsCategory.xml)</visible>
+					<visible>Window.IsActive(SystemSettings)</visible>
 				</control>
-			</control>
+			</control>-->
 			<control type="button" id="20">
 				<description>Settings Level Button</description>
 				<visible>false</visible>
@@ -169,18 +169,55 @@
 					<textcolor>white</textcolor>
 					<shadowcolor>99000000</shadowcolor>
 				</control>
-				<control type="textbox" id="6">
+				<!--<control type="textbox" id="6">
 					<description>Description Area</description>
 					<left>0</left>
 					<top>425</top>
-					<width>1045</width>
-					<height>30</height>
+					<width>750</width>
+					<height>45</height>
 					<textcolor>33white</textcolor>
 					<shadowcolor>44333333</shadowcolor>
 					<font>FontSize_20</font>
 					<align>left</align>
 					<autoscroll>false</autoscroll>
 					<label>-</label>
+				</control>-->
+				<control type="label" id="6">
+					<description>Settings Level</description>
+					<left>0</left>
+					<top>424</top>
+					<width>750</width>
+					<height>30</height>		
+					<font>FontSize_20</font>
+					<align>left</align>
+					<autoscroll>false</autoscroll>
+					<label>-</label>			
+					<textcolor>33white</textcolor>
+					<shadowcolor>44333333</shadowcolor>					
+					<align>right</align>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+				</control>
+				<control type="button" id="93">
+					<description>Settings Level</description>
+					<left>750</left>
+					<top>417</top>
+					<width>295</width>
+					<height>46</height>
+					<onup>3</onup>					
+					<label>$LOCALIZE[31167] [COLOR=blue]$INFO[Control.GetLabel(20)][/COLOR]</label>					
+					<onclick>SettingsLevelChange</onclick>					
+					<textcolor>33white</textcolor>
+					<shadowcolor>44333333</shadowcolor>
+					<font>FontSize_20</font>
+					<focusedcolor>white</focusedcolor>
+					<disabledcolor>33white</disabledcolor>
+					<texturefocus>buttons/settingslevelfocus.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<align>right</align>
+					<textoffsety>12</textoffsety>
+					<pulseonselect>false</pulseonselect>
+					<visible>Window.IsVisible(SettingsCategory.xml)</visible>
 				</control>
 			</control>
 		</control>
