@@ -1,4 +1,13 @@
-﻿[B][COLOR=FF56ADDA]v4.1.1a[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.1.2[/COLOR][/B]
+• Fixed: Overlapping issue with setttings level button
+
+[B][COLOR=FF56ADDA]v4.1.1b[/COLOR][/B]
+• Fixed: Broken widget select animation
+• Fixed: Broken widget content conditions
+• Fixed: Widget arrow positions
+• Added: Kodi Isengard VideoOSDBookmarks chapter window skin engine changes
+
+[B][COLOR=FF56ADDA]v4.1.1a[/COLOR][/B]
 • Fixed: Wrong addon requirement
 • Fixed: Missing GER translations
 

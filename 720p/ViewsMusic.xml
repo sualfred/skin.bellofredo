@@ -1099,7 +1099,7 @@
 				<top>95</top>
 				<width>1200</width>
 				<height>501</height>
-				<onleft>9111</onleft>
+				<onleft condition="!Skin.HasSetting(EnableKioskMode)">9111</onleft>
 				<onright>60</onright>
 				<onup>560</onup>
 				<ondown>560</ondown>
@@ -1492,7 +1492,7 @@
 				<textureslidernib>-</textureslidernib>
 				<textureslidernibfocus>-</textureslidernibfocus>
 				<onleft>560</onleft>
-				<onright>9111</onright>
+				<onright condition="!Skin.HasSetting(EnableKioskMode)">9111</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 				<animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
@@ -1767,7 +1767,7 @@
 				<width>1190</width>
 				<height>450</height>
 				<onright>60</onright>
-				<onleft>9111</onleft>
+				<onleft condition="!Skin.HasSetting(EnableKioskMode)">9111</onleft>
 				<onup>50</onup>
 				<ondown>50</ondown>
 				<viewtype label="31268">List</viewtype>

@@ -25,7 +25,7 @@
 			<left>45</left>
 			<top>-10</top>
 			<include>TopOptionsSlideAnimations</include>
-			<visible>!Skin.HasSetting(EnableKioskMode)</visible>
+			<visible allowhiddenfocus="false">!Skin.HasSetting(EnableKioskMode)</visible>
 			<visible allowhiddenfocus="true">ControlGroup(9111).HasFocus + !Window.IsActive(ContextMenu) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites)</visible>
 			<!-- Head Labels -->
 			<control type="grouplist">
@@ -49,6 +49,7 @@
 			</control>
 			<!-- Main Options -->
 			<control type="grouplist" id="9111">
+				<visible allowhiddenfocus="false">!Skin.HasSetting(EnableKioskMode)</visible>
 				<left>0</left>
 				<top>50</top>
 				<width>460</width>
