@@ -233,6 +233,10 @@
 					<preloaditems>3</preloaditems>
 					<focusposition>0</focusposition>
 					<movement>4</movement>
+					<onup>SetProperty(Movement,1)</onup>
+					<onup>150</onup>
+					<ondown>ClearProperty(Movement)</ondown>
+					<ondown>35</ondown>
 					<orientation>horizontal</orientation>
 					<scrolltime tween="Quadratic" easing="out">300</scrolltime>
 					<itemlayout height="200" width="144">
@@ -411,6 +415,10 @@
 					<focusposition>0</focusposition>
 					<movement>4</movement>
 					<orientation>horizontal</orientation>
+					<onup>SetProperty(Movement,1)</onup>
+					<onup>25</onup>
+					<ondown>ClearProperty(Movement)</ondown>
+					<ondown>45</ondown>
 					<scrolltime tween="Quadratic" easing="out">300</scrolltime>
 					<itemlayout height="200" width="144">
 						<control type="image">
@@ -590,6 +598,11 @@
 					<focusposition>0</focusposition>
 					<movement>3</movement>
 					<orientation>horizontal</orientation>
+					<onup>SetProperty(Movement,1)</onup>
+					<onup>35</onup>
+					<ondown>ClearProperty(Movement)</ondown>
+					<ondown condition="!System.HasAddon(plugin.audio.tuneinradio)">650</ondown>				
+					<ondown condition="System.HasAddon(plugin.audio.tuneinradio)">550</ondown>	
 					<scrolltime tween="Quadratic" easing="out">300</scrolltime>
 					<itemlayout height="200" width="180">
 						<control type="image">
