@@ -1,5 +1,7 @@
 ﻿[B][COLOR=FF56ADDA]v4.1.2[/COLOR][/B]
 • Fixed: Overlapping issue with setttings level button
+• Fixed: Not working kiosk mode
+• Reworked: PlayerControls dialog
 
 [B][COLOR=FF56ADDA]v4.1.1b[/COLOR][/B]
 • Fixed: Broken widget select animation

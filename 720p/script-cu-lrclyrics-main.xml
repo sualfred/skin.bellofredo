@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<allowoverlay>no</allowoverlay>
+	<zorder>10</zorder>
+	<animation effect="fade" start="0" end="100" delay="300" time="200" reversible="false">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" time="200" reversible="false">WindowClose</animation>	
+	<controls>
+		<control type="group">
+			<animation type="Conditional" reversible="false" condition="!Window.IsActive(shutdownmenu)">
+				<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+				<effect type="slide" start="0,-35" end="0,0" time="350" tween="cubic" easing="out" />
+			</animation>
+			<animation type="Conditional" reversible="false" condition="Window.IsActive(shutdownmenu)">
+				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+				<effect type="slide" start="0,0" end="0,-35" time="350" tween="sine" easing="out" />
+			</animation>
+			<animation effect="slide" start="0,0" end="0,110" time="350" condition="![Window.IsActive(MusicOSD) | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo]">Conditional</animation>
+			<visible>Window.IsActive(Visualisation) + Player.HasAudio</visible>
+			<visible>Control.IsVisible(110)</visible>
+			<control type="label">
+				<description>No lyrics found</description>
+				<top>340</top>
+				<width>1280</width>
+				<label>$ADDON[script.cu.lrclyrics 32001]</label>
+				<font>FontSize_50</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>99000000</shadowcolor>
+				<align>center</align>
+				<scroll>true</scroll>
+				<scrollspeed>20</scrollspeed>
+				<visible>!IntegerGreaterThan(Container(110).NumItems,0) | !Control.IsVisible(110)</visible>
+			</control>
+			<!-- ** Required ** Do not change <id> or <type> -->
+			<control type="list" id="110">
+				<visible>Window.IsActive(Visualisation) + Player.HasAudio</visible>				
+				<top>90</top>
+				<width>1280</width>
+				<height>330</height>
+				<onleft>111</onleft>
+                <onright>111</onright>
+                <onup>110</onup>
+                <ondown>110</ondown>
+                <pagecontrol>111</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<itemlayout width="1280" height="54">
+					<control type="label">
+						<posx>10</posx>
+						<posy>3</posy>
+						<width>1280</width>
+						<height>42</height>
+						<font>FontSize_44</font>
+						<aligny>center</aligny>
+						<align>center</align>
+						<textcolor>77white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="1280"  height="54">
+					<control type="label">
+						<posx>10</posx>
+						<posy>3</posy>
+						<width>1280</width>
+						<height>42</height>
+						<font>FontSize_44</font>
+						<aligny>center</aligny>
+						<align>center</align>
+						<textcolor>77white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!Control.HasFocus(110)</visible>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>3</posy>
+						<width>1280</width>
+						<height>42</height>
+						<font>FontSize_44</font>
+						<aligny>center</aligny>
+						<align>center</align>
+						<textcolor>selected</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<label fallback="--">$INFO[ListItem.Label]</label>
+						<visible>Control.HasFocus(110)</visible>
+					</control>
+				</focusedlayout>
+				<itemlayout height="54">
+					<control type="label">
+						<left>640</left>
+						<top>0</top>
+						<width>1280</width>
+						<height>42</height>
+						<font>FontSize_44</font>
+						<aligny>center</aligny>
+						<align>center</align>
+						<textcolor>77white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="54">
+					<control type="label">
+						<left>640</left>
+						<top>0</top>
+						<width>1280</width>
+						<height>42</height>
+						<font>FontSize_44</font>
+						<aligny>center</aligny>
+						<align>center</align>
+						<textcolor>77white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!Control.HasFocus(110)</visible>
+					</control>
+					<control type="label">
+						<left>640</left>
+						<top>0</top>
+						<width>1280</width>
+						<height>42</height>
+						<font>FontSize_44</font>
+						<aligny>center</aligny>
+						<align>center</align>
+						<textcolor>selected</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<label fallback="--">$INFO[ListItem.Label]</label>
+						<visible>Control.HasFocus(110)</visible>
+					</control>
+				</focusedlayout>
+			</control>
+			<!-- ** Required ** Do not change <id> or <type> -->
+			<control type="spincontrol" id="111">				
+				<visible>false</visible>
+			</control>		
+			<control type="list" id="120">
+				<visible>false</visible>
+			</control>
+			<control type="spincontrol" id="121">
+				<visible>false</visible>
+			</control>			
+			<control type="label" id="200">
+				<description>Scraper Label</description>				
+				<label>-</label>
+				<visible>false</visible>					
+			</control>
+		</control>
+	</controls>
+</window>

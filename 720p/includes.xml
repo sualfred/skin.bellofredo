@@ -2319,7 +2319,7 @@
 	<onload condition="Window.IsActive(1113)">Dialog.Close(1120)</onload>
 	<onload condition="Window.IsActive(1114)">Dialog.Close(1121)</onload>
 	<onload condition="Window.IsActive(1115)">Dialog.Close(1122)</onload>
-	<onload condition="Window.IsActive(3000)">Dialog.Close(3000)</onload>
+	<onload condition="Window.IsActive(3000) + !Window.IsVisible(script-cu-lrclyrics-main.xml)">Dialog.Close(3000)</onload>
 	<onload condition="Window.IsActive(3001)">Dialog.Close(3001)</onload>
 	<onload condition="Window.IsActive(3002)">Dialog.Close(3002)</onload>
 	<onload condition="Window.IsActive(3003)">Dialog.Close(3003)</onload>
