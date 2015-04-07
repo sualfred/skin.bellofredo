@@ -2029,17 +2029,17 @@
 
 <variable name="QuickNavWidgetFanart">	
 	<!--movies-->
-	<value condition="ControlGroup(9050).HasFocus + !IsEmpty(Container(250).ListItem.Art(fanart))">$INFO[Container(250).ListItem.Art(fanart)]</value>
-	<value condition="ControlGroup(9050).HasFocus + !IsEmpty(Container(250).ListItem.Property(FanartImage))">$INFO[Container(250).ListItem.Property(FanartImage)]</value>
-	<value condition="ControlGroup(9050).HasFocus + IsEmpty(Container(250).ListItem.Art(fanart)) + IsEmpty(Container(250).ListItem.Property(FanartImage))">SKINDEFAULT.jpg</value>
+	<value condition="[ControlGroup(9050).HasFocus | Control.HasFocus(25) | Control.HasFocus(250)]+ !IsEmpty(Container(250).ListItem.Art(fanart))">$INFO[Container(250).ListItem.Art(fanart)]</value>
+	<value condition="[ControlGroup(9050).HasFocus | Control.HasFocus(25) | Control.HasFocus(250)] + !IsEmpty(Container(250).ListItem.Property(FanartImage))">$INFO[Container(250).ListItem.Property(FanartImage)]</value>
+	<value condition="[ControlGroup(9050).HasFocus | Control.HasFocus(25) | Control.HasFocus(250)] + IsEmpty(Container(250).ListItem.Art(fanart)) + IsEmpty(Container(250).ListItem.Property(FanartImage))">SKINDEFAULT.jpg</value>
 	<!--tvshows-->
-	<value condition="ControlGroup(9060).HasFocus + !IsEmpty(Container(350).ListItem.Art(fanart))">$INFO[Container(350).ListItem.Art(fanart)]</value>
-	<value condition="ControlGroup(9060).HasFocus + !IsEmpty(Container(350).ListItem.Property(FanartImage))">$INFO[Container(350).ListItem.Property(FanartImage)]</value>
-	<value condition="ControlGroup(9060).HasFocus + IsEmpty(Container(350).ListItem.Art(fanart)) + IsEmpty(Container(350).ListItem.Property(FanartImage))">SKINDEFAULT.jpg</value>
+	<value condition="[ControlGroup(9060).HasFocus | Control.HasFocus(35) | Control.HasFocus(350)] + !IsEmpty(Container(350).ListItem.Art(fanart))">$INFO[Container(350).ListItem.Art(fanart)]</value>
+	<value condition="[ControlGroup(9060).HasFocus | Control.HasFocus(35) | Control.HasFocus(350)] + !IsEmpty(Container(350).ListItem.Property(FanartImage))">$INFO[Container(350).ListItem.Property(FanartImage)]</value>
+	<value condition="[ControlGroup(9060).HasFocus | Control.HasFocus(35) | Control.HasFocus(350)] + IsEmpty(Container(350).ListItem.Art(fanart)) + IsEmpty(Container(350).ListItem.Property(FanartImage))">SKINDEFAULT.jpg</value>
 	<!--music-->
-	<value condition="ControlGroup(9070).HasFocus + !IsEmpty(Container(450).ListItem.Art(fanart))">$INFO[Container(450).ListItem.Art(fanart)]</value>
-	<value condition="ControlGroup(9070).HasFocus + !IsEmpty(Container(450).ListItem.Property(FanartImage))">$INFO[Container(450).ListItem.Property(FanartImage)]</value>
-	<value condition="ControlGroup(9070).HasFocus + IsEmpty(Container(450).ListItem.Art(fanart)) + IsEmpty(Container(450).ListItem.Property(FanartImage))">SKINDEFAULT.jpg</value>
+	<value condition="[ControlGroup(9070).HasFocus | Control.HasFocus(45) | Control.HasFocus(450)] + !IsEmpty(Container(450).ListItem.Art(fanart))">$INFO[Container(450).ListItem.Art(fanart)]</value>
+	<value condition="[ControlGroup(9070).HasFocus | Control.HasFocus(45) | Control.HasFocus(450)] + !IsEmpty(Container(450).ListItem.Property(FanartImage))">$INFO[Container(450).ListItem.Property(FanartImage)]</value>
+	<value condition="[ControlGroup(9070).HasFocus | Control.HasFocus(45) | Control.HasFocus(450)] + IsEmpty(Container(450).ListItem.Art(fanart)) + IsEmpty(Container(450).ListItem.Property(FanartImage))">SKINDEFAULT.jpg</value>
 	<!--rss video feed-->
 	<value condition="ControlGroup(9099).HasFocus + !IsEmpty(Container(650).ListItem.Art(fanart))">$INFO[Container(650).ListItem.Art(fanart)]</value>
 	<value condition="ControlGroup(9099).HasFocus + !IsEmpty(Container(650).ListItem.Property(FanartImage))">$INFO[Container(650).ListItem.Property(FanartImage)]</value>  

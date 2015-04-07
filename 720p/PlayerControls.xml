@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window  type="dialog" id="114">
 	<defaultcontrol always="true">150</defaultcontrol>
-	<zorder>3</zorder>
+	<zorder>3</zorder>	
 	<include>OnLoadDialogsClose</include>
 	<onload condition="[Player.HasMedia + !VideoPlayer.Content(LiveTV)]">SetFocus(602)</onload>
 	<onload condition="[Player.HasMedia + VideoPlayer.Content(LiveTV)]">SetFocus(601)</onload>>
@@ -9,7 +9,7 @@
 	<onload condition="[System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetMoviesType),5)]">RunScript(script.extendedinfo,info=trendingmovies)</onload>
 	<onload condition="[System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetTVShowsType),4)]">RunScript(script.extendedinfo,info=trendingshows)</onload>
 	<onload condition="[System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetMusicType),4)]">RunScript(script.extendedinfo,info=topartists)</onload>
-	<visible>[Window.IsActive(PlayerControls) + ![Skin.HasSetting(DisableQuickNav) + !Player.HasMedia]] + !Window.IsActive(FullscreenVideo) + !Window.IsActive(Visualisation)</visible>
+	<visible>[Window.IsActive(PlayerControls) + ![Skin.HasSetting(DisableQuickNav) + !Player.HasMedia]] + !Window.IsActive(FullscreenVideo) + !Window.IsActive(Visualisation)</visible>-->
 	<controls>
 
 		<control type="image">
@@ -24,6 +24,7 @@
 		</control>
 
 		<control type="group">
+			<visible>!Window.IsActive(FullscreenVideo) + !Window.IsActive(Visualisation)</visible>
 			<include>QuickNavOpenCloseAnimation</include>	
 			<!-- Quick Nav -->
 			<control type="group">

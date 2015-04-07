@@ -2,7 +2,7 @@
 <window  id="120">
 	<defaultcontrol always="true">103</defaultcontrol>
 	<zorder>1</zorder>
-	<onload condition="Window.IsVisible(shutdownmenu)">Action(back)</onload>
+	<onload condition="Window.IsVisible(shutdownmenu)">Action(back)</onload> <!-- fix for CU LRC Lyrics bug -->
 	<controls>
 		
 		<control type="group">
