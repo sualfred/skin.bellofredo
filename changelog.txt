@@ -1,6 +1,10 @@
 ﻿[B][COLOR=FF56ADDA]v4.1.2[/COLOR][/B]
 • Fixed: Overlapping issue with setttings level button
 • Fixed: Not working kiosk mode
+• Added: Option to diffuse widget fanarts
+• Added: "Unwatched Movies" for movie widgets
+• Added: CU LRC Lyrics window 
+• Changed: Increased Music-OSD album thumb size
 • Reworked: PlayerControls dialog
 
 [B][COLOR=FF56ADDA]v4.1.1b[/COLOR][/B]
