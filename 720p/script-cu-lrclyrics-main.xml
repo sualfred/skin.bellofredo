@@ -30,11 +30,11 @@
 				<loop>true</loop>
 				<imagepath diffuse="osd/quicknav/fanart_diffuse.png" background="true">special://skin/extras/backgrounds/music_colors</imagepath>
 				<colordiffuse>OSDColorsDiffuse</colordiffuse>
-				<animation effect="fade" start="0" end="90" time="550" delay="0" tween="sine" easing="out">WindowOpen</animation>
-				<animation effect="fade" start="90" end="0" time="550" delay="200" tween="sine" easing="out">WindowClose</animation>
-				<animation effect="fade" start="0" end="90" time="550" delay="0" tween="sine" easing="out">Visible</animation>
-				<animation effect="fade" start="90" end="0" time="550" delay="200" tween="sine" easing="out">Hidden</animation>
-				<animation effect="fade" start="90" end="75" time="350" condition="[Window.IsActive(MusicOSD) | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo]">Conditional</animation>		
+				<animation effect="fade" start="0" end="95" time="550" delay="0" tween="sine" easing="out">WindowOpen</animation>
+				<animation effect="fade" start="95" end="0" time="550" delay="200" tween="sine" easing="out">WindowClose</animation>
+				<animation effect="fade" start="0" end="95" time="550" delay="0" tween="sine" easing="out">Visible</animation>
+				<animation effect="fade" start="95" end="0" time="550" delay="200" tween="sine" easing="out">Hidden</animation>
+				<animation effect="fade" start="95" end="75" time="350" condition="[Window.IsActive(MusicOSD) | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo]">Conditional</animation>		
 				<visible>Skin.HasSetting(HideOSDDiffuseColors)</visible>
 			</control>
 			<control type="label">
@@ -54,7 +54,7 @@
 			<control type="list" id="110">
 				<visible>Window.IsActive(Visualisation) + Player.HasAudio</visible>				
 				<top>50</top>
-				<left>250</left>
+				<left>260</left>
 				<width>780</width>
 				<height>330</height>
 				<onleft>111</onleft>
@@ -63,11 +63,11 @@
 				<ondown>110</ondown>
 				<pagecontrol>111</pagecontrol>
 				<scrolltime>200</scrolltime>
-				<itemlayout width="780" height="54">
+				<itemlayout width="800" height="54">
 					<control type="label">
 						<posx>10</posx>
 						<posy>3</posy>
-						<width>770</width>
+						<width>790</width>
 						<height>42</height>
 						<font>FontSize_40</font>
 						<aligny>center</aligny>
@@ -77,11 +77,11 @@
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="780"  height="54">
+				<focusedlayout width="800"  height="54">
 					<control type="label">
 						<posx>10</posx>
 						<posy>3</posy>
-						<width>770</width>
+						<width>790</width>
 						<height>42</height>
 						<font>FontSize_40B</font>
 						<aligny>center</aligny>
