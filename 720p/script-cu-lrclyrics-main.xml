@@ -22,7 +22,6 @@
 				<top>-110</top>
 				<include>FullscreenDimensions</include>			
 				<texture colordiffuse="purple" background="true">views/list/shine.png</texture>
-
 				<!--<animation effect="fade" time="0" start="100" end="40" condition="true">Conditional</animation>-->
 			</control>
 
