@@ -398,8 +398,8 @@
 				<height>450</height>
 				<onright>60</onright>
 				<onleft>9111</onleft>
-				<onup>50</onup>
-				<ondown>50</ondown>
+				<onup>582</onup>
+				<ondown>582</ondown>
 				<viewtype label="31268">List</viewtype>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime tween="cubic" easing="out">300</scrolltime>
