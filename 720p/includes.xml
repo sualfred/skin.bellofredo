@@ -592,6 +592,7 @@
 		<left>45</left>
 		<top>525</top>
 		<include>HomeNowPlayingCoversSlideAnimations</include>
+		<visible>!Window.Previous(startup)</visible>
 		<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + Player.HasAudio</visible>			
 		<control type="image">
 			<left>-110</left>
