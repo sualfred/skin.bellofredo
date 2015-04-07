@@ -15,14 +15,15 @@
 				<effect type="slide" start="0,0" end="0,-35" time="350" tween="sine" easing="out" />
 			</animation>
 			<animation effect="slide" start="0,0" end="0,110" time="350" condition="![Window.IsActive(MusicOSD) | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo]">Conditional</animation>
+			<animation effect="zoom" start="100" end="85" center="auto" time="350" condition="[Window.IsActive(MusicOSD) | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo]">Conditional</animation>
 			<visible>Window.IsActive(Visualisation) + Player.HasAudio</visible>
 			<visible>Control.IsVisible(110)</visible>
 			
 			<control type="image">
 				<top>-110</top>
 				<include>FullscreenDimensions</include>			
-				<texture colordiffuse="purple" background="true">views/list/shine.png</texture>
-				<!--<animation effect="fade" time="0" start="100" end="40" condition="true">Conditional</animation>-->
+				<!--<texture colordiffuse="purple" background="true">views/list/shine.png</texture>
+				<animation effect="fade" time="0" start="100" end="40" condition="true">Conditional</animation>-->
 			</control>
 
 			<control type="label">
