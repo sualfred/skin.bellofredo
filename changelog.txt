@@ -1,5 +1,6 @@
 ﻿[B][COLOR=FF56ADDA]v4.1.2[/COLOR][/B]
 • Fixed: Overlapping issue with setttings level button
+• Fixed: Wrong up/down conditions on ThumbList view
 • Fixed: Not working kiosk mode
 • Added: Option to diffuse widget fanarts
 • Added: "Unwatched Movies" for movie widgets
