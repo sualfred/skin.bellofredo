@@ -2,7 +2,7 @@
 <window  id="120">
 	<defaultcontrol always="true">103</defaultcontrol>
 	<zorder>1</zorder>
-	<onload condition="Window.IsVisible(shutdownmenu)">ActivateWindowAndFocus(shutdownmenu,9000,1)</onload>
+	<onload condition="Window.IsVisible(shutdownmenu)">Action(back)</onload>
 	<controls>
 		
 		<control type="group">
@@ -65,6 +65,7 @@
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 					<alttexturefocus>osd/play_fo.png</alttexturefocus>
 					<alttexturenofocus>osd/play_nf.png</alttexturenofocus>
+					<!--<onfocus condition="Window.IsVisible(shutdownmenu)">Action(back)</onfocus>-->
 					<onclick>PlayerControl(Play)</onclick>
 				</control>
 				<control type="button" id="104">

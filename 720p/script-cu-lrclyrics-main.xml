@@ -17,6 +17,15 @@
 			<animation effect="slide" start="0,0" end="0,110" time="350" condition="![Window.IsActive(MusicOSD) | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo]">Conditional</animation>
 			<visible>Window.IsActive(Visualisation) + Player.HasAudio</visible>
 			<visible>Control.IsVisible(110)</visible>
+			
+			<control type="image">
+				<top>-110</top>
+				<include>FullscreenDimensions</include>			
+				<texture colordiffuse="purple" background="true">views/list/shine.png</texture>
+
+				<!--<animation effect="fade" time="0" start="100" end="40" condition="true">Conditional</animation>-->
+			</control>
+
 			<control type="label">
 				<description>No lyrics found</description>
 				<top>340</top>
@@ -37,10 +46,10 @@
 				<width>1280</width>
 				<height>330</height>
 				<onleft>111</onleft>
-                <onright>111</onright>
-                <onup>110</onup>
-                <ondown>110</ondown>
-                <pagecontrol>111</pagecontrol>
+				<onright>111</onright>
+				<onup>110</onup>
+				<ondown>110</ondown>
+				<pagecontrol>111</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<itemlayout width="1280" height="54">
 					<control type="label">

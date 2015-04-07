@@ -3,7 +3,7 @@
 	<defaultcontrol>9000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
     <zorder>5</zorder>
-	<onload>Dialog.Close(playercontrols)</onload>
+	<onload>Dialog.Close(playercontrols)</onload>	
 	<include>OnLoadDialogsClose</include>
 	<controls>
 
