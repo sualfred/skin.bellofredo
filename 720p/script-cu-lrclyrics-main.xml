@@ -35,7 +35,7 @@
 				<animation effect="fade" start="0" end="95" time="550" delay="0" tween="sine" easing="out">Visible</animation>
 				<animation effect="fade" start="95" end="0" time="550" delay="200" tween="sine" easing="out">Hidden</animation>
 				<animation effect="fade" start="95" end="75" time="350" condition="[Window.IsActive(MusicOSD) | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo]">Conditional</animation>		
-				<visible>Skin.HasSetting(HideOSDDiffuseColors)</visible>
+				<visible>IntegerGreaterThan(Container(110).NumItems,0) + Control.IsVisible(110) + Skin.HasSetting(HideOSDDiffuseColors)</visible>
 			</control>
 			<control type="label">
 				<description>No lyrics found</description>
