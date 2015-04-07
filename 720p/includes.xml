@@ -1906,7 +1906,7 @@
 	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">[CAPITALIZE]$LOCALIZE[31256][/CAPITALIZE]</value>
 	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">[CAPITALIZE]$LOCALIZE[31257][/CAPITALIZE]</value>
 	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),6)">[CAPITALIZE]$LOCALIZE[31269][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),7)">[CAPITALIZE]$LOCALIZE[31155][/CAPITALIZE]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),7)">[CAPITALIZE]$LOCALIZE[31263][/CAPITALIZE]</value>
 </variable>
 <variable name="QuickNavSettingsTVShowName">
 	<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">[CAPITALIZE]$LOCALIZE[31242][/CAPITALIZE]</value>
