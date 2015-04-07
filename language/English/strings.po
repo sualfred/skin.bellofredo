@@ -478,7 +478,11 @@ msgctxt "#31115"
 msgid "My Subscriptions"
 msgstr ""
 
-#: empty strings from id 31116 to 31123
+msgctxt "#31116"
+msgid "Diffuse Widget Fanarts"
+msgstr ""
+
+#: empty strings from id 31117 to 31123
 
 msgctxt "#31124"
 msgid "Flashing Lights"

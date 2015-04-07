@@ -2041,8 +2041,8 @@
 	<value condition="[ControlGroup(9070).HasFocus | Control.HasFocus(45) | Control.HasFocus(450)] + !IsEmpty(Container(450).ListItem.Property(FanartImage))">$INFO[Container(450).ListItem.Property(FanartImage)]</value>
 	<value condition="[ControlGroup(9070).HasFocus | Control.HasFocus(45) | Control.HasFocus(450)] + IsEmpty(Container(450).ListItem.Art(fanart)) + IsEmpty(Container(450).ListItem.Property(FanartImage))">SKINDEFAULT.jpg</value>
 	<!--rss video feed-->
-	<value condition="ControlGroup(9099).HasFocus + !IsEmpty(Container(650).ListItem.Art(fanart))">$INFO[Container(650).ListItem.Art(fanart)]</value>
-	<value condition="ControlGroup(9099).HasFocus + !IsEmpty(Container(650).ListItem.Property(FanartImage))">$INFO[Container(650).ListItem.Property(FanartImage)]</value>  
+	<value condition="[ControlGroup(9099).HasFocus | Control.HasFocus(65) | Control.HasFocus(650)]+ !IsEmpty(Container(650).ListItem.Art(fanart))">$INFO[Container(650).ListItem.Art(fanart)]</value>
+	<value condition="[ControlGroup(9099).HasFocus | Control.HasFocus(65) | Control.HasFocus(650)] + !IsEmpty(Container(650).ListItem.Property(FanartImage))">$INFO[Container(650).ListItem.Property(FanartImage)]</value> 
 	<!--playlists-->
 	<value condition="ControlGroup(9071).HasFocus + !IsEmpty(Container(651).ListItem.Art(fanart))">$INFO[Container(651).ListItem.Art(fanart)]</value>
 	<value condition="ControlGroup(9071).HasFocus + IsEmpty(Container(651).ListItem.Art(fanart))">SKINDEFAULT.jpg</value>		
@@ -2066,7 +2066,8 @@
 	<value condition="ControlGroup(9091).HasFocus + StringCompare(Container(552).ListItem.Property(background),DefaultAddon)">$INFO[Container(552).ListItem.Property(defaultID),special://home/addons/,/fanart.jpg]</value>
 	<value condition="ControlGroup(9093).HasFocus + StringCompare(Container(553).ListItem.Property(background),DefaultAddon)">$INFO[Container(553).ListItem.Property(defaultID),special://home/addons/,/fanart.jpg]</value>
 	<value condition="ControlGroup(9094).HasFocus + StringCompare(Container(554).ListItem.Property(background),DefaultAddon)">$INFO[Container(554).ListItem.Property(defaultID),special://home/addons/,/fanart.jpg]</value>
-	<!-- not set: 550 tunein widget -->
+	<!--main menu background duplicate as fallback-->	
+	<value condition="!Window.IsVisible(playercontrols)">$INFO[Container(20).ListItem.Property(Background)]</value>
 </variable>
 
 <variable name="backgroundMainmenu">

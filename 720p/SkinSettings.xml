@@ -556,6 +556,13 @@
 							<selected>Skin.HasSetting(ViewsExtraFanart)</selected>
 							<enable>!Skin.HasSetting(HideBGFanart)</enable>
 						</control>
+						<control type="radiobutton" id="8408">
+							<include>SettingsRadioButton</include>
+							<label>31116</label>
+							<onclick>Skin.ToggleSetting(DiffuseWidgetFanart)</onclick>
+							<selected>Skin.HasSetting(DiffuseWidgetFanart)</selected>
+							<enable>!Skin.HasSetting(HideBGFanart)</enable>
+						</control>
 						<control type="radiobutton" id="8402">
 							<include>SettingsRadioButton</include>
 							<label>31132</label>

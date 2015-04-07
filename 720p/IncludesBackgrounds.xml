@@ -157,24 +157,48 @@
 					<include>3DWallBG_Artists</include>
 					<visible>StringCompare(Container(20).ListItem.Property(background),3DWallBG_Artists)</visible>
 				</control>
-				<control type="image">
-					<description>Widget Fanart Fallback Diffuse</description>
-					<include>FullscreenDimensions</include>
-					<texture background="true">SKINDEFAULT.jpg</texture>
-					<include>BackgroundFade</include>
-					<visible>!Skin.HasSetting(HideBGFanart)</visible>
-					<visible>!Window.IsActive(playercontrols)</visible>
-					<visible>ControlGroup(9050).HasFocus() | ControlGroup(9060).HasFocus() | ControlGroup(9070).HasFocus() | ControlGroup(9071).HasFocus() | ControlGroup(9072).HasFocus() | ControlGroup(9090).HasFocus() | ControlGroup(9091).HasFocus() | ControlGroup(9094).HasFocus() | ControlGroup(9093).HasFocus() | ControlGroup(9073).HasFocus() | ControlGroup(9074).HasFocus() | ControlGroup(9098).HasFocus()</visible>
-				</control>
-				<control type="image">
-					<description>Widget Fanart</description>
-					<include>FullscreenDimensions</include>
-					<include>BackgroundFade</include>
-					<texture background="true" fallback="SKINDEFAULT.jpg">$VAR[QuickNavWidgetFanart]</texture>
-					<fadetime>FanartCrossfadeTime</fadetime>
-					<visible>!Skin.HasSetting(HideBGFanart)</visible>
-					<visible>!Window.IsActive(playercontrols)</visible>
-					<visible>ControlGroup(9050).HasFocus() | ControlGroup(9060).HasFocus() | ControlGroup(9070).HasFocus() | ControlGroup(9071).HasFocus() | ControlGroup(9072).HasFocus() | ControlGroup(9090).HasFocus() | ControlGroup(9091).HasFocus() | ControlGroup(9094).HasFocus() | ControlGroup(9093).HasFocus() | ControlGroup(9073).HasFocus() | ControlGroup(9074).HasFocus() | ControlGroup(9098).HasFocus()</visible>
+				<control type="group">	
+				<description>Widget Backgrounds</description>
+					<control type="image">
+						<description>Widget Fanart Fallback Diffuse</description>
+						<include>FullscreenDimensions</include>
+						<texture background="true">SKINDEFAULT.jpg</texture>
+						<include>BackgroundFade</include>
+						<visible>!Skin.HasSetting(HideBGFanart)</visible>
+						<visible>!Window.IsActive(playercontrols)</visible>
+						<visible>[ControlGroup(9050).HasFocus | ControlGroup(9060).HasFocus | ControlGroup(9070).HasFocus | ControlGroup(9073).HasFocus | ControlGroup(9074).HasFocus | ControlGroup(9080).HasFocus | ControlGroup(9090).HasFocus | ControlGroup(9091).HasFocus | ControlGroup(9093).HasFocus | ControlGroup(9094).HasFocus | ControlGroup(9099).HasFocus | ControlGroup(9071).HasFocus | ControlGroup(9072).HasFocus | ControlGroup(9098).HasFocus]</visible>
+					</control>
+					<control type="image">
+						<description>Widget Fanart Fallback Diffuse</description>
+						<include>FullscreenDimensions</include>
+						<texture background="true">windows/bg/bg_diffuse.png</texture>
+						<animation effect="fade" end="20" time="0" condition="true">Conditional</animation>
+						<include>BackgroundFade</include>
+						<visible>!Skin.HasSetting(HideBGFanart) + Skin.HasSetting(DiffuseWidgetFanart)</visible>
+						<visible>!Window.IsActive(playercontrols)</visible>
+						<visible>[ControlGroup(9050).HasFocus | ControlGroup(9060).HasFocus | ControlGroup(9070).HasFocus | ControlGroup(9073).HasFocus | ControlGroup(9074).HasFocus | ControlGroup(9080).HasFocus | ControlGroup(9090).HasFocus | ControlGroup(9091).HasFocus | ControlGroup(9093).HasFocus | ControlGroup(9094).HasFocus | ControlGroup(9099).HasFocus | ControlGroup(9071).HasFocus | ControlGroup(9072).HasFocus | ControlGroup(9098).HasFocus]</visible>
+					</control>
+					<control type="image">
+						<description>Widget Fanart</description>
+						<include>FullscreenDimensions</include>
+						<include>BackgroundFade</include>
+						<texture diffuse="osd/quicknav/fanart_diffuse.png" background="true" fallback="SKINDEFAULT.jpg">$VAR[QuickNavWidgetFanart]</texture>
+						<fadetime>FanartCrossfadeTime</fadetime>
+						<visible>!Skin.HasSetting(HideBGFanart) + Skin.HasSetting(DiffuseWidgetFanart)</visible>
+						<visible>!Window.IsActive(playercontrols)</visible>
+						<!--<visible>ControlGroup(9050).HasFocus() | ControlGroup(9060).HasFocus() | ControlGroup(9070).HasFocus() | ControlGroup(9071).HasFocus() | ControlGroup(9072).HasFocus() | ControlGroup(9090).HasFocus() | ControlGroup(9091).HasFocus() | ControlGroup(9094).HasFocus() | ControlGroup(9093).HasFocus() | ControlGroup(9073).HasFocus() | ControlGroup(9074).HasFocus() | ControlGroup(9098).HasFocus() | ControlGroup(9080).HasFocus()</visible>-->
+						<visible>[ControlGroup(9050).HasFocus | ControlGroup(9060).HasFocus | ControlGroup(9070).HasFocus | ControlGroup(9073).HasFocus | ControlGroup(9074).HasFocus | ControlGroup(9080).HasFocus | ControlGroup(9090).HasFocus | ControlGroup(9091).HasFocus | ControlGroup(9093).HasFocus | ControlGroup(9094).HasFocus | ControlGroup(9099).HasFocus | ControlGroup(9071).HasFocus | ControlGroup(9072).HasFocus | ControlGroup(9098).HasFocus]</visible>
+					</control>
+					<control type="image">
+						<description>Widget Fanart</description>
+						<include>FullscreenDimensions</include>
+						<include>BackgroundFade</include>
+						<texture background="true" fallback="SKINDEFAULT.jpg">$VAR[QuickNavWidgetFanart]</texture>
+						<fadetime>FanartCrossfadeTime</fadetime>					
+						<visible>!Skin.HasSetting(HideBGFanart) + !Skin.HasSetting(DiffuseWidgetFanart)</visible>
+						<visible>!Window.IsActive(playercontrols)</visible>
+						<visible>[ControlGroup(9050).HasFocus | ControlGroup(9060).HasFocus | ControlGroup(9070).HasFocus | ControlGroup(9073).HasFocus | ControlGroup(9074).HasFocus | ControlGroup(9080).HasFocus | ControlGroup(9090).HasFocus | ControlGroup(9091).HasFocus | ControlGroup(9093).HasFocus | ControlGroup(9094).HasFocus | ControlGroup(9099).HasFocus | ControlGroup(9071).HasFocus | ControlGroup(9072).HasFocus | ControlGroup(9098).HasFocus]</visible>
+					</control>
 				</control>
 			</control>
 		</control>
@@ -326,7 +350,7 @@
 			<visible>[Skin.HasSetting(HideVisualisationVignette) + [!Window.IsActive(visualisation) | Window.IsActive(musicosd) | Player.ShowInfo]] | !Skin.HasSetting(HideVisualisationVignette)</visible>
 			<include>BackgroundFade</include>
 			<!--	<colordiffuse>FFCDCDCD</colordiffuse>
-      <colordiffuse>D5FFFFFF</colordiffuse> -->
+			<colordiffuse>D5FFFFFF</colordiffuse> -->
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>
