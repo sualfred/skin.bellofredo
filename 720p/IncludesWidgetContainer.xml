@@ -468,9 +468,11 @@
 				<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),3)">Skin.SetString(QuickNavWidgetMoviesType,4)</onright>
 				<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">Skin.SetString(QuickNavWidgetMoviesType,5)</onright>
 				<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">Skin.SetString(QuickNavWidgetMoviesType,6)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),6)">Skin.SetString(QuickNavWidgetMoviesType,1)</onright>
+				<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),6)">Skin.SetString(QuickNavWidgetMoviesType,7)</onright>
+				<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),7)">Skin.SetString(QuickNavWidgetMoviesType,1)</onright>
 				<!-- on left switches -->
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),1)">Skin.SetString(QuickNavWidgetMoviesType,6)</onleft>
+				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),1)">Skin.SetString(QuickNavWidgetMoviesType,7)</onleft>
+				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),7)">Skin.SetString(QuickNavWidgetMoviesType,6)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),6)">Skin.SetString(QuickNavWidgetMoviesType,5)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">Skin.SetString(QuickNavWidgetMoviesType,4)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">Skin.SetString(QuickNavWidgetMoviesType,3)</onleft>

@@ -383,6 +383,8 @@
 							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(QuickNavWidgetMoviesType,5))</onclick>
 							<onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31269])</onclick>
 							<onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(QuickNavWidgetMoviesType,6))</onclick>
+							<onclick>SetProperty(Dialog.7.Label,$LOCALIZE[31155])</onclick>
+							<onclick>SetProperty(Dialog.7.BuiltIn,Skin.SetString(QuickNavWidgetMoviesType,7))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31094])</onclick>
 						</control>
 						<control type="button" id="8507">

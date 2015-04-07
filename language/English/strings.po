@@ -590,7 +590,9 @@ msgctxt "#31154"
 msgid "Choose Trailers Add-on"
 msgstr ""
 
-#: empty string with id 31155
+msgctxt "#31155"
+msgid "Unseen Movies"
+msgstr ""
 
 msgctxt "#31156"
 msgid "Manage Video Views"

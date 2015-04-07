@@ -1806,6 +1806,7 @@
 	<value condition="[Window.IsVisible(playercontrols) | !Window.IsVisible(3050)] + stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">plugin://script.extendedinfo?info=incinemas</value>
 	<value condition="[Window.IsVisible(playercontrols) | !Window.IsVisible(3050)] + stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">plugin://script.extendedinfo?info=trendingmovies</value>
 	<value condition="[Window.IsVisible(playercontrols) | !Window.IsVisible(3050)] + stringcompare(Skin.String(QuickNavWidgetMoviesType),6)">special://skin/extras/playlists/Top250.xsp</value>
+	<value condition="[Window.IsVisible(playercontrols) | !Window.IsVisible(3050)] + stringcompare(Skin.String(QuickNavWidgetMoviesType),7)">special://skin/extras/playlists/UnseenMovies.xsp</value>
 </variable>
 <variable name="QuickNav_WidgetListContentTVShows">
 	<value condition="[Window.IsVisible(playercontrols) | !Window.IsVisible(3050)] + stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">videodb://recentlyaddedepisodes</value>
@@ -1905,7 +1906,8 @@
 	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">[CAPITALIZE]$LOCALIZE[31256][/CAPITALIZE]</value>
 	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">[CAPITALIZE]$LOCALIZE[31257][/CAPITALIZE]</value>
 	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),6)">[CAPITALIZE]$LOCALIZE[31269][/CAPITALIZE]</value>
-</variable>[/CAPITALIZE]
+	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),7)">[CAPITALIZE]$LOCALIZE[31155][/CAPITALIZE]</value>
+</variable>
 <variable name="QuickNavSettingsTVShowName">
 	<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">[CAPITALIZE]$LOCALIZE[31242][/CAPITALIZE]</value>
 	<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),2)">[CAPITALIZE]$LOCALIZE[31002] $LOCALIZE[575][/CAPITALIZE]</value>
