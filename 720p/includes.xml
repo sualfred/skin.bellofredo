@@ -586,409 +586,352 @@
 <!-- ================== -->
 <!-- Covers Now Playing -->
 <!-- ================== --> 
-<include name="CoversNowPlaying">	
-	<!-- Music Cover -->
-	<control type="group" id="25">
-		<left>45</left>
-		<top>525</top>
-		<include>HomeNowPlayingCoversSlideAnimations</include>
-		<visible>!Window.Previous(startup)</visible>
-		<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + Player.HasAudio</visible>			
-		<control type="image">
-			<left>-110</left>
-			<top>-100</top>
-			<width>370</width>
-			<height>400</height>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-			<texture background="true">views/list/shine.png</texture>
-			<animation effect="fade" end="40" reversible="false" condition="true" time="0">Conditional</animation>
-		</control>
-		<control type="image">
-			<left>3</left>
-			<top>-50</top>
-			<width>155</width>
-			<height>155</height>
-			<texture diffuse="osd/cd_diffuse.png" background="true" fallback="osd/cd.png">$INFO[Player.FolderPath,,cdart.png]</texture>
-			<aspectratio>keep</aspectratio>
-			<include>CDImageAnim</include>
-			<visible>!Player.IsInternetStream</visible>
-		</control>				
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>160</width>
-			<height>160</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">thumbs/thumb_back.png</texture>
-			<fadetime>800</fadetime>
-		</control>				
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>160</width>
-			<height>160</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$INFO[Player.Art(thumb)]</texture>
-			<fadetime>800</fadetime>
-		</control>
-		<control type="image">
-			<left>-7</left>
-			<top>-7</top>
-			<width>174</width>
-			<height>174</height>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-			<texture background="true">thumbs/music_overlay.png</texture>
-			<fadetime>800</fadetime>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>162</top>
-			<width>160</width>
-			<height>160</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_square.png" flipy="true" diffuse="thumbs/music_reflection_diffuse.png">thumbs/thumb_back.png</texture>
-			<fadetime>800</fadetime>
-			<colordiffuse>a0ffffff</colordiffuse>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>162</top>
-			<width>160</width>
-			<height>160</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_square.png" flipy="true" diffuse="thumbs/music_reflection_diffuse.png">$INFO[Player.Art(thumb)]</texture>
-			<fadetime>800</fadetime>
-			<colordiffuse>a0ffffff</colordiffuse>
-		</control>
-		<control type="image">
-			<description>paused indicator</description>
-			<left>-1</left>
-			<top>-1</top>
-			<width>162</width>
-			<height>162</height>
-			<texture background="true" diffuse="thumbs/music_diffuse.png">osd/paused-overlay.png</texture>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<animation type="conditional" condition="!Player.Paused" reversible="false">
-				<effect type="fade" start="50" end="0" time="300" />
-			</animation>	
-			<animation type="conditional" condition="Player.Paused" reversible="false">
-				<effect type="fade" start="0" end="50" time="300" />
-			</animation>				
-		</control>
-	</control>
-	<!-- Movies & Episodes Cover -->
-	<control type="group" id="26">
-		<left>45</left>
-		<top>502</top>
-		<include>HomeNowPlayingCoversSlideAnimations</include>
-		<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + Player.HasVideo + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))] + !VideoPlayer.Content(LiveTV)</visible>
-		<control type="image">
-			<left>-110</left>
-			<top>-100</top>
-			<width>350</width>
-			<height>400</height>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-			<texture background="true">views/list/shine.png</texture>
-			<animation effect="fade" end="40" reversible="false" condition="true" time="0">Conditional</animation>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>130</width>
-			<height>185</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
-			<fadetime>800</fadetime>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>130</width>
-			<height>185</height>
-			<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$VAR[VideoPlayerThumb]</texture>
-			<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-			<fadetime>800</fadetime>
-		</control>
-		<control type="image">
-			<left>-7</left>
-			<top>-7</top>
-			<width>145</width>
-			<height>200</height>
-			<texture background="true">thumbs/poster_overlay.png</texture>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-			<fadetime>800</fadetime>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>187</top>
-			<width>130</width>
-			<height>185</height>
-			<texture background="true" fallback="thumbs/fallback_poster.png" flipy="true" diffuse="thumbs/poster_reflection_diffuse.png">$VAR[VideoPlayerThumb]</texture>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<fadetime>800</fadetime>
-			<colordiffuse>A0FFFFFF</colordiffuse>
-		</control>
-		<control type="image">
-			<description>paused indicator</description>
-			<left>0</left>
-			<top>0</top>
-			<width>130</width>
-			<height>185</height>
-			<texture background="true" diffuse="thumbs/poster_diffuse.png">osd/paused-overlay.png</texture>
-			<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>				
-			<animation type="conditional" condition="!Player.Paused" reversible="false">
-				<effect type="fade" start="50" end="0" time="300" />
-			</animation>	
-			<animation type="conditional" condition="Player.Paused" reversible="false">
-				<effect type="fade" start="0" end="50" time="300" />
-			</animation>				
-		</control>
-	</control>
-	<!-- Videos Cover -->
-	<control type="group" id="27">
-		<left>45</left>
-		<top>527</top>
-		<include>HomeNowPlayingCoversSlideAnimations</include>
-		<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + Player.HasVideo + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)</visible>
-		<control type="image">
-			<left>-110</left>
-			<top>-100</top>
-			<width>460</width>
-			<height>400</height>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-			<texture background="true">views/list/shine.png</texture>
-			<animation effect="fade" end="40" reversible="false" condition="true" time="0">Conditional</animation>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>240</width>
-			<height>160</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
-			<fadetime>800</fadetime>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>240</width>
-			<height>160</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-			<texture background="true" diffuse="thumbs/video_diffuse.png">$INFO[VideoPlayer.Cover]</texture>
-			<fadetime>800</fadetime>
-			<visible>!VideoPlayer.HasMenu</visible>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>240</width>
-			<height>160</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_disc_tp.png" diffuse="thumbs/video_diffuse.png">$VAR[VideoPlayerThumb]</texture>
-			<fadetime>800</fadetime>
-			<visible>VideoPlayer.HasMenu</visible>
-		</control>
-		<control type="image">
-			<left>-6</left>
-			<top>-6</top>
-			<width>252</width>
-			<height>172</height>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-			<texture background="true">thumbs/video_overlay.png</texture>
-			<fadetime>800</fadetime>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>162</top>
-			<width>240</width>
-			<height>160</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_episode.png" flipy="true" diffuse="thumbs/video_reflection_diffuse.png">$INFO[VideoPlayer.Cover]</texture>
-			<fadetime>800</fadetime>
-			<colordiffuse>A0ffffff</colordiffuse>
-		</control>			 
-		<control type="image">
-			<description>paused indicator</description>
-			<left>-1</left>
-			<top>-1</top>
-			<width>241</width>
-			<height>161</height>
-			<texture background="true" diffuse="thumbs/video_diffuse.png">osd/paused-overlay.png</texture>
-			<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-			<animation type="conditional" condition="!Player.Paused" reversible="false">
-				<effect type="fade" start="50" end="0" time="300" />
-			</animation>	
-			<animation type="conditional" condition="Player.Paused" reversible="false">
-				<effect type="fade" start="0" end="50" time="300" />
-			</animation>				
-		</control>
-	</control>
-	<!-- LiveTV Cover -->
-	<control type="group" id="28">
-		<left>45</left>
-		<top>527</top>
-		<include>HomeNowPlayingCoversSlideAnimations</include>
-		<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + VideoPlayer.Content(LiveTV)</visible>	
-		<control type="image">
-			<left>-110</left>
-			<top>-100</top>
-			<width>370</width>
-			<height>400</height>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-			<texture background="true">views/list/shine.png</texture>
-			<animation effect="fade" end="40" reversible="false" condition="true" time="0">Conditional</animation>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>160</width>
-			<height>160</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="thumbs/music_diffuse.png">thumbs/thumb_back.png</texture>
-			<fadetime>800</fadetime>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>160</width>
-			<height>160</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$VAR[VideoPlayerThumb]</texture>
-			<fadetime>800</fadetime>
-		</control>
-		<control type="image">
-			<left>-7</left>
-			<top>-7</top>
-			<width>174</width>
-			<height>174</height>
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-			<texture background="true">thumbs/music_overlay.png</texture>
-			<fadetime>800</fadetime>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>162</top>
-			<width>160</width>
-			<height>160</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_square.png" flipy="true" diffuse="thumbs/music_reflection_diffuse.png">humbs/thumb_back.png</texture>
-			<fadetime>800</fadetime>
-			<colordiffuse>a0ffffff</colordiffuse>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>162</top>
-			<width>160</width>
-			<height>160</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_square.png" flipy="true" diffuse="thumbs/music_reflection_diffuse.png">$VAR[VideoPlayerThumb]</texture>
-			<fadetime>800</fadetime>
-			<colordiffuse>a0ffffff</colordiffuse>
-		</control>
-		<control type="image">
-			<description>paused indicator</description>
-			<left>-1</left>
-			<top>-1</top>
-			<width>162</width>
-			<height>162</height>
-			<texture background="true" diffuse="thumbs/music_diffuse.png">osd/paused-overlay.png</texture>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<animation type="conditional" condition="!Player.Paused" reversible="false">
-				<effect type="fade" start="50" end="0" time="300" />
-			</animation>	
-			<animation type="conditional" condition="Player.Paused" reversible="false">
-				<effect type="fade" start="0" end="50" time="300" />
-			</animation>				
-		</control>
-	</control>	
-	<!-- labels -->
-	<control type="group" id="30">
-		<left>45</left>
-		<top>640</top>
-		<!-- Movies and episodes -->			
-		<control type="grouplist">
+<include name="CoversNowPlaying">
+	<control type="group">	
+		<visible>!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4)</visible>
+		<!-- Music Cover -->
+		<control type="group" id="25">
+			<left>45</left>
+			<top>525</top>
 			<include>HomeNowPlayingCoversSlideAnimations</include>
-			<animation effect="slide" start="-145,0" end="0,0" time="260" tween="sine" easing="inout" condition="!Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites)">Conditional</animation>
-			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + [VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + Player.HasVideo + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))] + !VideoPlayer.Content(LiveTV)</visible>	
-			<left>145</left>
-			<top>0</top>
-			<width>1000</width>
-			<height>60</height>
-			<align>left</align>
-			<itemgap>5</itemgap>
-			<orientation>horizontal</orientation>
-			<control type="label">
-				<height>53</height>
-				<width min="10" max="1000">auto</width>
-				<label>$INFO[Player.Time]</label>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>FontSize_50</font>
-				<textcolor>white</textcolor>
-				<shadowcolor>77000000</shadowcolor>
+			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + Player.HasAudio</visible>			
+			<control type="image">
+				<left>-110</left>
+				<top>-100</top>
+				<width>370</width>
+				<height>400</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture background="true">views/list/shine.png</texture>
+				<animation effect="fade" end="40" reversible="false" condition="true" time="0">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>3</left>
+				<top>-50</top>
+				<width>155</width>
+				<height>155</height>
+				<texture diffuse="osd/cd_diffuse.png" background="true" fallback="osd/cd.png">$INFO[Player.FolderPath,,cdart.png]</texture>
+				<aspectratio>keep</aspectratio>
+				<include>CDImageAnim</include>
+				<visible>!Player.IsInternetStream</visible>
 			</control>				
-			<control type="group">
-				<left>500</left>
-				<include>KaiToastSlideAnimations</include>
-				<include>ScanSlideAnimations</include>					
-				<control type="label">
-					<left>0</left>
-					<top>0</top>
-					<width>300</width>
-					<height>33</height>
-					<label>$LOCALIZE[31316]...</label>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>NotificationsFont</font>
-					<textcolor>blue</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-				</control>
-				<control type="fadelabel">
-					<left>0</left>
-					<top>20</top>
-					<width>480</width>
-					<height>35</height>
-					<label>$VAR[NowPlayingInfoLabels]</label>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>NotificationsFont</font>
-					<textcolor>99white</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-				</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>160</width>
+				<height>160</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">thumbs/thumb_back.png</texture>
+				<fadetime>800</fadetime>
+			</control>				
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>160</width>
+				<height>160</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$INFO[Player.Art(thumb)]</texture>
+				<fadetime>800</fadetime>
+			</control>
+			<control type="image">
+				<left>-7</left>
+				<top>-7</top>
+				<width>174</width>
+				<height>174</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture background="true">thumbs/music_overlay.png</texture>
+				<fadetime>800</fadetime>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>162</top>
+				<width>160</width>
+				<height>160</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_square.png" flipy="true" diffuse="thumbs/music_reflection_diffuse.png">thumbs/thumb_back.png</texture>
+				<fadetime>800</fadetime>
+				<colordiffuse>a0ffffff</colordiffuse>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>162</top>
+				<width>160</width>
+				<height>160</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_square.png" flipy="true" diffuse="thumbs/music_reflection_diffuse.png">$INFO[Player.Art(thumb)]</texture>
+				<fadetime>800</fadetime>
+				<colordiffuse>a0ffffff</colordiffuse>
+			</control>
+			<control type="image">
+				<description>paused indicator</description>
+				<left>-1</left>
+				<top>-1</top>
+				<width>162</width>
+				<height>162</height>
+				<texture background="true" diffuse="thumbs/music_diffuse.png">osd/paused-overlay.png</texture>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<animation type="conditional" condition="!Player.Paused" reversible="false">
+					<effect type="fade" start="50" end="0" time="300" />
+				</animation>	
+				<animation type="conditional" condition="Player.Paused" reversible="false">
+					<effect type="fade" start="0" end="50" time="300" />
+				</animation>				
 			</control>
 		</control>
-		<!-- Music -->	
-		<control type="grouplist">
+		<!-- Movies & Episodes Cover -->
+		<control type="group" id="26">
+			<left>45</left>
+			<top>502</top>
 			<include>HomeNowPlayingCoversSlideAnimations</include>
-			<animation effect="slide" start="-175,0" end="0,0" time="260" tween="sine" easing="inout" condition="!Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites)">Conditional</animation>
-			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + Player.HasAudio</visible>	
-			<left>175</left>
-			<top>0</top>
-			<width>1000</width>
-			<height>60</height>
-			<align>left</align>
-			<itemgap>5</itemgap>
-			<orientation>horizontal</orientation>
-			<control type="label">
-				<height>53</height>
-				<width min="10" max="1000">auto</width>
-				<label>$INFO[Player.Time]</label>
+			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + Player.HasVideo + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))] + !VideoPlayer.Content(LiveTV)</visible>
+			<control type="image">
+				<left>-110</left>
+				<top>-100</top>
+				<width>350</width>
+				<height>400</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture background="true">views/list/shine.png</texture>
+				<animation effect="fade" end="40" reversible="false" condition="true" time="0">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>130</width>
+				<height>185</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
+				<fadetime>800</fadetime>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>130</width>
+				<height>185</height>
+				<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$VAR[VideoPlayerThumb]</texture>
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<fadetime>800</fadetime>
+			</control>
+			<control type="image">
+				<left>-7</left>
+				<top>-7</top>
+				<width>145</width>
+				<height>200</height>
+				<texture background="true">thumbs/poster_overlay.png</texture>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<fadetime>800</fadetime>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>187</top>
+				<width>130</width>
+				<height>185</height>
+				<texture background="true" fallback="thumbs/fallback_poster.png" flipy="true" diffuse="thumbs/poster_reflection_diffuse.png">$VAR[VideoPlayerThumb]</texture>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<fadetime>800</fadetime>
+				<colordiffuse>A0FFFFFF</colordiffuse>
+			</control>
+			<control type="image">
+				<description>paused indicator</description>
+				<left>0</left>
+				<top>0</top>
+				<width>130</width>
+				<height>185</height>
+				<texture background="true" diffuse="thumbs/poster_diffuse.png">osd/paused-overlay.png</texture>
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>				
+				<animation type="conditional" condition="!Player.Paused" reversible="false">
+					<effect type="fade" start="50" end="0" time="300" />
+				</animation>	
+				<animation type="conditional" condition="Player.Paused" reversible="false">
+					<effect type="fade" start="0" end="50" time="300" />
+				</animation>				
+			</control>
+		</control>
+		<!-- Videos Cover -->
+		<control type="group" id="27">
+			<left>45</left>
+			<top>527</top>
+			<include>HomeNowPlayingCoversSlideAnimations</include>
+			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + Player.HasVideo + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)</visible>
+			<control type="image">
+				<left>-110</left>
+				<top>-100</top>
+				<width>460</width>
+				<height>400</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture background="true">views/list/shine.png</texture>
+				<animation effect="fade" end="40" reversible="false" condition="true" time="0">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>240</width>
+				<height>160</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
+				<fadetime>800</fadetime>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>240</width>
+				<height>160</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="thumbs/video_diffuse.png">$INFO[VideoPlayer.Cover]</texture>
+				<fadetime>800</fadetime>
+				<visible>!VideoPlayer.HasMenu</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>240</width>
+				<height>160</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_disc_tp.png" diffuse="thumbs/video_diffuse.png">$VAR[VideoPlayerThumb]</texture>
+				<fadetime>800</fadetime>
+				<visible>VideoPlayer.HasMenu</visible>
+			</control>
+			<control type="image">
+				<left>-6</left>
+				<top>-6</top>
+				<width>252</width>
+				<height>172</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture background="true">thumbs/video_overlay.png</texture>
+				<fadetime>800</fadetime>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>162</top>
+				<width>240</width>
+				<height>160</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_episode.png" flipy="true" diffuse="thumbs/video_reflection_diffuse.png">$INFO[VideoPlayer.Cover]</texture>
+				<fadetime>800</fadetime>
+				<colordiffuse>A0ffffff</colordiffuse>
+			</control>			 
+			<control type="image">
+				<description>paused indicator</description>
+				<left>-1</left>
+				<top>-1</top>
+				<width>241</width>
+				<height>161</height>
+				<texture background="true" diffuse="thumbs/video_diffuse.png">osd/paused-overlay.png</texture>
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<animation type="conditional" condition="!Player.Paused" reversible="false">
+					<effect type="fade" start="50" end="0" time="300" />
+				</animation>	
+				<animation type="conditional" condition="Player.Paused" reversible="false">
+					<effect type="fade" start="0" end="50" time="300" />
+				</animation>				
+			</control>
+		</control>
+		<!-- LiveTV Cover -->
+		<control type="group" id="28">
+			<left>45</left>
+			<top>527</top>
+			<include>HomeNowPlayingCoversSlideAnimations</include>
+			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + VideoPlayer.Content(LiveTV)</visible>	
+			<control type="image">
+				<left>-110</left>
+				<top>-100</top>
+				<width>370</width>
+				<height>400</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture background="true">views/list/shine.png</texture>
+				<animation effect="fade" end="40" reversible="false" condition="true" time="0">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>160</width>
+				<height>160</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="thumbs/music_diffuse.png">thumbs/thumb_back.png</texture>
+				<fadetime>800</fadetime>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>160</width>
+				<height>160</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$VAR[VideoPlayerThumb]</texture>
+				<fadetime>800</fadetime>
+			</control>
+			<control type="image">
+				<left>-7</left>
+				<top>-7</top>
+				<width>174</width>
+				<height>174</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture background="true">thumbs/music_overlay.png</texture>
+				<fadetime>800</fadetime>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>162</top>
+				<width>160</width>
+				<height>160</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_square.png" flipy="true" diffuse="thumbs/music_reflection_diffuse.png">humbs/thumb_back.png</texture>
+				<fadetime>800</fadetime>
+				<colordiffuse>a0ffffff</colordiffuse>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>162</top>
+				<width>160</width>
+				<height>160</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_square.png" flipy="true" diffuse="thumbs/music_reflection_diffuse.png">$VAR[VideoPlayerThumb]</texture>
+				<fadetime>800</fadetime>
+				<colordiffuse>a0ffffff</colordiffuse>
+			</control>
+			<control type="image">
+				<description>paused indicator</description>
+				<left>-1</left>
+				<top>-1</top>
+				<width>162</width>
+				<height>162</height>
+				<texture background="true" diffuse="thumbs/music_diffuse.png">osd/paused-overlay.png</texture>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<animation type="conditional" condition="!Player.Paused" reversible="false">
+					<effect type="fade" start="50" end="0" time="300" />
+				</animation>	
+				<animation type="conditional" condition="Player.Paused" reversible="false">
+					<effect type="fade" start="0" end="50" time="300" />
+				</animation>				
+			</control>
+		</control>	
+		<!-- labels -->
+		<control type="group" id="30">
+			<left>45</left>
+			<top>640</top>
+			<!-- Movies and episodes -->			
+			<control type="grouplist">
+				<include>HomeNowPlayingCoversSlideAnimations</include>
+				<animation effect="slide" start="-145,0" end="0,0" time="260" tween="sine" easing="inout" condition="!Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites)">Conditional</animation>
+				<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + [VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + Player.HasVideo + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))] + !VideoPlayer.Content(LiveTV)</visible>	
+				<left>145</left>
+				<top>0</top>
+				<width>1000</width>
+				<height>60</height>
 				<align>left</align>
-				<aligny>center</aligny>
-				<font>FontSize_50</font>
-				<textcolor>white</textcolor>
-				<shadowcolor>77000000</shadowcolor>
-			</control>				
-			<control type="group">
-				<left>500</left>					
-				<include>KaiToastSlideAnimations</include>
-				<include>ScanSlideAnimations</include>				
+				<itemgap>5</itemgap>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<height>53</height>
+					<width min="10" max="1000">auto</width>
+					<label>$INFO[Player.Time]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>FontSize_50</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+				</control>				
 				<control type="group">
-					<animation type="Conditional" reversible="false" condition="MusicPlayer.HasNext" loop="true">
-						<effect type="fade" start="0" end="100" time="500" delay="0" />
-						<effect type="fade" start="100" end="0" time="500" delay="10000" />
-						<effect type="fade" start="100" end="0" time="500" delay="20000" />
-					</animation>
+					<left>500</left>
+					<include>KaiToastSlideAnimations</include>
+					<include>ScanSlideAnimations</include>					
 					<control type="label">
 						<left>0</left>
 						<top>0</top>
@@ -1001,10 +944,10 @@
 						<textcolor>blue</textcolor>
 						<shadowcolor>77000000</shadowcolor>
 					</control>
-					<control type="label">
+					<control type="fadelabel">
 						<left>0</left>
 						<top>20</top>
-						<width>540</width>
+						<width>480</width>
 						<height>35</height>
 						<label>$VAR[NowPlayingInfoLabels]</label>
 						<align>left</align>
@@ -1014,123 +957,123 @@
 						<shadowcolor>77000000</shadowcolor>
 					</control>
 				</control>
+			</control>
+			<!-- Music -->	
+			<control type="grouplist">
+				<include>HomeNowPlayingCoversSlideAnimations</include>
+				<animation effect="slide" start="-175,0" end="0,0" time="260" tween="sine" easing="inout" condition="!Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites)">Conditional</animation>
+				<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + Player.HasAudio</visible>	
+				<left>175</left>
+				<top>0</top>
+				<width>1000</width>
+				<height>60</height>
+				<align>left</align>
+				<itemgap>5</itemgap>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<height>53</height>
+					<width min="10" max="1000">auto</width>
+					<label>$INFO[Player.Time]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>FontSize_50</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+				</control>				
 				<control type="group">
-					<visible>MusicPlayer.HasNext</visible>
-					<animation type="Conditional" reversible="false" condition="MusicPlayer.HasNext" loop="true">
-						<effect type="fade" start="0" end="100" time="500" delay="10500" />
-						<effect type="fade" start="100" end="0" time="500" delay="20000" />
-					</animation>
-					<control type="label">
-						<left>0</left>
-						<top>0</top>
-						<width>300</width>
-						<height>33</height>
-						<label>$LOCALIZE[209]...</label>
-						<align>left</align>
-						<aligny>center</aligny>
-						<font>NotificationsFont</font>
-						<textcolor>blue</textcolor>
-						<shadowcolor>77000000</shadowcolor>
+					<left>500</left>					
+					<include>KaiToastSlideAnimations</include>
+					<include>ScanSlideAnimations</include>				
+					<control type="group">
+						<animation type="Conditional" reversible="false" condition="MusicPlayer.HasNext" loop="true">
+							<effect type="fade" start="0" end="100" time="500" delay="0" />
+							<effect type="fade" start="100" end="0" time="500" delay="10000" />
+							<effect type="fade" start="100" end="0" time="500" delay="20000" />
+						</animation>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<width>300</width>
+							<height>33</height>
+							<label>$LOCALIZE[31316]...</label>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>NotificationsFont</font>
+							<textcolor>blue</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>20</top>
+							<width>540</width>
+							<height>35</height>
+							<label>$VAR[NowPlayingInfoLabels]</label>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>NotificationsFont</font>
+							<textcolor>99white</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+						</control>
 					</control>
-					<control type="label">
-						<left>0</left>
-						<top>20</top>
-						<width>540</width>
-						<height>35</height>
-						<label>$INFO[MusicPlayer.offset(1).Artist]$INFO[MusicPlayer.offset(1).Title, · ] $INFO[MusicPlayer.offset(1).Album, (,) ]</label>
-						<align>left</align>
-						<aligny>center</aligny>
-						<font>NotificationsFont</font>
-						<textcolor>99white</textcolor>
-						<shadowcolor>77000000</shadowcolor>
+					<control type="group">
+						<visible>MusicPlayer.HasNext</visible>
+						<animation type="Conditional" reversible="false" condition="MusicPlayer.HasNext" loop="true">
+							<effect type="fade" start="0" end="100" time="500" delay="10500" />
+							<effect type="fade" start="100" end="0" time="500" delay="20000" />
+						</animation>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<width>300</width>
+							<height>33</height>
+							<label>$LOCALIZE[209]...</label>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>NotificationsFont</font>
+							<textcolor>blue</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>20</top>
+							<width>540</width>
+							<height>35</height>
+							<label>$INFO[MusicPlayer.offset(1).Artist]$INFO[MusicPlayer.offset(1).Title, · ] $INFO[MusicPlayer.offset(1).Album, (,) ]</label>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>NotificationsFont</font>
+							<textcolor>99white</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+						</control>
 					</control>
 				</control>
 			</control>
-		</control>
-		<!-- videos -->			
-		<control type="grouplist">
-			<include>HomeNowPlayingCoversSlideAnimations</include>
-			<animation effect="slide" start="-255,0" end="0,0" time="260" tween="sine" easing="inout" condition="!Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites)">Conditional</animation>
-			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + Player.HasVideo + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)</visible>
-			<left>255</left>
-			<top>0</top>
-			<width>1000</width>
-			<height>60</height>
-			<align>left</align>
-			<itemgap>5</itemgap>
-			<orientation>horizontal</orientation>
-			<control type="label">
-				<height>53</height>
-				<width min="10" max="1000">auto</width>
-				<label>$INFO[Player.Time]</label>
+			<!-- videos -->			
+			<control type="grouplist">
+				<include>HomeNowPlayingCoversSlideAnimations</include>
+				<animation effect="slide" start="-255,0" end="0,0" time="260" tween="sine" easing="inout" condition="!Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites)">Conditional</animation>
+				<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + Player.HasVideo + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)</visible>
+				<left>255</left>
+				<top>0</top>
+				<width>1000</width>
+				<height>60</height>
 				<align>left</align>
-				<aligny>center</aligny>
-				<font>FontSize_50</font>
-				<textcolor>white</textcolor>
-				<shadowcolor>77000000</shadowcolor>
-			</control>				
-			<control type="group">
-				<left>500</left>
-				<include>KaiToastSlideAnimations</include>
-				<include>ScanSlideAnimations</include>
+				<itemgap>5</itemgap>
+				<orientation>horizontal</orientation>
 				<control type="label">
-					<left>0</left>
-					<top>0</top>
-					<width>300</width>
-					<height>33</height>
-					<label>$LOCALIZE[31316]...</label>
+					<height>53</height>
+					<width min="10" max="1000">auto</width>
+					<label>$INFO[Player.Time]</label>
 					<align>left</align>
 					<aligny>center</aligny>
-					<font>NotificationsFont</font>
-					<textcolor>blue</textcolor>
+					<font>FontSize_50</font>
+					<textcolor>white</textcolor>
 					<shadowcolor>77000000</shadowcolor>
-				</control>
-				<control type="label">
-					<left>0</left>
-					<top>20</top>
-					<width>480</width>
-					<height>35</height>
-					<label>$VAR[NowPlayingInfoLabels]</label>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>NotificationsFont</font>
-					<textcolor>99white</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-				</control>
-			</control>
-		</control>
-		<!-- live tv -->			
-		<control type="grouplist">
-			<include>HomeNowPlayingCoversSlideAnimations</include>
-			<animation effect="slide" start="-175,0" end="0,0" time="260" tween="sine" easing="inout" condition="!Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites)">Conditional</animation>
-			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + VideoPlayer.Content(LiveTV)</visible>	
-			<left>175</left>
-			<top>0</top>
-			<width>1000</width>
-			<height>60</height>
-			<align>left</align>
-			<itemgap>5</itemgap>
-			<orientation>horizontal</orientation>
-			<control type="label">
-				<height>53</height>
-				<width min="10" max="1000">auto</width>
-				<label>$INFO[Player.Time]</label>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>FontSize_50</font>
-				<textcolor>white</textcolor>
-				<shadowcolor>77000000</shadowcolor>
-			</control>				
-			<control type="group">
-				<left>500</left>
-				<include>KaiToastSlideAnimations</include>
-				<include>ScanSlideAnimations</include>				
+				</control>				
 				<control type="group">
-					<animation type="Conditional" reversible="false" condition="Pvr.IsPlayingTv" loop="true">
-						<effect type="fade" start="0" end="100" time="500" delay="0" />
-						<effect type="fade" start="100" end="0" time="500" delay="10000" />
-						<effect type="fade" start="100" end="0" time="500" delay="20000" />
-					</animation>
+					<left>500</left>
+					<include>KaiToastSlideAnimations</include>
+					<include>ScanSlideAnimations</include>
 					<control type="label">
 						<left>0</left>
 						<top>0</top>
@@ -1148,38 +1091,7 @@
 						<top>20</top>
 						<width>480</width>
 						<height>35</height>
-						<label>$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.Title,: ]</label>
-						<align>left</align>
-						<aligny>center</aligny>
-						<font>NotificationsFont</font>
-						<textcolor>99white</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-					</control>
-				</control>
-				<control type="group">
-					<visible>Pvr.IsPlayingTv</visible>
-					<animation type="Conditional" reversible="false" condition="Pvr.IsPlayingTv" loop="true">
-						<effect type="fade" start="0" end="100" time="500" delay="10500" />
-						<effect type="fade" start="100" end="0" time="500" delay="20000" />
-					</animation>
-					<control type="label">
-						<left>0</left>
-						<top>0</top>
-						<width>300</width>
-						<height>33</height>
-						<label>$LOCALIZE[209]...</label>
-						<align>left</align>
-						<aligny>center</aligny>
-						<font>NotificationsFont</font>
-						<textcolor>blue</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-					</control>
-					<control type="label">
-						<left>0</left>
-						<top>20</top>
-						<width>480</width>
-						<height>35</height>
-						<label>$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.NextTitle,: ]</label>
+						<label>$VAR[NowPlayingInfoLabels]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>NotificationsFont</font>
@@ -1188,8 +1100,98 @@
 					</control>
 				</control>
 			</control>
-		</control>
+			<!-- live tv -->			
+			<control type="grouplist">
+				<include>HomeNowPlayingCoversSlideAnimations</include>
+				<animation effect="slide" start="-175,0" end="0,0" time="260" tween="sine" easing="inout" condition="!Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites)">Conditional</animation>
+				<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + VideoPlayer.Content(LiveTV)</visible>	
+				<left>175</left>
+				<top>0</top>
+				<width>1000</width>
+				<height>60</height>
+				<align>left</align>
+				<itemgap>5</itemgap>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<height>53</height>
+					<width min="10" max="1000">auto</width>
+					<label>$INFO[Player.Time]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>FontSize_50</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+				</control>				
+				<control type="group">
+					<left>500</left>
+					<include>KaiToastSlideAnimations</include>
+					<include>ScanSlideAnimations</include>				
+					<control type="group">
+						<animation type="Conditional" reversible="false" condition="Pvr.IsPlayingTv" loop="true">
+							<effect type="fade" start="0" end="100" time="500" delay="0" />
+							<effect type="fade" start="100" end="0" time="500" delay="10000" />
+							<effect type="fade" start="100" end="0" time="500" delay="20000" />
+						</animation>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<width>300</width>
+							<height>33</height>
+							<label>$LOCALIZE[31316]...</label>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>NotificationsFont</font>
+							<textcolor>blue</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>20</top>
+							<width>480</width>
+							<height>35</height>
+							<label>$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.Title,: ]</label>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>NotificationsFont</font>
+							<textcolor>99white</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+						</control>
+					</control>
+					<control type="group">
+						<visible>Pvr.IsPlayingTv</visible>
+						<animation type="Conditional" reversible="false" condition="Pvr.IsPlayingTv" loop="true">
+							<effect type="fade" start="0" end="100" time="500" delay="10500" />
+							<effect type="fade" start="100" end="0" time="500" delay="20000" />
+						</animation>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<width>300</width>
+							<height>33</height>
+							<label>$LOCALIZE[209]...</label>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>NotificationsFont</font>
+							<textcolor>blue</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>20</top>
+							<width>480</width>
+							<height>35</height>
+							<label>$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.NextTitle,: ]</label>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>NotificationsFont</font>
+							<textcolor>99white</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+						</control>
+					</control>
+				</control>
+			</control>
 
+		</control>
 	</control>
 </include>
 
