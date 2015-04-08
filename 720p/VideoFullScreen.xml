@@ -68,7 +68,6 @@
 				</animation>
 				<!-- Movies/Episodes Cover -->
 				<control type="group" id="1">
-					<!--<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + !SubString(Player.Filenameandpath,rtmp://) + !SubString(Player.Filenameandpath,http)</visible>-->
 					<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
 					<control type="image" id="1">
 						<left>10</left>
@@ -143,7 +142,6 @@
 				<!-- Videos -->
 				<control type="group" id="1">
 					<top>60</top>
-					<!--<visible>[!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(LiveTV)] | SubString(Player.Filenameandpath,rtmp://) | SubString(Player.Filenameandpath,http)</visible>-->
 					<visible>[!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(LiveTV)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)]</visible>
 					<control type="image" id="1">
 						<left>8</left>
@@ -315,7 +313,7 @@
 						<left>0</left>
 						<top>15</top>
 						<height>30</height>
-						<width>730</width>
+						<width>710</width>
 						<label>$VAR[OSDInfoTitleLabel]</label>
 						<align>left</align>
 						<aligny>center</aligny>
