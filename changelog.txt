@@ -1,4 +1,12 @@
-﻿[B][COLOR=FF56ADDA]v4.1.2[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.1.3[/COLOR][/B]
+Just a small bugfix release
+• Fixed: Optional Kodi-Intro issue with the "currently playing" notification
+• Fixed: PlayerControls focus texture dimensions (QuickNav element)
+• Fixed: PlayerControls MiniPlayer thumb for movies/episodes with non-available poster art
+• Fixed: Lyrics overlay and MusicOSD issue if the MusicOSD was active before the lyrics
+• Fixed: Not working fallback to a set multi-image of a main menu item if the widget has no own fanart
+
+[B][COLOR=FF56ADDA]v4.1.2[/COLOR][/B]
 • Fixed: Overlapping issue with setttings level button
 • Fixed: Wrong up/down conditions on ThumbList view
 • Fixed: Not working kiosk mode
