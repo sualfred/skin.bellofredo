@@ -135,8 +135,8 @@
 						<control type="image">
 							<left>20</left>
 							<top>0</top>
-							<width>175</width>
-							<height>165</height>
+							<width>172</width>
+							<height>164</height>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
 							<texture background="true">osd/quicknav/focus_square.png</texture>
 							<animation type="Focus">
