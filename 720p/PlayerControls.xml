@@ -1094,13 +1094,13 @@
 				<height>228</height>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 				<texture background="true" border="39">views/other/panel.png</texture>
-				<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)</visible>
+				<visible>[!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster))]</visible>
 				<animation effect="fade" time="0" start="100" end="50" condition="true">Conditional</animation>
 			</control>
 			<control type="image">
 				<include>FullscreenDimensions</include>
 				<texture background="true">osd/miniplayer/np_music.png</texture>
-				<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)</visible>
+				<visible>[!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster))]</visible>
 				<animation effect="fade" time="0" start="100" end="50" condition="true">Conditional</animation>
 			</control>
 			<control type="image">
@@ -1110,13 +1110,13 @@
 				<height>228</height>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 				<texture background="true" border="39">views/other/panel.png</texture>
-				<visible>VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)</visible>
+				<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
 				<animation effect="fade" time="0" start="100" end="50" condition="true">Conditional</animation>
 			</control>
 			<control type="image">
 				<include>FullscreenDimensions</include>
 				<texture background="true">osd/miniplayer/np_videos.png</texture>
-				<visible>VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)</visible>
+				<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
 				<animation effect="fade" time="0" start="100" end="50" condition="true">Conditional</animation>
 			</control>
 			<control type="label">
@@ -1137,28 +1137,9 @@
 			<control type="group">
 				<left>300</left>
 				<top>261</top>
-				<!-- Cover Movies & Episodes -->
+				<!-- Cover Movies & Episodes with Poster -->
 				<control type="group">
-					<visible>VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)</visible>
-					
-					<!--<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<width>144</width>
-						<height>194</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture border="3,2,3,2">osd/quicknav/nofocus_poster.png</texture>
-					</control>
-					<control type="image">
-						<description>Cover image</description>
-						<left>0</left>
-						<top>0</top>
-						<width>144</width>
-						<height>194</height>
-						<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
-						<texture background="true" fallback="thumbs/fallback_poster_tp.png">$VAR[VideoPlayerThumb]</texture>
-						<bordersize>6</bordersize>
-					</control>-->
+					<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
 					<control type="group">
 						<left>8</left>
 						<top>5</top>
@@ -1231,6 +1212,106 @@
 							<animation type="conditional" condition="Player.Rewinding" reversible="true">
 								<effect type="fade" start="0" end="50" time="300" />
 							</animation>		
+						</control>
+					</control>
+				</control>
+
+				<!-- Cover Movies & Episodes without Poster -->			
+				<control type="group">
+					<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster))]</visible>				
+					<control type="group">
+						<top>4</top>
+						<left>6</left>		
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>186</width>
+							<height>186</height>
+							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+							<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">thumbs/thumb_back.png</texture>
+							<fadetime>800</fadetime>
+						</control>				
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>186</width>
+							<height>186</height>
+							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+							<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$INFO[Player.Art(thumb)]</texture>
+							<fadetime>800</fadetime>
+							<visible>Player.HasAudio</visible>
+						</control>		
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>186</width>
+							<height>186</height>
+							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+							<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$VAR[VideoPlayerThumb]</texture>
+							<fadetime>800</fadetime>
+							<visible>!Player.HasAudio + !VideoPlayer.Content(LiveTV)</visible>
+						</control>	
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>186</width>
+							<height>186</height>
+							<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+							<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$VAR[VideoPlayerThumb]</texture>
+							<fadetime>800</fadetime>
+							<visible>!Player.HasAudio + VideoPlayer.Content(LiveTV)</visible>
+						</control>
+						<control type="image">
+							<left>-7</left>
+							<top>-7</top>
+							<width>200</width>
+							<height>200</height>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>
+							<texture background="true">thumbs/music_overlay.png</texture>
+							<fadetime>800</fadetime>
+						</control>
+						<control type="image">
+							<description>paused indicator</description>
+							<left>-1</left>
+							<top>-1</top>
+							<width>188</width>
+							<height>188</height>
+							<texture background="true" diffuse="thumbs/music_diffuse.png">osd/paused-overlay.png</texture>
+							<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+							<animation type="conditional" condition="!Player.Paused" reversible="false">
+								<effect type="fade" start="50" end="0" time="300" />
+							</animation>	
+							<animation type="conditional" condition="Player.Paused" reversible="false">
+								<effect type="fade" start="0" end="50" time="300" />
+							</animation>				
+						</control>
+						<control type="image">
+							<description>ff indicator</description>
+							<left>-1</left>
+							<top>-1</top>
+							<width>188</width>
+							<height>188</height>
+							<aspectratio align="center" aligny="center">scale</aspectratio>
+							<texture background="true">osd/ff-overlay_two.png</texture>
+							<visible>Player.Forwarding</visible>
+							<include>VisibleFadeEffect</include>
+							<animation type="conditional" condition="Player.Forwarding" reversible="true">
+								<effect type="fade" start="0" end="60" time="300" />
+							</animation>				
+						</control>
+						<control type="image">
+							<description>rw indicator</description>
+							<left>-1</left>
+							<top>-1</top>
+							<width>188</width>
+							<height>188</height>
+							<aspectratio align="center" aligny="center">scale</aspectratio>
+							<texture background="true">osd/rw-overlay_two.png</texture>
+							<visible>Player.Rewinding</visible>
+							<include>VisibleFadeEffect</include>
+							<animation type="conditional" condition="Player.Rewinding" reversible="true">
+								<effect type="fade" start="0" end="60" time="300" />
+							</animation>				
 						</control>
 					</control>
 				</control>
@@ -1340,7 +1421,7 @@
 			<control type="group">
 				<left>486</left>
 				<top>245</top>
-				<visible>VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)</visible>
+				<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
 				<control type="group">
 					<left>3</left>
 					<visible>VideoPlayer.Content(Movies)</visible>
@@ -1445,6 +1526,137 @@
 					</control>
 					<control type="label">
 						<right>290</right>
+						<top>0</top>
+						<width>300</width>
+						<height>40</height>
+						<font>FontSize_16</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[Player.Time(mm:ss)]$INFO[Player.Duration, / ]</label>
+						<textcolor>99white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+					</control>
+				</control>
+				<control type="image">
+					<description>Rating image</description>
+					<left>3</left>
+					<top>77</top>
+					<width>125</width>
+					<height>25</height>
+					<aspectratio align="left">keep</aspectratio>
+					<texture>rating/$INFO[Player.StarRating]</texture>
+				</control>	 
+			</control>
+
+			<!-- Info Movies & Episodes without player poster -->
+			<control type="group">
+				<left>536</left>
+				<top>245</top>
+				<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster))]</visible>
+				<control type="group">
+					<left>3</left>
+					<visible>VideoPlayer.Content(Movies)</visible>
+					<control type="label">
+						<description>Title label</description>
+						<left>-2</left>
+						<top>15</top>
+						<height>30</height>
+						<width>445</width>
+						<label>$INFO[VideoPlayer.Title,, ]$INFO[VideoPlayer.Year, (,) ]</label>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>FontSize_30</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>45</top>
+						<height>30</height>
+						<width>445</width>
+						<label>$INFO[VideoPlayer.Genre]</label>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>FontSize_18</font>
+						<textcolor>99white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+					</control>
+				</control>
+				<control type="group">
+					<left>3</left>
+					<visible>VideoPlayer.Content(Episodes)</visible>
+					<control type="label">
+						<description>Title label</description>
+						<left>0</left>
+						<top>15</top>
+						<height>30</height>
+						<width>445</width>
+						<label>$INFO[VideoPlayer.Title]</label>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>FontSize_30</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+					</control>
+					<control type="label">
+						<description>Label</description>
+						<left>0</left>
+						<top>45</top>
+						<height>30</height>
+						<width>445</width>
+						<label>$INFO[VideoPlayer.TVShowTitle,,  •  ]$INFO[VideoPlayer.Season,$LOCALIZE[20373] ,  •  ]$INFO[VideoPlayer.Episode,$LOCALIZE[20359] ,]</label>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>FontSize_18</font>
+						<textcolor>99white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+					</control>
+				</control>
+				<control type="group">
+					<left>0</left>
+					<top>115</top>
+					<control type="fadelabel">
+						<left>3</left>
+						<top>0</top>
+						<width>365</width>
+						<height>40</height>
+						<font>FontSize_16</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>99white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<label>$INFO[VideoPlayer.Director,[COLOR=white]$LOCALIZE[20339]:[/COLOR] ]</label>
+						<label>$INFO[VideoPlayer.Writer,[COLOR=white]$LOCALIZE[20417]:[/COLOR] ]</label>
+						<label>$INFO[VideoPlayer.RatingAndVotes,[COLOR=white]$LOCALIZE[563]:[/COLOR] ]</label>
+						<label>$INFO[VideoPlayer.Top250,[COLOR=white]$LOCALIZE[368] $LOCALIZE[13409][/COLOR] # ]</label>
+						<scroll>false</scroll>
+						<scrollout>false</scrollout>
+						<scrollspeed>100</scrollspeed>
+						<pauseatend>5000</pauseatend>
+						<visible>VideoPlayer.Content(Movies)</visible>
+					</control>
+					<control type="fadelabel">
+						<left>3</left>
+						<top>0</top>
+						<width>340</width>
+						<height>40</height>
+						<font>FontSize_16</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>99white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<label>$INFO[VideoPlayer.Premiered,[COLOR=white]$LOCALIZE[20416]:[/COLOR] ]</label>
+						<label>$INFO[VideoPlayer.Director,[COLOR=white]$LOCALIZE[20339]:[/COLOR] ]</label>
+						<label>$INFO[VideoPlayer.Writer,[COLOR=white]$LOCALIZE[20417]:[/COLOR] ]</label>
+						<label>$INFO[VideoPlayer.RatingAndVotes,[COLOR=white]$LOCALIZE[563]:[/COLOR] ]</label>
+						<scroll>false</scroll>
+						<scrollout>false</scrollout>
+						<scrollspeed>100</scrollspeed>
+						<pauseatend>5000</pauseatend>
+						<visible>VideoPlayer.Content(Episodes)</visible>
+					</control>
+					<control type="label">
+						<right>303</right>
 						<top>0</top>
 						<width>300</width>
 						<height>40</height>
@@ -1690,13 +1902,12 @@
 				</control>
 			</control>
 
-
 			<!-- Buttons Controls -->
 			<control type="group" id="100">
 				<left>539</left>
 				<top>398</top>
 				<visible>!VideoPlayer.Content(LiveTV)</visible>
-				<animation effect="slide" start="0,0" end="-50,0" time="0" condition="VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)" reversible="true">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-50,0" time="0" condition="[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]" reversible="true">Conditional</animation>
 				<control type="button" id="600">
 					<left>0</left>
 					<top>0</top>
@@ -1855,7 +2066,7 @@
 					<ondown>ClearProperty(Movement)</ondown>
 					<ondown>150</ondown>
 					<visible>!VideoPlayer.HasMenu</visible>
-					<visible>VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)</visible>
+					<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
 				</control>
 			</control>
 
