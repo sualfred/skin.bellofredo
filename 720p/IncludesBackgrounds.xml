@@ -106,7 +106,7 @@
 					<fadetime>500</fadetime>
 					<visible>![SubString(Container(20).ListItem.Property(background),\,Right) | SubString(Container(20).ListItem.Property(background),/,Right)]</visible>
 				</control>
-				<control type="multiimage">
+				<control type="multiimage" id="99999">
 					<description>HomeMenu Multi-Background</description>
 					<include>FullscreenDimensions</include>
 					<include>FanartFade</include>
@@ -114,7 +114,7 @@
 					<timeperimage>10000</timeperimage>
 					<randomize>true</randomize>
 					<loop>yes</loop>
-					<fadetime>600</fadetime>
+					<fadetime>600</fadetime>					
 					<visible>SubString(Container(20).ListItem.Property(background),\,Right) | SubString(Container(20).ListItem.Property(background),/,Right)</visible>
 				</control>
 				<control type="group">
@@ -182,7 +182,7 @@
 						<description>Widget Fanart</description>
 						<include>FullscreenDimensions</include>
 						<include>BackgroundFade</include>
-						<texture diffuse="osd/quicknav/fanart_diffuse.png" background="true" fallback="SKINDEFAULT.jpg">$VAR[QuickNavWidgetFanart]</texture>
+						<texture diffuse="osd/quicknav/fanart_diffuse.png" background="true">$VAR[QuickNavWidgetFanart]</texture>
 						<fadetime>FanartCrossfadeTime</fadetime>
 						<visible>!Skin.HasSetting(HideBGFanart) + Skin.HasSetting(DiffuseWidgetFanart)</visible>
 						<visible>!Window.IsActive(playercontrols)</visible>
@@ -193,7 +193,7 @@
 						<description>Widget Fanart</description>
 						<include>FullscreenDimensions</include>
 						<include>BackgroundFade</include>
-						<texture background="true" fallback="SKINDEFAULT.jpg">$VAR[QuickNavWidgetFanart]</texture>
+						<texture background="true">$VAR[QuickNavWidgetFanart]</texture>
 						<fadetime>FanartCrossfadeTime</fadetime>					
 						<visible>!Skin.HasSetting(HideBGFanart) + !Skin.HasSetting(DiffuseWidgetFanart)</visible>
 						<visible>!Window.IsActive(playercontrols)</visible>

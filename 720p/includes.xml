@@ -2070,6 +2070,7 @@
 	<value condition="ControlGroup(9093).HasFocus + StringCompare(Container(553).ListItem.Property(background),DefaultAddon)">$INFO[Container(553).ListItem.Property(defaultID),special://home/addons/,/fanart.jpg]</value>
 	<value condition="ControlGroup(9094).HasFocus + StringCompare(Container(554).ListItem.Property(background),DefaultAddon)">$INFO[Container(554).ListItem.Property(defaultID),special://home/addons/,/fanart.jpg]</value>
 	<!--main menu background duplicate as fallback-->	
+	<value condition="!Window.IsVisible(playercontrols) + !IsEmpty(Control.GetLabel(99999))">$INFO[Control.GetLabel(99999)]</value>
 	<value condition="!Window.IsVisible(playercontrols)">$INFO[Container(20).ListItem.Property(Background)]</value>
 </variable>
 
