@@ -310,6 +310,21 @@
 
 		<!-- handwriting fonts -->
 		<font>
+			<name>Hand_16</name>
+			<filename>fafers.ttf</filename>
+			<size>16</size>
+		</font>
+		<font>
+			<name>Hand_18</name>
+			<filename>fafers.ttf</filename>
+			<size>18</size>
+		</font>
+		<font>
+			<name>Hand_20</name>
+			<filename>fafers.ttf</filename>
+			<size>20</size>
+		</font>
+		<font>
 			<name>Hand_22</name>
 			<filename>fafers.ttf</filename>
 			<size>22</size>

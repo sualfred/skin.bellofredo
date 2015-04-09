@@ -1727,9 +1727,6 @@
 	</control>
 </include>
 
-
-
-
 <variable name="MenuGroupHeader">
 	<value condition="!StringCompare(Window.Property(groupname),mainmenu) + !IsEmpty(Window.Property(groupDisplayName))">$LOCALIZE[31050] $INFO[Window.Property(groupDisplayName),","]</value>			
 	<value condition="StringCompare(Window.Property(groupname),widgetgroup1)">$LOCALIZE[31049] $INFO[Skin.String(widgetgroup1),","]</value>		
@@ -2635,5 +2632,7 @@
 		<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/video_overlay_noglass.png</texture>
 	</control>
 </include>
+
+
 
 </includes>
