@@ -308,6 +308,39 @@
 			<size>230</size>
 		</font>
 
+		<!-- handwriting fonts -->
+		<font>
+			<name>Hand_22</name>
+			<filename>fafers.ttf</filename>
+			<size>22</size>
+		</font>
+		<font>
+			<name>Hand_26</name>
+			<filename>fafers.ttf</filename>
+			<size>26</size>
+		</font>
+		<font>
+			<name>Hand_24</name>
+			<filename>fafers.ttf</filename>
+			<size>24</size>
+		</font>
+
+		<font>
+			<name>Hand_34</name>
+			<filename>fafers.ttf</filename>
+			<size>34</size>
+		</font>
+		<font>
+			<name>Hand_32</name>
+			<filename>fafers.ttf</filename>
+			<size>32</size>
+		</font>
+		<font>
+			<name>Hand_40</name>
+			<filename>fafers.ttf</filename>
+			<size>40</size>
+		</font>		
+
 		<!-- Confluence Fonts (For Add-On Compatibility) -->
 		<font>
 			<name>font10</name>
