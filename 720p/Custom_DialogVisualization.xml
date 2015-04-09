@@ -127,6 +127,14 @@
 					<selected>Skin.HasSetting(HideVisualisationVignette)</selected>
 					<onclick>Skin.ToggleSetting(HideVisualisationVignette)</onclick>
 				</control>
+				<control type="radiobutton" id="984">
+					<description>Handwritten DiscArt</description>
+					<width>553</width>
+					<label>$LOCALIZE[31117]</label>
+					<include>DialogsRadioButton</include>
+					<selected>!Skin.HasSetting(HideHandwrittenDiscArt)</selected>
+					<onclick>Skin.ToggleSetting(HideHandwrittenDiscArt)</onclick>
+				</control>
 			</control>
 		</control>
 	</controls>

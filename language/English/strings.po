@@ -483,10 +483,14 @@ msgid "Diffuse Widget Fanarts"
 msgstr ""
 
 msgctxt "#31117"
-msgid "Handwritten DiscArt"
+msgid "Handwritten Disc Art"
 msgstr ""
 
-#: empty strings from id 31118 to 31123
+msgctxt "#31118"
+msgid "Show Disc Art"
+msgstr ""
+
+#: empty strings from id 31119 to 31123
 
 msgctxt "#31124"
 msgid "Flashing Lights"

@@ -79,11 +79,20 @@
 				<control type="togglebutton" id="296">
 					<description>Disable Handwritten DiscArt</description>
 					<include>TopLeftMenusButton</include>
+					<label>$LOCALIZE[31118]: $LOCALIZE[31011]</label>
+					<altlabel>$LOCALIZE[31118]: $LOCALIZE[31012]</altlabel>
+					<onclick>Skin.ToggleSetting(HideDiscArt)</onclick>
+					<selected>Skin.HasSetting(HideDiscArt)</selected>
+					<visible>Control.IsVisible(582) + [Container.Content(albums) | Container.Content(songs)]</visible>
+				</control>
+				<control type="togglebutton" id="297">
+					<description>Disable Handwritten DiscArt</description>
+					<include>TopLeftMenusButton</include>
 					<label>$LOCALIZE[31117]: $LOCALIZE[31011]</label>
 					<altlabel>$LOCALIZE[31117]: $LOCALIZE[31012]</altlabel>
 					<onclick>Skin.ToggleSetting(HideHandwrittenDiscArt)</onclick>
 					<selected>Skin.HasSetting(HideHandwrittenDiscArt)</selected>
-					<visible>Control.IsVisible(582) + [Container.Content(albums) | Container.Content(songs)]</visible>
+					<visible>!Skin.HasSetting(HideDiscArt) + Control.IsVisible(582) + [Container.Content(albums) | Container.Content(songs)]</visible>
 				</control>
 				<control type="button" id="3">
 					<description>Sort by</description>

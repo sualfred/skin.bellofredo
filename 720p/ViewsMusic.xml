@@ -1684,7 +1684,7 @@
 						<effect type="slide" start="0,0" end="65,0" tween="sine" easing="out" time="700" delay="300" />
 					</animation>	
 					<control type="group">
-						<visible>!Skin.HasSetting(HideHandwrittenDiscArt)</visible>
+						<visible>!Skin.HasSetting(HideDiscArt)</visible>
 						<animation type="Hidden" reversible="false">
 							<effect type="slide" start="0,0" end="-65,0" tween="sine" easing="out" time="600" delay="0" />
 							<effect type="fade" start="100" end="0" time="500" delay="0"/>
@@ -1705,7 +1705,15 @@
 								<width>225</width>
 								<height>225</height>
 								<texture background="true" diffuse="osd/cd_diffuse.png">osd/cdr.png</texture>
-								<aspectratio>keep</aspectratio>						
+								<aspectratio>keep</aspectratio>
+								<visible>!Skin.HasSetting(HideHandwrittenDiscArt)</visible>						
+							</control>						
+							<control type="image">						
+								<width>225</width>
+								<height>225</height>
+								<texture background="true" diffuse="osd/cd_diffuse.png">$INFO[ListItem.Path,,cdart.png]</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>Skin.HasSetting(HideHandwrittenDiscArt) + Container.Content(songs)</visible>						
 							</control>						
 							<control type="textbox">
 								<left>48</left>
@@ -1718,6 +1726,7 @@
 								<textcolor>ccblack</textcolor>
 								<label>$INFO[ListItem.Artist]</label>	
 								<animation effect="fade" start="75" end="75" time="0" delay="0" condition="true">Conditional</animation>
+								<visible>!Skin.HasSetting(HideHandwrittenDiscArt)</visible>	
 							</control>
 							<control type="textbox">
 								<left>63</left>
@@ -1730,6 +1739,7 @@
 								<textcolor>ccblack</textcolor>
 								<label>$INFO[ListItem.Album]</label>	
 								<animation effect="fade" start="75" end="75" time="0" delay="0" condition="true">Conditional</animation>
+								<visible>!Skin.HasSetting(HideHandwrittenDiscArt)</visible>	
 							</control>
 						</control>
 						<control type="image">						

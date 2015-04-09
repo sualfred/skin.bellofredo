@@ -618,6 +618,14 @@
 	</include>
 
 	<include name="CDImageAnim">
+		<animation type="conditional" condition="Window.IsActive(Home) + [Window.IsActive(ShutdownMenu) | Window.IsActive(favourites)]" reversible="false">
+			<effect type="slide" start="0,0" end="0,75" tween="sine" easing="out" time="800" delay="0"/>
+			<effect type="fade" start="100" end="0" time="100" delay="0"/>
+		</animation>
+		<animation type="conditional" condition="Window.IsActive(Home) + ![Window.IsActive(ShutdownMenu) | Window.IsActive(favourites)]" reversible="false">
+			<effect type="fade" start="0" end="100" time="100" delay="0"/>
+			<effect type="slide" start="0,75" end="0,0" tween="sine" easing="out" time="600" delay="0"/>
+		</animation>
 		<animation type="conditional" condition="Player.Paused | Player.Forwarding | Player.Rewinding" reversible="false">
 			<effect type="slide" start="0,0" end="0,60" tween="sine" easing="out" time="800" delay="0"/>
 			<effect type="fade" start="100" end="0" time="1000" delay="1000"/>
@@ -634,7 +642,8 @@
 			<effect type="fade" start="0" end="100" time="500" delay="500"/>
 			<effect type="slide" start="0,60" end="0,0" tween="sine" easing="out" time="700" delay="300" />
 		</animation>
-		<animation effect="rotate" end="-3600" center="auto" time="30000" loop="true" reversible="false" condition="true">Conditional</animation>
+		<!--<animation effect="rotate" end="-3600" center="auto" time="30000" loop="true" reversible="false" condition="true">Conditional</animation>-->
+		<animation effect="rotate" end="-3600" center="auto" time="100000" loop="true" reversible="false" condition="true">Conditional</animation>
 	</include>
 
 	<include name="CDImageAnim2">
@@ -656,11 +665,19 @@
 		</animation>		
 	</include>
 	<include name="CDImageAnim2Home">
-		<animation type="conditional" condition="Player.Paused | Player.Forwarding | Player.Rewinding" reversible="false">
+		<animation type="conditional" condition="Window.IsActive(ShutdownMenu) | Window.IsActive(favourites)" reversible="false">
+			<effect type="slide" start="0,0" end="0,75" tween="sine" easing="out" time="800" delay="0"/>
+			<effect type="fade" start="100" end="0" time="100" delay="0"/>
+		</animation>
+		<animation type="conditional" condition="![Window.IsActive(ShutdownMenu) | Window.IsActive(favourites)]" reversible="false">
+			<effect type="fade" start="0" end="100" time="100" delay="0"/>
+			<effect type="slide" start="0,75" end="0,0" tween="sine" easing="out" time="600" delay="0"/>
+		</animation>
+		<animation type="conditional" condition="Player.Paused | Player.Forwarding | Player.Rewinding | Window.IsActive(ShutdownMenu) | Window.IsActive(favourites)" reversible="false">
 			<effect type="slide" start="0,0" end="0,75" tween="sine" easing="out" time="800" delay="0"/>
 			<effect type="fade" start="100" end="0" time="1000" delay="1000"/>
 		</animation>
-		<animation type="conditional" condition="![Player.Paused | Player.Forwarding | Player.Rewinding]" reversible="false">
+		<animation type="conditional" condition="![Player.Paused | Player.Forwarding | Player.Rewinding | Window.IsActive(ShutdownMenu) | Window.IsActive(favourites)]" reversible="false">
 			<effect type="fade" start="0" end="100" time="1000" delay="0"/>
 			<effect type="slide" start="0,75" end="0,0" tween="sine" easing="out" time="600" delay="0"/>
 		</animation>
