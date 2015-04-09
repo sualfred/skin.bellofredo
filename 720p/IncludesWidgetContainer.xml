@@ -193,7 +193,6 @@
 				<height>167.5</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back.png</texture>
-				<fadetime>800</fadetime>
 			</control>
 			<control type="image">
 				<left>22</left>
@@ -202,7 +201,6 @@
 				<height>167.5</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="osd/widgets/poster_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
-				<fadetime>800</fadetime>
 			</control>
 			<control type="image">
 				<left>15.5</left>
@@ -211,7 +209,6 @@
 				<height>178.5</height>
 				<texture background="true">osd/widgets/poster_overlay.png</texture>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
-				<fadetime>800</fadetime>
 			</control>
 		</itemlayout>
 		<focusedlayout height="200" width="144">
@@ -222,7 +219,7 @@
 				</animation>
 				<animation type="UnFocus" reversible="false" >
 					<effect type="zoom" start="95" end="100" time="100" tween="back" easing="in" center="auto" />
-					<effect type="fade" start="90" end="100" time="100" tween="sine" easing="in" />
+					<effect type="fade" start="90" end="100" time="100" tween="sine" easing="in" />-->
 				</animation>
 				<control type="image">
 					<left>22</left>
@@ -231,7 +228,6 @@
 					<height>167.5</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 					<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back.png</texture>
-					<fadetime>800</fadetime>
 				</control>
 				<control type="image">
 					<left>22</left>
@@ -240,7 +236,6 @@
 					<height>167.5</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 					<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="osd/widgets/poster_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
-					<fadetime>800</fadetime>
 				</control>
 				<control type="image">
 					<left>15.5</left>
@@ -249,7 +244,6 @@
 					<height>178.5</height>
 					<texture background="true">osd/widgets/poster_overlay.png</texture>
 					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<fadetime>800</fadetime>
 				</control>
 				<control type="image">
 					<left>18</left>
@@ -258,7 +252,6 @@
 					<height>173</height>
 					<aspectratio align="center" aligny="center">stretch</aspectratio>
 					<texture>osd/widgets/poster_focus.png</texture>
-
 					<animation type="Conditional" condition="![Control.IsVisible(4513) | Control.IsVisible(4514)]" reversible="false">
 						<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
 						<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
@@ -298,7 +291,6 @@
 				<height>154</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
-				<fadetime>800</fadetime>
 			</control>
 			<control type="image">
 				<left>20</left>
@@ -307,7 +299,6 @@
 				<height>154</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
-				<fadetime>800</fadetime>
 			</control>
 			<control type="image">
 				<left>14</left>
@@ -316,7 +307,6 @@
 				<height>165</height>
 				<texture background="true">osd/widgets/square_overlay.png</texture>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
-				<fadetime>800</fadetime>
 			</control>
 		</itemlayout>
 		<focusedlayout height="200" width="180">
@@ -336,7 +326,6 @@
 					<height>154</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 					<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
-					<fadetime>800</fadetime>
 				</control>
 				<control type="image">
 					<left>20</left>
@@ -345,7 +334,6 @@
 					<height>154</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
-					<fadetime>800</fadetime>
 				</control>
 				<control type="image">
 					<left>14</left>
@@ -354,7 +342,6 @@
 					<height>165</height>
 					<texture background="true">osd/widgets/square_overlay.png</texture>
 					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<fadetime>800</fadetime>
 				</control>
 				<control type="image">
 					<left>17</left>

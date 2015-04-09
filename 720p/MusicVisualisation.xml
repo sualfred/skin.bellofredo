@@ -367,7 +367,55 @@
 					<aspectratio>keep</aspectratio>
 					<include>CDImageAnim</include>
 					<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="![Player.ShowInfo | Window.IsActive(MusicOSD)]" reversible="true">Conditional</animation>
-					<visible>!Player.IsInternetStream</visible>
+					<visible>Skin.HasSetting(HideHandwrittenDiscArt) + !Player.IsInternetStream</visible>					
+				</control>
+				<control type="group">
+					<visible>!Skin.HasSetting(HideHandwrittenDiscArt) + !Player.IsInternetStream</visible>
+					<left>3</left>
+					<top>-70</top>
+					<include>CDImageAnim2</include>
+					<control type="group">						
+						<width>225</width>
+						<height>225</height>											
+						<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="![Player.ShowInfo | Window.IsActive(MusicOSD)]" reversible="true">Conditional</animation>
+						<animation effect="rotate" end="-3600" center="auto" time="100000" loop="true" reversible="false" condition="true">Conditional</animation>
+						<control type="image">						
+							<width>225</width>
+							<height>225</height>
+							<texture background="true" diffuse="osd/cd_diffuse.png">osd/cdr.png</texture>
+							<aspectratio>keep</aspectratio>		
+						</control>
+						<control type="textbox">
+							<left>48</left>
+							<top>30</top>
+							<width>130</width>
+							<height>40</height>
+							<align>center</align>
+							<aligny>top</aligny>
+							<font>Hand_16</font>
+							<textcolor>ccblack</textcolor>
+							<label>$INFO[MusicPlayer.Artist]</label>	
+							<animation effect="fade" start="75" end="75" time="0" delay="0" condition="true">Conditional</animation>
+						</control>
+						<control type="textbox">
+							<left>63</left>
+							<top>148</top>
+							<width>100</width>
+							<height>58</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Hand_16</font>
+							<textcolor>ccblack</textcolor>
+							<label>$INFO[MusicPlayer.Album]</label>	
+							<animation effect="fade" start="75" end="75" time="0" delay="0" condition="true">Conditional</animation>
+						</control>
+					</control>					
+					<control type="image">						
+						<width>225</width>
+						<height>225</height>
+						<texture background="true" diffuse="osd/cd_diffuse.png">osd/cdr_shadow_top.png</texture>
+						<aspectratio>keep</aspectratio>						
+					</control>	
 				</control>
 				<control type="image">
 					<left>0</left>
