@@ -532,13 +532,15 @@
 
 <variable name="VarArtThumb">
   <value condition="!IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+  <value condition="!IsEmpty(ListItem.Icon) + !StringCompare(ListItem.Label,..)">$INFO[ListItem.Icon]</value>
   <value>$INFO[ListItem.ActualIcon,thumbs/,/folderback_episode_tp.png]</value>
 </variable>
 
 <variable name="VarArtThumbSquare">
   <value condition="!IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+  <value condition="!IsEmpty(ListItem.Icon) + !StringCompare(ListItem.Label,..)">$INFO[ListItem.Icon]</value>
   <value>$INFO[ListItem.ActualIcon,thumbs/,/folderback_square_tp.png]</value>
-</variable>
+</variable> 
 
 <variable name="VideoWallThumb">
   <value condition="!IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
