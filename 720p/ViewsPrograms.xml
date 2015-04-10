@@ -285,17 +285,18 @@
 				<left>46</left>
 				<width>441</width>
 				<height>248</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-				<texture background="true" diffuse="views/episode/episode_diffuse.png" fallback="thumbs/fallback_episode_tp.png">$VAR[EpisodeThumb]</texture>
-				<fadetime>FanartCrossfadeTime</fadetime>
-			</control>	
+				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+				<texture background="true" diffuse="views/episode/episode_diffuse.png">$INFO[ListItem.ActualIcon]</texture>
+				<visible>IsEmpty(ListItem.Art(thumb)) + IsEmpty(ListItem.Art(fanart))</visible>
+			</control>
 			<control type="image">
 				<left>46</left>
 				<width>441</width>
 				<height>248</height>
-				<aspectratio aligny="center" align="center">stretch</aspectratio>
-				<texture background="true">views/episode/episode_overlay.png</texture>
-			</control>	
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views/episode/episode_diffuse.png">$VAR[EpisodeThumb]</texture>
+				<fadetime>FanartCrossfadeTime</fadetime>				
+			</control>				
 			<control type="image">
 				<left>46</left>
 				<width>441</width>
@@ -303,6 +304,13 @@
 				<aspectratio aligny="center" align="center">stretch</aspectratio>
 				<texture background="true" diffuse="views/episode/episode_diffuse.png">views/episode/episode_label.png</texture>
 				<visible>!Stringcompare(ListItem.Label,..)</visible>
+			</control>	
+			<control type="image">
+				<left>46</left>
+				<width>441</width>
+				<height>248</height>
+				<aspectratio aligny="center" align="center">stretch</aspectratio>
+				<texture background="true">views/episode/episode_overlay.png</texture>
 			</control>
 			<!-- thumb label -->
 			<control type="label">
