@@ -182,7 +182,7 @@
 		<onup condition="!Control.IsVisible(25) + !Control.IsVisible(35) + !Control.IsVisible(75) + !Control.IsVisible(76)">SetFocus(21)</onup>
 		<ondown>SetFocus(20)</ondown>
 		<onback>SetFocus(20)</onback>
-		<movement>5</movement>
+		<movement>4</movement>
 		<orientation>horizontal</orientation>
 		<scrolltime tween="Quadratic" easing="out">300</scrolltime>
 		<itemlayout height="200" width="144">
