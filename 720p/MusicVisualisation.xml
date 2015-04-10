@@ -272,150 +272,78 @@
 			</animation>
 			<visible>[Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(MusicOSD)]</visible>
 			<visible>!Window.IsVisible(AddonSettings) + !Window.IsVisible(SelectDialog) + !Window.IsVisible(VisualisationPresetList) + !Window.IsVisible(1112) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites)</visible>
-			<!-- thumb cover -->
-			<!--<control type="group">
-				<control type="image">
-					<left>3</left>
-					<top>-50</top>
-					<width>155</width>
-					<height>155</height>
-					<texture background="true" diffuse="osd/cd_diffuse.png" fallback="osd/cd.png">$INFO[Player.FolderPath,,cdart.png]</texture>
-					<aspectratio>keep</aspectratio>
-					<include>CDImageAnim</include>
-					<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="![Player.ShowInfo | Window.IsActive(MusicOSD)]" reversible="true">Conditional</animation>
-					<visible>!Player.IsInternetStream</visible>
-				</control>
-				<control type="image">
-					<left>0</left>
-					<top>0</top>
-					<width>160</width>
-					<height>160</height>
-					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-					<texture diffuse="thumbs/music_diffuse.png">thumbs/thumb_back.png</texture>
-					<fadetime>800</fadetime>
-				</control>
-				<control type="image">
-					<left>0</left>
-					<top>0</top>
-					<width>160</width>
-					<height>160</height>
-					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-					<texture fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$INFO[Player.Art(thumb)]</texture>
-					<fadetime>800</fadetime>
-				</control>
-				<control type="image">
-					<left>-7</left>
-					<top>-7</top>
-					<width>174</width>
-					<height>174</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture>thumbs/music_overlay.png</texture>
-					<fadetime>800</fadetime>
-				</control>
-				<control type="image">
-					<description>paused indicator</description>
-					<left>-1</left>
-					<top>-1</top>
-					<width>162</width>
-					<height>162</height>
-					<texture diffuse="thumbs/music_diffuse.png">osd/paused-overlay.png</texture>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<visible>Player.Paused</visible>
-					<include>VisibleFadeEffect</include>
-					<animation type="conditional" condition="Player.Paused" reversible="true">
-						<effect type="fade" start="0" end="50" time="300" />
-					</animation>
-				</control>
-				<control type="image">
-					<description>ff indicator</description>
-					<left>-1</left>
-					<top>-1</top>
-					<width>162</width>
-					<height>162</height>
-					<texture diffuse="thumbs/music_diffuse.png">osd/ff-overlay.png</texture>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<visible>Player.Forwarding</visible>
-					<include>VisibleFadeEffect</include>
-					<animation type="conditional" condition="Player.Forwarding" reversible="true">
-						<effect type="fade" start="0" end="50" time="300" />
-					</animation>
-				</control>
-				<control type="image">
-					<description>rw indicator</description>
-					<left>-1</left>
-					<top>-1</top>
-					<width>162</width>
-					<height>162</height>
-					<texture diffuse="thumbs/music_diffuse.png">osd/rw-overlay.png</texture>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<visible>Player.Rewinding</visible>
-					<include>VisibleFadeEffect</include>
-					<animation type="conditional" condition="Player.Rewinding" reversible="true">
-						<effect type="fade" start="0" end="50" time="300" />
-					</animation>
-				</control>
-			</control>-->
-			<control type="group">
-				<!--<animation effect="slide" time="0" start="0,0" end="0,-70" condition="true">Conditional</animation>-->
+			
+			<control type="group">				
 				<top>-70</top>
-				<control type="image">
-					<left>3</left>
-					<top>-70</top>
-					<width>225</width>
-					<height>225</height>
-					<texture background="true" diffuse="osd/cd_diffuse.png" fallback="osd/cd.png">$INFO[Player.FolderPath,,cdart.png]</texture>
-					<aspectratio>keep</aspectratio>
-					<include>CDImageAnim</include>
-					<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="![Player.ShowInfo | Window.IsActive(MusicOSD)]" reversible="true">Conditional</animation>
-					<visible>Skin.HasSetting(HideHandwrittenDiscArt) + !Player.IsInternetStream</visible>					
-				</control>
 				<control type="group">
-					<visible>!Skin.HasSetting(HideHandwrittenDiscArt) + !Player.IsInternetStream</visible>
-					<left>3</left>
-					<top>-70</top>
-					<include>CDImageAnim2</include>
-					<control type="group">						
+					<visible>Player.HasAudio + !Player.IsInternetStream + IntegerGreaterThan(MusicPlayer.Time,0)</visible>
+					<animation type="Hidden" reversible="false">
+						<effect type="slide" start="0,0" end="0,60" tween="sine" easing="out" time="600" delay="0" />
+						<effect type="fade" start="100" end="0" time="500" delay="0"/>
+					</animation>
+					<animation type="Visible" reversible="false">
+						<effect type="fade" start="0" end="100" time="500" delay="500"/>
+						<effect type="slide" start="0,60" end="0,0" tween="sine" easing="out" time="700" delay="300" />
+					</animation>
+					<control type="image">
+						<left>3</left>
+						<top>-70</top>
 						<width>225</width>
-						<height>225</height>											
+						<height>225</height>
+						<texture background="true" diffuse="osd/cd_diffuse.png" fallback="osd/cd.png">$INFO[Player.FolderPath,,cdart.png]</texture>
+						<aspectratio>keep</aspectratio>
+						<include>CDImageAnim</include>
 						<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="![Player.ShowInfo | Window.IsActive(MusicOSD)]" reversible="true">Conditional</animation>
-						<animation effect="rotate" end="-3600" center="auto" time="100000" loop="true" reversible="false" condition="true">Conditional</animation>
+						<visible>Skin.HasSetting(HideHandwrittenDiscArt) + !Player.IsInternetStream</visible>					
+					</control>
+					<control type="group">
+						<visible>!Skin.HasSetting(HideHandwrittenDiscArt) + !Player.IsInternetStream</visible>
+						<left>3</left>
+						<top>-70</top>
+						<include>CDImageAnim2</include>
+						<control type="group">						
+							<width>225</width>
+							<height>225</height>											
+							<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="![Player.ShowInfo | Window.IsActive(MusicOSD)]" reversible="true">Conditional</animation>
+							<animation effect="rotate" end="-3600" center="auto" time="100000" loop="true" reversible="false" condition="true">Conditional</animation>
+							<control type="image">						
+								<width>225</width>
+								<height>225</height>
+								<texture background="true" diffuse="osd/cd_diffuse.png">osd/cdr.png</texture>
+								<aspectratio>keep</aspectratio>		
+							</control>
+							<control type="textbox">
+								<left>48</left>
+								<top>30</top>
+								<width>130</width>
+								<height>40</height>
+								<align>center</align>
+								<aligny>top</aligny>
+								<font>Hand_16</font>
+								<textcolor>ccblack</textcolor>
+								<label>$INFO[MusicPlayer.Artist]</label>	
+								<animation effect="fade" start="75" end="75" time="0" delay="0" condition="true">Conditional</animation>
+							</control>
+							<control type="textbox">
+								<left>63</left>
+								<top>148</top>
+								<width>100</width>
+								<height>58</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>Hand_16</font>
+								<textcolor>ccblack</textcolor>
+								<label>$INFO[MusicPlayer.Album]</label>	
+								<animation effect="fade" start="75" end="75" time="0" delay="0" condition="true">Conditional</animation>
+							</control>
+						</control>					
 						<control type="image">						
 							<width>225</width>
 							<height>225</height>
-							<texture background="true" diffuse="osd/cd_diffuse.png">osd/cdr.png</texture>
-							<aspectratio>keep</aspectratio>		
-						</control>
-						<control type="textbox">
-							<left>48</left>
-							<top>30</top>
-							<width>130</width>
-							<height>40</height>
-							<align>center</align>
-							<aligny>top</aligny>
-							<font>Hand_16</font>
-							<textcolor>ccblack</textcolor>
-							<label>$INFO[MusicPlayer.Artist]</label>	
-							<animation effect="fade" start="75" end="75" time="0" delay="0" condition="true">Conditional</animation>
-						</control>
-						<control type="textbox">
-							<left>63</left>
-							<top>148</top>
-							<width>100</width>
-							<height>58</height>
-							<align>center</align>
-							<aligny>center</aligny>
-							<font>Hand_16</font>
-							<textcolor>ccblack</textcolor>
-							<label>$INFO[MusicPlayer.Album]</label>	
-							<animation effect="fade" start="75" end="75" time="0" delay="0" condition="true">Conditional</animation>
-						</control>
-					</control>					
-					<control type="image">						
-						<width>225</width>
-						<height>225</height>
-						<texture background="true" diffuse="osd/cd_diffuse.png">osd/cdr_shadow_top.png</texture>
-						<aspectratio>keep</aspectratio>						
-					</control>	
+							<texture background="true" diffuse="osd/cd_diffuse.png">osd/cdr_shadow_top.png</texture>
+							<aspectratio>keep</aspectratio>						
+						</control>	
+					</control>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -462,8 +390,8 @@
 					<description>ff indicator</description>
 					<left>-1</left>
 					<top>-1</top>
-					<width>162</width>
-					<height>162</height>
+					<width>232</width>
+					<height>232</height>
 					<texture diffuse="thumbs/music_diffuse.png">osd/ff-overlay.png</texture>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 					<visible>Player.Forwarding</visible>
@@ -476,8 +404,8 @@
 					<description>rw indicator</description>
 					<left>-1</left>
 					<top>-1</top>
-					<width>162</width>
-					<height>162</height>
+					<width>232</width>
+					<height>232</height>
 					<texture diffuse="thumbs/music_diffuse.png">osd/rw-overlay.png</texture>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 					<visible>Player.Rewinding</visible>

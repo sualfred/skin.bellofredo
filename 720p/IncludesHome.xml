@@ -38,6 +38,61 @@
 					</animation>
 					<visible>Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar)</visible>
 				</control>
+
+				<!--<control type="group">
+					<include>WidgetMainMenuSlideAnimations</include>
+					<animation effect="zoom" time="0" tween="0" easing="0" start="100" end="25" center="635,200" condition="true">Conditional</animation>
+					<top>262</top>
+					<left>419</left>
+					<width>734</width>
+					<height>275</height>
+					<control type="image">
+						<left>-121.5</left>
+						<top>5</top>
+						<width>116.5</width>
+						<height>167.5</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="osd/widgets/poster_diffuse.png">$INFO[Container(250).ListItem(0).Thumb]</texture>
+						<fadetime>800</fadetime>
+					</control> 
+					<control type="image">
+						<left>22</left>
+						<top>5</top>
+						<width>116.5</width>
+						<height>167.5</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="osd/widgets/poster_diffuse.png">$INFO[Container(250).ListItem(1).Thumb]</texture>
+						<fadetime>800</fadetime>
+					</control> 
+					<control type="image">
+						<left>166</left>
+						<top>5</top>
+						<width>116.5</width>
+						<height>167.5</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="osd/widgets/poster_diffuse.png">$INFO[Container(250).ListItem(2).Thumb]</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>310</left>
+						<top>5</top>
+						<width>116.5</width>
+						<height>167.5</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="osd/widgets/poster_diffuse.png">$INFO[Container(250).ListItem(3).Thumb]</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image">
+						<left>454</left>
+						<top>5</top>
+						<width>116.5</width>
+						<height>167.5</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+					<texture background="true" diffuse="osd/widgets/poster_diffuse.png">$INFO[Container(250).ListItem(4).Thumb]</texture>
+						<fadetime>800</fadetime>
+					</control>	
+				</control>-->
+
 				<control type="wraplist" id="20">
 					<include>WidgetMainMenuSlideAnimations</include>
 					<description>Home Container</description>
