@@ -225,8 +225,22 @@
 			<animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation>
 			<animation effect="fade" start="0" end="100" time="1000">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="1000">Hidden</animation>
-			<include condition="Skin.HasSetting(Vis-Animation)">VizBackAnimation</include>
-			<visible>Player.HasAudio</visible>
+			<include>VizBackAnimation</include>
+			<visible>Player.HasAudio + !Skin.HasSetting(AmbilightMode)</visible>
+			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
+		</control>
+		<control type="multiimage">
+			<include>FullscreenDimensions</include>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<loop>yes</loop>
+			<fadetime>1000</fadetime>
+			<imagepath background="true" diffuse="osd/quicknav/fanart_diffuse2.png">$VAR[Vis-Background]</imagepath>
+			<animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation>
+			<animation effect="fade" start="0" end="100" time="1000">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="1000">Hidden</animation>
+			<include>VizBackAnimation</include>
+			<visible>Player.HasAudio + Skin.HasSetting(AmbilightMode)</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>
 		<include condition="[Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))]">BackgroundWeather</include>
@@ -347,7 +361,7 @@
 			<description>Vignette</description>
 			<include>FullscreenDimensions</include>
 			<texture background="true">windows/bg/bg_vignette.png</texture>
-			<visible>[Skin.HasSetting(HideVisualisationVignette) + [!Window.IsActive(visualisation) | Window.IsActive(musicosd) | Player.ShowInfo]] | !Skin.HasSetting(HideVisualisationVignette)</visible>
+			<visible>[Skin.HasSetting(AmbilightMode) + [!Window.IsActive(visualisation) | Window.IsActive(musicosd) | Player.ShowInfo]] | !Skin.HasSetting(AmbilightMode)</visible>
 			<include>BackgroundFade</include>
 			<!--	<colordiffuse>FFCDCDCD</colordiffuse>
 			<colordiffuse>D5FFFFFF</colordiffuse> -->

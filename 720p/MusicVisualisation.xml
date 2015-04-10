@@ -213,7 +213,22 @@
 			<animation effect="fade" start="100" end="0" time="550" delay="200" tween="sine" easing="out">WindowClose</animation>
 			<animation effect="fade" start="0" end="100" time="550" delay="0" tween="sine" easing="out">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="550" delay="200" tween="sine" easing="out">Hidden</animation>
-			<visible>!Skin.HasSetting(HideOSDDiffuseColors)</visible>
+			<visible>!Skin.HasSetting(HideOSDDiffuseColors) + !Skin.HasSetting(AmbilightMode)</visible>
+		</control>
+		<control type="multiimage">
+			<include>FullscreenDimensions</include>
+			<randomize>true</randomize>
+			<timeperimage>12000</timeperimage>
+			<fadetime>4000</fadetime>
+			<pauseatend>0</pauseatend>
+			<loop>true</loop>
+			<imagepath background="true" diffuse="osd/quicknav/fanart_diffuse2.png">special://skin/extras/backgrounds/music_colors</imagepath>
+			<colordiffuse>OSDColorsDiffuse</colordiffuse>			
+			<animation effect="fade" start="0" end="70" time="550" delay="0" tween="sine" easing="out">WindowOpen</animation>
+			<animation effect="fade" start="70" end="0" time="550" delay="200" tween="sine" easing="out">WindowClose</animation>
+			<animation effect="fade" start="0" end="70" time="550" delay="0" tween="sine" easing="out">Visible</animation>
+			<animation effect="fade" start="70" end="0" time="550" delay="200" tween="sine" easing="out">Hidden</animation>
+			<visible>!Skin.HasSetting(HideOSDDiffuseColors) + Skin.HasSetting(AmbilightMode)</visible>
 		</control>
 		<control type="textbox">
 			<description>textarea</description>

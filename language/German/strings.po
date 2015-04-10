@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-04-04 11:35+0000\n"
+"PO-Revision-Date: 2015-04-10 19:24+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -483,7 +483,19 @@ msgctxt "#31115"
 msgid "My Subscriptions"
 msgstr "Meine Abos"
 
-#: empty strings from id 31116 to 31123
+msgctxt "#31116"
+msgid "Diffuse Widget Fanarts"
+msgstr "Überblende Widget Fanarts"
+
+msgctxt "#31117"
+msgid "Handwritten Disc Art"
+msgstr "Handbeschriebene Disc Arts"
+
+msgctxt "#31118"
+msgid "Show Disc Art"
+msgstr "Zeige Disc Art"
+
+#: empty strings from id 31119 to 31123
 msgctxt "#31124"
 msgid "Flashing Lights"
 msgstr "Blinkende Lichter"
@@ -599,7 +611,7 @@ msgctxt "#31154"
 msgid "Choose Trailers Add-on"
 msgstr "Wähle Trailer-Addon"
 
-#: empty string with id 31155
+#: empty string with 31155
 msgctxt "#31156"
 msgid "Manage Video Views"
 msgstr "Videoansichten verwalten"
@@ -1122,8 +1134,8 @@ msgid "Now Playing"
 msgstr "Läuft gerade"
 
 msgctxt "#31317"
-msgid "Deactivate Vignette (Better for Ambilight)"
-msgstr "Deaktiviere Vignette (Besser für Ambilight)"
+msgid "Amiblight Compatiblity Mode"
+msgstr "Ambilight Kompatiblitätsmodus"
 
 #: empty strings from id 31318 to 31349 PVR
 msgctxt "#31350"

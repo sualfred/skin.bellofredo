@@ -42,7 +42,7 @@
 	<onload condition="!Skin.HasSetting(BelloFredoFirstRun) + !Skin.HasSetting(ShowVideoInfo)">Skin.ToggleSetting(ShowVideoInfo)</onload>
 	<onload condition="!Skin.HasSetting(BelloFredoFirstRun) + !Skin.HasSetting(HomeWidgetArrowAnimation)">Skin.ToggleSetting(HomeWidgetArrowAnimation)</onload>
 	<onload condition="!Skin.HasSetting(BelloFredoFirstRun) + !Skin.HasSetting(HideOSDDiffuseColors)">Skin.ToggleSetting(HideOSDDiffuseColors)</onload>
-	<onload condition="!Skin.HasSetting(BelloFredoFirstRun) + !Skin.HasSetting(HideVisualisationVignette)">Skin.ToggleSetting(HideVisualisationVignette)</onload>
+	<onload condition="!Skin.HasSetting(BelloFredoFirstRun) + !Skin.HasSetting(AmbilightMode)">Skin.ToggleSetting(AmbilightMode)</onload>
 	<onload condition="!Skin.HasSetting(BelloFredoFirstRun)">Skin.ToggleSetting(BelloFredoFirstRun)</onload>	
 	<controls>
 		<control type="button" id="10">

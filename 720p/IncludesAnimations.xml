@@ -613,8 +613,9 @@
 	</include>
 
 	<include name="VizBackAnimation">
-		<animation effect="zoom" start="110" end="130" center="auto" time="14000" pulse="true" condition="true">Conditional</animation>
-		<animation effect="slide" start="-20,-20" end="40,40" time="15000" pulse="true" condition="true">Conditional</animation>
+		<animation effect="zoom" start="90" end="110" center="auto" time="14000" pulse="true" condition="Skin.HasSetting(Vis-Animation)" reversible="false">Conditional</animation>
+		<animation effect="slide" start="-20,-20" end="40,40" time="15000" pulse="true" condition="Skin.HasSetting(Vis-Animation)" reversible="false">Conditional</animation><animation effect="zoom" end="100" center="auto" time="0" condition="!Skin.HasSetting(Vis-Animation)" reversible="false">Conditional</animation>
+		<animation effect="slide" end="0,0" time="0" condition="!Skin.HasSetting(Vis-Animation)" reversible="false">Conditional</animation>
 	</include>
 
 	<include name="CDImageAnim">

@@ -2,6 +2,12 @@
 • Fixed: Image fadetime issues with latest nightlie of Kodi
 • Added: Optional disc art for ThumbList view (music)
 • Added: Optional handwritten music disc art style instead of using local stored cdart.png's
+• Removed: Old Ambilight option
+• Added: Ambilight Compatiblity Mode (Diffused effects on the borders for all visualisation settings)
+• Fixed: Thumbnail View fallback icons
+• Fixed: Thumb List fallback icons
+• Fixed: Some CDArt animation conditions
+• Fixed: Visualisation fanart animation
 
 [B][COLOR=FF56ADDA]v4.1.3[/COLOR][/B]
 Just a small bugfix release

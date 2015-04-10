@@ -1130,7 +1130,7 @@ msgid "Now Playing"
 msgstr ""
 
 msgctxt "#31317"
-msgid "Deactivate Vignette (Better for Ambilight)"
+msgid "Amiblight Compatiblity Mode"
 msgstr ""
 
 #: empty strings from id 31318 to 31349

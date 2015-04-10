@@ -522,23 +522,20 @@
 </variable>
 
 <variable name="VarArtBanner">
+  <value condition="StringCompare(ListItem.Label,..)">$INFO[ListItem.ActualIcon,thumbs/,/folderback_banner_tp.png]</value>  
   <value condition="Skin.HasSetting(LocalArtworks) + !SubString(ListItem.Path,plugin:,left) + Container.Content(Seasons) + !IsEmpty(ListItem.Season) + !IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season0,-banner.jpg]</value>
   <value condition="Skin.HasSetting(LocalArtworks) + !SubString(ListItem.Path,plugin:,left) + Container.Content(Seasons) + !IsEmpty(ListItem.Season) + IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-banner.jpg]</value>
   <value condition="!IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
   <value condition="!IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
-  <value condition="!IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
-  <value condition="StringCompare(ListItem.Label,..)">$INFO[ListItem.ActualIcon,thumbs/,/folderback_banner_tp.png]</value>  
   <value>$INFO[ListItem.Icon]</value>
 </variable>
 
 <variable name="VarArtThumb">
-  <value condition="!IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
-  <value condition="StringCompare(ListItem.Label,..)">$INFO[ListItem.ActualIcon,thumbs/,/folderback_episode_tp.png]</value>
+    <value condition="StringCompare(ListItem.Label,..)">$INFO[ListItem.ActualIcon,thumbs/,/folderback_episode_tp.png]</value>
   <value>$INFO[ListItem.Icon]</value>  
 </variable>
 
 <variable name="VarArtThumbSquare">
-  <value condition="!IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>  
   <value condition="StringCompare(ListItem.Label,..)">$INFO[ListItem.ActualIcon,thumbs/,/folderback_square_tp.png]</value>
   <value>$INFO[ListItem.Icon]</value>
 </variable> 
