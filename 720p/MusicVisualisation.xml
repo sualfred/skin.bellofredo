@@ -224,8 +224,9 @@
 			<fadetime>4000</fadetime>
 			<pauseatend>0</pauseatend>
 			<loop>true</loop>
-			<imagepath background="true" diffuse="osd/quicknav/fanart_diffuse2.png">special://skin/extras/backgrounds/music_colors</imagepath>
-			<colordiffuse>OSDColorsDiffuse</colordiffuse>			
+			<imagepath background="true" diffuse="osd/quicknav/fanart_diffuse3.png">special://skin/extras/backgrounds/music_colors</imagepath>
+			<colordiffuse>OSDColorsDiffuse</colordiffuse>
+			<include>VizBackAnimation</include>			
 			<animation effect="fade" start="0" end="70" time="550" delay="0" tween="sine" easing="out">WindowOpen</animation>
 			<animation effect="fade" start="70" end="0" time="550" delay="200" tween="sine" easing="out">WindowClose</animation>
 			<animation effect="fade" start="0" end="70" time="550" delay="0" tween="sine" easing="out">Visible</animation>
