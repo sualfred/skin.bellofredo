@@ -20,7 +20,10 @@
 			<include>BackgroundFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!Window.IsActive(SliderDialog)</visible>
-			<visible>[Player.ShowInfo | Player.Paused] | Window.IsActive(ShutdownMenu) | Window.IsActive(VideoOSD) | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(VideoBookmarks) | Window.IsActive(SelectDialog) | Window.IsActive(SubtitleSearch) | Window.IsActive(NumericInput)</visible>
+			<visible>[Player.ShowInfo | Player.Paused] | Window.IsActive(ShutdownMenu) | Window.IsActive(VideoOSD) | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(VideoBookmarks) | Window.IsActive(SelectDialog) | Window.IsActive(SubtitleSearch) | Window.IsActive(NumericInput) | Window.IsActive(MusicOSD)</visible>
+			
+			<animation effect="fade" time="300">Visible</animation>
+			<animation effect="fade" time="400" delay="300">Hidden</animation>
 		</control>
 
 		<control type="group">

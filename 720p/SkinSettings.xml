@@ -37,13 +37,14 @@
 					<left>0</left>
 					<top>0</top>
 					<width>295</width>
-					<height>414</height>
+					<height>420</height>
 					<itemgap>2</itemgap>
 					<onleft>9000</onleft>
 					<onright>8900</onright>
 					<onup>8800</onup>
 					<ondown>8800</ondown>
 					<pagecontrol>-</pagecontrol>
+					<movement>8</movement>
 					<scrolltime>300</scrolltime>
 					<itemlayout height="52" width="295">
 						<control type="image">
@@ -92,11 +93,6 @@
 							<label>$LOCALIZE[128]</label>
 							<onclick>noop</onclick>
 						</item>
-						<!--Home Window
-						<item id="2">
-							<label>$LOCALIZE[513]</label>
-							<onclick>noop</onclick>
-						</item>-->
 						<!--menu & widgets-->
 						<item id="3">
 							<label>$LOCALIZE[31379]</label>
@@ -124,6 +120,11 @@
 						<!--Quick Nav-->
 						<item id="7">
 							<label>$LOCALIZE[31374]</label>
+							<onclick>noop</onclick>
+						</item>
+						<!--Music Visualisation-->
+						<item id="2">
+							<label>$LOCALIZE[31310]</label>
 							<onclick>noop</onclick>
 						</item>
 					</content>
@@ -828,6 +829,117 @@
 							<label>- $LOCALIZE[31377]</label>
 							<onclick>ActivateWindow(1119)</onclick>
 							<visible>!Skin.HasSetting(DisableQuickNav)</visible>
+						</control>
+					</control>
+					<!--======================-->
+					<!--== Music Visualisation ==-->
+					<!--======================-->
+					<control type="grouplist" id="8750">
+						<include>CloseAnimation</include>
+						<visible>Container(8800).Hasfocus(2)</visible>
+						<left>297</left>
+						<top>0</top>
+						<width>782</width>
+						<height>414</height>
+						<itemgap>2</itemgap>
+						<pagecontrol>60</pagecontrol>
+						<onleft>8800</onleft>
+						<onright>9000</onright>
+						<onup>8750</onup>
+						<ondown>8750</ondown>
+						<control type="radiobutton" id="1">
+							<description>Enable Visualisation Button</description>
+							<label>$LOCALIZE[31307]</label>
+							<include>SettingsRadioButton</include>
+							<onclick condition="!Skin.HasSetting(Vis-Visualization)">Skin.Reset(AmbilightMode)</onclick>
+							<onclick>Skin.ToggleSetting(Vis-Visualization)</onclick>
+							<selected>!Skin.HasSetting(Vis-Visualization)</selected>
+						</control>				
+						<control type="radiobutton" id="2">
+							<description>Ambilight Mode</description>
+							<label>- $LOCALIZE[31317]</label>
+							<include>SettingsRadioButton</include>
+							<selected>Skin.HasSetting(AmbilightMode)</selected>
+							<onclick>Skin.ToggleSetting(AmbilightMode)</onclick>
+							<visible>!Skin.HasSetting(Vis-Visualization)</visible>
+						</control>
+						<control type="button" id="3">
+							<description>Select Visualization Type Button</description>
+							<label>- $LOCALIZE[31308]</label>
+							<include>SettingsButton</include>
+							<onclick>SendClick(120,500)</onclick>
+							<visible>!Skin.HasSetting(Vis-Visualization)</visible>
+						</control>
+						<control type="button" id="4">
+							<description>Visualization Presets Button</description>
+							<label>- $LOCALIZE[31309]</label>
+							<include>SettingsButton</include>
+							<onclick>ActivateWindow(visualisationpresetlist)</onclick>
+							<visible>!Skin.HasSetting(Vis-Visualization)</visible>
+						</control>
+						<control type="button" id="5">
+							<description>Visualization Settings Button</description>
+							<label>- $LOCALIZE[31310]</label>
+							<include>SettingsButton</include>
+							<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+							<visible>!Skin.HasSetting(Vis-Visualization)</visible>
+						</control>
+						<control type="radiobutton" id="6">
+							<description>Enable Fanart Button</description>
+							<label>$LOCALIZE[24022] $LOCALIZE[20445]</label>
+							<include>SettingsRadioButton</include>
+							<selected>Skin.HasSetting(Vis-Fanart)</selected>
+							<onclick>Skin.Reset(Vis-ArtistSlideshow)</onclick>
+							<onclick>Skin.Reset(Vis-MusicSlideshow)</onclick>
+							<onclick>Skin.ToggleSetting(Vis-Fanart)</onclick>
+						</control>
+						<control type="radiobutton" id="7">
+							<description>Artist Slideshow Button</description>
+							<label>$LOCALIZE[31312]</label>
+							<include>SettingsRadioButton</include>
+							<selected>Skin.HasSetting(Vis-ArtistSlideshow)</selected>
+							<onclick>Skin.Reset(Vis-Fanart)</onclick>
+							<onclick>Skin.Reset(Vis-MusicSlideshow)</onclick>
+							<onclick>Skin.ToggleSetting(Vis-ArtistSlideshow)</onclick>
+							<onclick condition="IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning))">RunScript(script.artistslideshow)</onclick>
+						</control>
+						<control type="radiobutton" id="8">
+							<description>Custom Slideshow Button</description>
+							<label>$LOCALIZE[31311]</label>
+							<include>SettingsRadioButton</include>
+							<selected>Skin.HasSetting(Vis-MusicSlideshow)</selected>
+							<onclick>Skin.Reset(Vis-Fanart)</onclick>
+							<onclick>Skin.Reset(Vis-ArtistSlideshow)</onclick>
+							<onclick>Skin.ToggleSetting(Vis-MusicSlideshow)</onclick>
+						</control>
+						<control type="radiobutton" id="9">
+							<description>Animation Button</description>
+							<label>$LOCALIZE[31313]</label>
+							<include>SettingsRadioButton</include>
+							<selected>Skin.HasSetting(Vis-Animation)</selected>
+							<onclick>Skin.ToggleSetting(Vis-Animation)</onclick>
+							<onclick>ReplaceWindow(visualisation)</onclick>
+						</control>
+						<control type="radiobutton" id="10">
+							<description>Hide Diffuse Colors</description>
+							<label>$LOCALIZE[31314]</label>
+							<include>SettingsRadioButton</include>
+							<selected>Skin.HasSetting(HideOSDDiffuseColors)</selected>
+							<onclick>Skin.ToggleSetting(HideOSDDiffuseColors)</onclick>
+						</control>
+						<control type="radiobutton" id="11">
+							<description>Hide Scrolling Titles</description>
+							<label>$LOCALIZE[31315]</label>
+							<include>SettingsRadioButton</include>
+							<selected>Skin.HasSetting(HideOSDScrollingTitles)</selected>
+							<onclick>Skin.ToggleSetting(HideOSDScrollingTitles)</onclick>
+						</control>
+						<control type="radiobutton" id="12">
+							<description>Handwritten DiscArt</description>
+							<label>$LOCALIZE[31117]</label>
+							<include>SettingsRadioButton</include>
+							<selected>!Skin.HasSetting(HideHandwrittenDiscArt)</selected>
+							<onclick>Skin.ToggleSetting(HideHandwrittenDiscArt)</onclick>
 						</control>
 					</control>
 					<control type="scrollbar" id="60">

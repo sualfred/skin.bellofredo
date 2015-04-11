@@ -360,11 +360,9 @@
 		<control type="image">
 			<description>Vignette</description>
 			<include>FullscreenDimensions</include>
-			<texture background="true">windows/bg/bg_vignette.png</texture>
-			<visible>[Skin.HasSetting(AmbilightMode) + [!Window.IsActive(visualisation) | Window.IsActive(musicosd) | Player.ShowInfo]] | !Skin.HasSetting(AmbilightMode)</visible>
+			<texture background="true">windows/bg/bg_vignette.png</texture>			
+			<visible>![Window.IsActive(visualisation) | Window.IsActive(musicosd) | Player.ShowInfo]</visible>
 			<include>BackgroundFade</include>
-			<!--	<colordiffuse>FFCDCDCD</colordiffuse>
-			<colordiffuse>D5FFFFFF</colordiffuse> -->
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>

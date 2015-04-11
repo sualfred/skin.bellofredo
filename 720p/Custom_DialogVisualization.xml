@@ -41,9 +41,9 @@
 					<selected>!Skin.HasSetting(Vis-Visualization)</selected>
 				</control>				
 				<control type="radiobutton" id="983">
-					<description>Ambilight Mode/description>
+					<description>Ambilight Mode</description>
 					<width>553</width>
-					<label>$LOCALIZE[31317]</label>
+					<label>- $LOCALIZE[31317]</label>
 					<include>DialogsRadioButton</include>
 					<selected>Skin.HasSetting(AmbilightMode)</selected>
 					<onclick>Skin.ToggleSetting(AmbilightMode)</onclick>
@@ -52,7 +52,7 @@
 				<control type="button" id="992">
 					<description>Select Visualization Type Button</description>
 					<width>553</width>
-					<label>$LOCALIZE[31308]</label>
+					<label>- $LOCALIZE[31308]</label>
 					<include>DialogsButton</include>
 					<onclick>SendClick(120,500)</onclick>
 					<visible>!Skin.HasSetting(Vis-Visualization)</visible>
@@ -60,7 +60,7 @@
 				<control type="button" id="993">
 					<description>Visualization Presets Button</description>
 					<width>553</width>
-					<label>$LOCALIZE[31309]</label>
+					<label>- $LOCALIZE[31309]</label>
 					<include>DialogsButton</include>
 					<onclick>ActivateWindow(visualisationpresetlist)</onclick>
 					<visible>!Skin.HasSetting(Vis-Visualization)</visible>
@@ -68,7 +68,7 @@
 				<control type="button" id="994">
 					<description>Visualization Settings Button</description>
 					<width>553</width>
-					<label>$LOCALIZE[31310]</label>
+					<label>- $LOCALIZE[31310]</label>
 					<include>DialogsButton</include>
 					<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
 					<visible>!Skin.HasSetting(Vis-Visualization)</visible>

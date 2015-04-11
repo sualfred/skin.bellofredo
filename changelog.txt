@@ -1,4 +1,10 @@
-﻿[B][COLOR=FF56ADDA]v4.1.4[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.1.4a[/COLOR][/B]
+Quick update release to fix the non working visualisation settings dialog
+• Fixed: Not working visualisation settings window
+• Fixed: Fixed "doubled" vignette if the music player shows the info panel
+• Added: Music visualisation settings to the skin settings
+
+[B][COLOR=FF56ADDA]v4.1.4[/COLOR][/B]
 • Fixed: Image fadetime issues with latest nightlie of Kodi
 • Added: Optional disc art for ThumbList view (music)
 • Added: Optional handwritten music disc art style instead of using local stored cdart.png's
