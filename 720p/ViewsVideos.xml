@@ -351,8 +351,8 @@
 							<width>14</width>
 							<height>14</height>
 							<aspectratio align="left" aligny="center">stretch</aspectratio>
-							<texture background="true" colordiffuse="selected">overlays/unwatched/list/unwatched.png</texture>
-							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+							<texture background="true" colordiffuse="selected">overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
+							<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="image">
@@ -361,8 +361,8 @@
 							<width>14</width>
 							<height>14</height>
 							<aspectratio align="left" aligny="center">stretch</aspectratio>
-							<texture background="true" colordiffuse="77white">overlays/unwatched/list/unwatched.png</texture>
-							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+							<texture background="true" colordiffuse="77white">overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
+							<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -466,8 +466,8 @@
 								<width>14</width>
 								<height>14</height>
 								<aspectratio align="left" aligny="center">stretch</aspectratio>
-								<texture background="true" colordiffuse="selected">overlays/unwatched/list/unwatched.png</texture>
-								<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+								<texture background="true" colordiffuse="selected">overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
+								<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 								<visible>ListItem.IsPlaying</visible>
 							</control>
 							<control type="image">
@@ -476,8 +476,8 @@
 								<width>14</width>
 								<height>14</height>
 								<aspectratio align="left" aligny="center">stretch</aspectratio>
-								<texture background="true">overlays/unwatched/list/unwatched.png</texture>
-								<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+								<texture>overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
+								<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
 							<control type="label">
@@ -613,8 +613,8 @@
 						<width>238</width>
 						<height>340</height>
 						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture diffuse="views/slide/poster_diffuse_nf.png">overlays/unwatched/slide/UnWatched_Poster.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<texture diffuse="views/slide/poster_diffuse_nf.png">overlays/unwatched/slide/$VAR[WatchedStateOverlay]_Poster.png</texture>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout width="238" height="340">
@@ -631,8 +631,8 @@
 							<width>238</width>
 							<height>340</height>
 							<aspectratio aligny="center" align="center">stretch</aspectratio>
-							<texture>overlays/unwatched/slide/UnWatched_Poster.png</texture>
-							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+							<texture>overlays/unwatched/slide/$VAR[WatchedStateOverlay]_Poster.png</texture>
+							<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 							<bordersize>6</bordersize>
 						</control>
 					</control>
@@ -846,7 +846,7 @@
 						<height>25</height>
 						<aspectratio aligny="center" align="center">stretch</aspectratio>
 						<texture background="true">views/gallery/star.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						<visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(Episodes)]</visible>
 					</control>
 					<control type="label">
@@ -927,8 +927,8 @@
 							<width>675</width>
 							<height>380</height>
 							<aspectratio aligny="center" align="center">stretch</aspectratio>
-							<texture background="true">overlays/unwatched/gallery/UnWatched_Fanart.png</texture>
-							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+							<texture>overlays/unwatched/gallery/$VAR[WatchedStateOverlay]_Fanart.png</texture>
+							<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 							<bordersize>6</bordersize>
 						</control>
 					</control>						
@@ -2023,8 +2023,8 @@
 							<width>14</width>
 							<height>14</height>
 							<aspectratio align="left" aligny="center">stretch</aspectratio>
-							<texture background="true" colordiffuse="selected">overlays/unwatched/list/unwatched.png</texture>
-							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+							<texture background="true" colordiffuse="selected">overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
+							<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="image">
@@ -2033,8 +2033,8 @@
 							<width>14</width>
 							<height>14</height>
 							<aspectratio align="left" aligny="center">stretch</aspectratio>
-							<texture background="true" colordiffuse="77white">overlays/unwatched/list/unwatched.png</texture>
-							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+							<texture background="true" colordiffuse="77white">overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
+							<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -2085,8 +2085,8 @@
 								<width>14</width>
 								<height>14</height>
 								<aspectratio align="left" aligny="center">stretch</aspectratio>
-								<texture background="true" colordiffuse="selected">overlays/unwatched/list/unwatched.png</texture>
-								<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+								<texture background="true" colordiffuse="selected">overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
+								<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 								<visible>ListItem.IsPlaying</visible>
 							</control>
 							<control type="image">
@@ -2095,8 +2095,8 @@
 								<width>14</width>
 								<height>14</height>
 								<aspectratio align="left" aligny="center">stretch</aspectratio>
-								<texture background="true">overlays/unwatched/list/unwatched.png</texture>
-								<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+								<texture>overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
+								<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 								<visible>!ListItem.IsPlaying</visible>
 							</control>
 							<control type="label">
@@ -2232,8 +2232,8 @@
 						<width>310</width>
 						<height>438</height>
 						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture background="true">overlays/unwatched/slide/UnWatched_Poster.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<texture>overlays/unwatched/slide/$VAR[WatchedStateOverlay]_Poster.png</texture>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						<bordersize>16</bordersize>
 					</control>
 				</itemlayout>
@@ -2260,9 +2260,9 @@
 							<width>325</width>
 							<height>460</height>
 							<aspectratio aligny="center" align="center">stretch</aspectratio>
-							<texture background="true">overlays/unwatched/slide/UnWatched_Poster.png</texture>
+							<texture>overlays/unwatched/slide/$VAR[WatchedStateOverlay]_Poster.png</texture>
 							<bordersize>18</bordersize>
-							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+							<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						</control>
 					</control>
 					<control type="group">
@@ -2287,9 +2287,9 @@
 							<width>325</width>
 							<height>460</height>
 							<aspectratio aligny="center" align="center">stretch</aspectratio>
-							<texture background="true">overlays/unwatched/slide/UnWatched_Poster.png</texture>
+							<texture>overlays/unwatched/slide/$VAR[WatchedStateOverlay]_Poster.png</texture>
 							<bordersize>34</bordersize>
-							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+							<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						</control>
 						<control type="image">
 							<width>325</width>
@@ -2401,10 +2401,10 @@
 						<top>9</top>
 						<width>223</width>
 						<height>151</height>
-						<texture background="true">overlays/unwatched/banners/UnWatched_Episodes.png</texture>
+						<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<bordersize>6</bordersize>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 					</control>
 				</itemlayout>
 				<itemlayout condition="![Container.Content(Episodes) | [substring(Container.FolderPath,plugin,left) + Container.HasFiles]] + !Skin.HasSetting(ShowSmallVideoThumbs)" height="248" width="239.5">
@@ -2431,10 +2431,10 @@
 						<top>9</top>
 						<width>223</width>
 						<height>232</height>
-						<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
+						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Square.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<bordersize>6</bordersize>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 					</control>
 					<control type="image">
 						<left>9</left>
@@ -2471,9 +2471,9 @@
 						<width>155</width>
 						<height>150</height>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
+						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Square.png</texture>
 						<bordersize>6</bordersize>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 					</control>
 					<control type="image">
 						<left>9</left>
@@ -2510,10 +2510,10 @@
 						<top>9</top>
 						<width>223</width>
 						<height>151</height>
-						<texture background="true">overlays/unwatched/banners/UnWatched_Episodes.png</texture>
+						<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<bordersize>6</bordersize>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 					</control>
 					<control type="group">
 						<animation effect="fade" end="0">Focus</animation>
@@ -2572,10 +2572,10 @@
 						<top>9</top>
 						<width>223</width>
 						<height>232</height>
-						<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
+						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Square.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<bordersize>6</bordersize>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 					</control>
 					<control type="image">
 						<left>9</left>
@@ -2620,10 +2620,10 @@
 						<top>9</top>
 						<width>155</width>
 						<height>150</height>
-						<texture background="true">overlays/unwatched/thumbs/UnWatched_Square.png</texture>
+						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Square.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<bordersize>6</bordersize>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 					</control>
 					<control type="image">
 						<left>9</left>
@@ -2796,10 +2796,10 @@
 						<top>9</top>
 						<width>155</width>
 						<height>230</height>
-						<texture background="true">overlays/unwatched/thumbs/UnWatched_Poster.png</texture>
+						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<bordersize>6</bordersize>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="246" width="171">
@@ -2826,10 +2826,10 @@
 						<top>9</top>
 						<width>155</width>
 						<height>230</height>
-						<texture background="true">overlays/unwatched/thumbs/UnWatched_Poster.png</texture>
+						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<bordersize>6</bordersize>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 					</control>
 					<control type="image">
 						<left>5</left>
@@ -3163,10 +3163,10 @@
 							<top>18</top>
 							<width>153</width>
 							<height>217</height>
-							<texture background="true">overlays/unwatched/thumbs/UnWatched_Poster.png</texture>
+							<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</texture>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
 							<bordersize>6</bordersize>
-							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+							<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						</control>
 						<control type="image">
 							<left>585</left>
@@ -3276,9 +3276,9 @@
 							<width>705</width>
 							<height>123</height>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
-							<texture background="true">overlays/unwatched/banners/UnWatched_Banner.png</texture>
+							<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Banner.png</texture>
 							<bordersize>6</bordersize>
-							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+							<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						</control>
 						<control type="image">
 							<left>585</left>
@@ -3361,10 +3361,10 @@
 							<top>18</top>
 							<width>290</width>
 							<height>182</height>
-							<texture background="true">overlays/unwatched/banners/UnWatched_Episodes.png</texture>
+							<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
 							<bordersize>6</bordersize>
-							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+							<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						</control>
 						<control type="image">
 							<left>585</left>
@@ -3531,8 +3531,8 @@
 				<height>18</height>
 				<colordiffuse>99white</colordiffuse>
 				<aspectratio align="left" aligny="center">stretch</aspectratio>
-				<texture background="true">overlays/unwatched/list/unwatched.png</texture>
-				<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+				<texture>overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
+				<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 			</control>
 			<control type="label">
 				<left>21</left>
@@ -3545,7 +3545,7 @@
 				<shadowcolor>77000000</shadowcolor>
 				<scroll>false</scroll>
 				<visible>!stringcompare(ListItem.Label,..) + IsEmpty(ListItem.Tagline)</visible>
-				<animation effect="slide" start="0,0" end="25,0" time="60" tween="sine" easing="inout" condition="stringcompare(ListItem.Overlay,OverlayUnWatched.png)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="25,0" time="60" tween="sine" easing="inout" condition="[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]">Conditional</animation>
 			</control>
 			<control type="label">
 				<left>21</left>
@@ -3558,7 +3558,7 @@
 				<shadowcolor>77000000</shadowcolor>
 				<scroll>false</scroll>
 				<visible>!stringcompare(ListItem.Label,..)</visible>
-				<animation effect="slide" start="0,0" end="25,0" time="60" tween="sine" easing="inout" condition="stringcompare(ListItem.Overlay,OverlayUnWatched.png)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="25,0" time="60" tween="sine" easing="inout" condition="[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]">Conditional</animation>
 			</control>
 			<!-- Small Down Info -->
 			<control type="group">
@@ -3779,8 +3779,8 @@
 						<height>18</height>
 						<colordiffuse>99white</colordiffuse>
 						<aspectratio align="left" aligny="center">stretch</aspectratio>
-						<texture background="true">overlays/unwatched/list/unwatched.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<texture>overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 					</control>
 					<control type="label">
 						<left>21</left>
@@ -3793,7 +3793,7 @@
 						<shadowcolor>77000000</shadowcolor>
 						<scroll>true</scroll>
 						<visible>!stringcompare(ListItem.Label,..)</visible>
-						<animation effect="slide" start="0,0" end="25,0" time="60" tween="sine" easing="inout" condition="stringcompare(ListItem.Overlay,OverlayUnWatched.png)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="25,0" time="60" tween="sine" easing="inout" condition="[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]">Conditional</animation>
 					</control>
 					<!-- Small Down Info -->
 					<control type="grouplist">
@@ -4388,8 +4388,8 @@
 						<width>14</width>
 						<height>14</height>
 						<aspectratio align="left" aligny="center">stretch</aspectratio>
-						<texture background="true" colordiffuse="selected">overlays/unwatched/list/unwatched.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<texture background="true" colordiffuse="selected">overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						<visible>ListItem.IsPlaying</visible>
 					</control>
 					<control type="image">
@@ -4398,8 +4398,8 @@
 						<width>14</width>
 						<height>14</height>
 						<aspectratio align="left" aligny="center">stretch</aspectratio>
-						<texture background="true" colordiffuse="77white">overlays/unwatched/list/unwatched.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<texture background="true" colordiffuse="77white">overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						<visible>!ListItem.IsPlaying</visible>
 					</control>
 					<control type="label">
@@ -4518,8 +4518,8 @@
 						<width>14</width>
 						<height>14</height>
 						<aspectratio align="left" aligny="center">stretch</aspectratio>
-						<texture background="true" colordiffuse="selected">overlays/unwatched/list/unwatched.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<texture background="true" colordiffuse="selected">overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						<visible>ListItem.IsPlaying</visible>
 					</control>
 					<control type="image">
@@ -4528,8 +4528,8 @@
 						<width>14</width>
 						<height>14</height>
 						<aspectratio align="left" aligny="center">stretch</aspectratio>
-						<texture background="true" colordiffuse="77white">overlays/unwatched/list/unwatched.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<texture background="true" colordiffuse="77white">overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						<visible>!ListItem.IsPlaying</visible>
 					</control>
 					<control type="label">
@@ -5032,8 +5032,8 @@
 						<width>138</width>
 						<height>199</height>
 						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture>overlays/unwatched/thumbs/UnWatched_Poster.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</texture>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						<bordersize>6</bordersize>
 					</control>
 				</itemlayout>
@@ -5076,8 +5076,8 @@
 						<width>138</width>
 						<height>199</height>
 						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture>overlays/unwatched/thumbs/UnWatched_Poster.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</texture>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						<bordersize>8</bordersize>
 					</control>
 				</focusedlayout>
@@ -5149,8 +5149,8 @@
 						<width>287</width>
 						<height>161</height>
 						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture>overlays/unwatched/banners/UnWatched_Episodes.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						<bordersize>6</bordersize>
 					</control>
 					<control type="image">
@@ -5233,8 +5233,8 @@
 						<width>287</width>
 						<height>161</height>
 						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture>overlays/unwatched/banners/UnWatched_Episodes.png</texture>
-						<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png)</visible>
+						<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						<bordersize>8</bordersize>
 					</control>					
 					<control type="image">

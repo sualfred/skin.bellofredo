@@ -490,7 +490,23 @@ msgctxt "#31118"
 msgid "Show Disc Art"
 msgstr ""
 
-#: empty strings from id 31119 to 31123
+msgctxt "#31119"
+msgid "Watched Flag Indicator"
+msgstr ""
+
+msgctxt "#31120"
+msgid "Unwatched"
+msgstr ""
+
+msgctxt "#31121"
+msgid "Watched"
+msgstr ""
+
+msgctxt "#31122"
+msgid "None"
+msgstr ""
+
+#: empty strings from id 31123
 
 msgctxt "#31124"
 msgid "Flashing Lights"

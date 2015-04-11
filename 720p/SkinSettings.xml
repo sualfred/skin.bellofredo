@@ -616,7 +616,19 @@
 						<onleft>8800</onleft>
 						<onright>9000</onright>
 						<onup>8500</onup>
-						<ondown>8500</ondown>						
+						<ondown>8500</ondown>
+						<control type="button" id="8536">
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[31119]</label>
+							<label2>[CAPITALIZE][COLOR=selected]$INFO[Skin.String(WatchedFlag)][/COLOR][/CAPITALIZE]</label2>
+							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31120])</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(WatchedFlag,unwatched))</onclick>
+							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31121])</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(WatchedFlag,watched))</onclick>
+							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31122])</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(WatchedFlag,hidden))</onclick>
+							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31119])</onclick>
+						</control>						
 						<control type="button" id="8599">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>

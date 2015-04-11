@@ -188,7 +188,7 @@
 						<top>9</top>
 						<width>155</width>
 						<height>230</height>
-						<texture background="true">overlays/in_library.png</texture>
+						<texture>overlays/in_library.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<bordersize>6</bordersize>
 						<visible>!IsEmpty(ListItem.Property(DBID))</visible>
@@ -218,7 +218,7 @@
 						<top>9</top>
 						<width>155</width>
 						<height>230</height>
-						<texture background="true">overlays/unwatched/thumbs/UnWatched_Poster.png</texture>
+						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<bordersize>6</bordersize>
 						<visible>!IsEmpty(ListItem.Property(DBID))</visible>

@@ -110,7 +110,7 @@
     							<top>18</top>
     							<width>153</width>
     							<height>217</height>
-									<texture>overlays/unwatched/thumbs/UnWatched_Poster.png</texture>
+									<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</texture>
 									<aspectratio align="center" aligny="center">stretch</aspectratio>
 									<bordersize>6</bordersize>
 									<visible>!IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
@@ -246,7 +246,7 @@
     							<width>705</width>
     							<height>123</height>
     							<aspectratio align="center" aligny="center">stretch</aspectratio>
-    							<texture background="true">overlays/unwatched/banners/UnWatched_Banner.png</texture>
+    							<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Banner.png</texture>
     							<bordersize>6</bordersize>
     							<visible>!IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
     						</control>
@@ -380,7 +380,7 @@
     							<top>18</top>
     							<width>290</width>
     							<height>182</height>
-    							<texture background="true">overlays/unwatched/banners/UnWatched_Episodes.png</texture>
+    							<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
     							<aspectratio align="center" aligny="center">stretch</aspectratio>
     							<bordersize>6</bordersize>
     							<visible>!IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
@@ -515,7 +515,7 @@
     							<top>18</top>
     							<width>290</width>
     							<height>182</height>
-    							<texture background="true">overlays/unwatched/banners/UnWatched_Episodes.png</texture>
+    							<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
     							<aspectratio align="center" aligny="center">stretch</aspectratio>
     							<bordersize>6</bordersize>
     							<visible>!IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>

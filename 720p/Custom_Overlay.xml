@@ -38,8 +38,14 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>Temporary Info Test: $INFO[ListItem.FileNameAndPath]</label>
+				<label>Test: $INFO[Skin.String(WatchedFlag)] - var $VAR[WatchedStateOverlay] - test overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</label>
 			</control>
+			<!--<control type="image">
+						<width>238</width>
+						<height>340</height>
+						<aspectratio aligny="center" align="center">stretch</aspectratio>
+						<texture diffuse="views/slide/poster_diffuse_nf.png">overlays/unwatched/slide/$VAR[WatchedStateOverlay]_Poster.png</texture>
+			</control>-->
 			<control type="label">
 				<width>780</width>
 				<height>21</height>
