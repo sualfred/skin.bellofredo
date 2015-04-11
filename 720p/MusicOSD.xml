@@ -159,7 +159,8 @@
 				<control type="button" id="1006">
 					<description>Playlist</description>
 					<include>TopButton</include>
-					<onclick>ActivateWindow(500)</onclick>
+					<onclick>Dialog.Close(MusicOSD)</onclick>
+					<onclick>ActivateWindow(musicplaylist)</onclick>
 				</control>
 			</control>
 			<control type="grouplist">

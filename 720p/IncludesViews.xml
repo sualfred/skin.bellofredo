@@ -73,6 +73,7 @@
     <include condition="!Skin.HasSetting(ThumbnailsMusic)">ThumbnailsView</include> <!-- id = 56 -->
     <include condition="!Skin.HasSetting(ThumbnailsMusic)">ThumbnailsView_Music</include> <!-- id = 560 -->
     <include condition="!Skin.HasSetting(BannersViewMusic)">BannersView_Music</include> <!-- id = 57 -->
+    <include condition="!Skin.HasSetting(ThumbListMusicView)">ThumbListMusicView</include> <!-- id = 582 -->      
   </include>
 
 
