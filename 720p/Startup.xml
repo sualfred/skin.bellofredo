@@ -9,6 +9,7 @@
 	<onload condition="[System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetMoviesType),5)]">RunScript(script.extendedinfo,info=trendingmovies)</onload>
 	<onload condition="[System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetTVShowsType),4)]">RunScript(script.extendedinfo,info=trendingshows)</onload>
 	<onload condition="[System.HasAddon(script.extendedinfo) + stringcompare(Skin.String(QuickNavWidgetMusicType),4)]">RunScript(script.extendedinfo,info=topartists)</onload>
+	<onload condition="IsEmpty(Skin.String(WatchedFlag))">Skin.SetString(WatchedFlag,unwatched)</onload>
 	<onload condition="IsEmpty(Skin.String(QuickNavWidgetMoviesType))">Skin.SetString(QuickNavWidgetMoviesType,1)</onload>
 	<onload condition="IsEmpty(Skin.String(QuickNavWidgetTVShowsType))">Skin.SetString(QuickNavWidgetTVShowsType,1)</onload>
 	<onload condition="IsEmpty(Skin.String(QuickNavWidgetMusicType))">Skin.SetString(QuickNavWidgetMusicType,1)</onload>
