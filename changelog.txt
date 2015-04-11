@@ -1,4 +1,10 @@
-﻿[B][COLOR=FF56ADDA]v4.1.4a[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.1.4b[/COLOR][/B]
+Not my day....
+• Fixed: More vignette issues
+• Fixed: Not working Playlist button on MusicOSD
+• Added: ThumbList view to playlists
+
+[B][COLOR=FF56ADDA]v4.1.4a[/COLOR][/B]
 Quick update release to fix the non working visualisation settings dialog
 • Fixed: Not working visualisation settings window
 • Fixed: Fixed "doubled" vignette if the music player shows the info panel
