@@ -227,7 +227,7 @@
 			<animation effect="fade" start="100" end="0" time="1000">Hidden</animation>
 			<include>VizBackAnimation</include>
 			<visible>Player.HasAudio + !Skin.HasSetting(AmbilightMode)</visible>
-			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
+			<animation effect="fade" start="100" end="40" time="300" condition="!Window.IsActive(visualisation) + Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>
 		<control type="multiimage">
 			<include>FullscreenDimensions</include>
