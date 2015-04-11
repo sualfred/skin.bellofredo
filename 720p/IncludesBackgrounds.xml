@@ -361,7 +361,7 @@
 			<description>Vignette</description>
 			<include>FullscreenDimensions</include>
 			<texture background="true">windows/bg/bg_vignette.png</texture>			
-			<visible>![Window.IsActive(visualisation) | Window.IsActive(musicosd) | Player.ShowInfo]</visible>
+			<visible>!Window.IsActive(visualisation)</visible>
 			<include>BackgroundFade</include>
 		</control>
 		<control type="image">

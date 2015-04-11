@@ -4,7 +4,7 @@
 	<allowoverlay>no</allowoverlay>
 	<controls>
 		<include>BackgroundItems</include>
-		<control type="image" id="1">
+		<!--<control type="image" id="1">
 			<description>Vignette</description>
 			<include>FullscreenDimensions</include>
 			<texture background="true">windows/bg/bg_vignette.png</texture>
@@ -12,7 +12,7 @@
 			<visible>Window.IsActive(InfoDialog) + !Window.IsActive(ShutdownMenu)</visible>
 			<animation effect="fade" time="300">Visible</animation>
 			<animation effect="fade" time="400" delay="300">Hidden</animation>
-		</control>
+		</control>-->
 		<control type="image" id="1">
 			<description>Vignette</description>
 			<include>FullscreenDimensions</include>
@@ -21,7 +21,6 @@
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!Window.IsActive(SliderDialog)</visible>
 			<visible>[Player.ShowInfo | Player.Paused] | Window.IsActive(ShutdownMenu) | Window.IsActive(VideoOSD) | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(VideoBookmarks) | Window.IsActive(SelectDialog) | Window.IsActive(SubtitleSearch) | Window.IsActive(NumericInput) | Window.IsActive(MusicOSD)</visible>
-			
 			<animation effect="fade" time="300">Visible</animation>
 			<animation effect="fade" time="400" delay="300">Hidden</animation>
 		</control>
