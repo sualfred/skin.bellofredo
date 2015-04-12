@@ -2515,28 +2515,26 @@
 						<bordersize>6</bordersize>
 						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 					</control>
-					<control type="group">
-						<animation effect="fade" end="0">Focus</animation>
-						<control type="image">
-							<left>160</left>
-							<top>125</top>
-							<width>61</width>
-							<height>24</height>
-							<aspectratio align="center" aligny="center">stretch</aspectratio>
-							<texture border="1">views/other/episode_number.png</texture>
-						</control>
-						<control type="label">
-							<left>160</left>
-							<top>115</top>
-							<width>61</width>
-							<height>43</height>
-							<font>FontSize_15B</font>
-							<textcolor>bbwhite</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>$VAR[ThumbnailsOnThumbLabel]</label>
-						</control>
+					<control type="image">
+						<left>160</left>
+						<top>125</top>
+						<width>61</width>
+						<height>24</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="1">views/other/episode_number.png</texture>
+						<visible>!IsEmpty(ListItem.Duration)</visible>
+					</control>
+					<control type="label">
+						<left>160</left>
+						<top>115</top>
+						<width>61</width>
+						<height>43</height>
+						<font>FontSize_15B</font>
+						<textcolor>bbwhite</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$VAR[ThumbnailsOnThumbLabel]</label>
 					</control>
 					<control type="image">
 						<left>5</left>
