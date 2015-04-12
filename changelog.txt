@@ -1,4 +1,9 @@
-﻿[B][COLOR=FF56ADDA]v4.1.4b[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.1.5[/COLOR][/B]
+• Fixed: More AmbilightMode things
+• Added: Switch to toggle between Unwatched/Watched/Hidden watched flag indicator 
+• Replaced: InLibrary overlay icon
+
+[B][COLOR=FF56ADDA]v4.1.4b[/COLOR][/B]
 Not my day....
 • Fixed: More vignette issues
 • Fixed: Not working Playlist button on MusicOSD

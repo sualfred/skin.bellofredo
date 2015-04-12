@@ -57,10 +57,10 @@
 				<left>260</left>
 				<width>780</width>
 				<height>330</height>
-				<onleft>111</onleft>
-				<onright>111</onright>
-				<onup>110</onup>
-				<ondown>110</ondown>
+				<onleft>109</onleft>
+				<onright>109</onright>
+				<onup>109</onup>
+				<ondown>109</ondown>
 				<pagecontrol>111</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<itemlayout width="800" height="54">

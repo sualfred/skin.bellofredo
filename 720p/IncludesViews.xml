@@ -532,7 +532,7 @@
 </variable>
 
 <variable name="VarArtThumb">
-    <value condition="StringCompare(ListItem.Label,..)">$INFO[ListItem.ActualIcon,thumbs/,/folderback_episode_tp.png]</value>
+  <value condition="StringCompare(ListItem.Label,..)">$INFO[ListItem.ActualIcon,thumbs/,/folderback_episode_tp.png]</value>
   <value>$INFO[ListItem.Icon]</value>  
 </variable>
 
@@ -553,14 +553,17 @@
 </variable>
 
 <variable name="NetFlixLandscapeThumb">
- <value condition="StringCompare(ListItem.Label,..)">thumbs/DefaultFolderBack.png/folderback_fanart_tp.png</value>
- <value condition="Container.Content(TVShows) + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>    
- <value condition="Container.Content(TVShows) + IsEmpty(ListItem.Art(landscape)) + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
- <value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>        
- <value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>    
- <value condition="Container.Content(Episodes) + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>   
- <value condition="Container.Content(Episodes) + IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(fanart)]</value>   
- <value condition="!IsEmpty(ListItem.Art(fanart)">$INFO[ListItem.Art(fanart)]</value>     
+  
+  <value condition="StringCompare(ListItem.Label,..)">thumbs/DefaultFolderBack.png/folderback_fanart_tp.png</value>
+  <value condition="Container.Content(TVShows) + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>    
+  <value condition="Container.Content(TVShows) + !IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>    
+  <!--<value condition="Container.Content(TVShows) + IsEmpty(ListItem.Art(landscape)) + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>-->
+  <value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>        
+  <value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>         
+  <!--<value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(landscape)) + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>   --> 
+  <value condition="Container.Content(Episodes) + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>   
+  <value condition="Container.Content(Episodes) + IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(fanart)]</value>   
+  <value condition="!IsEmpty(ListItem.Art(fanart)">$INFO[ListItem.Art(fanart)]</value>     
 </variable>
 
 <variable name="LandscapeVars">

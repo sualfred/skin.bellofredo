@@ -5116,7 +5116,7 @@
 						<height>161</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>IsEmpty(ListItem.Art(landscape))</visible>
+						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
 						<bordersize>40</bordersize>
 					</control>
 					<control type="image">
@@ -5136,7 +5136,7 @@
 						<height>161</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" >$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape))</visible>
+						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
 						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
 						<bordersize>40</bordersize>
 						<animation type="Conditional" reversible="false" condition="true">
@@ -5201,7 +5201,7 @@
 						<height>161</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape))</visible>
+						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
 						<bordersize>40</bordersize>
 					</control>
 					<control type="image">
@@ -5220,7 +5220,7 @@
 						<height>161</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" >$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>IsEmpty(ListItem.Art(landscape))</visible>
+						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
 						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
 						<bordersize>40</bordersize>
 						<animation type="Conditional" reversible="false" condition="true">
