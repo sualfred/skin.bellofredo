@@ -5160,7 +5160,7 @@
 						<height>24</height>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<texture border="1">views/other/episode_number.png</texture>
-						<visible>[Container.Content(Episodes) | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)] + !stringcompare(ListItem.Label,..)</visible>
+						<visible>[Container.Content(Seasons) | Container.Content(Episodes) | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)] + !stringcompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="label">
 						<left>213</left>
@@ -5236,7 +5236,7 @@
 						<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
 						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 						<bordersize>8</bordersize>
-					</control>					
+					</control>			
 					<control type="image">
 						<left>213</left>
 						<top>157</top>
@@ -5244,7 +5244,7 @@
 						<height>24</height>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<texture border="1">views/other/episode_number.png</texture>
-						<visible>[Container.Content(Episodes) | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)] + !stringcompare(ListItem.Label,..)</visible>
+						<visible>[Container.Content(Seasons) | Container.Content(Episodes) | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)] + !stringcompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="label">
 						<left>213</left>
