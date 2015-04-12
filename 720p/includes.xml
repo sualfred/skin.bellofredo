@@ -605,7 +605,7 @@
 <!-- ================== --> 
 <include name="CoversNowPlaying">
 	<control type="group">	
-		<visible>!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4)</visible>
+		<visible>Player.HasMedia + !Window.IsActive(busydialog) + !SubString(Window(Videos).Property(TvTunesIsAlive),True) + !Window.IsActive(ProgressDialog) + !SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4)</visible>		
 		<!-- Music Cover -->
 		<control type="group" id="2555">
 			<left>45</left>
