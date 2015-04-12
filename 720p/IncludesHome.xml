@@ -98,11 +98,7 @@
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout width="500">						
-							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
-								<effect type="zoom" start="80" end="100" time="200" tween="sine" easing="out" center="318,200" />
-								<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
-							</animation>
+					<focusedlayout width="500">													
 							<control type="label">
 								<left>-15</left>
 								<top>200</top>
@@ -112,6 +108,10 @@
 								<font>FontSize_100</font>
 								<align>center</align>
 								<label>$INFO[ListItem.Label]</label>
+								<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
+								<effect type="zoom" start="80" end="100" time="200" tween="sine" easing="out" center="318,200" />
+								<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
+							</animation>
 							</control>			
 							<control type="fadelabel">
 								<visible>!Skin.HasSetting(HideLibraryStats) + Control.HasFocus(20) + !IsEmpty(Control.GetLabel(17))</visible>
