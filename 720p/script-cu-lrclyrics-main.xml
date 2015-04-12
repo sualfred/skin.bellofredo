@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<allowoverlay>no</allowoverlay>
+	<visible>!Player.IsInternetStream</visible>
 	<zorder>0</zorder>
 	<onload condition="Window.IsVisible(MusicOSD)">Dialog.Close(MusicOSD)</onload>
 	<animation effect="fade" start="0" end="100" delay="300" time="200" reversible="false">WindowOpen</animation>
 	<animation effect="fade" start="100" end="0" time="200" reversible="false">WindowClose</animation>	
 	<controls>
 		<control type="group">
-			<visible>!Window.IsVisible(AddonSettings) + !Window.IsVisible(SelectDialog) + !Window.IsVisible(VisualisationPresetList) + !Window.IsVisible(1112) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites)</visible>
+			<visible>!Player.IsInternetStream + !Window.IsVisible(AddonSettings) + !Window.IsVisible(SelectDialog) + !Window.IsVisible(VisualisationPresetList) + !Window.IsVisible(1112) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites)</visible>
 			<visible>Window.IsActive(Visualisation) + Player.HasAudio</visible>
 			<visible>Control.IsVisible(110)</visible>
 			<animation type="Visible" reversible="false">
