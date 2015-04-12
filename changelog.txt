@@ -1,10 +1,14 @@
-﻿[B][COLOR=FF56ADDA]v4.1.5[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.1.5a[/COLOR][/B]indicator
+As usual..... found an issue right after pushing the update
+• Fixed: MainMenu unfocus animation
+
+[B][COLOR=FF56ADDA]v4.1.5[/COLOR][/B]
 • Added: Switch to toggle between Unwatched/Watched/Hidden watched flag indicator 
 • Added: Library statistic labels in the home menu (can be disabled)
 • Replaced: InLibrary overlay icon
 • Fixed: More AmbilightMode things
 • Fixed: ThumbNail view episode flag for focused item
-• Fixed: NetFilx landscape fanart conditions. Nobody does noticed that bugs lol.
+• Fixed: NetFilx landscape fanart conditions. Nobody noticed these bugs lol.
 • Added: NetFilx - Season info label on the thumbnail
 
 [B][COLOR=FF56ADDA]v4.1.4b[/COLOR][/B]
