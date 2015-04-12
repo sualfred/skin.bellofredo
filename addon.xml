@@ -14,7 +14,6 @@
 		<import addon="script.skin.info.service" version="1.0.0" />
 		<import addon="script.grab.fanart" version="0.12.8" />
 		<import addon="script.skinshortcuts" version="0.4.4" />
-		<import addon="script.cinema.experience" version="4.0.10" />
 		<import addon="script.playalbum" version="2.0.1" />
 		<import addon="weather.openweathermap.extended" version="1.0.1" />
 		<import addon="plugin.audio.tuneinradio" version="2.1.0" />
