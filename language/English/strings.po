@@ -506,7 +506,9 @@ msgctxt "#31122"
 msgid "None"
 msgstr ""
 
-#: empty strings from id 31123
+msgctxt "#31123"
+msgid "Watched Episodes"
+msgstr ""
 
 msgctxt "#31124"
 msgid "Flashing Lights"
@@ -516,7 +518,15 @@ msgctxt "#31125"
 msgid "Edit Info"
 msgstr ""
 
-#: empty strings from id 31126 to 31129
+msgctxt "#31126"
+msgid "Watched Movies"
+msgstr ""
+
+msgctxt "#31127"
+msgid "Show Libary Totals in the Menu"
+msgstr ""
+
+#: empty strings from id 31128 to 31129
 
 msgctxt "#31130"
 msgid "Disable Fanart in all sections"
@@ -641,7 +651,7 @@ msgid "Download [COLOR=selected]logo.png[/COLOR] for all Movies"
 msgstr ""
 
 msgctxt "#31161"
-msgid "Show Library Totals"
+msgid "Show Library Totals in the Top Menu"
 msgstr ""
 
 msgctxt "#31162"

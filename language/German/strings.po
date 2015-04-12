@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-04-10 19:24+0000\n"
+"PO-Revision-Date: 2015-04-12 13:42+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -495,7 +495,26 @@ msgctxt "#31118"
 msgid "Show Disc Art"
 msgstr "Zeige Disc Art"
 
-#: empty strings from id 31119 to 31123
+msgctxt "#31119"
+msgid "Watched Flag Indicator"
+msgstr "Watched Flag Indikator"
+
+msgctxt "#31120"
+msgid "Unwatched"
+msgstr "Ungesehen"
+
+msgctxt "#31121"
+msgid "Watched"
+msgstr "Gesehen"
+
+msgctxt "#31122"
+msgid "None"
+msgstr "Nichts"
+
+msgctxt "#31123"
+msgid "Watched Episodes"
+msgstr "Gesehene Episoden"
+
 msgctxt "#31124"
 msgid "Flashing Lights"
 msgstr "Blinkende Lichter"
@@ -504,7 +523,15 @@ msgctxt "#31125"
 msgid "Edit Info"
 msgstr "Info bearbeiten"
 
-#: empty strings from id 31126 to 31129
+msgctxt "#31126"
+msgid "Watched Movies"
+msgstr "Gesehene Filme"
+
+msgctxt "#31127"
+msgid "Show Libary Totals in the Menu"
+msgstr "Zeige Inhalte der Datenbank im Hauptmenü"
+
+#: empty strings from id 31128 to 31129
 msgctxt "#31130"
 msgid "Disable Fanart in all sections"
 msgstr "Fanart deaktivieren für alle Bereiche"
@@ -633,8 +660,8 @@ msgid "Download [COLOR=selected]logo.png[/COLOR] for all Movies"
 msgstr "Lade [COLOR=selected]logo.png[/COLOR] für alle Filme"
 
 msgctxt "#31161"
-msgid "Show Library Totals"
-msgstr "Zeige Gesamtinhalte der Datenbank"
+msgid "Show Library Totals in the Top Menu"
+msgstr "Zeige Gesamtinhalte der Datenbank im Top-Menü"
 
 msgctxt "#31162"
 msgid "Enable Kiosk Mode"

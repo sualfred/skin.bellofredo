@@ -35,6 +35,23 @@
 <constant name="ButtonsLabelsFade">50</constant>
 <constant name="ButtonsLabelsZoom">95</constant>
 
+
+<variable name="LibraryInfoLabel">
+	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),movies)">$INFO[Window(Home).Property(Movies.Count),$LOCALIZE[20342]: ]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),tvshows)">$INFO[Window(Home).Property(TVShows.Count),$LOCALIZE[31002]: ]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),music)">$INFO[Window(Home).Property(Music.AlbumsCount),$LOCALIZE[132]: ]</value>
+</variable>
+<variable name="LibraryInfoLabel2">
+	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),movies)">$INFO[Window(Home).Property(Movies.UnWatched),$LOCALIZE[31263]: ]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),tvshows)">$INFO[Window(Home).Property(Episodes.UnWatched),$LOCALIZE[31265]: ]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),music)">$INFO[Window(Home).Property(Music.SongsCount),$LOCALIZE[134]: ]</value>
+</variable>
+<variable name="LibraryInfoLabel3">
+	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),movies)">$INFO[Window(Home).Property(Movies.Watched),$LOCALIZE[31126]: ]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),tvshows)">$INFO[Window(Home).Property(Episodes.Watched),$LOCALIZE[31123]: ]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),music)">$INFO[Window(Home).Property(Music.ArtistsCount),$LOCALIZE[133]: ]</value>
+</variable>
+
 <include name="BackgroundItems">
 	<include>BackgroundContent</include>
 	<include>GlobalFanart</include>

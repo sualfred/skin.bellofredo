@@ -296,13 +296,20 @@
 							<selected>!Skin.HasSetting(ShowKodiSymbol)</selected>
 						</control>
 						<control type="radiobutton" id="8310">
+							<description>Hide Library Details</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31127]</label>
+							<onclick>Skin.ToggleSetting(HideLibraryStats)</onclick>
+							<selected>!Skin.HasSetting(HideLibraryStats)</selected>
+						</control>
+						<control type="radiobutton" id="8311">
 							<description>Hide Library Totals</description>
 							<include>SettingsRadioButton</include>
 							<label>- $LOCALIZE[31161]</label>
 							<onclick>Skin.ToggleSetting(ShowLibraryTotals)</onclick>
 							<selected>Skin.HasSetting(ShowLibraryTotals)</selected>
 						</control>
-						<control type="radiobutton" id="8311">
+						<control type="radiobutton" id="8313">
 							<description>Disable libary refresh button</description>
 							<include>SettingsRadioButton</include>
 							<label>- $LOCALIZE[31064]</label>
