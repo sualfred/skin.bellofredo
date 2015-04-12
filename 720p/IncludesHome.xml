@@ -114,8 +114,8 @@
 							</animation>
 							</control>			
 							<control type="fadelabel">
-								<visible>!Skin.HasSetting(HideLibraryStats) + Control.HasFocus(20) + !IsEmpty(Control.GetLabel(17))</visible>
-								<animation effect="fade" time="250">Visible</animation>
+								<visible>Control.HasFocus(20) + !Skin.HasSetting(HideLibraryStats) + !IsEmpty(Control.GetLabel(17))</visible>
+								<animation effect="fade" time="250" delay="50">Visible</animation>
 								<animation effect="fade" time="0">Hidden</animation>
 								<left>-15</left>
 								<top>264</top>		
