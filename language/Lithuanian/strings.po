@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-04-02 14:30+0000\n"
+"PO-Revision-Date: 2015-04-13 07:29+0000\n"
 "Last-Translator: Zapata11 <raimondas.duzinskas@gmail.com>\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/bello-fredo/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -466,7 +466,54 @@ msgctxt "#31111"
 msgid "Scroll down for more options"
 msgstr "Slinkite žemyn, norėdami pamatyti daugiau parinčių"
 
-#: empty strings from id 31112 to 31123
+msgctxt "#31112"
+msgid "Popular Right Now"
+msgstr "Populiaru šiuo metu"
+
+msgctxt "#31113"
+msgid "New Uploaded Videos"
+msgstr "Naujai įkelti vaizdo įrašai"
+
+msgctxt "#31114"
+msgid "My Channel"
+msgstr "Mano kanalas"
+
+msgctxt "#31115"
+msgid "My Subscriptions"
+msgstr "Mano prenumeratos"
+
+msgctxt "#31116"
+msgid "Diffuse Widget Fanarts"
+msgstr "Sumaišyti valdiklių Fanart"
+
+msgctxt "#31117"
+msgid "Handwritten Disc Art"
+msgstr "Ranka rašyta disko iliustracija"
+
+msgctxt "#31118"
+msgid "Show Disc Art"
+msgstr "Rodyti disko iliustraciją"
+
+msgctxt "#31119"
+msgid "Watched Flag Indicator"
+msgstr "Peržiūrėjimo vėliavos indikatorius"
+
+msgctxt "#31120"
+msgid "Unwatched"
+msgstr "Neperžiūrėta"
+
+msgctxt "#31121"
+msgid "Watched"
+msgstr "Peržiūrėta"
+
+msgctxt "#31122"
+msgid "None"
+msgstr "Joks"
+
+msgctxt "#31123"
+msgid "Watched Episodes"
+msgstr "Peržiūrėti epizodai"
+
 msgctxt "#31124"
 msgid "Flashing Lights"
 msgstr "Švyturėliai"
@@ -475,7 +522,15 @@ msgctxt "#31125"
 msgid "Edit Info"
 msgstr "Keisti informaciją"
 
-#: empty strings from id 31126 to 31129
+msgctxt "#31126"
+msgid "Watched Movies"
+msgstr "Peržiūrėti filmai"
+
+msgctxt "#31127"
+msgid "Show Libary Totals in the Menu"
+msgstr "Rodyti bibliotekos statistiką meniu"
+
+#: empty strings from id 31128 to 31129
 msgctxt "#31130"
 msgid "Disable Fanart in all sections"
 msgstr "Išjungti Fanart visuose skyriuose"
@@ -582,7 +637,7 @@ msgctxt "#31154"
 msgid "Choose Trailers Add-on"
 msgstr "Rodyti anonsų priedą"
 
-#: empty string with id 31155
+#: empty string with 31155
 msgctxt "#31156"
 msgid "Manage Video Views"
 msgstr "Tvarkyti vaizdo įrašų rodinius"
@@ -604,8 +659,8 @@ msgid "Download [COLOR=selected]logo.png[/COLOR] for all Movies"
 msgstr "Atsiųsti [COLOR=selected]logo.png[/COLOR] visiems filmams"
 
 msgctxt "#31161"
-msgid "Show Library Totals"
-msgstr "Rodyti bibliotekos statistiką"
+msgid "Show Library Totals in the Top Menu"
+msgstr "Rodyti bibliotekos statistiką viršutiniame meniu"
 
 msgctxt "#31162"
 msgid "Enable Kiosk Mode"
@@ -677,7 +732,19 @@ msgctxt "#31178"
 msgid "Manage [COLOR=selected]Common Widgets[/COLOR]"
 msgstr "Tvarkyti [COLOR=selected]savus valdiklius[/COLOR]"
 
-#: empty strings from id 31179 to 31199 scripts labels
+msgctxt "#31179"
+msgid "Manage Views"
+msgstr "Tvarkyti rodinius"
+
+msgctxt "#31180"
+msgid "Library Tools"
+msgstr "Bibliotekos statistika"
+
+msgctxt "#31181"
+msgid "Download Art"
+msgstr "Atsisiųsti iliustracijas"
+
+#: empty strings from id 31182 to 31199 scripts labels
 msgctxt "#31200"
 msgid "My Movies"
 msgstr "Mano filmai"
@@ -954,7 +1021,19 @@ msgctxt "#31268"
 msgid "Thumb List"
 msgstr "Miniatiūrų sąrašas"
 
-#: empty strings from id 31269 to 31279 Playlist Editor labels
+msgctxt "#31269"
+msgid "My IMDb Top250 Movies"
+msgstr "Mano IMDb Top250 filmai"
+
+msgctxt "#31270"
+msgid "Recently watched episodes"
+msgstr "Neseniai peržiūrėti epizodai"
+
+msgctxt "#31271"
+msgid "Enable Widget Content Switch Function"
+msgstr "Įjungti valdiklio turinio perjungimo funkciją"
+
+#: empty strings from id 31272 to 31279 Playlist Editor labels
 msgctxt "#31280"
 msgid "Open Playlist"
 msgstr "Atidaryti grojaraštį"
@@ -1081,8 +1160,8 @@ msgid "Now Playing"
 msgstr "Dabar atkuriama"
 
 msgctxt "#31317"
-msgid "Deactivate Vignette (Better for Ambilight)"
-msgstr "Deaktyvuoti vinjetę (geriau Ambilight sistemai)"
+msgid "Amiblight Compatiblity Mode"
+msgstr "Ambilight suderinamumo režimas"
 
 #: empty strings from id 31318 to 31349 PVR
 msgctxt "#31350"

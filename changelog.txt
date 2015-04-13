@@ -1,13 +1,14 @@
-﻿[B][COLOR=FF56ADDA]v4.1.6[/COLOR][/B]indicator
+﻿[B][COLOR=FF56ADDA]v4.1.6[/COLOR][/B]
 • Removed: CinemaExperience from the addon requirements. Still supported but not required to run the skin.
 • Fixed: TVTunes playback notification on Home
 • Fixed: Wrong InLibrary texture for focused item on ExtendedInfo video list
-• Fixed: KodiIntro <-> StartupPlaylist settings issue
+• Fixed: KodiIntro/StartupPlaylist settings issue
 • Changed: KodiIntro startup behaviour
 • Added: Loading label for slow machines
 • Removed: Lyrics support for audio internet streams. Too annoying O_o
+• Merged: Lithuanian translations
 
-[B][COLOR=FF56ADDA]v4.1.5a[/COLOR][/B]indicator
+[B][COLOR=FF56ADDA]v4.1.5a[/COLOR][/B]
 As usual..... found an issue right after pushing the update
 • Fixed: MainMenu unfocus animation
 
