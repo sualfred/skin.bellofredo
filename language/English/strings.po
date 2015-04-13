@@ -526,6 +526,10 @@ msgctxt "#31127"
 msgid "Show Libary Totals in the Menu"
 msgstr ""
 
+msgctxt "#31128"
+msgid "Loading. Please wait."
+msgstr ""
+
 #: empty strings from id 31128 to 31129
 
 msgctxt "#31130"

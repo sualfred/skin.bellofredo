@@ -149,28 +149,30 @@
 						<control type="radiobutton" id="8109">
 							<include>SettingsRadioButton</include>
 							<label>31014</label>
-							<onclick>Skin.ToggleSetting(KodiIntro.enabled)</onclick>
-							<selected>Skin.HasSetting(KodiIntro.enabled)</selected>
-						</control>
-						<control type="radiobutton" id="8101">
-							<include>SettingsRadioButton</include>
-							<label>20189</label>
-							<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
-							<selected>Skin.HasSetting(AutoScroll)</selected>
-						</control>
+							<onclick>Skin.Reset(Startup_Playlist_Path)</onclick>
+							<onclick>Skin.ToggleSetting(UseIntro)</onclick>
+							<selected>Skin.HasSetting(UseIntro)</selected>
+						</control>						
 						<control type="radiobutton" id="8102">
 							<include>SettingsRadioButton</include>
 							<label>21398</label>
+							<onclick>Skin.Reset(UseIntro)</onclick>
 							<onclick>Skin.Reset(Startup_Playlist_Path)</onclick>
 							<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
 							<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
-						</control>
+						</control>						
 						<control type="button" id="8103">
 							<include>SettingsButton</include>
 							<label>• $LOCALIZE[15311]</label>
 							<label2>$INFO[Skin.String(Startup_Playlist_Path)]</label2>
 							<onclick>Skin.SetFile(Startup_Playlist_Path,.m3u|.xsp,special://profile/playlists/)</onclick>
 							<visible>Skin.HasSetting(Use_Startup_Playlist)</visible>
+						</control>
+						<control type="radiobutton" id="8101">
+							<include>SettingsRadioButton</include>
+							<label>20189</label>
+							<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
+							<selected>Skin.HasSetting(AutoScroll)</selected>
 						</control>
 						<control type="radiobutton" id="8104">
 							<include>SettingsRadioButton</include>

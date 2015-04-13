@@ -17,9 +17,7 @@
 		<include>BackgroundContent</include>
 		<include>BackgroundVignette</include>			
 		<control type="group">
-			<animation type="Conditional" condition="Window.Previous(startup) + Skin.HasSetting(KodiIntro.enabled) + !Skin.HasSetting(Use_Startup_Playlist)" reversible="false">
-				<effect type="fade" start="0" end="100" time="1000" delay="10500" tween="sine" easing="in"  />					
-			</animation>
+			<animation effect="fade" time="1000" delay="10500" start="0" end="100" condition="[SubString(Player.Filenameandpath,extras/intro/intro.mp4) | SubString(Player.Filenameandpath,extras\intro\intro.mp4] + Skin.HasSetting(UseIntro)" reversible="false">Conditional</animation>
 			<include>HomeMenuWraplist</include>
 			<include>HomeSubMenus</include>
 			<include condition="!Skin.HasSetting(HideHomeNPCovers)">CoversNowPlaying</include>

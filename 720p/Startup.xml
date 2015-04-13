@@ -48,13 +48,11 @@
 	<controls>
 		<control type="button" id="10">
 			<description>trigger</description>
-			<onfocus condition="system.getbool(input.enablemouse) + !Skin.HasSetting(KodiIntro.enabled)">ActivateWindow(1110)</onfocus>
-			<onfocus condition="Skin.HasSetting(KodiIntro.enabled)">XBMC.PlayMedia(special://skin/extras/intro/intro.mp4,1)</onfocus>
-			<onfocus condition="Skin.HasSetting(KodiIntro.enabled)">AlarmClock(IntroDelay,ReplaceWindow($INFO[System.StartupWindow]),00:05,silent)</onfocus>
-			<onfocus condition="!Skin.HasSetting(KodiIntro.enabled)">ReplaceWindow($INFO[System.StartupWindow])</onfocus>
+			<onfocus condition="system.getbool(input.enablemouse)">ActivateWindow(1110)</onfocus>
+			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>			
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>
-			<visible>!Skin.HasSetting(Use_Startup_Playlist)</visible>
+			<visible>!Skin.HasSetting(Use_Startup_Playlist) + !Skin.HasSetting(UseIntro)</visible>
 		</control>
 		<control type="button" id="10">
 			<description>trigger with startup Playlist</description>
@@ -64,7 +62,25 @@
 			<texturefocus>-</texturefocus>
 			<visible>Skin.HasSetting(Use_Startup_Playlist)</visible>
 		</control>
+		<control type="button" id="10">
+			<description>trigger with startup intro</description>
+			<onfocus>XBMC.PlayMedia(special://skin/extras/intro/intro.mp4,1)</onfocus>
+			<onfocus>AlarmClock(IntroDelay,ReplaceWindow($INFO[System.StartupWindow]),00:05,silent)</onfocus>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+			<visible>Skin.HasSetting(UseIntro)</visible>
+		</control>
 		<include>BackgroundContent</include>
 		<include>BackgroundVignette</include>
+		<control type="label">
+			<include>FullscreenDimensions</include>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>77white</textcolor>
+			<shadowcolor>55000000</shadowcolor>
+			<font>FontSize_40B</font>
+			<label>$LOCALIZE[31128]</label>
+			<visible>!Skin.HasSetting(Use_Startup_Playlist) + !Skin.HasSetting(UseIntro)</visible>			
+		</control>
 	</controls>
 </window>

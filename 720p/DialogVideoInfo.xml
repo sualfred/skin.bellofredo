@@ -133,7 +133,7 @@
 								<onright>9000</onright>
 								<onup>9000</onup>
 								<include>TopButton</include>
-								<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Listitem.Director])</ondown>
+								<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director])</ondown>
 								<ondown>Dialog.Close(movieinformation)</ondown>
 								<onclick>SendClick(2003,13)</onclick>
 								<enable>!IsEmpty(ListItem.Director)</enable>
