@@ -23,6 +23,7 @@
     <include condition="!Skin.HasSetting(ThumbnailsVideos)">ThumbnailsView_Videos_Posters</include> <!-- id = 561 -->
     <include condition="!Skin.HasSetting(BannersViewVideos)">BannersView_Videos</include> <!-- id = 57 -->      
     <include condition="!Skin.HasSetting(ThumbListView)">ThumbListView</include> <!-- id = 582 -->      
+    <include>ClassicSlideView</include> <!-- id = 583 -->      
   </include>
 
   <include name="MusicLibraryViews">

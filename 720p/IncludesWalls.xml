@@ -1136,6 +1136,282 @@
 
 
 
+  <!-- OnNext -->
+	<include name="Includes_OnNext_ClassicSlide">
+		<control type="image">
+			<left>0</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(-3).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>164</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(-2).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>328</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(-1).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+
+		<control type="image">
+			<left>492</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(0).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+
+		<control type="image">
+			<left>656</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(1).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>820</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(2).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>984</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(3).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>1148</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(4).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>1312</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(5).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>1476</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(6).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+	</include>
+
+  <!-- OnPrevious -->
+	<include name="Includes_OnPrevious_ClassicSlide">
+		<control type="image">
+			<left>-164</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(-2).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+			<bordersize>2</bordersize>
+		<control type="image">
+			<left>0</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(-1).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+
+		<control type="image">
+			<left>164</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(0).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		
+		<control type="image">
+			<left>328</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(1).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>492</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(2).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>656</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(3).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>820</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(4).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>984</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(5).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>1148</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(6).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>1312</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(7).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+	</include>
+
+<!-- Static -->
+	<include name="Includes_Static_ClassicSlide">
+		<control type="image">
+			<left>0</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(-2).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>164</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(-1).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>328</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(0).Icon]</texture>
+		</control>
+		<control type="image">
+			<left>492</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(1).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>656</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(2).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>820</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(3).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>984</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(4).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>1148</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(5).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+		<control type="image">
+			<left>1312</left>
+			<top>240</top>
+			<width>164</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(6).Icon]</texture>
+			<bordersize>2</bordersize>
+		</control>
+	</include>
 
 
   <!-- OnNext -->
@@ -1780,7 +2056,7 @@
 		</control>
 	</include>
 
-
+	
 
 
 
