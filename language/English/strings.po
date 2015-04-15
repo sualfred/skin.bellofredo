@@ -530,7 +530,9 @@ msgctxt "#31128"
 msgid "Loading. Please wait."
 msgstr ""
 
-#: empty strings from id 31128 to 31129
+msgctxt "#31129"
+msgid "item"
+msgstr ""
 
 msgctxt "#31130"
 msgid "Disable Fanart in all sections"

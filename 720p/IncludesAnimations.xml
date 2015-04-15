@@ -951,6 +951,12 @@
 		<animation effect="fade" time="350" tween="sine" easing="out" reversible="false">Visible</animation>
 		<animation effect="fade" time="350" tween="sine" easing="in" reversible="false">Hidden</animation>	
 	</include>
+	<include name="FanartFade2">
+		<animation effect="fade" time="450" delay="50" tween="sine" easing="out" reversible="false">WindowOpen</animation>
+		<animation effect="fade" time="450" delay="400" tween="sine" easing="in" reversible="false">WindowClose</animation>
+		<animation effect="fade" time="350" delay="50" tween="sine" easing="out" reversible="false">Visible</animation>
+		<animation effect="fade" time="350" delay="400" tween="sine" easing="in" reversible="false">Hidden</animation>	
+	</include>
 	<include name="VisibleFadeEffect">
 		<animation effect="fade" time="250">Visible</animation>
 		<animation effect="fade" time="250">Hidden</animation>

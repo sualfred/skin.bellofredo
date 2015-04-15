@@ -5327,72 +5327,73 @@
 		<control type="group">
 			<left>-0</left>
 			<visible>Control.IsVisible(583)</visible>
+			<!-- smooth background fade-->
 			<control type="group">
-				<include>DialogFadeInOutAnimation</include>
-				<animation effect="fade" start="0" end="100" time="400" tween="sine" easing="out">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="2000" tween="sine" easing="out">WindowClose</animation>
-					<!--<control type="image">
-						<include>FullscreenDimensions</include>
-						<texture>views/bg/bg_diffuse.png</texture>
-						<fadetime>FanartCrossfadeTime</fadetime>
-					</control>-->
-					<control type="image">
-						<include>FullscreenDimensions</include>
-						<texture>views/ClassicSlide/wall_mask_white.png</texture>
-						
-						<fadetime>FanartCrossfadeTime</fadetime>
-					</control>
-					<control type="image">
-						<include>FullscreenDimensions</include>
-						<texture>views/ClassicSlide/top_bottom_shadows_white.png</texture>
-						<fadetime>FanartCrossfadeTime</fadetime>
-						<!--<animation effect="fade" time="0" end="50" condition="true">Conditional</animation>-->
-					</control>
-					<!-- imdb top 250 
-					<control type="group">
-						<left>480</left>					
-						<top>200</top>
-						<width>183</width>
-						<include>Top250</include>				
-					<visible>!IsEmpty(ListItem.Top250)</visible>
-						<control type="image">
-							<top>0</top>
-							<width>183</width>
-							<height>28</height>
-							<aspectratio aligny="center" align="center">stretch</aspectratio>
-							<colordiffuse>grey</colordiffuse>
-							<texture background="true">info/imdb.png</texture>					
-						</control>
-						<control type="label">
-							<left>6</left>
-							<top>2</top>
-							<height>23</height>
-							<width>110</width>
-							<font>FontSize_16B</font>
-							<textcolor>99white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Top250,Top 250 #]</label>
-						</control>
-					</control>-->
-				</control>
-				<control type="group">
-					<left>0</left>
-					<top>-1</top>
-					<visible>Control.IsVisible(583)</visible>
-					<include>DialogZoomInOutAnimation</include>
-				<!--<control type="image">
+				<visible>!Skin.HasSetting(HideBGFanart)</visible>
+				<animation type="WindowOpen" tween="sine" easing="out">
+					<effect type="fade" start="0" end="100" time="1000"/>
+				</animation>
+				<animation type="WindowClose" tween="sine" easing="out">
+					<effect type="fade" start="100" end="0" time="1000" delay="700"/>
+				</animation>	
+				<control type="image">
 					<include>FullscreenDimensions</include>
 					<texture>windows/bg/black.jpg</texture>
+					<fadetime>FanartCrossfadeTime</fadetime>
+				</control>
+				<control type="image">
+					<description>ClassicSlideFanart</description>
+					<include>FullscreenDimensions</include>
+					<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+					<fadetime>FanartCrossfadeTime</fadetime>
+					<visible>IsEmpty(Control.GetLabel(5831))</visible>
+				</control>
+				<control type="multiimage" id="5831">
+					<description>Fanart extrafanart</description>
+					<include>FullscreenDimensions</include>
+					<aspectratio>scale</aspectratio>
+					<randomize>true</randomize>
+					<timeperimage>5000</timeperimage>
+					<fadetime>1000</fadetime>
+					<imagepath background="true">$INFO[ListItem.Path,,/extrafanart/]</imagepath>
+					<visible>!Skin.HasSetting(HideBGFanart) + Skin.HasSetting(ViewsExtraFanart)</visible>
+				</control>	
+			</control>
+			<control type="group">
+				<animation type="WindowOpen" tween="sine" easing="out">
+					<effect type="fade" start="0" end="100" time="0"/>
+				</animation>
+				<animation type="WindowClose" tween="sine" easing="out">
+					<effect type="fade" start="100" end="0" time="1000" delay="700"/>
+				</animation>
+				<control type="image">
+					<description>ClassicSlideFanart Diffuse</description>
+					<include>FullscreenDimensions</include>
+					<texture background="true">views/ClassicSlide/mask.png</texture>
+				</control>
+				<control type="image">
+					<description>ClassicSlideFanart Diffuse</description>
+					<include>FullscreenDimensions</include>
+					<texture background="true">windows/bg/bg_vignette.png</texture>
+				</control>
+			</control>
+			<!-- itemlayout -->
+			<control type="group">
+				<left>0</left>
+				<top>-1</top>
+				<visible>Control.IsVisible(583)</visible>
+				<include>DialogZoomInOutAnimation</include>
+				<control type="image">
+					<include>FullscreenDimensions</include>
+					<texture>views/ClassicSlide/panel.png</texture>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<animation type="WindowOpen" tween="sine" easing="out">
 						<effect type="fade" start="0" end="100" time="1000"/>
 					</animation>
 					<animation type="WindowClose" tween="sine" easing="out">
-						<effect type="fade" start="100" end="0" time="1000" delay="1200"/>
+						<effect type="fade" start="100" end="0" time="1000" delay="300"/>
 					</animation>
-				</control>-->
+				</control>
 				<control type="group" id="8013">
 					<left>-100</left>
 					<animation reversible="false" effect="slide" start="0,0" end="-164,0" time="300" tween="quadratic" easing="out">Hidden</animation>
@@ -5411,31 +5412,63 @@
 						<effect type="fade" start="0" end="100" time="1000"/>
 					</animation>
 					<animation type="WindowClose" tween="sine" easing="out">
-						<effect type="fade" start="100" end="0" time="1000" delay="800"/>
+						<effect type="fade" start="100" end="0" time="1000" delay="300"/>
 					</animation>
 					<visible>!Control.IsVisible(8013) + !Control.IsVisible(8014)</visible>
 					<include>Includes_Static_ClassicSlide</include>
-				</control>
+				</control>				
 				<control type="image">
 					<visible>Control.IsVisible(583)</visible>
 					<include>FullscreenDimensions</include>
 					<texture>views/ClassicSlide/posters_overlay.png</texture>
 					<fadetime>FanartCrossfadeTime</fadetime>
-					<animation effect="fade" time="0" end="50" condition="true">Conditional</animation>
+					<!--<animation effect="fade" time="0" end="50" condition="true">Conditional</animation>-->
+					<animation type="WindowOpen">
+						<effect type="fade" start="0" end="50" time="500" delay="800" tween="sine" easing="out"/>						
+					</animation>
+					<animation type="WindowClose">						
+						<effect type="fade" start="50" end="0" time="500" delay="0" tween="sine" easing="out"/>
+					</animation>
+				</control>
+				<control type="label">
+					<top>200</top>
+					<width>1095</width>
+					<align>right</align>
+					<label>$VAR[ContainerItemSingular] $INFO[Container.CurrentItem] / $INFO[Container.NumItems] </label>
+					<font>FontSize_18B</font>
+					<textcolor>44white</textcolor>
+					<shadowcolor>99000000</shadowcolor>
+					<visible>!stringcompare(ListItem.Label,..)</visible>
 				</control>
 			</control>
-
-			
-
-			<control type="group">
+			<!-- scrollbar-->
+			<control type="scrollbar" id="60">
+				<left>430</left>
+				<top>486</top>
+				<width>855</width>
+				<height>9</height>
+				<texturesliderbackground>-</texturesliderbackground>
+				<texturesliderbar border="14,0,14,0">views/scrollbar/scrollbar_horizontal.png</texturesliderbar>
+				<texturesliderbarfocus border="14,0,14,0">views/scrollbar/scrollbar_horizontal.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<onup>583</onup>
+				<ondown>583</ondown>
+				<showonepage>false</showonepage>
+				<orientation>horizontal</orientation>
+				<animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 				<visible>Control.IsVisible(583)</visible>
+			</control>
+			<!-- focusedlayout -->
+			<control type="group">
+				<visible>Control.IsVisible(583)</visible>	
 				<control type="image">
 					<left>28</left>
 					<top>32</top>
 					<width>562</width>
 					<height>673</height>
 					<include>DialogZoomInOutAnimation</include>
-					<texture background="true">views/ClassicSlide/poster_blue_shadow2.png</texture>
+					<texture background="true">views/ClassicSlide/poster_blue_shadow_panel.png</texture>
 					<animation reversible="true" effect="zoom" start="100,100" end="95,100" center="340,340" time="300" tween="quadratic" easing="in" condition="Control.IsVisible(8013) | Control.IsVisible(8014)">Conditional</animation>
 					<animation type="WindowOpen">
 						<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>
@@ -5454,7 +5487,7 @@
 						<top>12</top>
 						<width>562</width>
 						<height>673</height>
-						<texture background="true">views/wall/poster_blue_shadow.png</texture>
+						<texture background="true">views/ClassicSlide/poster_blue_shadow.png</texture>
 						<animation type="WindowOpen">
 							<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>
 							<effect type="zoom" start="196,148,360,436" end="128,12,562,673" time="980" delay="750" tween="sine" easing="out"/>
@@ -5470,7 +5503,7 @@
 						<width>248</width>
 						<height>366</height>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-						<texture background="true" diffuse="views/wall/poster_diffuse.png" fallback="thumbs/fallback_poster_big.png">$INFO[ListItem.Icon]</texture>
+						<texture background="true" diffuse="views/ClassicSlide/poster_diffuse.png" fallback="thumbs/fallback_poster_big.png">$INFO[ListItem.Icon]</texture>
 						<animation type="WindowOpen">
 							<effect type="fade" start="0" end="100" time="500" delay="500"  tween="sine" easing="out"/>
 							<effect type="zoom" start="294,239,164,242" end="285,156,248,366" time="980" delay="750"  tween="sine" easing="out"/>
@@ -5479,14 +5512,14 @@
 							<effect type="zoom" start="285,156,248,366" end="294,239,164,242" time="980" delay="0"  tween="sine" easing="out"/>
 							<effect type="fade" start="100" end="0" time="500" delay="800"  tween="sine" easing="out"/>
 						</animation>
-					</control>	
+					</control>
 					<control type="image">
 						<left>185</left>
 						<top>156</top>
 						<width>248</width>
 						<height>366</height>
 						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture background="true">views/wall/poster_overlay.png</texture>
+						<texture background="true">views/ClassicSlide/poster_overlay.png</texture>
 						<animation type="WindowOpen">
 							<effect type="fade" start="0" end="100" time="500" delay="500" tween="sine" easing="out"/>
 							<effect type="zoom" start="294,239,164,242" end="285,156,248,366" time="980" delay="750" tween="sine" easing="out"/>
@@ -5495,14 +5528,31 @@
 							<effect type="zoom" start="285,156,248,366" end="294,239,164,242" time="980" delay="0" tween="sine" easing="out"/>
 							<effect type="fade" start="100" end="0" time="500" delay="800" tween="sine" easing="out"/>
 						</animation>
-					</control>
+					</control>	
+					<control type="image">
+						<left>185</left>
+						<top>156</top>
+						<width>248</width>
+						<height>366</height>
+						<aspectratio aligny="center" align="center">stretch</aspectratio>
+						<texture flipy="false" flipx="false" diffuse="views/ClassicSlide/poster_diffuse.png">overlays/unwatched/slide/$VAR[WatchedStateOverlay]_Poster.png</texture>							
+						<animation type="WindowOpen">
+							<effect type="fade" start="0" end="100" time="500" delay="500" tween="sine" easing="out"/>
+							<effect type="zoom" start="294,239,164,242" end="285,156,248,366" time="980" delay="750" tween="sine" easing="out"/>
+						</animation>
+						<animation type="WindowClose">
+							<effect type="zoom" start="285,156,248,366" end="294,239,164,242" time="980" delay="0" tween="sine" easing="out"/>
+							<effect type="fade" start="100" end="0" time="500" delay="800" tween="sine" easing="out"/>
+						</animation>
+						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+					</control>	
 					<control type="image">
 						<left>185</left>
 						<top>156</top>
 						<width>248</width>
 						<height>366</height>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-						<texture background="true" diffuse="views/wall/poster_diffuse.png" fallback="thumbs/fallback_poster_big.png">$INFO[ListItem(-1).Icon]</texture>
+						<texture background="true" diffuse="views/ClassicSlide/poster_diffuse.png" fallback="thumbs/fallback_poster_big.png">$INFO[ListItem(-1).Icon]</texture>
 						<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013)">Conditional</animation>
 						<visible>Control.IsVisible(8013) + !stringcompare(ListItem(-1).Label,..)</visible>
 					</control>
@@ -5512,7 +5562,7 @@
 						<width>248</width>
 						<height>366</height>
 						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture background="true">views/wall/poster_overlay.png</texture>
+						<texture background="true">views/ClassicSlide/poster_overlay.png</texture>
 						<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013)">Conditional</animation>
 						<visible>Control.IsVisible(8013) + !stringcompare(ListItem(-1).Label,..)</visible>
 					</control>
@@ -5522,7 +5572,7 @@
 						<width>248</width>
 						<height>366</height>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-						<texture background="true" diffuse="views/wall/poster_diffuse.png" fallback="thumbs/fallback_poster_big.png">$INFO[ListItem(1).Icon]</texture>
+						<texture background="true" diffuse="views/ClassicSlide/poster_diffuse.png" fallback="thumbs/fallback_poster_big.png">$INFO[ListItem(1).Icon]</texture>
 						<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014)">Conditional</animation>
 						<visible>Control.IsVisible(8014) + !stringcompare(ListItem(1).Label,..)</visible>
 					</control>
@@ -5532,54 +5582,22 @@
 						<width>248</width>
 						<height>366</height>
 						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture background="true">views/wall/poster_overlay.png</texture>
+						<texture background="true">views/ClassicSlide/poster_overlay.png</texture>
 						<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014)">Conditional</animation>
 						<visible>Control.IsVisible(8014) + !stringcompare(ListItem(1).Label,..)</visible>
 					</control>
-				</control>
 
-				<control type="group">
+
+				</control>
+				<!--labels-->
+				<control type="grouplist">
 					<left>185</left>
 					<top>530</top>
+					<width>910</width>
+					<height>100</height>
+					<itemgap>20</itemgap>
+					<orientation>horizontal</orientation>
 					<include>DialogZoomInOutAnimation</include>
-					<!-- imdb top 250 -->
-					<control type="group">
-						<top>4</top>
-						<!--<include>Top250</include>				-->
-						<visible>!IsEmpty(ListItem.Top250)</visible>
-						<control type="image">
-							<top>0</top>
-							<width>48</width>
-							<height>48</height>
-							<aspectratio aligny="center" align="center">stretch</aspectratio>
-							<colordiffuse>grey</colordiffuse>
-							<texture background="true">info/imdb-badge.png</texture>					
-						</control>
-						<control type="label">
-							<left>-1</left>
-							<top>48</top>
-							<height>23</height>
-							<width>48</width>
-							<font>FontSize_12</font>
-							<textcolor>99white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>TOP250</label>
-						</control>
-						<control type="label">
-							<top>62</top>
-							<left>-1</left>
-							<height>23</height>
-							<width>48</width>
-							<font>FontSize_12</font>
-							<textcolor>white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Top250,#,]</label>
-						</control>
-					</control>
 					<animation effect="zoom" start="100" end="95" center="340,340" time="300" tween="quadratic" easing="in" condition="Control.IsVisible(8013) | Control.IsVisible(8014)">Conditional</animation>
 					<animation effect="fade" start="100" end="0" condition="Control.IsVisible(8013) | Control.IsVisible(8014)">Conditional</animation>
 					<visible>!Control.IsVisible(8013) + !Control.IsVisible(8014)</visible>
@@ -5591,33 +5609,95 @@
 						<effect type="slide" start="0" end="570" time="980" delay="0" tween="sine" easing="out"/>
 						<effect type="fade" start="100" end="0" time="800" delay="0" tween="sine" easing="out"/>
 					</animation>
-					<control type="group">					
-						<animation effect="slide" time="0" start="0,0" end="60,0" condition="!IsEmpty(ListItem.Top250)">Conditional</animation>
+					<!-- imdb top 250 -->
+					<control type="group">
+						<width>48</width>
+						<visible>!IsEmpty(ListItem.Top250)</visible>
+						<control type="image">
+							<top>3</top>
+							<width>48</width>
+							<height>48</height>
+							<aspectratio aligny="center" align="center">stretch</aspectratio>
+							<texture background="true">info/imdb-badge.png</texture>					
+						</control>
 						<control type="label">
-							<left>0</left>
-							<top>0</top>
-							<width>910</width>
+							<left>-1</left>
+							<top>48</top>
+							<height>23</height>
+							<width>48</width>
+							<font>FontSize_12</font>
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>TOP250</label>
+						</control>
+						<control type="label">
+							<top>64</top>
+							<left>-1</left>
+							<height>23</height>
+							<width>48</width>
+							<font>FontSize_16B</font>
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Top250,]</label>
+						</control>
+						<control type="image">
+							<top>3</top>
+							<left>57</left>
+							<width>2</width>
+							<height>81</height>							
+							<texture>info/infopanel_line_v.png</texture>
+							<colordiffuse>33white</colordiffuse>
+						</control>
+					</control>
+					<!-- title and sub info -->
+					<control type="group">					
+						<width>910</width>					   
+						<control type="label">
 							<label>$VAR[ListItem.Label]</label>
 							<font>FontSize_28B</font>
 							<textcolor>white</textcolor>
 							<shadowcolor>77000000</shadowcolor>
 							<visible>!stringcompare(ListItem.Label,..)</visible>
 						</control>
-						<control type="label">
+						<control type="fadelabel">								
+							<top>23</top>
 							<left>0</left>
-							<top>27</top>
+							<align>left</align>
 							<width>910</width>
-							<label>$VAR[TagLineInfo]</label>
+							<height>38</height>
 							<font>FontSize_22</font>
-							<textcolor>ddwhite</textcolor>
+							<textcolor>white</textcolor>
 							<shadowcolor>77000000</shadowcolor>
+							<label>$INFO[ListItem.Tagline]</label>
+							<label>$INFO[ListItem.Genre]</label>		
 							<scroll>false</scroll>
+							<scrollout>false</scrollout>
+							<scrollspeed>100</scrollspeed>
+							<pauseatend>4000</pauseatend>
+							<visible>!stringcompare(ListItem.Label,..) + !IsEmpty(ListItem.Tagline)</visible>
+						</control>
+						<control type="label">
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<top>32</top>
+							<left>0</left>
+							<align>left</align>
+							<width>910</width>
+							<height>18</height>
+							<font>FontSize_22</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>77000000</shadowcolor>					
+							<label>$INFO[ListItem.Genre]</label>
+							<visible>IsEmpty(ListItem.Tagline)</visible>						
 						</control>
 						<!-- Small Down Info -->
-						<control type="grouplist">						
+						<control type="grouplist">
+							<visible>!stringcompare(ListItem.Label,..)</visible>						
 							<top>62</top>
 							<left>-1</left>
-							<width>910</width>
 							<orientation>horizontal</orientation>
 							<itemgap>10</itemgap>						
 							<control type="group">
@@ -5626,7 +5706,7 @@
 								<control type="image">							
 									<width>71</width>
 									<height>24</height>
-									<colordiffuse>33white</colordiffuse>
+									<colordiffuse>44white</colordiffuse>
 									<aspectratio align="center" aligny="center">keep</aspectratio>
 									<texture>flags/imdb.png</texture>						
 								</control>
@@ -5636,7 +5716,7 @@
 									<width>53</width>
 									<height>43</height>
 									<font>font11_title</font>
-									<textcolor>33white</textcolor>
+									<textcolor>44white</textcolor>
 									<align>center</align>
 									<aligny>center</aligny>
 									<label>$INFO[ListItem.Rating]</label>
@@ -5650,7 +5730,7 @@
 									<top>-2</top>
 									<width>118</width>
 									<height>24</height>
-									<colordiffuse>33white</colordiffuse>
+									<colordiffuse>44white</colordiffuse>
 									<aspectratio align="left" aligny="center">keep</aspectratio>
 									<texture background="true">rating/flat/$INFO[ListItem.StarRating]</texture>
 								</control>						
@@ -5660,7 +5740,7 @@
 								<top>0</top>
 								<width>38</width>
 								<height>22</height>
-								<colordiffuse>33white</colordiffuse>
+								<colordiffuse>44white</colordiffuse>
 								<aspectratio align="left" aligny="center">stretch</aspectratio>
 								<texture background="true">flags/sets/sets.png</texture>
 								<visible>Substring(ListItem.Path,videodb://movies/sets/)</visible>
@@ -5670,7 +5750,7 @@
 								<top>0</top>
 								<width>50</width>
 								<height>22</height>
-								<colordiffuse>33white</colordiffuse>
+								<colordiffuse>44white</colordiffuse>
 								<aspectratio align="left" aligny="center">stretch</aspectratio>
 								<texture background="true">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
 								<visible>Container.Content(TVShows) + !IsEmpty(ListItem.mpaa)</visible>
@@ -5680,7 +5760,7 @@
 								<top>0</top>
 								<height>20</height>
 								<width>auto</width>
-								<textcolor>33white</textcolor>
+								<textcolor>44white</textcolor>
 								<shadowcolor>99000000</shadowcolor>
 								<font>FontSize_22</font>
 								<scroll>false</scroll>
@@ -5689,20 +5769,34 @@
 								<label>$VAR[SmallGlobalInfoWORating]</label>
 							</control>
 							<control type="image">
-								<left>0</left>
-								<top>0</top>
+								<width>60</width>
+								<height>22</height>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+								<colordiffuse>44white</colordiffuse>
+								<texture fallback="flags/mpaa/film/rating-nr.png">$VAR[MPAAFilmRating]</texture>
+								<visible>Container.Content(Movies)</visible>
+							</control>
+							<control type="image">
+								<width>60</width>
+								<height>22</height>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+								<colordiffuse>44white</colordiffuse>
+								<texture fallback="flags/mpaa/tv/tv-na.png">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
+								<visible>!Container.Content(Movies) + !Container.Content(Sets)</visible>
+							</control>
+							<control type="image">
 								<width>34</width>
 								<height>22</height>
-								<colordiffuse>33white</colordiffuse>
+								<colordiffuse>44white</colordiffuse>
 								<aspectratio align="left" aligny="center">stretch</aspectratio>
 								<texture>$VAR[ViewsDef3DFlags]</texture>
-								<visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
+								<visible>Container.Content(Movies)</visible>
 							</control>
 						</control>
 					</control>
 				</control>
 			</control>
-
+			<!-- hidden container -->
 			<control type="panel" id="583">
 				<left>-335</left>
 				<top>195</top>
@@ -5710,7 +5804,7 @@
 				<height>362</height>
 				<onleft>583</onleft>
 				<onright>583</onright>
-				<ondown condition="!Skin.HasSetting(EnableKioskMode)">9111</ondown>
+				<ondown>60</ondown>
 				<onup condition="!Skin.HasSetting(EnableKioskMode)">9111</onup>
 				<viewtype label="ClassicSlideView">Slide</viewtype>
 				<pagecontrol>60</pagecontrol>
@@ -5720,7 +5814,7 @@
 				<preloaditems>2</preloaditems>
 				<focusposition>0</focusposition>
 				<hitrect x="285" y="176" w="248" h="362"/>
-				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)</visible>
+				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons)</visible>
 				<itemlayout width="248" height="362"/>
 				<focusedlayout width="248" height="362">
 					<control type="image">
@@ -5734,6 +5828,5 @@
 			</control>
 		</control>
 	</include>
-
 
 </includes>

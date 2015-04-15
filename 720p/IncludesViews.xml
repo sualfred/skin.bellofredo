@@ -461,7 +461,7 @@
   <value condition="Substring(ListItem.Path,videodb://movies/sets/,left) + IntegerGreaterThan(Window(home).Property(Set.Movies.Count),1)">$INFO[Window(home).Property(Set.Movies.Count),, $LOCALIZE[342]]</value>
   <value condition="Substring(ListItem.Path,videodb://movies/sets/,left) + !IntegerGreaterThan(Window(home).Property(Set.Movies.Count),1)">$INFO[Window(home).Property(Set.Movies.Count),, $LOCALIZE[20338]]</value>
   <value condition="!IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
-  <value condition="!IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
+  <!--<value condition="!IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>-->
 </variable>
 
 <variable name="NetFlixSubLabelInfo">

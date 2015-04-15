@@ -1801,6 +1801,18 @@
 	</control>
 </include>
 
+<variable name="ContainerItemSingular">
+	<value condition="Container.Content(movies)">$LOCALIZE[36900]</value>
+	<value condition="Container.Content(tvshows)">$LOCALIZE[20364]</value>
+	<value condition="Container.Content(episodes)">$LOCALIZE[20359]</value>
+	<value condition="Container.Content(seasons)">$LOCALIZE[36904]</value>
+	<value condition="Container.Content(albums)">$LOCALIZE[36918]</value>
+	<value condition="Container.Content(songs)">$LOCALIZE[36920]</value>
+	<value condition="Container.Content(artists)">$LOCALIZE[36916]</value>
+	<value condition="Container.Content(files)">$LOCALIZE[36916]</value>
+	<value>$LOCALIZE[31129]</value>
+</variable>
+
 <variable name="WatchedStateOverlay">
 	<value condition="StringCompare(Skin.String(WatchedFlag),unwatched)">unwatched</value>
 	<value condition="StringCompare(Skin.String(WatchedFlag),watched)">watched</value>
