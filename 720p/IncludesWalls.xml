@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes> 
-  <!-- OnNext -->
+	<!-- OnNext -->
 	<include name="Includes_OnNext_3DWall">
 		<control type="image">
 			<left>0</left>
@@ -388,7 +388,7 @@
 		</control>
 	</include>
 
-  <!-- OnPrevious -->
+	<!-- OnPrevious -->
 	<include name="Includes_OnPrevious_3DWall">
 		<control type="image">
 			<left>-164</left>
@@ -776,7 +776,7 @@
 		</control>
 	</include>
 
-  <!-- Static -->
+	<!-- Static -->
 	<include name="Includes_Static_3DWall">
 		<control type="image">
 			<left>0</left>
@@ -1136,285 +1136,191 @@
 
 
 
-  <!-- OnNext -->
-	<include name="Includes_OnNext_ClassicSlide">
+	<!-- ClassicSlide Definitions -->
+	<include name="ParamClassicSlidePoster">
 		<control type="image">
-			<left>0</left>
+			<left>$PARAM[left]</left>
 			<top>240</top>
 			<width>164</width>
 			<height>242</height>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(-3).Icon]</texture>
+			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem($PARAM[icon]).Icon]</texture>
 			<bordersize>2</bordersize>
+			<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)</visible>
 		</control>
 		<control type="image">
-			<left>164</left>
+			<left>$PARAM[leftSquare]</left>
 			<top>240</top>
-			<width>164</width>
+			<width>242</width>
 			<height>242</height>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(-2).Icon]</texture>
+			<texture background="true" fallback="thumbs/fallback_square.png">$INFO[ListItem($PARAM[icon]).Icon]</texture>
 			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>328</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(-1).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-
-		<control type="image">
-			<left>492</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(0).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-
-		<control type="image">
-			<left>656</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(1).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>820</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(2).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>984</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(3).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>1148</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(4).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>1312</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(5).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>1476</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(6).Icon]</texture>
-			<bordersize>2</bordersize>
+			<visible>Container.Content(addons) | Container.Content(albums) | Container.Content(artists) | Container.Content(programs) | Container.Content(Episodes)</visible>
 		</control>
 	</include>
-
-  <!-- OnPrevious -->
-	<include name="Includes_OnPrevious_ClassicSlide">
-		<control type="image">
-			<left>-164</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(-2).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-			<bordersize>2</bordersize>
-		<control type="image">
-			<left>0</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(-1).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-
-		<control type="image">
-			<left>164</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(0).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
+	<include name="ParamClassicSlideSquare">
 		
-		<control type="image">
-			<left>328</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(1).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>492</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(2).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>656</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(3).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>820</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(4).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>984</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(5).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>1148</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(6).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>1312</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(7).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
+	</include>
+	<!-- OnNext -->
+	<include name="Includes_OnNext_ClassicSlide">
+		<include name="ParamClassicSlidePoster">
+			<param name="left">0</param>
+			<param name="leftSquare">0</param>
+			<param name="icon">-3</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">164</param>
+			<param name="leftSquare">242</param>
+			<param name="icon">-2</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">328</param>
+			<param name="leftSquare">484</param>
+			<param name="icon">-1</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">492</param>
+			<param name="leftSquare">726</param>
+			<param name="icon">0</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">656</param>
+			<param name="leftSquare">968</param>
+			<param name="icon">1</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">820</param>
+			<param name="leftSquare">1210</param>
+			<param name="icon">2</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">984</param>
+			<param name="leftSquare">1452</param>
+			<param name="icon">3</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">1148</param>
+			<param name="visibleSquare">false</param>			
+			<param name="icon">4</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">1312</param>
+			<param name="visibleSquare">false</param>	
+			<param name="icon">5</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">1476</param>
+			<param name="visibleSquare">false</param>	
+			<param name="icon">6</param>
+		</include>
 	</include>
 
-<!-- Static -->
+	<!-- OnPrevious -->
+	<include name="Includes_OnPrevious_ClassicSlide">
+		<include name="ParamClassicSlidePoster">
+			<param name="left">-164</param>
+			<param name="leftSquare">-242</param>
+			<param name="icon">-2</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">0</param>
+			<param name="leftSquare">0</param>
+			<param name="icon">-1</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">164</param>
+			<param name="leftSquare">242</param>
+			<param name="icon">0</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">328</param>
+			<param name="leftSquare">484</param>
+			<param name="icon">1</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">492</param>
+			<param name="leftSquare">726</param>
+			<param name="icon">2</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">656</param>
+			<param name="leftSquare">968</param>
+			<param name="icon">3</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">820</param>
+			<param name="leftSquare">1210</param>
+			<param name="icon">4</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">984</param>
+			<param name="leftSquare">1452</param>
+			<param name="icon">5</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">1148</param>
+			<param name="visibleSquare">false</param>
+			<param name="icon">6</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">1312</param>
+			<param name="visibleSquare">false</param>
+			<param name="icon">7</param>
+		</include>
+	</include>
+
+	<!-- Static -->
 	<include name="Includes_Static_ClassicSlide">
-		<control type="image">
-			<left>0</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(-2).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>164</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(-1).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>328</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(0).Icon]</texture>
-		</control>
-		<control type="image">
-			<left>492</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(1).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>656</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(2).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>820</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(3).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>984</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(4).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>1148</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(5).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
-		<control type="image">
-			<left>1312</left>
-			<top>240</top>
-			<width>164</width>
-			<height>242</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(6).Icon]</texture>
-			<bordersize>2</bordersize>
-		</control>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">0</param>
+			<param name="leftSquare">0</param>
+			<param name="icon">-2</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">164</param>
+			<param name="leftSquare">242</param>
+			<param name="icon">-1</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">328</param>
+			<param name="leftSquare">484</param>
+			<param name="icon">0</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">492</param>
+			<param name="leftSquare">726</param>
+			<param name="icon">1</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">656</param>
+			<param name="leftSquare">968</param>
+			<param name="icon">2</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">820</param>
+			<param name="leftSquare">1210</param>
+			<param name="icon">3</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">984</param>
+			<param name="leftSquare">1452</param>
+			<param name="icon">4</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">1148</param>
+			<param name="visibleSquare">false</param>
+			<param name="icon">5</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
+			<param name="left">1312</param>
+			<param name="visibleSquare">false</param>
+			<param name="icon">6</param>
+		</include>
 	</include>
 
 
-  <!-- OnNext -->
+	<!-- OnNext -->
 	<include name="Includes_OnNext_Wall">
 		<control type="image">
 			<left>0</left>
@@ -1636,7 +1542,7 @@
 		</control>
 	</include>
 
-  <!-- OnPrevious -->
+	<!-- OnPrevious -->
 	<include name="Includes_OnPrevious_Wall">
 		<control type="image">
 			<left>-164</left>
@@ -1858,7 +1764,7 @@
 		</control>
 	</include>
 
-  <!-- Static -->
+	<!-- Static -->
 	<include name="Includes_Static_Wall">
 		<control type="image">
 			<left>0</left>
@@ -2060,7 +1966,7 @@
 
 
 
-  <!-- OnNext -->
+	<!-- OnNext -->
 	<include name="Includes_OnNext_ListWall">
 		<control type="image">
 			<left>0</left>
@@ -2193,7 +2099,7 @@
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture diffuse="views/wall/poster3d_diffuse.png" background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(-2).Icon]</texture>
 		</control>
-	
+
 		<control type="image">
 			<left>640</left>
 			<top>0</top>
@@ -2226,7 +2132,7 @@
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture diffuse="views/wall/poster3d_diffuse.png" background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(1).Icon]</texture>
 		</control>
-	
+
 		<control type="image">
 			<left>800</left>
 			<top>0</top>
@@ -2259,7 +2165,7 @@
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture diffuse="views/wall/poster3d_diffuse.png" background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(4).Icon]</texture>
 		</control>		
-	
+
 		<control type="image">
 			<left>960</left>
 			<top>0</top>
@@ -2292,7 +2198,7 @@
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture diffuse="views/wall/poster3d_diffuse.png" background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(7).Icon]</texture>
 		</control>		
-	
+
 		<control type="image">
 			<left>1120</left>
 			<top>0</top>
@@ -2327,7 +2233,7 @@
 		</control>		
 	</include>
 
-  <!-- OnPrevious -->
+	<!-- OnPrevious -->
 	<include name="Includes_OnPrevious_ListWall">
 		<control type="image">
 			<left>0</left>
@@ -2594,7 +2500,7 @@
 		</control>
 	</include>
 
-  <!-- Static -->
+	<!-- Static -->
 	<include name="Includes_Static_ListWall">
 		<control type="image">
 			<left>0</left>
@@ -2720,7 +2626,7 @@
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture diffuse="views/wall/poster3d_diffuse.png" background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(1).Icon]</texture>
 		</control>
-	
+
 		<control type="image">
 			<left>800</left>
 			<top>0</top>
@@ -2745,7 +2651,7 @@
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture diffuse="views/wall/poster3d_diffuse.png" background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(4).Icon]</texture>
 		</control>
-	
+
 		<control type="image">
 			<left>960</left>
 			<top>0</top>
@@ -2770,7 +2676,7 @@
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture diffuse="views/wall/poster3d_diffuse.png" background="true" fallback="thumbs/fallback_poster.png">$INFO[ListItem(7).Icon]</texture>
 		</control>
-	
+
 		<control type="image">
 			<left>1120</left>
 			<top>0</top>
@@ -2801,7 +2707,7 @@
 
 
 
-  <!-- OnNext -->
+	<!-- OnNext -->
 	<include name="Includes_OnNext_MusicWall">
 		<control type="image">
 			<left>-256</left>
@@ -3093,7 +2999,7 @@
 	</include>
 
 
-  <!-- OnPrevious -->
+	<!-- OnPrevious -->
 	<include name="Includes_OnPrevious_MusicWall">
 		<control type="image"> <!-- row 6-->
 			<left>-256</left>
@@ -3385,7 +3291,7 @@
 	</include>
 
 
-  <!-- Static -->
+	<!-- Static -->
 	<include name="Includes_Static_MusicWall">
 		<control type="image">
 			<left>-256</left>
@@ -3624,281 +3530,281 @@
 
 
 
-  <!-- 3DWall Background Movies - Posters -->
+	<!-- 3DWall Background Movies - Posters -->
 	<include name="3DWallBG_Movies_Posters">
 		<control type="panel">
 			<animation effect="rotatex" center="720,12" start="0" end="20" time="0" condition="true">Conditional</animation>
 <!--  <animation type="Conditional" condition="true" loop="true" reversible="false">
         <effect type="rotatex" center="720,12" start="0" end="23" time="5000"/>
         <effect type="rotatex" center="720,12" start="0" end="-23" time="5000" delay="25000"/>
-      </animation> -->
-			<left>-320</left>
-			<top>-449</top>
-			<width>1920</width>
-	    <height>1175</height>
-			<itemlayout width="160" height="235">
-    		<control type="image">
-    			<left>0</left>
-    			<top>0</top>
-    			<width>160</width>
-    			<height>235</height>
-    			<aspectratio scalediffuse="false">stretch</aspectratio>
-    			<texture background="true" diffuse="views/wall/3dBG_diffuse_poster.png" fallback="thumbs/fallback_poster.png">$INFO[ListItem.Art(poster)]</texture>
-    		</control>
-			</itemlayout>
-      <focusedlayout width="160" height="235"/>
-			<content>$VAR[ContentType_RandomMovies]</content>
-      <!-- <content>plugin://service.library.data.provider?type=randommovies+randommovies+randommovies&amp;reload=$INFO[Window(Home).Property(randommovies)]$INFO[Window(Home).Property(randommovies)]$INFO[Window(Home).Property(randommovies)]</content> -->
-	  </control>
-	</include>
+    </animation> -->
+    <left>-320</left>
+    <top>-449</top>
+    <width>1920</width>
+    <height>1175</height>
+    <itemlayout width="160" height="235">
+    	<control type="image">
+    		<left>0</left>
+    		<top>0</top>
+    		<width>160</width>
+    		<height>235</height>
+    		<aspectratio scalediffuse="false">stretch</aspectratio>
+    		<texture background="true" diffuse="views/wall/3dBG_diffuse_poster.png" fallback="thumbs/fallback_poster.png">$INFO[ListItem.Art(poster)]</texture>
+    	</control>
+    </itemlayout>
+    <focusedlayout width="160" height="235"/>
+    <content>$VAR[ContentType_RandomMovies]</content>
+    <!-- <content>plugin://service.library.data.provider?type=randommovies+randommovies+randommovies&amp;reload=$INFO[Window(Home).Property(randommovies)]$INFO[Window(Home).Property(randommovies)]$INFO[Window(Home).Property(randommovies)]</content> -->
+</control>
+</include>
 
-  <!-- 3DWall Background Movies - Logo -->
-	<include name="3DWallBG_Movies_Logo">
-		<control type="panel">
-			<animation effect="rotatex" center="720,12" start="0" end="19" time="0" condition="true">Conditional</animation>
-			<left>-320</left>
-			<top>-195</top>
-			<width>1920</width>
-	    <height>920</height>
-			<itemlayout width="320" height="184">
-    		<control type="image">
-    			<left>0</left>
-    			<top>0</top>
-    			<width>320</width>
-    			<height>184</height>
-    			<aspectratio scalediffuse="false">stretch</aspectratio>
-    			<texture background="true" diffuse="views/wall/3dBG_diffuse_landscape.png">thumbs/thumb_back.png</texture>
-    		</control>
-    		<control type="image">
-    			<left>0</left>
-    			<top>0</top>
-    			<width>320</width>
-    			<height>184</height>
-    			<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
-    			<texture background="true" diffuse="views/wall/3dBG_diffuse_landscape.png" fallback="thumbs/fallback_fanart_tp.png">$INFO[ListItem.Art(clearlogo)]</texture>
-  		    <bordersize>20</bordersize>
-    		</control>
-			</itemlayout>
-      <focusedlayout width="320" height="184"/>
-			<content>$VAR[ContentType_RandomMovies]</content>
-	  </control>
-	</include>
+<!-- 3DWall Background Movies - Logo -->
+<include name="3DWallBG_Movies_Logo">
+	<control type="panel">
+		<animation effect="rotatex" center="720,12" start="0" end="19" time="0" condition="true">Conditional</animation>
+		<left>-320</left>
+		<top>-195</top>
+		<width>1920</width>
+		<height>920</height>
+		<itemlayout width="320" height="184">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>184</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views/wall/3dBG_diffuse_landscape.png">thumbs/thumb_back.png</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>184</height>
+				<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+				<texture background="true" diffuse="views/wall/3dBG_diffuse_landscape.png" fallback="thumbs/fallback_fanart_tp.png">$INFO[ListItem.Art(clearlogo)]</texture>
+				<bordersize>20</bordersize>
+			</control>
+		</itemlayout>
+		<focusedlayout width="320" height="184"/>
+		<content>$VAR[ContentType_RandomMovies]</content>
+	</control>
+</include>
 
-  <!-- 3DWall Background Movies - DiscArt -->
-	<include name="3DWallBG_Movies_DiscArt">
-		<control type="panel">
-			<animation effect="rotatex" center="720,12" start="0" end="20" time="0" condition="true">Conditional</animation>
-			<left>-243</left>
-			<top>-449</top>
-			<width>1764</width>
-	    <height>1775</height>
-			<itemlayout width="252" height="235">
-    		<control type="image">
-    			<left>0</left>
-    			<top>0</top>
-    			<width>252</width>
-    			<height>235</height>
-    			<aspectratio scalediffuse="false">stretch</aspectratio>
-    			<texture background="true" diffuse="views/wall/3dBG_diffuse_squared.png">thumbs/thumb_back.png</texture>
-    		</control>
-    		<control type="image">
-    			<left>0</left>
-    			<top>0</top>
-    			<width>252</width>
-    			<height>235</height>
-    			<aspectratio scalediffuse="false">stretch</aspectratio>
-    			<texture background="true" diffuse="views/wall/3dBG_diffuse_squared.png" fallback="thumbs/fallback_square_tp.png">$INFO[ListItem.Art(discart)]</texture>
-  		    <bordersize>20</bordersize>
-    		</control>
-			</itemlayout>
-      <focusedlayout width="252" height="235"/>
-			<content>$VAR[ContentType_RandomMovies]</content>
-	  </control>
-	</include>
-
-
-
-
-
-  <!-- 3DWall Background TVShows - Posters -->
-	<include name="3DWallBG_TVShows_Posters">
-		<control type="panel">
-			<animation effect="rotatex" center="720,12" start="0" end="20" time="0" condition="true">Conditional</animation>
-			<left>-320</left>
-			<top>-449</top>
-			<width>1920</width>
-	    <height>1175</height>
-			<itemlayout width="160" height="235">
-    		<control type="image">
-    			<left>0</left>
-    			<top>0</top>
-    			<width>160</width>
-    			<height>235</height>
-    			<aspectratio scalediffuse="false">stretch</aspectratio>
-    			<texture background="true" diffuse="views/wall/3dBG_diffuse_poster.png" fallback="thumbs/fallback_poster.png">$INFO[ListItem.Art(poster)]</texture>
-    		</control>
-			</itemlayout>
-      <focusedlayout width="160" height="235"/>
-			<content>$VAR[ContentType_RandomTVShows]</content>
-      <!-- <content>plugin://service.library.data.provider?type=randomepisodes+randomepisodes+randomepisodes&amp;reload=$INFO[Window(Home).Property(randomepisodes)]$INFO[Window(Home).Property(randomepisodes)]$INFO[Window(Home).Property(randomepisodes)]</content> -->
-	  </control>
-	</include>
-
-  <!-- 3DWall Background TVShows - Logo -->
-	<include name="3DWallBG_TVShows_Logo">
-		<control type="panel">
-			<animation effect="rotatex" center="720,12" start="0" end="19" time="0" condition="true">Conditional</animation>
-			<left>-320</left>
-			<top>-195</top>
-			<width>1920</width>
-	    <height>920</height>
-			<itemlayout width="320" height="184">
-    		<control type="image">
-    			<left>0</left>
-    			<top>0</top>
-    			<width>320</width>
-    			<height>184</height>
-    			<aspectratio scalediffuse="false">stretch</aspectratio>
-    			<texture background="true" diffuse="views/wall/3dBG_diffuse_landscape.png">thumbs/thumb_back.png</texture>
-    		</control>
-    		<control type="image">
-    			<left>0</left>
-    			<top>0</top>
-    			<width>320</width>
-    			<height>184</height>
-    			<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
-    			<texture background="true" diffuse="views/wall/3dBG_diffuse_landscape.png" fallback="thumbs/fallback_fanart_tp.png">$INFO[ListItem.Art(clearlogo)]</texture>
-  		    <bordersize>20</bordersize>
-    		</control>
-			</itemlayout>
-      <focusedlayout width="320" height="184"/>
-			<content>$VAR[ContentType_RandomTVShows]</content>
-	  </control>
-	</include>
-
-  <!-- 3DWall Background TVShows - Landscape -->
-	<include name="3DWallBG_TVShows_Landscape">
-		<control type="panel">
-			<animation effect="rotatex" center="720,12" start="0" end="19" time="0" condition="true">Conditional</animation>
-			<left>-320</left>
-			<top>-195</top>
-			<width>1920</width>
-	    <height>920</height>
-			<itemlayout width="320" height="184">
-    		<control type="image">
-    			<left>0</left>
-    			<top>0</top>
-    			<width>320</width>
-    			<height>184</height>
-    			<aspectratio scalediffuse="false">stretch</aspectratio>
-    			<texture background="true" diffuse="views/wall/3dBG_diffuse_landscape.png">thumbs/thumb_back.png</texture>
-    		</control>
-    		<control type="image">
-    			<left>0</left>
-    			<top>0</top>
-    			<width>320</width>
-    			<height>184</height>
-    			<aspectratio scalediffuse="false" align="center" aligny="center">stretch</aspectratio>
-    			<texture background="true" diffuse="views/wall/3dBG_diffuse_landscape.png" fallback="thumbs/fallback_fanart_tp.png">$INFO[ListItem.Art(landscape)]</texture>
-    		</control>
-			</itemlayout>
-      <focusedlayout width="320" height="184"/>
-			<content>$VAR[ContentType_RandomTVShows]</content>
-	  </control>
-	</include>
+<!-- 3DWall Background Movies - DiscArt -->
+<include name="3DWallBG_Movies_DiscArt">
+	<control type="panel">
+		<animation effect="rotatex" center="720,12" start="0" end="20" time="0" condition="true">Conditional</animation>
+		<left>-243</left>
+		<top>-449</top>
+		<width>1764</width>
+		<height>1775</height>
+		<itemlayout width="252" height="235">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>252</width>
+				<height>235</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views/wall/3dBG_diffuse_squared.png">thumbs/thumb_back.png</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>252</width>
+				<height>235</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views/wall/3dBG_diffuse_squared.png" fallback="thumbs/fallback_square_tp.png">$INFO[ListItem.Art(discart)]</texture>
+				<bordersize>20</bordersize>
+			</control>
+		</itemlayout>
+		<focusedlayout width="252" height="235"/>
+		<content>$VAR[ContentType_RandomMovies]</content>
+	</control>
+</include>
 
 
 
 
 
-  <!-- 3DWall Background Albums -->
-	<include name="3DWallBG_Albums">
-		<control type="panel">
-			<animation effect="rotatex" center="720,12" start="0" end="20" time="0" condition="true">Conditional</animation>
-			<left>-243</left>
-			<top>-449</top>
-			<width>1764</width>
-	    <height>1775</height>
-			<itemlayout width="252" height="235">
-    		<control type="image">
-    			<left>0</left>
-    			<top>0</top>
-    			<width>252</width>
-    			<height>235</height>
-    			<aspectratio scalediffuse="false">stretch</aspectratio>
-    			<texture background="true" diffuse="views/wall/3dBG_diffuse_squared.png" fallback="thumbs/fallback_square.png">$INFO[ListItem.Art(thumb)]</texture>
-    		</control>
-			</itemlayout>
-      <focusedlayout width="252" height="235"/>
-			<content>$VAR[ContentType_RandomAlbums]</content>
-      <!-- <content>plugin://service.library.data.provider?type=randomalbums+randomalbums&amp;reload=$INFO[Window(Home).Property(randomalbums)]$INFO[Window(Home).Property(randomalbums)]</content> -->
-	  </control>
-	</include>
+<!-- 3DWall Background TVShows - Posters -->
+<include name="3DWallBG_TVShows_Posters">
+	<control type="panel">
+		<animation effect="rotatex" center="720,12" start="0" end="20" time="0" condition="true">Conditional</animation>
+		<left>-320</left>
+		<top>-449</top>
+		<width>1920</width>
+		<height>1175</height>
+		<itemlayout width="160" height="235">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>160</width>
+				<height>235</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views/wall/3dBG_diffuse_poster.png" fallback="thumbs/fallback_poster.png">$INFO[ListItem.Art(poster)]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="160" height="235"/>
+		<content>$VAR[ContentType_RandomTVShows]</content>
+		<!-- <content>plugin://service.library.data.provider?type=randomepisodes+randomepisodes+randomepisodes&amp;reload=$INFO[Window(Home).Property(randomepisodes)]$INFO[Window(Home).Property(randomepisodes)]$INFO[Window(Home).Property(randomepisodes)]</content> -->
+	</control>
+</include>
+
+<!-- 3DWall Background TVShows - Logo -->
+<include name="3DWallBG_TVShows_Logo">
+	<control type="panel">
+		<animation effect="rotatex" center="720,12" start="0" end="19" time="0" condition="true">Conditional</animation>
+		<left>-320</left>
+		<top>-195</top>
+		<width>1920</width>
+		<height>920</height>
+		<itemlayout width="320" height="184">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>184</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views/wall/3dBG_diffuse_landscape.png">thumbs/thumb_back.png</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>184</height>
+				<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+				<texture background="true" diffuse="views/wall/3dBG_diffuse_landscape.png" fallback="thumbs/fallback_fanart_tp.png">$INFO[ListItem.Art(clearlogo)]</texture>
+				<bordersize>20</bordersize>
+			</control>
+		</itemlayout>
+		<focusedlayout width="320" height="184"/>
+		<content>$VAR[ContentType_RandomTVShows]</content>
+	</control>
+</include>
+
+<!-- 3DWall Background TVShows - Landscape -->
+<include name="3DWallBG_TVShows_Landscape">
+	<control type="panel">
+		<animation effect="rotatex" center="720,12" start="0" end="19" time="0" condition="true">Conditional</animation>
+		<left>-320</left>
+		<top>-195</top>
+		<width>1920</width>
+		<height>920</height>
+		<itemlayout width="320" height="184">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>184</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views/wall/3dBG_diffuse_landscape.png">thumbs/thumb_back.png</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>184</height>
+				<aspectratio scalediffuse="false" align="center" aligny="center">stretch</aspectratio>
+				<texture background="true" diffuse="views/wall/3dBG_diffuse_landscape.png" fallback="thumbs/fallback_fanart_tp.png">$INFO[ListItem.Art(landscape)]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="320" height="184"/>
+		<content>$VAR[ContentType_RandomTVShows]</content>
+	</control>
+</include>
 
 
-  <!-- 3DWall Background Artists -->
-	<include name="3DWallBG_Artists">
-		<control type="panel">
-			<animation effect="rotatex" center="720,12" start="0" end="20" time="0" condition="true">Conditional</animation>
-			<left>-243</left>
-			<top>-449</top>
-			<width>1764</width>
-	    <height>1775</height>
-			<itemlayout width="252" height="235">
-    		<control type="image">
-    			<left>0</left>
-    			<top>0</top>
-    			<width>252</width>
-    			<height>235</height>
-    			<aspectratio scalediffuse="false">scale</aspectratio>
-    			<texture background="true" diffuse="views/wall/3dBG_diffuse_squared.png" fallback="thumbs/fallback_square.png">$INFO[ListItem.Art(thumb)]</texture>
-    		</control>
-			</itemlayout>
-      <focusedlayout width="252" height="235"/>
-			<content>$VAR[ContentType_RandomArtists]</content>
-	  </control>
-	</include>
 
 
-  <!-- 3DWall Viz-Background Albums -->
-	<include name="3DWallBG_Albums_Viz">
-		<control type="panel">
-			<animation effect="rotatex" center="720,12" start="0" end="20" time="0" condition="true">Conditional</animation>
-			<left>-243</left>
-			<top>-449</top>
-			<width>1764</width>
-	    <height>1775</height>
-			<itemlayout width="252" height="235">
-    		<control type="image">
-    			<left>0</left>
-    			<top>0</top>
-    			<width>252</width>
-    			<height>235</height>
-    			<aspectratio scalediffuse="false">stretch</aspectratio>
-    			<texture background="true" diffuse="views/wall/3dBG_diffuse_squared.png" fallback="thumbs/fallback_square.png">$INFO[ListItem.Art(thumb)]</texture>
-    		</control>
-			</itemlayout>
-      <focusedlayout width="252" height="235"/>
-      <content>plugin://service.library.data.provider?type=randomalbums+randomalbums&amp;reload=$INFO[Window(Home).Property(randomalbums)]$INFO[Window(Home).Property(randomalbums)]</content>
-	  </control>
-	</include>
+
+<!-- 3DWall Background Albums -->
+<include name="3DWallBG_Albums">
+	<control type="panel">
+		<animation effect="rotatex" center="720,12" start="0" end="20" time="0" condition="true">Conditional</animation>
+		<left>-243</left>
+		<top>-449</top>
+		<width>1764</width>
+		<height>1775</height>
+		<itemlayout width="252" height="235">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>252</width>
+				<height>235</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views/wall/3dBG_diffuse_squared.png" fallback="thumbs/fallback_square.png">$INFO[ListItem.Art(thumb)]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="252" height="235"/>
+		<content>$VAR[ContentType_RandomAlbums]</content>
+		<!-- <content>plugin://service.library.data.provider?type=randomalbums+randomalbums&amp;reload=$INFO[Window(Home).Property(randomalbums)]$INFO[Window(Home).Property(randomalbums)]</content> -->
+	</control>
+</include>
 
 
-  <variable name="ContentType_RandomMovies">
-      <value condition="!Window.IsVisible(3050)">special://skin/extras/playlists/RandomMovies.xsp</value>
-  </variable>
-  
-  <variable name="ContentType_RandomTVShows">
-      <value condition="!Window.IsVisible(3050)">special://skin/extras/playlists/RandomTVShows.xsp</value>
-  </variable>
-  
-  <variable name="ContentType_RandomAlbums">
-      <value condition="!Window.IsVisible(3050)">special://skin/extras/playlists/RandomAlbums.xsp</value>
-  </variable>
-  
-  <variable name="ContentType_RandomArtists">
-      <value condition="!Window.IsVisible(3050)">special://skin/extras/playlists/RandomArtists.xsp</value>
-  </variable>
+<!-- 3DWall Background Artists -->
+<include name="3DWallBG_Artists">
+	<control type="panel">
+		<animation effect="rotatex" center="720,12" start="0" end="20" time="0" condition="true">Conditional</animation>
+		<left>-243</left>
+		<top>-449</top>
+		<width>1764</width>
+		<height>1775</height>
+		<itemlayout width="252" height="235">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>252</width>
+				<height>235</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views/wall/3dBG_diffuse_squared.png" fallback="thumbs/fallback_square.png">$INFO[ListItem.Art(thumb)]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="252" height="235"/>
+		<content>$VAR[ContentType_RandomArtists]</content>
+	</control>
+</include>
+
+
+<!-- 3DWall Viz-Background Albums -->
+<include name="3DWallBG_Albums_Viz">
+	<control type="panel">
+		<animation effect="rotatex" center="720,12" start="0" end="20" time="0" condition="true">Conditional</animation>
+		<left>-243</left>
+		<top>-449</top>
+		<width>1764</width>
+		<height>1775</height>
+		<itemlayout width="252" height="235">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>252</width>
+				<height>235</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views/wall/3dBG_diffuse_squared.png" fallback="thumbs/fallback_square.png">$INFO[ListItem.Art(thumb)]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="252" height="235"/>
+		<content>plugin://service.library.data.provider?type=randomalbums+randomalbums&amp;reload=$INFO[Window(Home).Property(randomalbums)]$INFO[Window(Home).Property(randomalbums)]</content>
+	</control>
+</include>
+
+
+<variable name="ContentType_RandomMovies">
+	<value condition="!Window.IsVisible(3050)">special://skin/extras/playlists/RandomMovies.xsp</value>
+</variable>
+
+<variable name="ContentType_RandomTVShows">
+	<value condition="!Window.IsVisible(3050)">special://skin/extras/playlists/RandomTVShows.xsp</value>
+</variable>
+
+<variable name="ContentType_RandomAlbums">
+	<value condition="!Window.IsVisible(3050)">special://skin/extras/playlists/RandomAlbums.xsp</value>
+</variable>
+
+<variable name="ContentType_RandomArtists">
+	<value condition="!Window.IsVisible(3050)">special://skin/extras/playlists/RandomArtists.xsp</value>
+</variable>
 
 </includes>
 

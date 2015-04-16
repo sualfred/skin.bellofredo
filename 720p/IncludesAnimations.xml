@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes> 
 
+	<include name="FakeFadeLabel">
+		<animation type="Conditional" reversible="false" condition="$PARAM[condition]" loop="true">
+			<effect type="fade" start="0" end="100" time="500" delay="0" />
+			<effect type="fade" start="100" end="0" time="500" delay="10000" />
+			<effect type="fade" start="100" end="0" time="500" delay="20000" />
+		</animation>
+	</include>
+	<include name="FakeFadeLabel2">
+		<animation type="Conditional" reversible="false" condition="$PARAM[condition]" loop="true">
+			<effect type="fade" start="0" end="100" time="500" delay="10500" />
+			<effect type="fade" start="100" end="0" time="500" delay="20000" />
+		</animation>
+	</include>
+
 	<include name="ShutdownMenuAnimation">
 		<animation type="Conditional" reversible="false" condition="![Window.IsActive(ShutdownMenu) | Window.IsActive(contextmenu) | Window.IsActive(favourites)]">
 			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
@@ -85,6 +99,39 @@
 		<animation type="Hidden" reversible="false">
 			<effect type="fade" start="100" end="0" time="400" tween="sine" easing="out" />
 			<effect type="slide" start="0,0" end="0,55" time="450" tween="sine" easing="out" />
+		</animation>
+	</include>
+
+	<include name="DownUpAnimation">
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="in"  />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+		</animation>
+		<animation type="Visible" reversible="false">
+			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="in"  />
+			<effect type="slide" start="0,25" end="0,0" time="450" tween="cubic" easing="out" />
+		</animation>
+		<animation type="Hidden" reversible="false">
+			<effect type="fade" start="100" end="0" time="400" tween="sine" easing="out" />
+			<effect type="slide" start="0,0" end="0,25" time="450" tween="sine" easing="out" />
+		</animation>
+	</include>
+	<include name="UpDownAnimation">
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="in"  />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+		</animation>
+		<animation type="Visible" reversible="false">
+			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="in"  />
+			<effect type="slide" start="0,-25" end="0,0" time="450" tween="cubic" easing="out" />
+		</animation>
+		<animation type="Hidden" reversible="false">
+			<effect type="fade" start="100" end="0" time="400" tween="sine" easing="out" />
+			<effect type="slide" start="0,0" end="0,-25" time="450" tween="sine" easing="out" />
 		</animation>
 	</include>
 
@@ -497,7 +544,7 @@
 			<effect type="slide" start="0,0" end="-360,0" time="400" delay="250" tween="sine" easing="out" />
 			<effect type="fade" start="100" end="0" time="300" delay="250" tween="sine" easing="out"/>
 		</animation>
-			<animation type="Visible" reversible="false">
+		<animation type="Visible" reversible="false">
 			<effect type="fade" start="0" end="100" time="500" delay="0" tween="sine" easing="out"/>
 			<effect type="slide" start="-360,0" end="0,0" time="600" tween="cubic" easing="out" />
 		</animation>
