@@ -457,6 +457,19 @@
 	</control>
 </include>
 
+<include name="SettingsLabel">
+	<description>Default Button</description>
+	<width>782</width>
+	<height>50</height>
+	<font>FontSize_20B</font>
+	<textcolor>white</textcolor>
+	<shadowcolor>99000000</shadowcolor>
+	<align>left</align>
+	<aligny>top</aligny>
+	<textoffsetx>15</textoffsetx>
+	<textoffsety>12</textoffsety>
+	<pulseonselect>false</pulseonselect>
+</include>
 <include name="SettingsButton">
 	<description>Default Button</description>
 	<width>782</width>
@@ -473,6 +486,13 @@
 	<textoffsetx>15</textoffsetx>
 	<textoffsety>12</textoffsety>
 	<pulseonselect>false</pulseonselect>
+</include>
+<include name="SettingsSeperator">
+	<description>Default Button</description>
+	<width>782</width>
+	<height>1</height>
+	<colordiffuse>77white</colordiffuse>
+	<texture>info/seperator.png</texture>
 </include>
 <include name="SettingsRadioButton">
 	<description>Default RadioButton</description>

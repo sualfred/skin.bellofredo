@@ -4326,7 +4326,7 @@
 			<include>DialogZoomInOutAnimation</include>
 			<left>540</left>
 			<top>125</top>
-			<texture>info/infopanel_line_v.png</texture>
+			<texture>info/seperator_vertical.png</texture>
 			<colordiffuse>33white</colordiffuse>
 			<width>1</width>
 			<height>500</height>
@@ -5649,7 +5649,7 @@
 							<left>57</left>
 							<width>2</width>
 							<height>81</height>							
-							<texture>info/infopanel_line_v.png</texture>
+							<texture>info/seperator_vertical.png</texture>
 							<colordiffuse>33white</colordiffuse>
 						</control>
 					</control>

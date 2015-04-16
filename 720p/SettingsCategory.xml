@@ -45,6 +45,10 @@
 					<description>Default SpinControlex</description>
 					<include>SettingsSpincontrolex</include>
 				</control>
+				<control type="image" id="11">
+					<description>separator image</description>
+					<include>SettingsSeperator</include>
+				</control>
 				<control type="edit" id="12">
 					<description>Default edit</description>
 					<include>SettingsButton</include>
@@ -52,6 +56,10 @@
 				<control type="sliderex" id="13">
 					<description>Default Slider</description>
 					<include>SettingsSliderex</include>
+				</control>
+				<control type="label" id="14">
+					<description>Default Label</description>
+					<include>SettingsLabel</include>
 				</control>
 			</control>
 			<control type="group" id="9001">
