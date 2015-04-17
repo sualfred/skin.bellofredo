@@ -1156,9 +1156,11 @@
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture background="true" fallback="thumbs/fallback_square.png">$INFO[ListItem($PARAM[icon]).Icon]</texture>
 			<bordersize>2</bordersize>
-			<visible>Container.Content(addons) | Container.Content(albums) | Container.Content(artists) | Container.Content(programs) | Container.Content(Episodes)</visible>
+			<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]</visible>
+			<visible>$PARAM[visibleSquare]</visible>
 		</control>
 	</include>
+	
 	<include name="ParamClassicSlideSquare">
 		
 	</include>
@@ -1166,42 +1168,50 @@
 	<include name="Includes_OnNext_ClassicSlide">
 		<include name="ParamClassicSlidePoster">
 			<param name="left">0</param>
-			<param name="leftSquare">0</param>
+			<param name="leftSquare">-156</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">-3</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">164</param>
-			<param name="leftSquare">242</param>
+			<param name="leftSquare">86</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">-2</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">328</param>
-			<param name="leftSquare">484</param>
+			<param name="leftSquare">328</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">-1</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">492</param>
-			<param name="leftSquare">726</param>
+			<param name="leftSquare">570</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">0</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">656</param>
-			<param name="leftSquare">968</param>
+			<param name="leftSquare">812</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">1</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">820</param>
-			<param name="leftSquare">1210</param>
+			<param name="leftSquare">1054</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">2</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">984</param>
-			<param name="leftSquare">1452</param>
+			<param name="leftSquare">1296</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">3</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">1148</param>
-			<param name="visibleSquare">false</param>			
+			<param name="leftSquare">1538</param>	
+			<param name="visibleSquare">true</param>		
 			<param name="icon">4</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
@@ -1219,43 +1229,56 @@
 	<!-- OnPrevious -->
 	<include name="Includes_OnPrevious_ClassicSlide">
 		<include name="ParamClassicSlidePoster">
+			<param name="leftSquare">-640</param>
+			<param name="visibleSquare">true</param>
+			<param name="icon">-3</param>
+		</include>
+		<include name="ParamClassicSlidePoster">
 			<param name="left">-164</param>
-			<param name="leftSquare">-242</param>
+			<param name="leftSquare">-398</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">-2</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">0</param>
-			<param name="leftSquare">0</param>
+			<param name="leftSquare">-156</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">-1</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">164</param>
-			<param name="leftSquare">242</param>
+			<param name="leftSquare">86</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">0</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">328</param>
-			<param name="leftSquare">484</param>
+			<param name="leftSquare">328</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">1</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">492</param>
-			<param name="leftSquare">726</param>
+			<param name="leftSquare">570</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">2</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">656</param>
-			<param name="leftSquare">968</param>
+			<param name="leftSquare">812</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">3</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">820</param>
-			<param name="leftSquare">1210</param>
+			<param name="leftSquare">1054</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">4</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">984</param>
-			<param name="leftSquare">1452</param>
+			<param name="leftSquare">1296</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">5</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
@@ -1274,37 +1297,44 @@
 	<include name="Includes_Static_ClassicSlide">
 		<include name="ParamClassicSlidePoster">
 			<param name="left">0</param>
-			<param name="leftSquare">0</param>
+			<param name="leftSquare">-156</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">-2</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">164</param>
-			<param name="leftSquare">242</param>
+			<param name="leftSquare">86</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">-1</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">328</param>
-			<param name="leftSquare">484</param>
+			<param name="leftSquare">328</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">0</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">492</param>
-			<param name="leftSquare">726</param>
+			<param name="leftSquare">570</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">1</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">656</param>
-			<param name="leftSquare">968</param>
+			<param name="leftSquare">812</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">2</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">820</param>
-			<param name="leftSquare">1210</param>
+			<param name="leftSquare">1054</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">3</param>
 		</include>
 		<include name="ParamClassicSlidePoster">
 			<param name="left">984</param>
-			<param name="leftSquare">1452</param>
+			<param name="leftSquare">1296</param>
+			<param name="visibleSquare">true</param>
 			<param name="icon">4</param>
 		</include>
 		<include name="ParamClassicSlidePoster">

@@ -5374,17 +5374,35 @@
 						<effect type="fade" start="100" end="0" time="1000" delay="300"/>
 					</animation>
 				</control>
-				<control type="group" id="8013">
-					<left>-100</left>
-					<animation reversible="false" effect="slide" start="0,0" end="-164,0" time="300" tween="quadratic" easing="out">Hidden</animation>
-					<visible>Container.OnNext</visible>
-					<include>Includes_OnNext_ClassicSlide</include>
+				<control type="group">
+					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)</visible>
+					<control type="group" id="8013">
+						<left>-100</left>
+						<animation reversible="false" effect="slide" start="0,0" end="-164,0" time="300" tween="quadratic" easing="out">Hidden</animation>
+						<visible>Container.OnNext</visible>
+						<include>Includes_OnNext_ClassicSlide</include>
+					</control>
+					<control type="group" id="8014">
+						<left>-100</left>
+						<animation reversible="false" effect="slide" start="0,0" end="164,0" time="300" tween="quadratic" easing="out">Hidden</animation>
+						<visible>Container.OnPrevious</visible>
+						<include>Includes_OnPrevious_ClassicSlide</include>
+					</control>
 				</control>
-				<control type="group" id="8014">
-					<left>-100</left>
-					<animation reversible="false" effect="slide" start="0,0" end="164,0" time="300" tween="quadratic" easing="out">Hidden</animation>
-					<visible>Container.OnPrevious</visible>
-					<include>Includes_OnPrevious_ClassicSlide</include>
+				<control type="group">
+					<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]</visible>
+					<control type="group" id="8013">
+						<left>-100</left>
+						<animation reversible="false" effect="slide" start="0,0" end="-242,0" time="300" tween="quadratic" easing="out">Hidden</animation>
+						<visible>Container.OnNext</visible>
+						<include>Includes_OnNext_ClassicSlide</include>
+					</control>
+					<control type="group" id="8014">
+						<left>-100</left>
+						<animation reversible="false" effect="slide" start="0,0" end="242,0" time="300" tween="quadratic" easing="out">Hidden</animation>
+						<visible>Container.OnPrevious</visible>
+						<include>Includes_OnPrevious_ClassicSlide</include>
+					</control>
 				</control>
 				<control type="group">
 					<left>-100</left>
@@ -5769,17 +5787,17 @@
 				<control type="image">
 					<left>28</left>
 					<top>32</top>
-					<width>562</width>
+					<width>673</width>
 					<height>673</height>
 					<include>DialogZoomInOutAnimation</include>
 					<texture background="true">views/ClassicSlide/poster_blue_shadow_panel.png</texture>
 					<animation reversible="true" effect="zoom" start="100,100" end="95,100" center="340,340" time="300" tween="quadratic" easing="in" condition="Control.IsVisible(8013) | Control.IsVisible(8014)">Conditional</animation>
 					<animation type="WindowOpen">
 						<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>
-						<effect type="zoom" start="196,148,360,673" end="128,32,562,673" time="980" delay="750" tween="sine" easing="out"/>
+						<effect type="zoom" start="196,148,360,673" end="128,32,673,673" time="980" delay="750" tween="sine" easing="out"/>
 					</animation>
 					<animation type="WindowClose">
-						<effect type="zoom" start="128,32,562,673" end="196,148,360,436" time="980" delay="0" tween="sine" easing="out"/>
+						<effect type="zoom" start="128,32,673,673" end="196,148,360,673" time="980" delay="0" tween="sine" easing="out"/>
 						<effect type="fade" start="100" end="0" time="500" delay="0" tween="sine" easing="out"/>
 					</animation>
 				</control>
@@ -5787,7 +5805,7 @@
 					<include>DialogZoomInOutAnimation</include>
 					<animation reversible="true" effect="zoom" start="100" end="95" center="340,340" time="300" tween="quadratic" easing="in" condition="Control.IsVisible(8013) | Control.IsVisible(8014)">Conditional</animation>
 					<control type="image">
-						<left>28</left>
+						<left>30</left>
 						<top>12</top>
 						<width>673</width>
 						<height>673</height>
