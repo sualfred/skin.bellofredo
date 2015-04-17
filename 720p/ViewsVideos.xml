@@ -5278,7 +5278,7 @@
 				</control>
 			</include>
 			<!--========================-->
-			<!--==== Slide View "583" ====-->
+			<!--==== Classic Slide View "583" ====-->
 			<!--========================-->
 			<include name="ClassicSlideView">
 				<control type="group">
@@ -5439,7 +5439,7 @@
 						<animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 						<visible>Control.IsVisible(583)</visible>
 					</control>
-					<!--focusedlayout poster -->
+					<!--focusedlayout poster-->
 					<control type="group">
 						<visible>Control.IsVisible(583) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]</visible>
 						<control type="image">
@@ -5502,8 +5502,8 @@
 									<width>248</width>
 									<height>366</height>
 									<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="views/ClassicSlide/poster_diffuse.png" fallback="thumbs/fallback_poster_big.png">$INFO[ListItem.Icon]</texture>									
-									<animation effect="fade" start="75" end="100" time="200" delay="0" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)]">Conditional</animation>		
+									<texture background="true" diffuse="views/ClassicSlide/poster_diffuse.png" fallback="thumbs/fallback_poster_big.png">$INFO[ListItem.Icon]</texture>
+									<animation effect="fade" start="90" end="100" time="200" delay="0" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)]">Conditional</animation>
 								</control>
 								<control type="image">
 									<left>185</left>
@@ -5521,63 +5521,63 @@
 									<aspectratio aligny="center" align="center">stretch</aspectratio>
 									<texture flipy="false" flipx="false" diffuse="views/ClassicSlide/poster_diffuse.png">overlays/unwatched/classicslide/$VAR[WatchedStateOverlay]_Poster.png</texture>
 									<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
-									<animation effect="fade" start="75" end="100" time="200" delay="0" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)]">Conditional</animation>		
+									<animation effect="fade" start="90" end="100" time="200" delay="0" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)]">Conditional</animation>
 								</control>
-							</control>
-							<control type="group">
-								<visible>Control.IsVisible(8013)</visible>
-								<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013) + !IsEmpty(ListItem(-1).Art(thumb))">Conditional</animation>
-								<control type="image">
-									<left>185</left>
-									<top>156</top>
-									<width>248</width>
-									<height>366</height>
-									<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="views/ClassicSlide/poster_diffuse.png">thumbs/thumb_back.png</texture>
+								<control type="group">
+									<visible>Control.IsVisible(8013)</visible>
+									<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013) + !IsEmpty(ListItem(-1).Art(thumb))">Conditional</animation>
+									<control type="image">
+										<left>185</left>
+										<top>156</top>
+										<width>248</width>
+										<height>366</height>
+										<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+										<texture background="true" diffuse="views/ClassicSlide/poster_diffuse.png">thumbs/thumb_back.png</texture>
+									</control>
+									<control type="image">
+										<left>185</left>
+										<top>156</top>
+										<width>248</width>
+										<height>366</height>
+										<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+										<texture background="true" diffuse="views/ClassicSlide/poster_diffuse.png" fallback="thumbs/fallback_poster_big.png">$INFO[ListItem(-1).Icon]</texture>
+									</control>
+									<control type="image">
+										<left>185</left>
+										<top>156</top>
+										<width>248</width>
+										<height>366</height>
+										<aspectratio aligny="center" align="center">stretch</aspectratio>
+										<texture background="true">views/ClassicSlide/poster_overlay.png</texture>
+									</control>
 								</control>
-								<control type="image">
-									<left>185</left>
-									<top>156</top>
-									<width>248</width>
-									<height>366</height>
-									<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="views/ClassicSlide/poster_diffuse.png" fallback="thumbs/fallback_poster_big.png">$INFO[ListItem(-1).Icon]</texture>
-								</control>
-								<control type="image">
-									<left>185</left>
-									<top>156</top>
-									<width>248</width>
-									<height>366</height>
-									<aspectratio aligny="center" align="center">stretch</aspectratio>
-									<texture background="true">views/ClassicSlide/poster_overlay.png</texture>
-								</control>
-							</control>
-							<control type="group">
-								<visible>Control.IsVisible(8014)</visible>
-								<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014) + !IsEmpty(ListItem(1).Art(thumb))">Conditional</animation>								
-								<control type="image">
-									<left>185</left>
-									<top>156</top>
-									<width>248</width>
-									<height>366</height>
-									<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="views/ClassicSlide/poster_diffuse.png">thumbs/thumb_back.png</texture>
-								</control>						
-								<control type="image">
-									<left>185</left>
-									<top>156</top>
-									<width>248</width>
-									<height>366</height>
-									<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="views/ClassicSlide/poster_diffuse.png" fallback="thumbs/fallback_poster_big.png">$INFO[ListItem(1).Icon]</texture>
-								</control>
-								<control type="image">
-									<left>185</left>
-									<top>156</top>
-									<width>248</width>
-									<height>366</height>
-									<aspectratio aligny="center" align="center">stretch</aspectratio>
-									<texture background="true">views/ClassicSlide/poster_overlay.png</texture>
+								<control type="group">
+									<visible>Control.IsVisible(8014)</visible>
+									<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014) + !IsEmpty(ListItem(1).Art(thumb))">Conditional</animation>
+									<control type="image">
+										<left>185</left>
+										<top>156</top>
+										<width>248</width>
+										<height>366</height>
+										<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+										<texture background="true" diffuse="views/ClassicSlide/poster_diffuse.png">thumbs/thumb_back.png</texture>
+									</control>
+									<control type="image">
+										<left>185</left>
+										<top>156</top>
+										<width>248</width>
+										<height>366</height>
+										<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+										<texture background="true" diffuse="views/ClassicSlide/poster_diffuse.png" fallback="thumbs/fallback_poster_big.png">$INFO[ListItem(1).Icon]</texture>
+									</control>
+									<control type="image">
+										<left>185</left>
+										<top>156</top>
+										<width>248</width>
+										<height>366</height>
+										<aspectratio aligny="center" align="center">stretch</aspectratio>
+										<texture background="true">views/ClassicSlide/poster_overlay.png</texture>
+									</control>
 								</control>
 							</control>
 						</control>
@@ -5788,7 +5788,7 @@
 							</control>
 						</control>
 					</control>
-					<!--focusedlayout square -->
+					<!--focusedlayout square-->
 					<control type="group">
 						<visible>Control.IsVisible(583) + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]</visible>
 						<control type="image">
@@ -5852,7 +5852,7 @@
 									<height>366</height>
 									<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png" fallback="thumbs/fallback_square.png">$INFO[ListItem.Icon]</texture>
-									<animation effect="fade" start="75" end="100" time="200" delay="0" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)]">Conditional</animation>						
+									<animation effect="fade" start="90" end="100" time="200" delay="0" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)]">Conditional</animation>
 								</control>
 								<control type="image">
 									<left>185</left>
@@ -5870,65 +5870,65 @@
 									<aspectratio aligny="center" align="center">stretch</aspectratio>
 									<texture scalediffuse="true" diffuse="views/ClassicSlide/square_diffuse.png">overlays/unwatched/classicslide/$VAR[WatchedStateOverlay]_square.png</texture>
 									<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
-									<animation effect="fade" start="75" end="100" time="200" delay="0" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)]">Conditional</animation>		
+									<animation effect="fade" start="90" end="100" time="200" delay="0" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)]">Conditional</animation>
+								</control>
+								<control type="group">
+									<visible>Control.IsVisible(8013)</visible>
+									<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013) + !IsEmpty(ListItem(-1).Art(thumb))">Conditional</animation>
+									<control type="image">
+										<left>185</left>
+										<top>156</top>
+										<width>366</width>
+										<height>366</height>
+										<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+										<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png">thumbs/thumb_back.png</texture>
+									</control>
+									<control type="image">
+										<left>185</left>
+										<top>156</top>
+										<width>366</width>
+										<height>366</height>
+										<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+										<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png" fallback="thumbs/fallback_square.png">$INFO[ListItem(-1).Icon]</texture>
+									</control>
+									<control type="image">
+										<left>185</left>
+										<top>156</top>
+										<width>366</width>
+										<height>366</height>
+										<aspectratio aligny="center" align="center">stretch</aspectratio>
+										<texture background="true">views/ClassicSlide/square_overlay.png</texture>
+									</control>
+								</control>
+								<control type="group">
+									<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014) + !IsEmpty(ListItem(1).Art(thumb))">Conditional</animation>
+									<visible>Control.IsVisible(8014)</visible>
+									<control type="image">
+										<left>185</left>
+										<top>156</top>
+										<width>366</width>
+										<height>366</height>
+										<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+										<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png">thumbs/thumb_back.png</texture>
+									</control>
+									<control type="image">
+										<left>185</left>
+										<top>156</top>
+										<width>366</width>
+										<height>366</height>
+										<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+										<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png" fallback="thumbs/fallback_square.png">$INFO[ListItem(1).Icon]</texture>
+									</control>
+									<control type="image">
+										<left>185</left>
+										<top>156</top>
+										<width>366</width>
+										<height>366</height>
+										<aspectratio aligny="center" align="center">stretch</aspectratio>
+										<texture background="true">views/ClassicSlide/square_overlay.png</texture>
+									</control>
 								</control>
 							</control>
-							<control type="group">
-								<visible>Control.IsVisible(8013)</visible>	
-								<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013) + !IsEmpty(ListItem(-1).Art(thumb))">Conditional</animation>
-								<control type="image">									
-									<left>185</left>
-									<top>156</top>
-									<width>366</width>
-									<height>366</height>							
-									<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png">thumbs/thumb_back.png</texture>
-								</control>
-								<control type="image">
-									<left>185</left>
-									<top>156</top>
-									<width>366</width>
-									<height>366</height>
-									<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png" fallback="thumbs/fallback_square.png">$INFO[ListItem(-1).Icon]</texture>
-								</control>
-								<control type="image">
-									<left>185</left>
-									<top>156</top>
-									<width>366</width>
-									<height>366</height>
-									<aspectratio aligny="center" align="center">stretch</aspectratio>
-									<texture background="true">views/ClassicSlide/square_overlay.png</texture>
-								</control>
-							</control>
-							<control type="group">
-								<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014) + !IsEmpty(ListItem(1).Art(thumb))">Conditional</animation>
-								<visible>Control.IsVisible(8014)</visible>
-								<control type="image">
-									<left>185</left>
-									<top>156</top>
-									<width>366</width>
-									<height>366</height>
-									<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png">thumbs/thumb_back.png</texture>
-								</control>
-								<control type="image">
-									<left>185</left>
-									<top>156</top>
-									<width>366</width>
-									<height>366</height>
-									<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png" fallback="thumbs/fallback_square.png">$INFO[ListItem(1).Icon]</texture>
-								</control>
-								<control type="image">
-									<left>185</left>
-									<top>156</top>
-									<width>366</width>
-									<height>366</height>
-									<aspectratio aligny="center" align="center">stretch</aspectratio>
-									<texture background="true">views/ClassicSlide/square_overlay.png</texture>
-								</control>
-							</control>	
 						</control>
 						<!--labels-->
 						<control type="grouplist">
@@ -6002,7 +6002,7 @@
 						<onright>583</onright>
 						<ondown>60</ondown>
 						<onup condition="!Skin.HasSetting(EnableKioskMode)">9111</onup>
-						<viewtype label="ClassicSlideView">Slide</viewtype>
+						<viewtype label="Classic Slide">Slide</viewtype>
 						<pagecontrol>60</pagecontrol>
 						<itemgap>0</itemgap>
 						<orientation>horizontal</orientation>
@@ -6010,18 +6010,19 @@
 						<preloaditems>2</preloaditems>
 						<focusposition>0</focusposition>
 						<hitrect x="285" y="176" w="248" h="362"/>
-						<!--<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>-->
-						<itemlayout width="248" height="362"/>
-						<focusedlayout width="248" height="362">
-							<control type="image">
-								<left>0</left>
-								<top>0</top>
-								<width>248</width>
-								<height>362</height>
-								<texture>-</texture>
-							</control>
-						</focusedlayout>
-					</control>
+				<!--
+					<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>-->
+					<itemlayout width="248" height="362"/>
+					<focusedlayout width="248" height="362">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>248</width>
+							<height>362</height>
+							<texture>-</texture>
+						</control>
+					</focusedlayout>
 				</control>
-			</include>
-		</includes>
+			</control>
+		</include>
+	</includes>

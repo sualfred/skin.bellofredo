@@ -35,6 +35,7 @@
     <include condition="!Skin.HasSetting(BannersViewMusic)">BannersView_Music</include> <!-- id = 57 -->
     <include condition="!Skin.HasSetting(3DWallViewMusic)">3DWallView_Music</include> <!-- id = 59 -->
     <include condition="!Skin.HasSetting(ThumbListMusicView)">ThumbListMusicView</include> <!-- id = 582 -->      
+    <include condition="!Skin.HasSetting(ThumbListMusicView)">ClassicSlideMusicView</include> <!-- id = 583 -->      
   </include>
 
   <include name="MusicFilesViews">
@@ -404,6 +405,13 @@
   <value condition="Control.IsVisible(52) + [Container.Content(Movies) | Container.Content(Sets)] + Stringcompare(Skin.String(GalleryViewWideThumbMovies),1)">$LOCALIZE[20445]</value>
   <value condition="Control.IsVisible(52) + [Container.Content(Movies) | Container.Content(Sets)] + Stringcompare(Skin.String(GalleryViewWideThumbMovies),2)">$LOCALIZE[31218]</value>
   <value condition="Control.IsVisible(52) + [Container.Content(Movies) | Container.Content(Sets)] + Stringcompare(Skin.String(GalleryViewWideThumbMovies),3)">$LOCALIZE[31219]</value>
+</variable>
+
+<variable name="ClassicSlideMusicInfo">
+  <value condition="Container.Content(Songs)">$INFO[ListItem.Duration]</value>
+  <value condition="Container.Content(Albums)">$INFO[ListItem.Artist]</value>
+  <value condition="Container.Content(Artists) + IsEmpty(ListItem.Property(Artist_Genre)) + !StringCompare(ListItem.Label,..)">$LOCALIZE[31100]</value>
+  <value condition="Container.Content(Artists)">$INFO[ListItem.Property(Artist_Genre)]</value>
 </variable>
 
 <variable name="GlobalInfo">
