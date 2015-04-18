@@ -2085,9 +2085,9 @@
 			</control>
 			<!--scrollbar-->
 			<control type="scrollbar" id="60">
-				<left>435</left>
+				<left>550</left>
 				<top>486</top>
-				<width>845</width>
+				<width>730</width>
 				<height>9</height>
 				<texturesliderbackground>-</texturesliderbackground>
 				<texturesliderbar border="14,0,14,0">views/scrollbar/scrollbar_horizontal.png</texturesliderbar>
@@ -2262,7 +2262,7 @@
 							<height>50</height>
 							<itemgap>0</itemgap>
 							<control type="label">
-								<label>$VAR[MusicLabel]</label>
+								<label>$INFO[ListItem.Title]</label>
 								<width max="590">590</width>
 								<font>FontSize_28B</font>
 								<textcolor>white</textcolor>
@@ -2274,7 +2274,7 @@
 								<width max="320">320</width>
 								<align>right</align>
 								<font>FontSize_28</font>
-								<textcolor>44white</textcolor>
+								<textcolor>55white</textcolor>
 								<shadowcolor>77000000</shadowcolor>
 								<visible>!stringcompare(ListItem.Label,..)</visible>
 							</control>
@@ -2287,7 +2287,7 @@
 							<font>FontSize_22</font>
 							<textcolor>99white</textcolor>
 							<shadowcolor>77000000</shadowcolor>
-							<label>$VAR[GlobalPlotDescription]</label>
+							<label>$VAR[ClassicSlideMusicPlot]</label>
 							<align>justify</align>
 							<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
 							<visible>!stringcompare(ListItem.Label,..)</visible>

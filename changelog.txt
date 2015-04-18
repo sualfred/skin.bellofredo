@@ -1,4 +1,9 @@
-﻿[B][COLOR=FF56ADDA]v4.1.6[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.1.7[/COLOR][/B]
+Bugs incoming ^^
+• Added: ClassicSlide view for music/videos/addons/programs
+• Added: Recently added skin engine changes of Isengard
+
+[B][COLOR=FF56ADDA]v4.1.6[/COLOR][/B]
 • Removed: CinemaExperience from the addon requirements. Still supported but not required to run the skin.
 • Fixed: TVTunes playback notification on Home
 • Fixed: Wrong InLibrary texture for focused item on ExtendedInfo video list

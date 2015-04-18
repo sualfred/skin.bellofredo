@@ -5437,7 +5437,24 @@
 						<showonepage>false</showonepage>
 						<orientation>horizontal</orientation>
 						<animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-						<visible>Control.IsVisible(583)</visible>
+						<visible>Control.IsVisible(583) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]</visible>
+					</control>
+					<control type="scrollbar" id="60">
+						<left>550</left>
+						<top>486</top>
+						<width>730</width>
+						<height>9</height>
+						<texturesliderbackground>-</texturesliderbackground>
+						<texturesliderbar border="14,0,14,0">views/scrollbar/scrollbar_horizontal.png</texturesliderbar>
+						<texturesliderbarfocus border="14,0,14,0">views/scrollbar/scrollbar_horizontal.png</texturesliderbarfocus>
+						<textureslidernib>-</textureslidernib>
+						<textureslidernibfocus>-</textureslidernibfocus>
+						<onup>583</onup>
+						<ondown>583</ondown>
+						<showonepage>false</showonepage>
+						<orientation>horizontal</orientation>
+						<animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+						<visible>Control.IsVisible(583) + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]</visible>
 					</control>
 					<!--focusedlayout poster-->
 					<control type="group">
@@ -5971,7 +5988,7 @@
 										<width max="320">320</width>
 										<align>right</align>
 										<font>FontSize_28</font>
-										<textcolor>44white</textcolor>
+										<textcolor>55white</textcolor>
 										<shadowcolor>77000000</shadowcolor>
 										<visible>!stringcompare(ListItem.Label,..)</visible>
 									</control>
@@ -6010,19 +6027,17 @@
 						<preloaditems>2</preloaditems>
 						<focusposition>0</focusposition>
 						<hitrect x="285" y="176" w="248" h="362"/>
-				<!--
-					<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>-->
-					<itemlayout width="248" height="362"/>
-					<focusedlayout width="248" height="362">
-						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>248</width>
-							<height>362</height>
-							<texture>-</texture>
-						</control>
-					</focusedlayout>
+						<itemlayout width="248" height="362"/>
+						<focusedlayout width="248" height="362">
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<width>248</width>
+								<height>362</height>
+								<texture>-</texture>
+							</control>
+						</focusedlayout>
+					</control>
 				</control>
-			</control>
-		</include>
-	</includes>
+			</include>
+		</includes>

@@ -23,7 +23,7 @@
     <include condition="!Skin.HasSetting(ThumbnailsVideos)">ThumbnailsView_Videos_Posters</include> <!-- id = 561 -->
     <include condition="!Skin.HasSetting(BannersViewVideos)">BannersView_Videos</include> <!-- id = 57 -->      
     <include condition="!Skin.HasSetting(ThumbListView)">ThumbListView</include> <!-- id = 582 -->      
-    <include>ClassicSlideView</include> <!-- id = 583 -->      
+    <include condition="!Skin.HasSetting(ClassicSlideView)">ClassicSlideView</include> <!-- id = 583 -->      
   </include>
 
   <include name="MusicLibraryViews">
@@ -35,7 +35,7 @@
     <include condition="!Skin.HasSetting(BannersViewMusic)">BannersView_Music</include> <!-- id = 57 -->
     <include condition="!Skin.HasSetting(3DWallViewMusic)">3DWallView_Music</include> <!-- id = 59 -->
     <include condition="!Skin.HasSetting(ThumbListMusicView)">ThumbListMusicView</include> <!-- id = 582 -->      
-    <include condition="!Skin.HasSetting(ThumbListMusicView)">ClassicSlideMusicView</include> <!-- id = 583 -->      
+    <include condition="!Skin.HasSetting(ClassicSlideMusicView)">ClassicSlideMusicView</include> <!-- id = 583 -->      
   </include>
 
   <include name="MusicFilesViews">
@@ -56,12 +56,14 @@
     <include>ThumbnailsView</include> <!-- id = 56 -->
     <include>ThumbnailsView_Programs</include> <!-- id = 560 -->
     <include>ThumbListView_Programs</include> <!-- id = 582 -->
+    <include>ClassicSlideView_Programs</include> <!-- id = 583 -->
   </include>
 
   <include name="AddonsViews">
     <include>ListView_Addons</include> <!-- id = 50 -->
     <include>ThumbnailsView</include> <!-- id = 56 -->
     <include>ThumbnailsView_Addons</include> <!-- id = 560 -->
+    <include>ClassicSlideView_Addons</include> <!-- id = 583 -->
   </include>
 
   <include name="VideoPlaylistViews">
@@ -94,24 +96,37 @@
    <scrolltime tween="cubic" easing="out">300</scrolltime>
  </include>
 
- <!-- ==== ListView Arrows ==== -->
- <include name="ListView_Arrows">
-   <control type="image">
-    <left>58</left>
-    <top>130</top>
-    <width>24</width>
-    <height>21</height>
-    <texture>views/scrollbar/arrow.png</texture>
-    <visible>Container.HasPrevious</visible>
-  </control>
-  <control type="image">
-    <left>58</left>
-    <top>600</top>
-    <width>24</width>
-    <height>21</height>
-    <texture flipy="true">views/scrollbar/arrow.png</texture>
-    <visible>Container.HasNext</visible>
-  </control>
+ <!-- ==== ClassicView Content  ==== -->
+ <variable name="ContainerItemSingular">
+  <value condition="Container.Content(movies)">$LOCALIZE[36900]</value>
+  <value condition="Container.Content(sets)">$LOCALIZE[31155]</value>
+  <value condition="Container.Content(tvshows)">$LOCALIZE[20364]</value>
+  <value condition="Container.Content(episodes) + !SubString(Container.Folderpath,plugin.video.youtube)">$LOCALIZE[20359]</value>
+  <value condition="Container.Content(seasons)">$LOCALIZE[36904]</value>
+  <value condition="Container.Content(albums)">$LOCALIZE[36918]</value>
+  <value condition="Container.Content(songs)">$LOCALIZE[36920]</value>
+  <value condition="Container.Content(artists)">$LOCALIZE[36916]</value>
+  <value>$LOCALIZE[31129]</value>
+</variable>
+
+<!-- ==== ListView Arrows ==== -->
+<include name="ListView_Arrows">
+ <control type="image">
+  <left>58</left>
+  <top>130</top>
+  <width>24</width>
+  <height>21</height>
+  <texture>views/scrollbar/arrow.png</texture>
+  <visible>Container.HasPrevious</visible>
+</control>
+<control type="image">
+  <left>58</left>
+  <top>600</top>
+  <width>24</width>
+  <height>21</height>
+  <texture flipy="true">views/scrollbar/arrow.png</texture>
+  <visible>Container.HasNext</visible>
+</control>
 </include>
 
 <!-- ==== ListView Scrollbar ==== -->
@@ -408,10 +423,17 @@
 </variable>
 
 <variable name="ClassicSlideMusicInfo">
-  <value condition="Container.Content(Songs)">$INFO[ListItem.Duration]</value>
-  <value condition="Container.Content(Albums)">$INFO[ListItem.Artist]</value>
+  <!--<value condition="Container.Content(Songs)">$INFO[ListItem.Duration]</value>-->
+  <value condition="Container.Content(Albums) | Container.Content(Songs)">$INFO[ListItem.Artist]</value>
   <value condition="Container.Content(Artists) + IsEmpty(ListItem.Property(Artist_Genre)) + !StringCompare(ListItem.Label,..)">$LOCALIZE[31100]</value>
   <value condition="Container.Content(Artists)">$INFO[ListItem.Property(Artist_Genre)]</value>
+</variable>
+
+<variable name="ClassicSlideMusicPlot">
+  <value condition="Container.Content(Artists)">$INFO[ListItem.Property(Artist_Description)]</value>
+  <value condition="Container.Content(Albums) + !IsEmpty(ListItem.Property(Album_Description)">[COLOR=blue]$INFO[ListItem.Year,,  •  ]$INFO[Window(home).Property(Album.Songs.Count),, $LOCALIZE[182]  •  ]$INFO[Window(home).Property(Album.Songs.Duration),, $LOCALIZE[180]][/COLOR]$INFO[ListItem.Property(Album_Description),  |  ]</value>
+  <value condition="Container.Content(Songs)">[COLOR=blue]$INFO[ListItem.TrackNumber,$LOCALIZE[554] ,  •  ]$INFO[ListItem.Duration][/COLOR]$INFO[ListItem.Comment,  |  ]</value>
+  <value condition="Container.Content(Addons)">$INFO[ListItem.Property(Addon.Description)]</value>
 </variable>
 
 <variable name="GlobalInfo">
@@ -433,6 +455,7 @@
   <value condition="Container.Content(Albums)">$INFO[ListItem.Property(Album_Style)]</value>
   <value condition="Container.Content(Songs)">$INFO[ListItem.Album]$INFO[ListItem.Artist, - ]</value>
   <value condition="Window.IsActive(AddonBrowser)">$INFO[ListItem.Property(Addon.Summary)]</value>
+  <value condition="Control.IsVisible(583) + SubString(Container.FolderPath,plugin.program.advanced.launcher)">$INFO[ListItem.Genre,]</value>
   <value condition="SubString(Container.FolderPath,plugin.program.advanced.launcher)">$INFO[ListItem.Genre,,  •  ]$INFO[ListItem.Studio]</value>
   <value condition="Container.Content(Addons) + !IsEmpty(ListItem.Property(Addon.Summary))">$INFO[ListItem.Property(Addon.Summary)]</value>
   <value condition="Window.IsActive(Pictures)">$INFO[ListItem.PictureDateTime,,  •  ]$INFO[ListItem.PictureResolution]$INFO[ListItem.PictureCamModel,  •  ]</value>
