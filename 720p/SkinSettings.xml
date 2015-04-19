@@ -553,6 +553,12 @@
 						<onright>9000</onright>
 						<onup>8400</onup>
 						<ondown>8400</ondown>
+						<control type="radiobutton" id="8408">
+							<include>SettingsRadioButton</include>
+							<label>31183</label>
+							<onclick>Skin.ToggleSetting(BG-Animation)</onclick>
+							<selected>Skin.HasSetting(BG-Animation)</selected>
+						</control>
 						<control type="radiobutton" id="8401">
 							<include>SettingsRadioButton</include>
 							<label>31130</label>

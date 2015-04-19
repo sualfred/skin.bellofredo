@@ -664,6 +664,11 @@
 		<animation effect="slide" start="-20,-20" end="40,40" time="15000" pulse="true" condition="Skin.HasSetting(Vis-Animation)" reversible="false">Conditional</animation><animation effect="zoom" end="100" center="auto" time="0" condition="!Skin.HasSetting(Vis-Animation)" reversible="false">Conditional</animation>
 		<animation effect="slide" end="0,0" time="0" condition="!Skin.HasSetting(Vis-Animation)" reversible="false">Conditional</animation>
 	</include>
+	<include name="BackgroundAnimation">
+		<animation effect="zoom" start="100" end="120" center="auto" time="22000" pulse="true" condition="Skin.HasSetting(BG-Animation)" reversible="false">Conditional</animation>
+		<animation effect="slide" start="-20,-20" end="40,40" time="23000" pulse="true" condition="Skin.HasSetting(BG-Animation)" reversible="false">Conditional</animation><animation effect="zoom" end="100" center="auto" time="0" condition="!Skin.HasSetting(BG-Animation)" reversible="false">Conditional</animation>
+		<animation effect="slide" end="0,0" time="0" condition="!Skin.HasSetting(BG-Animation)" reversible="false">Conditional</animation>
+	</include>
 
 	<include name="CDImageAnim">
 		<animation type="conditional" condition="Window.IsActive(Home) + [Window.IsActive(ShutdownMenu) | Window.IsActive(favourites)]" reversible="false">

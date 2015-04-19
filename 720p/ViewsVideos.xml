@@ -5280,6 +5280,7 @@
 					<!--smooth background fade-->
 					<control type="group">
 						<visible>!Skin.HasSetting(HideBGFanart)</visible>
+						<include>BackgroundAnimation</include>
 						<animation type="WindowOpen" tween="sine" easing="out">
 							<effect type="fade" start="0" end="100" time="1000"/>
 						</animation>

@@ -3,6 +3,7 @@
 
 	<include name="BackgroundWeather">
 		<control type="multiimage">
+			<include>BackgroundAnimation</include>
 			<include>FullscreenDimensions</include>
 			<include>FanartFade</include>
 			<imagepath background="true">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
@@ -26,19 +27,21 @@
 		</control>
 		<control type="group">
 			<animation effect="fade" start="0" end="100" time="1000">Visible</animation>
-			<animation effect="fade" start="100" end="0" time="1000">Hidden</animation>
+			<animation effect="fade" start="100" end="0" time="1000">Hidden</animation>			
 			<visible>![Player.HasVideo + !Skin.HasSetting(HideBGVideo)]</visible>
 			<visible>![Player.HasAudio + [[Skin.HasSetting(Vis-Fanart) + !IsEmpty(Player.Art(fanart))] | Skin.HasSetting(Vis-MusicSlideshow) | Skin.HasSetting(Vis-ArtistSlideshow)]]</visible>
 			<control type="image">
 				<description>Default Background</description>
 				<include>FullscreenDimensions</include>
 				<include>BackgroundFade</include>
+				<include>BackgroundAnimation</include>
 				<texture background="true">SKINDEFAULT.jpg</texture>
 				<visible>![Skin.HasSetting(CustomBackground) + !IsEmpty(Skin.String(CustomImageBackgroundPath))]</visible>
 				<visible>![Skin.HasSetting(CustomBackground) + ![IsEmpty(Skin.String(CustomFolderBackgroundPath)) | Skin.HasSetting(ShowCustomBackgroundOnHomeOnly)]]</visible>
 				<fadetime>FanartCrossfadeTime</fadetime>
 			</control>
 			<control type="group">
+				<include>BackgroundAnimation</include>
 				<animation type="WindowOpen" reversible="false">
 					<effect type="fade" start="0" end="100" time="10350" />
 				</animation>
@@ -77,6 +80,7 @@
 				<description>Global Single-Background</description>
 				<include>FullscreenDimensions</include>
 				<include>BackgroundFade</include>
+				<include>BackgroundAnimation</include>
 				<texture background="true">$INFO[Skin.String(CustomImageBackgroundPath)]</texture>
 				<fadetime>500</fadetime>
 				<visible>Skin.HasSetting(CustomBackground) + !IsEmpty(Skin.String(CustomImageBackgroundPath))</visible>
@@ -86,6 +90,7 @@
 				<description>Global Multi-Background</description>
 				<include>FullscreenDimensions</include>
 				<include>FanartFade</include>
+				<include>BackgroundAnimation</include>
 				<imagepath background="true">$INFO[Skin.String(CustomFolderBackgroundPath)]</imagepath>
 				<timeperimage>10000</timeperimage>
 				<randomize>true</randomize>
@@ -101,7 +106,7 @@
 					<description>HomeMenu Single-Background</description>
 					<include>FullscreenDimensions</include>
 					<include>FanartFade</include>
-					<!--<texture background="true">$INFO[Container(20).ListItem.Property(Background)]</texture>-->
+					<include>BackgroundAnimation</include>
 					<texture background="true">$VAR[backgroundMainmenu]</texture>
 					<fadetime>500</fadetime>
 					<visible>![SubString(Container(20).ListItem.Property(background),\,Right) | SubString(Container(20).ListItem.Property(background),/,Right)]</visible>
@@ -114,57 +119,67 @@
 					<timeperimage>10000</timeperimage>
 					<randomize>true</randomize>
 					<loop>yes</loop>
-					<fadetime>600</fadetime>					
+					<fadetime>600</fadetime>	
+					<include>BackgroundAnimation</include>				
 					<visible>SubString(Container(20).ListItem.Property(background),\,Right) | SubString(Container(20).ListItem.Property(background),/,Right)</visible>
 				</control>
 				<control type="group">
 					<include>FanartFade</include>
 					<include>3DWallBG_Movies_Posters</include>
+					<include>BackgroundAnimation</include>
 					<visible>StringCompare(Container(20).ListItem.Property(background),3DWallBG_Movies_Posters)</visible>
 				</control>
 				<control type="group">
 					<include>FanartFade</include>
 					<include>3DWallBG_Movies_Logo</include>
+					<include>BackgroundAnimation</include>
 					<visible>StringCompare(Container(20).ListItem.Property(background),3DWallBG_Movies_Logo)</visible>
 				</control>
 				<control type="group">
 					<include>FanartFade</include>
 					<include>3DWallBG_Movies_DiscArt</include>
+					<include>BackgroundAnimation</include>
 					<visible>StringCompare(Container(20).ListItem.Property(background),3DWallBG_Movies_DiscArt)</visible>
 				</control>
 				<control type="group">
 					<include>FanartFade</include>
 					<include>3DWallBG_TVShows_Posters</include>
+					<include>BackgroundAnimation</include>
 					<visible>StringCompare(Container(20).ListItem.Property(background),3DWallBG_TVShows_Posters)</visible>
 				</control> 		
 				<control type="group">
 					<include>FanartFade</include>
 					<include>3DWallBG_TVShows_Logo</include>
+					<include>BackgroundAnimation</include>
 					<visible>StringCompare(Container(20).ListItem.Property(background),3DWallBG_TVShows_Logo)</visible>
 				</control>
 				<control type="group">
 					<include>FanartFade</include>
 					<include>3DWallBG_TVShows_Landscape</include>
+					<include>BackgroundAnimation</include>
 					<visible>StringCompare(Container(20).ListItem.Property(background),3DWallBG_TVShows_Landscape)</visible>
 				</control>
 				<control type="group">
 					<include>FanartFade</include>
 					<include>3DWallBG_Albums</include>
+					<include>BackgroundAnimation</include>
 					<visible>StringCompare(Container(20).ListItem.Property(background),3DWallBG_Albums)</visible>
 				</control>
 				<control type="group">
 					<include>FanartFade</include>
 					<include>3DWallBG_Artists</include>
+					<include>BackgroundAnimation</include>
 					<visible>StringCompare(Container(20).ListItem.Property(background),3DWallBG_Artists)</visible>
 				</control>
 				<control type="group">	
-				<description>Widget Backgrounds</description>
+					<description>Widget Backgrounds</description>
 					<control type="image">
 						<description>Widget Fanart Fallback Diffuse</description>
 						<include>FullscreenDimensions</include>
 						<texture background="true">SKINDEFAULT.jpg</texture>
 						<include>BackgroundFade</include>
 						<visible>!Skin.HasSetting(HideBGFanart)</visible>
+						<include>BackgroundAnimation</include>
 						<visible>!Window.IsActive(playercontrols)</visible>
 						<visible>[ControlGroup(9050).HasFocus | ControlGroup(9060).HasFocus | ControlGroup(9070).HasFocus | ControlGroup(9073).HasFocus | ControlGroup(9074).HasFocus | ControlGroup(9080).HasFocus | ControlGroup(9090).HasFocus | ControlGroup(9091).HasFocus | ControlGroup(9093).HasFocus | ControlGroup(9094).HasFocus | ControlGroup(9099).HasFocus | ControlGroup(9071).HasFocus | ControlGroup(9072).HasFocus | ControlGroup(9098).HasFocus]</visible>
 					</control>
@@ -184,6 +199,7 @@
 						<include>BackgroundFade</include>
 						<texture diffuse="osd/quicknav/fanart_diffuse.png" background="true">$VAR[QuickNavWidgetFanart]</texture>
 						<fadetime>FanartCrossfadeTime</fadetime>
+						<include>BackgroundAnimation</include>
 						<visible>!Skin.HasSetting(HideBGFanart) + Skin.HasSetting(DiffuseWidgetFanart)</visible>
 						<visible>!Window.IsActive(playercontrols)</visible>
 						<!--<visible>ControlGroup(9050).HasFocus() | ControlGroup(9060).HasFocus() | ControlGroup(9070).HasFocus() | ControlGroup(9071).HasFocus() | ControlGroup(9072).HasFocus() | ControlGroup(9090).HasFocus() | ControlGroup(9091).HasFocus() | ControlGroup(9094).HasFocus() | ControlGroup(9093).HasFocus() | ControlGroup(9073).HasFocus() | ControlGroup(9074).HasFocus() | ControlGroup(9098).HasFocus() | ControlGroup(9080).HasFocus()</visible>-->
@@ -194,6 +210,7 @@
 						<include>FullscreenDimensions</include>
 						<include>BackgroundFade</include>
 						<texture background="true">$VAR[QuickNavWidgetFanart]</texture>
+						<include>BackgroundAnimation</include>
 						<fadetime>FanartCrossfadeTime</fadetime>					
 						<visible>!Skin.HasSetting(HideBGFanart) + !Skin.HasSetting(DiffuseWidgetFanart)</visible>
 						<visible>!Window.IsActive(playercontrols)</visible>
@@ -246,12 +263,14 @@
 		<include condition="[Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))]">BackgroundWeather</include>
 	</include>
 	<include name="GlobalFanart">
+		<include>BackgroundAnimation</include>
 		<control type="image">
 			<description>Global Fanart</description>
 			<include>FullscreenDimensions</include>
 			<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
 			<include>FanartFade</include>			
 			<fadetime>FanartCrossfadeTime</fadetime>
+			<include>BackgroundAnimation</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
 			<visible>![[Control.IsVisible(55) | Control.IsVisible(59) | Control.IsVisible(583)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + !Control.IsVisible(581) + [IsEmpty(Control.GetLabel(5901) | !Skin.HasSetting(ViewsExtraFanart))]</visible>
 		</control>				
@@ -264,6 +283,7 @@
 			<fadetime>1000</fadetime>
 			<imagepath background="true">$INFO[ListItem.Path,,/extrafanart/]</imagepath>
 			<include>FanartFade</include>
+			<include>BackgroundAnimation</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
 			<visible>![[Control.IsVisible(55) | Control.IsVisible(59) | Control.IsVisible(583)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + !Control.IsVisible(581) + Skin.HasSetting(ViewsExtraFanart)</visible>
 		</control>	
@@ -296,6 +316,7 @@
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
 			<visible>Control.IsVisible(59) + !Window.IsActive(movieinformation) + IsEmpty(Control.GetLabel(5900))</visible>
+			<include>BackgroundAnimation</include>
 			<!--<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>-->
 		</control>	
 		<control type="multiimage" id="5900">
@@ -312,6 +333,7 @@
 			<include>FanartFade</include>			
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
 			<visible>Control.IsVisible(59) + !Window.IsActive(movieinformation) + Skin.HasSetting(ViewsExtraFanart)</visible>
+			<include>BackgroundAnimation</include>
 			<!--<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>-->
 		</control>		
 		<control type="image">
@@ -323,6 +345,7 @@
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>Window.IsVisible(Pictures) + Container.HasFiles</visible>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
+			<include>BackgroundAnimation</include>
 			<!--<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>-->
 		</control>
 		<control type="image">
@@ -332,6 +355,7 @@
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<texture background="true">$VAR[TVGuideFanart]</texture>
 			<visible>!Skin.HasSetting(HideTVGuideFanart)</visible>
+			<include>BackgroundAnimation</include>
 			<!--<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>-->
 		</control>
 	</include>
@@ -343,6 +367,7 @@
 			<include>FanartFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
+			<include>BackgroundAnimation</include>
 		</control>
 		<control type="image">
 			<description>Vignette</description>
