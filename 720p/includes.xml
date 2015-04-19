@@ -1580,7 +1580,7 @@
 			<scroll>false</scroll>
 			<align>left</align>
 			<aligny>center</aligny>
-			<label>$INFO[Window(AddonBrowser).Property(Updated), • $LOCALIZE[31182]]</label>
+			<label>$INFO[Window(AddonBrowser).Property(Updated), • $LOCALIZE[31182]:]</label>
 			<visible>Window.IsActive(AddonBrowser)</visible>
 		</control>
 	</control>

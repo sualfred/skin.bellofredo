@@ -370,7 +370,7 @@
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
-						<control type="image">
+						<!--<control type="image">
 							<left>530</left>
 							<top>11</top>
 							<width>53</width>
@@ -379,7 +379,7 @@
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 							<texture background="true">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
 							<visible>!stringcompare(ListItem.Overlay,OverlayUnWatched.png) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
-						</control>
+						</control>-->
 						<control type="image">
 							<left>530</left>
 							<top>11</top>
@@ -388,7 +388,8 @@
 							<colordiffuse>55ffffff</colordiffuse>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
 							<texture>flags/empty.png</texture>
-							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png) + IntegerGreaterThan(ListItem.Property(unWatchedEpisodes),0) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
+							<visible>!Stringcompare(ListItem.Label,..)</visible>
+							<visible>[Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 						</control>
 						<control type="label">
 							<left>532</left>
@@ -400,7 +401,7 @@
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Property(unWatchedEpisodes)]</label>
-							<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
+							<visible>[Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 						</control>
 						<control type="image">
 							<left>550</left>
@@ -486,7 +487,7 @@
 								<scroll>true</scroll>
 								<label>$INFO[ListItem.Label]</label>
 							</control>
-							<control type="image">
+							<!--<control type="image">
 								<left>530</left>
 								<top>11</top>
 								<width>53</width>
@@ -495,7 +496,7 @@
 								<aspectratio align="center" aligny="center">keep</aspectratio>
 								<texture background="true">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
 								<visible>!stringcompare(ListItem.Overlay,OverlayUnWatched.png) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
-							</control>
+							</control>-->
 							<control type="image">
 								<left>530</left>
 								<top>11</top>
@@ -504,7 +505,8 @@
 								<colordiffuse>ffcccccc</colordiffuse>
 								<aspectratio align="center" aligny="center">keep</aspectratio>
 								<texture>flags/empty.png</texture>
-								<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png) + IntegerGreaterThan(ListItem.Property(unWatchedEpisodes),0) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
+								<visible>!Stringcompare(ListItem.Label,..)</visible>
+								<visible>[Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 							</control>
 							<control type="label">
 								<left>532</left>
@@ -516,7 +518,7 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Property(unWatchedEpisodes)]</label>
-								<visible>stringcompare(ListItem.Overlay,OverlayUnWatched.png) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
+								<visible>[Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 							</control>
 							<control type="image">
 								<left>550</left>
