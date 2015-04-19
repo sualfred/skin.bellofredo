@@ -431,7 +431,7 @@
 
 <variable name="ClassicSlideMusicPlot">
   <value condition="Container.Content(Artists)">$INFO[ListItem.Property(Artist_Description)]</value>
-  <value condition="Container.Content(Albums) + !IsEmpty(ListItem.Property(Album_Description)">[COLOR=blue]$INFO[ListItem.Year,,  •  ]$INFO[Window(home).Property(Album.Songs.Count),, $LOCALIZE[182]  •  ]$INFO[Window(home).Property(Album.Songs.Duration),, $LOCALIZE[180]][/COLOR]$INFO[ListItem.Property(Album_Description),  |  ]</value>
+  <value condition="Container.Content(Albums) + !IsEmpty(ListItem.Property(Album_Description)">[COLOR=blue]$INFO[ListItem.Year]$INFO[Window(home).Property(Album.Songs.Count),  •  , $LOCALIZE[182]  •  ]$INFO[Window(home).Property(Album.Songs.Duration),, $LOCALIZE[180]][/COLOR]$INFO[ListItem.Property(Album_Description),  |  ]</value>
   <value condition="Container.Content(Songs)">[COLOR=blue]$INFO[ListItem.TrackNumber,$LOCALIZE[554] ,  •  ]$INFO[ListItem.Duration][/COLOR]$INFO[ListItem.Comment,  |  ]</value>
   <value condition="Container.Content(Addons)">$INFO[ListItem.Property(Addon.Description)]</value>
 </variable>
@@ -455,11 +455,24 @@
   <value condition="Container.Content(Albums)">$INFO[ListItem.Property(Album_Style)]</value>
   <value condition="Container.Content(Songs)">$INFO[ListItem.Album]$INFO[ListItem.Artist, - ]</value>
   <value condition="Window.IsActive(AddonBrowser)">$INFO[ListItem.Property(Addon.Summary)]</value>
-  <value condition="Control.IsVisible(583) + SubString(Container.FolderPath,plugin.program.advanced.launcher)">$INFO[ListItem.Genre,]</value>
   <value condition="SubString(Container.FolderPath,plugin.program.advanced.launcher)">$INFO[ListItem.Genre,,  •  ]$INFO[ListItem.Studio]</value>
   <value condition="Container.Content(Addons) + !IsEmpty(ListItem.Property(Addon.Summary))">$INFO[ListItem.Property(Addon.Summary)]</value>
   <value condition="Window.IsActive(Pictures)">$INFO[ListItem.PictureDateTime,,  •  ]$INFO[ListItem.PictureResolution]$INFO[ListItem.PictureCamModel,  •  ]</value>
   <value condition="Window.IsActive(Programs)">$INFO[ListItem.Property(Addon.Summary)]</value>
+</variable>
+
+<variable name="ClassicSlidePlotDescription">
+  <value condition="SubString(Container.FolderPath,plugin.program.advanced.launcher)">$INFO[ListItem.Plot]</value>
+  <value condition="Container.Content(Artists)">$INFO[ListItem.Property(Artist_Description)]</value>
+  <value condition="Container.Content(Albums)">$INFO[ListItem.Property(Album_Description)]</value>
+  <value condition="Container.Content(Songs)">$INFO[ListItem.Comment]</value>
+  <value condition="Container.Content(Addons)">$INFO[ListItem.Property(Addon.Description)]</value>
+  <value condition="SubString(ListItem.Path,videodb://movies/sets/,left)">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
+  <value condition="Container.Content(seasons) + !IsEmpty(ListItem.Title) + !IsEmpty(ListItem.Property(UnWatchedEpisodes))">$INFO[Container.ShowPlot]</value>
+  <value condition="Window.IsActive(Programs)">$INFO[ListItem.Property(Addon.Summary)]</value>
+  <value condition="Window.IsActive(AddonBrowser)">$INFO[ListItem.Property(Addon.Summary)]</value>
+  <value condition="Container.Content(Addons) + !IsEmpty(ListItem.Property(Addon.Summary))">$INFO[ListItem.Property(Addon.Summary)]</value>
+  <value>$INFO[ListItem.Plot]</value>
 </variable>
 
 <variable name="GlobalPlotDescription">

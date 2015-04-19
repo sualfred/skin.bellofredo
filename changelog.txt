@@ -1,4 +1,8 @@
-﻿[B][COLOR=FF56ADDA]v4.1.7[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.1.7a[/COLOR][/B]
+As usual.... bug fixing right after pushing the update
+• Fixed: Missing plots, empty info label conditions.... etc
+
+[B][COLOR=FF56ADDA]v4.1.7[/COLOR][/B]
 Bugs incoming ^^
 • Added: ClassicSlide view for music/videos/addons/programs
 • Added: Recently added skin engine changes of Isengard

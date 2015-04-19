@@ -951,6 +951,19 @@
 								<shadowcolor>77000000</shadowcolor>
 								<visible>!stringcompare(ListItem.Label,..)</visible>
 							</control>
+						</control>											
+						<control type="textbox">
+							<top>32</top>
+							<left>0</left>
+							<width>910</width>
+							<height>60</height>
+							<font>FontSize_22</font>
+							<textcolor>99white</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+							<label>$VAR[ClassicSlidePlotDescription]</label>
+							<align>justify</align>
+							<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
 						</control>
 					</control>
 				</control>

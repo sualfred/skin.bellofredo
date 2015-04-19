@@ -742,6 +742,10 @@ msgctxt "#31181"
 msgid "Download Art"
 msgstr ""
 
+msgctxt "#31182"
+msgid "Last Check for Updates"
+msgstr ""
+
 #: empty strings from id 31182 to 31199
 #: scripts labels
 

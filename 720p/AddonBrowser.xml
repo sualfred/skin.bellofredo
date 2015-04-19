@@ -3,7 +3,7 @@
 	<defaultcontrol always="true">50</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<backgroundcolor>0</backgroundcolor>
-	<views>50,56,560</views>
+	<views>50,56,560,583</views>
 	<controls>
 		<include>BackgroundItems</include>
 		<include>AddonsViews</include>
@@ -209,13 +209,7 @@
 				</control>
 				<control type="label">
 					<include>TopZoomedSmallLabel</include>
-					<label>$INFO[Container.Property(RepoName)]</label>
-					<visible>!IsEmpty(Container.Property(RepoName))</visible>
-				</control>
-				<control type="label">
-					<include>TopZoomedSmallLabel</include>
-					<label>$INFO[Container.Property(AddonCategory)]</label>
-					<visible>!IsEmpty(Container.Property(AddonCategory))</visible>
+					<label>$INFO[Container.FolderName]</label>
 				</control>
 			</control>
 		</control>

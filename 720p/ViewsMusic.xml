@@ -2262,7 +2262,7 @@
 							<height>50</height>
 							<itemgap>0</itemgap>
 							<control type="label">
-								<label>$INFO[ListItem.Title]</label>
+								<label>$VAR[ListItem.Title]</label>
 								<width max="590">590</width>
 								<font>FontSize_28B</font>
 								<textcolor>white</textcolor>

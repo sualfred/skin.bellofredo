@@ -3753,6 +3753,7 @@
 					</control>
 					<!--Small Down Info-->
 					<control type="grouplist">
+						<visible>!stringcompare(ListItem.Label,..)</visible>
 						<left>20</left>
 						<top>80</top>
 						<width>1000</width>
@@ -3802,16 +3803,6 @@
 							<texture background="true">flags/sets/sets.png</texture>
 							<visible>Substring(ListItem.Path,videodb://movies/sets/)</visible>
 						</control>
-						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>50</width>
-							<height>22</height>
-							<colordiffuse>77white</colordiffuse>
-							<aspectratio align="left" aligny="center">stretch</aspectratio>
-							<texture background="true">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
-							<visible>Container.Content(TVShows) + !IsEmpty(ListItem.mpaa)</visible>
-						</control>
 						<control type="label">
 							<left>45</left>
 							<top>0</top>
@@ -3831,7 +3822,7 @@
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 							<colordiffuse>99white</colordiffuse>
 							<texture fallback="flags/mpaa/film/rating-nr.png">$VAR[MPAAFilmRating]</texture>
-							<visible>Container.Content(Movies)</visible>
+							<visible>Container.Content(Movies) |  Container.Content(Sets)</visible>
 						</control>
 						<control type="image">
 							<width>60</width>

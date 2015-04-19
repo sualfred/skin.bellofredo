@@ -1549,13 +1549,18 @@
 </include>
 
 <include name="CommonPageCount">
-	<control type="group">
+	<control type="grouplist">		
 		<include>CommonSlideAnimations</include>
+		<visible>!ControlGroup(9000).HasFocus + !Window.IsActive(favourites) + !Window.IsActive(ContextMenu) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(filestackingdialog) + !Window.IsActive(MovieInformation) + !Window.IsActive(MusicInformation) + !Window.IsActive(SongInformation) + !Window.IsActive(AddonInformation) + !Window.IsActive(musicplaylisteditor) + !Window.IsActive(script-globalsearch-main.xml)</visible>
+		<left>45</left>
+		<top>70</top>
+		<height>20</height>
+		<width>640</width>
+		<orientation>horizontal</orientation>		
+		<itemgap>0</itemgap>
 		<control type="label">
 			<description>Page Count Label</description>
-			<left>45</left>
-			<top>70</top>
-			<width>640</width>
+			<width max="640">auto</width>
 			<height>20</height>
 			<font>FontSize_18</font>
 			<textcolor>blue</textcolor>
@@ -1564,8 +1569,19 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<label>$INFO[Container.NumItems,, $LOCALIZE[31025]]$INFO[Control.GetLabel(3), • ]</label>
-			<include>CommonSlideAnimations</include>
-			<visible>!ControlGroup(9000).HasFocus + !Window.IsActive(favourites) + !Window.IsActive(ContextMenu) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(filestackingdialog) + !Window.IsActive(MovieInformation) + !Window.IsActive(MusicInformation) + !Window.IsActive(SongInformation) + !Window.IsActive(AddonInformation) + !Window.IsActive(musicplaylisteditor) + !Window.IsActive(script-globalsearch-main.xml)</visible>
+		</control>
+		<control type="label">
+			<description>Page Count Label</description>
+			<width max="640">auto</width>
+			<height>20</height>
+			<font>FontSize_18</font>
+			<textcolor>blue</textcolor>
+			<shadowcolor>77000000</shadowcolor>
+			<scroll>false</scroll>
+			<align>left</align>
+			<aligny>center</aligny>
+			<label>$INFO[Window(AddonBrowser).Property(Updated), • $LOCALIZE[31182]]</label>
+			<visible>Window.IsActive(AddonBrowser)</visible>
 		</control>
 	</control>
 </include>	
