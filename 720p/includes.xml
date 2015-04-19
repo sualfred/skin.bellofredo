@@ -1977,26 +1977,26 @@
 </variable>
 
 <variable name="QuickNav_WidgetListContentYouTube">
-	<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetYouTubeType),1)">plugin://plugin.video.youtube/special/popular_right_now/</value>
-	<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">plugin://plugin.video.youtube/special/new_uploaded_videos/</value>
-	<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetYouTubeType),3)">plugin://plugin.video.youtube/channel/mine/</value>
-	<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetYouTubeType),4)">plugin://plugin.video.youtube/subscriptions/list/</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),youtube) + stringcompare(Skin.String(QuickNavWidgetYouTubeType),1)">plugin://plugin.video.youtube/special/popular_right_now/</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),youtube)  + stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">plugin://plugin.video.youtube/special/new_uploaded_videos/</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),youtube)  + stringcompare(Skin.String(QuickNavWidgetYouTubeType),3)">plugin://plugin.video.youtube/channel/mine/</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),youtube)  + stringcompare(Skin.String(QuickNavWidgetYouTubeType),4)">plugin://plugin.video.youtube/subscriptions/list/</value>
 </variable>
 
 <variable name="RSSVideoFeedURL">
-	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),Euronews)">Euronews</value>
-	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),BBC News)">bbcnews</value>
-	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),Vice)">vice</value>
-	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),TMZ)">TMZ</value>
-	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),The Ellen Show)">TheEllenShow</value>
-	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),TEDx Talks)">TEDxTalks</value>
-	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),VH1)">VH1</value>
-	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),VEVO)">vevo</value>
-	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),Comedy Central)">comedycentral</value>
-	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),Funny Or Die)">FunnyorDie</value>
-	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),GameTrailers)">gametrailers</value>
-	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),NBA)">NBA</value>
-	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),Custom)">$INFO[Skin.String(SearchStringURL)]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + stringcompare(Skin.String(RSSVideoFeedURL),Euronews)">Euronews</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + stringcompare(Skin.String(RSSVideoFeedURL),BBC News)">bbcnews</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + stringcompare(Skin.String(RSSVideoFeedURL),Vice)">vice</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + stringcompare(Skin.String(RSSVideoFeedURL),TMZ)">TMZ</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + stringcompare(Skin.String(RSSVideoFeedURL),The Ellen Show)">TheEllenShow</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + stringcompare(Skin.String(RSSVideoFeedURL),TEDx Talks)">TEDxTalks</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + stringcompare(Skin.String(RSSVideoFeedURL),VH1)">VH1</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + stringcompare(Skin.String(RSSVideoFeedURL),VEVO)">vevo</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + stringcompare(Skin.String(RSSVideoFeedURL),Comedy Central)">comedycentral</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + stringcompare(Skin.String(RSSVideoFeedURL),Funny Or Die)">FunnyorDie</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + stringcompare(Skin.String(RSSVideoFeedURL),GameTrailers)">gametrailers</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + stringcompare(Skin.String(RSSVideoFeedURL),NBA)">NBA</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget) + stringcompare(Skin.String(RSSVideoFeedURL),Custom)">$INFO[Skin.String(SearchStringURL)]</value>
 </variable>
 <variable name="RSSVideoFeedName">
 	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),Euronews)">Euronews</value>

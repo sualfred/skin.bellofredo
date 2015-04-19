@@ -1,4 +1,12 @@
-﻿[B][COLOR=FF56ADDA]v4.1.7a[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.1.7b[/COLOR][/B]
+Small bugfix release
+• Fixed: Double TV-MA ratings on LoveFilm view
+• Fixed: Not working addon browser if the Classic Slide view is set in some addons
+• Fixed (or should be): Widgets with an addon source should not override the set viewtypes anymore, if they are updating and a library window is going to be activated in the same time
+• Removed: TV-MA flag instead of unwatched episodes flag in List view if there is no unwatched episode left
+
+
+[B][COLOR=FF56ADDA]v4.1.7a[/COLOR][/B]
 As usual.... bug fixing right after pushing the update
 • Fixed: Missing plots, empty info label conditions.... etc
 
