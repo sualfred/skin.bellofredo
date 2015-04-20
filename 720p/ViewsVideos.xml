@@ -3569,12 +3569,14 @@
 		<itemlayout height="720" width="1280">
 			<control type="image">
 				<include>FullscreenDimensions</include>
+				<include>BackgroundAnimation</include>
 				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
 			</control>
 		</itemlayout>
 		<focusedlayout height="720" width="1280">
 			<control type="image">
-				<include>FullscreenDimensions</include>
+				<include>FullscreenDimensions</include>				
+				<include>BackgroundAnimation</include>
 				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
 			</control>
 		</focusedlayout>
@@ -4055,12 +4057,14 @@
 		<itemlayout height="720" width="1280">
 			<control type="image">
 				<include>FullscreenDimensions</include>
+				<include>BackgroundAnimation</include>
 				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
 			</control>
 		</itemlayout>
 		<focusedlayout height="720" width="1280">
 			<control type="image">
 				<include>FullscreenDimensions</include>
+				<include>BackgroundAnimation</include>
 				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
 			</control>
 		</focusedlayout>
