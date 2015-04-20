@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-04-12 13:42+0000\n"
+"PO-Revision-Date: 2015-04-20 10:08+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -531,7 +531,14 @@ msgctxt "#31127"
 msgid "Show Libary Totals in the Menu"
 msgstr "Zeige Inhalte der Datenbank im Hauptmenü"
 
-#: empty strings from id 31128 to 31129
+msgctxt "#31128"
+msgid "Loading. Please wait."
+msgstr "Loading"
+
+msgctxt "#31129"
+msgid "item"
+msgstr "Position"
+
 msgctxt "#31130"
 msgid "Disable Fanart in all sections"
 msgstr "Fanart deaktivieren für alle Bereiche"
@@ -638,7 +645,10 @@ msgctxt "#31154"
 msgid "Choose Trailers Add-on"
 msgstr "Wähle Trailer-Addon"
 
-#: empty string with 31155
+msgctxt "#31155"
+msgid "Collection"
+msgstr "Sammlung"
+
 msgctxt "#31156"
 msgid "Manage Video Views"
 msgstr "Videoansichten verwalten"
@@ -745,7 +755,27 @@ msgctxt "#31181"
 msgid "Download Art"
 msgstr "Download Art"
 
-#: empty strings from id 31182 to 31199 scripts labels
+msgctxt "#31182"
+msgid "Last Check for Updates"
+msgstr "Letzte Suche nach Updates"
+
+msgctxt "#31183"
+msgid "Background Animation"
+msgstr "Animierter Hintergrund"
+
+msgctxt "#31184"
+msgid "Global"
+msgstr "Global"
+
+msgctxt "#31185"
+msgid "Only Home Screen"
+msgstr "Nur Startseite"
+
+msgctxt "#31186"
+msgid "Only Windows & Dialogs"
+msgstr "Nur Windows & Dialoge"
+
+#: empty strings from id 31184 to 31199 scripts labels
 msgctxt "#31200"
 msgid "My Movies"
 msgstr "Meine Filme"

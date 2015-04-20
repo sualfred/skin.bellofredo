@@ -1,5 +1,8 @@
 ﻿[B][COLOR=FF56ADDA]v4.1.8[/COLOR][/B]
 • Added: Optional background animation settings (disabled, global, only for the home screen, everywhere except the home screen)
+• Added: Default icon for recently introduced GUI sound addons
+• Added: Date/time the repo was last checked for updates information in the addon browser window
+• Merged: Latest German translation
 • Fixed: Not working Watchlist widget with the recently released version of Sandmann's addon
 • Fixed: Visible empty unwatched episodes box in List view, if the info property is empty
 • Fixed: Wrong filled VideoPlayerThumb variable for internet streams
