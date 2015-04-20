@@ -721,9 +721,11 @@
 				<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),2)">Skin.SetString(QuickNavWidgetAmazonDBType,3)</onright>
 				<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),3)">Skin.SetString(QuickNavWidgetAmazonDBType,4)</onright>
 				<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),4)">Skin.SetString(QuickNavWidgetAmazonDBType,5)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),5)">Skin.SetString(QuickNavWidgetAmazonDBType,1)</onright>
+				<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),5)">Skin.SetString(QuickNavWidgetAmazonDBType,6)</onright>
+				<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),6)">Skin.SetString(QuickNavWidgetAmazonDBType,1)</onright>
 				<!-- on left switches -->
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),1)">Skin.SetString(QuickNavWidgetAmazonDBType,5)</onleft>
+				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),1)">Skin.SetString(QuickNavWidgetAmazonDBType,6)</onleft>
+				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),6)">Skin.SetString(QuickNavWidgetAmazonDBType,5)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),5)">Skin.SetString(QuickNavWidgetAmazonDBType,4)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),4)">Skin.SetString(QuickNavWidgetAmazonDBType,3)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),3)">Skin.SetString(QuickNavWidgetAmazonDBType,2)</onleft>

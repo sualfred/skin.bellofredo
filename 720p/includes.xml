@@ -1948,16 +1948,18 @@
 
 <!--sandmann-->
 <variable name="QuickNav_WidgetListContentAmazonDB">
-	<!--watchlist-->
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb) + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),1)">plugin://plugin.video.amazon/?url=&lt;&gt;&amp;mode=&lt;appfeed&gt;&amp;sitemode=&lt;WatchList&gt;&amp;name=&lt;Watchlist&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+	<!--watchlist movies-->
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb) + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),1)">plugin://plugin.video.amazon/?url=&lt;%2Fgp%2Faw%2Fwl%2F%3Ffilter%3Dmovie&gt;&amp;mode=&lt;appfeed&gt;&amp;sitemode=&lt;ListCont&gt;&amp;name=&lt;Filme&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+	<!--watchlist tvshows-->
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb) + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),2)">plugin://plugin.video.amazon/?url=&lt;%2Fgp%2Faw%2Fwl%2F%3Ffilter%3Dtv&gt;&amp;mode=&lt;appfeed&gt;&amp;sitemode=&lt;ListCont&gt;&amp;name=&lt;Serien&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
 	<!-- new movies -->
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb) + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),2)">plugin://plugin.video.amazon/?url=&lt;recent&gt;&amp;mode=&lt;listmovie&gt;&amp;sitemode=&lt;LIST_MOVIES_SORTED&gt;&amp;name=&lt;Recently+Added&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb) + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),3)">plugin://plugin.video.amazon/?url=&lt;recent&gt;&amp;mode=&lt;listmovie&gt;&amp;sitemode=&lt;LIST_MOVIES_SORTED&gt;&amp;name=&lt;Recently+Added&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
 	<!-- new shows -->
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb) + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),3)">plugin://plugin.video.amazon/?url=&lt;recent&gt;&amp;mode=&lt;listtv&gt;&amp;sitemode=&lt;LIST_TVSEASON_SORTED&gt;&amp;name=&lt;Recently+Added&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb) + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),4)">plugin://plugin.video.amazon/?url=&lt;recent&gt;&amp;mode=&lt;listtv&gt;&amp;sitemode=&lt;LIST_TVSEASON_SORTED&gt;&amp;name=&lt;Recently+Added&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
 	<!-- popular movies -->
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb) + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),4)">plugin://plugin.video.amazon/?url=&lt;popularity&gt;&amp;mode=&lt;listmovie&gt;&amp;sitemode=&lt;LIST_MOVIES_SORTED&gt;&amp;name=&lt;Popular&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb) + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),5)">plugin://plugin.video.amazon/?url=&lt;popularity&gt;&amp;mode=&lt;listmovie&gt;&amp;sitemode=&lt;LIST_MOVIES_SORTED&gt;&amp;name=&lt;Popular&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
 	<!-- popular tv shows -->
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb) + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),5)">plugin://plugin.video.amazon/?url=&lt;popularity&gt;&amp;mode=&lt;listtv&gt;&amp;sitemode=&lt;LIST_TVSHOWS_SORTED&gt;&amp;name=&lt;Popular&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb) + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),6)">plugin://plugin.video.amazon/?url=&lt;popularity&gt;&amp;mode=&lt;listtv&gt;&amp;sitemode=&lt;LIST_TVSHOWS_SORTED&gt;&amp;name=&lt;Popular&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
 </variable>
 
 <!-- addonscriptor-->
@@ -2049,16 +2051,18 @@
 	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),4)">[CAPITALIZE]$LOCALIZE[31115][/CAPITALIZE]</value>
 </variable>
 <variable name="QuickNavSettingsAmazonDBName">
-	<!--watchlist-->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),1)">[CAPITALIZE]$LOCALIZE[31055][/CAPITALIZE]</value>
+	<!--watchlist movies-->
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),1)">[CAPITALIZE]$LOCALIZE[31055] $LOCALIZE[36901][/CAPITALIZE]</value>
+	<!--watchlist tvshows-->
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),2)">[CAPITALIZE]$LOCALIZE[31055] $LOCALIZE[36903][/CAPITALIZE]</value>
 	<!-- new movies -->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),2)">[CAPITALIZE]$LOCALIZE[31241][/CAPITALIZE]</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),3)">[CAPITALIZE]$LOCALIZE[31241][/CAPITALIZE]</value>
 	<!-- new shows -->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),3)">[CAPITALIZE]$LOCALIZE[31242][/CAPITALIZE]</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),4)">[CAPITALIZE]$LOCALIZE[31242][/CAPITALIZE]</value>
 	<!-- popular movies -->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),4)">[CAPITALIZE]$LOCALIZE[31257][/CAPITALIZE]</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),5)">[CAPITALIZE]$LOCALIZE[31257][/CAPITALIZE]</value>
 	<!-- popular tv shows -->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),5)">[CAPITALIZE]$LOCALIZE[31258][/CAPITALIZE]</value>	
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),6)">[CAPITALIZE]$LOCALIZE[31258][/CAPITALIZE]</value>	
 </variable>
 <variable name="QuickNavSettingsAmazonName">
 	<!--watchlist movies-->

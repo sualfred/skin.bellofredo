@@ -446,21 +446,24 @@
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31105] $LOCALIZE[31058]</label>
 							<label2>[COLOR=selected]$VAR[QuickNavSettingsAmazonDBName][/COLOR]</label2>
-							<!--watchlist-->
-							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31055])</onclick>
+							<!--watchlist movies-->
+							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31055]: $LOCALIZE[36901])</onclick>
 							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,1))</onclick>
-							<!--new movies-->
-							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31241])</onclick>
+							<!--watchlist tvshows-->
+							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31055]: $LOCALIZE[36903])</onclick>
 							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,2))</onclick>
-							<!--new shows-->
-							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31242])</onclick>
+							<!--new movies-->
+							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31241])</onclick>
 							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,3))</onclick>
+							<!--new shows-->
+							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31242])</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,4))</onclick>
 							<!--popular movies-->
-							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31257])</onclick>
-							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,4)</onclick>
+							<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31257])</onclick>
+							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,5)</onclick>
 							<!--popular shows-->
-							<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31258])</onclick>
-							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,5))</onclick>
+							<onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31258])</onclick>
+							<onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(QuickNavWidgetAmazonDBType,6))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31052] $LOCALIZE[31058])</onclick>
 							<visible>System.HasAddon(plugin.video.amazon)</visible>
 						</control>
