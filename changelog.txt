@@ -1,4 +1,13 @@
-﻿[B][COLOR=FF56ADDA]v4.1.7b[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.1.8[/COLOR][/B]
+• Added: Optional background animation settings (disabled, global, only for the home screen, everywhere except the home screen)
+• Fixed: Not working Watchlist widget with the recently released version of Sandmann's addon
+• Fixed: Visible empty unwatched episodes box in List view, if the info property is empty
+• Fixed: Wrong filled VideoPlayerThumb variable for internet streams
+• Fixed: Position of the cast list in DialogVideoInfo.xml
+• Fixed: Visible actor age in ExtendedInfo dialogs, if the person has already died
+
+
+[B][COLOR=FF56ADDA]v4.1.7b[/COLOR][/B]
 Small bugfix release
 • Fixed: Double TV-MA ratings on LoveFilm view
 • Fixed: Not working addon browser if the Classic Slide view is set in some addons
