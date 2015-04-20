@@ -370,16 +370,6 @@
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
-						<!--<control type="image">
-							<left>530</left>
-							<top>11</top>
-							<width>53</width>
-							<height>22</height>
-							<colordiffuse>55ffffff</colordiffuse>
-							<aspectratio align="center" aligny="center">keep</aspectratio>
-							<texture background="true">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
-							<visible>!stringcompare(ListItem.Overlay,OverlayUnWatched.png) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
-						</control>-->
 						<control type="image">
 							<left>530</left>
 							<top>11</top>
@@ -389,6 +379,7 @@
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
 							<texture>flags/empty.png</texture>
 							<visible>!Stringcompare(ListItem.Label,..)</visible>
+							<visible>!IsEmpty(ListItem.Property(unWatchedEpisodes))</visible>
 							<visible>[Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 						</control>
 						<control type="label">
@@ -487,16 +478,6 @@
 								<scroll>true</scroll>
 								<label>$INFO[ListItem.Label]</label>
 							</control>
-							<!--<control type="image">
-								<left>530</left>
-								<top>11</top>
-								<width>53</width>
-								<height>22</height>
-								<colordiffuse>ffcccccc</colordiffuse>
-								<aspectratio align="center" aligny="center">keep</aspectratio>
-								<texture background="true">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
-								<visible>!stringcompare(ListItem.Overlay,OverlayUnWatched.png) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
-							</control>-->
 							<control type="image">
 								<left>530</left>
 								<top>11</top>
@@ -506,6 +487,7 @@
 								<aspectratio align="center" aligny="center">keep</aspectratio>
 								<texture>flags/empty.png</texture>
 								<visible>!Stringcompare(ListItem.Label,..)</visible>
+								<visible>!IsEmpty(ListItem.Property(unWatchedEpisodes))</visible>
 								<visible>[Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 							</control>
 							<control type="label">
