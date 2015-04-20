@@ -661,13 +661,20 @@
 
 	<include name="VizBackAnimation">
 		<animation effect="zoom" start="110" end="130" center="auto" time="14000" pulse="true" condition="Skin.HasSetting(Vis-Animation)" reversible="false">Conditional</animation>
-		<animation effect="slide" start="-20,-20" end="40,40" time="15000" pulse="true" condition="Skin.HasSetting(Vis-Animation)" reversible="false">Conditional</animation><animation effect="zoom" end="100" center="auto" time="0" condition="!Skin.HasSetting(Vis-Animation)" reversible="false">Conditional</animation>
+		<animation effect="slide" start="-20,-20" end="40,40" time="15000" pulse="true" condition="Skin.HasSetting(Vis-Animation)" reversible="false">Conditional</animation>
+		<animation effect="zoom" end="100" center="auto" time="0" condition="!Skin.HasSetting(Vis-Animation)" reversible="false">Conditional</animation>
 		<animation effect="slide" end="0,0" time="0" condition="!Skin.HasSetting(Vis-Animation)" reversible="false">Conditional</animation>
 	</include>
 	<include name="BackgroundAnimation">
-		<animation effect="zoom" start="100" end="120" center="auto" time="22000" pulse="true" condition="Skin.HasSetting(BG-Animation)" reversible="false">Conditional</animation>
-		<animation effect="slide" start="-20,-20" end="40,40" time="23000" pulse="true" condition="Skin.HasSetting(BG-Animation)" reversible="false">Conditional</animation><animation effect="zoom" end="100" center="auto" time="0" condition="!Skin.HasSetting(BG-Animation)" reversible="false">Conditional</animation>
-		<animation effect="slide" end="0,0" time="0" condition="!Skin.HasSetting(BG-Animation)" reversible="false">Conditional</animation>
+		<!--global-->
+		<animation effect="zoom" start="110" end="130" center="auto" time="14000" tween="sine" easing="inout" pulse="true" condition="StringCompare(Skin.String(BG-Animation),global)" reversible="false">Conditional</animation>
+		<animation effect="slide" start="-20,-20" end="20,20" time="15000" tween="sine" easing="inout" pulse="true" condition="StringCompare(Skin.String(BG-Animation),global)" reversible="false">Conditional</animation>
+		<!--only in windows-->
+		<animation effect="zoom" start="110" end="130" center="auto" time="14000" tween="sine" easing="inout" pulse="true" condition="StringCompare(Skin.String(BG-Animation),windows) + !Window.IsActive(home)" reversible="false">Conditional</animation>
+		<animation effect="slide" start="-20,-20" end="20,20" time="15000" tween="sine" easing="inout" pulse="true" condition="StringCompare(Skin.String(BG-Animation),windows) + !Window.IsActive(home)" reversible="false">Conditional</animation>
+		<!--only in home screen-->
+		<animation effect="zoom" start="110" end="130" center="auto" time="14000" tween="sine" easing="inout" pulse="true" condition="StringCompare(Skin.String(BG-Animation),home) + Window.IsActive(home)" reversible="false">Conditional</animation>
+		<animation effect="slide" start="-20,-20" end="20,20" time="15000" tween="sine" easing="inout" pulse="true" condition="StringCompare(Skin.String(BG-Animation),home) + Window.IsActive(home)" reversible="false">Conditional</animation>
 	</include>
 
 	<include name="CDImageAnim">

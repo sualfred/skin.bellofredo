@@ -747,7 +747,19 @@ msgid "Last Check for Updates"
 msgstr ""
 
 msgctxt "#31183"
-msgid "Enable Background Animation"
+msgid "Background Animation"
+msgstr ""
+
+msgctxt "#31184"
+msgid "Global"
+msgstr ""
+
+msgctxt "#31185"
+msgid "Only Home Screen"
+msgstr ""
+
+msgctxt "#31186"
+msgid "Only Windows & Dialogs"
 msgstr ""
 
 #: empty strings from id 31184 to 31199

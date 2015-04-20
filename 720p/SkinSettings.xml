@@ -556,11 +556,21 @@
 						<onright>9000</onright>
 						<onup>8400</onup>
 						<ondown>8400</ondown>
-						<control type="radiobutton" id="8408">
-							<include>SettingsRadioButton</include>
+						<control type="button" id="8408">
+							<include>SettingsButton</include>
 							<label>31183</label>
-							<onclick>Skin.ToggleSetting(BG-Animation)</onclick>
-							<selected>Skin.HasSetting(BG-Animation)</selected>
+							<label2>[COLOR=selected]$VAR[BackgroundAnimationLabels][/COLOR]</label2>
+							<!--<onclick>Skin.ToggleSetting(BG-Animation)</onclick>-->
+							<selected>!IsEmpty(Skin.String(BG-Animation))</selected>
+							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31184])</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(BG-Animation,global))</onclick>
+							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31186])</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(BG-Animation,windows))</onclick>
+							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31185])</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(BG-Animation,home))</onclick>
+							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31066])</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.Reset(BG-Animation,3))</onclick>
+							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31183])</onclick>
 						</control>
 						<control type="radiobutton" id="8401">
 							<include>SettingsRadioButton</include>

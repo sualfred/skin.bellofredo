@@ -2388,6 +2388,13 @@
 	<value condition="Stringcompare(Skin.String(WeatherExtended),4)">$LOCALIZE[31226]</value>
 </variable>
 
+<variable name="BackgroundAnimationLabels">
+	<value condition="Stringcompare(Skin.String(BG-Animation),home)">$LOCALIZE[31185]</value>
+	<value condition="Stringcompare(Skin.String(BG-Animation),windows)">$LOCALIZE[31186]</value>
+	<value condition="Stringcompare(Skin.String(WeatherExtended),global)">$LOCALIZE[31184]</value>
+	<value>$LOCALIZE[31066]</value>
+</variable>
+
 <include name="OnLoadDialogsClose">
 	<onload condition="Window.IsActive(subtitlesearch)">Dialog.Close(subtitlesearch)</onload>
 	<onload condition="Window.IsActive(contextmenu)">Dialog.Close(contextmenu)</onload>
