@@ -140,9 +140,18 @@
 						<textcolor>99white</textcolor>
 						<shadowcolor>99000000</shadowcolor>
 						<font>FontSize_22</font>
-						<width min="10" max="595">auto</width>
+						<width min="10" max="120">auto</width>
 						<height>30</height>
-						<label fallback="195">$INFO[Window.Property(actor.Birthday)] $INFO[Window.Property(actor.Age), (,)]</label>
+						<label fallback="195">$INFO[Window.Property(actor.Birthday)]</label>
+					</control>
+					<control type="label">
+						<textcolor>99white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<font>FontSize_22</font>
+						<width min="10" max="50">auto</width>
+						<height>30</height>
+						<label fallback="195">$INFO[Window.Property(actor.Age), (,)]</label>
+						<visible>IsEmpty(Window.Property(actor.Deathday))</visible>
 					</control>
 				</control>
 				<!-- PlaceOfBirth label -->
