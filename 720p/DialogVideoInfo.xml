@@ -497,8 +497,8 @@
 			<!-- Cast List -->
 			<control type="group">
 				<posx>366</posx>
-				<posy>400</posy>
-				<animation effect="slide" start="0,0" end="0,-40" time="150" condition="Control.HasFocus(50)">Conditional</animation>
+				<posy>412</posy>
+				<animation effect="slide" start="0,0" end="0,-43" time="150" condition="Control.HasFocus(50)">Conditional</animation>
 				<animation effect="fade" start="0" end="100" time="300" reversible="false" condition="Control.IsVisible(50)">Conditional</animation>
 				<animation effect="fade" start="100" end="0" time="300" reversible="false" condition="!Control.IsVisible(50)">Conditional</animation>
 				<control type="fixedlist" id="50">
