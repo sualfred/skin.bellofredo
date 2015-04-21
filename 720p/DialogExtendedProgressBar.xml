@@ -4,7 +4,12 @@
 	<onload condition="!IsEmpty(Window.Property(UpdateInProgress))">ClearProperty(UpdateInProgress)</onload>
 	<onload condition="Library.IsScanningVideo">SetProperty(UpdateInProgress,1)</onload>
 	<onunload condition="!IsEmpty(Window.Property(UpdateInProgress)) + Skin.HasSetting(AutoUpdateArt)">XBMC.RunScript(script.artwork.downloader,silent=true)</onunload>
-	<onunload condition="!IsEmpty(Window.Property(UpdateInProgress)) + Skin.HasSetting(AutoUpdateRatings)">RunScript(script.imdbupdate,all,hidden)</onunload>	
+	<onunload condition="!IsEmpty(Window.Property(UpdateInProgress)) + StringCompare(Skin.String(AutoUpdateRatings),top250)">RunScript(script.imdbupdate,top250,hidden)</onunload>	
+	<onunload condition="!IsEmpty(Window.Property(UpdateInProgress)) + StringCompare(Skin.String(AutoUpdateRatings),ratings)">RunScript(script.imdbupdate,movies,hidden)</onunload>	
+	<onunload condition="!IsEmpty(Window.Property(UpdateInProgress)) + StringCompare(Skin.String(AutoUpdateRatings),mpaa)">RunScript(script.imdbupdate,mpaa,hidden)</onunload>	
+	<onunload condition="!IsEmpty(Window.Property(UpdateInProgress)) + StringCompare(Skin.String(AutoUpdateRatings),all)">RunScript(script.imdbupdate,all,hidden)</onunload>	
+	<onunload condition="!IsEmpty(Window.Property(UpdateInProgress)) + StringCompare(Skin.String(AutoUpdateRatings),onlymovies)">RunScript(script.imdbupdate,top250,hidden)</onunload>	
+	<onunload condition="!IsEmpty(Window.Property(UpdateInProgress)) + StringCompare(Skin.String(AutoUpdateRatings),onlymovies)">AlarmClock(AutoUpdateRatingsDelay,RunScript(script.imdbupdate,movies,hidden),00:10,silent)</onunload>	
 	<onunload condition="!IsEmpty(Window.Property(UpdateInProgress))">ClearProperty(UpdateInProgress)</onunload>
 	<controls>
 

@@ -560,7 +560,6 @@
 							<include>SettingsButton</include>
 							<label>31183</label>
 							<label2>[COLOR=selected]$VAR[BackgroundAnimationLabels][/COLOR]</label2>
-							<!--<onclick>Skin.ToggleSetting(BG-Animation)</onclick>-->
 							<selected>!IsEmpty(Skin.String(BG-Animation))</selected>
 							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31184])</onclick>
 							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(BG-Animation,global))</onclick>
@@ -686,12 +685,24 @@
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31119])</onclick>
 						</control>		
 						<!--IMDb Rating Update-->
-						<control type="radiobutton" id="8506">
+						<control type="button" id="8506">
 							<description>IMDb Rating Updater</description>
-							<include>SettingsRadioButton</include>
 							<label>- $LOCALIZE[31092]</label>
-							<onclick>Skin.ToggleSetting(AutoUpdateRatings)</onclick>
-							<selected>Skin.HasSetting(AutoUpdateRatings)</selected>
+							<include>SettingsButton</include>
+							<label2>[COLOR=selected]$VAR[IMDbUpdateLabels][/COLOR]</label2>
+							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31187] / $LOCALIZE[31188] / $LOCALIZE[31189])</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(AutoUpdateRatings,all))</onclick>
+							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31187] / $LOCALIZE[31188])</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(AutoUpdateRatings,onlymovies))</onclick>
+							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31187])</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(AutoUpdateRatings,top250))</onclick>
+							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31188])</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(AutoUpdateRatings,movies))</onclick>
+							<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31189])</onclick>
+							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(AutoUpdateRatings,mpaa))</onclick>
+							<onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31066])</onclick>
+							<onclick>SetProperty(Dialog.6.BuiltIn,Skin.Reset(AutoUpdateRatings))</onclick>
+							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31191])</onclick>
 							<enable>System.HasAddon(script.imdbupdate)</enable>
 						</control>
 						<!--Artwork Downloader-->

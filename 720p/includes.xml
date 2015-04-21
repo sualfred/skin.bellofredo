@@ -2395,6 +2395,15 @@
 	<value>$LOCALIZE[31066]</value>
 </variable>
 
+<variable name="IMDbUpdateLabels">
+	<value condition="Stringcompare(Skin.String(AutoUpdateRatings),all)">$LOCALIZE[31187] / $LOCALIZE[31188] / $LOCALIZE[31189]</value>
+	<value condition="Stringcompare(Skin.String(AutoUpdateRatings),onlymovies)">$LOCALIZE[31187] / $LOCALIZE[31188]</value>
+	<value condition="Stringcompare(Skin.String(AutoUpdateRatings),top250)">$LOCALIZE[31187]</value>
+	<value condition="Stringcompare(Skin.String(AutoUpdateRatings),movies)">$LOCALIZE[31188]</value>
+	<value condition="Stringcompare(Skin.String(AutoUpdateRatings),mpaa)">$LOCALIZE[31189]</value>
+	<value>$LOCALIZE[31066]</value>
+</variable>
+
 <include name="OnLoadDialogsClose">
 	<onload condition="Window.IsActive(subtitlesearch)">Dialog.Close(subtitlesearch)</onload>
 	<onload condition="Window.IsActive(contextmenu)">Dialog.Close(contextmenu)</onload>

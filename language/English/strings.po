@@ -383,7 +383,7 @@ msgid "Episodes"
 msgstr ""
 
 msgctxt "#31092"
-msgid "Automatically update IMDb Top250 & Ratings if the Library has been updated"
+msgid "Auto Update IMDb Top250 & Movie Ratings"
 msgstr ""
 
 msgctxt "#31093"
@@ -762,7 +762,27 @@ msgctxt "#31186"
 msgid "Only Windows & Dialogs"
 msgstr ""
 
-#: empty strings from id 31184 to 31199
+msgctxt "#31187"
+msgid "Top 250"
+msgstr ""
+
+msgctxt "#31188"
+msgid "Movie Ratings"
+msgstr ""
+
+msgctxt "#31189"
+msgid "MPAA"
+msgstr ""
+
+msgctxt "#31190"
+msgid "Update MPAA Ratings"
+msgstr ""
+
+msgctxt "#31191"
+msgid "Update Settings"
+msgstr ""
+
+#: empty strings from id 31192 to 31199
 #: scripts labels
 
 msgctxt "#31200"
