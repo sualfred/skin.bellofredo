@@ -391,11 +391,11 @@
 			<include>WidgetContainer</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(250).OnNext</visible>					
+				<visible>Container(250).OnNext + IntegerGreaterThan(Container(250).NumItems,1)</visible>					
 			</control>
 			<control type="group" id="4514">
 				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(250).OnPrevious</visible>
+				<visible>Container(250).OnPrevious + IntegerGreaterThan(Container(250).NumItems,1)</visible>
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(250).NumItems,5)</visible>
@@ -479,11 +479,11 @@
 			<include>WidgetContainer</include>	
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(350).OnNext</visible>					
+				<visible>Container(350).OnNext + IntegerGreaterThan(Container(350).NumItems,1)</visible>					
 			</control>
 			<control type="group" id="4514">
 				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(350).OnPrevious</visible>
+				<visible>Container(350).OnPrevious + IntegerGreaterThan(Container(350).NumItems,1)</visible>
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(350).NumItems,5)</visible>
@@ -564,11 +564,11 @@
 			<include>WidgetContainer</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(450).OnNext</visible>					
+				<visible>Container(450).OnNext + IntegerGreaterThan(Container(450).NumItems,1)</visible>					
 			</control>
 			<control type="group" id="4514">
 				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(450).OnPrevious</visible>
+				<visible>Container(450).OnPrevious + IntegerGreaterThan(Container(450).NumItems,1)</visible>
 			</control>
 			<control type="group">
 				<include>BackgroundVignette</include>
@@ -656,11 +656,11 @@
 			<include>WidgetContainer</include>				
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(750).OnNext</visible>					
+				<visible>Container(750).OnNext + IntegerGreaterThan(Container(750).NumItems,1)</visible>					
 			</control>
 			<control type="group" id="4514">
 				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(750).OnPrevious</visible>
+				<visible>Container(750).OnPrevious + IntegerGreaterThan(Container(750).NumItems,1)</visible>
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(750).NumItems,5)</visible>
@@ -743,11 +743,11 @@
 			<include>WidgetContainer</include>	
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(751).OnNext</visible>					
+				<visible>Container(751).OnNext + IntegerGreaterThan(Container(751).NumItems,1)</visible>					
 			</control>
 			<control type="group" id="4514">
 				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(751).OnPrevious</visible>
+				<visible>Container(751).OnPrevious + IntegerGreaterThan(Container(751).NumItems,1)</visible>
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(751).NumItems,5)</visible>
@@ -829,11 +829,11 @@
 			<include>WidgetContainer</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(550).OnNext</visible>					
+				<visible>Container(550).OnNext + IntegerGreaterThan(Container(550).NumItems,1)</visible>					
 			</control>
 			<control type="group" id="4514">
 				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(550).OnPrevious</visible>
+				<visible>Container(550).OnPrevious + IntegerGreaterThan(Container(550).NumItems,1)</visible>
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(550).NumItems,4)</visible>
@@ -912,11 +912,11 @@
 			<include>WidgetContainer</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(653).OnNext</visible>					
+				<visible>Container(653).OnNext + IntegerGreaterThan(Container(653).NumItems,1)</visible>					
 			</control>
 			<control type="group" id="4514">
 				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(653).OnPrevious</visible>
+				<visible>Container(653).OnPrevious + IntegerGreaterThan(Container(653).NumItems,1)</visible>
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(653).NumItems,4)</visible>
@@ -997,11 +997,11 @@
 			<include>WidgetContainer</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(551).OnNext</visible>					
+				<visible>Container(551).OnNext + IntegerGreaterThan(Container(551).NumItems,1)</visible>					
 			</control>
 			<control type="group" id="4514">
 				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(551).OnPrevious</visible>
+				<visible>Container(551).OnPrevious + IntegerGreaterThan(Container(551).NumItems,1)</visible>
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(551).NumItems,4)</visible>
@@ -1060,11 +1060,11 @@
 			<include>WidgetContainer</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(552).OnNext</visible>					
+				<visible>Container(552).OnNext + IntegerGreaterThan(Container(552).NumItems,1)</visible>					
 			</control>
 			<control type="group" id="4514">
 				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(552).OnPrevious</visible>
+				<visible>Container(552).OnPrevious + IntegerGreaterThan(Container(552).NumItems,1)</visible>
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(552).NumItems,4)</visible>
@@ -1123,11 +1123,11 @@
 			<include>WidgetContainer</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(553).OnNext</visible>					
+				<visible>Container(553).OnNext + IntegerGreaterThan(Container(553).NumItems,1)</visible>					
 			</control>
 			<control type="group" id="4514">
 				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(553).OnPrevious</visible>
+				<visible>Container(553).OnPrevious + IntegerGreaterThan(Container(553).NumItems,1)</visible>
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(553).NumItems,4)</visible>
@@ -1186,11 +1186,11 @@
 			<include>WidgetContainer</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(554).OnNext</visible>					
+				<visible>Container(554).OnNext + IntegerGreaterThan(Container(554).NumItems,1)</visible>					
 			</control>
 			<control type="group" id="4514">
 				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(554).OnPrevious</visible>
+				<visible>Container(554).OnPrevious + IntegerGreaterThan(Container(554).NumItems,1)</visible>
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(554).NumItems,4)</visible>
@@ -1249,11 +1249,11 @@
 			<include>WidgetContainer</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(650).OnNext</visible>					
+				<visible>Container(650).OnNext + IntegerGreaterThan(Container(650).NumItems,1)</visible>					
 			</control>
 			<control type="group" id="4514">
 				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(650).OnPrevious</visible>
+				<visible>Container(650).OnPrevious + IntegerGreaterThan(Container(650).NumItems,1)</visible>
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(650).NumItems,4)</visible>
@@ -1353,11 +1353,11 @@
 			<include>WidgetContainer</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(651).OnNext</visible>					
+				<visible>Container(651).OnNext + IntegerGreaterThan(Container(651).NumItems,1)</visible>					
 			</control>
 			<control type="group" id="4514">
 				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(651).OnPrevious</visible>
+				<visible>Container(651).OnPrevious + IntegerGreaterThan(Container(651).NumItems,1)</visible>
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(651).NumItems,4)</visible>
@@ -1414,11 +1414,11 @@
 			<include>WidgetContainer</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(652).OnNext</visible>					
+				<visible>Container(652).OnNext + IntegerGreaterThan(Container(652).NumItems,1)</visible>					
 			</control>
 			<control type="group" id="4514">
 				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(652).OnPrevious</visible>
+				<visible>Container(652).OnPrevious + IntegerGreaterThan(Container(652).NumItems,1)</visible>
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(652).NumItems,4)</visible>
