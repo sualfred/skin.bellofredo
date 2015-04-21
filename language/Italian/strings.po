@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: Bello
-# Addon id: skin.bello
-# Addon Provider: Nessus
+# Addon Name: Bello Fredo
+# Addon id: skin.bellofredo
+# Addon Provider: Sualfred
 # Translators:
 # Peppe Calvo <peppe.calvo.cc@gmail.com>, 2015
 msgid ""
@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-04-02 13:33+0000\n"
-"Last-Translator: sualfred <su4lfred@gmail.com>\n"
+"PO-Revision-Date: 2015-04-21 10:19+0000\n"
+"Last-Translator: Peppe Calvo <peppe.calvo.cc@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/bello-fredo/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -287,7 +287,7 @@ msgstr "Disabilita"
 
 msgctxt "#31067"
 msgid "Enable Aurora-Pulse-Bar behind the Mainmenu"
-msgstr ""
+msgstr "Abilita la Barra Aurora-Pulse dietro il menù principale"
 
 msgctxt "#31068"
 msgid "Online Video Information"
@@ -386,13 +386,12 @@ msgid "Episodes"
 msgstr "Episodi"
 
 msgctxt "#31092"
-msgid ""
-"Automatically update IMDb Top250 & Ratings if the Library has been updated"
-msgstr ""
+msgid "Auto Update IMDb Top250 & Movie Ratings"
+msgstr "Auto Aggiorna MDb Top250 & Valutazione Film"
 
 msgctxt "#31093"
 msgid "Update IMDb Top250 & Movie Ratings"
-msgstr ""
+msgstr "Aggiorna IMDb Top250 & Valutazione Film"
 
 msgctxt "#31094"
 msgid "Movies Widget"
@@ -436,7 +435,7 @@ msgstr "Nascondi Informazioni Musicali in Esecuzione"
 
 msgctxt "#31104"
 msgid "Hide Now Playing Cover on Home"
-msgstr ""
+msgstr "Nascondi le Cover in esecuzione  nella Schermata principale "
 
 msgctxt "#31105"
 msgid "Amazon [COLOR=55white](Sandmann's Plugin)[/COLOR]"
@@ -452,21 +451,68 @@ msgstr "Rilasciato"
 
 msgctxt "#31108"
 msgid "Enable Kodi Icon in the Upper-Left Corner"
-msgstr ""
+msgstr "Abilita l'icona Kodi nell'angolo in alto a sinistra"
 
 msgctxt "#31109"
 msgid "Edit Menu/Assign Widgets"
-msgstr ""
+msgstr "Edita Menù/Assegna Widget"
 
 msgctxt "#31110"
 msgid "Animations"
-msgstr ""
+msgstr "Animazioni"
 
 msgctxt "#31111"
 msgid "Scroll down for more options"
-msgstr ""
+msgstr "Sfoglia verso il basso per ulteriori opzioni"
 
-#: empty strings from id 31112 to 31123
+msgctxt "#31112"
+msgid "Popular Right Now"
+msgstr "Popolari ora"
+
+msgctxt "#31113"
+msgid "New Uploaded Videos"
+msgstr "Video Recenti"
+
+msgctxt "#31114"
+msgid "My Channel"
+msgstr "Il mio canale"
+
+msgctxt "#31115"
+msgid "My Subscriptions"
+msgstr "Le mie sottoscrizioni"
+
+msgctxt "#31116"
+msgid "Diffuse Widget Fanarts"
+msgstr "Widget Fanart Diffuse"
+
+msgctxt "#31117"
+msgid "Handwritten Disc Art"
+msgstr "Disc Art scritti a mano"
+
+msgctxt "#31118"
+msgid "Show Disc Art"
+msgstr "Mostra "
+
+msgctxt "#31119"
+msgid "Watched Flag Indicator"
+msgstr "Indicatore Bandiera Visti"
+
+msgctxt "#31120"
+msgid "Unwatched"
+msgstr "Non Visti"
+
+msgctxt "#31121"
+msgid "Watched"
+msgstr "Visti"
+
+msgctxt "#31122"
+msgid "None"
+msgstr "Nessuno"
+
+msgctxt "#31123"
+msgid "Watched Episodes"
+msgstr "Episodi Visti"
+
 msgctxt "#31124"
 msgid "Flashing Lights"
 msgstr "Luci Lampeggianti"
@@ -475,7 +521,22 @@ msgctxt "#31125"
 msgid "Edit Info"
 msgstr "Edita Informazioni"
 
-#: empty strings from id 31126 to 31129
+msgctxt "#31126"
+msgid "Watched Movies"
+msgstr "Film Visti"
+
+msgctxt "#31127"
+msgid "Show Libary Totals in the Menu"
+msgstr "Mostra i totali della libreria nel Menù"
+
+msgctxt "#31128"
+msgid "Loading. Please wait."
+msgstr "Caricamento. Attendere."
+
+msgctxt "#31129"
+msgid "item"
+msgstr "elemento"
+
 msgctxt "#31130"
 msgid "Disable Fanart in all sections"
 msgstr "Disabilita le Fanart in tutte le Sezini"
@@ -582,7 +643,10 @@ msgctxt "#31154"
 msgid "Choose Trailers Add-on"
 msgstr "Scegli l'addon dei Trailer"
 
-#: empty string with id 31155
+msgctxt "#31155"
+msgid "Collection"
+msgstr "Collezione"
+
 msgctxt "#31156"
 msgid "Manage Video Views"
 msgstr "Gestisci le Viste Video"
@@ -604,8 +668,8 @@ msgid "Download [COLOR=selected]logo.png[/COLOR] for all Movies"
 msgstr "Scarica [COLOR=selected]logo.png[/COLOR] per tutti i Film"
 
 msgctxt "#31161"
-msgid "Show Library Totals"
-msgstr "Mostra i totali delle librerie"
+msgid "Show Library Totals in the Top Menu"
+msgstr "Mostra i totali della libreria nel Menù in alto"
 
 msgctxt "#31162"
 msgid "Enable Kiosk Mode"
@@ -677,7 +741,59 @@ msgctxt "#31178"
 msgid "Manage [COLOR=selected]Common Widgets[/COLOR]"
 msgstr "Gestisci [COLOR=selected] Widgets Generici[/COLOR]"
 
-#: empty strings from id 31179 to 31199 scripts labels
+msgctxt "#31179"
+msgid "Manage Views"
+msgstr "Gestisci Visualizzazioni"
+
+msgctxt "#31180"
+msgid "Library Tools"
+msgstr "Utilità Libreria"
+
+msgctxt "#31181"
+msgid "Download Art"
+msgstr "Scarica Art"
+
+msgctxt "#31182"
+msgid "Last Check for Updates"
+msgstr "Ultima verifica aggiornamenti"
+
+msgctxt "#31183"
+msgid "Background Animation"
+msgstr "Animazione di sfondo"
+
+msgctxt "#31184"
+msgid "Global"
+msgstr "Globale"
+
+msgctxt "#31185"
+msgid "Only Home Screen"
+msgstr "Solo nel menù principale"
+
+msgctxt "#31186"
+msgid "Only Windows & Dialogs"
+msgstr "Solo Finestre e Suggerimenti"
+
+msgctxt "#31187"
+msgid "Top 250"
+msgstr "Top 250 "
+
+msgctxt "#31188"
+msgid "Movie Ratings"
+msgstr "Valutazione Film"
+
+msgctxt "#31189"
+msgid "MPAA"
+msgstr "MPAA "
+
+msgctxt "#31190"
+msgid "Update MPAA Ratings"
+msgstr "Aggiorna valutazione MPAA"
+
+msgctxt "#31191"
+msgid "Update Settings"
+msgstr "Aggiorna Impostazioni"
+
+#: empty strings from id 31192 to 31199 scripts labels
 msgctxt "#31200"
 msgid "My Movies"
 msgstr "I Miei Film"
@@ -954,7 +1070,19 @@ msgctxt "#31268"
 msgid "Thumb List"
 msgstr "Lista Icone"
 
-#: empty strings from id 31269 to 31279 Playlist Editor labels
+msgctxt "#31269"
+msgid "My IMDb Top250 Movies"
+msgstr "I miei Film IMDb Top250"
+
+msgctxt "#31270"
+msgid "Recently watched episodes"
+msgstr "Episodi visti di recente"
+
+msgctxt "#31271"
+msgid "Enable Widget Content Switch Function"
+msgstr "Abilita la funzione di variazione contenuto wiget"
+
+#: empty strings from id 31272 to 31279 Playlist Editor labels
 msgctxt "#31280"
 msgid "Open Playlist"
 msgstr "Apri Playlist"
@@ -1081,8 +1209,8 @@ msgid "Now Playing"
 msgstr "In Esecuzione"
 
 msgctxt "#31317"
-msgid "Deactivate Vignette (Better for Ambilight)"
-msgstr "Disattiva Vignetta (Meglio per Ambilight)"
+msgid "Amiblight Compatiblity Mode"
+msgstr "Modalità Compatibile "
 
 #: empty strings from id 31318 to 31349 PVR
 msgctxt "#31350"
@@ -1140,7 +1268,7 @@ msgstr "Elemento Personalizzato"
 
 msgctxt "#31379"
 msgid "Home & Menu"
-msgstr ""
+msgstr "Schermata Principale & Menù"
 
 msgctxt "#31380"
 msgid "Custom Widgets"
