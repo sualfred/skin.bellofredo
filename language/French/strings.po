@@ -1,21 +1,24 @@
 # Kodi Media Center language file
-# Addon Name: Bello
-# Addon id: skin.bello
-# Addon Provider: Nessus
+# Addon Name: Bello Fredo
+# Addon id: skin.bellofredo
+# Addon Provider: Sualfred
+# Translators:
+# Olivier Zolli <ozolli@gmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: XBMC Skins\n"
+"Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Kodi Translation Team\n"
-"Language-Team: French (http://www.transifex.com/projects/p/xbmc-skins/language/fr/)\n"
+"PO-Revision-Date: 2015-04-21 16:59+0000\n"
+"Last-Translator: Olivier Zolli <ozolli@gmail.com>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/bello-fredo/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: Misc labels
 msgctxt "#31000"
 msgid "Live TV"
 msgstr "TV en direct"
@@ -26,7 +29,7 @@ msgstr "Guide TV"
 
 msgctxt "#31002"
 msgid "TV Shows"
-msgstr "Séries TV"
+msgstr "Séries"
 
 msgctxt "#31003"
 msgid "Aired"
@@ -38,7 +41,7 @@ msgstr "1ère diffusion"
 
 msgctxt "#31005"
 msgid "Track Number"
-msgstr "Numéro de la piste"
+msgstr "Numéro de piste"
 
 msgctxt "#31006"
 msgid "Working..."
@@ -72,9 +75,13 @@ msgctxt "#31013"
 msgid "Enable Home Menu Animation"
 msgstr "Activer l'animation sur le menu d'accueil"
 
+msgctxt "#31014"
+msgid "Enable Startup Intro Video"
+msgstr "Activer la vidéo d'intro au démarrage"
+
 msgctxt "#31016"
 msgid "File Manager"
-msgstr "Gestionnaire de fichier"
+msgstr "Gestionnaire de fichiers"
 
 msgctxt "#31017"
 msgid "Karaoke Song Selector"
@@ -82,7 +89,7 @@ msgstr "Sélecteur chanson karaoké"
 
 msgctxt "#31018"
 msgid "Trailers"
-msgstr "Bande-annonce"
+msgstr "Bandes annonces"
 
 msgctxt "#31019"
 msgid "Search for movies directed by"
@@ -94,7 +101,7 @@ msgstr "Trouvé"
 
 msgctxt "#31021"
 msgid "Music Library"
-msgstr "Médiathèque Musique"
+msgstr "Médiathèque musique"
 
 msgctxt "#31022"
 msgid "Music Files"
@@ -122,11 +129,11 @@ msgstr "Mémoire utilisée :"
 
 msgctxt "#31028"
 msgid "Move Left"
-msgstr "Déplacer à Gauche"
+msgstr "Déplacer à gauche"
 
 msgctxt "#31029"
 msgid "Move Right"
-msgstr "Déplacer à Droite"
+msgstr "Déplacer à droite"
 
 msgctxt "#31030"
 msgid "AM"
@@ -142,7 +149,7 @@ msgstr "Connexion"
 
 msgctxt "#31033"
 msgid "Channel Group"
-msgstr "Groupe des Chaînes"
+msgstr "Groupe de chaînes"
 
 msgctxt "#31034"
 msgid "Teletext"
@@ -176,6 +183,160 @@ msgctxt "#31041"
 msgid "Creator"
 msgstr "Créateur"
 
+msgctxt "#31042"
+msgid "Always show plot"
+msgstr "Toujours montrer le résumé"
+
+msgctxt "#31043"
+msgid "Transparent background"
+msgstr "Arrière-plan transparent"
+
+msgctxt "#31044"
+msgid "Play all recently played albums"
+msgstr "Lire tous les albums récents"
+
+msgctxt "#31045"
+msgid "Enable Home Menu Arrow Up/Down Animation"
+msgstr "Activer l'animation des flèches Haut/Bas du menu d'accueil"
+
+msgctxt "#31046"
+msgid "Enable Home Widgets Arrow Left/Right Animation"
+msgstr "Activer l'animation des flèches Gauche/Droite du menu d'accueil"
+
+msgctxt "#31047"
+msgid "Automatically download Extra Artwork if a Library has been updated"
+msgstr "Téléchargement auto des images supplémentaires si la médiathèque a été mise à jour"
+
+msgctxt "#31048"
+msgid "Manage Menu Items"
+msgstr "Gérer les éléments du menu"
+
+msgctxt "#31049"
+msgid "Manage Widgets"
+msgstr "Gérer les widgets"
+
+msgctxt "#31050"
+msgid "Manage Sub Menu of"
+msgstr "Gérer les sous-menus de"
+
+msgctxt "#31051"
+msgid "Use Extra-Fanarts"
+msgstr "Utiliser les fanarts supplémentaires"
+
+msgctxt "#31052"
+msgid "Amazon Prime"
+msgstr "Amazon Prime"
+
+msgctxt "#31053"
+msgid "[COLOR=55white](AddonScriptorDE's Plugin)[/COLOR]"
+msgstr "[COLOR=55white](Plugin AddonScriptorDE)[/COLOR]"
+
+msgctxt "#31054"
+msgid "[COLOR=55white](Sandmanns's Plugin)[/COLOR]"
+msgstr "[COLOR=55white](Plugin Sandmanns)[/COLOR]"
+
+msgctxt "#31055"
+msgid "Watchlist"
+msgstr "Liste de surveillance"
+
+msgctxt "#31056"
+msgid "Popular"
+msgstr "Populaire"
+
+msgctxt "#31057"
+msgid "New at Amazon"
+msgstr "Nouveau chez Amazon"
+
+msgctxt "#31058"
+msgid "Widget"
+msgstr "Widget"
+
+msgctxt "#31059"
+msgid "Scan for new videos"
+msgstr "Scanner nouvelles vidéos"
+
+msgctxt "#31060"
+msgid "Scan for new music"
+msgstr "Scanner nouvelles musiques"
+
+msgctxt "#31061"
+msgid "Cleanup video database"
+msgstr "Nettoyer la médiathèque vidéo"
+
+msgctxt "#31062"
+msgid "Cleanup music database"
+msgstr "Nettoyer la médiathèque musicale"
+
+msgctxt "#31063"
+msgid ""
+"Force use of local stored season art [COLOR=55white](eg: seasonXX-"
+"poster.jpg)[/COLOR]"
+msgstr "Forcer l'utilisation de l'affiche locale pour la saison [COLOR=55white](ex : seasonXX-poster.jpg)[/COLOR]"
+
+msgctxt "#31064"
+msgid "Enable Library Refresh Button on the Home Screen"
+msgstr "Activer le bouton de MàJ médiathèque sur l'écran d'accueil"
+
+msgctxt "#31065"
+msgid "Enabled"
+msgstr "Activé"
+
+msgctxt "#31066"
+msgid "Disabled"
+msgstr "Désactivé"
+
+msgctxt "#31067"
+msgid "Enable Aurora-Pulse-Bar behind the Mainmenu"
+msgstr "Activer Aurora-Pulse-Bar derrière le menu principal"
+
+msgctxt "#31068"
+msgid "Online Video Information"
+msgstr "Infos vidéo en ligne"
+
+msgctxt "#31069"
+msgid "Misc"
+msgstr "Divers"
+
+msgctxt "#31070"
+msgid "Video Info"
+msgstr "Infos vidéo"
+
+msgctxt "#31071"
+msgid "Similar"
+msgstr "Similaire"
+
+msgctxt "#31072"
+msgid "Crew"
+msgstr "Equipe"
+
+msgctxt "#31073"
+msgid "Cast"
+msgstr "Acteurs"
+
+msgctxt "#31074"
+msgid "About"
+msgstr "A propos"
+
+msgctxt "#31075"
+msgid "Recommended by TMDB"
+msgstr "Recommandé par TMDB"
+
+msgctxt "#31076"
+msgid "Photos"
+msgstr "Photos"
+
+msgctxt "#31077"
+msgid "Online Videos"
+msgstr "Vidéos en ligne"
+
+msgctxt "#31078"
+msgid "TV Show Roles"
+msgstr "Rôles séries"
+
+msgctxt "#31079"
+msgid "Movie Actor Roles"
+msgstr "Rôles films"
+
 msgctxt "#31080"
 msgid "Slide"
 msgstr "Diaporama"
@@ -202,7 +363,7 @@ msgstr "Vignettes"
 
 msgctxt "#31086"
 msgid "Banner List"
-msgstr "Bannière"
+msgstr "Bannières"
 
 msgctxt "#31087"
 msgid "VideoWall Fanart"
@@ -212,21 +373,41 @@ msgctxt "#31088"
 msgid "List Wall"
 msgstr "Mur-liste"
 
+msgctxt "#31089"
+msgid "LoveFilm"
+msgstr "LoveFilm"
+
+msgctxt "#31090"
+msgid "Sets & Seasons"
+msgstr "Sets & saisons"
+
+msgctxt "#31091"
+msgid "Episodes"
+msgstr "Episodes"
+
+msgctxt "#31092"
+msgid "Auto Update IMDb Top250 & Movie Ratings"
+msgstr "MàJ auto IMDb Top250 & Evaluation films"
+
+msgctxt "#31093"
+msgid "Update IMDb Top250 & Movie Ratings"
+msgstr "Mettre à jour IMDb Top250 & Evaluation films"
+
 msgctxt "#31094"
-msgid "Choose Movies Widget"
-msgstr "Choisir le widget Films"
+msgid "Movies Widget"
+msgstr "Widget Films"
 
 msgctxt "#31095"
-msgid "Choose TV Shows Widget"
-msgstr "Choisir le widget Séries TV"
+msgid "TV Shows Widget"
+msgstr "Widget Séries"
 
 msgctxt "#31096"
-msgid "Choose Music Widget"
-msgstr "Choisir le widget Musique"
+msgid "Music Widget"
+msgstr "Widget Musique"
 
 msgctxt "#31097"
-msgid "Choose RSS Video Feed Widget"
-msgstr "Choisir le widget RSS Vidéo"
+msgid "RSS Video Feed Widget"
+msgstr "Widget RSS Vidéo"
 
 msgctxt "#31098"
 msgid "Show Small Thumbs"
@@ -236,17 +417,101 @@ msgctxt "#31099"
 msgid "Show Big Thumbs"
 msgstr "Afficher les grandes pochettes"
 
+msgctxt "#31100"
+msgid "Unknown Genre"
+msgstr "Genre inconnu"
+
 msgctxt "#31101"
 msgid "Show Weather Info"
 msgstr "Afficher les infos météo"
 
 msgctxt "#31102"
 msgid "Hide Now Playing Video Info"
-msgstr "Masquer les infos de lecture en cours Vidéos"
+msgstr "Masquer les infos de lecture en cours Vidéo"
 
 msgctxt "#31103"
 msgid "Hide Now Playing Music Info"
 msgstr "Masquer les infos de lecture en cours Musique"
+
+msgctxt "#31104"
+msgid "Hide Now Playing Cover on Home"
+msgstr "Masquer les infos de lecture en cours sur l'accueil"
+
+msgctxt "#31105"
+msgid "Amazon [COLOR=55white](Sandmann's Plugin)[/COLOR]"
+msgstr "Amazon [COLOR=55white](Plugin Sandmann)[/COLOR]"
+
+msgctxt "#31106"
+msgid "Amazon [COLOR=55white](AddonScriptorDE's Plugin)[/COLOR]"
+msgstr "Amazon [COLOR=55white](Plugin AddonScriptorDE)[/COLOR]"
+
+msgctxt "#31107"
+msgid "Released"
+msgstr "Date de sortie"
+
+msgctxt "#31108"
+msgid "Enable Kodi Icon in the Upper-Left Corner"
+msgstr "Afficher l'icone Kodi dans le coin supérieur gauche"
+
+msgctxt "#31109"
+msgid "Edit Menu/Assign Widgets"
+msgstr "Editer le menu / Assigner les widgets"
+
+msgctxt "#31110"
+msgid "Animations"
+msgstr "Animations"
+
+msgctxt "#31111"
+msgid "Scroll down for more options"
+msgstr "Faire défiler pour plus d'options"
+
+msgctxt "#31112"
+msgid "Popular Right Now"
+msgstr "Populaires actuellement"
+
+msgctxt "#31113"
+msgid "New Uploaded Videos"
+msgstr "Nouvelles vidéos téléversées"
+
+msgctxt "#31114"
+msgid "My Channel"
+msgstr "Ma chaîne"
+
+msgctxt "#31115"
+msgid "My Subscriptions"
+msgstr "Mes abonnements"
+
+msgctxt "#31116"
+msgid "Diffuse Widget Fanarts"
+msgstr "Assombrir les fanarts de widget"
+
+msgctxt "#31117"
+msgid "Handwritten Disc Art"
+msgstr "Image disque écrite à la main"
+
+msgctxt "#31118"
+msgid "Show Disc Art"
+msgstr "Montrer l'image disque"
+
+msgctxt "#31119"
+msgid "Watched Flag Indicator"
+msgstr "Indicateur du drapeau Vu"
+
+msgctxt "#31120"
+msgid "Unwatched"
+msgstr "Non vu"
+
+msgctxt "#31121"
+msgid "Watched"
+msgstr "Vu"
+
+msgctxt "#31122"
+msgid "None"
+msgstr "Aucun"
+
+msgctxt "#31123"
+msgid "Watched Episodes"
+msgstr "Episodes vus"
 
 msgctxt "#31124"
 msgid "Flashing Lights"
@@ -254,19 +519,35 @@ msgstr "Lumières clignotantes"
 
 msgctxt "#31125"
 msgid "Edit Info"
-msgstr "Éditer infos"
+msgstr "Editer infos"
+
+msgctxt "#31126"
+msgid "Watched Movies"
+msgstr "Films vus"
+
+msgctxt "#31127"
+msgid "Show Libary Totals in the Menu"
+msgstr "Montrer les totaux de la médiathèque dans le menu"
+
+msgctxt "#31128"
+msgid "Loading. Please wait."
+msgstr "Chargement. Veuillez patienter."
+
+msgctxt "#31129"
+msgid "item"
+msgstr "objet"
 
 msgctxt "#31130"
 msgid "Disable Fanart in all sections"
-msgstr "Désactiver les Fanarts dans toutes les sections"
+msgstr "Désactiver les fanarts dans toutes les sections"
 
 msgctxt "#31131"
 msgid "Show Only on Home Screen"
-msgstr "Afficher uniquement sur l'Accueil"
+msgstr "Afficher uniquement sur l'accueil"
 
 msgctxt "#31132"
 msgid "Hide Background Video"
-msgstr "Masquer l'arrière-plan video"
+msgstr "Masquer la vidéo en arrière-plan"
 
 msgctxt "#31133"
 msgid "Custom Global Background"
@@ -274,19 +555,23 @@ msgstr "Fond d'écran global personnalisé"
 
 msgctxt "#31134"
 msgid "Complete"
-msgstr "Complet"
+msgstr "Terminé"
 
 msgctxt "#31135"
 msgid "Single Image"
-msgstr "Single Image"
+msgstr "Image unique"
 
 msgctxt "#31136"
 msgid "Multi Image"
-msgstr "Multi Image"
+msgstr "Images multiples"
 
 msgctxt "#31137"
 msgid "Enable Notifications"
-msgstr "Activer les Notifications"
+msgstr "Activer les notifications"
+
+msgctxt "#31138"
+msgid "TuneIn Radio"
+msgstr "TuneIn Radio"
 
 msgctxt "#31139"
 msgid "Enable Add-ons Notifications"
@@ -294,7 +579,7 @@ msgstr "Activer les notifications d'extensions"
 
 msgctxt "#31140"
 msgid "Enable Weather Alerts Notifications"
-msgstr "Activer les notifications d'alertes Météo"
+msgstr "Activer les notifications d'alertes météo"
 
 msgctxt "#31141"
 msgid "Choose Lyrics Add-on"
@@ -305,40 +590,50 @@ msgid "Choose Subtitles Add-on"
 msgstr "Sélectionnez l'extension Sous-titres"
 
 msgctxt "#31143"
-msgid "Enable NextAired Info on TV Shows [COLOR=55white](Requires Next Aired Add-on)[/COLOR]"
-msgstr "Activer NextAired Info dans les Séries-TV [COLOR=55white](nécessite l'extension Next Aired)[/COLOR]"
+msgid ""
+"Enable NextAired Info on TV Shows [COLOR=55white](Requires Next Aired Add-"
+"on)[/COLOR]"
+msgstr "Activer NextAired Info dans les séries [COLOR=55white](nécessite l'extension Next Aired)[/COLOR]"
 
 msgctxt "#31144"
-msgid "Enable Music Theme on TV Shows [COLOR=55white](Requires TV Tunes Add-on)[/COLOR]"
-msgstr "Activer les génériques TV dans les Séries-TV [COLOR=55white](nécessite l'extension TV Tunes)[/COLOR]"
+msgid ""
+"Enable Music Theme on TV Shows [COLOR=55white](Requires TV Tunes Add-"
+"on)[/COLOR]"
+msgstr "Activer les génériques TV dans les séries [COLOR=55white](nécessite l'extension TV Tunes)[/COLOR]"
 
 msgctxt "#31145"
 msgid "Download music themes for all TV Shows"
-msgstr "Télécharger les génériques TV pour toutes les Séries-TV"
+msgstr "Télécharger les génériques TV pour toutes les séries"
 
 msgctxt "#31146"
 msgid "Download [COLOR=selected]logo.png[/COLOR] for all TV Shows"
-msgstr "Télécharger [COLOR=selected]logo.png[/COLOR] pour toutes les Séries-TV"
+msgstr "Télécharger [COLOR=selected]logo.png[/COLOR] pour toutes les séries"
 
 msgctxt "#31147"
 msgid "Download [COLOR=selected]clearart.png[/COLOR] for all TV Shows"
-msgstr "Télécharger [COLOR=selected]clearart.png[/COLOR] pour toutes les Séries-TV"
+msgstr "Télécharger [COLOR=selected]clearart.png[/COLOR] pour toutes les séries"
 
 msgctxt "#31148"
 msgid "Download [COLOR=selected]landscape.jpg[/COLOR] for all TV Shows"
-msgstr "Télécharger [COLOR=selected]landscape.jpg[/COLOR] pour toutes les Séries-TV"
+msgstr "Télécharger [COLOR=selected]landscape.jpg[/COLOR] pour toutes les séries"
 
 msgctxt "#31149"
 msgid "Download [COLOR=selected]banner.jpg[/COLOR] for all TV Shows"
-msgstr "Télécharger [COLOR=selected]banner.jpg[/COLOR] pour toutes les Séries-TV"
+msgstr "Télécharger [COLOR=selected]banner.jpg[/COLOR] pour toutes les séries"
 
 msgctxt "#31150"
 msgid "Download [COLOR=selected]poster.jpg[/COLOR] for all TV Shows"
-msgstr "Télécharger [COLOR=selected]poster.jpg[/COLOR] pour toutes les Séries-TV"
+msgstr "Télécharger [COLOR=selected]poster.jpg[/COLOR] pour toutes les séries"
 
 msgctxt "#31151"
 msgid "Show RSS feed in whole skin"
 msgstr "Afficher les flux RSS dans toutes les fenêtres"
+
+msgctxt "#31152"
+msgid ""
+"Download [COLOR=selected]season art[/COLOR] for all TV Shows (enable local "
+"files!)"
+msgstr "Télécharger [COLOR=selected]l'affiche de saison[/COLOR] pour toutes les séries (activer les fichiers locaux !)"
 
 msgctxt "#31153"
 msgid "Enable login screen"
@@ -346,11 +641,15 @@ msgstr "Activer l'écran de connexion"
 
 msgctxt "#31154"
 msgid "Choose Trailers Add-on"
-msgstr "Choisissez une extension pour les bande-annonces"
+msgstr "Choisissez une extension pour les bandes annonces"
+
+msgctxt "#31155"
+msgid "Collection"
+msgstr "Collection"
 
 msgctxt "#31156"
 msgid "Manage Video Views"
-msgstr "Gérer les vues Vidéos"
+msgstr "Gérer les vues Vidéo"
 
 msgctxt "#31157"
 msgid "Manage Music Views"
@@ -361,24 +660,24 @@ msgid "Views"
 msgstr "Vues"
 
 msgctxt "#31159"
-msgid "Show FullScreenInfo instead of the SeekBar"
-msgstr "Afficher les infos en plein écran au lieu de la barre de recherche"
+msgid "Show SeekBar instead of the fullscreen info for videos"
+msgstr "Afficher la barre de recherche au lieu des infos en plein écran"
 
 msgctxt "#31160"
 msgid "Download [COLOR=selected]logo.png[/COLOR] for all Movies"
 msgstr "Télécharger [COLOR=selected]logo.png[/COLOR] pour tous les films"
 
 msgctxt "#31161"
-msgid "Show Library Totals"
-msgstr "Afficher les totaux de la vidéothèque"
+msgid "Show Library Totals in the Top Menu"
+msgstr "Afficher les totaux de la médiathèque dans le menu supérieur"
 
 msgctxt "#31162"
 msgid "Enable Kiosk Mode"
-msgstr "Activer le mode Kiosk"
+msgstr "Activer le mode Kiosque"
 
 msgctxt "#31163"
 msgid "Cast info"
-msgstr "Info du casting"
+msgstr "Infos acteurs"
 
 msgctxt "#31164"
 msgid "Press DOWN for more info"
@@ -402,16 +701,99 @@ msgstr "RàZ du niveau"
 
 msgctxt "#31169"
 msgid "Reset Skin"
-msgstr "Réinitialiser Skin"
+msgstr "Réinitialiser le thème"
 
 msgctxt "#31170"
-msgid "All Skin Settings will revert back to their default state.[CR]Are you sure you want to proceed ?"
+msgid ""
+"All Skin Settings will revert back to their default state.[CR]Are you sure "
+"you want to proceed ?"
 msgstr "Tous les paramètres du thème seront remis à leur état d'origine.[CR]Voulez-vous continuer ?"
 
 msgctxt "#31171"
 msgid "Update Art"
-msgstr "Mettre à jour les Art"
+msgstr "Mise à jour des images"
 
+msgctxt "#31172"
+msgid "Empty Label"
+msgstr "Etiquette vide"
+
+msgctxt "#31173"
+msgid "Custom Widgets #1"
+msgstr "Widget personnalisé #1"
+
+msgctxt "#31174"
+msgid "Custom Widgets #2"
+msgstr "Widget personnalisé #2"
+
+msgctxt "#31175"
+msgid "Custom Widgets #3"
+msgstr "Widget personnalisé #3"
+
+msgctxt "#31176"
+msgid "Custom Widgets #4"
+msgstr "Widget personnalisé #4"
+
+msgctxt "#31177"
+msgid "Manage [COLOR=selected]Custom Widgets[/COLOR]"
+msgstr "Gérer les [COLOR=selected]Widgets personnalisés[/COLOR]"
+
+msgctxt "#31178"
+msgid "Manage [COLOR=selected]Common Widgets[/COLOR]"
+msgstr "Gérer les [COLOR=selected]Widgets communs[/COLOR]"
+
+msgctxt "#31179"
+msgid "Manage Views"
+msgstr "Gérer les vues"
+
+msgctxt "#31180"
+msgid "Library Tools"
+msgstr "Outils médiathèque"
+
+msgctxt "#31181"
+msgid "Download Art"
+msgstr "Télécharger images"
+
+msgctxt "#31182"
+msgid "Last Check for Updates"
+msgstr "Dernière mise à jour"
+
+msgctxt "#31183"
+msgid "Background Animation"
+msgstr "Animation d'arrière-plan"
+
+msgctxt "#31184"
+msgid "Global"
+msgstr "Global"
+
+msgctxt "#31185"
+msgid "Only Home Screen"
+msgstr "Seulement l'écran d'accueil"
+
+msgctxt "#31186"
+msgid "Only Windows & Dialogs"
+msgstr "Seulement les fenêtres et les dialogues"
+
+msgctxt "#31187"
+msgid "Top 250"
+msgstr "Top 250"
+
+msgctxt "#31188"
+msgid "Movie Ratings"
+msgstr "Evaluations films"
+
+msgctxt "#31189"
+msgid "MPAA"
+msgstr "MPAA"
+
+msgctxt "#31190"
+msgid "Update MPAA Ratings"
+msgstr "Mise à jour évaluations MPAA"
+
+msgctxt "#31191"
+msgid "Update Settings"
+msgstr "Mise à jour réglages"
+
+#: empty strings from id 31192 to 31199 scripts labels
 msgctxt "#31200"
 msgid "My Movies"
 msgstr "Mes films"
@@ -430,7 +812,7 @@ msgstr "Nouvelle recherche"
 
 msgctxt "#31204"
 msgid "Please check your weather settings"
-msgstr "Merci de vérifier les paramètres Météo"
+msgstr "Merci de vérifier vos paramètres Météo"
 
 msgctxt "#31205"
 msgid "Browse the most recently added movies"
@@ -446,15 +828,15 @@ msgstr "Parcourir les albums récemment ajoutés"
 
 msgctxt "#31208"
 msgid "Browse all movies in progress"
-msgstr "Parcourir tous les films en cours de lecture"
+msgstr "Parcourir tous les films en cours"
 
 msgctxt "#31209"
 msgid "Browse all shows in progress"
-msgstr "Parcourir toutes les Séries-TV en cours de lecture"
+msgstr "Parcourir toutes les séries en cours"
 
 msgctxt "#31210"
 msgid "Browse all music in progress"
-msgstr "Parcourir tous les albums en cours de lecture"
+msgstr "Parcourir tous les albums en cours"
 
 msgctxt "#31211"
 msgid "Browse all movies in your library"
@@ -462,7 +844,7 @@ msgstr "Parcourir tous les films de votre médiathèque"
 
 msgctxt "#31212"
 msgid "Browse all shows in your library"
-msgstr "Parcourir toutes les Séries-TV de votre médiathèque"
+msgstr "Parcourir toutes les séries de votre médiathèque"
 
 msgctxt "#31213"
 msgid "Browse all music in your library"
@@ -498,11 +880,11 @@ msgstr "Infos supplémentaires"
 
 msgctxt "#31221"
 msgid "Get Extra Art"
-msgstr "Récupérer Extra Art"
+msgstr "Récupérer images supplémentaires"
 
 msgctxt "#31222"
 msgid "Get TV Tune"
-msgstr "Récupérer Génériques TV"
+msgstr "Récupérer génériques TV"
 
 msgctxt "#31223"
 msgid "36 Hour Forecast"
@@ -514,7 +896,7 @@ msgstr "Prévisions heure par heure"
 
 msgctxt "#31225"
 msgid "Weekend Forecast"
-msgstr "Prévisions pour le weekend"
+msgstr "Prévisions pour le week-end"
 
 msgctxt "#31226"
 msgid "10 Days Forecast"
@@ -538,15 +920,19 @@ msgstr "Fournisseur de données"
 
 msgctxt "#31231"
 msgid "Max Humidity"
-msgstr "Humidité Max"
+msgstr "Humidité maxi"
 
 msgctxt "#31232"
 msgid "Min Humidity"
-msgstr "Humidité Min"
+msgstr "Humidité mini"
 
 msgctxt "#31233"
 msgid "Chance of Precipitation"
 msgstr "Risque de pluie"
+
+msgctxt "#31234"
+msgid "Person"
+msgstr "Personne"
 
 msgctxt "#31235"
 msgid "Current Forecast"
@@ -562,7 +948,7 @@ msgstr "Vue"
 
 msgctxt "#31238"
 msgid "No Shows Airing Today"
-msgstr "Aucune Série diffusé aujourd'hui"
+msgstr "Aucune série diffusée aujourd'hui"
 
 msgctxt "#31239"
 msgid "Shows Listed"
@@ -574,15 +960,15 @@ msgstr "Séries diffusées aujourd'hui"
 
 msgctxt "#31241"
 msgid "Recently Added Movies"
-msgstr "Films Ajoutés Récemment"
+msgstr "Films récemment ajoutés"
 
 msgctxt "#31242"
 msgid "Recently Added TV Shows"
-msgstr "Série TV Récemment Ajoutées"
+msgstr "Séries récemment ajoutées"
 
 msgctxt "#31243"
 msgid "Recently Added Music"
-msgstr "Musiques Récemment Ajoutées"
+msgstr "Musiques récemment ajoutées"
 
 msgctxt "#31244"
 msgid "New Movies"
@@ -594,7 +980,7 @@ msgstr "Nouvelles séries"
 
 msgctxt "#31246"
 msgid "New Music"
-msgstr "Nouvelle musique"
+msgstr "Nouvelles musiques"
 
 msgctxt "#31247"
 msgid "Random Movies"
@@ -606,15 +992,15 @@ msgstr "Séries aléatoires"
 
 msgctxt "#31249"
 msgid "Random Music"
-msgstr "Musique aléatoire"
+msgstr "Musiques aléatoires"
 
 msgctxt "#31250"
 msgid "All Movies"
-msgstr "Tous les Films"
+msgstr "Tous les films"
 
 msgctxt "#31251"
 msgid "All TV Shows"
-msgstr "Toutes les Séries TV"
+msgstr "Toutes les séries"
 
 msgctxt "#31252"
 msgid "All Music"
@@ -634,7 +1020,7 @@ msgstr "Flux RSS Vidéos"
 
 msgctxt "#31256"
 msgid "In Cinemas Now"
-msgstr "Au cinéma actuellement"
+msgstr "Dans les salles"
 
 msgctxt "#31257"
 msgid "Trending Movies"
@@ -642,24 +1028,61 @@ msgstr "Films du moment"
 
 msgctxt "#31258"
 msgid "Trending  TV Shows"
-msgstr "Séries TV du moment"
+msgstr "Séries du moment"
 
 msgctxt "#31259"
 msgid "Top Artists"
 msgstr "Top artistes"
 
 msgctxt "#31260"
-msgid "In Progress Movies"
+msgid "Movies In Progress"
 msgstr "Films en cours"
 
 msgctxt "#31261"
-msgid "In Progress TV Shows"
-msgstr "Séries TV en cours"
+msgid "TV Shows In Progress"
+msgstr "Séries en cours"
 
 msgctxt "#31262"
-msgid "In Progress Music"
+msgid "Music In Progress"
 msgstr "Musique en cours"
 
+msgctxt "#31263"
+msgid "Unwatched Movies"
+msgstr "Films non vus"
+
+msgctxt "#31264"
+msgid "Unwatched TV Shows"
+msgstr "Séries non vues"
+
+msgctxt "#31265"
+msgid "Unwatched Episodes"
+msgstr "Episodes non vus"
+
+msgctxt "#31266"
+msgid "Fanart"
+msgstr "Fanart"
+
+msgctxt "#31267"
+msgid "YouTube Channel"
+msgstr "Chaîne YouTube"
+
+msgctxt "#31268"
+msgid "Thumb List"
+msgstr "Liste vignettes"
+
+msgctxt "#31269"
+msgid "My IMDb Top250 Movies"
+msgstr "Mes films IMDb Top250"
+
+msgctxt "#31270"
+msgid "Recently watched episodes"
+msgstr "Episodes vus récemment"
+
+msgctxt "#31271"
+msgid "Enable Widget Content Switch Function"
+msgstr "Activer la fonction de changement de widget"
+
+#: empty strings from id 31272 to 31279 Playlist Editor labels
 msgctxt "#31280"
 msgid "Open Playlist"
 msgstr "Ouvrir Playliste"
@@ -674,16 +1097,49 @@ msgstr "Fermer Playliste"
 
 msgctxt "#31283"
 msgid "System Music Files"
-msgstr "Fichiers de Musique Système"
+msgstr "Fichiers de musique système"
 
 msgctxt "#31284"
 msgid "Current Playlist"
-msgstr "Playliste Actuelle"
+msgstr "Playliste actuelle"
 
 msgctxt "#31285"
 msgid "Playlist Options"
-msgstr "Options de playliste"
+msgstr "Options de Playliste"
 
+msgctxt "#31286"
+msgid "Recent Streams"
+msgstr "Flux récents"
+
+msgctxt "#31287"
+msgid "Favourite Streams"
+msgstr "Flux favoris"
+
+msgctxt "#31288"
+msgid "TuneIn Radio Widget"
+msgstr "Widget TuneIn Radio"
+
+msgctxt "#31289"
+msgid "Toggle debug grid"
+msgstr "Activer la grille de débogage"
+
+msgctxt "#31290"
+msgid "Toggle debug info"
+msgstr "Activer les infos de débogage"
+
+msgctxt "#31291"
+msgid "Enable skin debug tools"
+msgstr "Activer les outils de débogage du thème"
+
+msgctxt "#31292"
+msgid "Local Streams"
+msgstr "Flux locaux"
+
+msgctxt "#31293"
+msgid "Default Addon Fanart [COLOR=55white](if available)[/COLOR]"
+msgstr "Extension fanart par défaut [COLOR=55white](si disponible)[/COLOR]"
+
+#: empty strings from id 31293 to 31299 video and Music OSD Labels
 msgctxt "#31300"
 msgid "Muted"
 msgstr "En sourdine"
@@ -698,11 +1154,11 @@ msgstr "Pause"
 
 msgctxt "#31303"
 msgid "Rewinding:"
-msgstr "Retour rapide"
+msgstr "Retour rapide :"
 
 msgctxt "#31304"
 msgid "Forwarding:"
-msgstr "Avance Rapide"
+msgstr "Avance Rapide :"
 
 msgctxt "#31305"
 msgid "Finish Time:"
@@ -714,7 +1170,7 @@ msgstr "Arrière-plan personnalisé"
 
 msgctxt "#31307"
 msgid "Enable Visualization"
-msgstr "Activer la Visualisation"
+msgstr "Activer la visualisation"
 
 msgctxt "#31308"
 msgid "Visualization Type"
@@ -730,11 +1186,11 @@ msgstr "Options de visualisation"
 
 msgctxt "#31311"
 msgid "Enable Music Fanart SlideShow"
-msgstr "Activer le Diaporama des fanarts de musique"
+msgstr "Activer le diaporama des fanarts de musique"
 
 msgctxt "#31312"
 msgid "Enable Artist SlideShow"
-msgstr "Activer le Diaporama des fanarts artiste"
+msgstr "Activer le diaporama des fanarts artistes"
 
 msgctxt "#31313"
 msgid "Animated Backgrounds"
@@ -752,37 +1208,43 @@ msgctxt "#31316"
 msgid "Now Playing"
 msgstr "En cours de lecture"
 
+msgctxt "#31317"
+msgid "Amiblight Compatiblity Mode"
+msgstr "Mode de compatibilité Ambilight"
+
+#: empty strings from id 31318 to 31349 PVR
 msgctxt "#31350"
 msgid "Available Groups"
 msgstr "Groupes disponibles"
 
 msgctxt "#31351"
 msgid "Add Group"
-msgstr "Ajouter un Groupe"
+msgstr "Ajouter un groupe"
 
 msgctxt "#31352"
 msgid "Rename Group"
-msgstr "Renommer le Groupe"
+msgstr "Renommer le groupe"
 
 msgctxt "#31353"
 msgid "Delete Group"
-msgstr "Supprimer le Groupe"
+msgstr "Supprimer le groupe"
 
+#: empty strings from id 31354 to 31369 Quick Navigation labels
 msgctxt "#31370"
 msgid "Update Video Library"
-msgstr "Mise à jour médiathèque"
+msgstr "Mise à jour médiathèque vidéo"
 
 msgctxt "#31371"
 msgid "Update Music Library"
-msgstr "Mise à jour bibliothèque musical"
+msgstr "Mise à jour médiathèque musicale"
 
 msgctxt "#31372"
 msgid "Clean Video Library"
-msgstr "Nettoyage bibliothèque vidéo"
+msgstr "Nettoyage médiathèque vidéo"
 
 msgctxt "#31373"
 msgid "Clean Music Library"
-msgstr "Nettoyage bibliothèque musicale"
+msgstr "Nettoyage médiathèque musicale"
 
 msgctxt "#31374"
 msgid "Quick Navigation"
@@ -794,27 +1256,37 @@ msgstr "Désactiver la navigation rapide"
 
 msgctxt "#31376"
 msgid "Default QuickNav Items"
-msgstr "Elements QuickNav par défaut"
+msgstr "Eléments QuickNav par défaut"
 
 msgctxt "#31377"
 msgid "Custom QuickNav Items"
-msgstr "Elements QuickNav customisé"
+msgstr "Eléments QuickNav personnalisés"
 
 msgctxt "#31378"
 msgid "Custom Item"
-msgstr "Élément personnalisé"
+msgstr "Elément personnalisé"
 
 msgctxt "#31379"
-msgid "Custom Items"
-msgstr "Elements customisés"
+msgid "Home & Menu"
+msgstr "Accueil & Menu"
 
+msgctxt "#31380"
+msgid "Custom Widgets"
+msgstr "Widget personnalisé"
+
+#: empty strings from id 31381 to 31408 settings Category Description & Header
+#: Labels
 msgctxt "#31409"
-msgid "Choose from a variety of settings and customization options to make \"Bello\" fit your needs and taste."
-msgstr "Choisissez parmi des paramètres et des options de personnalisation afin qui \"Bello\" s'adapte à vos besoins."
+msgid ""
+"Choose from a variety of settings and customization options to make \"Bello "
+"Fredo\" fit your needs and taste."
+msgstr "Choisissez parmi des paramètres et des options de personnalisation afin que \\\"Bello Fredo\\\" s'adapte à vos besoins."
 
 msgctxt "#31410"
-msgid "With Kodi you can have several profiles and the auto login option if the login screen is disabled."
-msgstr "Avec Kodi vous pouvez avoir plusieurs profils si l'option Connexion automatique est désactivée."
+msgid ""
+"With Kodi you can have several profiles and the auto login option if the "
+"login screen is disabled."
+msgstr "Avec Kodi vous pouvez avoir plusieurs profils et l'option Connexion automatique si l'écran de connexion est désactivé."
 
 msgctxt "#31411"
 msgid "Configure Appearance Settings"
@@ -826,19 +1298,19 @@ msgstr "Configurer les réglages vidéo"
 
 msgctxt "#31413"
 msgid "Configure Live TV Settings"
-msgstr "Configurer les réglages de la télévision en direct"
+msgstr "Configurer les réglages TV en direct"
 
 msgctxt "#31414"
 msgid "Configure Music Settings"
-msgstr "Configurer les réglages de la musique"
+msgstr "Configurer les réglages musicaux"
 
 msgctxt "#31415"
 msgid "Configure Pictures Settings"
-msgstr "Configurer les réglages des images"
+msgstr "Configurer les réglages images"
 
 msgctxt "#31416"
 msgid "Configure Weather Settings"
-msgstr "Configurer les réglages de la météo"
+msgstr "Configurer les réglages météo"
 
 msgctxt "#31417"
 msgid "Configure Services Settings"
@@ -846,7 +1318,7 @@ msgstr "Configurer les réglages des services"
 
 msgctxt "#31418"
 msgid "Configure System Settings"
-msgstr "Configurer les réglages systèmes"
+msgstr "Configurer les réglages système"
 
 msgctxt "#31419"
 msgid "Configure Profiles Settings"
@@ -856,10 +1328,19 @@ msgctxt "#31420"
 msgid "Configure Skin Settings"
 msgstr "Configurer les réglages des thèmes"
 
+msgctxt "#31421"
+msgid "Library"
+msgstr "Médiathèque"
+
+#: empty strings from id 31422 to 31430 Help Messages
 msgctxt "#31431"
-msgid "You haven't added any items to Favorites yet.[CR]Highlight an item, and choose \"Add to favorites\" from the context menu."
-msgstr "Vous n'avez pas ajouté d'éléments aux favoris actuellement.[CR]Sélectionné un élément, et choisissez \"Ajouter aux favoris\" dans le menu contextuel."
+msgid ""
+"You haven't added any items to Favorites yet.[CR]Highlight an item, and "
+"choose \"Add to favorites\" from the context menu."
+msgstr "Vous n'avez pas encore ajouté d'élément aux favoris.[CR]Sélectionnez un élément et choisissez \\\"Ajouter aux favoris\\\" dans le menu contextuel."
 
 msgctxt "#31432"
-msgid "Mouse usage is not supported.[CR]Please disable it from Settings>System>Input Devices>[CR]\"Enable mouse and Touch Screen support\"."
-msgstr "L'utilisation de la souris n'est pas supporté.[CR]Merci de désactiver son usage dans Paramètres>Systèmes>Périphériques>[CR]\"Activer la souris\""
+msgid ""
+"Mouse usage is not supported.[CR]Please disable it from "
+"Settings>System>Input Devices>[CR]\"Enable mouse and Touch Screen support\"."
+msgstr "L'utilisation de la souris n'est pas supportée.[CR]Merci de désactiver son usage dans Paramètres>Système>Périphériques>[CR]\\\"Activer le support de la souris\\\""
