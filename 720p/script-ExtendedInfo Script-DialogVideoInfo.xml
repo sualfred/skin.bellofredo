@@ -38,36 +38,41 @@
 		<!-- ================== -->
 		<!-- background -->
 		<!-- ================== --> 
+
 		<control type="group">
-			<control type="image">
-				<description>background</description>
+			<control type="group">			
 				<include>FullscreenDimensions</include>
-				<texture background="true">SKINDEFAULT.jpg</texture>
-				<include>BackgroundFade</include>	
-			</control>
-			<control type="image">
-				<description>background</description>
-				<include>FullscreenDimensions</include>
-				<texture background="true">$INFO[Window.Property(movie.fanart)]</texture>
-				<include>BackgroundFade</include>
-				<fadetime>FanartCrossfadeTime</fadetime>
-				<visible>!IsEmpty(Window.Property(movie.fanart)) + IsEmpty(Container(1350).ListItem.Property(Original))</visible>
-			</control>
-			<control type="image">
-				<description>background</description>
-				<include>FullscreenDimensions</include>
-				<texture background="true">$INFO[Window.Property(movie.set.fanart)]</texture>
-				<include>BackgroundFade</include>
-				<fadetime>FanartCrossfadeTime</fadetime>
-				<visible>!IsEmpty(Window.Property(movie.set.fanart)) + IsEmpty(Container(1350).ListItem.Property(Original))</visible>
-			</control>			
-			<control type="image">
-				<description>background</description>
-				<include>FullscreenDimensions</include>
-				<texture background="true">$INFO[Container(1350).ListItem.Property(Original)]</texture>
-				<include>BackgroundFade</include>
-				<fadetime>FanartCrossfadeTime</fadetime>
-				<visible>!IsEmpty(Container(1350).ListItem.Property(Original))</visible>
+				<include>BackgroundAnimation</include>
+				<control type="image">
+					<description>background</description>
+					<include>FullscreenDimensions</include>
+					<texture background="true">SKINDEFAULT.jpg</texture>
+					<include>BackgroundFade</include>	
+				</control>
+				<control type="image">
+					<description>background</description>
+					<include>FullscreenDimensions</include>
+					<texture background="true">$INFO[Window.Property(movie.fanart)]</texture>
+					<include>BackgroundFade</include>
+					<fadetime>FanartCrossfadeTime</fadetime>
+					<visible>!IsEmpty(Window.Property(movie.fanart)) + IsEmpty(Container(1350).ListItem.Property(Original))</visible>
+				</control>
+				<control type="image">
+					<description>background</description>
+					<include>FullscreenDimensions</include>
+					<texture background="true">$INFO[Window.Property(movie.set.fanart)]</texture>
+					<include>BackgroundFade</include>
+					<fadetime>FanartCrossfadeTime</fadetime>
+					<visible>!IsEmpty(Window.Property(movie.set.fanart)) + IsEmpty(Container(1350).ListItem.Property(Original))</visible>
+				</control>			
+				<control type="image">
+					<description>background</description>
+					<include>FullscreenDimensions</include>
+					<texture background="true">$INFO[Container(1350).ListItem.Property(Original)]</texture>
+					<include>BackgroundFade</include>
+					<fadetime>FanartCrossfadeTime</fadetime>
+					<visible>!IsEmpty(Container(1350).ListItem.Property(Original))</visible>
+				</control>
 			</control>
 			<control type="image">
 				<include>FullscreenDimensions</include>
@@ -146,9 +151,9 @@
 				<!-- Vertical Info Line -->
 				<!-- ================== --> 
 				<control type="group">
-				<top>10</top>
+					<top>10</top>
 					<control type="image">
-					<texture>info/seperator.png</texture>
+						<texture>info/seperator.png</texture>
 						<posx>330</posx>
 						<posy>54</posy>
 						<height>1</height>
@@ -157,7 +162,7 @@
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
-					<texture>info/seperator.png</texture>
+						<texture>info/seperator.png</texture>
 						<posx>330</posx>
 						<posy>110</posy>
 						<height>1</height>
@@ -166,164 +171,164 @@
 						<aspectratio>stretch</aspectratio>				
 						<visible>!StringCompare(Window.Property(type),episode)</visible>
 					</control>
-				<control type="grouplist">
-					<posx>330</posx>
-					<posy>40</posy>
-					<width>900</width>
-					<itemgap>0</itemgap>
-					<orientation>horizontal</orientation>
-					<usecontrolcoords>true</usecontrolcoords> 					
-					<visible>!StringCompare(Window.Property(type),episode)</visible>
-					<control type="group">
-						<width>60</width>
-						<control type="image">
-							<posx>0</posx>
-							<posy>22</posy>
-							<height>20</height>
-							<aspectratio align="bottom">keep</aspectratio>
-							<texture fallback="flags/mpaa/rating-nr.png">$VAR[MPAAFilmRatingExtendedInfo]</texture>
+					<control type="grouplist">
+						<posx>330</posx>
+						<posy>40</posy>
+						<width>900</width>
+						<itemgap>0</itemgap>
+						<orientation>horizontal</orientation>
+						<usecontrolcoords>true</usecontrolcoords> 					
+						<visible>!StringCompare(Window.Property(type),episode)</visible>
+						<control type="group">
+							<width>60</width>
+							<control type="image">
+								<posx>0</posx>
+								<posy>22</posy>
+								<height>20</height>
+								<aspectratio align="bottom">keep</aspectratio>
+								<texture fallback="flags/mpaa/rating-nr.png">$VAR[MPAAFilmRatingExtendedInfo]</texture>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>37</posy>
+								<height>38</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label fallback="Rating">$INFO[Window.Property(movie.mpaa)]</label>
+								<textcolor>99white</textcolor>
+								<shadowcolor>99000000</shadowcolor>
+								<font>FontSize_14B</font>
+							</control>
 						</control>
-						<control type="label">
-							<posx>0</posx>
-							<posy>37</posy>
-							<height>38</height>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label fallback="Rating">$INFO[Window.Property(movie.mpaa)]</label>
-							<textcolor>99white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_14B</font>
+						<control type="group">
+							<width>140</width>
+							<visible>!Stringcompare(Window.Property(movie.Rating),0.0) + !IsEmpty(Window.Property(movie.Rating))</visible>
+							<control type="label">
+								<posx>0</posx>
+								<posy>12</posy>
+								<height>38</height>
+								<align>center</align>
+								<label fallback="?">$INFO[Window.Property(movie.Rating)]</label>
+								<textcolor>white</textcolor>
+								<shadowcolor>99000000</shadowcolor>
+								<font>FontSize_22</font>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>37</posy>
+								<height>38</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label fallback="Rating">$INFO[Window.Property(movie.Votes),, Votes]</label>
+								<textcolor>99white</textcolor>
+								<shadowcolor>99000000</shadowcolor>
+								<font>FontSize_14B</font>
+							</control>
 						</control>
-					</control>
-					<control type="group">
-						<width>140</width>
-						<visible>!Stringcompare(Window.Property(movie.Rating),0.0) + !IsEmpty(Window.Property(movie.Rating))</visible>
-						<control type="label">
+						<control type="group">
 							<posx>0</posx>
-							<posy>12</posy>
-							<height>38</height>
-							<align>center</align>
-							<label fallback="?">$INFO[Window.Property(movie.Rating)]</label>
-							<textcolor>white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
+							<width>100</width>
+							<visible>!Stringcompare(Window.Property(movie.Duration),0) + !IsEmpty(Window.Property(movie.Duration))</visible>
+							<control type="label">
+								<posx>0</posx>
+								<posy>12</posy>
+								<height>38</height>
+								<align>center</align>
+								<label>$INFO[Window.Property(movie.Duration)]</label>
+								<textcolor>white</textcolor>
+								<shadowcolor>99000000</shadowcolor>
+								<font>FontSize_22</font>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>37</posy>
+								<height>38</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>Minutes</label>
+								<textcolor>99white</textcolor>
+								<shadowcolor>99000000</shadowcolor>
+								<font>FontSize_14B</font>
+							</control>
 						</control>
-						<control type="label">
+						<control type="group">
+							<width>160</width>
+							<visible>!IsEmpty(Window.Property(movie.ReleaseDate))</visible>
+							<control type="label">
+								<posx>0</posx>
+								<posy>12</posy>
+								<height>38</height>
+								<align>center</align>
+								<label fallback="?">$INFO[Window.Property(movie.ReleaseDate)]</label>
+								<textcolor>white</textcolor>
+								<shadowcolor>99000000</shadowcolor>
+								<font>FontSize_22</font>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>37</posy>
+								<height>38</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label fallback="Release Date">$INFO[Window.Property(movie.Status)]</label>
+								<textcolor>99white</textcolor>
+								<shadowcolor>99000000</shadowcolor>
+								<font>FontSize_14B</font>
+							</control>
+						</control>
+						<control type="group">
 							<posx>0</posx>
-							<posy>37</posy>
-							<height>38</height>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label fallback="Rating">$INFO[Window.Property(movie.Votes),, Votes]</label>
-							<textcolor>99white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_14B</font>
+							<width>160</width>
+							<visible>!IsEmpty(Window.Property(movie.Budget))</visible>
+							<control type="label">
+								<posx>0</posx>
+								<posy>12</posy>
+								<height>38</height>
+								<align>center</align>
+								<label>$INFO[Window.Property(movie.Budget),$]</label>
+								<textcolor>white</textcolor>
+								<shadowcolor>99000000</shadowcolor>
+								<font>FontSize_22</font>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>37</posy>
+								<height>38</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>Budget</label>
+								<textcolor>99white</textcolor>
+								<shadowcolor>99000000</shadowcolor>
+								<font>FontSize_14B</font>
+							</control>
 						</control>
-					</control>
-					<control type="group">
-						<posx>0</posx>
-						<width>100</width>
-						<visible>!Stringcompare(Window.Property(movie.Duration),0) + !IsEmpty(Window.Property(movie.Duration))</visible>
-						<control type="label">
+						<control type="group" id="3300">
 							<posx>0</posx>
-							<posy>12</posy>
-							<height>38</height>
-							<align>center</align>
-							<label>$INFO[Window.Property(movie.Duration)]</label>
-							<textcolor>white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
+							<width>160</width>
+							<visible>!IsEmpty(Window.Property(movie.Revenue))</visible>
+							<control type="label">
+								<posx>0</posx>
+								<posy>12</posy>
+								<height>38</height>
+								<align>center</align>
+								<label fallback="?">$INFO[Window.Property(movie.Revenue),$]</label>
+								<textcolor>white</textcolor>
+								<shadowcolor>99000000</shadowcolor>
+								<font>FontSize_22</font>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>37</posy>
+								<height>38</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>Revenue</label>
+								<textcolor>99white</textcolor>
+								<shadowcolor>99000000</shadowcolor>
+								<font>FontSize_14B</font>
+							</control>
 						</control>
-						<control type="label">
-							<posx>0</posx>
-							<posy>37</posy>
-							<height>38</height>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>Minutes</label>
-							<textcolor>99white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_14B</font>
-						</control>
-					</control>
-					<control type="group">
-						<width>160</width>
-						<visible>!IsEmpty(Window.Property(movie.ReleaseDate))</visible>
-						<control type="label">
-							<posx>0</posx>
-							<posy>12</posy>
-							<height>38</height>
-							<align>center</align>
-							<label fallback="?">$INFO[Window.Property(movie.ReleaseDate)]</label>
-							<textcolor>white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
-						</control>
-						<control type="label">
-							<posx>0</posx>
-							<posy>37</posy>
-							<height>38</height>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label fallback="Release Date">$INFO[Window.Property(movie.Status)]</label>
-							<textcolor>99white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_14B</font>
-						</control>
-					</control>
-					<control type="group">
-						<posx>0</posx>
-						<width>160</width>
-						<visible>!IsEmpty(Window.Property(movie.Budget))</visible>
-						<control type="label">
-							<posx>0</posx>
-							<posy>12</posy>
-							<height>38</height>
-							<align>center</align>
-							<label>$INFO[Window.Property(movie.Budget),$]</label>
-							<textcolor>white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
-						</control>
-						<control type="label">
-							<posx>0</posx>
-							<posy>37</posy>
-							<height>38</height>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>Budget</label>
-							<textcolor>99white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_14B</font>
-						</control>
-					</control>
-					<control type="group" id="3300">
-						<posx>0</posx>
-						<width>160</width>
-						<visible>!IsEmpty(Window.Property(movie.Revenue))</visible>
-						<control type="label">
-							<posx>0</posx>
-							<posy>12</posy>
-							<height>38</height>
-							<align>center</align>
-							<label fallback="?">$INFO[Window.Property(movie.Revenue),$]</label>
-							<textcolor>white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
-						</control>
-						<control type="label">
-							<posx>0</posx>
-							<posy>37</posy>
-							<height>38</height>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>Revenue</label>
-							<textcolor>99white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_14B</font>
-						</control>
-					</control>
-				</control>				
+					</control>				
 				</control>
 				<control type="group">	
 					<visible>false</visible>
@@ -454,34 +459,34 @@
 					<height>310</height>
 					<orientation>vertical</orientation>
 					<itemgap>0</itemgap>
-						<control type="label">
-							<textcolor>99white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
-							<width>840</width>
-							<height>25</height>
-							<wrapmultiline>true</wrapmultiline>
-							<label>$INFO[Window.Property(movie.omdb.Awards),[COLOR=white]Awards:[/COLOR][COLOR=selected] ,[/COLOR]]</label>		
-							<visible>!IsEmpty(Window.Property(movie.omdb.Awards))</visible>
-						</control>
-						<control type="label">
-							<top>25</top>
-							<textcolor>99white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
-							<width>840</width>
-							<height>25</height>
-							<label>$INFO[Window.Property(movie.omdb.tomatoConsensus)]</label>
-							<scroll>true</scroll>
-							<scrolltime>50</scrolltime>
-							<visible>!IsEmpty(Window.Property(movie.omdb.tomatoConsensus))</visible>
-						</control>
-						<control type="label">
-							<top>25</top>
-							<height>22</height>
-							<width>840</width>							
-							<label>-</label>
-						</control>				
+					<control type="label">
+						<textcolor>99white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<font>FontSize_22</font>
+						<width>840</width>
+						<height>25</height>
+						<wrapmultiline>true</wrapmultiline>
+						<label>$INFO[Window.Property(movie.omdb.Awards),[COLOR=white]Awards:[/COLOR][COLOR=selected] ,[/COLOR]]</label>		
+						<visible>!IsEmpty(Window.Property(movie.omdb.Awards))</visible>
+					</control>
+					<control type="label">
+						<top>25</top>
+						<textcolor>99white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<font>FontSize_22</font>
+						<width>840</width>
+						<height>25</height>
+						<label>$INFO[Window.Property(movie.omdb.tomatoConsensus)]</label>
+						<scroll>true</scroll>
+						<scrolltime>50</scrolltime>
+						<visible>!IsEmpty(Window.Property(movie.omdb.tomatoConsensus))</visible>
+					</control>
+					<control type="label">
+						<top>25</top>
+						<height>22</height>
+						<width>840</width>							
+						<label>-</label>
+					</control>				
 					<control type="textbox" id="400">
 						<description>plot</description>
 						<width>840</width>
@@ -846,40 +851,40 @@
 		<!-- ================== -->
 		<!-- Star Rating		 -->
 		<!-- ================== -->    
-			<control type="grouplist">
-				<posx>0</posx>
-				<posy>150</posy>
-				<height>0</height>
-				<width>1218</width>
-				<itemgap>5</itemgap>
-				<align>right</align>
-				<orientation>horizontal</orientation>
-				<animation type="Conditional" reversible="false" condition="!Window.IsActive(VolumeBar)">
-					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
-					<effect type="slide" start="0,35" end="0,0" time="350" tween="cubic" easing="out" />
-				</animation>
-				<animation type="Conditional" reversible="false" condition="Window.IsActive(VolumeBar)">
-					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-					<effect type="slide" start="0,0" end="0,35" time="350" tween="sine" easing="out" />
-				</animation>
-				<control type="image">
-					<width>40</width>
-					<height>38</height>
-					<aspectratio>keep</aspectratio>
-					<texture>$VAR[VideoInfoStarRating]</texture>
-				</control>
-				<control type="label">
-					<height>40</height>
-					<width min="10" max="1280">auto</width>
-					<font>FontSize_40</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>99000000</shadowcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<scroll>false</scroll>
-					<label fallback="0.0">$INFO[Window.Property(movie.Rating)]</label>
-				</control>
+		<control type="grouplist">
+			<posx>0</posx>
+			<posy>150</posy>
+			<height>0</height>
+			<width>1218</width>
+			<itemgap>5</itemgap>
+			<align>right</align>
+			<orientation>horizontal</orientation>
+			<animation type="Conditional" reversible="false" condition="!Window.IsActive(VolumeBar)">
+				<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+				<effect type="slide" start="0,35" end="0,0" time="350" tween="cubic" easing="out" />
+			</animation>
+			<animation type="Conditional" reversible="false" condition="Window.IsActive(VolumeBar)">
+				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+				<effect type="slide" start="0,0" end="0,35" time="350" tween="sine" easing="out" />
+			</animation>
+			<control type="image">
+				<width>40</width>
+				<height>38</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$VAR[VideoInfoStarRating]</texture>
 			</control>
+			<control type="label">
+				<height>40</height>
+				<width min="10" max="1280">auto</width>
+				<font>FontSize_40</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>99000000</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label fallback="0.0">$INFO[Window.Property(movie.Rating)]</label>
+			</control>
+		</control>
 		<!-- ================== -->
 		<!-- Top Buttons Labels -->
 		<!-- ================== -->    

@@ -5,23 +5,23 @@
 	<includes>
 		<include name="hiddenlist">
 			<description>container</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1</width>
-				<height>1</height>
-				<onleft>9000</onleft>
-				<onright>9000</onright>
-				<onup>9000</onup>
-				<ondown>9000</ondown>
-				<viewtype label="Actor">list</viewtype>
-				<pagecontrol>-</pagecontrol>
-				<itemlayout height="1" width="1" />
-				<focusedlayout height="1" width="1" />
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1</width>
+			<height>1</height>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<viewtype label="Actor">list</viewtype>
+			<pagecontrol>-</pagecontrol>
+			<itemlayout height="1" width="1" />
+			<focusedlayout height="1" width="1" />
 		</include>
 	</includes>
 	<controls>
 		<control type="group">
-		<description>addon required lists</description>
+			<description>addon required lists</description>
 			<visible>false</visible>	
 			<control type="list" id="550">
 				<include>hiddenlist</include>
@@ -31,19 +31,23 @@
 			</control>	
 		</control>
 
-		<control type="image">
-			<description>background</description>
+		<control type="group">			
 			<include>FullscreenDimensions</include>
-			<texture background="true">SKINDEFAULT.jpg</texture>
-			<include>BackgroundFade</include>	
-		</control>
-		<control type="image">
-			<description>background</description>
-			<include>FullscreenDimensions</include>
-			<texture background="true">$INFO[Container(750).ListItem.Property(Original)]</texture>
-			<include>BackgroundFade</include>
-			<fadetime>FanartCrossfadeTime</fadetime>
-			<visible>!IsEmpty(Container(750).ListItem.Property(Original))</visible>
+			<include>BackgroundAnimation</include>
+			<control type="image">
+				<description>background</description>
+				<include>FullscreenDimensions</include>
+				<texture background="true">SKINDEFAULT.jpg</texture>
+				<include>BackgroundFade</include>	
+			</control>
+			<control type="image">
+				<description>background</description>
+				<include>FullscreenDimensions</include>
+				<texture background="true">$INFO[Container(750).ListItem.Property(Original)]</texture>
+				<include>BackgroundFade</include>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<visible>!IsEmpty(Container(750).ListItem.Property(Original))</visible>
+			</control>
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>

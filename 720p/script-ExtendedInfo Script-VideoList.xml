@@ -5,18 +5,22 @@
 		<!-- ============================= -->
 		<!-- == Background		 == -->
 		<!-- ============================= -->
-		<control type="image">
-			<description>background</description>
+		<control type="group">			
 			<include>FullscreenDimensions</include>
-			<texture background="true">SKINDEFAULT.jpg</texture>
-			<include>BackgroundFade</include>	
-		</control>
-		<control type="image">
-			<description>background</description>
-			<include>FullscreenDimensions</include>
-			<texture background="true">$INFO[Container(500).ListItem.Art(fanart)]</texture>
-			<include>BackgroundFade</include>
-			<fadetime>FanartCrossfadeTime</fadetime>			
+			<include>BackgroundAnimation</include>
+			<control type="image">
+				<description>background</description>
+				<include>FullscreenDimensions</include>
+				<texture background="true">SKINDEFAULT.jpg</texture>
+				<include>BackgroundFade</include>	
+			</control>
+			<control type="image">
+				<description>background</description>
+				<include>FullscreenDimensions</include>
+				<texture background="true">$INFO[Container(500).ListItem.Art(fanart)]</texture>
+				<include>BackgroundFade</include>
+				<fadetime>FanartCrossfadeTime</fadetime>			
+			</control>
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>
