@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes> 
+	<include name="ParamWidgetCounter">
+		<control type="label">
+			<left>0</left>
+			<top>237</top>
+			<width>1280</width>
+			<height>70</height>
+			<font>FontSize_14B</font>		
+			<shadowcolor>77000000</shadowcolor>
+			<aligny>top</aligny>
+			<align>center</align>
+			<label>$INFO[Container($PARAM[Container]).CurrentItem] / $INFO[Container($PARAM[Container]).NumItems]</label>
+			<font>FontSize_18B</font>
+			<textcolor>77white</textcolor>
+			<shadowcolor>99000000</shadowcolor>
+			<include>DownUpAnimation</include>
+			<visible>!stringcompare(ListItem.Label,..) + !Control.HasFocus(60)</visible>
+		</control>
+	</include>
 
 	<include name="WidgetContainer">
 		<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>			
@@ -466,7 +484,10 @@
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),3)">Skin.SetString(QuickNavWidgetMoviesType,2)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),2)">Skin.SetString(QuickNavWidgetMoviesType,1)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>
+			<include>WidgetBottomLabels</include>			
+			<include name="ParamWidgetCounter">
+				<param name="Container">250</param>
+			</include>
 		</control>
 
 		<!-- =========== -->
@@ -551,7 +572,10 @@
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),3)">Skin.SetString(QuickNavWidgetTVShowsType,2)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),2)">Skin.SetString(QuickNavWidgetTVShowsType,1)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>
+			<include>WidgetBottomLabels</include>		
+			<include name="ParamWidgetCounter">
+				<param name="Container">350</param>
+			</include>
 		</control>
 
 		<!-- =========== -->
@@ -644,7 +668,10 @@
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMusicType),3)">Skin.SetString(QuickNavWidgetMusicType,2)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">Skin.SetString(QuickNavWidgetMusicType,1)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>
+			<include>WidgetBottomLabels</include>		
+			<include name="ParamWidgetCounter">
+				<param name="Container">450</param>
+			</include>
 		</control>
 
 		<!-- =========== -->
@@ -731,7 +758,10 @@
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),3)">Skin.SetString(QuickNavWidgetAmazonDBType,2)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),2)">Skin.SetString(QuickNavWidgetAmazonDBType,1)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>
+			<include>WidgetBottomLabels</include>		
+			<include name="ParamWidgetCounter">
+				<param name="Container">750</param>
+			</include>
 		</control>
 
 		<!-- =========== -->
@@ -815,7 +845,10 @@
 				<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),3)">Skin.SetString(QuickNavWidgetAmazonType,2)</onleft>
 				<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),2)">Skin.SetString(QuickNavWidgetAmazonType,1)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>
+			<include>WidgetBottomLabels</include>		
+			<include name="ParamWidgetCounter">
+				<param name="Container">751</param>
+			</include>
 		</control>
 
 		<!-- =========== -->
@@ -898,7 +931,10 @@
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),3">Skin.SetString(QuickNavWidgetTuneInType,2)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">Skin.SetString(QuickNavWidgetTuneInType,1)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>
+			<include>WidgetBottomLabels</include>		
+			<include name="ParamWidgetCounter">
+				<param name="Container">550</param>
+			</include>
 		</control>
 
 		<!-- =========== -->
@@ -983,7 +1019,10 @@
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),3">Skin.SetString(QuickNavWidgetYouTubeType,2)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">Skin.SetString(QuickNavWidgetYouTubeType,1)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>
+			<include>WidgetBottomLabels</include>		
+			<include name="ParamWidgetCounter">
+				<param name="Container">653</param>
+			</include>
 		</control>
 
 		<!-- =========== -->
@@ -1046,7 +1085,10 @@
 					<include>skinshortcuts-group-widgetgroup1</include>
 				</content>
 			</control>
-			<include>WidgetBottomLabels</include>
+			<include>WidgetBottomLabels</include>		
+			<include name="ParamWidgetCounter">
+				<param name="Container">551</param>
+			</include>
 		</control>
 
 		<!-- =========== -->
@@ -1109,7 +1151,10 @@
 					<include>skinshortcuts-group-widgetgroup2</include>
 				</content>
 			</control>
-			<include>WidgetBottomLabels</include>
+			<include>WidgetBottomLabels</include>		
+			<include name="ParamWidgetCounter">
+				<param name="Container">552</param>
+			</include>
 		</control>
 
 		<!-- =========== -->
@@ -1172,7 +1217,10 @@
 					<include>skinshortcuts-group-widgetgroup3</include>
 				</content>
 			</control>
-			<include>WidgetBottomLabels</include>
+			<include>WidgetBottomLabels</include>		
+			<include name="ParamWidgetCounter">
+				<param name="Container">553</param>
+			</include>
 		</control>
 
 		<!-- =========== -->
@@ -1235,7 +1283,10 @@
 					<include>skinshortcuts-group-widgetgroup4</include>
 				</content>
 			</control>
-			<include>WidgetBottomLabels</include>
+			<include>WidgetBottomLabels</include>		
+			<include name="ParamWidgetCounter">
+				<param name="Container">554</param>
+			</include>
 		</control>
 
 		<!-- =========== -->
@@ -1339,7 +1390,10 @@
 				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),NBA)">Skin.SetString(RSSVideoFeedURL,GameTrailers)</onleft>
 				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Custom)">Skin.SetString(RSSVideoFeedURL,NBA)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>
+			<include>WidgetBottomLabels</include>		
+			<include name="ParamWidgetCounter">
+				<param name="Container">650</param>
+			</include>
 		</control>
 
 		<!-- =========== -->
@@ -1400,7 +1454,10 @@
 				<include>WidgetSquareLayout</include>
 				<content target="music">$VAR[QuickNav_WidgetListContentPlaylists]</content>
 			</control>
-			<include>WidgetBottomLabels</include>
+			<include>WidgetBottomLabels</include>		
+			<include name="ParamWidgetCounter">
+				<param name="Container">651</param>
+			</include>
 		</control>
 
 		<!-- =========== -->
@@ -1461,7 +1518,10 @@
 				<include>WidgetPosterLayout</include>
 				<content target="videos">$VAR[QuickNav_WidgetListContentPlaylists]</content>
 			</control>
-			<include>WidgetBottomLabels</include>
+			<include>WidgetBottomLabels</include>		
+			<include name="ParamWidgetCounter">
+				<param name="Container">652</param>
+			</include>
 		</control>
 	</include>
 
