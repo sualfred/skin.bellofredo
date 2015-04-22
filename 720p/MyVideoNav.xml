@@ -177,7 +177,7 @@
 					<altlabel>$LOCALIZE[31051]: $LOCALIZE[31065]</altlabel>
 					<onclick>Skin.ToggleSetting(ViewsExtraFanart)</onclick>
 					<selected>Skin.HasSetting(ViewsExtraFanart)</selected>
-					<visible>[Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(58) + !Control.IsVisible(580) + !Control.IsVisible(581)</visible>
+					<visible>[Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(58) + !Control.IsVisible(580) + !Control.IsVisible(581) + !SubString(Container.Folderpath,plugin://,left)</visible>
 				</control>
 				<control type="button" id="3">
 					<description>Sort by</description>

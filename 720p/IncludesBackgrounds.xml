@@ -285,7 +285,7 @@
 			<include>FanartFade</include>
 			<include>BackgroundAnimation</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>![[Control.IsVisible(55) | Control.IsVisible(59) | Control.IsVisible(583)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + !Control.IsVisible(581) + Skin.HasSetting(ViewsExtraFanart)</visible>
+			<visible>![[Control.IsVisible(55) | Control.IsVisible(59) | Control.IsVisible(583)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + !Control.IsVisible(581) + Skin.HasSetting(ViewsExtraFanart) + !SubString(Container.Folderpath,plugin://,left)</visible>
 		</control>	
 		<control type="image">
 			<include>NetFilx Fanart Transparency</include>
@@ -332,7 +332,7 @@
 			<imagepath background="true" diffuse="views/netfilx/fanart_diffuse.png">$INFO[ListItem.Path,,/extrafanart/]</imagepath>
 			<include>FanartFade</include>			
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>Control.IsVisible(59) + !Window.IsActive(movieinformation) + Skin.HasSetting(ViewsExtraFanart)</visible>
+			<visible>Control.IsVisible(59) + !Window.IsActive(movieinformation) + Skin.HasSetting(ViewsExtraFanart) + !SubString(Container.Folderpath,plugin://,left)</visible>
 			<include>BackgroundAnimation</include>
 			<!--<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>-->
 		</control>		
