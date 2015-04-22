@@ -1992,7 +1992,7 @@
 					<timeperimage>5000</timeperimage>
 					<fadetime>1000</fadetime>
 					<imagepath background="true">$INFO[ListItem.Path,,/extrafanart/]</imagepath>
-					<visible>!Skin.HasSetting(HideBGFanart) + Skin.HasSetting(ViewsExtraFanart)</visible>
+					<visible>!Skin.HasSetting(HideBGFanart) + Skin.HasSetting(ViewsExtraFanart) + !SubString(Container.Folderpath,plugin://,left)</visible>
 				</control>
 			</control>
 			<control type="group">
