@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes> 
-	<include name="ParamWidgetCounter">
+	<include name="ParamWidgetCounterLoading">
 		<control type="label">
+			<left>0</left>
+			<top>236</top>
+			<width>1280</width>
+			<height>70</height>
+			<aligny>top</aligny>
+			<align>center</align>
+			<label>$INFO[Container($PARAM[Container]).CurrentItem] / $INFO[Container($PARAM[Container]).NumItems]</label>
+			<textcolor>77white</textcolor>
+			<shadowcolor>55000000</shadowcolor>
+			<font>FontSize_16</font>				
+			<visible>!Container($PARAM[Container]).IsUpdating</visible>
+			<include>VisibleFadeEffect4</include>
+			<visible>!stringcompare(ListItem.Label,..) + !Skin.HasSetting(HideWidgetCounter) + IntegerGreaterThan(Container($PARAM[Container]).NumItems,0)</visible>
+		</control>
+		<!--<control type="label">
 			<left>0</left>
 			<top>237</top>
 			<width>1280</width>
@@ -10,13 +25,64 @@
 			<shadowcolor>77000000</shadowcolor>
 			<aligny>top</aligny>
 			<align>center</align>
-			<label>$INFO[Container($PARAM[Container]).CurrentItem] / $INFO[Container($PARAM[Container]).NumItems]</label>
+			<label>0 / $INFO[Container($PARAM[Container]).NumItems]</label>
 			<font>FontSize_18B</font>
 			<textcolor>77white</textcolor>
-			<shadowcolor>99000000</shadowcolor>
+			<shadowcolor>99000000</shadowcolor>						
+			<visible>!Container($PARAM[Container]).IsUpdating</visible>
+			<include>VisibleFadeEffect4</include>
+			<visible>!stringcompare(ListItem.Label,..) + !Skin.HasSetting(HideWidgetCounter) + !IntegerGreaterThan(Container($PARAM[Container]).NumItems,0)</visible>
+		</control>-->
+		<control type="grouplist">			
+			<visible>Container($PARAM[Container]).IsUpdating</visible>
 			<include>DownUpAnimation</include>
-			<visible>!stringcompare(ListItem.Label,..) + !Skin.HasSetting(HideWidgetCounter)</visible>
+			<left>295</left>
+			<top>451</top>
+			<width>707</width>
+			<height>70</height>
+			<height>70</height>
+			<align>left</align>
+			<itemgap>10</itemgap>			
+			<orientation>horizontal</orientation>
+			<control type="image">
+				<width>20</width>
+				<height>20</height>
+				<aligny>center</aligny>
+				<aspectratio aligny="center">keep</aspectratio>
+				<colordiffuse>CC05ADDA</colordiffuse>				
+				<shadowcolor>77000000</shadowcolor>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">dialogs/busy/busy.png</texture>
+				<animation effect="rotate" start="0" end="-360" center="auto" time="1500" loop="true" condition="true">conditional</animation>
+			</control>
+			<control type="group">
+				<control type="label">
+					<height>18</height>
+					<width>auto</width>
+					<label>$LOCALIZE[31006]</label>
+					<align>center</align>
+					<font>FontSize_22</font>
+					<textcolor>blue</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<include name="FakeFadeFastLabel">
+						<param name="condition">true</param>
+					</include>
+				</control>
+				<control type="label">
+					<height>18</height>
+					<width>auto</width>
+					<label>$LOCALIZE[31007]</label>
+					<align>center</align>
+					<font>FontSize_22</font>
+					<textcolor>blue</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<include name="FakeFadeFastLabel2">
+						<param name="condition">true</param>
+					</include>
+				</control>
+			</control>
 		</control>
+
 	</include>
 
 	<include name="WidgetContainer">
@@ -73,6 +139,8 @@
 
 	<include name="WidgetBottomLabels">
 		<control type="button">
+			<visible>!Container($PARAM[Container]).IsUpdating</visible>
+			<include>DownUpAnimation</include>
 			<left>288</left>
 			<top>445</top>
 			<width>707</width>
@@ -484,8 +552,10 @@
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),3)">Skin.SetString(QuickNavWidgetMoviesType,2)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),2)">Skin.SetString(QuickNavWidgetMoviesType,1)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>			
-			<include name="ParamWidgetCounter">
+			<include name="WidgetBottomLabels">
+				<param name="Container">250</param>
+			</include>			
+			<include name="ParamWidgetCounterLoading">
 				<param name="Container">250</param>
 			</include>
 		</control>
@@ -572,8 +642,10 @@
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),3)">Skin.SetString(QuickNavWidgetTVShowsType,2)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),2)">Skin.SetString(QuickNavWidgetTVShowsType,1)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>		
-			<include name="ParamWidgetCounter">
+			<include name="WidgetBottomLabels">
+				<param name="Container">350</param>
+			</include>			
+			<include name="ParamWidgetCounterLoading">
 				<param name="Container">350</param>
 			</include>
 		</control>
@@ -668,8 +740,10 @@
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMusicType),3)">Skin.SetString(QuickNavWidgetMusicType,2)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">Skin.SetString(QuickNavWidgetMusicType,1)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>		
-			<include name="ParamWidgetCounter">
+			<include name="WidgetBottomLabels">
+				<param name="Container">450</param>
+			</include>			
+			<include name="ParamWidgetCounterLoading">
 				<param name="Container">450</param>
 			</include>
 		</control>
@@ -758,8 +832,10 @@
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),3)">Skin.SetString(QuickNavWidgetAmazonDBType,2)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),2)">Skin.SetString(QuickNavWidgetAmazonDBType,1)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>		
-			<include name="ParamWidgetCounter">
+			<include name="WidgetBottomLabels">
+				<param name="Container">750</param>
+			</include>				
+			<include name="ParamWidgetCounterLoading">
 				<param name="Container">750</param>
 			</include>
 		</control>
@@ -845,8 +921,10 @@
 				<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),3)">Skin.SetString(QuickNavWidgetAmazonType,2)</onleft>
 				<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),2)">Skin.SetString(QuickNavWidgetAmazonType,1)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>		
-			<include name="ParamWidgetCounter">
+			<include name="WidgetBottomLabels">
+				<param name="Container">751</param>
+			</include>		
+			<include name="ParamWidgetCounterLoading">
 				<param name="Container">751</param>
 			</include>
 		</control>
@@ -931,8 +1009,10 @@
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),3">Skin.SetString(QuickNavWidgetTuneInType,2)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">Skin.SetString(QuickNavWidgetTuneInType,1)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>		
-			<include name="ParamWidgetCounter">
+			<include name="WidgetBottomLabels">
+				<param name="Container">550</param>
+			</include>			
+			<include name="ParamWidgetCounterLoading">
 				<param name="Container">550</param>
 			</include>
 		</control>
@@ -1019,8 +1099,10 @@
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),3">Skin.SetString(QuickNavWidgetYouTubeType,2)</onleft>
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">Skin.SetString(QuickNavWidgetYouTubeType,1)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>		
-			<include name="ParamWidgetCounter">
+			<include name="WidgetBottomLabels">
+				<param name="Container">653</param>
+			</include>			
+			<include name="ParamWidgetCounterLoading">
 				<param name="Container">653</param>
 			</include>
 		</control>
@@ -1085,8 +1167,10 @@
 					<include>skinshortcuts-group-widgetgroup1</include>
 				</content>
 			</control>
-			<include>WidgetBottomLabels</include>		
-			<include name="ParamWidgetCounter">
+			<include name="WidgetBottomLabels">
+				<param name="Container">551</param>
+			</include>		
+			<include name="ParamWidgetCounterLoading">
 				<param name="Container">551</param>
 			</include>
 		</control>
@@ -1151,8 +1235,10 @@
 					<include>skinshortcuts-group-widgetgroup2</include>
 				</content>
 			</control>
-			<include>WidgetBottomLabels</include>		
-			<include name="ParamWidgetCounter">
+			<include name="WidgetBottomLabels">
+				<param name="Container">552</param>
+			</include>				
+			<include name="ParamWidgetCounterLoading">
 				<param name="Container">552</param>
 			</include>
 		</control>
@@ -1217,8 +1303,10 @@
 					<include>skinshortcuts-group-widgetgroup3</include>
 				</content>
 			</control>
-			<include>WidgetBottomLabels</include>		
-			<include name="ParamWidgetCounter">
+			<include name="WidgetBottomLabels">
+				<param name="Container">553</param>
+			</include>		
+			<include name="ParamWidgetCounterLoading">
 				<param name="Container">553</param>
 			</include>
 		</control>
@@ -1283,8 +1371,10 @@
 					<include>skinshortcuts-group-widgetgroup4</include>
 				</content>
 			</control>
-			<include>WidgetBottomLabels</include>		
-			<include name="ParamWidgetCounter">
+			<include name="WidgetBottomLabels">
+				<param name="Container">554</param>
+			</include>			
+			<include name="ParamWidgetCounterLoading">
 				<param name="Container">554</param>
 			</include>
 		</control>
@@ -1390,8 +1480,10 @@
 				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),NBA)">Skin.SetString(RSSVideoFeedURL,GameTrailers)</onleft>
 				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Custom)">Skin.SetString(RSSVideoFeedURL,NBA)</onleft>
 			</control>
-			<include>WidgetBottomLabels</include>		
-			<include name="ParamWidgetCounter">
+			<include name="WidgetBottomLabels">
+				<param name="Container">650</param>
+			</include>		
+			<include name="ParamWidgetCounterLoading">
 				<param name="Container">650</param>
 			</include>
 		</control>
@@ -1454,8 +1546,10 @@
 				<include>WidgetSquareLayout</include>
 				<content target="music">$VAR[QuickNav_WidgetListContentPlaylists]</content>
 			</control>
-			<include>WidgetBottomLabels</include>		
-			<include name="ParamWidgetCounter">
+			<include name="WidgetBottomLabels">
+				<param name="Container">651</param>
+			</include>		
+			<include name="ParamWidgetCounterLoading">
 				<param name="Container">651</param>
 			</include>
 		</control>
@@ -1518,8 +1612,10 @@
 				<include>WidgetPosterLayout</include>
 				<content target="videos">$VAR[QuickNav_WidgetListContentPlaylists]</content>
 			</control>
-			<include>WidgetBottomLabels</include>		
-			<include name="ParamWidgetCounter">
+			<include name="WidgetBottomLabels">
+				<param name="Container">652</param>
+			</include>			
+			<include name="ParamWidgetCounterLoading">
 				<param name="Container">652</param>
 			</include>
 		</control>

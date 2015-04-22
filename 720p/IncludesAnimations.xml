@@ -14,6 +14,19 @@
 			<effect type="fade" start="100" end="0" time="500" delay="20000" />
 		</animation>
 	</include>
+	<include name="FakeFadeFastLabel">
+		<animation type="Conditional" reversible="false" condition="$PARAM[condition]" loop="true">
+			<effect type="fade" start="0" end="100" time="500" delay="0" />
+			<effect type="fade" start="100" end="0" time="500" delay="2000" />
+			<effect type="fade" start="100" end="0" time="500" delay="4000" />
+		</animation>
+	</include>
+	<include name="FakeFadeFastLabel2">
+		<animation type="Conditional" reversible="false" condition="$PARAM[condition]" loop="true">
+			<effect type="fade" start="0" end="100" time="500" delay="2500" />
+			<effect type="fade" start="100" end="0" time="500" delay="4000" />
+		</animation>
+	</include>
 
 	<include name="ShutdownMenuAnimation">
 		<animation type="Conditional" reversible="false" condition="![Window.IsActive(ShutdownMenu) | Window.IsActive(contextmenu) | Window.IsActive(favourites)]">
@@ -134,7 +147,6 @@
 			<effect type="slide" start="0,0" end="0,-25" time="450" tween="sine" easing="out" />
 		</animation>
 	</include>
-
 	<include name="ArrowPulseFade">
 		<animation type="Conditional" condition="true" pulse="true">
 			<effect type="fade" start="0" end="100" delay="0" time="1000"  />						
@@ -1028,9 +1040,17 @@
 		<animation effect="fade" time="20">Visible</animation>
 		<animation effect="fade" time="20">Hidden</animation>
 	</include>
+	<include name="VisibleFadeEffect4">
+		<animation effect="fade" time="250">Visible</animation>
+		<animation effect="fade" time="0">Hidden</animation>
+	</include>
 	<include name="FocusVisibleFadeEffect">
 		<animation effect="fade" time="170">Visible</animation>
 		<animation effect="fade" time="170">Hidden</animation>
+	</include>
+	<include name="VisibleFadeEffectDelay">
+		<animation effect="fade" time="170" delay="400">Visible</animation>
+		<animation effect="fade" time="170" delay="400">Hidden</animation>
 	</include>
 	<include name="OpenCloseFadeEffect">
 		<animation effect="fade" time="300">WindowOpen</animation>
