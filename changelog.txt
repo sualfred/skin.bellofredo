@@ -1,5 +1,7 @@
 ﻿[B][COLOR=FF56ADDA]v4.1.9[/COLOR][/B]
-• Added: Widget item counter
+• Added: Widget item counter (can be disabled)
+• Added: New widget content loading method, so widgets aren't loaded in the background anymore (more secure and faster on slower machines)
+• Added: Widget content loading animation
 • Added: Options to set which IMDb updates should be run automatically
 • Added: Update MPAA ratings as seperate button in the home top menu dialog
 • Removed: Extrafanart controls for plugin based windows to prevent issue and error messages with ContentProvider
