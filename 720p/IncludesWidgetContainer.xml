@@ -15,7 +15,7 @@
 			<textcolor>77white</textcolor>
 			<shadowcolor>99000000</shadowcolor>
 			<include>DownUpAnimation</include>
-			<visible>!stringcompare(ListItem.Label,..) + !Control.HasFocus(60)</visible>
+			<visible>!stringcompare(ListItem.Label,..) + !Skin.HasSetting(HideWidgetCounter)</visible>
 		</control>
 	</include>
 

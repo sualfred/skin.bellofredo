@@ -249,6 +249,13 @@
 							<onclick>Skin.ToggleSetting(LockWidgetSwitch)</onclick>
 							<selected>!Skin.HasSetting(LockWidgetSwitch)</selected>
 						</control>
+						<control type="radiobutton" id="8314">
+							<description>widget counter</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31192]</label>
+							<onclick>Skin.ToggleSetting(HideWidgetCounter)</onclick>
+							<selected>Skin.HasSetting(HideWidgetCounter)</selected>
+						</control>
 						<control type="button" id="8304">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>

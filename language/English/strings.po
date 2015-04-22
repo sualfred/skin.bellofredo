@@ -782,7 +782,11 @@ msgctxt "#31191"
 msgid "Update Settings"
 msgstr ""
 
-#: empty strings from id 31192 to 31199
+msgctxt "#31192"
+msgid "Hide Widget Item Counter"
+msgstr ""
+
+#: empty strings from id 31193 to 31199
 #: scripts labels
 
 msgctxt "#31200"
