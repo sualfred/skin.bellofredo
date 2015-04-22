@@ -1,4 +1,13 @@
-﻿[B][COLOR=FF56ADDA]v4.1.8[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.1.9[/COLOR][/B]
+• Added: Widget item counter
+• Added: Options to set which IMDb updates should be run automatically
+• Added: Update MPAA ratings as seperate button in the home top menu dialog
+• Removed: Extrafanart controls for plugin based windows to prevent issue and error messages with ContentProvider
+• Merged: FR and IT translations by Peppe and Incubus
+• Fixed: Animated backgrounds for ExtendedInfo dialogs
+• Fixed: YouTube widget "new uploaded videos" (requires Bromix latest beta 12 or above)
+
+[B][COLOR=FF56ADDA]v4.1.8[/COLOR][/B]
 • Added: Optional background animation settings (disabled, global, only for the home screen, everywhere except the home screen)
 • Added: Default icon for recently introduced GUI sound addons
 • Added: Date/time the repo was last checked for updates information in the addon browser window
@@ -9,14 +18,12 @@
 • Fixed: Position of the cast list in DialogVideoInfo.xml
 • Fixed: Visible actor age in ExtendedInfo dialogs, if the person has already died
 
-
 [B][COLOR=FF56ADDA]v4.1.7b[/COLOR][/B]
 Small bugfix release
 • Fixed: Double TV-MA ratings on LoveFilm view
 • Fixed: Not working addon browser if the Classic Slide view is set in some addons
 • Fixed (or should be): Widgets with an addon source should not override the set viewtypes anymore, if they are updating and a library window is going to be activated in the same time
 • Removed: TV-MA flag instead of unwatched episodes flag in List view if there is no unwatched episode left
-
 
 [B][COLOR=FF56ADDA]v4.1.7a[/COLOR][/B]
 As usual.... bug fixing right after pushing the update
