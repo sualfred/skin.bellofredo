@@ -1,4 +1,10 @@
-﻿[B][COLOR=FF56ADDA]v4.1.9[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.2.0[/COLOR][/B]
+• Changed: Bottom label positions of square widgets
+• Changed: Plot/movie critic layout of ExtendedInfo video dialog
+• Fixed: Some conditions and info labels
+• Merged: FR/GER translations
+
+[B][COLOR=FF56ADDA]v4.1.9[/COLOR][/B]
 • Added: Widget item counter (can be disabled)
 • Added: New widget content loading method, so widgets aren't loaded in the background anymore (more secure and faster on slower machines)
 • Added: Widget content loading animation
