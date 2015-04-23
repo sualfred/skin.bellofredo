@@ -194,7 +194,7 @@
 								<height>38</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<label fallback="Not Rated">$INFO[Window.Property(movie.mpaa)]</label>
+								<label fallback="N/A">$INFO[Window.Property(movie.mpaa)]</label>
 								<textcolor>99white</textcolor>
 								<shadowcolor>99000000</shadowcolor>
 								<font>FontSize_14B</font>
