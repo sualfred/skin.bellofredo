@@ -2,73 +2,60 @@
 <includes> 
 	<variable name="MPAAFilmRating">
 		<!--international ratings-->
-		<value condition="substring(ListItem.MPAA,Rated G) | substring(ListItem.MPAA,USA:G)">flags/mpaa/film/rating-g.png</value>
-		<value condition="[substring(ListItem.MPAA,Rated PG) + !substring(ListItem.MPAA,13)] | substring(ListItem.MPAA,USA:PG)">flags/mpaa/film/rating-pg.png</value>
-		<value condition="[substring(ListItem.MPAA,PG-13) | substring(ListItem.MPAA,USA:PG-13)] + [!substring(ListItem.MPAA,USA:R) + !substring(ListItem.MPAA,rated R)]">flags/mpaa/film/rating-pg13.png</value>
-		<value condition="substring(ListItem.MPAA,Rated R) | substring(ListItem.MPAA,USA:R)">flags/mpaa/film/rating-r.png</value>
-		<value condition="substring(ListItem.MPAA, NC-17) | substring(ListItem.MPAA,USA:NC-17)">flags/mpaa/film/rating-nc17.png</value>
+		<value condition="SubString(ListItem.MPAA,Rated G) | SubString(ListItem.MPAA,USA:G)">flags/mpaa/film/rating-g.png</value>
+		<value condition="[SubString(ListItem.MPAA,Rated PG) + !SubString(ListItem.MPAA,13)] | SubString(ListItem.MPAA,USA:PG)">flags/mpaa/film/rating-pg.png</value>
+		<value condition="[SubString(ListItem.MPAA,PG-13) | SubString(ListItem.MPAA,USA:PG-13)] + [!SubString(ListItem.MPAA,USA:R) + !SubString(ListItem.MPAA,rated R)]">flags/mpaa/film/rating-pg13.png</value>
+		<value condition="SubString(ListItem.MPAA,Rated R) | SubString(ListItem.MPAA,USA:R)">flags/mpaa/film/rating-r.png</value>
+		<value condition="SubString(ListItem.MPAA, NC-17) | SubString(ListItem.MPAA,USA:NC-17)">flags/mpaa/film/rating-nc17.png</value>
 		<!--german rating-->
-		<value condition="substring(ListItem.mpaa,Rated 18) | substring(ListItem.mpaa,Germany:18) | substring(ListItem.mpaa,FSK 18) | substring(ListItem.mpaa,ab 18)">flags/mpaa/fsk/fsk18.png</value>
-		<value condition="substring(ListItem.mpaa,Rated 16) | substring(ListItem.mpaa,Germany:16) | substring(ListItem.mpaa,FSK 16) | substring(ListItem.mpaa,ab 16)">flags/mpaa/fsk/fsk16.png</value>
-		<value condition="substring(ListItem.mpaa,Rated 12) | substring(ListItem.mpaa,Germany:12) | substring(ListItem.mpaa,FSK 12) | substring(ListItem.mpaa,ab 12)">flags/mpaa/fsk/fsk12.png</value>
-		<value condition="substring(ListItem.mpaa,Rated 6) | substring(ListItem.mpaa,Germany:6) | substring(ListItem.mpaa,FSK 6) | substring(ListItem.mpaa,ab 6)">flags/mpaa/fsk/fsk6.png</value>
-		<value condition="substring(ListItem.mpaa,Rated 0) | substring(ListItem.mpaa,Germany:0) | substring(ListItem.mpaa,FSK 0) | substring(ListItem.mpaa,ab 0)">flags/mpaa/fsk/fsk0.png</value>
+		<value condition="SubString(ListItem.mpaa,Rated 18) | SubString(ListItem.mpaa,Germany:18) | SubString(ListItem.mpaa,FSK 18) | SubString(ListItem.mpaa,ab 18)">flags/mpaa/fsk/fsk18.png</value>
+		<value condition="SubString(ListItem.mpaa,Rated 16) | SubString(ListItem.mpaa,Germany:16) | SubString(ListItem.mpaa,FSK 16) | SubString(ListItem.mpaa,ab 16)">flags/mpaa/fsk/fsk16.png</value>
+		<value condition="SubString(ListItem.mpaa,Rated 12) | SubString(ListItem.mpaa,Germany:12) | SubString(ListItem.mpaa,FSK 12) | SubString(ListItem.mpaa,ab 12)">flags/mpaa/fsk/fsk12.png</value>
+		<value condition="SubString(ListItem.mpaa,Rated 6) | SubString(ListItem.mpaa,Germany:6) | SubString(ListItem.mpaa,FSK 6) | SubString(ListItem.mpaa,ab 6)">flags/mpaa/fsk/fsk6.png</value>
+		<value condition="SubString(ListItem.mpaa,Rated 0) | SubString(ListItem.mpaa,Germany:0) | SubString(ListItem.mpaa,FSK 0) | SubString(ListItem.mpaa,ab 0)">flags/mpaa/fsk/fsk0.png</value>
 		<value>flags/mpaa/film/rating-nr.png</value>
 	</variable>
 	<variable name="MPAAFilmRatingExtendedInfo">
 		<!--international ratings-->
-		<value condition="StringCompare(Window.Property(movie.mpaa),G)">flags/mpaa/film/rating-g.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),Rated G)">flags/mpaa/film/rating-g.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),NC-17)">flags/mpaa/film/rating-nc17.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),Rated NC-17)">flags/mpaa/film/rating-nc17.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),NC17)">flags/mpaa/film/rating-nc17.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),Rated NC17)">flags/mpaa/film/rating-nc17.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),PG)">flags/mpaa/film/rating-pg.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),Rated PG)">flags/mpaa/film/rating-pg.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),PG13)">flags/mpaa/film/rating-pg13.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),Rated PG13)">flags/mpaa/film/rating-pg13.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),PG-13)">flags/mpaa/film/rating-pg13.png</value>rating-pg13
-		<value condition="StringCompare(Window.Property(movie.mpaa),Rated PG-13)">flags/mpaa/film/rating-pg13.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),R)">flags/mpaa/film/rating-r.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),Rated R)">flags/mpaa/film/rating-r.png</value>	
-		<!--tv ratings-->
-		<value condition="StringCompare(Window.Property(movie.mpaa),TV-14)">flags/mpaa/tv/tv-14.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),TV-14_Certificate_US)">flags/mpaa/tv/tv-14.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),TV-MA)">flags/mpaa/tv/tv-ma.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),TV-MA_Certificate_US)">flags/mpaa/tv/tv-ma.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),TV-PG)">flags/mpaa/tv/tv-pg.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),TV-PG_Certificate_US)">flags/mpaa/tv/tv-pg.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),TV-G)">flags/mpaa/tv/tv-g.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),TV-G_Certificate_US)">flags/mpaa/tv/tv-g.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),ty-y)">flags/mpaa/tv/tv-y.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),tv-y_Certificate_US)">flags/mpaa/tv/tv-y.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),ty-y7)">flags/mpaa/tv/tv-y7.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),tv-y7_Certificate_US)">flags/mpaa/tv/tv-y7.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),Rated G) | SubString(Window.Property(movie.mpaa),USA:G)">flags/mpaa/film/rating-g.png</value>
+		<value condition="[SubString(Window.Property(movie.mpaa),Rated PG) + !SubString(Window.Property(movie.mpaa),13)] | SubString(Window.Property(movie.mpaa),USA:PG)">flags/mpaa/film/rating-pg.png</value>
+		<value condition="[SubString(Window.Property(movie.mpaa),PG-13) | SubString(Window.Property(movie.mpaa),USA:PG-13)] + [!SubString(Window.Property(movie.mpaa),USA:R) + !SubString(Window.Property(movie.mpaa),rated R)]">flags/mpaa/film/rating-pg13.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),Rated R) | SubString(Window.Property(movie.mpaa),USA:R)">flags/mpaa/film/rating-r.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa), NC-17) | SubString(Window.Property(movie.mpaa),USA:NC-17)">flags/mpaa/film/rating-nc17.png</value>
 		<!--german rating-->
-		<value condition="StringCompare(Window.Property(movie.mpaa),Rated FSK-18) | StringCompare(Window.Property(movie.mpaa),FSK-18) | StringCompare(Window.Property(movie.mpaa),FSK 18) | StringCompare(Window.Property(movie.mpaa),ab 18) | StringCompare(Window.Property(movie.mpaa),18)">flags/mpaa/fsk/fsk18.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),Rated FSK-16) | StringCompare(Window.Property(movie.mpaa),Germany:FSK-16) | StringCompare(Window.Property(movie.mpaa),FSK 16) | StringCompare(Window.Property(movie.mpaa),ab 16 | StringCompare(Window.Property(movie.mpaa),16)">flags/mpaa/fsk/fsk16.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),Rated FSK-12) | StringCompare(Window.Property(movie.mpaa),Germany:FSK-12) | StringCompare(Window.Property(movie.mpaa),FSK 12) | StringCompare(Window.Property(movie.mpaa),ab 12) | StringCompare(Window.Property(movie.mpaa),12)">flags/mpaa/fsk/fsk12.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),Rated FSK-6) | StringCompare(Window.Property(movie.mpaa),Germany:FSK-6) | StringCompare(Window.Property(movie.mpaa),FSK-6) | StringCompare(Window.Property(movie.mpaa),ab 6)">flags/mpaa/fsk/fsk6.png</value>
-		<value condition="StringCompare(Window.Property(movie.mpaa),Rated FSK-0) | StringCompare(Window.Property(movie.mpaa),Germany:FSK-0) | StringCompare(Window.Property(movie.mpaa),FSK-0) | StringCompare(Window.Property(movie.mpaa),ab 0)">flags/mpaa/fsk/fsk0.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),Rated 18) | SubString(Window.Property(movie.mpaa),Germany:18) | SubString(Window.Property(movie.mpaa),FSK 18) | SubString(Window.Property(movie.mpaa),ab 18)">flags/mpaa/fsk/fsk18.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),Rated 16) | SubString(Window.Property(movie.mpaa),Germany:16) | SubString(Window.Property(movie.mpaa),FSK 16) | SubString(Window.Property(movie.mpaa),ab 16)">flags/mpaa/fsk/fsk16.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),Rated 12) | SubString(Window.Property(movie.mpaa),Germany:12) | SubString(Window.Property(movie.mpaa),FSK 12) | SubString(Window.Property(movie.mpaa),ab 12)">flags/mpaa/fsk/fsk12.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),Rated 6) | SubString(Window.Property(movie.mpaa),Germany:6) | SubString(Window.Property(movie.mpaa),FSK 6) | SubString(Window.Property(movie.mpaa),ab 6)">flags/mpaa/fsk/fsk6.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),Rated 0) | SubString(Window.Property(movie.mpaa),Germany:0) | SubString(Window.Property(movie.mpaa),FSK 0) | SubString(Window.Property(movie.mpaa),ab 0)">flags/mpaa/fsk/fsk0.png</value>
+		<value>flags/mpaa/film/rating-nr.png</value>
+		<!--tv ratings-->
+		<value condition="SubString(Window.Property(movie.mpaa),TV-14)">flags/mpaa/tv/tv-14.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),TV-MA)">flags/mpaa/tv/tv-ma.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),TV-PG)">flags/mpaa/tv/tv-pg.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),TV-G)">flags/mpaa/tv/tv-g.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),ty-y)">flags/mpaa/tv/tv-y.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),ty-y7)">flags/mpaa/tv/tv-y7.png</value>
 		<value>flags/mpaa/film/rating-nr.png</value>
 	</variable>
+	
 	<variable name="VideoCodec">
-		<value condition="[substring(ListItem.VideoCodec,div,left) | stringcompare(ListItem.VideoCodec,dx50)]">divx</value>
+		<value condition="[SubString(ListItem.VideoCodec,div,left) | stringcompare(ListItem.VideoCodec,dx50)]">divx</value>
 		<value>$INFO[ListItem.VideoCodec]</value>
 	</variable>
 
 	<include name="FlagsLayout">
-			<width>65</width>
-			<height>28</height>
-			<colordiffuse>99ffffff</colordiffuse>
-			<aspectratio align="center">keep</aspectratio>
+		<width>65</width>
+		<height>28</height>
+		<colordiffuse>99ffffff</colordiffuse>
+		<aspectratio align="center">keep</aspectratio>
 	</include>
 
 	<include name="FlagsOSDLayout">
-			<width>54</width>
-			<height>23</height>
-			<colordiffuse>77ffffff</colordiffuse>
-			<aspectratio align="center">keep</aspectratio>
+		<width>54</width>
+		<height>23</height>
+		<colordiffuse>77ffffff</colordiffuse>
+		<aspectratio align="center">keep</aspectratio>
 	</include>
 	
 	<include name="VideoResFlagsConditions">
@@ -113,238 +100,238 @@
 	</include>
 
 	<include name="CameraLogosLayout">
-			<left>0</left>
-			<top>0</top>
-			<width>161</width>
-			<height>109</height>
-	    <colordiffuse>99ffffff</colordiffuse>
+		<left>0</left>
+		<top>0</top>
+		<width>161</width>
+		<height>109</height>
+		<colordiffuse>99ffffff</colordiffuse>
 	</include>
 
 	<include name="CameraLogosFlags">
 		<control type="image.">
-      <include>CameraLogosLayout</include>
-      <texture>views/list/info.png</texture>
+			<include>CameraLogosLayout</include>
+			<texture>views/list/info.png</texture>
 			<visible>IsEmpty(ListItem.PictureCamMake)</visible>
 		</control>
 		<control type="image">
-      <include>CameraLogosLayout</include>
-      <texture>flags/camera/Canon.png</texture>
+			<include>CameraLogosLayout</include>
+			<texture>flags/camera/Canon.png</texture>
 			<visible>SubString(ListItem.PictureCamMake,Canon) | SubString(ListItem.PictureCamModel,Canon)</visible>
 		</control>
 		<control type="image">
 			<include>CameraLogosLayout</include>
-      <texture>flags/camera/FujiFilm.png</texture>
+			<texture>flags/camera/FujiFilm.png</texture>
 			<visible>SubString(ListItem.PictureCamMake,FujiFilm) | SubString(ListItem.PictureCamModel,FujiFilm)</visible>
 		</control>
 		<control type="image">
 			<include>CameraLogosLayout</include>
-      <texture>flags/camera/Kodak.png</texture>
+			<texture>flags/camera/Kodak.png</texture>
 			<visible>SubString(ListItem.PictureCamMake,Kodak) | SubString(ListItem.PictureCamModel,Kodak)</visible>
 		</control>
 		<control type="image">
 			<include>CameraLogosLayout</include>
-      <texture>flags/camera/Leica.png</texture>
+			<texture>flags/camera/Leica.png</texture>
 			<visible>SubString(ListItem.PictureCamMake,Leica) | SubString(ListItem.PictureCamModel,Leica)</visible>
 		</control>
 		<control type="image">
 			<include>CameraLogosLayout</include>
-      <texture>flags/camera/Nikon.png</texture>
+			<texture>flags/camera/Nikon.png</texture>
 			<visible>SubString(ListItem.PictureCamMake,Nikon) | SubString(ListItem.PictureCamModel,Nikon)</visible>
 		</control>
 		<control type="image">
 			<include>CameraLogosLayout</include>
-      <texture>flags/camera/Nokia.png</texture>
+			<texture>flags/camera/Nokia.png</texture>
 			<visible>SubString(ListItem.PictureCamMake,Nokia) | SubString(ListItem.PictureCamModel,Nokia)</visible>
 		</control>
 		<control type="image">
 			<include>CameraLogosLayout</include>
-      <texture>flags/camera/Olympus.png</texture>
+			<texture>flags/camera/Olympus.png</texture>
 			<visible>SubString(ListItem.PictureCamMake,Olympus) | SubString(ListItem.PictureCamModel,Olympus)</visible>
 		</control>
 		<control type="image">
 			<include>CameraLogosLayout</include>
-      <texture>flags/camera/Panasonic.png</texture>
+			<texture>flags/camera/Panasonic.png</texture>
 			<visible>SubString(ListItem.PictureCamMake,Panasonic) | SubString(ListItem.PictureCamModel,Panasonic)</visible>
 		</control>
 		<control type="image">
 			<include>CameraLogosLayout</include>
-      <texture>flags/camera/Polaroid.png</texture>
+			<texture>flags/camera/Polaroid.png</texture>
 			<visible>SubString(ListItem.PictureCamMake,Polaroid) | SubString(ListItem.PictureCamModel,Polaroid)</visible>
 		</control>
 		<control type="image">
 			<include>CameraLogosLayout</include>
-      <texture>flags/camera/Samsung.png</texture>
+			<texture>flags/camera/Samsung.png</texture>
 			<visible>SubString(ListItem.PictureCamMake,Samsung) | SubString(ListItem.PictureCamModel,Samsung)</visible>
 		</control>
 		<control type="image">
 			<include>CameraLogosLayout</include>
-      <texture>flags/camera/Sony.png</texture>
+			<texture>flags/camera/Sony.png</texture>
 			<visible>SubString(ListItem.PictureCamMake,Sony) | SubString(ListItem.PictureCamModel,Sony)</visible>
 		</control>
 		<control type="image">
 			<include>CameraLogosLayout</include>
-      <texture>flags/camera/Toshiba.png</texture>
+			<texture>flags/camera/Toshiba.png</texture>
 			<visible>SubString(ListItem.PictureCamMake,Toshiba) | SubString(ListItem.PictureCamModel,Toshiba)</visible>
 		</control>
 	</include>
 
 	<include name="VideoLanguageFlagsLayout">
-			<width>33</width>
-			<height>19</height>
-			<aspectratio>keep</aspectratio>
+		<width>33</width>
+		<height>19</height>
+		<aspectratio>keep</aspectratio>
 	</include>
 
 	<include name="VideoLanguageFlags">
 		<control type="grouplist">
-				<align>left</align>
-				<aligny>center</aligny>
-				<orientation>horizontal</orientation>
-				<!-- Audio Language -->
-				<control type="group">
-          <width>73</width>
-          <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
-				  <control type="image">
-				    <include>FlagsLayout</include>
-				    <texture>flags/language/language_flag.png</texture>
-				  </control>
-				  <control type="image">
-						<left>30</left>
-						<top>4</top>
-				    <include>VideoLanguageFlagsLayout</include>
-				    <texture>$INFO[Window(movieinformation).Property(AudioLanguage.1),flags/language/,.png]</texture>
-				  </control>
+			<align>left</align>
+			<aligny>center</aligny>
+			<orientation>horizontal</orientation>
+			<!-- Audio Language -->
+			<control type="group">
+				<width>73</width>
+				<visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
+				<control type="image">
+					<include>FlagsLayout</include>
+					<texture>flags/language/language_flag.png</texture>
 				</control>
-				<control type="group">
-          <width>73</width>
-          <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.2))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.1),Window(movieinformation).Property(AudioLanguage.2))</visible>
-				  <control type="image">
-				    <include>FlagsLayout</include>
-				    <texture>flags/language/language_flag.png</texture>
-				  </control>
-				  <control type="image">
-						<left>30</left>
-						<top>4</top>
-				    <include>VideoLanguageFlagsLayout</include>
-				    <texture>$INFO[Window(movieinformation).Property(AudioLanguage.2),flags/language/,.png]</texture>
-				  </control>
+				<control type="image">
+					<left>30</left>
+					<top>4</top>
+					<include>VideoLanguageFlagsLayout</include>
+					<texture>$INFO[Window(movieinformation).Property(AudioLanguage.1),flags/language/,.png]</texture>
 				</control>
-				<control type="group">
-          <width>73</width>
-          <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.3))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.1),Window(movieinformation).Property(AudioLanguage.3))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.2),Window(movieinformation).Property(AudioLanguage.3))</visible>
-				  <control type="image">
-				    <include>FlagsLayout</include>
-				    <texture>flags/language/language_flag.png</texture>
-				  </control>
-				  <control type="image">
-						<left>30</left>
-						<top>4</top>
-				    <include>VideoLanguageFlagsLayout</include>
-				    <texture>$INFO[Window(movieinformation).Property(AudioLanguage.3),flags/language/,.png]</texture>
-				  </control>
+			</control>
+			<control type="group">
+				<width>73</width>
+				<visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.2))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.1),Window(movieinformation).Property(AudioLanguage.2))</visible>
+				<control type="image">
+					<include>FlagsLayout</include>
+					<texture>flags/language/language_flag.png</texture>
 				</control>
-				<!-- Subtitle Language -->
-				<control type="group">
-          <width>73</width>
-				  <visible>!IsEmpty(Window(movieinformation).Property(SubtitleLanguage.1))</visible>
-				  <control type="image">
-				    <include>FlagsLayout</include>
-				    <texture>flags/language/subtitle_flag.png</texture>
-				  </control>
-				  <control type="image">
-						<left>30</left>
-						<top>4</top>
-				    <include>VideoLanguageFlagsLayout</include>
-				    <texture>$INFO[Window(movieinformation).Property(SubtitleLanguage.1),flags/language/,.png]</texture>
-				  </control>
+				<control type="image">
+					<left>30</left>
+					<top>4</top>
+					<include>VideoLanguageFlagsLayout</include>
+					<texture>$INFO[Window(movieinformation).Property(AudioLanguage.2),flags/language/,.png]</texture>
 				</control>
-				<control type="group">
-          <width>73</width>
-          <visible>!IsEmpty(Window(movieinformation).Property(SubtitleLanguage.2))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.1),Window(movieinformation).Property(SubtitleLanguage.2))</visible>
-				  <control type="image">
-				    <include>FlagsLayout</include>
-				    <texture>flags/language/subtitle_flag.png</texture>
-				  </control>
-				  <control type="image">
-						<left>30</left>
-						<top>4</top>
-				    <include>VideoLanguageFlagsLayout</include>
-				    <texture>$INFO[Window(movieinformation).Property(SubtitleLanguage.2),flags/language/,.png]</texture>
-				  </control>
+			</control>
+			<control type="group">
+				<width>73</width>
+				<visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.3))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.1),Window(movieinformation).Property(AudioLanguage.3))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.2),Window(movieinformation).Property(AudioLanguage.3))</visible>
+				<control type="image">
+					<include>FlagsLayout</include>
+					<texture>flags/language/language_flag.png</texture>
 				</control>
-				<control type="group">
-          <width>73</width>
-          <visible>!IsEmpty(Window(movieinformation).Property(SubtitleLanguage.3))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.1),Window(movieinformation).Property(SubtitleLanguage.3))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.2),Window(movieinformation).Property(SubtitleLanguage.3))</visible>
-				  <control type="image">
-				    <include>FlagsLayout</include>
-				    <texture>flags/language/subtitle_flag.png</texture>
-				  </control>
-				  <control type="image">
-						<left>30</left>
-						<top>4</top>
-				    <include>VideoLanguageFlagsLayout</include>
-				    <texture>$INFO[Window(movieinformation).Property(SubtitleLanguage.3),flags/language/,.png]</texture>
-				  </control>
+				<control type="image">
+					<left>30</left>
+					<top>4</top>
+					<include>VideoLanguageFlagsLayout</include>
+					<texture>$INFO[Window(movieinformation).Property(AudioLanguage.3),flags/language/,.png]</texture>
 				</control>
-				<control type="group">
-          <width>73</width>
-          <visible>!IsEmpty(Window(movieinformation).Property(SubtitleLanguage.4))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.1),Window(movieinformation).Property(SubtitleLanguage.4))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.2),Window(movieinformation).Property(SubtitleLanguage.4))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.3),Window(movieinformation).Property(SubtitleLanguage.4))</visible>
-				  <control type="image">
-				    <include>FlagsLayout</include>
-				    <texture>flags/language/subtitle_flag.png</texture>
-				  </control>
-				  <control type="image">
-						<left>30</left>
-						<top>4</top>
-				    <include>VideoLanguageFlagsLayout</include>
-				    <texture>$INFO[Window(movieinformation).Property(SubtitleLanguage.4),flags/language/,.png]</texture>
-				  </control>
+			</control>
+			<!-- Subtitle Language -->
+			<control type="group">
+				<width>73</width>
+				<visible>!IsEmpty(Window(movieinformation).Property(SubtitleLanguage.1))</visible>
+				<control type="image">
+					<include>FlagsLayout</include>
+					<texture>flags/language/subtitle_flag.png</texture>
 				</control>
-				<control type="group">
-          <width>73</width>
-          <visible>!IsEmpty(Window(movieinformation).Property(SubtitleLanguage.5))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.1),Window(movieinformation).Property(SubtitleLanguage.5))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.2),Window(movieinformation).Property(SubtitleLanguage.5))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.3),Window(movieinformation).Property(SubtitleLanguage.5))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.4),Window(movieinformation).Property(SubtitleLanguage.5))</visible>
-				  <control type="image">
-				    <include>FlagsLayout</include>
-				    <texture>flags/language/subtitle_flag.png</texture>
-				  </control>
-				  <control type="image">
-						<left>30</left>
-						<top>4</top>
-				    <include>VideoLanguageFlagsLayout</include>
-				    <texture>$INFO[Window(movieinformation).Property(SubtitleLanguage.5),flags/language/,.png]</texture>
-				  </control>
+				<control type="image">
+					<left>30</left>
+					<top>4</top>
+					<include>VideoLanguageFlagsLayout</include>
+					<texture>$INFO[Window(movieinformation).Property(SubtitleLanguage.1),flags/language/,.png]</texture>
 				</control>
-				<control type="group">
-          <width>73</width>
-          <visible>!IsEmpty(Window(movieinformation).Property(SubtitleLanguage.6))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.1),Window(movieinformation).Property(SubtitleLanguage.6))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.2),Window(movieinformation).Property(SubtitleLanguage.6))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.3),Window(movieinformation).Property(SubtitleLanguage.6))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.4),Window(movieinformation).Property(SubtitleLanguage.6))</visible>
-          <visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.5),Window(movieinformation).Property(SubtitleLanguage.6))</visible>
-				  <control type="image">
-				    <include>FlagsLayout</include>
-				    <texture>flags/language/subtitle_flag.png</texture>
-				  </control>
-				  <control type="image">
-						<left>30</left>
-						<top>4</top>
-				    <include>VideoLanguageFlagsLayout</include>
-				    <texture>$INFO[Window(movieinformation).Property(SubtitleLanguage.6),flags/language/,.png]</texture>
-				  </control>
+			</control>
+			<control type="group">
+				<width>73</width>
+				<visible>!IsEmpty(Window(movieinformation).Property(SubtitleLanguage.2))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.1),Window(movieinformation).Property(SubtitleLanguage.2))</visible>
+				<control type="image">
+					<include>FlagsLayout</include>
+					<texture>flags/language/subtitle_flag.png</texture>
 				</control>
+				<control type="image">
+					<left>30</left>
+					<top>4</top>
+					<include>VideoLanguageFlagsLayout</include>
+					<texture>$INFO[Window(movieinformation).Property(SubtitleLanguage.2),flags/language/,.png]</texture>
+				</control>
+			</control>
+			<control type="group">
+				<width>73</width>
+				<visible>!IsEmpty(Window(movieinformation).Property(SubtitleLanguage.3))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.1),Window(movieinformation).Property(SubtitleLanguage.3))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.2),Window(movieinformation).Property(SubtitleLanguage.3))</visible>
+				<control type="image">
+					<include>FlagsLayout</include>
+					<texture>flags/language/subtitle_flag.png</texture>
+				</control>
+				<control type="image">
+					<left>30</left>
+					<top>4</top>
+					<include>VideoLanguageFlagsLayout</include>
+					<texture>$INFO[Window(movieinformation).Property(SubtitleLanguage.3),flags/language/,.png]</texture>
+				</control>
+			</control>
+			<control type="group">
+				<width>73</width>
+				<visible>!IsEmpty(Window(movieinformation).Property(SubtitleLanguage.4))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.1),Window(movieinformation).Property(SubtitleLanguage.4))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.2),Window(movieinformation).Property(SubtitleLanguage.4))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.3),Window(movieinformation).Property(SubtitleLanguage.4))</visible>
+				<control type="image">
+					<include>FlagsLayout</include>
+					<texture>flags/language/subtitle_flag.png</texture>
+				</control>
+				<control type="image">
+					<left>30</left>
+					<top>4</top>
+					<include>VideoLanguageFlagsLayout</include>
+					<texture>$INFO[Window(movieinformation).Property(SubtitleLanguage.4),flags/language/,.png]</texture>
+				</control>
+			</control>
+			<control type="group">
+				<width>73</width>
+				<visible>!IsEmpty(Window(movieinformation).Property(SubtitleLanguage.5))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.1),Window(movieinformation).Property(SubtitleLanguage.5))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.2),Window(movieinformation).Property(SubtitleLanguage.5))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.3),Window(movieinformation).Property(SubtitleLanguage.5))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.4),Window(movieinformation).Property(SubtitleLanguage.5))</visible>
+				<control type="image">
+					<include>FlagsLayout</include>
+					<texture>flags/language/subtitle_flag.png</texture>
+				</control>
+				<control type="image">
+					<left>30</left>
+					<top>4</top>
+					<include>VideoLanguageFlagsLayout</include>
+					<texture>$INFO[Window(movieinformation).Property(SubtitleLanguage.5),flags/language/,.png]</texture>
+				</control>
+			</control>
+			<control type="group">
+				<width>73</width>
+				<visible>!IsEmpty(Window(movieinformation).Property(SubtitleLanguage.6))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.1),Window(movieinformation).Property(SubtitleLanguage.6))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.2),Window(movieinformation).Property(SubtitleLanguage.6))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.3),Window(movieinformation).Property(SubtitleLanguage.6))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.4),Window(movieinformation).Property(SubtitleLanguage.6))</visible>
+				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.5),Window(movieinformation).Property(SubtitleLanguage.6))</visible>
+				<control type="image">
+					<include>FlagsLayout</include>
+					<texture>flags/language/subtitle_flag.png</texture>
+				</control>
+				<control type="image">
+					<left>30</left>
+					<top>4</top>
+					<include>VideoLanguageFlagsLayout</include>
+					<texture>$INFO[Window(movieinformation).Property(SubtitleLanguage.6),flags/language/,.png]</texture>
+				</control>
+			</control>
 		</control>
 	</include>
 
