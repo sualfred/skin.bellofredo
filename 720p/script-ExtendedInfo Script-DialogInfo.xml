@@ -155,7 +155,6 @@
 						<width min="10" max="50">auto</width>
 						<height>30</height>
 						<label fallback="195">$INFO[Window.Property(actor.Age), (,)]</label>
-						<visible>IsEmpty(Window.Property(actor.Deathday))</visible>
 					</control>
 				</control>
 				<!-- PlaceOfBirth label -->
