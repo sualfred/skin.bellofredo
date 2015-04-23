@@ -194,7 +194,7 @@
 								<height>38</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<label fallback="Rating">$INFO[Window.Property(movie.mpaa)]</label>
+								<label fallback="Not Rated">$INFO[Window.Property(movie.mpaa)]</label>
 								<textcolor>99white</textcolor>
 								<shadowcolor>99000000</shadowcolor>
 								<font>FontSize_14B</font>
@@ -245,7 +245,7 @@
 								<height>38</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<label>Minutes</label>
+								<label>$LOCALIZE[12391]</label>
 								<textcolor>99white</textcolor>
 								<shadowcolor>99000000</shadowcolor>
 								<font>FontSize_14B</font>
@@ -322,7 +322,7 @@
 								<height>38</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<label>Revenue</label>
+								<label>$LOCALIZE[31195]</label>
 								<textcolor>99white</textcolor>
 								<shadowcolor>99000000</shadowcolor>
 								<font>FontSize_14B</font>
@@ -469,7 +469,7 @@
 						<label>$INFO[Window.Property(movie.omdb.Awards),[COLOR=white]Awards:[/COLOR][COLOR=selected] ,[/COLOR]]</label>		
 						<visible>!IsEmpty(Window.Property(movie.omdb.Awards))</visible>
 					</control>
-					<control type="label">
+					<!--<control type="label">
 						<top>25</top>
 						<textcolor>99white</textcolor>
 						<shadowcolor>99000000</shadowcolor>
@@ -480,17 +480,22 @@
 						<scroll>true</scroll>
 						<scrolltime>50</scrolltime>
 						<visible>!IsEmpty(Window.Property(movie.omdb.tomatoConsensus))</visible>
-					</control>
-					<control type="label">
-						<top>25</top>
-						<height>22</height>
-						<width>840</width>							
-						<label>-</label>
-					</control>				
+					</control>-->
+					<include name="ExtendInfoPlot">
+						<param name="spacer">17</param>
+						<param name="height">268</param>
+						<param name="visible">!IsEmpty(Window.Property(movie.omdb.Awards))</param>
+					</include>
+					<include name="ExtendInfoPlot">
+						<param name="spacer">11</param>
+						<param name="height">325</param>
+						<param name="visible">IsEmpty(Window.Property(movie.omdb.Awards)) + IsEmpty(Window.Property(movie.omdb.tomatoConsensus))</param>
+					</include>
+					<!--				
 					<control type="textbox" id="400">
 						<description>plot</description>
-						<width>840</width>
-						<height>238</height>		
+						<width>840</width>		
+						<height>238</height>
 						<font>FontSize_22</font>
 						<align>justify</align>
 						<textcolor>99white</textcolor>
@@ -498,7 +503,7 @@
 						<label fallback="No info available">$VAR[ExtendedInfoPlot]</label>
 						<autoscroll time="3000" delay="5000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 						<visible>IsEmpty(Window.Property(switchcontent))</visible>						
-					</control>
+					</control>-->
 				</control>				
 			</control>
 			

@@ -2264,29 +2264,6 @@
 	<value condition="Container.Content(Episodes)">$LOCALIZE[20360]</value>
 </variable>
 
-<variable name="ExtendedInfoActorContentInfoLabels">
-	<value condition="StringCompare(Window.Property(switchcontent),1)">$LOCALIZE[31079]</value>
-	<value condition="StringCompare(Window.Property(switchcontent),2)">$LOCALIZE[31078]</value>
-	<value condition="StringCompare(Window.Property(switchcontent),3)">$LOCALIZE[31077]</value>
-	<value condition="StringCompare(Window.Property(switchcontent),4)">$LOCALIZE[31076]</value>
-	<value condition="StringCompare(Window.Property(switchcontent),5)">$LOCALIZE[20445]</value>
-	<value>$LOCALIZE[31074]</value>
-</variable>
-
-<variable name="ExtendedInfoPlot">
-	<value condition="IsEmpty(Window.Property(movie.Plot))">No plot information available...</value>
-	<value>[COLOR=selected]$INFO[Window.Property(movie.TagLine),, ][/COLOR]$INFO[Window.Property(movie.Plot)]</value>
-</variable>
-
-<variable name="ExtendedInfoVideoContentInfoLabels">
-	<value condition="StringCompare(Window.Property(switchcontent),1)">$LOCALIZE[31073]</value>
-	<value condition="StringCompare(Window.Property(switchcontent),5)">$LOCALIZE[31072]</value>
-	<value condition="StringCompare(Window.Property(switchcontent),2)">$LOCALIZE[31075]</value>
-	<value condition="StringCompare(Window.Property(switchcontent),3)">$LOCALIZE[31077]</value>
-	<value condition="StringCompare(Window.Property(switchcontent),4)">$LOCALIZE[20445]</value>
-	<value>$LOCALIZE[31074]</value>
-</variable>
-
 <variable name="VideoInfoStarRating">
 	<value condition="!IsEmpty(ListItem.Rating) | !Substring(Container(100).ListItem.Property(Rating),0.0)">rating/star_big_full.png</value>
 	<value condition="IsEmpty(ListItem.Rating) | Substring(Container(100).ListItem.Property(Rating),0.0)">rating/star_big_empty.png</value>
