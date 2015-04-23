@@ -16,28 +16,11 @@
 			<include>VisibleFadeEffect4</include>
 			<visible>!stringcompare(ListItem.Label,..) + !Skin.HasSetting(HideWidgetCounter) + IntegerGreaterThan(Container($PARAM[Container]).NumItems,0)</visible>
 		</control>
-		<!--<control type="label">
-			<left>0</left>
-			<top>237</top>
-			<width>1280</width>
-			<height>70</height>
-			<font>FontSize_14B</font>		
-			<shadowcolor>77000000</shadowcolor>
-			<aligny>top</aligny>
-			<align>center</align>
-			<label>0 / $INFO[Container($PARAM[Container]).NumItems]</label>
-			<font>FontSize_18B</font>
-			<textcolor>77white</textcolor>
-			<shadowcolor>99000000</shadowcolor>						
-			<visible>!Container($PARAM[Container]).IsUpdating</visible>
-			<include>VisibleFadeEffect4</include>
-			<visible>!stringcompare(ListItem.Label,..) + !Skin.HasSetting(HideWidgetCounter) + !IntegerGreaterThan(Container($PARAM[Container]).NumItems,0)</visible>
-		</control>-->
 		<control type="grouplist">			
 			<visible>Container($PARAM[Container]).IsUpdating</visible>
 			<include>DownUpAnimation</include>
 			<left>295</left>
-			<top>451</top>
+			<top>$PARAM[Top]</top>
 			<width>707</width>
 			<height>70</height>
 			<height>70</height>
@@ -82,7 +65,6 @@
 				</control>
 			</control>
 		</control>
-
 	</include>
 
 	<include name="WidgetContainer">
@@ -142,7 +124,7 @@
 			<visible>!Container($PARAM[Container]).IsUpdating</visible>
 			<include>DownUpAnimation</include>
 			<left>288</left>
-			<top>445</top>
+			<top>$PARAM[top]</top>
 			<width>707</width>
 			<height>70</height>
 			<font>FontSize_22</font>
@@ -554,9 +536,11 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">250</param>
+				<param name="top">445</param>
 			</include>			
 			<include name="ParamWidgetCounterLoading">
 				<param name="Container">250</param>
+				<param name="Top">451</param>
 			</include>
 		</control>
 
@@ -644,9 +628,11 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">350</param>
+				<param name="top">445</param>
 			</include>			
 			<include name="ParamWidgetCounterLoading">
 				<param name="Container">350</param>
+				<param name="Top">451</param>
 			</include>
 		</control>
 
@@ -709,7 +695,7 @@
 				<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5) + !IsEmpty(Container(450).ListItem.DBID)">RunScript(script.playalbum,albumid=$INFO[Container(450).ListItem.DBID])</onclick>
 				<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5) + IsEmpty(Container(450).ListItem.DBID)">PlayMedia("musicdb://recentlyplayedalbums/-1/")</onclick>
 				<onclick condition="!stringcompare(Skin.String(QuickNavWidgetMusicType),4) + !stringcompare(Skin.String(QuickNavWidgetMusicType),5)">SetFocus(450)</onclick>
-				<onclick condition="!stringcompare(Skin.String(QuickNavWidgetMusicType),4) + !stringcompare(Skin.String(QuickNavWidgetMusicType),5)">Select</onclick>							
+				<onclick condition="!stringcompare(Skin.String(QuickNavWidgetMusicType),4) + !stringcompare(Skin.String(QuickNavWidgetMusicType),5)">Select</onclick>
 				<onclick>SetFocus(45)</onclick>	
 				<include>TopButton</include>
 			</control>
@@ -742,9 +728,11 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">450</param>
+				<param name="top">432</param>
 			</include>			
 			<include name="ParamWidgetCounterLoading">
 				<param name="Container">450</param>
+				<param name="Top">438</param>
 			</include>
 		</control>
 
@@ -834,9 +822,11 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">750</param>
+				<param name="top">445</param>
 			</include>				
 			<include name="ParamWidgetCounterLoading">
 				<param name="Container">750</param>
+				<param name="Top">451</param>
 			</include>
 		</control>
 
@@ -923,9 +913,11 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">751</param>
+				<param name="top">445</param>
 			</include>		
 			<include name="ParamWidgetCounterLoading">
 				<param name="Container">751</param>
+				<param name="Top">451</param>
 			</include>
 		</control>
 
@@ -1011,9 +1003,11 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">550</param>
+				<param name="top">432</param>
 			</include>			
 			<include name="ParamWidgetCounterLoading">
 				<param name="Container">550</param>
+				<param name="Top">438</param>
 			</include>
 		</control>
 
@@ -1101,9 +1095,11 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">653</param>
+				<param name="top">432</param>
 			</include>			
 			<include name="ParamWidgetCounterLoading">
 				<param name="Container">653</param>
+				<param name="Top">438</param>
 			</include>
 		</control>
 
@@ -1169,9 +1165,11 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">551</param>
+				<param name="top">432</param>
 			</include>		
 			<include name="ParamWidgetCounterLoading">
 				<param name="Container">551</param>
+				<param name="Top">438</param>
 			</include>
 		</control>
 
@@ -1237,9 +1235,11 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">552</param>
+				<param name="top">432</param>
 			</include>				
 			<include name="ParamWidgetCounterLoading">
 				<param name="Container">552</param>
+				<param name="Top">438</param>
 			</include>
 		</control>
 
@@ -1305,9 +1305,11 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">553</param>
+				<param name="top">432</param>
 			</include>		
 			<include name="ParamWidgetCounterLoading">
 				<param name="Container">553</param>
+				<param name="Top">438</param>
 			</include>
 		</control>
 
@@ -1373,9 +1375,11 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">554</param>
+				<param name="top">432</param>
 			</include>			
 			<include name="ParamWidgetCounterLoading">
 				<param name="Container">554</param>
+				<param name="Top">438</param>
 			</include>
 		</control>
 
@@ -1482,9 +1486,11 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">650</param>
+				<param name="top">432</param>
 			</include>		
 			<include name="ParamWidgetCounterLoading">
 				<param name="Container">650</param>
+				<param name="Top">438</param>
 			</include>
 		</control>
 
@@ -1548,9 +1554,11 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">651</param>
+				<param name="top">432</param>
 			</include>		
 			<include name="ParamWidgetCounterLoading">
 				<param name="Container">651</param>
+				<param name="Top">438</param>
 			</include>
 		</control>
 
@@ -1614,9 +1622,11 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">652</param>
+				<param name="top">445</param>
 			</include>			
 			<include name="ParamWidgetCounterLoading">
 				<param name="Container">652</param>
+				<param name="Top">451</param>
 			</include>
 		</control>
 	</include>
