@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-04-23 11:45+0000\n"
+"PO-Revision-Date: 2015-04-24 15:51+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -810,7 +810,22 @@ msgctxt "#31195"
 msgid "Revenue"
 msgstr "Einnahmen"
 
-#: empty strings from id 31195 to 31199 scripts labels
+msgctxt "#31196"
+msgid "In Production"
+msgstr "In Produktion"
+
+msgctxt "#31197"
+msgid "Post Production"
+msgstr "Post-Produktion"
+
+msgctxt "#31198"
+msgid "Ended"
+msgstr "Eingestellt"
+
+msgctxt "#31199"
+msgid "Returning Series"
+msgstr "Nicht eingstellt"
+
 msgctxt "#31200"
 msgid "My Movies"
 msgstr "Meine Filme"
