@@ -1114,6 +1114,15 @@
 				</control>
 			</include>
 
+			<variable name="ExtendedInfoContentInfoStatus">
+				<value condition="StringCompare(Window.Property(movie.Status),Released)">$LOCALIZE[31107]</value>
+				<value condition="StringCompare(Window.Property(movie.Status),Post Production)">$LOCALIZE[31197]</value>
+				<value condition="StringCompare(Window.Property(movie.Status),In Production)">$LOCALIZE[31196]</value>
+				<value condition="StringCompare(Window.Property(movie.Status),Ended)">$LOCALIZE[31198]</value>
+				<value condition="StringCompare(Window.Property(movie.Status),Returning Series)">$LOCALIZE[31199]</value>
+				<value>$INFO[Window.Property(movie.Status)]</value>
+			</variable>
+
 			<variable name="ExtendedInfoActorContentInfoLabels">
 				<value condition="StringCompare(Window.Property(switchcontent),1)">$LOCALIZE[31079]</value>
 				<value condition="StringCompare(Window.Property(switchcontent),2)">$LOCALIZE[31078]</value>

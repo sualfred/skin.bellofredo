@@ -798,8 +798,21 @@ msgctxt "#31195"
 msgid "Revenue"
 msgstr ""
 
-#: empty strings from id 31195 to 31199
-#: scripts labels
+msgctxt "#31196"
+msgid "In Production"
+msgstr ""
+
+msgctxt "#31197"
+msgid "Post Production"
+msgstr ""
+
+msgctxt "#31198"
+msgid "Ended"
+msgstr ""
+
+msgctxt "#31199"
+msgid "Returning Series"
+msgstr ""
 
 msgctxt "#31200"
 msgid "My Movies"
