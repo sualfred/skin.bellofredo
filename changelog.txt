@@ -1,4 +1,11 @@
-﻿[B][COLOR=FF56ADDA]v4.2.0[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.2.1[/COLOR][/B]
+With the help of Incubus, thx.
+• Changed: Removed the counter values in the ExtendedInfo dialogs
+• Changed: ExtendedInfo plot layout
+• Fixed: Missing ExtendedInfo actor total movies line
+• Added: ExtendedInfo label translations
+
+[B][COLOR=FF56ADDA]v4.2.0[/COLOR][/B]
 • Changed: Bottom label positions of square widgets
 • Changed: Plot/movie critic layout of ExtendedInfo video dialog
 • Fixed: Some conditions and info labels
