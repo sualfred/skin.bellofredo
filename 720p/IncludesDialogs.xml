@@ -1108,7 +1108,7 @@
 					<align>justify</align>
 					<textcolor>99white</textcolor>
 					<shadowcolor>99000000</shadowcolor>
-					<label>$INFO[Window.Property(movie.omdb.tomatoConsensus),[COLOR=white]$LOCALIZE[31193]:[/COLOR][CR]","[CR][CR]][COLOR=white]$LOCALIZE[207]:[/COLOR][CR][COLOR=blue]$INFO[Window.Property(movie.TagLine),,[CR]][/COLOR]$VAR[ExtendedInfoPlot]</label>
+					<label>$INFO[Window.Property(movie.omdb.tomatoConsensus),[COLOR=white]$LOCALIZE[31193]:[/COLOR] ","[CR][CR]][COLOR=white]$LOCALIZE[207]:[/COLOR][CR]$INFO[Window.Property(movie.TagLine),[COLOR=blue],[/COLOR] - ]$VAR[ExtendedInfoPlot]</label>
 					<autoscroll time="3000" delay="10000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>IsEmpty(Window.Property(switchcontent)) + $PARAM[visible]</visible>						
 				</control>
