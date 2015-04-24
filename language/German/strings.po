@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-04-24 15:51+0000\n"
+"PO-Revision-Date: 2015-04-24 18:56+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -1114,7 +1114,31 @@ msgctxt "#31271"
 msgid "Enable Widget Content Switch Function"
 msgstr "Aktiviere Widget Content Switch Funktion"
 
-#: empty strings from id 31272 to 31279 Playlist Editor labels
+msgctxt "#31272"
+msgid "Budget"
+msgstr "Budget"
+
+msgctxt "#31273"
+msgid "Place of Birth"
+msgstr "Geburtsort"
+
+msgctxt "#31274"
+msgid "Birthday"
+msgstr "Geburtstag"
+
+msgctxt "#31275"
+msgid "Deathday"
+msgstr "Todestag"
+
+msgctxt "#31276"
+msgid "Also known as"
+msgstr "Auch bekannt als"
+
+msgctxt "#31277"
+msgid "Filmography"
+msgstr "Filmographie"
+
+#: empty strings from id 31278 to 31279 Playlist Editor labels
 msgctxt "#31280"
 msgid "Open Playlist"
 msgstr "Wiedergabeliste öffnen"
