@@ -1106,7 +1106,27 @@ msgctxt "#31272"
 msgid "Budget"
 msgstr ""
 
-#: empty strings from id 31273 to 31279
+msgctxt "#31273"
+msgid "Place of Birth"
+msgstr ""
+
+msgctxt "#31274"
+msgid "Birthday"
+msgstr ""
+
+msgctxt "#31275"
+msgid "Deathday"
+msgstr ""
+
+msgctxt "#31276"
+msgid "Also known as"
+msgstr ""
+
+msgctxt "#31277"
+msgid "Filmography"
+msgstr ""
+
+#: empty strings from id 31278 to 31279
 #: Playlist Editor labels
 
 msgctxt "#31280"

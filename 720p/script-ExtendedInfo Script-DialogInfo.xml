@@ -114,7 +114,7 @@
 						<shadowcolor>99000000</shadowcolor>
 						<font>FontSize_22</font>
 						<width min="10" max="595">auto</width>
-						<label>$ADDON[script.extendedinfo 32016]:</label>
+						<label>$LOCALIZE[31276]:</label>
 					</control>
 					<control type="label">
 						<textcolor>99white</textcolor>
@@ -138,7 +138,7 @@
 						<shadowcolor>99000000</shadowcolor>
 						<font>FontSize_22</font>
 						<width min="10" max="595">auto</width>
-						<label>$ADDON[script.extendedinfo 32012]:</label>
+						<label>$LOCALIZE[31274]:</label>
 					</control>
 					<control type="label">
 						<textcolor>99white</textcolor>
@@ -169,7 +169,7 @@
 						<shadowcolor>99000000</shadowcolor>
 						<font>FontSize_22</font>
 						<width min="10" max="595">auto</width>
-						<label>$ADDON[script.extendedinfo 32014]:</label>
+						<label>$LOCALIZE[31273]:</label>
 					</control>
 					<control type="label">
 						<textcolor>99white</textcolor>
@@ -193,7 +193,7 @@
 						<shadowcolor>99000000</shadowcolor>
 						<font>FontSize_22</font>
 						<width min="10" max="595">auto</width>
-						<label>$ADDON[script.extendedinfo 32013]:</label>
+						<label>$LOCALIZE[31275]:</label>
 					</control>
 					<control type="label">
 						<textcolor>99white</textcolor>
@@ -212,13 +212,13 @@
 					<height>30</height>
 					<orientation>horizontal</orientation>
 					<animation effect="slide" start="0,0" end="0,-25" time="0" condition="IsEmpty(Window.Property(actor.Deathday))">Conditional</animation>
-					<visible>!IsEmpty(Window.Property(actor.TotalMovies))</visible>
+					<!--<visible>!IsEmpty(Window.Property(actor.TotalMovies))</visible>-->
 					<control type="label">
 						<textcolor>white</textcolor>
 						<shadowcolor>99000000</shadowcolor>
 						<font>FontSize_22</font>
 						<width min="10" max="595">auto</width>
-						<label>$ADDON[script.extendedinfo 32011]:</label>
+						<label>$LOCALIZE[31277]:</label>
 					</control>
 					<control type="label">
 						<textcolor>99white</textcolor>
@@ -226,7 +226,7 @@
 						<font>FontSize_22</font>
 						<width min="10" max="595">auto</width>
 						<height>30</height>
-						<label fallback="195">$INFO[Window.Property(actor.TotalMovies)]</label>
+						<label fallback="195">$VAR[ExtendedInfoSeenIn]</label>
 					</control>
 				</control>
 				<control type="textbox" id="400">
@@ -802,35 +802,35 @@
 				</control>
 				<control type="button" id="6">
 					<description>Filmography</description>
-					<label>$LOCALIZE[31079]$INFO[Container(150).NumItems, (,)]</label>
+					<label>$LOCALIZE[31079]</label>
 					<onclick>SetProperty(switchcontent,1)</onclick>
 					<include>TopButton</include>
 					<visible>IntegerGreaterThan(Container(150).NumItems,0)</visible>
 				</control>
 				<control type="button" id="7">
 					<description>TVshows</description>
-					<label>$LOCALIZE[31078]$INFO[Container(250).NumItems, (,)]</label>
+					<label>$LOCALIZE[31078]</label>
 					<onclick>SetProperty(switchcontent,2)</onclick>
 					<include>TopButton</include>
 					<visible>IntegerGreaterThan(Container(250).NumItems,0)</visible>
 				</control>				
 				<control type="button" id="8">
 					<description>youtube</description>
-					<label>$LOCALIZE[31077]$INFO[Container(350).NumItems, (,)]</label>
+					<label>$LOCALIZE[31077]</label>
 					<onclick>SetProperty(switchcontent,3)</onclick>
 					<include>TopButton</include>
 					<visible>IntegerGreaterThan(Container(350).NumItems,0)</visible>
 				</control>			
 				<control type="button" id="9">
 					<description>artwork</description>
-					<label>$LOCALIZE[31076]$INFO[Container(450).NumItems, (,)]</label>
+					<label>$LOCALIZE[31076]</label>
 					<onclick>SetProperty(switchcontent,4)</onclick>
 					<include>TopButton</include>
 					<visible>IntegerGreaterThan(Container(450).NumItems,0)</visible>
 				</control>							
 				<control type="button" id="10">
 					<description>fanart</description>
-					<label>$LOCALIZE[20445]$INFO[Container(750).NumItems, (,)]</label>
+					<label>$LOCALIZE[20445]</label>
 					<onclick>SetProperty(switchcontent,5)</onclick>
 					<include>TopButton</include>
 					<visible>IntegerGreaterThan(Container(750).NumItems,0)</visible>

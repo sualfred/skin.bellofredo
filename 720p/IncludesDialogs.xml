@@ -1137,6 +1137,12 @@
 				<value>$INFO[Window.Property(movie.Plot)]</value>
 			</variable>
 
+			<variable name="ExtendedInfoSeenIn">
+				<value condition="IntegerGreaterThan(Container(250).NumItems,0) + IntegerGreaterThan(Container(150).NumItems,0)">$INFO[Container(150).NumItems,, $LOCALIZE[31079]] / $INFO[Container(250).NumItems,, $LOCALIZE[31078]]</value>
+				<value condition="IntegerGreaterThan(Container(250).NumItems,0) + !IntegerGreaterThan(Container(150).NumItems,0)">$INFO[Container(250).NumItems,, $LOCALIZE[31078]]</value>
+				<value condition="!IntegerGreaterThan(Container(250).NumItems,0) + IntegerGreaterThan(Container(150).NumItems,0)">$INFO[Container(150).NumItems,, $LOCALIZE[31079]]</value>
+			</variable>
+
 			<variable name="ExtendedInfoVideoContentInfoLabels">
 				<value condition="StringCompare(Window.Property(switchcontent),1)">$LOCALIZE[31073]</value>
 				<value condition="StringCompare(Window.Property(switchcontent),5)">$LOCALIZE[31072]</value>
