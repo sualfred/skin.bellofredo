@@ -813,49 +813,49 @@
 				</control>
 				<control type="button" id="21">
 					<description>cast</description>
-					<label>$LOCALIZE[31073]$INFO[Container(1000).NumItems, (,)]</label>
+					<label>$LOCALIZE[31073]</label>
 					<onclick>SetProperty(switchcontent,1)</onclick>
 					<include>TopButton</include>
 					<visible>IntegerGreaterThan(Container(1000).NumItems,0)</visible>
 				</control>							
 				<control type="button" id="25">
 					<description>crew</description>
-					<label>$LOCALIZE[31072]$INFO[Container(750).NumItems, (,)]</label>
+					<label>$LOCALIZE[31072]</label>
 					<onclick>SetProperty(switchcontent,5)</onclick>
 					<include>TopButton</include>
 					<visible>IntegerGreaterThan(Container(750).NumItems,0)</visible>
 				</control>				
 				<control type="button" id="26">
 					<description>sets seasons</description>
-					<label>$LOCALIZE[31090]$INFO[Container(250).NumItems, (,)]</label>
+					<label>$LOCALIZE[31090]</label>
 					<onclick>SetProperty(switchcontent,6)</onclick>
 					<include>TopButton</include>
 					<visible>IntegerGreaterThan(Container(250).NumItems,0)</visible>
 				</control>					
 				<control type="button" id="27">
 					<description>episodes</description>
-					<label>$LOCALIZE[31091]$INFO[Container(2000).NumItems, (,)]</label>
+					<label>$LOCALIZE[31091]</label>
 					<onclick>SetProperty(switchcontent,7)</onclick>
 					<include>TopButton</include>
 					<visible>IntegerGreaterThan(Container(2000).NumItems,0)</visible>
 				</control>		
 				<control type="button" id="22">
 					<description>recommended</description>
-					<label>$LOCALIZE[31071]$INFO[Container(150).NumItems, (,)]</label>
+					<label>$LOCALIZE[31071]</label>
 					<onclick>SetProperty(switchcontent,2)</onclick>
 					<include>TopButton</include>
 					<visible>IntegerGreaterThan(Container(150).NumItems,0)</visible>
 				</control>				
 				<control type="button" id="23">
 					<description>youtube</description>
-					<label>$LOCALIZE[31077]$INFO[Container(350).NumItems, (,)]</label>
+					<label>$LOCALIZE[31077]</label>
 					<onclick>SetProperty(switchcontent,3)</onclick>
 					<include>TopButton</include>
 					<visible>IntegerGreaterThan(Container(350).NumItems,0)</visible>
 				</control>			
 				<control type="button" id="24">
 					<description>fanart</description>
-					<label>$LOCALIZE[20445]$INFO[Container(1350).NumItems, (,)]</label>
+					<label>$LOCALIZE[20445]</label>
 					<onclick>SetProperty(switchcontent,4)</onclick>
 					<include>TopButton</include>
 					<visible>IntegerGreaterThan(Container(1350).NumItems,0)</visible>
