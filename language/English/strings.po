@@ -1126,7 +1126,11 @@ msgctxt "#31277"
 msgid "Filmography"
 msgstr ""
 
-#: empty strings from id 31278 to 31279
+msgctxt "#31278"
+msgid "Planned"
+msgstr ""
+
+#: empty strings from id 31279 to 31279
 #: Playlist Editor labels
 
 msgctxt "#31280"

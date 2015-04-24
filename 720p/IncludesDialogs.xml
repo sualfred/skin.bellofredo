@@ -1120,6 +1120,7 @@
 				<value condition="StringCompare(Window.Property(movie.Status),In Production)">$LOCALIZE[31196]</value>
 				<value condition="StringCompare(Window.Property(movie.Status),Ended)">$LOCALIZE[31198]</value>
 				<value condition="StringCompare(Window.Property(movie.Status),Returning Series)">$LOCALIZE[31199]</value>
+				<value condition="StringCompare(Window.Property(movie.Status),Planned)">$LOCALIZE[31278]</value>
 				<value>$INFO[Window.Property(movie.Status)]</value>
 			</variable>
 
