@@ -8,11 +8,11 @@
 		<value condition="SubString(ListItem.MPAA,Rated R) | SubString(ListItem.MPAA,USA:R)">flags/mpaa/film/rating-r.png</value>
 		<value condition="SubString(ListItem.MPAA, NC-17) | SubString(ListItem.MPAA,USA:NC-17)">flags/mpaa/film/rating-nc17.png</value>
 		<!--german rating-->
-		<value condition="SubString(ListItem.mpaa,Rated 18) | SubString(ListItem.mpaa,Germany:18) | SubString(ListItem.mpaa,FSK 18) | SubString(ListItem.mpaa,ab 18)">flags/mpaa/fsk/fsk18.png</value>
-		<value condition="SubString(ListItem.mpaa,Rated 16) | SubString(ListItem.mpaa,Germany:16) | SubString(ListItem.mpaa,FSK 16) | SubString(ListItem.mpaa,ab 16)">flags/mpaa/fsk/fsk16.png</value>
-		<value condition="SubString(ListItem.mpaa,Rated 12) | SubString(ListItem.mpaa,Germany:12) | SubString(ListItem.mpaa,FSK 12) | SubString(ListItem.mpaa,ab 12)">flags/mpaa/fsk/fsk12.png</value>
-		<value condition="SubString(ListItem.mpaa,Rated 6) | SubString(ListItem.mpaa,Germany:6) | SubString(ListItem.mpaa,FSK 6) | SubString(ListItem.mpaa,ab 6)">flags/mpaa/fsk/fsk6.png</value>
-		<value condition="SubString(ListItem.mpaa,Rated 0) | SubString(ListItem.mpaa,Germany:0) | SubString(ListItem.mpaa,FSK 0) | SubString(ListItem.mpaa,ab 0)">flags/mpaa/fsk/fsk0.png</value>
+		<value condition="SubString(ListItem.mpaa,18) | SubString(ListItem.mpaa,Rated 18) | SubString(ListItem.mpaa,Germany:18) | SubString(ListItem.mpaa,FSK 18) | SubString(ListItem.mpaa,ab 18)">flags/mpaa/fsk/fsk18.png</value>
+		<value condition="SubString(ListItem.mpaa,16) | SubString(ListItem.mpaa,Rated 16) | SubString(ListItem.mpaa,Germany:16) | SubString(ListItem.mpaa,FSK 16) | SubString(ListItem.mpaa,ab 16)">flags/mpaa/fsk/fsk16.png</value>
+		<value condition="SubString(ListItem.mpaa,12) | SubString(ListItem.mpaa,Rated 12) | SubString(ListItem.mpaa,Germany:12) | SubString(ListItem.mpaa,FSK 12) | SubString(ListItem.mpaa,ab 12)">flags/mpaa/fsk/fsk12.png</value>
+		<value condition="SubString(ListItem.mpaa,6) | SubString(ListItem.mpaa,Rated 6) | SubString(ListItem.mpaa,Germany:6) | SubString(ListItem.mpaa,FSK 6) | SubString(ListItem.mpaa,ab 6)">flags/mpaa/fsk/fsk6.png</value>
+		<value condition="SubString(ListItem.mpaa,0) | SubString(ListItem.mpaa,Rated 0) | SubString(ListItem.mpaa,Germany:0) | SubString(ListItem.mpaa,FSK 0) | SubString(ListItem.mpaa,ab 0)">flags/mpaa/fsk/fsk0.png</value>
 		<value>flags/mpaa/film/rating-nr.png</value>
 	</variable>
 	<variable name="MPAAFilmRatingExtendedInfo">
@@ -23,11 +23,11 @@
 		<value condition="SubString(Window.Property(movie.mpaa),Rated R) | SubString(Window.Property(movie.mpaa),USA:R)">flags/mpaa/film/rating-r.png</value>
 		<value condition="SubString(Window.Property(movie.mpaa), NC-17) | SubString(Window.Property(movie.mpaa),USA:NC-17)">flags/mpaa/film/rating-nc17.png</value>
 		<!--german rating-->
-		<value condition="SubString(Window.Property(movie.mpaa),Rated 18) | SubString(Window.Property(movie.mpaa),Germany:18) | SubString(Window.Property(movie.mpaa),FSK 18) | SubString(Window.Property(movie.mpaa),ab 18)">flags/mpaa/fsk/fsk18.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Rated 16) | SubString(Window.Property(movie.mpaa),Germany:16) | SubString(Window.Property(movie.mpaa),FSK 16) | SubString(Window.Property(movie.mpaa),ab 16)">flags/mpaa/fsk/fsk16.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Rated 12) | SubString(Window.Property(movie.mpaa),Germany:12) | SubString(Window.Property(movie.mpaa),FSK 12) | SubString(Window.Property(movie.mpaa),ab 12)">flags/mpaa/fsk/fsk12.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Rated 6) | SubString(Window.Property(movie.mpaa),Germany:6) | SubString(Window.Property(movie.mpaa),FSK 6) | SubString(Window.Property(movie.mpaa),ab 6)">flags/mpaa/fsk/fsk6.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Rated 0) | SubString(Window.Property(movie.mpaa),Germany:0) | SubString(Window.Property(movie.mpaa),FSK 0) | SubString(Window.Property(movie.mpaa),ab 0)">flags/mpaa/fsk/fsk0.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),18) | SubString(Window.Property(movie.mpaa),Rated 18) | SubString(Window.Property(movie.mpaa),Germany:18) | SubString(Window.Property(movie.mpaa),FSK 18) | SubString(Window.Property(movie.mpaa),ab 18)">flags/mpaa/fsk/fsk18.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),16) | SubString(Window.Property(movie.mpaa),Rated 16) | SubString(Window.Property(movie.mpaa),Germany:16) | SubString(Window.Property(movie.mpaa),FSK 16) | SubString(Window.Property(movie.mpaa),ab 16)">flags/mpaa/fsk/fsk16.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),12) | SubString(Window.Property(movie.mpaa),Rated 12) | SubString(Window.Property(movie.mpaa),Germany:12) | SubString(Window.Property(movie.mpaa),FSK 12) | SubString(Window.Property(movie.mpaa),ab 12)">flags/mpaa/fsk/fsk12.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),6) | SubString(Window.Property(movie.mpaa),Rated 6) | SubString(Window.Property(movie.mpaa),Germany:6) | SubString(Window.Property(movie.mpaa),FSK 6) | SubString(Window.Property(movie.mpaa),ab 6)">flags/mpaa/fsk/fsk6.png</value>
+		<value condition="SubString(Window.Property(movie.mpaa),0) | SubString(Window.Property(movie.mpaa),Rated 0) | SubString(Window.Property(movie.mpaa),Germany:0) | SubString(Window.Property(movie.mpaa),FSK 0) | SubString(Window.Property(movie.mpaa),ab 0)">flags/mpaa/fsk/fsk0.png</value>
 		<value>flags/mpaa/film/rating-nr.png</value>
 		<!--tv ratings-->
 		<value condition="SubString(Window.Property(movie.mpaa),TV-14)">flags/mpaa/tv/tv-14.png</value>
