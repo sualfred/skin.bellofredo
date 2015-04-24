@@ -4,13 +4,14 @@
 # Addon Provider: Sualfred
 # Translators:
 # Olivier Zolli <ozolli@gmail.com>, 2015
+# sualfred <su4lfred@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-04-24 17:45+0000\n"
-"Last-Translator: Olivier Zolli <ozolli@gmail.com>\n"
+"PO-Revision-Date: 2015-04-24 19:00+0000\n"
+"Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/bello-fredo/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1113,7 +1114,31 @@ msgctxt "#31271"
 msgid "Enable Widget Content Switch Function"
 msgstr "Activer la fonction de changement de widget"
 
-#: empty strings from id 31272 to 31279 Playlist Editor labels
+msgctxt "#31272"
+msgid "Budget"
+msgstr "Budget"
+
+msgctxt "#31273"
+msgid "Place of Birth"
+msgstr "Lieu de naissance"
+
+msgctxt "#31274"
+msgid "Birthday"
+msgstr "Anniversaire"
+
+msgctxt "#31275"
+msgid "Deathday"
+msgstr "Date de décès"
+
+msgctxt "#31276"
+msgid "Also known as"
+msgstr "Aussi connu sous"
+
+msgctxt "#31277"
+msgid "Filmography"
+msgstr "Filmographie"
+
+#: empty strings from id 31278 to 31279 Playlist Editor labels
 msgctxt "#31280"
 msgid "Open Playlist"
 msgstr "Ouvrir Playliste"
