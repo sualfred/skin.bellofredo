@@ -296,7 +296,7 @@
 								<height>38</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<label>Budget</label>
+								<label>$LOCALIZE[31272]</label>
 								<textcolor>99white</textcolor>
 								<shadowcolor>99000000</shadowcolor>
 								<font>FontSize_14B</font>
@@ -329,124 +329,6 @@
 							</control>
 						</control>
 					</control>				
-				</control>
-				<control type="group">	
-					<visible>false</visible>
-					<!-- duration label -->
-					<control type="grouplist">
-						<posx>333</posx>
-						<posy>55</posy>
-						<width>775</width>
-						<height>30</height>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<textcolor>white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
-							<width min="10" max="595">auto</width>
-							<label>$LOCALIZE[2050]:</label>
-						</control>
-						<control type="label">
-							<textcolor>99white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
-							<width min="10" max="595">auto</width>
-							<height>30</height>
-							<label fallback="195">$INFO[Window.Property(movie.Duration),, $LOCALIZE[12391]] </label>
-						</control>
-					</control>
-					<!-- premiered label -->
-					<control type="grouplist">
-						<posx>333</posx>
-						<posy>80</posy>
-						<width>775</width>
-						<height>30</height>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<textcolor>white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
-							<width min="10" max="595">auto</width>
-							<label>$INFO[Window.Property(movie.Status)]:</label>
-						</control>
-						<control type="label">
-							<textcolor>99white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
-							<width min="10" max="595">auto</width>
-							<height>30</height>
-							<label fallback="195">$INFO[Window.Property(movie.ReleaseDate)]</label>
-						</control>
-					</control>
-					<!-- Budget label -->
-					<control type="grouplist">
-						<posx>333</posx>
-						<posy>105</posy>
-						<width>775</width>
-						<height>30</height>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<textcolor>white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
-							<width min="10" max="595">auto</width>
-							<label>Budget:</label>
-						</control>
-						<control type="label">
-							<textcolor>99white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
-							<width min="10" max="595">auto</width>
-							<height>30</height>
-							<label>$INFO[Window.Property(movie.Budget)]</label>
-						</control>
-					</control>
-					<!-- Revenue label -->
-					<control type="grouplist">
-						<posx>333</posx>
-						<posy>130</posy>
-						<width>775</width>
-						<height>30</height>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<textcolor>white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
-							<width min="10" max="595">auto</width>
-							<label>Revenue:</label>
-						</control>
-						<control type="label">
-							<textcolor>99white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
-							<width min="10" max="595">auto</width>
-							<height>30</height>
-							<label fallback="195">$INFO[Window.Property(movie.Revenue)]</label>
-						</control>
-					</control>
-					<!-- rating label -->
-					<control type="grouplist">
-						<posx>333</posx>
-						<posy>155</posy>
-						<width>775</width>
-						<height>30</height>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<textcolor>white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
-							<width min="10" max="595">auto</width>
-							<label>$LOCALIZE[563]:</label>
-						</control>
-						<control type="label">
-							<textcolor>99white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<font>FontSize_22</font>
-							<width min="10" max="595">auto</width>
-							<height>30</height>
-							<label fallback="195">$INFO[Window.Property(movie.Rating)] / $INFO[Window.Property(movie.Votes),, Votes]</label>
-						</control>
-					</control>					
 				</control>		
 				
 				<!-- ================== -->
@@ -469,18 +351,6 @@
 						<label>$INFO[Window.Property(movie.omdb.Awards),[COLOR=white]Awards:[/COLOR][COLOR=selected] ,[/COLOR]]</label>		
 						<visible>!IsEmpty(Window.Property(movie.omdb.Awards))</visible>
 					</control>
-					<!--<control type="label">
-						<top>25</top>
-						<textcolor>99white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<font>FontSize_22</font>
-						<width>840</width>
-						<height>25</height>
-						<label>$INFO[Window.Property(movie.omdb.tomatoConsensus)]</label>
-						<scroll>true</scroll>
-						<scrolltime>50</scrolltime>
-						<visible>!IsEmpty(Window.Property(movie.omdb.tomatoConsensus))</visible>
-					</control>-->
 					<include name="ExtendInfoPlot">
 						<param name="spacer">17</param>
 						<param name="height">268</param>
@@ -489,21 +359,8 @@
 					<include name="ExtendInfoPlot">
 						<param name="spacer">11</param>
 						<param name="height">325</param>
-						<param name="visible">IsEmpty(Window.Property(movie.omdb.Awards)) + IsEmpty(Window.Property(movie.omdb.tomatoConsensus))</param>
+						<param name="visible">IsEmpty(Window.Property(movie.omdb.Awards))</param>
 					</include>
-					<!--				
-					<control type="textbox" id="400">
-						<description>plot</description>
-						<width>840</width>		
-						<height>238</height>
-						<font>FontSize_22</font>
-						<align>justify</align>
-						<textcolor>99white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<label fallback="No info available">$VAR[ExtendedInfoPlot]</label>
-						<autoscroll time="3000" delay="5000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
-						<visible>IsEmpty(Window.Property(switchcontent))</visible>						
-					</control>-->
 				</control>				
 			</control>
 			

@@ -1102,7 +1102,11 @@ msgctxt "#31271"
 msgid "Enable Widget Content Switch Function"
 msgstr ""
 
-#: empty strings from id 31272 to 31279
+msgctxt "#31272"
+msgid "Budget"
+msgstr ""
+
+#: empty strings from id 31273 to 31279
 #: Playlist Editor labels
 
 msgctxt "#31280"
