@@ -2368,7 +2368,7 @@
 <variable name="BackgroundAnimationLabels">
 	<value condition="Stringcompare(Skin.String(BG-Animation),home)">$LOCALIZE[31185]</value>
 	<value condition="Stringcompare(Skin.String(BG-Animation),windows)">$LOCALIZE[31186]</value>
-	<value condition="Stringcompare(Skin.String(WeatherExtended),global)">$LOCALIZE[31184]</value>
+	<value condition="Stringcompare(Skin.String(BG-Animation),global)">$LOCALIZE[31184]</value>
 	<value>$LOCALIZE[31066]</value>
 </variable>
 
