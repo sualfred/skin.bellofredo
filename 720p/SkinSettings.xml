@@ -563,7 +563,7 @@
 						<onright>9000</onright>
 						<onup>8400</onup>
 						<ondown>8400</ondown>
-						<control type="button" id="8408">
+						<control type="button" id="8401">
 							<include>SettingsButton</include>
 							<label>31183</label>
 							<label2>[COLOR=selected]$VAR[BackgroundAnimationLabels][/COLOR]</label2>
@@ -578,39 +578,39 @@
 							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.Reset(BG-Animation,3))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31183])</onclick>
 						</control>
-						<control type="radiobutton" id="8401">
+						<control type="radiobutton" id="8402">
 							<include>SettingsRadioButton</include>
 							<label>31130</label>
 							<onclick>Skin.ToggleSetting(HideBGFanart)</onclick>
 							<selected>Skin.HasSetting(HideBGFanart)</selected>
 						</control>
-						<control type="radiobutton" id="8407">
+						<control type="radiobutton" id="8403">
 							<include>SettingsRadioButton</include>
 							<label>31051</label>
 							<onclick>Skin.ToggleSetting(ViewsExtraFanart)</onclick>
 							<selected>Skin.HasSetting(ViewsExtraFanart)</selected>
 							<enable>!Skin.HasSetting(HideBGFanart)</enable>
 						</control>
-						<control type="radiobutton" id="8408">
+						<control type="radiobutton" id="8404">
 							<include>SettingsRadioButton</include>
 							<label>31116</label>
 							<onclick>Skin.ToggleSetting(DiffuseWidgetFanart)</onclick>
 							<selected>Skin.HasSetting(DiffuseWidgetFanart)</selected>
 							<enable>!Skin.HasSetting(HideBGFanart)</enable>
 						</control>
-						<control type="radiobutton" id="8402">
+						<control type="radiobutton" id="8405">
 							<include>SettingsRadioButton</include>
 							<label>31132</label>
 							<onclick>Skin.ToggleSetting(HideBGVideo)</onclick>
 							<selected>Skin.HasSetting(HideBGVideo)</selected>
 						</control>
-						<control type="radiobutton" id="8403">
+						<control type="radiobutton" id="8406">
 							<include>SettingsRadioButton</include>
 							<label>31133</label>
 							<onclick>Skin.ToggleSetting(CustomBackground)</onclick>
 							<selected>Skin.HasSetting(CustomBackground)</selected>
 						</control>
-						<control type="button" id="8404">
+						<control type="button" id="8407">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31135]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(CustomImageBackgroundPath)][/COLOR]</label2>
@@ -618,7 +618,7 @@
 							<onclick>Skin.SetImage(CustomImageBackgroundPath)</onclick>
 							<visible>Skin.HasSetting(CustomBackground)</visible>
 						</control>
-						<control type="button" id="8405">
+						<control type="button" id="8408">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31136]</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(CustomFolderBackgroundPath)][/COLOR]</label2>
@@ -626,7 +626,7 @@
 							<onclick>Skin.SetPath(CustomFolderBackgroundPath)</onclick>
 							<visible>Skin.HasSetting(CustomBackground)</visible>
 						</control>
-						<control type="radiobutton" id="8406">
+						<control type="radiobutton" id="8409">
 							<include>SettingsRadioButton</include>
 							<label>- $LOCALIZE[31131]</label>
 							<onclick>Skin.ToggleSetting(ShowCustomBackgroundOnHomeOnly)</onclick>
