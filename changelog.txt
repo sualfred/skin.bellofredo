@@ -1,4 +1,10 @@
-﻿[B][COLOR=FF56ADDA]v4.2.1[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.2.1a[/COLOR][/B]
+Grml. Quick bugfix release
+• Fixed: Background animation global
+• Fixed: Not accessable "Diffuse Widgets" settings button
+• Fixed: FR "Planned" language string
+
+[B][COLOR=FF56ADDA]v4.2.1[/COLOR][/B]
 With the help of Incubus, thx.
 • Changed: Removed the counter values in the ExtendedInfo dialogs
 • Changed: ExtendedInfo plot layout
