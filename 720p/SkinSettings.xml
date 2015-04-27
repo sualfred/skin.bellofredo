@@ -260,7 +260,7 @@
 							<description>menu position</description>
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31279]</label>
-							<label2>[COLOR=blue]$VAR[MenuPositionLabel][/COLOR]</label2>
+							<label2>[COLOR=selected]$VAR[MenuPositionLabel][/COLOR]</label2>
 							<onclick>Skin.ToggleSetting(MoveMenuPosition)</onclick>
 							<selected>Skin.HasSetting(MoveMenuPosition)</selected>
 						</control>
