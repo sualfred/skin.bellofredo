@@ -1130,8 +1130,9 @@ msgctxt "#31278"
 msgid "Planned"
 msgstr ""
 
-#: empty strings from id 31279 to 31279
-#: Playlist Editor labels
+msgctxt "#31279"
+msgid "Menu Position"
+msgstr ""
 
 msgctxt "#31280"
 msgid "Open Playlist"
@@ -1330,7 +1331,15 @@ msgctxt "#31380"
 msgid "Custom Widgets"
 msgstr ""
 
-#: empty strings from id 31381 to 31408
+msgctxt "#31381"
+msgid "Center"
+msgstr ""
+
+msgctxt "#31382"
+msgid "Bottom"
+msgstr ""
+
+#: empty strings from id 31383 to 31408
 #: settings Category Description & Header Labels
 
 msgctxt "#31409"

@@ -11,26 +11,30 @@
 	<onload>Dialog.Close(pictureinfo)</onload>
 	<onload>SetProperty(RefreshList,1,Home)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=20&amp;group=mainmenu|widgetgroup1|widgetgroup2|widgetgroup3|widgetgroup4)</onload>
-  <allowoverlay>yes</allowoverlay>
-  <backgroundcolor>0</backgroundcolor>
+	<allowoverlay>yes</allowoverlay>
+	<backgroundcolor>0</backgroundcolor>
 	<controls>		
 		<include>BackgroundContent</include>
 		<include>BackgroundVignette</include>			
 		<control type="group">
 			<animation effect="fade" time="1000" delay="10500" start="0" end="100" condition="[SubString(Player.Filenameandpath,extras/intro/intro.mp4) | SubString(Player.Filenameandpath,extras\intro\intro.mp4] + Skin.HasSetting(UseIntro)" reversible="false">Conditional</animation>
-			<include>HomeMenuWraplist</include>
-			<include>HomeSubMenus</include>
+			<control type="group">				
+				<animation effect="slide" time="0" start="0,0" end="0,100" condition="Skin.HasSetting(MoveMenuPosition)">Conditional</animation>
+				<include>HomeMenuWraplist</include>
+				<include>HomeSubMenus</include>
+			</control>
 			<include condition="!Skin.HasSetting(HideHomeNPCovers)">CoversNowPlaying</include>
 			<include condition="Skin.HasSetting(HideHomeNPCovers)">CommonNowPlaying</include>
 			<include>TopHomeMenu</include>
 			<include>HomeWeatherAndClock</include>
-			<control type="group">
-			<animation type="Conditional" condition="Window.IsVisible(contextmenu)" reversible="false">
-				<effect type="slide" end="0,-25" time="350" tween="cubic" easing="out" />			
-			</animation>
-			<animation type="Conditional" condition="!Window.IsVisible(contextmenu)" reversible="false">
-				<effect type="slide" start="0,-25" end="0,0" time="350" tween="sine" easing="out" />			
-			</animation>
+			<control type="group">				
+				<animation effect="slide" time="0" start="0,0" end="0,100" condition="Skin.HasSetting(MoveMenuPosition)">Conditional</animation>
+				<animation type="Conditional" condition="Window.IsVisible(contextmenu)" reversible="false">
+					<effect type="slide" end="0,-25" time="350" tween="cubic" easing="out" />			
+				</animation>
+				<animation type="Conditional" condition="!Window.IsVisible(contextmenu)" reversible="false">
+					<effect type="slide" start="0,-25" end="0,0" time="350" tween="sine" easing="out" />			
+				</animation>				
 				<include>FredHomeWidgets</include>			
 			</control>
 			<include>CommonDialogsFadeOutBG</include>

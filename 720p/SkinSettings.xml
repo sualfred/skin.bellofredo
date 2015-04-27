@@ -256,6 +256,14 @@
 							<onclick>Skin.ToggleSetting(HideWidgetCounter)</onclick>
 							<selected>Skin.HasSetting(HideWidgetCounter)</selected>
 						</control>
+						<control type="button" id="8315">
+							<description>menu position</description>
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31279]</label>
+							<label2>[COLOR=blue]$VAR[MenuPositionLabel][/COLOR]</label2>
+							<onclick>Skin.ToggleSetting(MoveMenuPosition)</onclick>
+							<selected>Skin.HasSetting(MoveMenuPosition)</selected>
+						</control>
 						<control type="button" id="8304">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>

@@ -1842,6 +1842,11 @@
 	<value condition="StringCompare(Skin.String(WatchedFlag),watched)">watched</value>
 </variable>
 
+<variable name="MenuPositionLabel">
+	<value condition="Skin.HasSetting(MoveMenuPosition)">$LOCALIZE[31382]</value>
+	<value>$LOCALIZE[31381]</value>
+</variable>
+
 <variable name="MenuGroupHeader">
 	<value condition="!StringCompare(Window.Property(groupname),mainmenu) + !IsEmpty(Window.Property(groupDisplayName))">$LOCALIZE[31050] $INFO[Window.Property(groupDisplayName),","]</value>			
 	<value condition="StringCompare(Window.Property(groupname),widgetgroup1)">$LOCALIZE[31049] $INFO[Skin.String(widgetgroup1),","]</value>		
