@@ -1194,21 +1194,7 @@ msgctxt "#31294"
 msgid "BelloFredo - Extrapack"
 msgstr ""
 
-msgctxt "#31295"
-msgid "Update finished"
-msgstr ""
-
-msgctxt "#31296"
-msgid "Update failed"
-msgstr ""
-
-msgctxt "#31297"
-msgid "No update required"
-msgstr ""
-
-msgctxt "#31298"
-msgid "Downloading: "
-msgstr ""
+#: empty strings from id 31295 to 31298
 
 msgctxt "#31299"
 msgid "Conditional Weather Fanarts"
