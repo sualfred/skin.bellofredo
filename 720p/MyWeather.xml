@@ -85,7 +85,7 @@
 					<onclick condition="stringcompare(Skin.String(WeatherExtended),4)">Skin.SetString(WeatherExtended,1)</onclick>
 					<visible>StringCompare(Weather.Plugin,weather.openweathermap.extended) + !IsEmpty(Control.GetLabel(3))</visible>
 				</control>
-				<control type="togglebutton" id="262">
+				<!--<control type="togglebutton" id="262">
 					<description>Fanart Toggle</description>
 					<label>$LOCALIZE[20445]: $LOCALIZE[31012]</label>
 					<altlabel>$LOCALIZE[20445]: $LOCALIZE[31011]</altlabel>
@@ -95,6 +95,18 @@
 					<onclick condition="!Skin.HasSetting(ShowWeatherFanart)">Skin.SetPath(WeatherFanartDir)</onclick>
 					<onclick condition="!IsEmpty(Skin.String(WeatherFanartDir)) + !Skin.HasSetting(ShowWeatherFanart)">ReplaceWindow(Weather)</onclick>
 					<selected>Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))</selected>
+				</control>-->
+				<control type="button" id="262">
+					<description>Fanart Toggle</description>
+					<label>$LOCALIZE[20445]: $VAR[SettingsConditionalWeatherLabels]</label>
+					<include>TopLeftMenusButton</include>					
+					<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31318])</onclick>
+					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(ConditionalWeatherArt,Extrapack)||Skin.SetString(WeatherFanartDir,special://profile/addon_data/skin.bellofredo.extrapack/weatherfanarts/))</onclick>
+					<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31136])</onclick>
+					<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(ConditionalWeatherArt,MultiImage)||Skin.SetPath(WeatherFanartDir))</onclick>
+					<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[13106])</onclick>
+					<onclick>SetProperty(Dialog.3.BuiltIn,Skin.Reset(ConditionalWeatherArt)||Skin.Reset(WeatherFanartDir))</onclick>
+					<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31299])</onclick>
 				</control>
 				<control type="togglebutton" id="263">
 					<description>Alerts Toggle</description>

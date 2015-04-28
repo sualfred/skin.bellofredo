@@ -564,7 +564,7 @@ msgstr "Einzelbild"
 
 msgctxt "#31136"
 msgid "Multi Image"
-msgstr "Mehfachbilder"
+msgstr "Mehrfachbilder"
 
 msgctxt "#31137"
 msgid "Enable Notifications"

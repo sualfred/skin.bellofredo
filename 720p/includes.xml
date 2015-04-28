@@ -2226,6 +2226,12 @@
 	<value condition="Window.IsVisible(SystemSettings)">$LOCALIZE[31418]</value>
 </variable>
 
+<variable name="SettingsConditionalWeatherLabels">
+	<value condition="StringCompare(Skin.String(ConditionalWeatherArt),Extrapack">$LOCALIZE[31294]</value>
+	<value condition="StringCompare(Skin.String(ConditionalWeatherArt),MultiImage">$LOCALIZE[31136]</value>
+	<value>$LOCALIZE[1223]</value>
+</variable>
+
 <variable name="GlobalSearchFanart">
 	<value condition="Control.HasFocus(111) | Container(9000).HasFocus(1)">$INFO[Container(111).ListItem.Property(Fanart)]</value>
 	<value condition="Control.HasFocus(121) | Container(9000).HasFocus(2)">$INFO[Container(121).ListItem.Property(Fanart)]</value>

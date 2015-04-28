@@ -38,7 +38,7 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>Test: $INFO[Skin.String(WatchedFlag)] - var $VAR[WatchedStateOverlay] - test overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</label>
+				<label>Test: $INFO[Skin.String(WeatherFanartDir)]</label>
 			</control>
 			<!--<control type="image">
 						<width>238</width>

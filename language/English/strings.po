@@ -1190,8 +1190,29 @@ msgctxt "#31293"
 msgid "Default Addon Fanart [COLOR=55white](if available)[/COLOR]"
 msgstr ""
 
-#: empty strings from id 31293 to 31299
-#: video and Music OSD Labels
+msgctxt "#31294"
+msgid "BelloFredo - Extrapack"
+msgstr ""
+
+msgctxt "#31295"
+msgid "Update finished"
+msgstr ""
+
+msgctxt "#31296"
+msgid "Update failed"
+msgstr ""
+
+msgctxt "#31297"
+msgid "No update required"
+msgstr ""
+
+msgctxt "#31298"
+msgid "Downloading: "
+msgstr ""
+
+msgctxt "#31299"
+msgid "Conditional Weather Fanarts"
+msgstr ""
 
 msgctxt "#31300"
 msgid "Muted"
@@ -1265,7 +1286,23 @@ msgctxt "#31317"
 msgid "Amiblight Compatiblity Mode"
 msgstr ""
 
-#: empty strings from id 31318 to 31349
+msgctxt "#31318"
+msgid "Use Extrapack Weather Fanarts"
+msgstr ""
+
+msgctxt "#31319"
+msgid "Download Extras & available Updates"
+msgstr ""
+
+msgctxt "#31320"
+msgid "Force Extrapack Refresh"
+msgstr ""
+
+msgctxt "#31321"
+msgid "Check of Updates on Startup"
+msgstr ""
+
+#: empty strings from id 31322 to 31349
 #: PVR
 
 msgctxt "#31350"
