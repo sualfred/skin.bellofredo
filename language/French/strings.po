@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-04-24 19:00+0000\n"
+"PO-Revision-Date: 2015-04-28 13:16+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/bello-fredo/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -1142,7 +1142,10 @@ msgctxt "#31278"
 msgid "Planned"
 msgstr "Prévu"
 
-#: empty strings from id 31279 to 31279 Playlist Editor labels
+msgctxt "#31279"
+msgid "Menu Position"
+msgstr "Position du menu principal"
+
 msgctxt "#31280"
 msgid "Open Playlist"
 msgstr "Ouvrir Playliste"
@@ -1199,7 +1202,15 @@ msgctxt "#31293"
 msgid "Default Addon Fanart [COLOR=55white](if available)[/COLOR]"
 msgstr "Extension fanart par défaut [COLOR=55white](si disponible)[/COLOR]"
 
-#: empty strings from id 31293 to 31299 video and Music OSD Labels
+msgctxt "#31294"
+msgid "BelloFredo - Extrapack"
+msgstr "BelloFredo - Extrapack"
+
+#: empty strings from id 31295 to 31298
+msgctxt "#31299"
+msgid "Conditional Weather Fanarts"
+msgstr "Fanarts tendance météo"
+
 msgctxt "#31300"
 msgid "Muted"
 msgstr "En sourdine"
@@ -1272,7 +1283,23 @@ msgctxt "#31317"
 msgid "Amiblight Compatiblity Mode"
 msgstr "Mode de compatibilité Ambilight"
 
-#: empty strings from id 31318 to 31349 PVR
+msgctxt "#31318"
+msgid "Use Extrapack Weather Fanarts"
+msgstr "Utiliser les fanarts tendance météo"
+
+msgctxt "#31319"
+msgid "Download Extras & available Updates"
+msgstr "Télécharger Extras & mises à jour diponibles"
+
+msgctxt "#31320"
+msgid "Force Extrapack Refresh"
+msgstr "Forcer mise à jour Extrapack"
+
+msgctxt "#31321"
+msgid "Check of Updates on Startup"
+msgstr "Vérifier les mises à jour au démarrage"
+
+#: empty strings from id 31322 to 31349 PVR
 msgctxt "#31350"
 msgid "Available Groups"
 msgstr "Groupes disponibles"
@@ -1334,7 +1361,15 @@ msgctxt "#31380"
 msgid "Custom Widgets"
 msgstr "Widget personnalisé"
 
-#: empty strings from id 31381 to 31408 settings Category Description & Header
+msgctxt "#31381"
+msgid "Center"
+msgstr "Centré"
+
+msgctxt "#31382"
+msgid "Bottom"
+msgstr "En bas"
+
+#: empty strings from id 31383 to 31408 settings Category Description & Header
 #: Labels
 msgctxt "#31409"
 msgid ""

@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: Bello
-# Addon id: skin.bello
-# Addon Provider: Nessus
+# Addon Name: Bello Fredo
+# Addon id: skin.bellofredo
+# Addon Provider: Sualfred
 # Translators:
 # Zapata11 <raimondas.duzinskas@gmail.com>, 2015
 msgid ""
@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-04-13 07:29+0000\n"
-"Last-Translator: Zapata11 <raimondas.duzinskas@gmail.com>\n"
+"PO-Revision-Date: 2015-04-28 13:16+0000\n"
+"Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/bello-fredo/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -386,9 +386,8 @@ msgid "Episodes"
 msgstr "Epizodai"
 
 msgctxt "#31092"
-msgid ""
-"Automatically update IMDb Top250 & Ratings if the Library has been updated"
-msgstr "Automatiškai atnaujinti IMDb Top250 ir reitingus po bibliotekos atnaujinimo"
+msgid "Auto Update IMDb Top250 & Movie Ratings"
+msgstr ""
 
 msgctxt "#31093"
 msgid "Update IMDb Top250 & Movie Ratings"
@@ -530,7 +529,14 @@ msgctxt "#31127"
 msgid "Show Libary Totals in the Menu"
 msgstr "Rodyti bibliotekos statistiką meniu"
 
-#: empty strings from id 31128 to 31129
+msgctxt "#31128"
+msgid "Loading. Please wait."
+msgstr ""
+
+msgctxt "#31129"
+msgid "item"
+msgstr ""
+
 msgctxt "#31130"
 msgid "Disable Fanart in all sections"
 msgstr "Išjungti Fanart visuose skyriuose"
@@ -637,7 +643,10 @@ msgctxt "#31154"
 msgid "Choose Trailers Add-on"
 msgstr "Rodyti anonsų priedą"
 
-#: empty string with 31155
+msgctxt "#31155"
+msgid "Collection"
+msgstr ""
+
 msgctxt "#31156"
 msgid "Manage Video Views"
 msgstr "Tvarkyti vaizdo įrašų rodinius"
@@ -744,7 +753,78 @@ msgctxt "#31181"
 msgid "Download Art"
 msgstr "Atsisiųsti iliustracijas"
 
-#: empty strings from id 31182 to 31199 scripts labels
+msgctxt "#31182"
+msgid "Last Check for Updates"
+msgstr ""
+
+msgctxt "#31183"
+msgid "Background Animation"
+msgstr ""
+
+msgctxt "#31184"
+msgid "Global"
+msgstr ""
+
+msgctxt "#31185"
+msgid "Only Home Screen"
+msgstr ""
+
+msgctxt "#31186"
+msgid "Only Windows & Dialogs"
+msgstr ""
+
+msgctxt "#31187"
+msgid "Top 250"
+msgstr ""
+
+msgctxt "#31188"
+msgid "Movie Ratings"
+msgstr ""
+
+msgctxt "#31189"
+msgid "MPAA"
+msgstr ""
+
+msgctxt "#31190"
+msgid "Update MPAA Ratings"
+msgstr ""
+
+msgctxt "#31191"
+msgid "Update Settings"
+msgstr ""
+
+msgctxt "#31192"
+msgid "Hide Widget Item Counter"
+msgstr ""
+
+msgctxt "#31193"
+msgid "Critics Consensus"
+msgstr ""
+
+msgctxt "#31194"
+msgid "No plot information available"
+msgstr ""
+
+msgctxt "#31195"
+msgid "Revenue"
+msgstr ""
+
+msgctxt "#31196"
+msgid "In Production"
+msgstr ""
+
+msgctxt "#31197"
+msgid "Post Production"
+msgstr ""
+
+msgctxt "#31198"
+msgid "Ended"
+msgstr ""
+
+msgctxt "#31199"
+msgid "Returning Series"
+msgstr ""
+
 msgctxt "#31200"
 msgid "My Movies"
 msgstr "Mano filmai"
@@ -1033,7 +1113,38 @@ msgctxt "#31271"
 msgid "Enable Widget Content Switch Function"
 msgstr "Įjungti valdiklio turinio perjungimo funkciją"
 
-#: empty strings from id 31272 to 31279 Playlist Editor labels
+msgctxt "#31272"
+msgid "Budget"
+msgstr ""
+
+msgctxt "#31273"
+msgid "Place of Birth"
+msgstr ""
+
+msgctxt "#31274"
+msgid "Birthday"
+msgstr ""
+
+msgctxt "#31275"
+msgid "Deathday"
+msgstr ""
+
+msgctxt "#31276"
+msgid "Also known as"
+msgstr ""
+
+msgctxt "#31277"
+msgid "Filmography"
+msgstr ""
+
+msgctxt "#31278"
+msgid "Planned"
+msgstr ""
+
+msgctxt "#31279"
+msgid "Menu Position"
+msgstr ""
+
 msgctxt "#31280"
 msgid "Open Playlist"
 msgstr "Atidaryti grojaraštį"
@@ -1090,7 +1201,15 @@ msgctxt "#31293"
 msgid "Default Addon Fanart [COLOR=55white](if available)[/COLOR]"
 msgstr "Numatytasis priedo Fanart [COLOR=55white](jei prieinama)[/COLOR]"
 
-#: empty strings from id 31293 to 31299 video and Music OSD Labels
+msgctxt "#31294"
+msgid "BelloFredo - Extrapack"
+msgstr ""
+
+#: empty strings from id 31295 to 31298
+msgctxt "#31299"
+msgid "Conditional Weather Fanarts"
+msgstr ""
+
 msgctxt "#31300"
 msgid "Muted"
 msgstr "Nutildyta"
@@ -1163,7 +1282,23 @@ msgctxt "#31317"
 msgid "Amiblight Compatiblity Mode"
 msgstr "Ambilight suderinamumo režimas"
 
-#: empty strings from id 31318 to 31349 PVR
+msgctxt "#31318"
+msgid "Use Extrapack Weather Fanarts"
+msgstr ""
+
+msgctxt "#31319"
+msgid "Download Extras & available Updates"
+msgstr ""
+
+msgctxt "#31320"
+msgid "Force Extrapack Refresh"
+msgstr ""
+
+msgctxt "#31321"
+msgid "Check of Updates on Startup"
+msgstr ""
+
+#: empty strings from id 31322 to 31349 PVR
 msgctxt "#31350"
 msgid "Available Groups"
 msgstr "Galimos grupės"
@@ -1225,7 +1360,15 @@ msgctxt "#31380"
 msgid "Custom Widgets"
 msgstr "Savi valdikliai"
 
-#: empty strings from id 31381 to 31408 settings Category Description & Header
+msgctxt "#31381"
+msgid "Center"
+msgstr ""
+
+msgctxt "#31382"
+msgid "Bottom"
+msgstr ""
+
+#: empty strings from id 31383 to 31408 settings Category Description & Header
 #: Labels
 msgctxt "#31409"
 msgid ""
