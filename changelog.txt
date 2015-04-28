@@ -1,7 +1,7 @@
 ﻿[B][COLOR=FF56ADDA]v4.2.2[/COLOR][/B]
 • Added: Option to move the home menu slightly more to the bottom
 • Added: BelloFredo Extrapack script to download conditional weather fanarts and more background presets
-• Removed: Non-default backgrounds from the skin. Will now provided by BelloFredo Extrapack
+• Removed: Non-default backgrounds. Will now provided by BelloFredo Extrapack.
 • Merged: Translations
 
 [B][COLOR=FF56ADDA]v4.2.1a[/COLOR][/B]
