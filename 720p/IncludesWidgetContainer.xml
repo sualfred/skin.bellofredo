@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes> 
+	<include name="widgetgroup-custompath-video">
+		<content target="video">$VAR[QuickNav_WidgetListContentCustomPath]</content>
+	</include>
+	<include name="widgetgroup-custompath-music">
+		<content target="music">$VAR[QuickNav_WidgetListContentCustomPath]</content>
+	</include>
+	<include name="widgetgroup-custompath-pictures">
+		<content target="pictures">$VAR[QuickNav_WidgetListContentCustomPath]</content>
+	</include>
+	<include name="widgetgroup-custompath-other">
+		<content>$VAR[QuickNav_WidgetListContentCustomPath]</content>
+	</include>
+	<include name="widgetgroup-customgroup">
+		<content>
+			<include>$VAR[QuickNav_WidgetListContentCustomPath]</include>
+		</content>
+	</include>
+
 	<include name="ParamWidgetCounterLoading">
 		<control type="label">
 			<left>0</left>
@@ -1122,7 +1140,8 @@
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(551).NumItems,4)</visible>
-				<include>WidgetEmptyBoxes</include>
+				<include condition="!StringCompare(Skin.String(widgetgroup1type),pathposter)">WidgetEmptyBoxes</include>
+				<include condition="StringCompare(Skin.String(widgetgroup1type),pathposter)">WidgetEmptyPosters</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
@@ -1158,10 +1177,18 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="551">	
-				<include>WidgetSquareLayout</include>
-				<content>
+				<include condition="!StringCompare(Skin.String(widgetgroup1type),pathposter)">WidgetSquareLayout</include>
+				<include condition="StringCompare(Skin.String(widgetgroup1type),pathposter)">WidgetPosterLayout</include>
+
+				<include condition="StringCompare(Skin.String(widgetgroup1type),mixed)">widgetgroup-customgroup</include>
+				<include condition="StringCompare(Skin.String(widgetgroup1type),pathvideos)">widgetgroup-custompath-video</include>
+				<include condition="StringCompare(Skin.String(widgetgroup1type),pathmusic)">widgetgroup-custompath-music</include>
+				<include condition="StringCompare(Skin.String(widgetgroup1type),pathpictures)">widgetgroup-custompath-music</include>
+				<include condition="StringCompare(Skin.String(widgetgroup1type),pathother)">widgetgroup-custompath-other</include>
+				<!--<content condition="StringCompare(Skin.String(widgetgroup1type),mixed)">
 					<include>skinshortcuts-group-widgetgroup1</include>
 				</content>
+				<content condition="!StringCompare(Skin.String(widgetgroup1type),mixed)">$INFO[Skin.String(CustomWidgetPath1.List)]</content>-->			
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">551</param>

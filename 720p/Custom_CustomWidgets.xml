@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window  type="dialog" id="1120">
+ <defaultcontrol always="true">5000</defaultcontrol>
+ <controls>
+   <control type="group">
+     <include>DialogAnimation</include>
+     <visible>!Window.IsActive(DialogSelect.xml) + !Window.IsActive(VirtualKeyboard) + !Window.IsActive(FileBrowser) + !Window.IsActive(ProgressDialog)</visible>
+     <control type="group">      
+      <top>-32</top>
+       <control type="image">
+         <left>311</left>
+         <top>226</top>
+         <width>658</width>
+         <height>57</height>
+         <colordiffuse>blue</colordiffuse>
+         <texture background="true" border="9">dialogs/other/header.png</texture>
+       </control>
+       <control type="image">
+         <left>311</left>
+         <top>280</top>
+         <width>658</width>
+         <height>238</height>
+         <texture background="true" border="39,19,39,19">dialogs/other/body.png</texture>
+       </control>
+       <control type="image">
+         <left>313</left>
+         <top>279</top>
+         <width>654</width>
+         <height>4</height>
+         <aspectratio>stretch</aspectratio>
+         <texture background="true">dialogs/other/header_line.png</texture>
+       </control>
+       <control type="label">
+         <description>header label</description>
+         <left>325</left>
+         <top>241</top>
+         <width>560</width>
+         <include>DialogsHeaderLabel</include>
+         <label>$LOCALIZE[31377]</label>
+       </control>
+     </control>
+
+       <control type="image">
+         <description>background image</description>
+         <include>FullscreenDimensions</include>
+         <texture background="true">dialogs/other/bg_customwidgets.png</texture>
+       </control>
+
+     <control type="group" id="10010">
+      <control type="grouplist" id="5000">
+       <posx>328</posx>
+       <posy>247</posy>
+       <width>170</width>
+       <height>200</height>
+       <itemgap>4</itemgap>
+       <onleft>10000</onleft>
+       <onright>6000</onright>
+       <onup>5000</onup>
+       <ondown>5000</ondown>
+       <control type="button" id="5001">
+        <description>Custom Item 1</description>
+        <width>170</width>
+        <include>DialogsButton</include>
+        <label>$LOCALIZE[31378] 1</label>
+        <onfocus>SetProperty(EditCustomWidgets,widgetgroup1,SkinSettings)</onfocus>
+      </control>
+      <control type="button" id="5002">
+        <description>Custom Item 2</description>
+        <width>170</width>
+        <include>DialogsButton</include>
+        <label>$LOCALIZE[31378] 2</label>
+        <onfocus>SetProperty(EditCustomWidgets,widgetgroup2,SkinSettings)</onfocus>
+      </control>
+      <control type="button" id="5003">
+        <description>Custom Item 3</description>
+        <width>170</width>
+        <include>DialogsButton</include>
+        <label>$LOCALIZE[31378] 3</label>
+        <onfocus>SetProperty(EditCustomWidgets,widgetgroup3,SkinSettings)</onfocus>
+      </control>
+      <control type="button" id="5004">
+        <description>Custom Item 4</description>
+        <width>170</width>
+        <include>DialogsButton</include>
+        <label>$LOCALIZE[31378] 4</label>
+        <onfocus>SetProperty(EditCustomWidgets,widgetgroup4,SkinSettings)</onfocus>
+      </control>
+    </control>
+
+    <control type="grouplist" id="6000">
+     <posx>502</posx>
+     <posy>297</posy>
+     <width>450</width>
+     <height>149</height>
+     <itemgap>4</itemgap>
+     <onleft>5000</onleft>
+     <onright>10000</onright>
+     <onup>6000</onup>
+     <ondown>6000</ondown>
+     <scrolltime>250</scrolltime>
+     <control type="button" id="4101">
+      <description>Edit Label</description>
+      <width>450</width>
+      <include>DialogsButton</include>
+      <label>Label $VAR[CustomWidgetNumber]</label>
+      <label2>[COLOR=selected]$VAR[CustomWidgetLabel][/COLOR]</label2>
+      <onclick>Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Label)</onclick>
+    </control>
+    <control type="button" id="4102">
+      <description>edit Thumb</description>
+      <width>450</width>
+      <include>DialogsButton</include>
+      <label>Layout $VAR[CustomWidgetNumber]</label>
+      <label2>[COLOR=selected]$VAR[CustomWidgetLayout][/COLOR]</label2>
+      <onclick>SetProperty(Dialog.1.Label,Poster)</onclick>
+      <onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Layout,Poster))</onclick>
+      <onclick>SetProperty(Dialog.2.Label,Square)</onclick>
+      <onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Layout,Square))</onclick>    
+      <onclick>RunScript(script.toolbox,info=selectdialog,header=Layout)</onclick>
+    </control>
+    <control type="button" id="4103">
+      <description>edit target</description>
+      <width>450</width>
+      <include>DialogsButton</include>
+      <label>Target $VAR[CustomWidgetNumber]</label>
+      <label2>[COLOR=selected]$VAR[CustomWidgetTarget][/COLOR]</label2>
+      <onclick>SetProperty(Dialog.1.Label,Videos)</onclick>
+      <onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Target,video))</onclick>
+      <onclick>SetProperty(Dialog.2.Label,Music)</onclick>
+      <onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Target,music))</onclick>    
+      <onclick>SetProperty(Dialog.3.Label,Pictures)</onclick>
+      <onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Target,pictures))</onclick>  
+      <onclick>SetProperty(Dialog.4.Label,Programs)</onclick>
+      <onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Target,programs))</onclick>   
+      <onclick>SetProperty(Dialog.5.Label,Other)</onclick>
+      <onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Target,other))</onclick>    
+      <onclick>RunScript(script.toolbox,info=selectdialog,header=Target)</onclick>
+    </control>
+    <control type="button" id="4104">
+      <description>edit source</description>
+      <width>450</width>
+      <include>DialogsButton</include>
+      <label>$LOCALIZE[21899] $VAR[CustomWidgetNumber]</label>
+      <label2>[COLOR=selected]$VAR[CustomWidgetSource][/COLOR]</label2>
+      <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31323])</onclick>
+      <onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,mixed)||RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup1))</onclick>
+      <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31324])</onclick>
+      <onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,pathvideos)||RunScript(script.favourites,property=CustomWidgetPath1))</onclick>
+      <onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31325])</onclick>
+      <onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,pathmusic)||RunScript(script.favourites,property=CustomWidgetPath1))</onclick>
+      <onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31326])</onclick>
+      <onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,pathpictures)||RunScript(script.favourites,property=CustomWidgetPath1))</onclick>
+      <onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31327])</onclick>
+      <onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,pathother)||RunScript(script.favourites,property=CustomWidgetPath1))</onclick>
+      <onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31328])</onclick>
+      <onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,pathown)||Skin.SetString(CustomWidgetPath1.List))</onclick>
+      <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31322])</onclick>
+    </control>
+  </control>
+</control>
+<!-- Control Buttons -->
+<control type="group"  id="10000">
+ <left>974</left>
+ <top>423</top>
+ <control type="button" id="10">
+  <description>Save</description>
+  <width>150</width>
+  <include>DialogsButtonsText</include>
+  <texturefocus border="49,0,49,0">dialogs/buttons/add_focus.png</texturefocus>
+  <texturenofocus border="49,0,49,0">dialogs/buttons/add_nofocus.png</texturenofocus>
+  <onleft>10010</onleft>
+  <onright>10010</onright>
+  <onup>10</onup>
+  <ondown>10</ondown>
+  <label>$LOCALIZE[20177]</label>
+  <onclick>Close</onclick>
+</control>
+</control>
+</control>
+</controls>
+</window>
+
+

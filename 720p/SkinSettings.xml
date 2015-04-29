@@ -127,6 +127,11 @@
 							<label>$LOCALIZE[31310]</label>
 							<onclick>noop</onclick>
 						</item>
+						<!--Music Visualisation-->
+						<item id="9">
+							<label>test</label>
+							<onclick>RunScript(script.favourites,property=CustomFavourite1)</onclick>
+						</item>
 					</content>
 				</control>
 				<control type="group" id="8900">
@@ -350,6 +355,7 @@
 						<onright>9000</onright>
 						<onup>8500</onup>
 						<ondown>8500</ondown>
+						<!-- RunScript(script.favourites,property=CustomFavourite1) -->
 						<!--custom widgets-->
 						<control type="button" id="8500">
 							<disabledcolor>55white</disabledcolor>
@@ -361,8 +367,29 @@
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31380] #1</label>
 							<label2>[COLOR=selected]$INFO[Skin.String(widgetgroup1)][/COLOR]</label2>
-							<onclick>Skin.SetString(widgetgroup1)</onclick>
-							<onclick>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup1)</onclick>
+
+							<onclick>SetProperty(EditCustomWidgets,widgetgroup1,SkinSettings)</onclick>
+							<onclick>SetProperty(ManageButtons,widgetgroup1)</onclick>
+							<onclick>ActivateWindow(1118)</onclick>
+
+							<!--<onclick>ActivateWindow(1120)</onclick>-->
+
+							<!--<onclick>Skin.SetString(widgetgroup1)</onclick>
+							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31323])</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widgetgroup1type,mixed)||RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup1))</onclick>
+							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31324])</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widgetgroup1type,pathvideos)||RunScript(script.favourites,property=CustomWidgetPath1))</onclick>
+							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31325])</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widgetgroup1type,pathmusic)||RunScript(script.favourites,property=CustomWidgetPath1))</onclick>
+							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31326])</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widgetgroup1type,pathpictures)||RunScript(script.favourites,property=CustomWidgetPath1))</onclick>
+							<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31327])</onclick>
+							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widgetgroup1type,pathother)||RunScript(script.favourites,property=CustomWidgetPath1))</onclick>
+							<onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31328])</onclick>
+							<onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(widgetgroup1type,pathown)||Skin.SetString(CustomWidgetPath1.List))</onclick>
+							<onclick>SetProperty(Dialog.7.Label,$LOCALIZE[31329])</onclick>
+							<onclick>SetProperty(Dialog.7.BuiltIn,Skin.Reset(widgetgroup1type)||Skin.SetString(widgetgroup1,$LOCALIZE[31172]))</onclick>
+							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31322])</onclick>-->
 						</control>
 						<control type="button" id="8502">
 							<include>SettingsButton</include>

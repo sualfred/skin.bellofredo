@@ -1288,7 +1288,55 @@ msgctxt "#31321"
 msgid "Check of Updates on Startup"
 msgstr ""
 
-#: empty strings from id 31322 to 31349
+msgctxt "#31322"
+msgid "Choose Widget Content"
+msgstr ""
+
+msgctxt "#31323"
+msgid "Mixed Item Group"
+msgstr ""
+
+msgctxt "#31324"
+msgid "Extract custom path from a existing favourite"
+msgstr ""
+
+msgctxt "#31325"
+msgid "Other"
+msgstr ""
+
+msgctxt "#31326"
+msgid "empty empty"
+msgstr ""
+
+msgctxt "#31327"
+msgid "Other custom path (extracted from a favourite)"
+msgstr ""
+
+msgctxt "#31328"
+msgid "Add own or edit existing extracted path"
+msgstr ""
+
+msgctxt "#31329"
+msgid "Reset Widget"
+msgstr ""
+
+msgctxt "#31330"
+msgid "Widget Label"
+msgstr ""
+
+msgctxt "#31331"
+msgid "Content Source"
+msgstr ""
+
+msgctxt "#31332"
+msgid "Widget Layout"
+msgstr ""
+
+msgctxt "#31333"
+msgid "Content Target"
+msgstr ""
+
+#: empty strings from id 31334 to 31349
 #: PVR
 
 msgctxt "#31350"

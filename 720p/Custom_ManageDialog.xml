@@ -5,7 +5,7 @@
 	<controls>
 		<control type="group" id="4000">
 			<include>DialogAnimation</include>
-			<visible>!Window.IsActive(DialogSelect.xml) + !Window.IsActive(ProgressDialog)</visible>
+			<visible>!Window.IsActive(DialogSelect.xml) + !Window.IsActive(ProgressDialog) + !Window.IsActive(script-skinshortcuts.xml)</visible>
 			<control type="image">
 				<left>411</left>
 				<top>128</top>
@@ -41,6 +41,74 @@
 				<width>445</width>
 				<include>DialogsHeaderLabel</include>
 				<label>$VAR[ManageDialogHeader]</label>
+			</control>
+
+			<!-- Manage QuickNav Buttons -->
+			<control type="grouplist" id="1000">
+				<posx>428</posx>
+				<posy>199</posy>
+				<width>425</width>
+				<height>353</height>
+				<itemgap>4</itemgap>
+				<onleft>Close</onleft>
+				<onright>Close</onright>
+				<onup>1000</onup>
+				<ondown>1000</ondown>
+				<scrolltime>250</scrolltime>
+				<visible>StringCompare(Window(SkinSettings).Property(ManageButtons),widgetgroup1)</visible>
+				<!-- Default Visible Buttons -->
+				<control type="button" id="1001">
+					<description>Label</description>
+					<width>425</width>
+					<include>DialogsButton</include>
+					<label>$LOCALIZE[31330]</label>
+					<label2>[COLOR=selected]$VAR[CustomWidgetLabel][/COLOR]</label2>
+					<onclick>Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Label)</onclick>
+				</control>				
+				<control type="button" id="1004">
+					<description>Source</description>
+					<width>425</width>
+					<include>DialogsButton</include>
+					<label>$LOCALIZE[31331]</label>
+					<label2>[COLOR=selected]$VAR[CustomWidgetSourceLabels][/COLOR]</label2>
+					<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31323])</onclick>
+					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,mixed)||RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup1))</onclick>
+					<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31324])</onclick>
+					<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,pathfav)||RunScript(script.favourites,property=CustomWidgetPath1))</onclick>
+					<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31328])</onclick>
+					<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,pathown)||Skin.SetString(CustomWidgetPath1.List))</onclick>
+					<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31322])</onclick>
+				</control>
+				<control type="button" id="1002">
+					<description>layout</description>
+					<width>425</width>
+					<include>DialogsButton</include>
+					<label>$LOCALIZE[31332]</label>
+					<label2>[COLOR=selected]$VAR[CustomWidgetLayout][/COLOR]</label2>
+					<onclick>SetProperty(Dialog.1.Label,Poster)</onclick>
+					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Layout,Poster))</onclick>
+					<onclick>SetProperty(Dialog.2.Label,Square)</onclick>
+					<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Layout,Square))</onclick>    
+					<onclick>RunScript(script.toolbox,info=selectdialog,header=Layout)</onclick>
+				</control>
+				<control type="button" id="1003">
+					<description>target</description>
+					<width>425</width>
+					<include>DialogsButton</include>
+					<label>$LOCALIZE[31333]</label>
+					<label2>[COLOR=selected]$VAR[CustomWidgetSourceTarget][/COLOR]</label2>
+					<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[10006])</onclick>
+					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Target,video))</onclick>
+					<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[1211])</onclick>
+					<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Target,music))</onclick>    
+					<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[1213])</onclick>
+					<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Target,pictures))</onclick>  
+					<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[10001])</onclick>
+					<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Target,programs))</onclick>   
+					<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31325])</onclick>
+					<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Target,other))</onclick>    
+					<onclick>RunScript(script.toolbox,info=selectdialog,header=Target)</onclick>
+				</control>
 			</control>
 
 			<!-- Manage QuickNav Buttons -->

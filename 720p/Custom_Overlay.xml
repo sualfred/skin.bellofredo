@@ -38,7 +38,25 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>Test: $INFO[Skin.String(WeatherFanartDir)]</label>
+				<label>Test: $INFO[Skin.String(CustomWidgetPath1.List)]</label>
+			</control>
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>Test: $INFO[Skin.String(widgetgroup.1.Layout)]</label>
+			</control>
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>Test: $INFO[Skin.String(widgetgroup1type)]</label>
 			</control>
 			<!--<control type="image">
 						<width>238</width>
