@@ -11,7 +11,7 @@
 			<fadetime>500</fadetime>
 			<randomize>true</randomize>
 			<loop>yes</loop>
-			<visible>!IsEmpty(Skin.String(WeatherFanartDir)) + Window.IsVisible(weather) | StringCompare(Container(20).ListItem.Property(defaultID),weather)</visible>
+			<visible>!IsEmpty(Skin.String(WeatherFanartDir)) + Window.IsVisible(weather) | StringCompare(Container(20).ListItem.Property(backgroundName),Conditional Weather) | StringCompare(Container(20).ListItem.Property(defaultID),weather)</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>
 	</include>

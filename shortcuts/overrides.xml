@@ -172,6 +172,7 @@
 	<background label="3DWall TV Shows Landscape" condition="Library.HasContent(tvshows)">3DWallBG_TVShows_Landscape</background>
 	<background label="3DWall Albums" condition="Library.HasContent(music)">3DWallBG_Albums</background>
 	<background label="3DWall Artists" condition="Library.HasContent(music)">3DWallBG_Artists</background>
+	<background label="Conditional Weather" condition="!IsEmpty(Skin.String(WeatherFanartDir))">Conditional Weather</background>
 	<backgrounddefault defaultID="movies">$INFO[Window(Home).Property(script.grab.fanart.Movie.FanArt)]</backgrounddefault>
 	<backgrounddefault defaultID="tvshows">$INFO[Window(Home).Property(script.grab.fanart.TV.FanArt)]</backgrounddefault>
 	<backgrounddefault defaultID="music">$INFO[Window(Home).Property(script.grab.fanart.Music.FanArt)]</backgrounddefault>

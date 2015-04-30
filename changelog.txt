@@ -1,4 +1,10 @@
-﻿[B][COLOR=FF56ADDA]v4.2.2[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.2.3[/COLOR][/B]
+Existing Customs Widgets have to be reconfigured!
+• Added: Custom Widget support for own and automatically extracted widget sources (based on favourites)
+• Added: More Custom Widget options (limit, layout poster/square, target)
+• Added: Conditional Weather Fanarts as backgorund option for other menu items
+
+[B][COLOR=FF56ADDA]v4.2.2[/COLOR][/B]
 • Added: Option to move the home menu slightly more to the bottom
 • Added: BelloFredo Extrapack script to download conditional weather fanarts and more background presets
 • Removed: Non-default backgrounds. Will now provided by BelloFredo Extrapack.
