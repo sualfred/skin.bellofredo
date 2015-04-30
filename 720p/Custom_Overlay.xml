@@ -38,7 +38,7 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>Test: $INFO[Skin.String(CustomWidgetPath1.List)]</label>
+				<label>Der Costum Fav Path: $INFO[Skin.String(CustomWidgetPath1.List)]</label>
 			</control>
 			<control type="label">
 				<width>780</width>
@@ -47,7 +47,7 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>Test: $INFO[Skin.String(widgetgroup.1.Layout)]</label>
+				<label>Costum Fav Var: $INFO[Skin.String(CustomWidgetPath1.List)]</label>
 			</control>
 			<control type="label">
 				<width>780</width>
@@ -56,7 +56,7 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>Test: $INFO[Skin.String(widgetgroup1type)]</label>
+				<label>Source quelle: $INFO[$VAR[QuickNav_WidgetListContentCustomPath]]</label>
 			</control>
 			<!--<control type="image">
 						<width>238</width>

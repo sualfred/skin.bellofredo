@@ -703,7 +703,7 @@ msgid "Update Art"
 msgstr ""
 
 msgctxt "#31172"
-msgid "Empty Label"
+msgid "Not configured"
 msgstr ""
 
 msgctxt "#31173"
@@ -1194,7 +1194,15 @@ msgctxt "#31294"
 msgid "BelloFredo - Extrapack"
 msgstr ""
 
-#: empty strings from id 31295 to 31298
+msgctxt "#31295"
+msgid "Note"
+msgstr ""
+
+msgctxt "#31296"
+msgid "Path extraction from a favourite only works for nodes and directories!"
+msgstr ""
+
+#: empty strings from id 31297 to 31298
 
 msgctxt "#31299"
 msgid "Conditional Weather Fanarts"
@@ -1293,7 +1301,7 @@ msgid "Choose Widget Content"
 msgstr ""
 
 msgctxt "#31323"
-msgid "Mixed Item Group"
+msgid "Mixed item group"
 msgstr ""
 
 msgctxt "#31324"
@@ -1305,7 +1313,7 @@ msgid "Other"
 msgstr ""
 
 msgctxt "#31326"
-msgid "empty empty"
+msgid "Square"
 msgstr ""
 
 msgctxt "#31327"
@@ -1325,7 +1333,7 @@ msgid "Widget Label"
 msgstr ""
 
 msgctxt "#31331"
-msgid "Content Source"
+msgid "Content Path"
 msgstr ""
 
 msgctxt "#31332"
@@ -1333,10 +1341,14 @@ msgid "Widget Layout"
 msgstr ""
 
 msgctxt "#31333"
-msgid "Content Target"
+msgid "Content Type"
 msgstr ""
 
-#: empty strings from id 31334 to 31349
+msgctxt "#31334"
+msgid "Not required"
+msgstr ""
+
+#: empty strings from id 31335 to 31349
 #: PVR
 
 msgctxt "#31350"

@@ -2,15 +2,14 @@
 <window>
 	<defaultcontrol always="true">30000</defaultcontrol>
 	<onunload condition="Window.IsVisible(home) + !StringCompare(Window.Property(groupname),mainmenu)">ReplaceWindow(home)</onunload>
-	<onunload condition="![Window.IsVisible(home) | StringCompare(Window.Property(groupname),mainmenu)]">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=20&amp;group=mainmenu|widgetgroup1|widgetgroup2|widgetgroup3|widgetgroup4)</onunload>
+	<onunload condition="![Window.IsVisible(home) | StringCompare(Window.Property(groupname),mainmenu)] + !Window.IsActive(1120)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=20&amp;group=mainmenu|widgetgroup1|widgetgroup2|widgetgroup3|widgetgroup4)</onunload>
 	<onload>SetProperty(level)</onload>
 	<controls>
 
 		<control type="group">
 			<include>DialogAnimation</include>
-			<!--<visible>![Window.IsActive(PlayerControls) + ![Skin.HasSetting(DisableQuickNav) + !Player.HasMedia]] + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites) + !Window.IsActive(addonsettings) + !Window.IsActive(filebrowser) + !Window.IsActive(yesnodialog) + !Window.IsActive(selectdialog) + !Window.IsActive(DialogSelect.xml) + !Window.IsActive(script-skinshortcuts.xml) + !Window.IsActive(1117) + !Window.IsActive(1118) + !Window.IsActive(1119)</visible>-->
 			<visible>!Window.IsActive(ShutdownMenu) + !Window.IsActive(PlayerControls) + IsEmpty(Window.Property(additionalDialog)) + !Window.IsActive(SelectDialog) + !Window.IsActive(DialogSelect.xml) + !Window.IsActive(FileBrowser) + !Window.IsActive(VirtualKeyboard) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog) + !Window.IsActive(yesnodialog)</visible>
-			<control type="image">-->
+			<control type="image">
 			<left>213</left>
 			<top>116</top>
 			<width>852</width>

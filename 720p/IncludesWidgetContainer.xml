@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes> 
-	<include name="widgetgroup-custompath-video">
-		<content target="video">$VAR[QuickNav_WidgetListContentCustomPath]</content>
-	</include>
-	<include name="widgetgroup-custompath-music">
-		<content target="music">$VAR[QuickNav_WidgetListContentCustomPath]</content>
-	</include>
-	<include name="widgetgroup-custompath-pictures">
-		<content target="pictures">$VAR[QuickNav_WidgetListContentCustomPath]</content>
-	</include>
-	<include name="widgetgroup-custompath-other">
-		<content>$VAR[QuickNav_WidgetListContentCustomPath]</content>
+	<include name="widgetgroup-custompath">
+		<content limit="$PARAM[Limit]" target="$PARAM[Target]">$INFO[Skin.String(CustomWidgetPath$PARAM[GroupNo].List)]</content>
 	</include>
 	<include name="widgetgroup-customgroup">
 		<content>
-			<include>$VAR[QuickNav_WidgetListContentCustomPath]</include>
+			<include>skinshortcuts-group-widgetgroup$PARAM[GroupNo]</include>
 		</content>
 	</include>
 
@@ -1140,8 +1131,8 @@
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(551).NumItems,4)</visible>
-				<include condition="!StringCompare(Skin.String(widgetgroup1type),pathposter)">WidgetEmptyBoxes</include>
-				<include condition="StringCompare(Skin.String(widgetgroup1type),pathposter)">WidgetEmptyPosters</include>
+				<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetEmptyBoxes</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetEmptyPosters</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
@@ -1176,27 +1167,34 @@
 				<onclick>SetFocus(90901)</onclick>	
 				<include>TopButton</include>
 			</control>
-			<control type="fixedlist" id="551">	
-				<include condition="!StringCompare(Skin.String(widgetgroup1type),pathposter)">WidgetSquareLayout</include>
-				<include condition="StringCompare(Skin.String(widgetgroup1type),pathposter)">WidgetPosterLayout</include>
-
-				<include condition="StringCompare(Skin.String(widgetgroup1type),mixed)">widgetgroup-customgroup</include>
-				<include condition="StringCompare(Skin.String(widgetgroup1type),pathvideos)">widgetgroup-custompath-video</include>
-				<include condition="StringCompare(Skin.String(widgetgroup1type),pathmusic)">widgetgroup-custompath-music</include>
-				<include condition="StringCompare(Skin.String(widgetgroup1type),pathpictures)">widgetgroup-custompath-music</include>
-				<include condition="StringCompare(Skin.String(widgetgroup1type),pathother)">widgetgroup-custompath-other</include>
-				<!--<content condition="StringCompare(Skin.String(widgetgroup1type),mixed)">
-					<include>skinshortcuts-group-widgetgroup1</include>
-				</content>
-				<content condition="!StringCompare(Skin.String(widgetgroup1type),mixed)">$INFO[Skin.String(CustomWidgetPath1.List)]</content>-->			
+			<control type="fixedlist" id="551">
+				<visible>ControlGroup(9090).HasFocus</visible>	
+				<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetSquareLayout</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetPosterLayout</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.1.Source),mixed)" name="widgetgroup-customgroup">
+					<param name="GroupNo">1</param>
+				</include>
+				<include condition="SubString(Skin.String(widgetgroup.1.Source),path)" name="widgetgroup-custompath">
+					<param name="GroupNo">1</param>
+					<param name="Target">$INFO[Skin.String(widgetgroup.1.Target)]</param>
+					<param name="Limit">$INFO[Skin.String(widgetgroup.1.Limit)]</param>
+				</include>
 			</control>
-			<include name="WidgetBottomLabels">
+			<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)" name="WidgetBottomLabels">
 				<param name="Container">551</param>
 				<param name="Top">432</param>
 			</include>		
-			<include name="ParamWidgetCounterLoading">
+			<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)" name="ParamWidgetCounterLoading">
 				<param name="Container">551</param>
 				<param name="Top">438</param>
+			</include>			
+			<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)" name="WidgetBottomLabels">
+				<param name="Container">551</param>
+				<param name="Top">445</param>
+			</include>		
+			<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)" name="ParamWidgetCounterLoading">
+				<param name="Container">551</param>
+				<param name="Top">451</param>
 			</include>
 		</control>
 
@@ -1219,7 +1217,8 @@
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(552).NumItems,4)</visible>
-				<include>WidgetEmptyBoxes</include>
+				<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetEmptyBoxes</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetEmptyPosters</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
@@ -1254,19 +1253,34 @@
 				<onclick>SetFocus(90911)</onclick>	
 				<include>TopButton</include>
 			</control>
-			<control type="fixedlist" id="552">	
-				<include>WidgetSquareLayout</include>
-				<content>
-					<include>skinshortcuts-group-widgetgroup2</include>
-				</content>
+			<control type="fixedlist" id="552">					
+				<visible>ControlGroup(9091).HasFocus</visible>	
+				<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetSquareLayout</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetPosterLayout</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.2.Source),mixed)" name="widgetgroup-customgroup">
+					<param name="GroupNo">2</param>
+				</include>
+				<include condition="SubString(Skin.String(widgetgroup.2.Source),path)" name="widgetgroup-custompath">
+					<param name="GroupNo">2</param>
+					<param name="Target">$INFO[Skin.String(widgetgroup.2.Target)]</param>
+					<param name="Limit">$INFO[Skin.String(widgetgroup.2.Limit)]</param>
+				</include>
 			</control>
-			<include name="WidgetBottomLabels">
+			<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)" name="WidgetBottomLabels">
 				<param name="Container">552</param>
 				<param name="Top">432</param>
-			</include>				
-			<include name="ParamWidgetCounterLoading">
+			</include>		
+			<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)" name="ParamWidgetCounterLoading">
 				<param name="Container">552</param>
 				<param name="Top">438</param>
+			</include>			
+			<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)" name="WidgetBottomLabels">
+				<param name="Container">552</param>
+				<param name="Top">445</param>
+			</include>		
+			<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)" name="ParamWidgetCounterLoading">
+				<param name="Container">552</param>
+				<param name="Top">451</param>
 			</include>
 		</control>
 
@@ -1289,7 +1303,8 @@
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(553).NumItems,4)</visible>
-				<include>WidgetEmptyBoxes</include>
+				<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetEmptyBoxes</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetEmptyPosters</include>
 			</control>			
 			<control type="group">
 				<description>arrows left right</description>
@@ -1324,19 +1339,34 @@
 				<onclick>SetFocus(90931)</onclick>	
 				<include>TopButton</include>
 			</control>
-			<control type="fixedlist" id="553">	
-				<include>WidgetSquareLayout</include>
-				<content>
-					<include>skinshortcuts-group-widgetgroup3</include>
-				</content>
+			<control type="fixedlist" id="553">					
+				<visible>ControlGroup(9093).HasFocus</visible>	
+				<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetSquareLayout</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetPosterLayout</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.3.Source),mixed)" name="widgetgroup-customgroup">
+					<param name="GroupNo">3</param>
+				</include>
+				<include condition="SubString(Skin.String(widgetgroup.3.Source),path)" name="widgetgroup-custompath">
+					<param name="GroupNo">3</param>
+					<param name="Target">$INFO[Skin.String(widgetgroup.3.Target)]</param>
+					<param name="Limit">$INFO[Skin.String(widgetgroup.3.Limit)]</param>
+				</include>
 			</control>
-			<include name="WidgetBottomLabels">
+			<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)" name="WidgetBottomLabels">
 				<param name="Container">553</param>
 				<param name="Top">432</param>
 			</include>		
-			<include name="ParamWidgetCounterLoading">
+			<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)" name="ParamWidgetCounterLoading">
 				<param name="Container">553</param>
 				<param name="Top">438</param>
+			</include>			
+			<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)" name="WidgetBottomLabels">
+				<param name="Container">553</param>
+				<param name="Top">445</param>
+			</include>		
+			<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)" name="ParamWidgetCounterLoading">
+				<param name="Container">553</param>
+				<param name="Top">451</param>
 			</include>
 		</control>
 
@@ -1359,7 +1389,8 @@
 			</control>
 			<control type="group">
 				<visible>!IntegerGreaterThan(Container(554).NumItems,4)</visible>
-				<include>WidgetEmptyBoxes</include>
+				<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetEmptyBoxes</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetEmptyPosters</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
@@ -1395,18 +1426,33 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="554">	
-				<include>WidgetSquareLayout</include>
-				<content>
-					<include>skinshortcuts-group-widgetgroup4</include>
-				</content>
+				<visible>ControlGroup(9094).HasFocus</visible>	
+				<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetSquareLayout</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetPosterLayout</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.4.Source),mixed)" name="widgetgroup-customgroup">
+					<param name="GroupNo">4</param>
+				</include>
+				<include condition="SubString(Skin.String(widgetgroup.4.Source),path)" name="widgetgroup-custompath">
+					<param name="GroupNo">4</param>
+					<param name="Target">$INFO[Skin.String(widgetgroup.4.Target)]</param>
+					<param name="Limit">$INFO[Skin.String(widgetgroup.4.Limit)]</param>
+				</include>
 			</control>
-			<include name="WidgetBottomLabels">
+			<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)" name="WidgetBottomLabels">
 				<param name="Container">554</param>
 				<param name="Top">432</param>
-			</include>			
-			<include name="ParamWidgetCounterLoading">
+			</include>		
+			<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)" name="ParamWidgetCounterLoading">
 				<param name="Container">554</param>
 				<param name="Top">438</param>
+			</include>			
+			<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)" name="WidgetBottomLabels">
+				<param name="Container">554</param>
+				<param name="Top">445</param>
+			</include>		
+			<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)" name="ParamWidgetCounterLoading">
+				<param name="Container">554</param>
+				<param name="Top">451</param>
 			</include>
 		</control>
 

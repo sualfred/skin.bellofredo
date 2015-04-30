@@ -18,7 +18,7 @@
 		<include>BackgroundItems</include>
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
-			<visible>![Window.IsActive(PlayerControls) + ![Skin.HasSetting(DisableQuickNav) + !Player.HasMedia]] + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites) + !Window.IsActive(addonsettings) + !Window.IsActive(filebrowser) + !Window.IsActive(yesnodialog) + !Window.IsActive(selectdialog) + !Window.IsActive(DialogSelect.xml) + !Window.IsActive(script-skinshortcuts.xml) + !Window.IsActive(1117) + !Window.IsActive(1118) + !Window.IsActive(1119)</visible>
+			<visible>![Window.IsActive(PlayerControls) + ![Skin.HasSetting(DisableQuickNav) + !Player.HasMedia]] + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites) + !Window.IsActive(addonsettings) + !Window.IsActive(filebrowser) + !Window.IsActive(yesnodialog) + !Window.IsActive(selectdialog) + !Window.IsActive(DialogSelect.xml) + !Window.IsActive(script-skinshortcuts.xml) + !Window.IsActive(1117) + !Window.IsActive(1118) + !Window.IsActive(1119) + !Window.IsActive(1120)</visible>
 			<control type="group">
 				<include>Window_OpenClose_Animation</include>
 				<control type="image">
@@ -366,51 +366,30 @@
 						<control type="button" id="8501">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31380] #1</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(widgetgroup1)][/COLOR]</label2>
-
+							<label2>[COLOR=selected]$INFO[Skin.String(widgetgroup.1.Label)][/COLOR]</label2>
 							<onclick>SetProperty(EditCustomWidgets,widgetgroup1,SkinSettings)</onclick>
-							<onclick>SetProperty(ManageButtons,widgetgroup1)</onclick>
-							<onclick>ActivateWindow(1118)</onclick>
-
-							<!--<onclick>ActivateWindow(1120)</onclick>-->
-
-							<!--<onclick>Skin.SetString(widgetgroup1)</onclick>
-							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31323])</onclick>
-							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widgetgroup1type,mixed)||RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup1))</onclick>
-							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31324])</onclick>
-							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widgetgroup1type,pathvideos)||RunScript(script.favourites,property=CustomWidgetPath1))</onclick>
-							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31325])</onclick>
-							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widgetgroup1type,pathmusic)||RunScript(script.favourites,property=CustomWidgetPath1))</onclick>
-							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31326])</onclick>
-							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widgetgroup1type,pathpictures)||RunScript(script.favourites,property=CustomWidgetPath1))</onclick>
-							<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31327])</onclick>
-							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widgetgroup1type,pathother)||RunScript(script.favourites,property=CustomWidgetPath1))</onclick>
-							<onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31328])</onclick>
-							<onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(widgetgroup1type,pathown)||Skin.SetString(CustomWidgetPath1.List))</onclick>
-							<onclick>SetProperty(Dialog.7.Label,$LOCALIZE[31329])</onclick>
-							<onclick>SetProperty(Dialog.7.BuiltIn,Skin.Reset(widgetgroup1type)||Skin.SetString(widgetgroup1,$LOCALIZE[31172]))</onclick>
-							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31322])</onclick>-->
+							<onclick>ActivateWindow(1120)</onclick>
 						</control>
 						<control type="button" id="8502">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31380] #2</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(widgetgroup2)][/COLOR]</label2>
-							<onclick>Skin.SetString(widgetgroup2)</onclick>
-							<onclick>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup2)</onclick>
+							<label2>[COLOR=selected]$INFO[Skin.String(widgetgroup.2.Label)][/COLOR]</label2>
+							<onclick>SetProperty(EditCustomWidgets,widgetgroup2,SkinSettings)</onclick>
+							<onclick>ActivateWindow(1120)</onclick>
 						</control>
 						<control type="button" id="8503">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31380] #3</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(widgetgroup3)][/COLOR]</label2>
-							<onclick>Skin.SetString(widgetgroup3)</onclick>
-							<onclick>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup3)</onclick>
+							<label2>[COLOR=selected]$INFO[Skin.String(widgetgroup.3.Label)][/COLOR]</label2>
+							<onclick>SetProperty(EditCustomWidgets,widgetgroup3,SkinSettings)</onclick>
+							<onclick>ActivateWindow(1120)</onclick>
 						</control>
 						<control type="button" id="8504">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31380] #4</label>
-							<label2>[COLOR=selected]$INFO[Skin.String(widgetgroup4)][/COLOR]</label2>
-							<onclick>Skin.SetString(widgetgroup4)</onclick>
-							<onclick>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup4)</onclick>
+							<label2>[COLOR=selected]$INFO[Skin.String(widgetgroup.4.Label)][/COLOR]</label2>
+							<onclick>SetProperty(EditCustomWidgets,widgetgroup4,SkinSettings)</onclick>
+							<onclick>ActivateWindow(1120)</onclick>
 						</control>
 						<!--common widgets-->
 						<control type="button" id="8505">
