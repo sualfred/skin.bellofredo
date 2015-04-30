@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-04-28 13:16+0000\n"
+"PO-Revision-Date: 2015-04-30 13:44+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -715,8 +715,8 @@ msgid "Update Art"
 msgstr "Kunst aktualisieren"
 
 msgctxt "#31172"
-msgid "Empty Label"
-msgstr "Kein Label"
+msgid "Not configured"
+msgstr "Nicht konfiguriert"
 
 msgctxt "#31173"
 msgid "Custom Widgets #1"
@@ -1206,7 +1206,15 @@ msgctxt "#31294"
 msgid "BelloFredo - Extrapack"
 msgstr "BelloFredo - Extrapack"
 
-#: empty strings from id 31295 to 31298
+msgctxt "#31295"
+msgid "Note"
+msgstr "Achtung"
+
+msgctxt "#31296"
+msgid "Path extraction from a favourite only works for nodes and directories!"
+msgstr "Pfad-Extrahierung von einem Favouriten funktioniert nur für Nodes oder Verzeichnisse!"
+
+#: empty strings from id 31297 to 31298
 msgctxt "#31299"
 msgid "Conditional Weather Fanarts"
 msgstr "Echtzeit Wetter Fanarts"
@@ -1299,7 +1307,59 @@ msgctxt "#31321"
 msgid "Check of Updates on Startup"
 msgstr "Suche nach Updates beim Start"
 
-#: empty strings from id 31322 to 31349 PVR
+msgctxt "#31322"
+msgid "Choose Widget Content"
+msgstr "Wähle Widget Kontent"
+
+msgctxt "#31323"
+msgid "Mixed item group"
+msgstr "Gemischte Item Gruppe"
+
+msgctxt "#31324"
+msgid "Extract custom path from a existing favourite"
+msgstr "Extrahiere Container-Pfad von Favourit"
+
+msgctxt "#31325"
+msgid "Other"
+msgstr "Andere"
+
+msgctxt "#31326"
+msgid "Square"
+msgstr "Box"
+
+msgctxt "#31327"
+msgid "Other custom path (extracted from a favourite)"
+msgstr "Anderer Pfad (extrahiert von einem Favouriten)"
+
+msgctxt "#31328"
+msgid "Add own or edit existing extracted path"
+msgstr "Füge eigenen hinzu oder ändere extrahierten Pfad"
+
+msgctxt "#31329"
+msgid "Reset Widget"
+msgstr "Resette Widget"
+
+msgctxt "#31330"
+msgid "Widget Label"
+msgstr "Widget Label"
+
+msgctxt "#31331"
+msgid "Content Path"
+msgstr "Kontent-Pfad"
+
+msgctxt "#31332"
+msgid "Widget Layout"
+msgstr "Widget Layout"
+
+msgctxt "#31333"
+msgid "Content Type"
+msgstr "Kontent-Art"
+
+msgctxt "#31334"
+msgid "Not required"
+msgstr "Nicht benötigt"
+
+#: empty strings from id 31335 to 31349 PVR
 msgctxt "#31350"
 msgid "Available Groups"
 msgstr "Verfügbare Gruppen"
