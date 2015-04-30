@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-04-28 13:16+0000\n"
-"Last-Translator: sualfred <su4lfred@gmail.com>\n"
+"PO-Revision-Date: 2015-04-30 13:47+0000\n"
+"Last-Translator: Olivier Zolli <ozolli@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/bello-fredo/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -715,8 +715,8 @@ msgid "Update Art"
 msgstr "Mise à jour des images"
 
 msgctxt "#31172"
-msgid "Empty Label"
-msgstr "Etiquette vide"
+msgid "Not configured"
+msgstr "Non configuré"
 
 msgctxt "#31173"
 msgid "Custom Widgets #1"
@@ -1206,7 +1206,15 @@ msgctxt "#31294"
 msgid "BelloFredo - Extrapack"
 msgstr "BelloFredo - Extrapack"
 
-#: empty strings from id 31295 to 31298
+msgctxt "#31295"
+msgid "Note"
+msgstr "Note"
+
+msgctxt "#31296"
+msgid "Path extraction from a favourite only works for nodes and directories!"
+msgstr "L'extraction de chemin d'un favori ne fonctionne que pour les noeuds et les dossiers !"
+
+#: empty strings from id 31297 to 31298
 msgctxt "#31299"
 msgid "Conditional Weather Fanarts"
 msgstr "Fanarts tendance météo"
@@ -1299,7 +1307,59 @@ msgctxt "#31321"
 msgid "Check of Updates on Startup"
 msgstr "Vérifier les mises à jour au démarrage"
 
-#: empty strings from id 31322 to 31349 PVR
+msgctxt "#31322"
+msgid "Choose Widget Content"
+msgstr "Choix du contenu du widget"
+
+msgctxt "#31323"
+msgid "Mixed item group"
+msgstr "Groupe d'éléments mixtes"
+
+msgctxt "#31324"
+msgid "Extract custom path from a existing favourite"
+msgstr "Extraire le chemin personnalisé d'un favori existant"
+
+msgctxt "#31325"
+msgid "Other"
+msgstr "Autre"
+
+msgctxt "#31326"
+msgid "Square"
+msgstr "Carré"
+
+msgctxt "#31327"
+msgid "Other custom path (extracted from a favourite)"
+msgstr "Autre chemin personnalisé (extrait d'un favori)"
+
+msgctxt "#31328"
+msgid "Add own or edit existing extracted path"
+msgstr "Ajouter ou éditer un chemin extrait existant"
+
+msgctxt "#31329"
+msgid "Reset Widget"
+msgstr "Réinitialisation du widget"
+
+msgctxt "#31330"
+msgid "Widget Label"
+msgstr "Etiquette du widget"
+
+msgctxt "#31331"
+msgid "Content Path"
+msgstr "Chemin de contenu"
+
+msgctxt "#31332"
+msgid "Widget Layout"
+msgstr "Disposition du widget"
+
+msgctxt "#31333"
+msgid "Content Type"
+msgstr "Type de contenu"
+
+msgctxt "#31334"
+msgid "Not required"
+msgstr "Non requis"
+
+#: empty strings from id 31335 to 31349 PVR
 msgctxt "#31350"
 msgid "Available Groups"
 msgstr "Groupes disponibles"
