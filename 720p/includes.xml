@@ -1871,6 +1871,26 @@
 	<value>$LOCALIZE[31172]</value>
 </variable>
 
+<variable name="CustomWidgetLabel1">
+	<value condition="!IsEmpty(Skin.String(widgetgroup.1.Label))">$INFO[Skin.String(widgetgroup.1.Label)]</value>
+	<value>$LOCALIZE[31172]</value>
+</variable>
+
+<variable name="CustomWidgetLabel2">
+	<value condition="!IsEmpty(Skin.String(widgetgroup.2.Label))">$INFO[Skin.String(widgetgroup.2.Label)]</value>
+	<value>$LOCALIZE[31172]</value>
+</variable>
+
+<variable name="CustomWidgetLabel3">
+	<value condition="!IsEmpty(Skin.String(widgetgroup.3.Label))">$INFO[Skin.String(widgetgroup.3.Label)]</value>
+	<value>$LOCALIZE[31172]</value>
+</variable>
+
+<variable name="CustomWidgetLabel4">
+	<value condition="!IsEmpty(Skin.String(widgetgroup.4.Label))">$INFO[Skin.String(widgetgroup.4.Label)]</value>
+	<value>$LOCALIZE[31172]</value>
+</variable>
+
 <variable name="CustomWidgetLimit">
 	<value condition="![[SubString(Skin.String(widgetgroup.1.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1)] | [SubString(Skin.String(widgetgroup.2.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup2)] | [SubString(Skin.String(widgetgroup.3.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup3)] | [SubString(Skin.String(widgetgroup.4.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup4)]]">$LOCALIZE[31334]</value>
 	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1) + !IsEmpty(Skin.String(widgetgroup.1.Limit))">$INFO[Skin.String(widgetgroup.1.Limit)]</value>
@@ -2295,11 +2315,15 @@
 	<!--Amazon AddonScriptor-->
 	<value condition="ControlGroup(9074).HasFocus + !IsEmpty(Container(751).ListItem.Art(fanart))">$INFO[Container(751).ListItem.Art(fanart)]</value>
 	<value condition="ControlGroup(9074).HasFocus + IsEmpty(Container(751).ListItem.Art(fanart))">SKINDEFAULT.jpg</value>-->
-	<!--custom widgets-->
+	<!--custom widgets-->	
+	<value condition="SubString(Skin.String(widgetgroup.1.Source),path) + ControlGroup(9090).HasFocus + !IsEmpty(Container(551).ListItem.Art(fanart)) + !StringCompare(Container(551).ListItem.Property(background),DefaultAddon)">$INFO[Container(551).ListItem.Art(fanart)]</value>
+	<value condition="SubString(Skin.String(widgetgroup.2.Source),path) + ControlGroup(9091).HasFocus + !IsEmpty(Container(552).ListItem.Art(fanart)) + StringCompare(Container(552).ListItem.Property(background),DefaultAddon)">$INFO[Container(552).ListItem.Art(fanart)]</value>
+	<value condition="SubString(Skin.String(widgetgroup.3.Source),path) + ControlGroup(9093).HasFocus + !IsEmpty(Container(553).ListItem.Art(fanart)) + StringCompare(Container(553).ListItem.Property(background),DefaultAddon)">$INFO[Container(553).ListItem.Art(fanart)]</value>
+	<value condition="SubString(Skin.String(widgetgroup.4.Source),path) + ControlGroup(9094).HasFocus + !IsEmpty(Container(554).ListItem.Art(fanart)) + StringCompare(Container(554).ListItem.Property(background),DefaultAddon)">$INFO[Container(554).ListItem.Art(fanart)]</value>
 	<value condition="ControlGroup(9090).HasFocus + !IsEmpty(Container(551).ListItem.Property(background)) + !StringCompare(Container(551).ListItem.Property(background),DefaultAddon)">$INFO[Container(551).ListItem.Property(background)]</value>		
 	<value condition="ControlGroup(9091).HasFocus + !IsEmpty(Container(552).ListItem.Property(background)) + StringCompare(Container(552).ListItem.Property(background),DefaultAddon)">$INFO[Container(552).ListItem.Property(background)]</value>		
 	<value condition="ControlGroup(9093).HasFocus + !IsEmpty(Container(553).ListItem.Property(background)) + StringCompare(Container(553).ListItem.Property(background),DefaultAddon)">$INFO[Container(553).ListItem.Property(background)]</value>		
-	<value condition="ControlGroup(9094).HasFocus + !IsEmpty(Container(554).ListItem.Property(background)) + StringCompare(Container(554).ListItem.Property(background),DefaultAddon)">$INFO[Container(554).ListItem.Property(background)]</value>				
+	<value condition="ControlGroup(9094).HasFocus + !IsEmpty(Container(554).ListItem.Property(background)) + StringCompare(Container(554).ListItem.Property(background),DefaultAddon)">$INFO[Container(554).ListItem.Property(background)]</value>	
 	<value condition="ControlGroup(9090).HasFocus + StringCompare(Container(551).ListItem.Property(background),DefaultAddon)">$INFO[Container(551).ListItem.Property(defaultID),special://home/addons/,/fanart.jpg]</value>
 	<value condition="ControlGroup(9091).HasFocus + StringCompare(Container(552).ListItem.Property(background),DefaultAddon)">$INFO[Container(552).ListItem.Property(defaultID),special://home/addons/,/fanart.jpg]</value>
 	<value condition="ControlGroup(9093).HasFocus + StringCompare(Container(553).ListItem.Property(background),DefaultAddon)">$INFO[Container(553).ListItem.Property(defaultID),special://home/addons/,/fanart.jpg]</value>
