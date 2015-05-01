@@ -260,7 +260,7 @@
 			<visible>Player.HasAudio + Skin.HasSetting(AmbilightMode)</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>
-		<include condition="[Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))]">BackgroundWeather</include>
+		<include condition="[!IsEmpty(Skin.String(ConditionalWeatherArt)) + !IsEmpty(Skin.String(WeatherFanartDir))]">BackgroundWeather</include>
 	</include>
 	<include name="GlobalFanart">
 		<include>BackgroundAnimation</include>
