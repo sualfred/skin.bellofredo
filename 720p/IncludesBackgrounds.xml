@@ -272,7 +272,7 @@
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<include>BackgroundAnimation</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>![[Control.IsVisible(55) | Control.IsVisible(59) | Control.IsVisible(583)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + !Control.IsVisible(581) + [IsEmpty(Control.GetLabel(5901) | !Skin.HasSetting(ViewsExtraFanart))]</visible>
+			<visible>![[Control.IsVisible(55) | Control.IsVisible(59) | Control.IsVisible(583)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + !Control.IsVisible(581) + [IsEmpty(Control.GetLabel(5901)) | !Skin.HasSetting(ViewsExtraFanart)]</visible>
 		</control>				
 		<control type="multiimage" id="5901">
 			<description>Fanart extrafanart</description>

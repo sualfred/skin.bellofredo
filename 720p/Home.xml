@@ -17,7 +17,7 @@
 		<include>BackgroundContent</include>
 		<include>BackgroundVignette</include>			
 		<control type="group">
-			<animation effect="fade" time="1000" delay="10500" start="0" end="100" condition="[SubString(Player.Filenameandpath,extras/intro/intro.mp4) | SubString(Player.Filenameandpath,extras\intro\intro.mp4] + Skin.HasSetting(UseIntro)" reversible="false">Conditional</animation>
+			<animation effect="fade" time="1000" delay="10500" start="0" end="100" condition="[SubString(Player.Filenameandpath,extras/intro/intro.mp4) | SubString(Player.Filenameandpath,extras\intro\intro.mp4)] + Skin.HasSetting(UseIntro)" reversible="false">Conditional</animation>
 			<control type="group">				
 				<animation effect="slide" time="0" start="0,0" end="0,100" condition="Skin.HasSetting(MoveMenuPosition)">Conditional</animation>
 				<include>HomeMenuWraplist</include>
