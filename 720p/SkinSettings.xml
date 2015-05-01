@@ -127,11 +127,6 @@
 							<label>$LOCALIZE[31310]</label>
 							<onclick>noop</onclick>
 						</item>
-						<!--Music Visualisation-->
-						<item id="9">
-							<label>test</label>
-							<onclick>RunScript(script.favourites,property=CustomFavourite1)</onclick>
-						</item>
 					</content>
 				</control>
 				<control type="group" id="8900">

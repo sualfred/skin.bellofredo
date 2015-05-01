@@ -57,7 +57,7 @@
 			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>
-			<visible>Skin.HasSetting(Use_Startup_Playlist)</visible>
+			<visible>Skin.HasSetting(Use_Startup_Playlist) + !Skin.HasSetting(UseIntro)</visible>
 		</control>
 		<control type="button" id="10">
 			<description>trigger with startup intro</description>
@@ -65,7 +65,7 @@
 			<onfocus>AlarmClock(IntroDelay,ReplaceWindow($INFO[System.StartupWindow]),00:05,silent)</onfocus>
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>
-			<visible>Skin.HasSetting(UseIntro)</visible>
+			<visible>!Skin.HasSetting(Use_Startup_Playlist) + Skin.HasSetting(UseIntro)</visible>
 		</control>
 		<include>BackgroundContent</include>
 		<include>BackgroundVignette</include>
