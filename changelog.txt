@@ -1,4 +1,10 @@
-﻿[B][COLOR=FF56ADDA]v4.2.3[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.2.4[/COLOR][/B]
+• Fixed: Broken background images for custom widgets with extracted path
+• Fixed: Empty custom widget source field if the selection was canceled before
+• Fixed: Enabled limit/target options if the source selection was canceled before
+• Fixed: Unmatched parentheses
+
+[B][COLOR=FF56ADDA]v4.2.3[/COLOR][/B]
 Existing Customs Widgets have to be reconfigured!
 • Added: Custom Widget support for own and automatically extracted widget sources (based on favourites)
 • Added: More Custom Widget options (limit, layout poster/square, target)
