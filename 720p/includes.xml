@@ -1892,7 +1892,7 @@
 </variable>
 
 <variable name="CustomWidgetLimit">
-	<value condition="![[SubString(Skin.String(widgetgroup.1.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1)] | [SubString(Skin.String(widgetgroup.2.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup2)] | [SubString(Skin.String(widgetgroup.3.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup3)] | [SubString(Skin.String(widgetgroup.4.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup4)]]">$LOCALIZE[31334]</value>
+	<value condition="![[SubString(Skin.String(widgetgroup.1.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1) + !IsEmpty(Skin.String(CustomWidgetPath1.List))] | [SubString(Skin.String(widgetgroup.2.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup2) + !IsEmpty(Skin.String(CustomWidgetPath2.List))] | [SubString(Skin.String(widgetgroup.3.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup3) + !IsEmpty(Skin.String(CustomWidgetPath3.List))] | [SubString(Skin.String(widgetgroup.4.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup4) + !IsEmpty(Skin.String(CustomWidgetPath4.List))]]">$LOCALIZE[31334]</value>
 	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1) + !IsEmpty(Skin.String(widgetgroup.1.Limit))">$INFO[Skin.String(widgetgroup.1.Limit)]</value>
 	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup2) + !IsEmpty(Skin.String(widgetgroup.2.Limit))">$INFO[Skin.String(widgetgroup.2.Limit)]</value>
 	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup3) + !IsEmpty(Skin.String(widgetgroup.3.Limit))">$INFO[Skin.String(widgetgroup.3.Limit)]</value>
@@ -1918,13 +1918,13 @@
 
 <variable name="CustomWidgetSourceLabels">
 	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1) + StringCompare(Skin.String(widgetgroup.1.Source),mixed)">$LOCALIZE[31323]</value>
-	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1) + SubString(Skin.String(widgetgroup.1.Source),path)">$INFO[Skin.String(CustomWidgetPath1.List)]</value>
+	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1) + SubString(Skin.String(widgetgroup.1.Source),path) + !IsEmpty(Skin.String(CustomWidgetPath1.List))">$INFO[Skin.String(CustomWidgetPath1.List)]</value>
 	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup2) + StringCompare(Skin.String(widgetgroup.2.Source),mixed)">$LOCALIZE[31323]</value>
-	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup2) + SubString(Skin.String(widgetgroup.2.Source),path)">$INFO[Skin.String(CustomWidgetPath2.List)]</value>
+	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup2) + SubString(Skin.String(widgetgroup.2.Source),path) + !IsEmpty(Skin.String(CustomWidgetPath2.List))">$INFO[Skin.String(CustomWidgetPath2.List)]</value>
 	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup3) + StringCompare(Skin.String(widgetgroup.3.Source),mixed)">$LOCALIZE[31323]</value>
-	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup3) + SubString(Skin.String(widgetgroup.3.Source),path)">$INFO[Skin.String(CustomWidgetPath3.List)]</value>
+	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup3) + SubString(Skin.String(widgetgroup.3.Source),path) + !IsEmpty(Skin.String(CustomWidgetPath3.List))">$INFO[Skin.String(CustomWidgetPath3.List)]</value>
 	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup4) + StringCompare(Skin.String(widgetgroup.4.Source),mixed)">$LOCALIZE[31323]</value>
-	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup4) + SubString(Skin.String(widgetgroup.4.Source),path)">$INFO[Skin.String(CustomWidgetPath4.List)]</value>
+	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup4) + SubString(Skin.String(widgetgroup.4.Source),path) + !IsEmpty(Skin.String(CustomWidgetPath4.List))">$INFO[Skin.String(CustomWidgetPath4.List)]</value>
 	<value>$LOCALIZE[31172]</value>
 </variable>
 
@@ -1941,9 +1941,7 @@
 </variable>
 
 <variable name="CustomWidgetSourceTarget">
-
-	<value condition="![[SubString(Skin.String(widgetgroup.1.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1)] | [SubString(Skin.String(widgetgroup.2.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup2)] | [SubString(Skin.String(widgetgroup.3.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup3)] | [SubString(Skin.String(widgetgroup.4.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup4)]]">$LOCALIZE[31334]</value>
-
+	<value condition="![[SubString(Skin.String(widgetgroup.1.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1) + !IsEmpty(Skin.String(CustomWidgetPath1.List))] | [SubString(Skin.String(widgetgroup.2.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup2) + !IsEmpty(Skin.String(CustomWidgetPath2.List))] | [SubString(Skin.String(widgetgroup.3.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup3) + !IsEmpty(Skin.String(CustomWidgetPath3.List))] | [SubString(Skin.String(widgetgroup.4.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup4) + !IsEmpty(Skin.String(CustomWidgetPath4.List))]]">$LOCALIZE[31334]</value>
 	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1) + StringCompare(Skin.String(widgetgroup.1.Target),video)">$LOCALIZE[10006]</value>
 	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1) + StringCompare(Skin.String(widgetgroup.1.Target),music)">$LOCALIZE[1211]</value>
 	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1) + StringCompare(Skin.String(widgetgroup.1.Target),pictures)">$LOCALIZE[1213]</value>
