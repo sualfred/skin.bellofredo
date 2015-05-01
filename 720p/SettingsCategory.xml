@@ -48,6 +48,7 @@
 				<control type="image" id="11">
 					<description>separator image</description>
 					<include>SettingsSeperator</include>
+					<visible>false</visible>
 				</control>
 				<control type="edit" id="12">
 					<description>Default edit</description>
