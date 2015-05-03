@@ -18,131 +18,118 @@
 	<include file="IncludesDialogs.xml" />
 	<include file="IncludesWidgetContainer.xml" />
 
-	<!-- Custom Windows IDs (This is for references only)
-  Custom_DialogOK.xml               id=1110
-  Custom_DialogVisualization.xml    id=1112
-  Custom_MoviesHomeWidgets.xml      id=1113
-  Custom_TVShowsHomeWidgets.xml     id=1114
-  Custom_MusicHomeWidgets.xml       id=1115
-  Custom_Reset.xml                  id=1117
-  Custom_ManageDialog.xml           id=1118
-  Custom_CustomItems.xml            id=1119
-  Custom_RSS.xml                    id=3002
--->
+	<constant name="FanartCrossfadeTime">250</constant>
+	<constant name="IconCrossfadeTime">250</constant>
+	<constant name="ButtonsLabelsFade">50</constant>
+	<constant name="ButtonsLabelsZoom">95</constant>
 
-<constant name="FanartCrossfadeTime">250</constant>
-<constant name="IconCrossfadeTime">250</constant>
-<constant name="ButtonsLabelsFade">50</constant>
-<constant name="ButtonsLabelsZoom">95</constant>
+	<variable name="LibraryInfoLabel">
+		<value condition="StringCompare(Container(20).ListItem.Property(defaultID),movies)">$INFO[Window(Home).Property(Movies.Count),$LOCALIZE[20342]: ]</value>
+		<value condition="StringCompare(Container(20).ListItem.Property(defaultID),tvshows)">$INFO[Window(Home).Property(TVShows.Count),$LOCALIZE[31002]: ]</value>
+		<value condition="StringCompare(Container(20).ListItem.Property(defaultID),music)">$INFO[Window(Home).Property(Music.AlbumsCount),$LOCALIZE[132]: ]</value>
+	</variable>
+	<variable name="LibraryInfoLabel2">
+		<value condition="StringCompare(Container(20).ListItem.Property(defaultID),movies)">$INFO[Window(Home).Property(Movies.UnWatched),$LOCALIZE[31263]: ]</value>
+		<value condition="StringCompare(Container(20).ListItem.Property(defaultID),tvshows)">$INFO[Window(Home).Property(Episodes.UnWatched),$LOCALIZE[31265]: ]</value>
+		<value condition="StringCompare(Container(20).ListItem.Property(defaultID),music)">$INFO[Window(Home).Property(Music.SongsCount),$LOCALIZE[134]: ]</value>
+	</variable>
+	<variable name="LibraryInfoLabel3">
+		<value condition="StringCompare(Container(20).ListItem.Property(defaultID),movies)">$INFO[Window(Home).Property(Movies.Watched),$LOCALIZE[31126]: ]</value>
+		<value condition="StringCompare(Container(20).ListItem.Property(defaultID),tvshows)">$INFO[Window(Home).Property(Episodes.Watched),$LOCALIZE[31123]: ]</value>
+		<value condition="StringCompare(Container(20).ListItem.Property(defaultID),music)">$INFO[Window(Home).Property(Music.ArtistsCount),$LOCALIZE[133]: ]</value>
+	</variable>
 
+	<include name="BackgroundItems">
+		<include>BackgroundContent</include>
+		<include>GlobalFanart</include>
+		<include>BackgroundVignette</include>
+	</include>
 
-<variable name="LibraryInfoLabel">
-	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),movies)">$INFO[Window(Home).Property(Movies.Count),$LOCALIZE[20342]: ]</value>
-	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),tvshows)">$INFO[Window(Home).Property(TVShows.Count),$LOCALIZE[31002]: ]</value>
-	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),music)">$INFO[Window(Home).Property(Music.AlbumsCount),$LOCALIZE[132]: ]</value>
-</variable>
-<variable name="LibraryInfoLabel2">
-	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),movies)">$INFO[Window(Home).Property(Movies.UnWatched),$LOCALIZE[31263]: ]</value>
-	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),tvshows)">$INFO[Window(Home).Property(Episodes.UnWatched),$LOCALIZE[31265]: ]</value>
-	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),music)">$INFO[Window(Home).Property(Music.SongsCount),$LOCALIZE[134]: ]</value>
-</variable>
-<variable name="LibraryInfoLabel3">
-	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),movies)">$INFO[Window(Home).Property(Movies.Watched),$LOCALIZE[31126]: ]</value>
-	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),tvshows)">$INFO[Window(Home).Property(Episodes.Watched),$LOCALIZE[31123]: ]</value>
-	<value condition="StringCompare(Container(20).ListItem.Property(defaultID),music)">$INFO[Window(Home).Property(Music.ArtistsCount),$LOCALIZE[133]: ]</value>
-</variable>
+	<include name="BackgroundItemsPVR">
+		<include>BackgroundContent</include>
+		<include>BackgroundVignette</include>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture background="true">windows/pvr/bg_overlay.png</texture>
+			<colordiffuse>D9FFFFFF</colordiffuse>
+			<include>FanartFade</include>
+		</control>
+	</include>
 
-<include name="BackgroundItems">
-	<include>BackgroundContent</include>
-	<include>GlobalFanart</include>
-	<include>BackgroundVignette</include>
-</include>
+	<include name="CommonItems">
+		<include>CommonDialogsFadeOutBG</include>
+		<include>CommonScrollingLetters</include>
+		<include>CommonNowPlaying</include>
+		<include>CommonPageCount</include>
+	</include>
 
-<include name="BackgroundItemsPVR">
-	<include>BackgroundContent</include>
-	<include>BackgroundVignette</include>
-	<control type="image">
-		<include>FullscreenDimensions</include>
-		<texture background="true">windows/pvr/bg_overlay.png</texture>
-		<colordiffuse>D9FFFFFF</colordiffuse>
-		<include>FanartFade</include>
-	</control>
-</include>
+	<include name="FullscreenDimensions">
+		<left>0</left>
+		<top>0</top>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio>stretch</aspectratio>
+	</include>
 
-<include name="CommonItems">
-	<include>CommonDialogsFadeOutBG</include>
-	<include>CommonScrollingLetters</include>
-	<include>CommonNowPlaying</include>
-	<include>CommonPageCount</include>
-</include>
+	<include name="CommonDialogsFadeOutBG">
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture background="true">windows/bg/bg_diffuse.png</texture>
+			<animation effect="fade" time="300" start="0" end="100" tween="sine" easing="out">WindowOpen</animation>
+			<animation effect="fade" time="300" start="100" end="0" tween="sine" easing="in">WindowClose</animation>
+			<animation effect="fade" time="300" start="0" end="100" tween="sine" easing="out">Visible</animation>
+			<animation effect="fade" time="300" start="100" end="0" tween="sine" easing="in">Hidden</animation>
+			<colordiffuse>ddFFFFFF</colordiffuse>
+			<visible>!Window.IsVisible(home) + !Window.IsVisible(Favourites) + !Window.IsVisible(playercontrols)</visible>
+			<visible>Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(yesnodialog) | [Window.IsActive(contextmenu)]</visible>	
+		</control>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture background="true">views/other/menus_overlay.png</texture>
+			<animation effect="fade" time="300" start="0" end="100" tween="sine" easing="out">WindowOpen</animation>
+			<animation effect="fade" time="300" start="100" end="0" tween="sine" easing="in">WindowClose</animation>
+			<animation effect="fade" time="300" start="0" end="100" tween="sine" easing="out">Visible</animation>
+			<animation effect="fade" time="300" start="100" end="0" tween="sine" easing="in">Hidden</animation>
+			<visible>
+				[Window.IsActive(script-ExtendedInfo Script-VideoList.xml) + [Window.IsActive(Shutdownmenu) 
+				| ControlGroup(9000).HasFocus]] 
+				| ControlGroup(9111).HasFocus 
+				| Window.IsActive(FileStackingDialog) 
+				| [Window.IsActive(contextmenu) + ![Window.IsActive(home) | Window.IsActive(locksettings) | Window.IsActive(musicplaylisteditor) | Window.IsActive(filemanager) | Window.IsVisible(pvrchannelmanager)]] 
+			</visible>
+		</control>
+	</include>
 
-<include name="FullscreenDimensions">
-	<left>0</left>
-	<top>0</top>
-	<width>1280</width>
-	<height>720</height>
-	<aspectratio>stretch</aspectratio>
-</include>
-
-<include name="CommonDialogsFadeOutBG">
-	<control type="image">
-		<include>FullscreenDimensions</include>
-		<texture background="true">windows/bg/bg_diffuse.png</texture>
-		<animation effect="fade" time="300" start="0" end="100" tween="sine" easing="out">WindowOpen</animation>
-		<animation effect="fade" time="300" start="100" end="0" tween="sine" easing="in">WindowClose</animation>
-		<animation effect="fade" time="300" start="0" end="100" tween="sine" easing="out">Visible</animation>
-		<animation effect="fade" time="300" start="100" end="0" tween="sine" easing="in">Hidden</animation>
-		<colordiffuse>ddFFFFFF</colordiffuse>
-		<visible>!Window.IsVisible(home) + !Window.IsVisible(Favourites) + !Window.IsVisible(playercontrols)</visible>
-		<visible>Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(yesnodialog) | [Window.IsActive(contextmenu)]</visible>	
-	</control>
-	<control type="image">
-		<include>FullscreenDimensions</include>
-		<texture background="true">views/other/menus_overlay.png</texture>
-		<animation effect="fade" time="300" start="0" end="100" tween="sine" easing="out">WindowOpen</animation>
-		<animation effect="fade" time="300" start="100" end="0" tween="sine" easing="in">WindowClose</animation>
-		<animation effect="fade" time="300" start="0" end="100" tween="sine" easing="out">Visible</animation>
-		<animation effect="fade" time="300" start="100" end="0" tween="sine" easing="in">Hidden</animation>
-		<visible>
-			[Window.IsActive(script-ExtendedInfo Script-VideoList.xml) + [Window.IsActive(Shutdownmenu) 
-			| ControlGroup(9000).HasFocus]] 
-			| ControlGroup(9111).HasFocus 
-			| Window.IsActive(FileStackingDialog) 
-			| [Window.IsActive(contextmenu) + ![Window.IsActive(home) | Window.IsActive(locksettings) | Window.IsActive(musicplaylisteditor) | Window.IsActive(filemanager) | Window.IsVisible(pvrchannelmanager)]] 
-		</visible>
-	</control>
-</include>
-
-<include name="TopZoomedSmallLabel">
-	<height>65</height>
-	<width min="10" max="1280">auto</width>
-	<font>FontSize_20</font>
-	<textcolor>99white</textcolor>
-	<shadowcolor>77000000</shadowcolor>
-	<align>left</align>
-	<aligny>center</aligny>
-	<scroll>false</scroll>
-</include>
-<include name="TopSmallLabel">
-	<height>65</height>
-	<width min="10" max="1280">auto</width>
-	<font>FontSize_22</font>
-	<textcolor>white</textcolor>
-	<shadowcolor>77000000</shadowcolor>
-	<align>left</align>
-	<aligny>center</aligny>
-	<scroll>false</scroll>
-</include>
-<include name="TopBigLabel">
-	<height>50</height>
-	<width min="10" max="1280">auto</width>
-	<font>FontSize_40</font>
-	<textcolor>white</textcolor>
-	<shadowcolor>77000000</shadowcolor>
-	<align>left</align>
-	<aligny>center</aligny>
-	<scroll>false</scroll>
-</include>
+	<include name="TopZoomedSmallLabel">
+		<height>65</height>
+		<width min="10" max="1280">auto</width>
+		<font>FontSize_20</font>
+		<textcolor>99white</textcolor>
+		<shadowcolor>77000000</shadowcolor>
+		<align>left</align>
+		<aligny>center</aligny>
+		<scroll>false</scroll>
+	</include>
+	<include name="TopSmallLabel">
+		<height>65</height>
+		<width min="10" max="1280">auto</width>
+		<font>FontSize_22</font>
+		<textcolor>white</textcolor>
+		<shadowcolor>77000000</shadowcolor>
+		<align>left</align>
+		<aligny>center</aligny>
+		<scroll>false</scroll>
+	</include>
+	<include name="TopBigLabel">
+		<height>50</height>
+		<width min="10" max="1280">auto</width>
+		<font>FontSize_40</font>
+		<textcolor>white</textcolor>
+		<shadowcolor>77000000</shadowcolor>
+		<align>left</align>
+		<aligny>center</aligny>
+		<scroll>false</scroll>
+	</include>
 	<!-- *NOT USED*
 	<include name="TopOptionsBigLabel">
 			<height>43</height>
