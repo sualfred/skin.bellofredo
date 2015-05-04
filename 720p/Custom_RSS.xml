@@ -6,7 +6,7 @@
   <visible>Skin.HasSetting(EnableGlobalRSS) | [Window.IsActive(home) + !Skin.HasSetting(EnableGlobalRSS)] + !Window.IsVisible(startup)</visible>
   <controls>
 	  <control type="group">
-      <visible>!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation) + !Window.IsVisible(screencalibration) + !Window.IsVisible(screensaver) + !Window.IsVisible(slideshow)</visible>
+      <visible>!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4) + !Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation) + !Window.IsVisible(screencalibration) + !Window.IsVisible(screensaver) + !Window.IsVisible(slideshow)</visible>
 			<control type="rss">
 				<description>RSS feed</description>
 				<left>0</left>
