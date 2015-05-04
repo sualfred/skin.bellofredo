@@ -74,8 +74,8 @@
 			<align>center</align>
 			<aligny>center</aligny>
 			<textcolor>55white</textcolor>
-			<shadowcolor>55000000</shadowcolor>
 			<font>FontSize_40B</font>
+			<shadowcolor>55000000</shadowcolor>			
 			<label>$LOCALIZE[31128]</label>
 			<animation type="Conditional" condition="true" pulse="true">
 				<effect type="fade" start="0" end="100" delay="0" time="1000"  />
