@@ -1,4 +1,11 @@
-﻿[B][COLOR=FF56ADDA]v4.2.5[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.2.6[/COLOR][/B]
+• Fixed: Gui overlapping with enabled Kodi intro
+• Added: Audio channel flags for video OSD and video info dialog
+• Added: Audio codec flag in some views
+• Changed: IMDb update script implementation for the recently released update
+• Fixed: Small typos, conditions and things that I already forgot
+
+[B][COLOR=FF56ADDA]v4.2.5[/COLOR][/B]
 Important fix release
 • Fixed: Broken Skin if mouse usage is enabled
 • Fixed: Broken conditional weather fanarts, if it was never set before the Extrapack was released
