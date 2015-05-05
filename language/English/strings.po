@@ -1202,7 +1202,11 @@ msgctxt "#31296"
 msgid "Path extraction from a favourite only works for nodes and directories!"
 msgstr ""
 
-#: empty strings from id 31297 to 31298
+msgctxt "#31297"
+msgid "Enable PVR Recording Info Box"
+msgstr ""
+
+#: empty strings from id 31298 to 31298
 
 msgctxt "#31299"
 msgid "Conditional Weather Fanarts"

@@ -14,6 +14,21 @@
 			<effect type="fade" start="100" end="0" time="500" delay="20000" />
 		</animation>
 	</include>
+
+	<include name="FakeFadeSlowLabel">
+		<animation type="Conditional" reversible="false" condition="$PARAM[condition]" loop="true">
+			<effect type="fade" start="0" end="100" time="500" delay="0" />
+			<effect type="fade" start="100" end="0" time="500" delay="15000" />
+			<effect type="fade" start="100" end="0" time="500" delay="30000" />
+		</animation>
+	</include>
+	<include name="FakeFadeSlowLabel2">
+		<animation type="Conditional" reversible="false" condition="$PARAM[condition]" loop="true">
+			<effect type="fade" start="0" end="100" time="500" delay="15500" />
+			<effect type="fade" start="100" end="0" time="500" delay="30000" />
+		</animation>
+	</include>
+
 	<include name="FakeFadeFastLabel">
 		<animation type="Conditional" reversible="false" condition="$PARAM[condition]" loop="true">
 			<effect type="fade" start="0" end="100" time="500" delay="0" />

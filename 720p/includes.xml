@@ -448,7 +448,7 @@
 	<description>Default Button</description>
 	<width>782</width>
 	<height>50</height>
-	<font>FontSize_20B</font>
+	<font>FontSize_30B</font>
 	<textcolor>white</textcolor>
 	<shadowcolor>99000000</shadowcolor>
 	<align>left</align>
@@ -953,7 +953,7 @@
 				<width>160</width>
 				<height>160</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-				<texture background="true" fallback="thumbs/fallback_square.png" flipy="true" diffuse="thumbs/music_reflection_diffuse.png">humbs/thumb_back.png</texture>
+				<texture background="true" fallback="thumbs/fallback_square.png" flipy="true" diffuse="thumbs/music_reflection_diffuse.png">thumbs/thumb_back.png</texture>
 				<fadetime>800</fadetime>
 				<colordiffuse>a0ffffff</colordiffuse>
 			</control>
