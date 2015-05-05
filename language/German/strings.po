@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-04-30 13:44+0000\n"
+"PO-Revision-Date: 2015-05-05 14:26+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -1214,7 +1214,11 @@ msgctxt "#31296"
 msgid "Path extraction from a favourite only works for nodes and directories!"
 msgstr "Pfad-Extrahierung von einem Favouriten funktioniert nur für Nodes oder Verzeichnisse!"
 
-#: empty strings from id 31297 to 31298
+msgctxt "#31297"
+msgid "Enable PVR Recording Info Box"
+msgstr "Aktiviere PVR Aufnahme Infobox"
+
+#: empty strings from id 31298 to 31298
 msgctxt "#31299"
 msgid "Conditional Weather Fanarts"
 msgstr "Echtzeit Wetter Fanarts"
