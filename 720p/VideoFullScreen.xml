@@ -299,15 +299,14 @@
 					</control>
 				</control>
 
-				<!-- Movies/Episodes/Videos Info -->
+				<!-- Movies/EpisodesInfo -->
 				<control type="group" id="1">
 					<left>210</left>
 					<top>100</top>
 					<include>OSDPlotAnimation</include>
 					<visible>[IsEmpty(Window(VideoOSD).Property(ShowPlot)) | IsEmpty(VideoPlayer.Plot)]</visible>
-					<visible>!VideoPlayer.Content(LiveTV)</visible>
-					<!--<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] | SubString(Player.Filenameandpath,rtmp://) | SubString(Player.Filenameandpath,http)">Conditional</animation>-->
-					<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)]">Conditional</animation>
+					<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
+					<!--<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)]">Conditional</animation>-->
 					<control type="label" id="1">
 						<description>Title label</description>
 						<left>0</left>
@@ -367,6 +366,74 @@
 						<pauseatend>5000</pauseatend>
 					</control>
 				</control>
+				<!-- Movies/Episodes/Videos Info -->
+				<control type="group" id="1">
+					<left>300</left>
+					<top>100</top>
+					<include>OSDPlotAnimation</include>
+					<visible>[IsEmpty(Window(VideoOSD).Property(ShowPlot)) | IsEmpty(VideoPlayer.Plot)]</visible>
+					<visible>[!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(LiveTV)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)]</visible>
+					<!--<visible>!VideoPlayer.Content(LiveTV)</visible>-->
+					<!--<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] | SubString(Player.Filenameandpath,rtmp://) | SubString(Player.Filenameandpath,http)">Conditional</animation>-->
+					<control type="label" id="1">
+						<description>Title label</description>
+						<left>0</left>
+						<top>15</top>
+						<height>30</height>
+						<width>620</width>
+						<label>$VAR[OSDInfoTitleLabel]</label>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>FontSize_36</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>55000000</shadowcolor>
+					</control>
+					<control type="label" id="1">
+						<description>Label</description>
+						<left>2</left>
+						<top>45</top>
+						<height>30</height>
+						<width>620</width>
+						<label>$VAR[OSDInfoUnderTitleLabel]</label>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>FontSize_22</font>
+						<textcolor>99white</textcolor>
+						<shadowcolor>55000000</shadowcolor>
+					</control>
+					<control type="image" id="1">
+						<description>Rating image</description>
+						<left>0</left>
+						<top>85</top>
+						<width>130</width>
+						<height>25</height>
+						<aspectratio align="left">keep</aspectratio>
+						<texture background="true">rating/$INFO[Player.StarRating]</texture>
+						<visible>!IsEmpty(VideoPlayer.Rating)</visible>
+					</control>
+					<control type="fadelabel" id="1">
+						<left>0</left>
+						<top>110</top>
+						<include condition="[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(LiveTV)]">OSDFadeLabelWidth</include>
+						<include condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(LiveTV)]">OSDFadeLabelWidthSmall</include>
+						<height>45</height>
+						<font>FontSize_20</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>99white</textcolor>
+						<shadowcolor>55000000</shadowcolor>
+						<label>$VAR[OSDInfoPremieredFadeLabel]</label>
+						<label>$INFO[VideoPlayer.Director,[COLOR=white]$LOCALIZE[20339]:[/COLOR] ]</label>
+						<label>$INFO[VideoPlayer.Writer,[COLOR=white]$LOCALIZE[20417]:[/COLOR] ]</label>
+						<label>$INFO[VideoPlayer.RatingAndVotes,[COLOR=white]$LOCALIZE[563]:[/COLOR] ]</label>
+						<label>$INFO[VideoPlayer.Top250,[COLOR=white]$LOCALIZE[368] $LOCALIZE[13409][/COLOR] # ]</label>
+						<label>$VAR[OSDInfoChapterFadeLabel]</label>
+						<scroll>false</scroll>
+						<scrollout>false</scrollout>
+						<scrollspeed>100</scrollspeed>
+						<pauseatend>5000</pauseatend>
+					</control>
+				</control>
 				<!-- LiveTV Info -->
 				<control type="group" id="1">
 					<left>225</left>
@@ -374,31 +441,25 @@
 					<include>OSDPlotAnimation</include>
 					<visible>[IsEmpty(Window(VideoOSD).Property(ShowPlot)) | IsEmpty(VideoPlayer.Plot)]</visible>
 					<visible>VideoPlayer.Content(LiveTV)</visible>
-					<control type="grouplist" id="1">
+					<control type="label" id="1">
+						<description>Title label</description>
 						<left>0</left>
 						<top>15</top>
-						<height>70</height>
-						<width>730</width>
-						<itemgap>5</itemgap>
+						<height>30</height>
+						<width>620</width>
+						<label>$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]</label>
 						<align>left</align>
-						<orientation>horizontal</orientation>
-						<include>OSDSlideAnimations</include>
-						<control type="label" id="1">
-							<include>TopBigLabel</include>
-							<label>$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]</label>
-						</control>
-						<!--<control type="label" id="1">
-							<include>TopSmallLabel</include>
-							<label>$INFO[VideoPlayer.Title]</label>
-							<animation effect="fade" end="65" condition="true">Conditional</animation>
-						</control>-->
+						<aligny>center</aligny>
+						<font>FontSize_36</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>55000000</shadowcolor>
 					</control>
 					<control type="label" id="1">
 						<description>Label</description>
 						<left>0</left>
-						<top>55</top>
+						<top>45</top>
 						<height>30</height>
-						<width>730</width>
+						<width>620</width>
 						<label>$INFO[VideoPlayer.Title]</label>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -618,6 +679,16 @@
 						<description>Audio Codec Flag</description>
 						<include>FlagsOSDLayout</include>
 						<texture>$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
+					</control>
+				</control>
+				<!-- Audio Channels -->
+				<control type="group" id="1">
+					<width>54</width>
+					<visible>!IsEmpty(VideoPlayer.AudioChannels)</visible>
+					<control type="image" id="1">
+						<description>Audio Channel Flag</description>
+						<include>FlagsOSDLayout</include>
+						<texture>$INFO[VideoPlayer.AudioChannels,flags/audiochannels/,.png]</texture>
 					</control>
 				</control>
 			</control>
