@@ -90,6 +90,14 @@
 			<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
 		</control>
 	</include>
+	
+	<include name="AudioChannelFlagsConditions">
+		<control type="image">
+			<description>Audio Channel Image</description>
+			<include>FlagsLayout</include>
+			<texture>$INFO[ListItem.AudioChannels,flags/audiochannels/,.png]</texture>
+		</control>
+	</include>
 
 	<include name="AspectRatioFlagsConditions">
 		<control type="image">

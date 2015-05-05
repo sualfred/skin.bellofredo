@@ -491,6 +491,7 @@
 				<include>AspectRatioFlagsConditions</include>
 				<include>VideoCodecFlagsConditions</include>
 				<include>AudioFlagsConditions</include>
+				<include>AudioChannelFlagsConditions</include>
 				<include>VideoLanguageFlags</include>
 			</control>
 

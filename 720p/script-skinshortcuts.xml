@@ -142,8 +142,31 @@
 			<control type="group" id="20000">
 				<left>230</left>
 				<top>498</top>
+				<control type="button" id ="301">
+					<description>Add New</description>
+					<height>40</height>
+					<font>FontSize_16B</font>
+					<textcolor>77white</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<disabledcolor>33white</disabledcolor>
+					<shadowcolor>99000000</shadowcolor>
+					<texturefocus>buttons/focus.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textoffsetx>5</textoffsetx>
+					<textoffsety>9</textoffsety>
+					<pulseonselect>true</pulseonselect>
+					<label>$ADDON[script.skinshortcuts 32000]</label>
+					<onleft>211</onleft>
+					<onright>303</onright>
+					<onup>211</onup>
+					<ondown>10001</ondown>
+				</control>
 				<control type="button" id ="303">
 					<description>Move UP</description>
+					<left>135</left>
+					<width>131</width>
 					<width>131</width>
 					<height>40</height>
 					<font>FontSize_16B</font>
@@ -159,16 +182,16 @@
 					<textoffsety>9</textoffsety>
 					<pulseonselect>true</pulseonselect>
 					<label>$ADDON[script.skinshortcuts 32002]</label>
-					<onleft>211</onleft>
+					<onleft>301</onleft>
 					<onright>304</onright>
 					<onup>211</onup>
 					<ondown>10001</ondown>
 				</control>
 				<control type="button" id ="304">
 					<description>Move DOWN</description>
-					<left>135</left>
-					<width>131</width>
 					<height>40</height>
+					<left>270</left>
+					<width>130</width>
 					<font>FontSize_16B</font>
 					<textcolor>77white</textcolor>
 					<focusedcolor>white</focusedcolor>
@@ -183,29 +206,6 @@
 					<pulseonselect>true</pulseonselect>
 					<label>$ADDON[script.skinshortcuts 32003]</label>
 					<onleft>303</onleft>
-					<onright>301</onright>
-					<onup>211</onup>
-					<ondown>10001</ondown>
-				</control>
-				<control type="button" id ="301">
-					<description>Add New</description>
-					<left>270</left>
-					<width>130</width>
-					<height>40</height>
-					<font>FontSize_16B</font>
-					<textcolor>77white</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<disabledcolor>33white</disabledcolor>
-					<shadowcolor>99000000</shadowcolor>
-					<texturefocus>buttons/focus.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<align>center</align>
-					<aligny>top</aligny>
-					<textoffsetx>5</textoffsetx>
-					<textoffsety>9</textoffsety>
-					<pulseonselect>true</pulseonselect>
-					<label>$ADDON[script.skinshortcuts 32000]</label>
-					<onleft>304</onleft>
 					<onright>30000</onright>
 					<onup>211</onup>
 					<ondown>10001</ondown>
