@@ -4135,8 +4135,8 @@
 				<width>441</width>
 				<height>248</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-				<texture background="true" diffuse="views/episode/episode_diffuse.png">$INFO[ListItem.ActualIcon]</texture>
-				<visible>IsEmpty(ListItem.Art(thumb)) + IsEmpty(ListItem.Art(fanart))</visible>
+				<texture background="true" diffuse="views/episode/episode_diffuse.png">$INFO[ListItem.Icon]</texture>
+				<visible>IsEmpty(ListItem.Art(fanart))</visible>
 			</control>
 			<control type="image">
 				<left>46</left>

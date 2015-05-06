@@ -699,6 +699,7 @@
   <value condition="Container.Content(Movies) + Skin.HasSetting(EpisodeViewLandscape) + IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(fanart)]</value>
   <value condition="Container.Content(Movies) + !Skin.HasSetting(EpisodeViewLandscape)">$INFO[ListItem.Art(fanart)]</value>   
   <value condition="!IsEmpty(ListItem.Art(fanart)">$INFO[ListItem.Art(fanart)]</value>
+  
 </variable>
 
 <variable name="DiscArtType">
