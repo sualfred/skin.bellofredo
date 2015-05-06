@@ -38,7 +38,7 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>Der Costum Fav Path: $INFO[Skin.String(CustomWidgetPath1.List)]</label>
+				<label>$INFO[Window(home).Property(ImageFilter)]</label>
 			</control>
 			<control type="label">
 				<width>780</width>
