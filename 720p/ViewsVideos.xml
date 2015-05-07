@@ -3687,7 +3687,7 @@
 					<height>28</height>
 					<aspectratio aligny="center" align="center">stretch</aspectratio>
 					<colordiffuse>grey</colordiffuse>
-					<texture background="true">info/imdb.png</texture>
+					<texture background="true">flags/imdb/imdb.png</texture>
 				</control>
 				<control type="label">
 					<left>6</left>
@@ -4173,7 +4173,7 @@
 					<height>23</height>
 					<aspectratio aligny="center" align="center">stretch</aspectratio>
 					<colordiffuse>grey</colordiffuse>
-					<texture background="true">info/imdb.png</texture>
+					<texture background="true">flags/imdb/imdb.png</texture>
 				</control>
 				<control type="label">
 					<left>6</left>
@@ -4719,7 +4719,7 @@
 					<height>28</height>
 					<aspectratio aligny="center" align="center">stretch</aspectratio>
 					<colordiffuse>grey</colordiffuse>
-					<texture background="true">info/imdb.png</texture>
+					<texture background="true">flags/imdb/imdb.png</texture>
 				</control>
 				<control type="label">
 					<left>6</left>
@@ -5645,7 +5645,7 @@
 							<width>48</width>
 							<height>48</height>
 							<aspectratio aligny="center" align="center">stretch</aspectratio>
-							<texture background="true">info/imdb-badge.png</texture>
+							<texture background="true">flags/imdb/imdb-badge.png</texture>
 						</control>
 						<control type="label">
 							<left>-1</left>
