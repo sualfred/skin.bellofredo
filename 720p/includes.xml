@@ -763,7 +763,7 @@
 			<left>45</left>
 			<top>502</top>
 			<include>HomeNowPlayingCoversSlideAnimations</include>
-			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + Player.HasVideo + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))] + !VideoPlayer.Content(LiveTV)</visible>
+			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + Player.HasVideo + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster)) | SubString(Player.Folderpath,/lovefilm/)] + !VideoPlayer.Content(LiveTV)</visible>
 			<control type="image">
 				<left>-110</left>
 				<top>-100</top>
@@ -831,7 +831,7 @@
 			<left>45</left>
 			<top>527</top>
 			<include>HomeNowPlayingCoversSlideAnimations</include>
-			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + Player.HasVideo + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)</visible>
+			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + Player.HasVideo + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !SubString(Player.Folderpath,/lovefilm/) + !VideoPlayer.Content(LiveTV)</visible>
 			<control type="image">
 				<left>-110</left>
 				<top>-100</top>
@@ -991,7 +991,7 @@
 			<control type="grouplist">
 				<include>HomeNowPlayingCoversSlideAnimations</include>
 				<animation effect="slide" start="-145,0" end="0,0" time="260" tween="sine" easing="inout" condition="!Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites)">Conditional</animation>
-				<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + [VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + Player.HasVideo + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))] + !VideoPlayer.Content(LiveTV)</visible>	
+				<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + Player.HasVideo + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster)) | SubString(Player.Folderpath,/lovefilm/)] + !VideoPlayer.Content(LiveTV)</visible>	
 				<left>145</left>
 				<top>0</top>
 				<width>1000</width>
@@ -1133,7 +1133,7 @@
 			<control type="grouplist">
 				<include>HomeNowPlayingCoversSlideAnimations</include>
 				<animation effect="slide" start="-255,0" end="0,0" time="260" tween="sine" easing="inout" condition="!Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites)">Conditional</animation>
-				<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + Player.HasVideo + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)</visible>
+				<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + Player.HasVideo + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !SubString(Player.Folderpath,/lovefilm/) + !VideoPlayer.Content(LiveTV)</visible>
 				<left>255</left>
 				<top>0</top>
 				<width>1000</width>

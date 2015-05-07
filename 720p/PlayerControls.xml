@@ -1087,37 +1087,39 @@
 				<include>FullscreenDimensions</include>
 				<texture background="true">views/list/shine.png</texture>
 			</control>
-			<control type="image">
-				<left>283</left>
-				<top>244</top>
-				<width>717</width>
-				<height>228</height>
-				<aspectratio align="center" aligny="center">stretch</aspectratio>
-				<texture background="true" border="39">views/other/panel.png</texture>
-				<visible>[!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster))]</visible>
+			<!-- panel square style -->
+			<control type="group">
+				<visible>[[!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster))]] + !SubString(Player.Folderpath,/lovefilm/)</visible>
 				<animation effect="fade" time="0" start="100" end="50" condition="true">Conditional</animation>
+				<control type="image">
+					<left>283</left>
+					<top>244</top>
+					<width>717</width>
+					<height>228</height>
+					<aspectratio align="center" aligny="center">stretch</aspectratio>
+					<texture background="true" border="39">views/other/panel.png</texture>
+				</control>
+				<control type="image">
+					<include>FullscreenDimensions</include>
+					<texture background="true">osd/miniplayer/np_music.png</texture>
+				</control>
 			</control>
-			<control type="image">
-				<include>FullscreenDimensions</include>
-				<texture background="true">osd/miniplayer/np_music.png</texture>
-				<visible>[!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster))]</visible>
+			<!-- panel poster style -->
+			<control type="group">
+				<visible>[[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]] | SubString(Player.Folderpath,/lovefilm/)</visible>
 				<animation effect="fade" time="0" start="100" end="50" condition="true">Conditional</animation>
-			</control>
-			<control type="image">
-				<left>283</left>
-				<top>244</top>
-				<width>729</width>
-				<height>228</height>
-				<aspectratio align="center" aligny="center">stretch</aspectratio>
-				<texture background="true" border="39">views/other/panel.png</texture>
-				<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
-				<animation effect="fade" time="0" start="100" end="50" condition="true">Conditional</animation>
-			</control>
-			<control type="image">
-				<include>FullscreenDimensions</include>
-				<texture background="true">osd/miniplayer/np_videos.png</texture>
-				<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
-				<animation effect="fade" time="0" start="100" end="50" condition="true">Conditional</animation>
+				<control type="image">
+					<left>283</left>
+					<top>244</top>
+					<width>729</width>
+					<height>228</height>
+					<aspectratio align="center" aligny="center">stretch</aspectratio>
+					<texture background="true" border="39">views/other/panel.png</texture>
+				</control>
+				<control type="image">
+					<include>FullscreenDimensions</include>
+					<texture background="true">osd/miniplayer/np_videos.png</texture>
+				</control>
 			</control>
 			<control type="label">
 				<description>header label</description>
@@ -1139,7 +1141,7 @@
 				<top>261</top>
 				<!-- Cover Movies & Episodes with Poster -->
 				<control type="group">
-					<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
+					<visible>[[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]] | SubString(Player.Folderpath,/lovefilm/)</visible>
 					<control type="group">
 						<left>8</left>
 						<top>5</top>
@@ -1150,7 +1152,6 @@
 							<height>185</height>
 							<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 							<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
-							
 						</control>
 						<control type="image">
 							<left>0</left>
@@ -1218,7 +1219,7 @@
 
 				<!-- Cover Movies & Episodes without Poster -->			
 				<control type="group">
-					<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster))]</visible>				
+					<visible>[[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster))]] + !SubString(Player.Folderpath,/lovefilm/)</visible>				
 					<control type="group">
 						<top>4</top>
 						<left>6</left>		
@@ -1318,7 +1319,7 @@
 
 				<!-- Cover Videos & Music -->			
 				<control type="group">
-					<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)</visible>					
+					<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !SubString(Player.Folderpath,/lovefilm/)</visible>
 					<control type="group">
 						<top>4</top>
 						<left>6</left>		
@@ -1329,7 +1330,6 @@
 							<height>186</height>
 							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 							<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">thumbs/thumb_back.png</texture>
-							
 						</control>				
 						<control type="image">
 							<left>0</left>
@@ -1338,7 +1338,6 @@
 							<height>186</height>
 							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 							<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$INFO[Player.Art(thumb)]</texture>
-							
 							<visible>Player.HasAudio</visible>
 						</control>		
 						<control type="image">
@@ -1348,7 +1347,6 @@
 							<height>186</height>
 							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 							<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$VAR[VideoPlayerThumb]</texture>
-							
 							<visible>!Player.HasAudio + !VideoPlayer.Content(LiveTV)</visible>
 						</control>	
 						<control type="image">
@@ -1358,7 +1356,6 @@
 							<height>186</height>
 							<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
 							<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$VAR[VideoPlayerThumb]</texture>
-							
 							<visible>!Player.HasAudio + VideoPlayer.Content(LiveTV)</visible>
 						</control>
 						<control type="image">
@@ -1368,7 +1365,6 @@
 							<height>200</height>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
 							<texture background="true">thumbs/music_overlay.png</texture>
-							
 						</control>
 						<control type="image">
 							<description>paused indicator</description>
@@ -1684,6 +1680,7 @@
 				<left>536</left>
 				<top>0</top>
 				<visible>![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(LiveTV)]</visible>
+				<animation effect="slide" start="0,0" end="-50,0" time="0" condition="SubString(Player.Folderpath,/lovefilm/)" reversible="true">Conditional</animation>
 				<control type="group">
 					<left>3</left>
 					<top>245</top>	
@@ -1811,7 +1808,8 @@
 					<aligny>center</aligny>
 					<label>$INFO[Player.Time(mm:ss)]$INFO[Player.Duration, / ]</label>
 					<textcolor>99white</textcolor>
-					<shadowcolor>99000000</shadowcolor>
+					<shadowcolor>99000000</shadowcolor>					
+					<animation effect="slide" start="0,0" end="60,0" time="0" condition="SubString(Player.Folderpath,/lovefilm/)" reversible="true">Conditional</animation>
 				</control>
 			</control>
 
@@ -1907,7 +1905,7 @@
 				<left>539</left>
 				<top>398</top>
 				<visible>!VideoPlayer.Content(LiveTV)</visible>
-				<animation effect="slide" start="0,0" end="-50,0" time="0" condition="[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]" reversible="true">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-50,0" time="0" condition="[[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]] | SubString(Player.Folderpath,/lovefilm/)" reversible="true">Conditional</animation>
 				<control type="button" id="600">
 					<left>0</left>
 					<top>0</top>
@@ -2066,7 +2064,7 @@
 					<ondown>ClearProperty(Movement)</ondown>
 					<ondown>150</ondown>
 					<visible>!VideoPlayer.HasMenu</visible>
-					<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
+					<visible>[[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]] | SubString(Player.Folderpath,/lovefilm/)</visible>
 				</control>
 			</control>
 
