@@ -1,4 +1,10 @@
-﻿[B][COLOR=FF56ADDA]v4.2.6[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.2.7[/COLOR][/B]
+• Added: Some new audio codec flags, including missing flags for DTS-HD/DTS-MA
+• Fixed: Video OSD / Playercontrols dialog poster art workaround for Amazon Instant Video movie playback (Sandmann's plugin)
+• Merged: FR translation
+• And some cleanup
+
+[B][COLOR=FF56ADDA]v4.2.6[/COLOR][/B]
 • Fixed: Gui overlapping with enabled Kodi intro
 • Added: Audio channel flags for video OSD and video info dialog
 • Added: Audio codec flag in some views
