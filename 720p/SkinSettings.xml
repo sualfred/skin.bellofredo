@@ -333,12 +333,17 @@
 							<onclick>Skin.ToggleSetting(DisableLibraryRefreshButton)</onclick>
 							<selected>!Skin.HasSetting(DisableLibraryRefreshButton)</selected>
 						</control>
-						<control type="radiobutton" id="8316">
-							<description>Disable pvr recording box</description>
-							<include>SettingsRadioButton</include>
+						<control type="button" id="8316">
+							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31297]</label>
-							<onclick>Skin.ToggleSetting(HideRecordingBox)</onclick>
-							<selected>!Skin.HasSetting(HideRecordingBox)</selected>
+							<label2>[COLOR=selected]$VAR[RecordingBoxLabel][/COLOR]</label2>
+							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[34122])</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(RecordingBox,1))</onclick>
+							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31298])</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(RecordingBox,2))</onclick>
+							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[13113])</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.Reset(RecordingBox))</onclick>
+							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31297])</onclick>
 						</control>
 					</control>
 					<!--==============================-->
@@ -841,6 +846,13 @@
 							<include>SettingsButton</include>
 							<label>$LOCALIZE[1047]</label>
 							<enable>false</enable>
+						</control>
+						<control type="radiobutton" id="8616">
+							<include>SettingsRadioButton</include>
+							<label>$LOCALIZE[31015]</label>
+							<onclick>Skin.ToggleSetting(ShowYouTubeChannelOSD)</onclick>
+							<selected>Skin.HasSetting(ShowYouTubeChannelOSD)</selected>
+							<enable>System.HasAddon(plugin.video.youtube)</enable>
 						</control>
 						<control type="button" id="8606">
 							<include>SettingsButton</include>

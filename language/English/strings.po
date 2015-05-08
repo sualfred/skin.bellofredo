@@ -77,8 +77,11 @@ msgctxt "#31014"
 msgid "Enable Startup Intro Video"
 msgstr ""
 
-#: empty string with 31015
+msgctxt "#31015"
+msgid "Show YouTube Channel Logo in Fullscreen Video"
+msgstr ""
 
+#: empty string with 31015
 msgctxt "#31016"
 msgid "File Manager"
 msgstr ""
@@ -1215,6 +1218,10 @@ msgstr ""
 
 msgctxt "#31297"
 msgid "Enable PVR Recording Info Box"
+msgstr ""
+
+msgctxt "#31298"
+msgid "Only if LiveTV is focused"
 msgstr ""
 
 #: empty strings from id 31298 to 31298

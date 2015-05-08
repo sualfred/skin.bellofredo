@@ -2324,6 +2324,12 @@
 	<value condition="!StringCompare(Container(20).ListItem.Property(background),DefaultAddon)">$INFO[Container(20).ListItem.Property(Background)]</value>
 </variable>
 
+<variable name="RecordingBoxLabel">
+	<value condition="StringCompare(Skin.String(RecordingBox),1)">$LOCALIZE[34122]</value>
+	<value condition="StringCompare(Skin.String(RecordingBox),2)">$LOCALIZE[31298]</value>
+	<value>$LOCALIZE[13113]</value>
+</variable>
+
 <variable name="CustomDialogOKHeadLabel">
 	<value condition="Window.IsVisible(SkinSettings)">$LOCALIZE[31169]</value>
 	<value condition="Window.IsVisible(SubtitleSearch)">KODI $LOCALIZE[24012]</value>
@@ -2408,8 +2414,9 @@
 	<value condition="VideoPlayer.Content(LiveTV)">$INFO[VideoPlayer.Cover]</value>	
 	<value condition="VideoPlayer.Content(Episodes) + !IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
 	<value condition="[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + !IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>		
-	<value condition="!IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
 	<value condition="!IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
+	<value condition="!IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
+	
 	<value>$INFO[VideoPlayer.Cover]</value>
 </variable>
 
