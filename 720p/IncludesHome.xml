@@ -182,7 +182,7 @@
 		<control type="group">
 			<include>HomeNowPlayingCoversSlideAnimations</include>
 			<include>WidgetMainMenuSlideAnimations</include>
-			<visible>StringCompare(Skin.String(RecordingBox),1) | [StringCompare(Skin.String(RecordingBox),2) + StringCompare(Container(20).ListItem.Property(defaultID),livetv)]</visible>
+			<visible>StringCompare(Skin.String(RecordingBox),global) | [IsEmpty(Skin.String(RecordingBox)) + StringCompare(Container(20).ListItem.Property(defaultID),livetv)]</visible>
 			<visible>![Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols) | Window.IsActive(selectdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(favourites) | Window.IsActive(progressdialog) | Window.IsActive(InfoDialog) | Window.IsActive(extendedprogressdialog) | Window.IsActive(ContextMenu) | Window.IsActive(script-globalsearch-main.xml) | Player.HasMedia] + [PVR.IsRecording | PVR.HasNonRecordingTimer]</visible>
 			<!--currently recording -->
 			<control type="group">

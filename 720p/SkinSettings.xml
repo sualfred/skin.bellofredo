@@ -338,12 +338,19 @@
 							<label>- $LOCALIZE[31297]</label>
 							<label2>[COLOR=selected]$VAR[RecordingBoxLabel][/COLOR]</label2>
 							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[34122])</onclick>
-							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(RecordingBox,1))</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(RecordingBox,global))</onclick>
 							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31298])</onclick>
-							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(RecordingBox,2))</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.Reset(RecordingBox))</onclick>
 							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[13113])</onclick>
-							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.Reset(RecordingBox))</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(RecordingBox,disabled))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31297])</onclick>
+						</control>
+						<control type="radiobutton" id="8317">
+							<description>Hide Small Rec Info</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31336]</label>
+							<onclick>Skin.ToggleSetting(HideSmallRecInfo)</onclick>
+							<selected>!Skin.HasSetting(HideSmallRecInfo)</selected>
 						</control>
 					</control>
 					<!--==============================-->

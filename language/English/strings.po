@@ -1369,6 +1369,14 @@ msgctxt "#31334"
 msgid "Not required"
 msgstr ""
 
+msgctxt "#31335"
+msgid "REC SCHEDULED"
+msgstr ""
+
+msgctxt "#31336"
+msgid "Enable REC Information at the Home Screen Clock"
+msgstr ""
+
 #: empty strings from id 31335 to 31349 PVR
 msgctxt "#31350"
 msgid "Available Groups"

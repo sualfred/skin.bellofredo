@@ -1791,7 +1791,7 @@
 
 	<control type="group">
 		<left>1187</left>
-		<visible>PVR.IsRecording</visible>
+		<visible>[PVR.IsRecording | PVR.HasNonRecordingTimer]</visible>
 		<animation type="Conditional" reversible="false" condition="!Window.IsActive(VolumeBar)">
 			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
 			<effect type="slide" start="0,35" end="0,0" time="350" tween="cubic" easing="out" />
@@ -1800,29 +1800,64 @@
 			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 			<effect type="slide" start="0,0" end="0,35" time="350" tween="sine" easing="out" />
 		</animation>
-		<animation effect="fade" start="0" end="100" delay="500" time="500" tween="sine" easing="in" pulse="true" condition="true">Conditional</animation>
-		<control type="label">
-			<left>-95</left>
-			<top>25</top>
-			<width>100</width>
-			<height>23</height>
-			<font>FontSize_14B</font>
-			<textcolor>white</textcolor>
-			<shadowcolor>AA000000</shadowcolor>
-			<align>right</align>
-			<aligny>center</aligny>
-			<label>REC</label>
+		<control type="group">
+			<animation effect="fade" start="0" end="100" delay="500" time="1000" tween="sine" easing="inout" pulse="true" condition="PVR.IsRecording">Conditional</animation>			
+			<control type="label">
+				<left>-195</left>
+				<top>25</top>
+				<width>200</width>
+				<height>23</height>
+				<font>FontSize_14B</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>AA000000</shadowcolor>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$VAR[ClockRecLabel]</label>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>20</top>
+				<width>32</width>
+				<height>32</height>
+				<aspectratio align="right" aligny="center">keep</aspectratio>
+				<texture>windows/pvr/rec.png</texture>
+			</control>
 		</control>
-		<control type="image">
-			<left>0</left>
-			<top>20</top>
-			<width>32</width>
-			<height>32</height>
-			<aspectratio align="right" aligny="center">keep</aspectratio>
-			<texture>windows/pvr/rec.png</texture>
+		<control type="grouplist">
+			<visible>Window.IsActive(home) + !Skin.HasSetting(HideSmallRecInfo)</visible>
+			<orientation>vertical</orientation>
+			<itemgap>0</itemgap>
+			<left>-378</left>
+			<top>46</top>
+			<width>400</width>
+			<control type="label">
+				<height>20</height>
+				<font>FontSize_14</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>AA000000</shadowcolor>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>[B]$LOCALIZE[19030]:[/B] $INFO[PVR.NowRecordingChannel]$INFO[PVR.NowRecordingTitle, • ]</label>
+				<visible>PVR.IsRecording</visible>
+			</control>
+			<control type="label">
+				<height>20</height>
+				<font>FontSize_14</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>AA000000</shadowcolor>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>[B]$LOCALIZE[209]:[/B] $INFO[PVR.NextRecordingChannel]$INFO[PVR.NextRecordingTitle, • ]</label>
+				<visible>PVR.HasNonRecordingTimer</visible>
+			</control>
 		</control>
 	</control>
 </include>
+
+<variable name="ClockRecLabel">
+	<value condition="PVR.IsRecording">$LOCALIZE[31035]</value>
+	<value condition="PVR.HasNonRecordingTimer">$LOCALIZE[31335]</value>
+</variable>
 
 <variable name="WatchedStateOverlay">
 	<value condition="StringCompare(Skin.String(WatchedFlag),unwatched)">unwatched</value>
@@ -2325,9 +2360,9 @@
 </variable>
 
 <variable name="RecordingBoxLabel">
-	<value condition="StringCompare(Skin.String(RecordingBox),1)">$LOCALIZE[34122]</value>
-	<value condition="StringCompare(Skin.String(RecordingBox),2)">$LOCALIZE[31298]</value>
-	<value>$LOCALIZE[13113]</value>
+	<value condition="StringCompare(Skin.String(RecordingBox),global)">$LOCALIZE[34122]</value>
+	<value condition="StringCompare(Skin.String(RecordingBox),disabled)">$LOCALIZE[13113]</value>	
+	<value>$LOCALIZE[31298]</value>
 </variable>
 
 <variable name="CustomDialogOKHeadLabel">
