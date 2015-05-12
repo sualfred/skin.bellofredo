@@ -6,6 +6,7 @@
 	<include file="IncludesHome.xml" />
 	<include file="IncludesViews.xml" />
 	<include file="IncludesWalls.xml" />
+	<include file="IncludesShowCase.xml" />
 	<include file="IncludesFlags.xml" />
 	<include file="IncludesMenus.xml" />
 	<include file="IncludesNextAiredInfo.xml" />
