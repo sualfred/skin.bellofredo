@@ -1136,6 +1136,222 @@
 
 
 
+	<!-- Shelf Definitions -->
+	<include name="ParamShelfPoster">
+			<control type="image">
+				<left>$PARAM[left]</left>
+				<posy>363</posy>
+				<width>28</width>
+				<height>304</height>
+				<texture>views/shelf/shelf_case_reflect.png</texture>
+				<animation effect="slide" end="-15,0" time="0" condition="true">Conditional</animation>
+				<visible>$PARAM[visible]</visible>
+			</control>
+			<control type="image">
+				<left>$PARAM[left]</left>
+				<posy>133</posy>
+				<width>28</width>
+				<height>236.5</height>
+				<texture>views/shelf/shelf_case.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<animation effect="slide" end="-15,0" time="0" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>$PARAM[left]</left>
+				<posy>367</posy>
+				<width>163</width>
+				<height>241</height>
+				<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png">views/shelf/thumb_shelf_border.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<colordiffuse>30FFFFFF</colordiffuse>		
+				<visible>$PARAM[visible]</visible>		
+			</control>
+			<control type="image">
+				<left>$PARAM[left]</left>
+				<posy>368</posy>
+				<width>162</width>
+				<height>241</height>
+				<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$INFO[ListItem($PARAM[icon]).Icon]</texture>
+				<aspectratio>stretch</aspectratio>
+				<visible>$PARAM[visible]</visible>
+			</control>
+			<control type="image">
+				<left>$PARAM[left]</left>
+				<posy>131</posy>
+				<width>162</width>
+				<height>241</height>
+				<texture>views/shelf/thumb_shelf_diffuse.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<left>$PARAM[left]</left>
+				<posy>131</posy>
+				<width>162</width>
+				<height>241</height>
+				<texture diffuse="views/shelf/thumb_shelf_diffuse.png" background="true">$INFO[ListItem($PARAM[icon]).Icon]</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+	</include>
+	<!-- OnNext -->
+	<include name="Includes_OnNext_Shelf">
+		<include name="ParamShelfPoster">
+			<param name="left">0</param>
+			<param name="icon">-8</param>
+			<param name="visible">true</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">164</param>
+			<param name="icon">-7</param>
+			<param name="visible">true</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">328</param>
+			<param name="icon">-6</param>
+			<param name="visible">true</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">492</param>
+			<param name="icon">-5</param>
+			<param name="visible">true</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">656</param>
+			<param name="icon">-4</param>
+			<param name="visible">true</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">820</param>
+			<param name="icon">-3</param>
+			<param name="visible">true</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">984</param>
+			<param name="icon">-2</param>
+			<param name="visible">true</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">1148</param>	
+			<param name="icon">-1</param>
+			<param name="visible">true</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">1312</param>
+			<param name="icon">0</param>
+			<param name="visible">false</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">1476</param>
+			<param name="icon">1</param>
+			<param name="visible">true</param>
+		</include>
+	</include>
+
+	<!-- OnPrevious -->
+	<include name="Includes_OnPrevious_Shelf">
+		<include name="ParamShelfPoster">
+			<param name="left">-164</param>
+			<param name="icon">-7</param>
+			<visible>true</visible>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">0</param>
+			<param name="visible">true</param>
+			<param name="icon">-6</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">164</param>
+			<param name="visible">true</param>
+			<param name="icon">-5</param>
+			<visible>true</visible>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">328</param>
+			<param name="visible">true</param>
+			<param name="icon">-4</param>
+			<visible>true</visible>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">492</param>
+			<param name="visible">true</param>
+			<param name="icon">-3</param>
+			<visible>true</visible>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">656</param>
+			<param name="visible">true</param>
+			<param name="icon">-2</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">820</param>
+			<param name="visible">true</param>
+			<param name="icon">-1</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">984</param>
+			<param name="visible">false</param>
+			<param name="icon">0</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">1148</param>
+			<param name="visible">true</param>
+			<param name="icon">1</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">1312</param>
+			<param name="visible">true</param>
+			<param name="icon">2</param>
+		</include>
+	</include>
+
+	<!-- Static -->
+	<include name="Includes_Static_Shelf">
+		<include name="ParamShelfPoster">
+			<param name="left">0</param>
+			<param name="visible">true</param>
+			<param name="icon">-7</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">164</param>
+			<param name="visible">true</param>
+			<param name="icon">-6</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">328</param>
+			<param name="visible">true</param>
+			<param name="icon">-5</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">492</param>
+			<param name="visible">true</param>
+			<param name="icon">-4</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">656</param>
+			<param name="visible">true</param>
+			<param name="icon">-3</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">820</param>
+			<param name="visible">true</param>
+			<param name="icon">-2</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">984</param>
+			<param name="visible">true</param>
+			<param name="icon">-1</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">1148</param>
+			<param name="visible">false</param>
+			<param name="icon">0</param>
+		</include>
+		<include name="ParamShelfPoster">
+			<param name="left">1312</param>
+			<param name="visible">true</param>
+			<param name="icon">1</param>
+		</include>
+	</include>
+
 	<!-- ClassicSlide Definitions -->
 	<include name="ParamClassicSlidePoster">
 		<control type="image">
