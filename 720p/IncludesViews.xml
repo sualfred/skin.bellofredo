@@ -708,5 +708,10 @@
   <value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">views/wall/bluray.png</value>
   <value condition="!IntegerGreaterThan(ListItem.VideoResolution,719)">views/wall/dvd.png</value>
 </variable>
+<variable name="DiscArtTypeShelf">
+  <value condition="!IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>
+  <value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">views/shelf/disc_bluray.png</value>
+  <value condition="!IntegerGreaterThan(ListItem.VideoResolution,719)">views/shelf/disc_dvd.png</value>
+</variable>
 
 </includes>    

@@ -5298,6 +5298,47 @@
 	<!--==== ViewShelf "579" ====-->
 	<!--========================-->
 	<include name="ViewShelf">
+		<!--smooth background fade-->
+		<control type="group">
+			<visible>!Skin.HasSetting(HideBGFanart)</visible>
+			<include>BackgroundAnimation</include>
+			<animation type="WindowOpen" tween="sine" easing="out">
+				<effect type="fade" start="0" end="100" time="1000"/>
+			</animation>
+			<animation type="WindowClose" tween="sine" easing="out">
+				<effect type="fade" start="100" end="0" time="1000" delay="700"/>
+			</animation>
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture>windows/bg/black.jpg</texture>
+				<fadetime>FanartCrossfadeTime</fadetime>
+			</control>
+			<control type="image">
+				<description>ClassicSlideFanart</description>
+				<include>FullscreenDimensions</include>
+				<texture background="true" fallback="SKINDEFAULT.jpg">$INFO[ListItem.Art(fanart)]</texture>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<visible>IsEmpty(Control.GetLabel(5831))</visible>
+			</control>
+			<control type="multiimage" id="5831">
+				<description>Fanart extrafanart</description>
+				<include>FullscreenDimensions</include>
+				<aspectratio>scale</aspectratio>
+				<randomize>true</randomize>
+				<timeperimage>5000</timeperimage>
+				<fadetime>1000</fadetime>
+				<imagepath background="true">$INFO[ListItem.Path,,/extrafanart/]</imagepath>
+				<visible>!Skin.HasSetting(HideBGFanart) + Skin.HasSetting(ViewsExtraFanart)+ !SubString(Container.Folderpath,plugin://,left)</visible>
+			</control>
+			<control type="image">
+				<description>Vignette</description>
+				<include>FullscreenDimensions</include>
+				<texture background="true">windows/bg/bg_vignette.png</texture>			
+				<visible>!Window.IsActive(visualisation)</visible>
+				<include>BackgroundFade</include>
+			</control>
+
+		</control>
 		<control type="group">
 			<!-- default group -->
 			<animation effect="fade" time="400">VisibleChange</animation>
@@ -5311,7 +5352,6 @@
 				<texture background="true">views/shelf/glas.png</texture>
 			</control>
 			<control type="group">
-				
 				<!--itemlayout-->
 				<control type="group">
 					<left>0</left>
@@ -5372,26 +5412,16 @@
 					<control type="group">
 						<left>-100</left>
 						<animation type="WindowOpen" tween="sine" easing="out">
-							<effect type="fade" start="0" end="100" time="1000"/>
+							<effect type="slide" start="-1000" end="0" time="780"/>
+							<effect type="fade" start="0" end="100" time="500" delay="0"  tween="sine" easing="out"/>
 						</animation>
 						<animation type="WindowClose" tween="sine" easing="out">
-							<effect type="fade" start="100" end="0" time="1000" delay="300"/>
+							<effect type="slide" start="0" end="-1000" time="780" delay="1050"/>
+							<effect type="fade" start="100" end="0" time="500" delay="1350"  tween="sine" easing="out"/>
 						</animation>
 						<visible>!Control.IsVisible(8013) + !Control.IsVisible(8014)</visible>
 						<include>Includes_Static_Shelf</include>
 					</control>
-					<!--<control type="image">
-						<visible>Control.IsVisible(579)</visible>
-						<include>FullscreenDimensions</include>
-						<texture>views/ClassicSlide/posters_overlay.png</texture>
-						<fadetime>FanartCrossfadeTime</fadetime>
-						<animation type="WindowOpen">
-							<effect type="fade" start="0" end="50" time="500" delay="800" tween="sine" easing="out"/>
-						</animation>
-						<animation type="WindowClose">
-							<effect type="fade" start="50" end="0" time="500" delay="0" tween="sine" easing="out"/>
-						</animation>
-					</control>-->
 				</control>
 
 				<!--focusedlayout poster-->
@@ -5406,49 +5436,53 @@
 						<animation reversible="true" effect="zoom" start="100" end="95" center="340,340" time="300" tween="quadratic" easing="in" condition="Control.IsVisible(8013) | Control.IsVisible(8014)">Conditional</animation>
 						<control type="group">
 							<width>297</width>
-							<height>439</height>
-
+							<height>439</height>							
 							<animation type="WindowOpen">
-								<effect type="fade" start="0" end="100" time="500" delay="500"  tween="sine" easing="out"/>
-								<effect type="zoom" start="265,192,200,317" end="205,156,297,439" time="980" delay="750"  tween="sine" easing="out"/>
-								<!--<effect type="zoom" start="80" end="100" center="auto" time="980" delay="10750"  tween="sine" easing="out"/>-->
-								<effect type="slide" end="0,-15" time="980" delay="750"  tween="sine" easing="out"/>
-								
-								
+								<effect type="fade" start="0" end="100" time="500" delay="900"  tween="sine" easing="out"/>
+								<effect type="zoom" start="265,192,200,317" end="205,156,297,439" time="980" delay="1150"  tween="sine" easing="out"/>
+								<effect type="slide" end="0,-15" time="980" delay="1150"  tween="sine" easing="out"/>
 							</animation>
 							<animation type="WindowClose">
 								<effect type="zoom" start="205,156,297,439" end="265,192,200,317" time="980" delay="0"  tween="sine" easing="out"/>
 								<effect type="slide" start="0,-15" end="0,0" time="980" delay="0"  tween="sine" easing="out"/>
 								<effect type="fade" start="100" end="0" time="500" delay="800"  tween="sine" easing="out"/>
 							</animation>
-
 							<control type="group">
 								<top>-30</top>
 								<left>280</left>
 								<control type="image">
-									<posx>44</posx>
-									<posy>379</posy>
-									<width>43</width>
-									<height>396</height>
-									<texture>views/shelf/shelf_case_reflect.png</texture>
+									<left>-230</left>
+									<top>-85</top>
+									<width>500</width>
+									<height>900</height>
+									<aspectratio align="center" aligny="center">stretch</aspectratio>
+									<texture background="true">views/list/shine.png</texture>
+									<animation effect="fade" end="80" reversible="false" condition="true" time="0">Conditional</animation>
+									<animation effect="rotate" time="0" delay="0" start="0" end="-27" loop="false" center="auto" condition="true" reversible="true">Conditional</animation>
+								</control>
+								<control type="image">
+									<posx>84</posx>
+									<posy>372</posy>
+									<width>56</width>
+									<height>459</height>
+									<texture>views/shelf/shelf_reflected_case_full.png</texture>
 									<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="image">
 									<posx>84</posx>
-									<posy>92</posy>
-									<width>43</width>
-									<height>353</height>
+									<posy>39</posy>
+									<width>56</width>
+									<height>459</height>
 									<texture>views/shelf/shelf_case.png</texture>
 									<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="image">
 									<posx>-148</posx>
-									<posy>440</posy>
-									<width>255</width>
-									<height>441</height>
-									<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png">views/shelf/thumb_shelf_border.png</texture>
+									<posy>441</posy>
+									<width>253</width>
+									<height>360</height>
+									<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">views/shelf/thumb_shelf_fallback.png</texture>
 									<aspectratio>stretch</aspectratio>
-									<colordiffuse>30FFFFFF</colordiffuse>
 								</control>
 								<control type="image">
 									<posx>-148</posx>
@@ -5483,14 +5517,14 @@
 									<posy>89</posy>
 									<width>253</width>
 									<height>360</height>
-									<texture>views/shelf/thumb_shelf_diffuse.png</texture>
+									<texture diffuse="views/shelf/thumb_shelf_diffuse.png">views/shelf/thumb_shelf_fallback.png</texture>
 									<aspectratio scalediffuse="false">stretch</aspectratio>
 								</control>
 								<control type="image">
 									<posx>-148</posx>
 									<posy>89</posy>
 									<width>253</width>
-									<height>360</height>
+									<height>359</height>
 									<texture diffuse="views/shelf/thumb_shelf_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 									<aspectratio scalediffuse="false">stretch</aspectratio>
 								</control>
@@ -5519,16 +5553,53 @@
 									<posy>89</posy>
 									<width>253</width>
 									<height>360</height>
+									<texture diffuse="views/shelf/thumb_shelf_diffuse.png">views/shelf/thumb_shelf_glas.png</texture>
+									<aspectratio scalediffuse="false">stretch</aspectratio>
+								</control>
+								<control type="image">
+									<posx>-148</posx>
+									<posy>89</posy>
+									<width>253</width>
+									<height>360</height>
 									<aspectratio aligny="center" align="center">stretch</aspectratio>
-									<texture flipy="false" flipx="false" diffuse="views/shelf/thumb_shelf_diffuse.png">overlays/unwatched/classicslide/$VAR[WatchedStateOverlay]_Poster.png</texture>
+									<texture flipy="false" flipx="false" diffuse="views/shelf/thumb_shelf_diffuse.png">overlays/unwatched/shelf/$VAR[WatchedStateOverlay]_Poster.png</texture>
 									<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 									<animation effect="fade" start="90" end="100" time="200" delay="0" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)]">Conditional</animation>
 								</control>
 							</control>
-
-							
-							
-							
+						</control>
+						<!--discart-->
+						<control type="group">
+							<top>-40</top>
+							<left>420</left>
+							<visible>!Substring(ListItem.Path,videodb://movies/sets/,left) + !StringCompare(ListItem.Label,..) + Container.Content(movies)</visible>
+							<animation effect="fade" start="0" end="100" time="350" delay="70">Visible</animation>
+							<animation type="Conditional" condition="![Control.IsVisible(8013) | Control.IsVisible(8014) | Window.IsVisible(Shutdownmenu) | Window.IsVisible(Playercontrols)]" reversible="true">
+								<effect type="fade" start="0" end="100" time="200" delay="0" tween="sine" easing="out"/>
+								<effect type="slide" start="150,0" end="0,0" time="200" delay="0" tween="sine" easing="in"/>
+							</animation>
+							<animation type="WindowOpen">
+								<effect type="fade" start="0" end="100" time="200" delay="1300" tween="sine" easing="out"/>
+								<effect type="slide" start="50,0" end="-150,0" time="980" delay="1150" tween="sine" easing="out"/>
+							</animation>
+							<animation type="WindowClose">
+								<effect type="fade" start="100" end="0" time="500" delay="0" tween="sine" easing="out"/>
+								<effect type="slide" start="-150,0" end="100,0" time="780" delay="0" tween="sine" easing="out"/>
+							</animation>
+							<control type="image">
+								<top>260</top>
+								<width>206</width>
+								<height>206</height>
+								<aspectratio aligny="center" align="center">stretch</aspectratio>
+								<texture background="true" diffuse="views/shelf/disc.png" fallback="views/shelf/disc_fallback.png">$VAR[DiscArtTypeShelf]</texture>
+							</control>
+							<control type="image">
+								<top>465</top>
+								<width>206</width>
+								<height>206</height>
+								<aspectratio aligny="center" align="center">stretch</aspectratio>
+								<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true" fallback="views/wall/bluray.png">$VAR[DiscArtType]</texture>
+							</control>
 						</control>
 					</control>
 				</control>

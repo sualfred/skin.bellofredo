@@ -272,7 +272,7 @@
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<include>BackgroundAnimation</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>![[Control.IsVisible(55) | Control.IsVisible(59) | Control.IsVisible(583)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + !Control.IsVisible(581) + [IsEmpty(Control.GetLabel(5901)) | !Skin.HasSetting(ViewsExtraFanart)]</visible>
+			<visible>![[Control.IsVisible(55) | Control.IsVisible(59) | Control.IsVisible(583) | Control.IsVisible(579)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + !Control.IsVisible(581) + [IsEmpty(Control.GetLabel(5901)) | !Skin.HasSetting(ViewsExtraFanart)]</visible>
 		</control>				
 		<control type="multiimage" id="5901">
 			<description>Fanart extrafanart</description>
@@ -285,7 +285,7 @@
 			<include>FanartFade</include>
 			<include>BackgroundAnimation</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>![[Control.IsVisible(55) | Control.IsVisible(59) | Control.IsVisible(583)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + !Control.IsVisible(581) + Skin.HasSetting(ViewsExtraFanart) + !SubString(Container.Folderpath,plugin://,left)</visible>
+			<visible>![[Control.IsVisible(55) | Control.IsVisible(59) | Control.IsVisible(583) | Control.IsVisible(579)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + !Control.IsVisible(581) + Skin.HasSetting(ViewsExtraFanart) + !SubString(Container.Folderpath,plugin://,left)</visible>
 		</control>	
 		<control type="image">
 			<include>NetFilx Fanart Transparency</include>

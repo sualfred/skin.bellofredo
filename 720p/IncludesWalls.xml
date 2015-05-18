@@ -1138,37 +1138,46 @@
 
 	<!-- Shelf Definitions -->
 	<include name="ParamShelfPoster">
-			<control type="image">
+			<!-- case  -->
+			<!--<control type="image">
 				<left>$PARAM[left]</left>
 				<posy>363</posy>
-				<width>28</width>
+				<width>24</width>
 				<height>304</height>
 				<texture>views/shelf/shelf_case_reflect.png</texture>
-				<animation effect="slide" end="-15,0" time="0" condition="true">Conditional</animation>
+				<animation effect="slide" end="149,1" time="0" condition="true">Conditional</animation>
 				<visible>$PARAM[visible]</visible>
+			</control>-->
+			<control type="image">
+				<left>$PARAM[left]</left>
+				<posy>318</posy>
+				<width>37</width>
+				<height>306</height>
+				<texture>views/shelf/shelf_reflected_case.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<animation effect="slide" end="149,2" time="0" condition="true">Conditional</animation>
 			</control>
 			<control type="image">
 				<left>$PARAM[left]</left>
-				<posy>133</posy>
-				<width>28</width>
-				<height>236.5</height>
+				<posy>97</posy>
+				<width>37</width>
+				<height>306</height>
 				<texture>views/shelf/shelf_case.png</texture>
 				<aspectratio>stretch</aspectratio>
-				<animation effect="slide" end="-15,0" time="0" condition="true">Conditional</animation>
+				<animation effect="slide" end="149,2" time="0" condition="true">Conditional</animation>
 			</control>
 			<control type="image">
 				<left>$PARAM[left]</left>
 				<posy>367</posy>
-				<width>163</width>
+				<width>162</width>
 				<height>241</height>
-				<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png">views/shelf/thumb_shelf_border.png</texture>
+				<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">views/shelf/thumb_shelf_fallback.png</texture>
 				<aspectratio>stretch</aspectratio>
-				<colordiffuse>30FFFFFF</colordiffuse>		
-				<visible>$PARAM[visible]</visible>		
+				<visible>$PARAM[visible]</visible>
 			</control>
 			<control type="image">
 				<left>$PARAM[left]</left>
-				<posy>368</posy>
+				<posy>367</posy>
 				<width>162</width>
 				<height>241</height>
 				<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$INFO[ListItem($PARAM[icon]).Icon]</texture>
@@ -1180,7 +1189,7 @@
 				<posy>131</posy>
 				<width>162</width>
 				<height>241</height>
-				<texture>views/shelf/thumb_shelf_diffuse.png</texture>
+				<texture diffuse="views/shelf/thumb_shelf_diffuse.png">views/shelf/thumb_shelf_fallback.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="image">
@@ -1189,6 +1198,14 @@
 				<width>162</width>
 				<height>241</height>
 				<texture diffuse="views/shelf/thumb_shelf_diffuse.png" background="true">$INFO[ListItem($PARAM[icon]).Icon]</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<left>$PARAM[left]</left>
+				<posy>131</posy>
+				<width>162</width>
+				<height>241</height>
+				<texture diffuse="views/shelf/thumb_shelf_diffuse.png">views/shelf/thumb_shelf_glas.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
 	</include>
