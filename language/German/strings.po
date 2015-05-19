@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-05-05 14:26+0000\n"
+"PO-Revision-Date: 2015-05-19 14:24+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -80,6 +80,11 @@ msgctxt "#31014"
 msgid "Enable Startup Intro Video"
 msgstr "Aktiviere Intro Video"
 
+msgctxt "#31015"
+msgid "Show YouTube Channel Logo in Fullscreen Video"
+msgstr "Zeige YouTube Channel Logo währen der Wiedergabe"
+
+#: empty string with 31015
 msgctxt "#31016"
 msgid "File Manager"
 msgstr "Dateimanager"
@@ -1218,6 +1223,10 @@ msgctxt "#31297"
 msgid "Enable PVR Recording Info Box"
 msgstr "Aktiviere PVR Aufnahme Infobox"
 
+msgctxt "#31298"
+msgid "Only if LiveTV is focused"
+msgstr "Nur wenn LiveTV fokusiert ist"
+
 #: empty strings from id 31298 to 31298
 msgctxt "#31299"
 msgid "Conditional Weather Fanarts"
@@ -1362,6 +1371,26 @@ msgstr "Kontent-Art"
 msgctxt "#31334"
 msgid "Not required"
 msgstr "Nicht benötigt"
+
+msgctxt "#31335"
+msgid "REC SCHEDULED"
+msgstr "AUFNAHME GEPLANT"
+
+msgctxt "#31336"
+msgid "Enable REC Information at the Home Screen Clock"
+msgstr "Aktiviere REC Informationen in der Home Screen Uhr"
+
+msgctxt "#31337"
+msgid "TV Show Disc Art"
+msgstr "TV-Serien Disc Art"
+
+msgctxt "#31338"
+msgid "Movie Disc Art"
+msgstr "Film Disc Art"
+
+msgctxt "#31339"
+msgid "Back"
+msgstr "Zurück"
 
 #: empty strings from id 31335 to 31349 PVR
 msgctxt "#31350"

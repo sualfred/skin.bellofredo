@@ -1,4 +1,12 @@
-﻿[B][COLOR=FF56ADDA]v4.2.7[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.2.8[/COLOR][/B]
+• Added: New video viewtype "Shelf"
+• Fixed: StarRating overlapping in music info dialogs
+• Fixed: Cropped sunrise/sunset label in weather window
+• Improved: Home recording info boxes (3 variants)
+• Adjusted: Info label line in video OSD
+• Added: Experimental permament YouTube channellogo (can be disabled)
+
+[B][COLOR=FF56ADDA]v4.2.7[/COLOR][/B]
 • Added: Some new audio codec flags, including missing flags for DTS-HD/DTS-MA
 • Fixed: Video OSD / Playercontrols dialog poster art workaround for Amazon Instant Video movie playback (Sandmann's plugin)
 • Merged: FR translation

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-05-05 14:26+0000\n"
+"PO-Revision-Date: 2015-05-19 14:22+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/bello-fredo/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -79,6 +79,11 @@ msgctxt "#31014"
 msgid "Enable Startup Intro Video"
 msgstr "Išjungti Įžanginį vaizdo įrašą"
 
+msgctxt "#31015"
+msgid "Show YouTube Channel Logo in Fullscreen Video"
+msgstr "Rodyti YouTube kanalo logotipą viso ekrano vaizdo įraše"
+
+#: empty string with 31015
 msgctxt "#31016"
 msgid "File Manager"
 msgstr "Failų tvarkyklė"
@@ -715,7 +720,7 @@ msgstr "Atnaujinti iliustracijas"
 
 msgctxt "#31172"
 msgid "Not configured"
-msgstr ""
+msgstr "Nesukonfigūruota"
 
 msgctxt "#31173"
 msgid "Custom Widgets #1"
@@ -1207,15 +1212,19 @@ msgstr "BelloFredo - Extrapack"
 
 msgctxt "#31295"
 msgid "Note"
-msgstr ""
+msgstr "Pastaba"
 
 msgctxt "#31296"
 msgid "Path extraction from a favourite only works for nodes and directories!"
-msgstr ""
+msgstr "Kelio išgavimas iš mėgstamiausiojo veikia tik mazgams ir katalogams!"
 
 msgctxt "#31297"
 msgid "Enable PVR Recording Info Box"
-msgstr ""
+msgstr "Įjungti PVR įrašymo informacinį langelį"
+
+msgctxt "#31298"
+msgid "Only if LiveTV is focused"
+msgstr "Tik jei pasirinkta televizija"
 
 #: empty strings from id 31298 to 31298
 msgctxt "#31299"
@@ -1312,54 +1321,74 @@ msgstr "Ieškoti atnaujinimų paleidžiant"
 
 msgctxt "#31322"
 msgid "Choose Widget Content"
-msgstr ""
+msgstr "Pasirinkite valdiklio turinį"
 
 msgctxt "#31323"
 msgid "Mixed item group"
-msgstr ""
+msgstr "Mišrių elementų grupė"
 
 msgctxt "#31324"
 msgid "Extract custom path from a existing favourite"
-msgstr ""
+msgstr "Išgauti savą kelią iš egzistuojančio mėgstamiausiojo"
 
 msgctxt "#31325"
 msgid "Other"
-msgstr ""
+msgstr "Kita"
 
 msgctxt "#31326"
 msgid "Square"
-msgstr ""
+msgstr "Kvadratas"
 
 msgctxt "#31327"
 msgid "Other custom path (extracted from a favourite)"
-msgstr ""
+msgstr "Kitas savas kelias (išgautas iš mėgstamiausiojo)"
 
 msgctxt "#31328"
 msgid "Add own or edit existing extracted path"
-msgstr ""
+msgstr "Pridėti savą ar keisti egzistuojantį išgautą kelią"
 
 msgctxt "#31329"
 msgid "Reset Widget"
-msgstr ""
+msgstr "Atstatyti valdiklį"
 
 msgctxt "#31330"
 msgid "Widget Label"
-msgstr ""
+msgstr "Valdiklio etiketė"
 
 msgctxt "#31331"
 msgid "Content Path"
-msgstr ""
+msgstr "Turinio kelias"
 
 msgctxt "#31332"
 msgid "Widget Layout"
-msgstr ""
+msgstr "Valdiklio išdėstymas"
 
 msgctxt "#31333"
 msgid "Content Type"
-msgstr ""
+msgstr "Turinio tipas"
 
 msgctxt "#31334"
 msgid "Not required"
+msgstr "Nebūtina"
+
+msgctxt "#31335"
+msgid "REC SCHEDULED"
+msgstr "ĮRŠ. SUPLANUOTAS"
+
+msgctxt "#31336"
+msgid "Enable REC Information at the Home Screen Clock"
+msgstr "Įjungti ĮRŠ. informaciją prie pradinio ekrano laikrodžio"
+
+msgctxt "#31337"
+msgid "TV Show Disc Art"
+msgstr ""
+
+msgctxt "#31338"
+msgid "Movie Disc Art"
+msgstr ""
+
+msgctxt "#31339"
+msgid "Back"
 msgstr ""
 
 #: empty strings from id 31335 to 31349 PVR
