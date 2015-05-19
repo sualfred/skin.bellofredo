@@ -6224,7 +6224,7 @@
 				<control type="grouplist">
 					<left>185</left>
 					<top>530</top>
-					<width>910</width>
+					<width>960</width>
 					<height>100</height>
 					<itemgap>20</itemgap>
 					<orientation>horizontal</orientation>

@@ -138,7 +138,6 @@
 				<!-- Movies/Episodes Cover -->
 				<control type="group" id="1">
 					<visible>SubString(Player.Folderpath,/lovefilm/) | [VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
-					<!--<visible>[VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] | [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>-->
 					<control type="image" id="1">
 						<left>10</left>
 						<top>10</top>
@@ -213,7 +212,6 @@
 				<control type="group" id="1">
 					<top>60</top>
 					<visible>[!SubString(Player.Folderpath,/lovefilm/) + !VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(LiveTV)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV) + !SubString(Player.Folderpath,/lovefilm/)]</visible>
-					<!--<visible>[!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(LiveTV)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)]</visible>-->
 					<control type="image" id="1">
 						<left>8</left>
 						<top>8</top>
@@ -377,7 +375,6 @@
 					<include>OSDPlotAnimation</include>
 					<visible>[IsEmpty(Window(VideoOSD).Property(ShowPlot)) | IsEmpty(VideoPlayer.Plot)]</visible>
 					<visible>SubString(Player.Folderpath,/lovefilm/) | [VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
-					<!--<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV)]">Conditional</animation>-->
 					<control type="label" id="1">
 						<description>Title label</description>
 						<left>0</left>
@@ -394,7 +391,7 @@
 					<control type="label" id="1">
 						<description>Label</description>
 						<left>2</left>
-						<top>45</top>
+						<top>46</top>
 						<height>30</height>
 						<width>730</width>
 						<label>$VAR[OSDInfoUnderTitleLabel]</label>
@@ -444,8 +441,6 @@
 					<include>OSDPlotAnimation</include>
 					<visible>[IsEmpty(Window(VideoOSD).Property(ShowPlot)) | IsEmpty(VideoPlayer.Plot)]</visible>
 					<visible>[!SubString(Player.Folderpath,/lovefilm/) + !VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(LiveTV)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV) + !SubString(Player.Folderpath,/lovefilm/)]</visible>
-					<!--<visible>!VideoPlayer.Content(LiveTV)</visible>-->
-					<!--<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] | SubString(Player.Filenameandpath,rtmp://) | SubString(Player.Filenameandpath,http)">Conditional</animation>-->
 					<control type="label" id="1">
 						<description>Title label</description>
 						<left>0</left>
@@ -462,7 +457,7 @@
 					<control type="label" id="1">
 						<description>Label</description>
 						<left>2</left>
-						<top>45</top>
+						<top>46</top>
 						<height>30</height>
 						<width>620</width>
 						<label>$VAR[OSDInfoUnderTitleLabel]</label>
@@ -528,7 +523,7 @@
 					<control type="label" id="1">
 						<description>Label</description>
 						<left>0</left>
-						<top>45</top>
+						<top>46</top>
 						<height>30</height>
 						<width>620</width>
 						<label>$INFO[VideoPlayer.Title]</label>
@@ -551,7 +546,6 @@
 						<label>$INFO[VideoPlayer.Genre,[COLOR=white]$LOCALIZE[515]:[/COLOR] ]</label>
 						<label>$INFO[VideoPlayer.ChannelGroup,[COLOR=white]$LOCALIZE[31033]:[/COLOR] ]</label>
 						<label>$INFO[VideoPlayer.NextTitle,[COLOR=white]$LOCALIZE[19031]:[/COLOR] ,]$INFO[VideoPlayer.NextStartTime, (,)]</label>
-						<!--<label>$INFO[VideoPlayer.NextStartTime,[COLOR=white]$LOCALIZE[19080][/COLOR] ,]$INFO[VideoPlayer.NextEndTime,  [COLOR=white]$LOCALIZE[19081][/COLOR] ,]</label>-->
 						<scroll>false</scroll>
 						<scrollout>false</scrollout>
 						<scrollspeed>100</scrollspeed>
@@ -564,8 +558,7 @@
 					<left>207</left>
 					<top>240</top>
 					<include>OSDPlotAnimation</include>
-					<visible>[IsEmpty(Window(VideoOSD).Property(ShowPlot)) | IsEmpty(VideoPlayer.Plot)]</visible>					
-					<!--<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(LiveTV)] | SubString(Player.Filenameandpath,rtmp://) | SubString(Player.Filenameandpath,http)">Conditional</animation>-->
+					<visible>[IsEmpty(Window(VideoOSD).Property(ShowPlot)) | IsEmpty(VideoPlayer.Plot)]</visible>
 					<animation effect="slide" start="0,0" end="90,0" condition="![SubString(Player.Folderpath,/lovefilm/) | VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(LiveTV)] | [IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !VideoPlayer.Content(LiveTV) + !SubString(Player.Folderpath,/lovefilm/)]">Conditional</animation>
 					<animation effect="slide" start="0,0" end="15,-20" condition="VideoPlayer.Content(LiveTV)">Conditional</animation>
 					<control type="group" id="1">
