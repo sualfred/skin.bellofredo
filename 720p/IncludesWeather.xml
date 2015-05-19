@@ -2,16 +2,16 @@
 <includes> 
 
 	<!-- ============================= -->
-  <!-- ========= TOP INFO ========== -->
+	<!-- ========= TOP INFO ========== -->
 	<!-- ============================= -->
 	<include name="WeatherTopInfo">			
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
-	    <include>DialogZoomInOutAnimation</include>
+			<include>DialogZoomInOutAnimation</include>
 
 			<control type="group">
-			  <include>Window_OpenClose_Animation</include>
-			  <visible>Weather.IsFetched + !SubString(Window(Weather).Property(Current.ConditionIcon),na) + ![IsEmpty(Window(Weather).Property(Current.Condition)) | IsEmpty(Window(Weather).Property(Location))]</visible>
+				<include>Window_OpenClose_Animation</include>
+				<visible>Weather.IsFetched + !SubString(Window(Weather).Property(Current.ConditionIcon),na) + ![IsEmpty(Window(Weather).Property(Current.Condition)) | IsEmpty(Window(Weather).Property(Location))]</visible>
 				<!-- Top Info Left -->
 				<control type="group">
 					<top>65</top>
@@ -43,28 +43,28 @@
 						<height>150</height>
 						<itemgap>0</itemgap>
 						<align>left</align>
-				    <orientation>horizontal</orientation>
+						<orientation>horizontal</orientation>
 						<control type="label">
-								<description>big current temp value</description>
-								<height>130</height>
-								<width min="10" max="500">auto</width>
-								<font>FontSize_140</font>
-								<align>left</align>
-								<aligny>center</aligny>
-								<label>$INFO[Window.Property(Current.Temperature)]</label>
-								<textcolor>white</textcolor>
-			          <shadowcolor>99000000</shadowcolor>
+							<description>big current temp value</description>
+							<height>130</height>
+							<width min="10" max="500">auto</width>
+							<font>FontSize_140</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(Current.Temperature)]</label>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
 						</control>
 						<control type="label">
-								<description>temperature units value</description>
-								<height>55</height>
-								<width min="10" max="500">auto</width>
-								<font>FontSize_40</font>
-								<align>left</align>
-								<aligny>center</aligny>
-								<label>$INFO[System.TemperatureUnits]</label>
-								<textcolor>white</textcolor>
-			          <shadowcolor>99000000</shadowcolor>
+							<description>temperature units value</description>
+							<height>55</height>
+							<width min="10" max="500">auto</width>
+							<font>FontSize_40</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[System.TemperatureUnits]</label>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
 						</control>
 					</control>
 					<control type="grouplist">
@@ -74,151 +74,151 @@
 						<height>50</height>
 						<itemgap>15</itemgap>
 						<align>left</align>
-				    <orientation>horizontal</orientation>
+						<orientation>horizontal</orientation>
 						<control type="label">
-							  <description>current condition</description>
-								<height>40</height>
-								<width min="10" max="500">auto</width>
-								<font>FontSize_40</font>
-								<align>left</align>
-								<aligny>center</aligny>
-				        <label>$INFO[Window.Property(Current.Condition)]</label>
-								<textcolor>white</textcolor>
-			          <shadowcolor>99000000</shadowcolor>
+							<description>current condition</description>
+							<height>40</height>
+							<width min="10" max="500">auto</width>
+							<font>FontSize_40</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(Current.Condition)]</label>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
 						</control>
 						<control type="label">
-								<description>Feels Like</description>
-								<height>55</height>
-								<width min="10" max="500">auto</width>
-								<font>FontSize_22</font>
-								<align>left</align>
-								<aligny>center</aligny>
-								<label>$INFO[Window.Property(Current.FeelsLike),[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] ]$INFO[System.TemperatureUnits], $INFO[Window.Property(Current.Humidity),[COLOR=ddC6C6C8]$LOCALIZE[406]:[/COLOR] ]</label>
-								<textcolor>ffffffff</textcolor>
-								<shadowcolor>ff0d0d0d</shadowcolor>
+							<description>Feels Like</description>
+							<height>55</height>
+							<width min="10" max="500">auto</width>
+							<font>FontSize_22</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(Current.FeelsLike),[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] ]$INFO[System.TemperatureUnits], $INFO[Window.Property(Current.Humidity),[COLOR=ddC6C6C8]$LOCALIZE[406]:[/COLOR] ]</label>
+							<textcolor>ffffffff</textcolor>
+							<shadowcolor>ff0d0d0d</shadowcolor>
 						</control>
-				  </control>
+					</control>
 				</control>
-			  <!-- Day/Date/Year Right -->	
+				<!-- Day/Date/Year Right -->	
 				<control type="group">
 					<left>748</left>
 					<top>10</top>
 					<control type="label">
-							<description>Date</description>
-							<left>98</left>
-							<top>110</top>
-							<width>365</width>
-							<height>50</height>
-							<font>FontSize_85</font>
-							<align>right</align>
-							<aligny>center</aligny>
-							<label>$INFO[System.Date(dd)]</label>
-							<textcolor>white</textcolor>
-							<shadowcolor>ff0d0d0d</shadowcolor>
+						<description>Date</description>
+						<left>98</left>
+						<top>110</top>
+						<width>365</width>
+						<height>50</height>
+						<font>FontSize_85</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[System.Date(dd)]</label>
+						<textcolor>white</textcolor>
+						<shadowcolor>ff0d0d0d</shadowcolor>
 					</control>
 					<control type="label">
-							<description>Year</description>
-							<left>420</left>
-							<top>140</top>
-							<width>100</width>
-							<height>30</height>
-							<font>FontSize_28</font>
-							<textcolor>white</textcolor>
-							<align>right</align>
-							<aligny>top</aligny>
-							<label>$INFO[System.Date(yyyy)]</label>
-						 <animation effect="rotate" start="0" end="90" center="auto" time="0">WindowOpen</animation>
-						 <animation effect="rotate" start="0" end="90" center="auto" time="0">WindowClose</animation>
-							<shadowcolor>ff0d0d0d</shadowcolor>
+						<description>Year</description>
+						<left>420</left>
+						<top>140</top>
+						<width>100</width>
+						<height>30</height>
+						<font>FontSize_28</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>top</aligny>
+						<label>$INFO[System.Date(yyyy)]</label>
+						<animation effect="rotate" start="0" end="90" center="auto" time="0">WindowOpen</animation>
+						<animation effect="rotate" start="0" end="90" center="auto" time="0">WindowClose</animation>
+						<shadowcolor>ff0d0d0d</shadowcolor>
 					</control>
 					<control type="label">
-							<description>Weekday</description>
-							<left>18</left>
-							<top>105</top>
-							<width>350</width>
-							<height>30</height>
-							<font>FontSize_34</font>
-							<textcolor>white</textcolor>
-							<align>right</align>
-							<aligny>center</aligny>
-							<label>$INFO[System.Date(DDD)]</label>
-							<shadowcolor>ff0d0d0d</shadowcolor>
+						<description>Weekday</description>
+						<left>18</left>
+						<top>105</top>
+						<width>350</width>
+						<height>30</height>
+						<font>FontSize_34</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[System.Date(DDD)]</label>
+						<shadowcolor>ff0d0d0d</shadowcolor>
 					</control>
 					<control type="label">
-							<description>Month</description>
-							<left>18</left>
-							<top>139</top>
-							<width>350</width>
-							<height>30</height>
-							<font>FontSize_34</font>
-							<textcolor>white</textcolor>
-							<align>right</align>
-							<aligny>center</aligny>
-							<label>$INFO[System.Date(MMM)]</label>
-							<shadowcolor>ff0d0d0d</shadowcolor>
+						<description>Month</description>
+						<left>18</left>
+						<top>139</top>
+						<width>350</width>
+						<height>30</height>
+						<font>FontSize_34</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[System.Date(MMM)]</label>
+						<shadowcolor>ff0d0d0d</shadowcolor>
 					</control>
 				</control>
-			  <!-- Sunrise/Sunset/Provider Right -->	
+				<!-- Sunrise/Sunset/Provider Right -->	
 				<control type="group">
 					<left>856</left>
 					<top>195</top>
 					<control type="label">
-							<description>Sunrise-Sunset</description>
-							<left>0</left>
-							<top>0</top>
-							<width>380</width>
-							<height>30</height>
-							<font>FontSize_20</font>
-							<textcolor>white</textcolor>
-							<align>right</align>
-							<aligny>center</aligny>
-							<scroll>false</scroll>
-						  <label>$INFO[Window.Property(Today.Sunrise),[COLOR=ddC6C6C8]$LOCALIZE[33027]: [/COLOR]],  $INFO[Window.Property(Today.Sunset),[COLOR=ddC6C6C8]$LOCALIZE[33028]: [/COLOR]]</label>
-			        <visible>!IsEmpty(Window.Property(Today.Sunrise)) + !IsEmpty(Window.Property(Today.Sunset))</visible>
-							<shadowcolor>ff0d0d0d</shadowcolor>
+						<description>Sunrise-Sunset</description>
+						<left>-100</left>
+						<top>0</top>
+						<width>480</width>
+						<height>30</height>
+						<font>FontSize_20</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<scroll>false</scroll>
+						<label>$INFO[Window.Property(Today.Sunrise),[COLOR=ddC6C6C8]$LOCALIZE[33027]: [/COLOR]],  $INFO[Window.Property(Today.Sunset),[COLOR=ddC6C6C8]$LOCALIZE[33028]: [/COLOR]]</label>
+						<visible>!IsEmpty(Window.Property(Today.Sunrise)) + !IsEmpty(Window.Property(Today.Sunset))</visible>
+						<shadowcolor>ff0d0d0d</shadowcolor>
 					</control>
 					<control type="label">
-							<description>last update</description>
-							<left>0</left>
-							<top>23</top>
-							<width>380</width>
-							<height>30</height>
-							<font>FontSize_20</font>
-							<textcolor>white</textcolor>
-							<align>right</align>
-							<aligny>center</aligny>
-							<scroll>false</scroll>
-						  <label>$INFO[Window.Property(Updated),[COLOR=ddC6C6C8]$LOCALIZE[31229]: [/COLOR]]</label>
-							<shadowcolor>ff0d0d0d</shadowcolor>
+						<description>last update</description>
+						<left>0</left>
+						<top>23</top>
+						<width>380</width>
+						<height>30</height>
+						<font>FontSize_20</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<scroll>false</scroll>
+						<label>$INFO[Window.Property(Updated),[COLOR=ddC6C6C8]$LOCALIZE[31229]: [/COLOR]]</label>
+						<shadowcolor>ff0d0d0d</shadowcolor>
 					</control>
 					<!-- Current Weather Provider -->	
 					<control type="label">
-							<description>current provider</description>
-							<left>0</left>
-							<top>46</top>
-							<width>380</width>
-							<height>30</height>
-							<font>FontSize_20</font>
-							<textcolor>white</textcolor>
-							<align>right</align>
-							<aligny>center</aligny>
-							<scroll>false</scroll>
-				      <label>$INFO[Window.Property(WeatherProvider),[COLOR=ddC6C6C8]$LOCALIZE[31230]: [/COLOR]]</label>
-							<shadowcolor>ff0d0d0d</shadowcolor>
+						<description>current provider</description>
+						<left>0</left>
+						<top>46</top>
+						<width>380</width>
+						<height>30</height>
+						<font>FontSize_20</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<scroll>false</scroll>
+						<label>$INFO[Window.Property(WeatherProvider),[COLOR=ddC6C6C8]$LOCALIZE[31230]: [/COLOR]]</label>
+						<shadowcolor>ff0d0d0d</shadowcolor>
 					</control>
 				</control>
-		  </control>
+			</control>
 		</control>
-  </include>
+	</include>
 
 
-  <!-- ================================================================ -->
-  <!-- ================== DEFAULT WEATHER ADDON ======================= -->
-  <!-- ================================================================ -->
+	<!-- ================================================================ -->
+	<!-- ================== DEFAULT WEATHER ADDON ======================= -->
+	<!-- ================================================================ -->
 	<include name="WeatherDefault">
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
-	    <include>DialogZoomInOutAnimation</include>
+			<include>DialogZoomInOutAnimation</include>
 			<control type="group" id="50">
 				<visible>Weather.IsFetched + !SubString(Window(Weather).Property(Current.ConditionIcon),na) + ![IsEmpty(Window(Weather).Property(Current.Condition)) | IsEmpty(Window(Weather).Property(Location))]</visible>
 				<include>Window_OpenClose_Animation</include>
@@ -235,7 +235,7 @@
 					<preloaditems>4</preloaditems>
 					<orientation>horizontal</orientation>
 					<viewtype label="535">list</viewtype>
-				  <scrolltime tween="cubic" easing="out">350</scrolltime>
+					<scrolltime tween="cubic" easing="out">350</scrolltime>
 					<itemlayout height="325" width="300">
 						<control type="image">
 							<left>4</left>
@@ -246,49 +246,49 @@
 							<texture border="30">views/other/panel.png</texture>
 						</control>
 						<control type="label">
-						  <left>15</left>
+							<left>15</left>
 							<top>25</top>
 							<width>270</width>
 							<height>30</height>
 							<font>FontSize_26</font>
 							<textcolor>ddC6C6C8</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
-						  <left>15</left>
+							<left>15</left>
 							<top>55</top>
 							<width>270</width>
 							<height>30</height>
 							<font>FontSize_26</font>
 							<textcolor>white</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 						<control type="label">
-					    <left>15</left>
+							<left>15</left>
 							<top>255</top>
 							<width>270</width>
 							<height>30</height>
 							<font>FontSize_26</font>
 							<textcolor>white</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Property(HighTemperature)]</label>
 						</control>
 						<control type="label">
-					    <left>15</left>
+							<left>15</left>
 							<top>285</top>
 							<width>270</width>
 							<height>30</height>
 							<font>FontSize_26</font>
 							<textcolor>white</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Property(LowTemperature)]</label>
@@ -318,52 +318,52 @@
 							<height>317</height>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
 							<texture border="30">views/other/focus_blue.png</texture>
-	            <include>ThumbnailsFocusAnimation</include>
+							<include>ThumbnailsFocusAnimation</include>
 						</control>
 						<control type="label">
-						  <left>15</left>
+							<left>15</left>
 							<top>25</top>
 							<width>270</width>
 							<height>30</height>
 							<font>FontSize_26</font>
 							<textcolor>ddC6C6C8</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
-						  <left>15</left>
+							<left>15</left>
 							<top>55</top>
 							<width>270</width>
 							<height>30</height>
 							<font>FontSize_26</font>
 							<textcolor>white</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 						<control type="label">
-						  <left>15</left>
+							<left>15</left>
 							<top>255</top>
 							<width>270</width>
 							<height>30</height>
 							<font>FontSize_26</font>
 							<textcolor>white</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Property(HighTemperature)]</label>
 						</control>
 						<control type="label">
-						  <left>15</left>
+							<left>15</left>
 							<top>285</top>
 							<width>270</width>
 							<height>30</height>
 							<font>FontSize_26</font>
 							<textcolor>white</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Property(LowTemperature)]</label>
@@ -378,19 +378,19 @@
 						</control>
 					</focusedlayout>
 					<content>
-	          <include>Weather_DefaultForecast</include>
+						<include>Weather_DefaultForecast</include>
 					</content>
 				</control>
-	
-		  </control>
+
+			</control>
 		</control>		  
-  </include>
+	</include>
 
 
-  <!-- ======================================================= -->
-  <!-- ================== WEATHER EXTENDED =================== -->
-  <!-- ======================================================= -->
-  <include name="WeatherExtended">
+	<!-- ======================================================= -->
+	<!-- ================== WEATHER EXTENDED =================== -->
+	<!-- ======================================================= -->
+	<include name="WeatherExtended">
 		<control type="button" id="50">
 			<description>Get Focus Fake Button</description>
 			<include>TopButton</include>
@@ -402,430 +402,430 @@
 		</control>
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
-	    <include>DialogZoomInOutAnimation</include>
-	    <visible>!SubString(Window(Weather).Property(Current.ConditionIcon),na)</visible>
-	
-	    <!-- Current Weather Conditions -->
+			<include>DialogZoomInOutAnimation</include>
+			<visible>!SubString(Window(Weather).Property(Current.ConditionIcon),na)</visible>
+
+			<!-- Current Weather Conditions -->
 			<control type="group">
 				<description>Current Weather</description>
-        <visible>Skin.String(WeatherExtended,1) + Weather.IsFetched + !IsEmpty(Window(Weather).Property(Daily.IsFetched)) + ![IsEmpty(Window(Weather).Property(Current.Condition)) | IsEmpty(Window(Weather).Property(Location))]</visible>
+				<visible>Skin.String(WeatherExtended,1) + Weather.IsFetched + !IsEmpty(Window(Weather).Property(Daily.IsFetched)) + ![IsEmpty(Window(Weather).Property(Current.Condition)) | IsEmpty(Window(Weather).Property(Location))]</visible>
 				<include>Window_OpenClose_Animation</include>
-			 <control type="group">
-				<left>0</left>
-				<top>300</top>
-	      <!-- Today -->
 				<control type="group">
-					<left>31</left>
-					<top>0</top>
-					<control type="image">
-						<left>14</left>
-						<top>-5</top>
-						<width>306</width>
-						<height>317</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture border="30">views/other/panel.png</texture>
-					</control>
-					<control type="label">
-						<left>0</left>
-						<top>10</top>
-						<width>300</width>
-						<height>30</height>
-						<font>FontSize_30B</font>
-						<textcolor>white</textcolor>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$LOCALIZE[33006]</label>
-					</control>
-					<control type="label">
-						<left>0</left>
-						<top>60</top>
-						<width>300</width>
-						<height>30</height>
-						<font>FontSize_20</font>
-						<textcolor>white</textcolor>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$INFO[Window.Property(Daily.1.HighTemperature),[COLOR=ddC6C6C8]$LOCALIZE[393]: [/COLOR]]</label>
-					</control>
-					<control type="label">
-						<left>0</left>
-						<top>85</top>
-						<width>300</width>
-						<height>30</height>
-						<font>FontSize_20</font>
-						<textcolor>white</textcolor>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$INFO[Window.Property(Daily.1.LowTemperature),[COLOR=ddC6C6C8]$LOCALIZE[391]: [/COLOR]]</label>
-					</control>
-					<control type="label">
-						<left>30</left>
-						<top>160</top>
-						<width>270</width>
-						<height>20</height>
-						<font>FontSize_26</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$INFO[Window.Property(Daily.1.ShortOutlook)]</label>
-					</control>
-					<control type="label">
-						<left>30</left>
-						<top>200</top>
-						<width>270</width>
-						<height>20</height>
-						<font>FontSize_18</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window.Property(Daily.1.FeelsLike)]</label>
-					</control>
-					<control type="label">
-						<left>30</left>
-						<top>224</top>
-						<width>270</width>
-						<height>20</height>
-						<font>FontSize_18</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window.Property(Daily.1.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window.Property(Daily.1.Humidity)]</label>
-					</control>
-					<control type="label">
-						<left>30</left>
-						<top>250</top>
-						<width>270</width>
-						<height>20</height>
-						<font>FontSize_18</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window.Property(Daily.1.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Daily.1.WindSpeed)]</label>
-					</control>
-					<control type="label">
-						<left>30</left>
-						<top>275</top>
-						<width>270</width>
-						<height>20</height>
-						<font>FontSize_18</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$INFO[Window.Property(Daily.1.Outlook),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</label>
-					</control>
-					<control type="image">
-						<left>30</left>
+					<left>0</left>
+					<top>300</top>
+					<!-- Today -->
+					<control type="group">
+						<left>31</left>
 						<top>0</top>
-						<width>150</width>
-						<height>150</height>
-						<aspectratio>keep</aspectratio>
-						<texture>$INFO[Window.Property(Daily.1.OutlookIcon)]</texture>
+						<control type="image">
+							<left>14</left>
+							<top>-5</top>
+							<width>306</width>
+							<height>317</height>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>
+							<texture border="30">views/other/panel.png</texture>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>10</top>
+							<width>300</width>
+							<height>30</height>
+							<font>FontSize_30B</font>
+							<textcolor>white</textcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$LOCALIZE[33006]</label>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>60</top>
+							<width>300</width>
+							<height>30</height>
+							<font>FontSize_20</font>
+							<textcolor>white</textcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(Daily.1.HighTemperature),[COLOR=ddC6C6C8]$LOCALIZE[393]: [/COLOR]]</label>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>85</top>
+							<width>300</width>
+							<height>30</height>
+							<font>FontSize_20</font>
+							<textcolor>white</textcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(Daily.1.LowTemperature),[COLOR=ddC6C6C8]$LOCALIZE[391]: [/COLOR]]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>160</top>
+							<width>270</width>
+							<height>20</height>
+							<font>FontSize_26</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(Daily.1.ShortOutlook)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>200</top>
+							<width>270</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window.Property(Daily.1.FeelsLike)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>224</top>
+							<width>270</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window.Property(Daily.1.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window.Property(Daily.1.Humidity)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>250</top>
+							<width>270</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window.Property(Daily.1.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Daily.1.WindSpeed)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>275</top>
+							<width>270</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(Daily.1.Outlook),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</label>
+						</control>
+						<control type="image">
+							<left>30</left>
+							<top>0</top>
+							<width>150</width>
+							<height>150</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$INFO[Window.Property(Daily.1.OutlookIcon)]</texture>
+						</control>
+					</control>
+					<!-- Tomorrow -->
+					<control type="group">
+						<left>345</left>
+						<top>0</top>
+						<control type="image">
+							<left>14</left>
+							<top>-5</top>
+							<width>306</width>
+							<height>317</height>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>
+							<texture border="30">views/other/panel.png</texture>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>10</top>
+							<width>300</width>
+							<height>30</height>
+							<font>FontSize_30B</font>
+							<textcolor>white</textcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$LOCALIZE[33007]</label>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>60</top>
+							<width>300</width>
+							<height>30</height>
+							<font>FontSize_20</font>
+							<textcolor>white</textcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(Daily.2.HighTemperature),[COLOR=ddC6C6C8]$LOCALIZE[393]: [/COLOR]]</label>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>85</top>
+							<width>300</width>
+							<height>30</height>
+							<font>FontSize_20</font>
+							<textcolor>white</textcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(Daily.2.LowTemperature),[COLOR=ddC6C6C8]$LOCALIZE[391]: [/COLOR]]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>160</top>
+							<width>270</width>
+							<height>20</height>
+							<font>FontSize_26</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(Daily.2.ShortOutlook)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>200</top>
+							<width>270</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window.Property(Daily.2.FeelsLike)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>224</top>
+							<width>270</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window.Property(Daily.2.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window.Property(Daily.2.Humidity)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>250</top>
+							<width>270</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window.Property(Daily.2.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Daily.2.WindSpeed)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>275</top>
+							<width>270</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(Daily.2.Outlook),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</label>
+						</control>
+						<control type="image">
+							<left>30</left>
+							<top>0</top>
+							<width>150</width>
+							<height>150</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$INFO[Window.Property(Daily.2.OutlookIcon)]</texture>
+						</control>
+					</control>
+					<!-- Maps -->
+					<control type="group" id="50">
+						<left>687</left>
+						<top>0</top>
+						<control type="image">
+							<left>14</left>
+							<top>-5</top>
+							<width>534</width>
+							<height>317</height>
+							<aspectratio align="center" aligny="center">stretch</aspectratio>
+							<texture border="31">views/other/panel2.png</texture>
+						</control>
+						<control type="image">
+							<left>30</left>
+							<top>10</top>
+							<width>514</width>
+							<height>297</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture>$INFO[Window(Weather).Property(WeatherProviderLogo)]</texture>
+							<visible>IsEmpty(Container(53).ListItem.Icon)</visible>
+							<include>VisibleFadeEffect</include>
+						</control>
+						<control type="list" id="53">
+							<left>24</left>
+							<top>5</top>
+							<width>514</width>
+							<height>297</height>
+							<onleft>noop</onleft>
+							<onright>noop</onright>
+							<onup>9000</onup>
+							<ondown>noop</ondown>
+							<viewtype label="535">list</viewtype>
+							<scrolltime>200</scrolltime>
+							<orientation>horizontal</orientation>
+							<itemlayout width="514" height="297">
+								<control type="image">
+									<description>area image</description>
+									<left>0</left>
+									<top>0</top>
+									<width>514</width>
+									<height>297</height>
+									<texture>$INFO[ListItem.Icon]</texture>
+									<aspectratio>scale</aspectratio>
+								</control>
+								<control type="image">
+									<description>layer image</description>
+									<left>0</left>
+									<top>0</top>
+									<width>514</width>
+									<height>297</height>
+									<texture>$INFO[ListItem.Property(Layer)]</texture>
+									<aspectratio>scale</aspectratio>
+									<colordiffuse>70FFFFFF</colordiffuse>
+								</control>
+							</itemlayout>
+							<focusedlayout width="514" height="297">
+								<control type="image">
+									<description>layer image</description>
+									<left>0</left>
+									<top>0</top>
+									<width>514</width>
+									<height>297</height>
+									<texture>$INFO[ListItem.Icon]</texture>
+									<aspectratio>scale</aspectratio>
+								</control>
+								<control type="image">
+									<description>area image</description>
+									<left>0</left>
+									<top>0</top>
+									<width>514</width>
+									<height>297</height>
+									<texture>$INFO[ListItem.Property(Layer)]</texture>
+									<aspectratio>scale</aspectratio>
+									<colordiffuse>70FFFFFF</colordiffuse>
+								</control>
+							</focusedlayout>
+							<content>
+								<item>
+									<label>$INFO[Window.Property(Map.1.Heading)]</label>
+									<label2>$INFO[Window.Property(Map.1.Legend)]</label2>
+									<icon>$INFO[Window.Property(Map.1.Area)]</icon>
+									<property name="Layer">$INFO[Window.Property(Map.1.Layer)]</property>
+									<onclick>noop</onclick>
+									<visible>Weather.IsFetched + !IsEmpty(Window.Property(Map.1.Area)) + !IsEmpty(Window.Property(Map.IsFetched))</visible>
+								</item>
+								<item>
+									<label>$INFO[Window.Property(Map.2.Heading)]</label>
+									<label2>$INFO[Window.Property(Map.2.Legend)]</label2>
+									<icon>$INFO[Window.Property(Map.2.Area)]</icon>
+									<property name="Layer">$INFO[Window.Property(Map.2.Layer)]</property>
+									<onclick>noop</onclick>
+									<visible>Weather.IsFetched + !IsEmpty(Window.Property(Map.2.Area)) + !IsEmpty(Window.Property(Map.IsFetched))</visible>
+								</item>
+								<item>
+									<label>$INFO[Window.Property(Map.3.Heading)]</label>
+									<label2>$INFO[Window.Property(Map.3.Legend)]</label2>
+									<icon>$INFO[Window.Property(Map.3.Area)]</icon>
+									<property name="Layer">$INFO[Window.Property(Map.3.Layer)]</property>
+									<onclick>noop</onclick>
+									<visible>Weather.IsFetched + !IsEmpty(Window.Property(Map.3.Area)) + !IsEmpty(Window.Property(Map.IsFetched))</visible>
+								</item>
+								<item>
+									<label>$INFO[Window.Property(Map.4.Heading)]</label>
+									<label2>$INFO[Window.Property(Map.4.Legend)]</label2>
+									<icon>$INFO[Window.Property(Map.4.Area)]</icon>
+									<property name="Layer">$INFO[Window.Property(Map.4.Layer)]</property>
+									<onclick>noop</onclick>
+									<visible>Weather.IsFetched + !IsEmpty(Window.Property(Map.4.Area)) + !IsEmpty(Window.Property(Map.IsFetched))</visible>
+								</item>
+								<item>
+									<label>$INFO[Window.Property(Map.5.Heading)]</label>
+									<label2>$INFO[Window.Property(Map.5.Legend)]</label2>
+									<icon>$INFO[Window.Property(Map.5.Area)]</icon>
+									<property name="Layer">$INFO[Window.Property(Map.5.Layer)]</property>
+									<onclick>noop</onclick>
+									<visible>Weather.IsFetched + !IsEmpty(Window.Property(Map.5.Area)) + !IsEmpty(Window.Property(Map.IsFetched))</visible>
+								</item>
+							</content>
+						</control>
+						<control type="image">
+							<left>24</left>
+							<top>242</top>
+							<width>514</width>
+							<height>60</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="1">weather/map_tile.png</texture>
+							<colordiffuse>aaFFFFFF</colordiffuse>
+							<visible>!IsEmpty(Container(53).ListItem.Icon)</visible>
+							<include>VisibleFadeEffect</include>
+						</control>
+						<!-- Legend -->
+						<control type="image">
+							<description>legend image</description>
+							<left>315</left>
+							<top>267</top>
+							<width>224</width>
+							<height>35</height>
+							<texture border="1">$INFO[Container(53).ListItem.Label2]</texture>
+							<visible>!IsEmpty(Container(53).ListItem.Icon)</visible>
+							<include>VisibleFadeEffect</include>
+						</control>
+						<!-- Heading Label -->
+						<control type="label">
+							<left>32</left>
+							<top>270</top>
+							<width>285</width>
+							<height>30</height>
+							<font>FontSize_24</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<label>$INFO[Container(53).ListItem.Label]</label>
+							<visible>!IsEmpty(Container(53).ListItem.Icon)</visible>
+							<include>VisibleFadeEffect</include>
+						</control>
+						<!-- Navigation Arrows -->
+						<control type="image">
+							<left>25</left>
+							<top>140</top>
+							<width>25</width>
+							<height>25</height>
+							<colordiffuse>99000000</colordiffuse>
+							<texture>buttons/arrow_left.png</texture>
+							<visible>Container(53).HasPrevious</visible>
+							<include>VisibleFadeEffect</include>
+						</control>
+						<control type="image">
+							<left>510</left>
+							<top>140</top>
+							<width>25</width>
+							<height>25</height>
+							<colordiffuse>99000000</colordiffuse>
+							<texture>buttons/arrow_right.png</texture>
+							<visible>Container(53).HasNext</visible>
+							<include>VisibleFadeEffect</include>
+						</control>
 					</control>
 				</control>
-	      <!-- Tomorrow -->
-				<control type="group">
-					<left>345</left>
-					<top>0</top>
-					<control type="image">
-						<left>14</left>
-						<top>-5</top>
-						<width>306</width>
-						<height>317</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture border="30">views/other/panel.png</texture>
-					</control>
-					<control type="label">
-						<left>0</left>
-						<top>10</top>
-						<width>300</width>
-						<height>30</height>
-						<font>FontSize_30B</font>
-						<textcolor>white</textcolor>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$LOCALIZE[33007]</label>
-					</control>
-					<control type="label">
-						<left>0</left>
-						<top>60</top>
-						<width>300</width>
-						<height>30</height>
-						<font>FontSize_20</font>
-						<textcolor>white</textcolor>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$INFO[Window.Property(Daily.2.HighTemperature),[COLOR=ddC6C6C8]$LOCALIZE[393]: [/COLOR]]</label>
-					</control>
-					<control type="label">
-						<left>0</left>
-						<top>85</top>
-						<width>300</width>
-						<height>30</height>
-						<font>FontSize_20</font>
-						<textcolor>white</textcolor>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$INFO[Window.Property(Daily.2.LowTemperature),[COLOR=ddC6C6C8]$LOCALIZE[391]: [/COLOR]]</label>
-					</control>
-					<control type="label">
-						<left>30</left>
-						<top>160</top>
-						<width>270</width>
-						<height>20</height>
-						<font>FontSize_26</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$INFO[Window.Property(Daily.2.ShortOutlook)]</label>
-					</control>
-					<control type="label">
-						<left>30</left>
-						<top>200</top>
-						<width>270</width>
-						<height>20</height>
-						<font>FontSize_18</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window.Property(Daily.2.FeelsLike)]</label>
-					</control>
-					<control type="label">
-						<left>30</left>
-						<top>224</top>
-						<width>270</width>
-						<height>20</height>
-						<font>FontSize_18</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window.Property(Daily.2.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window.Property(Daily.2.Humidity)]</label>
-					</control>
-					<control type="label">
-						<left>30</left>
-						<top>250</top>
-						<width>270</width>
-						<height>20</height>
-						<font>FontSize_18</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window.Property(Daily.2.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Daily.2.WindSpeed)]</label>
-					</control>
-					<control type="label">
-						<left>30</left>
-						<top>275</top>
-						<width>270</width>
-						<height>20</height>
-						<font>FontSize_18</font>
-						<textcolor>white</textcolor>
-						<selectedcolor>selected</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$INFO[Window.Property(Daily.2.Outlook),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</label>
-					</control>
-					<control type="image">
-						<left>30</left>
-						<top>0</top>
-						<width>150</width>
-						<height>150</height>
-						<aspectratio>keep</aspectratio>
-						<texture>$INFO[Window.Property(Daily.2.OutlookIcon)]</texture>
-					</control>
-				</control>
-	      <!-- Maps -->
-				<control type="group" id="50">
-					<left>687</left>
-					<top>0</top>
-					<control type="image">
-						<left>14</left>
-						<top>-5</top>
-						<width>534</width>
-						<height>317</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture border="31">views/other/panel2.png</texture>
-					</control>
-					<control type="image">
-						<left>30</left>
-						<top>10</top>
-						<width>514</width>
-						<height>297</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture>$INFO[Window(Weather).Property(WeatherProviderLogo)]</texture>
-    				<visible>IsEmpty(Container(53).ListItem.Icon)</visible>
-					  <include>VisibleFadeEffect</include>
-					</control>
-    			<control type="list" id="53">
-    				<left>24</left>
-    				<top>5</top>
-    				<width>514</width>
-    				<height>297</height>
-    				<onleft>noop</onleft>
-    				<onright>noop</onright>
-    				<onup>9000</onup>
-    				<ondown>noop</ondown>
-    				<viewtype label="535">list</viewtype>
-    				<scrolltime>200</scrolltime>
-    				<orientation>horizontal</orientation>
-    				<itemlayout width="514" height="297">
-    					<control type="image">
-    						<description>area image</description>
-    						<left>0</left>
-    						<top>0</top>
-    						<width>514</width>
-    						<height>297</height>
-    						<texture>$INFO[ListItem.Icon]</texture>
-    						<aspectratio>scale</aspectratio>
-    					</control>
-    					<control type="image">
-    						<description>layer image</description>
-    						<left>0</left>
-    						<top>0</top>
-    						<width>514</width>
-    						<height>297</height>
-    						<texture>$INFO[ListItem.Property(Layer)]</texture>
-    						<aspectratio>scale</aspectratio>
-    						<colordiffuse>70FFFFFF</colordiffuse>
-    					</control>
-    				</itemlayout>
-    				<focusedlayout width="514" height="297">
-    					<control type="image">
-    						<description>layer image</description>
-    						<left>0</left>
-    						<top>0</top>
-    						<width>514</width>
-    						<height>297</height>
-    						<texture>$INFO[ListItem.Icon]</texture>
-    						<aspectratio>scale</aspectratio>
-    					</control>
-    					<control type="image">
-    						<description>area image</description>
-    						<left>0</left>
-    						<top>0</top>
-    						<width>514</width>
-    						<height>297</height>
-    						<texture>$INFO[ListItem.Property(Layer)]</texture>
-    						<aspectratio>scale</aspectratio>
-    						<colordiffuse>70FFFFFF</colordiffuse>
-    					</control>
-    				</focusedlayout>
-    				<content>
-    					<item>
-    						<label>$INFO[Window.Property(Map.1.Heading)]</label>
-    						<label2>$INFO[Window.Property(Map.1.Legend)]</label2>
-    						<icon>$INFO[Window.Property(Map.1.Area)]</icon>
-    						<property name="Layer">$INFO[Window.Property(Map.1.Layer)]</property>
-    						<onclick>noop</onclick>
-    						<visible>Weather.IsFetched + !IsEmpty(Window.Property(Map.1.Area)) + !IsEmpty(Window.Property(Map.IsFetched))</visible>
-    					</item>
-    					<item>
-    						<label>$INFO[Window.Property(Map.2.Heading)]</label>
-    						<label2>$INFO[Window.Property(Map.2.Legend)]</label2>
-    						<icon>$INFO[Window.Property(Map.2.Area)]</icon>
-    						<property name="Layer">$INFO[Window.Property(Map.2.Layer)]</property>
-    						<onclick>noop</onclick>
-    						<visible>Weather.IsFetched + !IsEmpty(Window.Property(Map.2.Area)) + !IsEmpty(Window.Property(Map.IsFetched))</visible>
-    					</item>
-    					<item>
-    						<label>$INFO[Window.Property(Map.3.Heading)]</label>
-    						<label2>$INFO[Window.Property(Map.3.Legend)]</label2>
-    						<icon>$INFO[Window.Property(Map.3.Area)]</icon>
-    						<property name="Layer">$INFO[Window.Property(Map.3.Layer)]</property>
-    						<onclick>noop</onclick>
-    						<visible>Weather.IsFetched + !IsEmpty(Window.Property(Map.3.Area)) + !IsEmpty(Window.Property(Map.IsFetched))</visible>
-    					</item>
-    					<item>
-    						<label>$INFO[Window.Property(Map.4.Heading)]</label>
-    						<label2>$INFO[Window.Property(Map.4.Legend)]</label2>
-    						<icon>$INFO[Window.Property(Map.4.Area)]</icon>
-    						<property name="Layer">$INFO[Window.Property(Map.4.Layer)]</property>
-    						<onclick>noop</onclick>
-    						<visible>Weather.IsFetched + !IsEmpty(Window.Property(Map.4.Area)) + !IsEmpty(Window.Property(Map.IsFetched))</visible>
-    					</item>
-    					<item>
-    						<label>$INFO[Window.Property(Map.5.Heading)]</label>
-    						<label2>$INFO[Window.Property(Map.5.Legend)]</label2>
-    						<icon>$INFO[Window.Property(Map.5.Area)]</icon>
-    						<property name="Layer">$INFO[Window.Property(Map.5.Layer)]</property>
-    						<onclick>noop</onclick>
-    						<visible>Weather.IsFetched + !IsEmpty(Window.Property(Map.5.Area)) + !IsEmpty(Window.Property(Map.IsFetched))</visible>
-    					</item>
-    				</content>
-    			</control>
-					<control type="image">
-						<left>24</left>
-						<top>242</top>
-						<width>514</width>
-						<height>60</height>
-					  <aspectratio>stretch</aspectratio>
-						<texture border="1">weather/map_tile.png</texture>
-    				<colordiffuse>aaFFFFFF</colordiffuse>
-    				<visible>!IsEmpty(Container(53).ListItem.Icon)</visible>
-					  <include>VisibleFadeEffect</include>
-					</control>
-          <!-- Legend -->
-					<control type="image">
-						<description>legend image</description>
-    				<left>315</left>
-    				<top>267</top>
-						<width>224</width>
-						<height>35</height>
-						<texture border="1">$INFO[Container(53).ListItem.Label2]</texture>
-    				<visible>!IsEmpty(Container(53).ListItem.Icon)</visible>
-					  <include>VisibleFadeEffect</include>
-					</control>
-          <!-- Heading Label -->
-    			<control type="label">
-    				<left>32</left>
-    				<top>270</top>
-    				<width>285</width>
-    				<height>30</height>
-    				<font>FontSize_24</font>
-    				<align>left</align>
-    				<aligny>center</aligny>
-    				<textcolor>white</textcolor>
-    				<shadowcolor>99000000</shadowcolor>
-				    <label>$INFO[Container(53).ListItem.Label]</label>
-    				<visible>!IsEmpty(Container(53).ListItem.Icon)</visible>
-					  <include>VisibleFadeEffect</include>
-    			</control>
-          <!-- Navigation Arrows -->
-					<control type="image">
-						<left>25</left>
-						<top>140</top>
-						<width>25</width>
-						<height>25</height>
-					  <colordiffuse>99000000</colordiffuse>
-						<texture>buttons/arrow_left.png</texture>
-					  <visible>Container(53).HasPrevious</visible>
-					  <include>VisibleFadeEffect</include>
-				  </control>
-				  <control type="image">
-						<left>510</left>
-						<top>140</top>
-						<width>25</width>
-						<height>25</height>
-					  <colordiffuse>99000000</colordiffuse>
-						<texture>buttons/arrow_right.png</texture>
-					  <visible>Container(53).HasNext</visible>
-					  <include>VisibleFadeEffect</include>
-				  </control>
-			  </control>
-			 </control>
 			</control>
-	
-	    <!-- 36-Hours Forecast-->
+
+			<!-- 36-Hours Forecast-->
 			<control type="group">
 				<description>36Hours</description>
-        <visible>Skin.String(WeatherExtended,2) + Weather.IsFetched + !IsEmpty(Window(Weather).Property(36Hour.IsFetched)) + ![IsEmpty(Window(Weather).Property(Current.Condition)) | IsEmpty(Window(Weather).Property(Location))]</visible>
+				<visible>Skin.String(WeatherExtended,2) + Weather.IsFetched + !IsEmpty(Window(Weather).Property(36Hour.IsFetched)) + ![IsEmpty(Window(Weather).Property(Current.Condition)) | IsEmpty(Window(Weather).Property(Location))]</visible>
 				<include>Window_OpenClose_Animation</include>
 				<control type="group">
 					<left>0</left>
@@ -852,88 +852,88 @@
 							<aligny>center</aligny>
 							<label>$INFO[Window.Property(36Hour.1.Heading)]</label>
 						</control>
-  					<control type="label">
-  						<left>0</left>
-  						<top>75</top>
-  						<width>370</width>
-  						<height>30</height>
-  						<font>FontSize_20</font>
-  						<textcolor>white</textcolor>
-  						<align>right</align>
-  						<aligny>center</aligny>
-  						<label>$INFO[Window.Property(36Hour.1.HighTemperature),[COLOR=ddC6C6C8]$LOCALIZE[393]: [/COLOR]]</label>
-  					</control>
-  					<control type="label">
-  						<left>0</left>
-  						<top>100</top>
-  						<width>370</width>
-  						<height>30</height>
-  						<font>FontSize_20</font>
-  						<textcolor>white</textcolor>
-  						<align>right</align>
-  						<aligny>center</aligny>
-  						<label>$INFO[Window.Property(36Hour.1.LowTemperature),[COLOR=ddC6C6C8]$LOCALIZE[391]: [/COLOR]]</label>
-  					</control>
-  					<control type="label">
-  						<left>30</left>
-  						<top>160</top>
-  						<width>350</width>
-  						<height>20</height>
-  						<font>FontSize_26</font>
-  						<textcolor>white</textcolor>
-  						<selectedcolor>selected</selectedcolor>
-  						<align>left</align>
-  						<aligny>center</aligny>
-  						<label>$INFO[Window.Property(36Hour.1.ShortOutlook)]</label>
-  					</control>
-  					<control type="label">
-  						<left>30</left>
-  						<top>200</top>
-  						<width>350</width>
-  						<height>20</height>
-  						<font>FontSize_18</font>
-  						<textcolor>white</textcolor>
-  						<selectedcolor>selected</selectedcolor>
-  						<align>left</align>
-  						<aligny>center</aligny>
-  						<label>[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window.Property(36Hour.1.FeelsLike)]</label>
-  					</control>
-  					<control type="label">
-  						<left>30</left>
-  						<top>224</top>
-  						<width>350</width>
-  						<height>20</height>
-  						<font>FontSize_18</font>
-  						<textcolor>white</textcolor>
-  						<selectedcolor>selected</selectedcolor>
-  						<align>left</align>
-  						<aligny>center</aligny>
-  						<label>[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window.Property(36Hour.1.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window.Property(36Hour.1.Humidity)]</label>
-  					</control>
-  					<control type="label">
-  						<left>30</left>
-  						<top>250</top>
-  						<width>350</width>
-  						<height>20</height>
-  						<font>FontSize_18</font>
-  						<textcolor>white</textcolor>
-  						<selectedcolor>selected</selectedcolor>
-  						<align>left</align>
-  						<aligny>center</aligny>
-  						<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window.Property(36Hour.1.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(36Hour.1.WindSpeed)]</label>
-  					</control>
-  					<control type="label">
-  						<left>30</left>
-  						<top>275</top>
-  						<width>350</width>
-  						<height>20</height>
-  						<font>FontSize_18</font>
-  						<textcolor>white</textcolor>
-  						<selectedcolor>selected</selectedcolor>
-  						<align>left</align>
-  						<aligny>center</aligny>
-  						<label>$INFO[Window.Property(36Hour.1.Outlook),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</label>
-  					</control>
+						<control type="label">
+							<left>0</left>
+							<top>75</top>
+							<width>370</width>
+							<height>30</height>
+							<font>FontSize_20</font>
+							<textcolor>white</textcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(36Hour.1.HighTemperature),[COLOR=ddC6C6C8]$LOCALIZE[393]: [/COLOR]]</label>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>100</top>
+							<width>370</width>
+							<height>30</height>
+							<font>FontSize_20</font>
+							<textcolor>white</textcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(36Hour.1.LowTemperature),[COLOR=ddC6C6C8]$LOCALIZE[391]: [/COLOR]]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>160</top>
+							<width>350</width>
+							<height>20</height>
+							<font>FontSize_26</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(36Hour.1.ShortOutlook)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>200</top>
+							<width>350</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window.Property(36Hour.1.FeelsLike)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>224</top>
+							<width>350</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window.Property(36Hour.1.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window.Property(36Hour.1.Humidity)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>250</top>
+							<width>350</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window.Property(36Hour.1.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(36Hour.1.WindSpeed)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>275</top>
+							<width>350</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(36Hour.1.Outlook),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</label>
+						</control>
 						<control type="image">
 							<left>50</left>
 							<top>15</top>
@@ -965,88 +965,88 @@
 							<aligny>center</aligny>
 							<label>$INFO[Window.Property(36Hour.2.Heading)]</label>
 						</control>
-  					<control type="label">
-  						<left>0</left>
-  						<top>75</top>
-  						<width>370</width>
-  						<height>30</height>
-  						<font>FontSize_20</font>
-  						<textcolor>white</textcolor>
-  						<align>right</align>
-  						<aligny>center</aligny>
-  						<label>$INFO[Window.Property(36Hour.2.HighTemperature),[COLOR=ddC6C6C8]$LOCALIZE[393]: [/COLOR]]</label>
-  					</control>
-  					<control type="label">
-  						<left>0</left>
-  						<top>100</top>
-  						<width>370</width>
-  						<height>30</height>
-  						<font>FontSize_20</font>
-  						<textcolor>white</textcolor>
-  						<align>right</align>
-  						<aligny>center</aligny>
-  						<label>$INFO[Window.Property(36Hour.2.LowTemperature),[COLOR=ddC6C6C8]$LOCALIZE[391]: [/COLOR]]</label>
-  					</control>
-  					<control type="label">
-  						<left>30</left>
-  						<top>160</top>
-  						<width>350</width>
-  						<height>20</height>
-  						<font>FontSize_26</font>
-  						<textcolor>white</textcolor>
-  						<selectedcolor>selected</selectedcolor>
-  						<align>left</align>
-  						<aligny>center</aligny>
-  						<label>$INFO[Window.Property(36Hour.2.ShortOutlook)]</label>
-  					</control>
-  					<control type="label">
-  						<left>30</left>
-  						<top>200</top>
-  						<width>350</width>
-  						<height>20</height>
-  						<font>FontSize_18</font>
-  						<textcolor>white</textcolor>
-  						<selectedcolor>selected</selectedcolor>
-  						<align>left</align>
-  						<aligny>center</aligny>
-  						<label>[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window.Property(36Hour.2.FeelsLike)]</label>
-  					</control>
-  					<control type="label">
-  						<left>30</left>
-  						<top>224</top>
-  						<width>350</width>
-  						<height>20</height>
-  						<font>FontSize_18</font>
-  						<textcolor>white</textcolor>
-  						<selectedcolor>selected</selectedcolor>
-  						<align>left</align>
-  						<aligny>center</aligny>
-  						<label>[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window.Property(36Hour.2.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window.Property(36Hour.2.Humidity)]</label>
-  					</control>
-  					<control type="label">
-  						<left>30</left>
-  						<top>250</top>
-  						<width>350</width>
-  						<height>20</height>
-  						<font>FontSize_18</font>
-  						<textcolor>white</textcolor>
-  						<selectedcolor>selected</selectedcolor>
-  						<align>left</align>
-  						<aligny>center</aligny>
-  						<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window.Property(36Hour.2.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(36Hour.2.WindSpeed)]</label>
-  					</control>
-  					<control type="label">
-  						<left>30</left>
-  						<top>275</top>
-  						<width>350</width>
-  						<height>20</height>
-  						<font>FontSize_18</font>
-  						<textcolor>white</textcolor>
-  						<selectedcolor>selected</selectedcolor>
-  						<align>left</align>
-  						<aligny>center</aligny>
-  						<label>$INFO[Window.Property(36Hour.2.Outlook),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</label>
-  					</control>
+						<control type="label">
+							<left>0</left>
+							<top>75</top>
+							<width>370</width>
+							<height>30</height>
+							<font>FontSize_20</font>
+							<textcolor>white</textcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(36Hour.2.HighTemperature),[COLOR=ddC6C6C8]$LOCALIZE[393]: [/COLOR]]</label>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>100</top>
+							<width>370</width>
+							<height>30</height>
+							<font>FontSize_20</font>
+							<textcolor>white</textcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(36Hour.2.LowTemperature),[COLOR=ddC6C6C8]$LOCALIZE[391]: [/COLOR]]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>160</top>
+							<width>350</width>
+							<height>20</height>
+							<font>FontSize_26</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(36Hour.2.ShortOutlook)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>200</top>
+							<width>350</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window.Property(36Hour.2.FeelsLike)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>224</top>
+							<width>350</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window.Property(36Hour.2.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window.Property(36Hour.2.Humidity)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>250</top>
+							<width>350</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window.Property(36Hour.2.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(36Hour.2.WindSpeed)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>275</top>
+							<width>350</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(36Hour.2.Outlook),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</label>
+						</control>
 						<control type="image">
 							<left>50</left>
 							<top>15</top>
@@ -1078,88 +1078,88 @@
 							<aligny>center</aligny>
 							<label>$INFO[Window.Property(36Hour.3.Heading)]</label>
 						</control>
-  					<control type="label">
-  						<left>0</left>
-  						<top>75</top>
-  						<width>370</width>
-  						<height>30</height>
-  						<font>FontSize_20</font>
-  						<textcolor>white</textcolor>
-  						<align>right</align>
-  						<aligny>center</aligny>
-  						<label>$INFO[Window.Property(36Hour.3.HighTemperature),[COLOR=ddC6C6C8]$LOCALIZE[393]: [/COLOR]]</label>
-  					</control>
-  					<control type="label">
-  						<left>0</left>
-  						<top>100</top>
-  						<width>370</width>
-  						<height>30</height>
-  						<font>FontSize_20</font>
-  						<textcolor>white</textcolor>
-  						<align>right</align>
-  						<aligny>center</aligny>
-  						<label>$INFO[Window.Property(36Hour.3.LowTemperature),[COLOR=ddC6C6C8]$LOCALIZE[391]: [/COLOR]]</label>
-  					</control>
-  					<control type="label">
-  						<left>30</left>
-  						<top>160</top>
-  						<width>350</width>
-  						<height>20</height>
-  						<font>FontSize_26</font>
-  						<textcolor>white</textcolor>
-  						<selectedcolor>selected</selectedcolor>
-  						<align>left</align>
-  						<aligny>center</aligny>
-  						<label>$INFO[Window.Property(36Hour.3.ShortOutlook)]</label>
-  					</control>
-  					<control type="label">
-  						<left>30</left>
-  						<top>200</top>
-  						<width>350</width>
-  						<height>20</height>
-  						<font>FontSize_18</font>
-  						<textcolor>white</textcolor>
-  						<selectedcolor>selected</selectedcolor>
-  						<align>left</align>
-  						<aligny>center</aligny>
-  						<label>[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window.Property(36Hour.3.FeelsLike)]</label>
-  					</control>
-  					<control type="label">
-  						<left>30</left>
-  						<top>224</top>
-  						<width>350</width>
-  						<height>20</height>
-  						<font>FontSize_18</font>
-  						<textcolor>white</textcolor>
-  						<selectedcolor>selected</selectedcolor>
-  						<align>left</align>
-  						<aligny>center</aligny>
-  						<label>[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window.Property(36Hour.3.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window.Property(36Hour.3.Humidity)]</label>
-  					</control>
-  					<control type="label">
-  						<left>30</left>
-  						<top>250</top>
-  						<width>350</width>
-  						<height>20</height>
-  						<font>FontSize_18</font>
-  						<textcolor>white</textcolor>
-  						<selectedcolor>selected</selectedcolor>
-  						<align>left</align>
-  						<aligny>center</aligny>
-  						<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window.Property(36Hour.3.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(36Hour.3.WindSpeed)]</label>
-  					</control>
-  					<control type="label">
-  						<left>30</left>
-  						<top>275</top>
-  						<width>350</width>
-  						<height>20</height>
-  						<font>FontSize_18</font>
-  						<textcolor>white</textcolor>
-  						<selectedcolor>selected</selectedcolor>
-  						<align>left</align>
-  						<aligny>center</aligny>
-  						<label>$INFO[Window.Property(36Hour.3.Outlook),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</label>
-  					</control>
+						<control type="label">
+							<left>0</left>
+							<top>75</top>
+							<width>370</width>
+							<height>30</height>
+							<font>FontSize_20</font>
+							<textcolor>white</textcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(36Hour.3.HighTemperature),[COLOR=ddC6C6C8]$LOCALIZE[393]: [/COLOR]]</label>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>100</top>
+							<width>370</width>
+							<height>30</height>
+							<font>FontSize_20</font>
+							<textcolor>white</textcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(36Hour.3.LowTemperature),[COLOR=ddC6C6C8]$LOCALIZE[391]: [/COLOR]]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>160</top>
+							<width>350</width>
+							<height>20</height>
+							<font>FontSize_26</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(36Hour.3.ShortOutlook)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>200</top>
+							<width>350</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window.Property(36Hour.3.FeelsLike)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>224</top>
+							<width>350</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window.Property(36Hour.3.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window.Property(36Hour.3.Humidity)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>250</top>
+							<width>350</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window.Property(36Hour.3.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(36Hour.3.WindSpeed)]</label>
+						</control>
+						<control type="label">
+							<left>30</left>
+							<top>275</top>
+							<width>350</width>
+							<height>20</height>
+							<font>FontSize_18</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[Window.Property(36Hour.3.Outlook),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</label>
+						</control>
 						<control type="image">
 							<left>50</left>
 							<top>15</top>
@@ -1169,21 +1169,21 @@
 							<texture>$INFO[Window.Property(36Hour.3.OutlookIcon)]</texture>
 						</control>
 					</control>
-	
+
 				</control>
 			</control>
-	
-	    <!-- Hourly Forecast -->
+
+			<!-- Hourly Forecast -->
 			<control type="group">
 				<description>Hourly</description>
-        <visible>Skin.String(WeatherExtended,3) + Weather.IsFetched + !IsEmpty(Window(Weather).Property(Hourly.IsFetched)) + ![IsEmpty(Window(Weather).Property(Current.Condition)) | IsEmpty(Window(Weather).Property(Location))]</visible>
+				<visible>Skin.String(WeatherExtended,3) + Weather.IsFetched + !IsEmpty(Window(Weather).Property(Hourly.IsFetched)) + ![IsEmpty(Window(Weather).Property(Current.Condition)) | IsEmpty(Window(Weather).Property(Location))]</visible>
 				<include>Window_OpenClose_Animation</include>
 				<control type="group">
 					<left>0</left>
 					<top>300</top>
 					<!--- Top Row -->
 					<control type="group">
-					  <description>Next 1 Hour Data</description>
+						<description>Next 1 Hour Data</description>
 						<left>30</left>
 						<top>0</top>
 						<control type="image">
@@ -1278,12 +1278,12 @@
 							<textcolor>white</textcolor>
 							<align>left</align>
 							<aligny>center</aligny>
-  						<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $INFO[Window.Property(Hourly.1.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Hourly.1.WindSpeed)]</label>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $INFO[Window.Property(Hourly.1.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Hourly.1.WindSpeed)]</label>
 						</control>
 					</control>
-	
+
 					<control type="group">
-					  <description>Next 2 Hour Data</description>
+						<description>Next 2 Hour Data</description>
 						<left>230</left>
 						<top>0</top>
 						<control type="image">
@@ -1378,12 +1378,12 @@
 							<textcolor>white</textcolor>
 							<align>left</align>
 							<aligny>center</aligny>
-  						<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $INFO[Window.Property(Hourly.2.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Hourly.2.WindSpeed)]</label>
+							<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $INFO[Window.Property(Hourly.2.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Hourly.2.WindSpeed)]</label>
 						</control>
 					</control>
-	
+
 					<control type="group">
-					  <description>Next 3 Hour Data</description>
+						<description>Next 3 Hour Data</description>
 						<left>430</left>
 						<top>0</top>
 						<control type="image">
@@ -1481,9 +1481,9 @@
 							<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $INFO[Window.Property(Hourly.3.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Hourly.3.WindSpeed)]</label>
 						</control>
 					</control>
-	
+
 					<control type="group">
-					  <description>Next 4 Hour Data</description>
+						<description>Next 4 Hour Data</description>
 						<left>630</left>
 						<top>0</top>
 						<control type="image">
@@ -1581,9 +1581,9 @@
 							<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $INFO[Window.Property(Hourly.4.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Hourly.4.WindSpeed)]</label>
 						</control>
 					</control>
-	
+
 					<control type="group">
-					  <description>Next 5 Hour Data</description>
+						<description>Next 5 Hour Data</description>
 						<left>830</left>
 						<top>0</top>
 						<control type="image">
@@ -1683,7 +1683,7 @@
 					</control>
 					
 					<control type="group">
-					  <description>Next 6 Hour Data</description>
+						<description>Next 6 Hour Data</description>
 						<left>1030</left>
 						<top>0</top>
 						<control type="image">
@@ -1784,7 +1784,7 @@
 					
 					<!--- Bottom Row -->
 					<control type="group">
-					  <description>Next 7 Hour Data</description>
+						<description>Next 7 Hour Data</description>
 						<left>30</left>
 						<top>173</top>
 
@@ -1883,9 +1883,9 @@
 							<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $INFO[Window.Property(Hourly.7.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Hourly.7.WindSpeed)]</label>
 						</control>
 					</control>
-	
+
 					<control type="group">
-					  <description>Next 8 Hour Data</description>
+						<description>Next 8 Hour Data</description>
 						<left>230</left>
 						<top>173</top>
 						<control type="image">
@@ -1983,9 +1983,9 @@
 							<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $INFO[Window.Property(Hourly.8.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Hourly.8.WindSpeed)]</label>
 						</control>
 					</control>
-	
+
 					<control type="group">
-					  <description>Next 9 Hour Data</description>
+						<description>Next 9 Hour Data</description>
 						<left>430</left>
 						<top>173</top>
 						<control type="image">
@@ -2083,9 +2083,9 @@
 							<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $INFO[Window.Property(Hourly.9.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Hourly.9.WindSpeed)]</label>
 						</control>
 					</control>
-	
+
 					<control type="group">
-					  <description>Next 10 Hour Data</description>
+						<description>Next 10 Hour Data</description>
 						<left>630</left>
 						<top>173</top>
 						<control type="image">
@@ -2183,9 +2183,9 @@
 							<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $INFO[Window.Property(Hourly.10.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Hourly.10.WindSpeed)]</label>
 						</control>
 					</control>
-	
+
 					<control type="group">
-					  <description>Next 11 Hour Data</description>
+						<description>Next 11 Hour Data</description>
 						<left>830</left>
 						<top>173</top>
 						<control type="image">
@@ -2283,9 +2283,9 @@
 							<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $INFO[Window.Property(Hourly.11.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Hourly.11.WindSpeed)]</label>
 						</control>
 					</control>
-	
+
 					<control type="group">
-					  <description>Next 12 Hour Data</description>
+						<description>Next 12 Hour Data</description>
 						<left>1030</left>
 						<top>173</top>
 						<control type="image">
@@ -2383,13 +2383,13 @@
 							<label>[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $INFO[Window.Property(Hourly.12.WindDirection)] $LOCALIZE[31228] $INFO[Window.Property(Hourly.12.WindSpeed)]</label>
 						</control>
 					</control>
-			  </control>
+				</control>
 			</control>
-	
-	    <!-- 10-Days Forecast -->
+
+			<!-- 10-Days Forecast -->
 			<control type="group" id="50">
 				<description>10Days</description>
-        <visible>Skin.String(WeatherExtended,4) + Weather.IsFetched + !IsEmpty(Window(Weather).Property(Daily.IsFetched)) + ![IsEmpty(Window(Weather).Property(Current.Condition)) | IsEmpty(Window(Weather).Property(Location))]</visible>
+				<visible>Skin.String(WeatherExtended,4) + Weather.IsFetched + !IsEmpty(Window(Weather).Property(Daily.IsFetched)) + ![IsEmpty(Window(Weather).Property(Current.Condition)) | IsEmpty(Window(Weather).Property(Location))]</visible>
 				<include>Window_OpenClose_Animation</include>
 				<control type="panel" id="51">
 					<left>40</left>
@@ -2404,7 +2404,7 @@
 					<preloaditems>4</preloaditems>
 					<orientation>horizontal</orientation>
 					<viewtype label="535">list</viewtype>
-				  <scrolltime tween="cubic" easing="out">350</scrolltime>
+					<scrolltime tween="cubic" easing="out">350</scrolltime>
 					<itemlayout height="325" width="300">
 						<control type="image">
 							<left>4</left>
@@ -2415,62 +2415,62 @@
 							<texture border="30">views/other/panel.png</texture>
 						</control>
 						<control type="label">
-						  <left>83</left>
+							<left>83</left>
 							<top>5</top>
 							<width>200</width>
 							<height>60</height>
 							<font>FontSize_24</font>
 							<textcolor>white</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>right</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 						<control type="label">
-						  <left>83</left>
+							<left>83</left>
 							<top>30</top>
 							<width>200</width>
 							<height>60</height>
 							<font>FontSize_22</font>
 							<textcolor>ddC6C6C8</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>right</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
-						  <left>22</left>
+							<left>22</left>
 							<top>160</top>
 							<width>265</width>
 							<height>60</height>
 							<font>FontSize_24</font>
 							<textcolor>white</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>left</align>
 							<aligny>center</aligny>
 							<scroll>false</scroll>
 							<label>$INFO[ListItem.Property(ShortOutlook)]</label>
 						</control>
 						<control type="label">
-						  <left>83</left>
+							<left>83</left>
 							<top>110</top>
 							<width>200</width>
 							<height>30</height>
 							<font>FontSize_20</font>
 							<textcolor>white</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>right</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Property(HighTemperature)]</label>
 						</control>
 						<control type="label">
-						  <left>83</left>
+							<left>83</left>
 							<top>135</top>
 							<width>200</width>
 							<height>30</height>
 							<font>FontSize_20</font>
 							<textcolor>white</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>right</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Property(LowTemperature)]</label>
@@ -2483,7 +2483,7 @@
 								<height>30</height>
 								<font>FontSize_18</font>
 								<textcolor>white</textcolor>
-				        <shadowcolor>99000000</shadowcolor>
+								<shadowcolor>99000000</shadowcolor>
 								<align>left</align>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Property(FeelsLike)]</label>
@@ -2494,7 +2494,7 @@
 								<height>30</height>
 								<font>FontSize_18</font>
 								<textcolor>white</textcolor>
-				        <shadowcolor>99000000</shadowcolor>
+								<shadowcolor>99000000</shadowcolor>
 								<align>left</align>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Property(DewPointAndHumidity)]</label>
@@ -2505,7 +2505,7 @@
 								<height>30</height>
 								<font>FontSize_18</font>
 								<textcolor>white</textcolor>
-				        <shadowcolor>99000000</shadowcolor>
+								<shadowcolor>99000000</shadowcolor>
 								<align>left</align>
 								<align>center</align>
 								<label>$INFO[ListItem.Thumb]</label>
@@ -2516,7 +2516,7 @@
 								<height>30</height>
 								<font>FontSize_18</font>
 								<textcolor>white</textcolor>
-				        <shadowcolor>99000000</shadowcolor>
+								<shadowcolor>99000000</shadowcolor>
 								<align>left</align>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Property(Outlook)]</label>
@@ -2547,65 +2547,65 @@
 							<height>317</height>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
 							<texture border="30">views/other/focus_blue.png</texture>
-	            <include>ThumbnailsFocusAnimation</include>
+							<include>ThumbnailsFocusAnimation</include>
 						</control>
 						<control type="label">
-						  <left>83</left>
+							<left>83</left>
 							<top>5</top>
 							<width>200</width>
 							<height>60</height>
 							<font>FontSize_24</font>
 							<textcolor>white</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>right</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 						<control type="label">
-						  <left>83</left>
+							<left>83</left>
 							<top>30</top>
 							<width>200</width>
 							<height>60</height>
 							<font>FontSize_22</font>
 							<textcolor>ddC6C6C8</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>right</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
-						  <left>22</left>
+							<left>22</left>
 							<top>160</top>
 							<width>265</width>
 							<height>60</height>
 							<font>FontSize_24</font>
 							<textcolor>white</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>left</align>
 							<aligny>center</aligny>
 							<scroll>false</scroll>
 							<label>$INFO[ListItem.Property(ShortOutlook)]</label>
 						</control>
 						<control type="label">
-						  <left>83</left>
+							<left>83</left>
 							<top>110</top>
 							<width>200</width>
 							<height>30</height>
 							<font>FontSize_20</font>
 							<textcolor>white</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>right</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Property(HighTemperature)]</label>
 						</control>
 						<control type="label">
-						  <left>83</left>
+							<left>83</left>
 							<top>135</top>
 							<width>200</width>
 							<height>30</height>
 							<font>FontSize_20</font>
 							<textcolor>white</textcolor>
-			        <shadowcolor>99000000</shadowcolor>
+							<shadowcolor>99000000</shadowcolor>
 							<align>right</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Property(LowTemperature)]</label>
@@ -2618,7 +2618,7 @@
 								<height>30</height>
 								<font>FontSize_18</font>
 								<textcolor>white</textcolor>
-				        <shadowcolor>99000000</shadowcolor>
+								<shadowcolor>99000000</shadowcolor>
 								<align>left</align>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Property(FeelsLike)]</label>
@@ -2629,7 +2629,7 @@
 								<height>30</height>
 								<font>FontSize_18</font>
 								<textcolor>white</textcolor>
-				        <shadowcolor>99000000</shadowcolor>
+								<shadowcolor>99000000</shadowcolor>
 								<align>left</align>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Property(DewPointAndHumidity)]</label>
@@ -2640,7 +2640,7 @@
 								<height>30</height>
 								<font>FontSize_18</font>
 								<textcolor>white</textcolor>
-				        <shadowcolor>99000000</shadowcolor>
+								<shadowcolor>99000000</shadowcolor>
 								<align>left</align>
 								<align>center</align>
 								<label>$INFO[ListItem.Thumb]</label>
@@ -2651,7 +2651,7 @@
 								<height>30</height>
 								<font>FontSize_18</font>
 								<textcolor>white</textcolor>
-				        <shadowcolor>99000000</shadowcolor>
+								<shadowcolor>99000000</shadowcolor>
 								<align>left</align>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Property(Outlook)]</label>
@@ -2667,10 +2667,10 @@
 						</control>
 					</focusedlayout>
 					<content>
-	          <include>Weather_10DaysForecast</include>
+						<include>Weather_10DaysForecast</include>
 					</content>
 				</control>
-		  </control>
+			</control>
 		</control>
-  </include>
+	</include>
 </includes>
