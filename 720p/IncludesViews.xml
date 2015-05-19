@@ -24,7 +24,7 @@
     <include condition="!Skin.HasSetting(BannersViewVideos)">BannersView_Videos</include> <!-- id = 57 -->      
     <include condition="!Skin.HasSetting(ThumbListView)">ThumbListView</include> <!-- id = 582 -->      
     <include condition="!Skin.HasSetting(ClassicSlideView)">ClassicSlideView</include> <!-- id = 583 -->      
-    <include condition="!Skin.HasSetting(ClassicSlideView)">ViewShelf</include> <!-- id = 583 -->      
+    <include condition="!Skin.HasSetting(ShelfView)">ViewShelf</include> <!-- id = 583 -->      
   </include>
 
   <include name="MusicLibraryViews">
@@ -709,9 +709,18 @@
   <value condition="!IntegerGreaterThan(ListItem.VideoResolution,719)">views/wall/dvd.png</value>
 </variable>
 <variable name="DiscArtTypeShelf">
+  <value condition="Container.Content(tvshows)">$INFO[ListItem.Art(fanart)]</value>
+  <value condition="Container.Content(seasons)">$INFO[ListItem.Art(poster)]</value>  
   <value condition="!IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>
   <value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">views/shelf/disc_bluray.png</value>
   <value condition="!IntegerGreaterThan(ListItem.VideoResolution,719)">views/shelf/disc_dvd.png</value>
+</variable>
+<variable name="DiscArtTvShowLabel">
+  <value condition="Container.Content(tvshows)">$INFO[ListItem.TVShowTitle]</value>
+  <value condition="Container.Content(seasons)">$INFO[ListItem.Season,$LOCALIZE[20373] ]</value>
+</variable>
+<variable name="ShelfLabel">
+  <value condition="!stringcompare(ListItem.Label,..)">$INFO[ListItem.Label]</value>
 </variable>
 
 </includes>    

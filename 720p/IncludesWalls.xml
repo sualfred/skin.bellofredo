@@ -1139,15 +1139,6 @@
 	<!-- Shelf Definitions -->
 	<include name="ParamShelfPoster">
 			<!-- case  -->
-			<!--<control type="image">
-				<left>$PARAM[left]</left>
-				<posy>363</posy>
-				<width>24</width>
-				<height>304</height>
-				<texture>views/shelf/shelf_case_reflect.png</texture>
-				<animation effect="slide" end="149,1" time="0" condition="true">Conditional</animation>
-				<visible>$PARAM[visible]</visible>
-			</control>-->
 			<control type="image">
 				<left>$PARAM[left]</left>
 				<posy>318</posy>

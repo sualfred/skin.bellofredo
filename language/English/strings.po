@@ -1377,6 +1377,18 @@ msgctxt "#31336"
 msgid "Enable REC Information at the Home Screen Clock"
 msgstr ""
 
+msgctxt "#31337"
+msgid "TV Show Disc Art"
+msgstr ""
+
+msgctxt "#31338"
+msgid "Movie Disc Art"
+msgstr ""
+
+msgctxt "#31339"
+msgid "Back"
+msgstr ""
+
 #: empty strings from id 31335 to 31349 PVR
 msgctxt "#31350"
 msgid "Available Groups"

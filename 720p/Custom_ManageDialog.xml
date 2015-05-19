@@ -336,9 +336,17 @@
 					<onclick>Skin.ToggleSetting(ClassicSlideView)</onclick>
 					<selected>!Skin.HasSetting(ClassicSlideView)</selected>
 					<visible>StringCompare(Window(SkinSettings).Property(ManageButtons),managevideoviews)</visible>
+				</control>			
+				<control type="radiobutton" id="8524">
+					<width>425</width>
+					<include>DialogsButton</include>
+					<label>Shelf</label>
+					<onclick>Skin.ToggleSetting(ShelfView)</onclick>
+					<selected>!Skin.HasSetting(ShelfView)</selected>
+					<visible>StringCompare(Window(SkinSettings).Property(ManageButtons),managevideoviews)</visible>
 				</control>
 				<!-- Music Views -->
-				<control type="radiobutton" id="8524">
+				<control type="radiobutton" id="8525">
 					<width>425</width>
 					<include>DialogsButton</include>
 					<label>$LOCALIZE[31080]</label>
@@ -346,7 +354,7 @@
 					<selected>!Skin.HasSetting(SlideViewMusic)</selected>
 					<visible>StringCompare(Window(SkinSettings).Property(ManageButtons),managemusicviews)</visible>
 				</control>
-				<control type="radiobutton" id="8525">
+				<control type="radiobutton" id="8526">
 					<width>425</width>
 					<include>DialogsButton</include>
 					<label>$LOCALIZE[31081]</label>
@@ -354,7 +362,7 @@
 					<selected>!Skin.HasSetting(GalleryViewMusic)</selected>
 					<visible>StringCompare(Window(SkinSettings).Property(ManageButtons),managemusicviews)</visible>
 				</control>
-				<control type="radiobutton" id="8526">
+				<control type="radiobutton" id="8527">
 					<width>425</width>
 					<include>DialogsButton</include>
 					<label>$LOCALIZE[31085]</label>
@@ -362,7 +370,7 @@
 					<selected>!Skin.HasSetting(ThumbnailsMusic)</selected>
 					<visible>StringCompare(Window(SkinSettings).Property(ManageButtons),managemusicviews)</visible>
 				</control>
-				<control type="radiobutton" id="8527">
+				<control type="radiobutton" id="8528">
 					<width>425</width>
 					<include>DialogsButton</include>
 					<label>$LOCALIZE[31086]</label>
@@ -370,7 +378,7 @@
 					<selected>!Skin.HasSetting(BannersViewMusic)</selected>
 					<visible>StringCompare(Window(SkinSettings).Property(ManageButtons),managemusicviews)</visible>
 				</control>
-				<control type="radiobutton" id="8528">
+				<control type="radiobutton" id="8529">
 					<width>425</width>
 					<include>DialogsButton</include>
 					<label>$LOCALIZE[31082]</label>
@@ -378,7 +386,7 @@
 					<selected>!Skin.HasSetting(3DWallViewMusic)</selected>
 					<visible>StringCompare(Window(SkinSettings).Property(ManageButtons),managemusicviews)</visible>
 				</control>
-				<control type="radiobutton" id="8529">
+				<control type="radiobutton" id="8530">
 					<width>425</width>
 					<include>DialogsButton</include>
 					<label>$LOCALIZE[31268]</label>
@@ -386,7 +394,7 @@
 					<selected>!Skin.HasSetting(ThumbListMusicView)</selected>
 					<visible>StringCompare(Window(SkinSettings).Property(ManageButtons),managemusicviews)</visible>
 				</control>			
-				<control type="radiobutton" id="8530">
+				<control type="radiobutton" id="8531">
 					<width>425</width>
 					<include>DialogsButton</include>
 					<label>Classic Slide</label>
