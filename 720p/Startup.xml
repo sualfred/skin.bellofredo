@@ -46,7 +46,7 @@
 		<control type="button" id="10">
 			<description>trigger</description>
 			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
-			<onfocus condition="system.getbool(input.enablemouse)">ActivateWindow(1110)</onfocus>
+			<onfocus condition="system.getbool(input.enablemouse) + !Skin.HasSetting(BelloFredoFirstRun)">ActivateWindow(1110)</onfocus>
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>
 			<visible>!Skin.HasSetting(Use_Startup_Playlist) + !Skin.HasSetting(UseIntro)</visible>
