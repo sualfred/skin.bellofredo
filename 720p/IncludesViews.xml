@@ -58,6 +58,7 @@
     <include>ThumbnailsView_Programs</include> <!-- id = 560 -->
     <include>ThumbListView_Programs</include> <!-- id = 582 -->
     <include>ClassicSlideView_Programs</include> <!-- id = 583 -->
+    <include>ViewShelf_Programs</include> <!-- id = 579 -->
   </include>
 
   <include name="AddonsViews">

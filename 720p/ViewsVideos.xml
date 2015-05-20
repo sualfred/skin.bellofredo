@@ -3748,7 +3748,7 @@
 						<shadowcolor>77000000</shadowcolor>
 						<label>$VAR[TagLineInfo]</label>
 						<include name="FakeFadeLabel">
-							<param name="condition">!IsEmpty(ListItem.Tagline) | !IsEmpty(Window(home).Property(Set.Movies.Count))</param>
+							<param name="condition">stringcompare(ListItem.Label,..) | !IsEmpty(ListItem.Tagline) | !IsEmpty(Window(home).Property(Set.Movies.Count))</param>
 						</include>
 					</control>
 					<control type="label">
@@ -3761,7 +3761,7 @@
 						<textcolor>99white</textcolor>
 						<shadowcolor>77000000</shadowcolor>
 						<include name="FakeFadeLabel2">
-							<param name="condition">!IsEmpty(ListItem.Tagline) | !IsEmpty(Window(home).Property(Set.Movies.Count))</param>
+							<param name="condition">stringcompare(ListItem.Label,..) | !IsEmpty(ListItem.Tagline) | !IsEmpty(Window(home).Property(Set.Movies.Count))</param>
 						</include>
 						<label>$VAR[TagLineInfoGenre]</label>
 					</control>
@@ -6362,7 +6362,7 @@
 							<shadowcolor>77000000</shadowcolor>
 							<label>$VAR[TagLineInfo]</label>
 							<include name="FakeFadeLabel">
-								<param name="condition">!IsEmpty(ListItem.Tagline) | !IsEmpty(Window(home).Property(Set.Movies.Count))</param>
+								<param name="condition">stringcompare(ListItem.Label,..) | !IsEmpty(ListItem.Tagline) | !IsEmpty(Window(home).Property(Set.Movies.Count))</param>
 							</include>
 							<visible>!stringcompare(ListItem.Label,..)</visible>
 						</control>
@@ -6377,7 +6377,7 @@
 							<textcolor>white</textcolor>
 							<shadowcolor>77000000</shadowcolor>
 							<include name="FakeFadeLabel2">
-								<param name="condition">!IsEmpty(ListItem.Tagline) | !IsEmpty(Window(home).Property(Set.Movies.Count))</param>
+								<param name="condition">stringcompare(ListItem.Label,..) | !IsEmpty(ListItem.Tagline) | !IsEmpty(Window(home).Property(Set.Movies.Count))</param>
 							</include>
 							<label>$VAR[TagLineInfoGenre]</label>
 						</control>
