@@ -5605,7 +5605,14 @@
 									<width>206</width>
 									<height>206</height>
 									<aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="views/shelf/disc.png" fallback="views/shelf/disc_fallback.png">$VAR[DiscArtTypeShelf]</texture>
+									<texture background="true">views/shelf/disc_bg.png</texture>
+								</control>
+								<control type="image">
+									<top>260</top>
+									<width>206</width>
+									<height>206</height>
+									<aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
+									<texture background="true" diffuse="views/shelf/disc_diffuse.png" fallback="views/shelf/disc_fallback.png">$VAR[DiscArtTypeShelf]</texture>
 								</control>
 								<control type="group">
 									<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(ListItem.Art(thumb))</visible>
@@ -5614,7 +5621,7 @@
 										<width>206</width>
 										<height>206</height>
 										<aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
-										<texture background="true" diffuse="views/shelf/disc.png">views/shelf/disc_labelbar.png</texture>
+										<texture background="true" diffuse="views/shelf/disc_diffuse.png">views/shelf/disc_labelbar.png</texture>
 										<animation effect="fade" time="0" start="85" end="85" condition="true">Conditional</animation>
 									</control>
 									<control type="textbox">
@@ -5665,21 +5672,29 @@
 									<width>206</width>
 									<height>206</height>
 									<aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
-									<texture flipy="true" diffuse="views/shelf/shelf_disc_reflect.png" background="true" fallback="views/shelf/disc_fallback.png">$VAR[DiscArtTypeShelf]</texture>
+									<texture flipy="true" background="true">views/shelf/shelf_disc_reflect.png</texture>
+									<animation effect="fade" time="0" start="30" end="30" condition="true">Conditional</animation>
+								</control>
+								<control type="image">
+									<top>465</top>
+									<width>206</width>
+									<height>206</height>
+									<aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
+									<texture flipy="true" diffuse="views/shelf/shelf_disc_reflect_diffuse.png" background="true" fallback="views/shelf/disc_fallback.png">$VAR[DiscArtTypeShelf]</texture>
 								</control>
 								<control type="group">
 									<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(ListItem.Art(thumb))</visible>
 									<control type="image">
-										<top>460</top>
+										<top>465</top>
 										<width>206</width>
 										<height>206</height>
 										<aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
 										<texture flipy="true">views/shelf/disc_labelbar.png</texture>
-										<animation effect="fade" time="0" start="40" end="40" condition="true">Conditional</animation>
+										<animation effect="fade" time="0" start="40" end="60" condition="true">Conditional</animation>
 									</control>
 									<control type="textbox">
 										<left>43</left>
-										<top>-515</top>
+										<top>-520</top>
 										<width>120</width>
 										<height>40</height>
 										<align>center</align>
@@ -5694,18 +5709,20 @@
 									</control>
 									<control type="image">
 										<left>43</left>
-										<top>485</top>
+										<top>480</top>
 										<width>120</width>
-										<height>40</height>
+										<height>60</height>
+										<bordersize>10</bordersize>
 										<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>	
 										<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$VAR[DiscArtTvShowLogo]</texture>	
 										<visible>Container.Content(tvshows)</visible>
 									</control>
 									<control type="image">
 										<left>43</left>
-										<top>495</top>
+										<top>490</top>
 										<width>120</width>
-										<height>40</height>
+										<height>60</height>
+										<bordersize>10</bordersize>
 										<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>		
 										<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$VAR[DiscArtTvShowLogo]</texture>	
 										<visible>Container.Content(seasons)</visible>
@@ -5734,10 +5751,6 @@
 						<effect type="fade" start="100" end="0" time="500" delay="300" tween="sine" easing="out"/>
 						<effect type="slide" start="0,0" end="-250,0" time="780" delay="0" tween="sine" easing="out"/>
 					</animation>
-					<!--<animation type="Conditional" condition="!stringcompare(ListItem.Label,..)">
-						<effect type="fade" start="0" end="100" time="100" delay="500" tween="sine" easing="out"/>
-						<effect type="slide" start="-350,0" end="0,0" time="500" delay="500" tween="sine" easing="out"/>
-					</animation>-->
 					<!--imdb top 250-->
 					<control type="group">
 						<width>48</width>
@@ -5807,7 +5820,6 @@
 								<param name="condition">stringcompare(ListItem.Label,..) | !IsEmpty(ListItem.Tagline) | !IsEmpty(Window(home).Property(Set.Movies.Count))</param>
 							</include>							
 						</control>
-
 						<control type="label">							
 							<top>33</top>
 							<left>0</left>
