@@ -5625,9 +5625,32 @@
 										<align>center</align>
 										<aligny>top</aligny>
 										<font>FontSize_14B</font>
-										<shadowcolor>77000000</shadowcolor>
 										<textcolor>white</textcolor>
 										<label>$VAR[DiscArtTvShowLabel]</label>	
+										<animation effect="slide" time="0" start="0,0" end="0,20" condition="Container.Content(seasons)">Conditional</animation>
+										<visible>[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] | Container.Content(seasons)</visible>
+									</control>
+									<control type="image">
+										<left>43</left>
+										<top>400</top>
+										<width>120</width>
+										<height>40</height>
+										<align>center</align>
+										<aligny>top</aligny>
+										<aspectratio align="center" aligny="top">keep</aspectratio>
+										<texture background="true">$VAR[DiscArtTvShowLogo]</texture>
+										<visible>Container.Content(tvshows)</visible>
+									</control>
+									<control type="image">
+										<left>43</left>
+										<top>395</top>
+										<width>120</width>
+										<height>35</height>
+										<align>center</align>
+										<aligny>top</aligny>
+										<aspectratio align="center" aligny="top">keep</aspectratio>
+										<texture background="true">$VAR[DiscArtTvShowLogo]</texture>
+										<visible>Container.Content(seasons)</visible>
 									</control>
 								</control>
 							</control>
@@ -5656,7 +5679,7 @@
 									</control>
 									<control type="textbox">
 										<left>43</left>
-										<top>-510</top>
+										<top>-515</top>
 										<width>120</width>
 										<height>40</height>
 										<align>center</align>
@@ -5666,6 +5689,26 @@
 										<label>$VAR[DiscArtTvShowLabel]</label>	
 										<animation effect="rotatex" time="0" start="0" end="180" condition="true">Conditional</animation>
 										<animation effect="fade" time="0" start="10" end="10" condition="true">Conditional</animation>
+										<animation effect="slide" time="0" start="0,0" end="0,20" condition="Container.Content(seasons)">Conditional</animation>	
+										<visible>IsEmpty(ListItem.Art(clearlogo))</visible>
+									</control>
+									<control type="image">
+										<left>43</left>
+										<top>485</top>
+										<width>120</width>
+										<height>40</height>
+										<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>	
+										<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$VAR[DiscArtTvShowLogo]</texture>	
+										<visible>Container.Content(tvshows)</visible>
+									</control>
+									<control type="image">
+										<left>43</left>
+										<top>495</top>
+										<width>120</width>
+										<height>40</height>
+										<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>		
+										<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$VAR[DiscArtTvShowLogo]</texture>	
+										<visible>Container.Content(seasons)</visible>
 									</control>
 								</control>
 							</control>
