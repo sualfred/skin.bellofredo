@@ -5624,7 +5624,7 @@
 										<height>40</height>
 										<align>center</align>
 										<aligny>top</aligny>
-										<font>FontSize_14B</font>
+										<font>font10_title</font>
 										<textcolor>white</textcolor>
 										<label>$VAR[DiscArtTvShowLabel]</label>	
 										<animation effect="slide" time="0" start="0,0" end="0,20" condition="Container.Content(seasons)">Conditional</animation>
@@ -5684,7 +5684,7 @@
 										<height>40</height>
 										<align>center</align>
 										<aligny>top</aligny>
-										<font>FontSize_14B</font>
+										<font>font10_title</font>
 										<textcolor>white</textcolor>
 										<label>$VAR[DiscArtTvShowLabel]</label>	
 										<animation effect="rotatex" time="0" start="0" end="180" condition="true">Conditional</animation>
@@ -5734,10 +5734,10 @@
 						<effect type="fade" start="100" end="0" time="500" delay="300" tween="sine" easing="out"/>
 						<effect type="slide" start="0,0" end="-250,0" time="780" delay="0" tween="sine" easing="out"/>
 					</animation>
-					<animation type="Conditional" condition="!stringcompare(ListItem.Label,..)">
+					<!--<animation type="Conditional" condition="!stringcompare(ListItem.Label,..)">
 						<effect type="fade" start="0" end="100" time="100" delay="500" tween="sine" easing="out"/>
 						<effect type="slide" start="-350,0" end="0,0" time="500" delay="500" tween="sine" easing="out"/>
-					</animation>
+					</animation>-->
 					<!--imdb top 250-->
 					<control type="group">
 						<width>48</width>
@@ -5804,12 +5804,11 @@
 							<shadowcolor>77000000</shadowcolor>
 							<label>$VAR[TagLineInfo]</label>
 							<include name="FakeFadeLabel">
-								<param name="condition">!IsEmpty(ListItem.Tagline) | !IsEmpty(Window(home).Property(Set.Movies.Count))</param>
-							</include>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
+								<param name="condition">stringcompare(ListItem.Label,..) | !IsEmpty(ListItem.Tagline) | !IsEmpty(Window(home).Property(Set.Movies.Count))</param>
+							</include>							
 						</control>
-						<control type="label">
-							<visible>!stringcompare(ListItem.Label,..)</visible>
+
+						<control type="label">							
 							<top>33</top>
 							<left>0</left>
 							<align>left</align>
@@ -5819,7 +5818,7 @@
 							<textcolor>white</textcolor>
 							<shadowcolor>77000000</shadowcolor>
 							<include name="FakeFadeLabel2">
-								<param name="condition">!IsEmpty(ListItem.Tagline) | !IsEmpty(Window(home).Property(Set.Movies.Count))</param>
+								<param name="condition">stringcompare(ListItem.Label,..) | !IsEmpty(ListItem.Tagline) | !IsEmpty(Window(home).Property(Set.Movies.Count))</param>
 							</include>
 							<label>$VAR[TagLineInfoGenre]</label>
 						</control>
