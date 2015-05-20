@@ -5572,6 +5572,15 @@
 									<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 									<animation effect="fade" start="90" end="100" time="200" delay="0" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)]">Conditional</animation>
 								</control>
+								<!--
+								<control type="image">
+									<posx>-148</posx>
+									<posy>89</posy>
+									<width>253</width>
+									<height>359</height>
+									<texture background="true">views/shelf/thumb_shelf_box_overlay.png</texture>
+									<aspectratio scalediffuse="false">stretch</aspectratio>
+								</control>-->
 							</control>
 						</control>
 
