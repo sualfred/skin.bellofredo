@@ -724,8 +724,5 @@
   <value condition="Container.Content(tvshows)">$INFO[ListItem.Art(clearlogo)]</value>
   <value condition="Container.Content(seasons)">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
 </variable>
-<variable name="ShelfLabel">
-  <value condition="!stringcompare(ListItem.Label,..)">$INFO[ListItem.Label]</value>
-</variable>
 
 </includes>    

@@ -1,4 +1,13 @@
-﻿[B][COLOR=FF56ADDA]v4.2.8a[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.2.9[/COLOR][/B]
+• Fixed: Item labels on season level (NetFilx view)
+• Fixed: Movie Set disc art animation (Shelf view)
+• Fixed: Crossfade-Labels animation in some views
+• Changed: Disc art style to be more realistic (Shelf view)
+• Added: Clearlogo for TV-Show/Season disc arts (Shelf view)
+• Added: Shelf view for programs
+• And some more tiny minor tweaks
+
+[B][COLOR=FF56ADDA]v4.2.8a[/COLOR][/B]
 • Fixed: texture bug
 
 [B][COLOR=FF56ADDA]v4.2.8[/COLOR][/B]
