@@ -5526,14 +5526,24 @@
 									<texture diffuse="views/shelf/thumb_shelf_diffuse.png">views/shelf/thumb_shelf_fallback.png</texture>
 									<aspectratio scalediffuse="false">stretch</aspectratio>
 								</control>
-								<control type="image">
+
+								<!--<control type="image">
 									<posx>-148</posx>
 									<posy>89</posy>
 									<width>253</width>
 									<height>359</height>
 									<texture diffuse="views/shelf/thumb_shelf_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 									<aspectratio scalediffuse="false">stretch</aspectratio>
+								</control>-->
+								<control type="image">
+									<posx>-143</posx>
+									<posy>120</posy>
+									<width>242</width>
+									<height>319</height>
+									<texture background="true">$INFO[ListItem.Icon]</texture>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 								</control>
+
 								<control type="image">
 									<posx>-148</posx>
 									<posy>89</posy>
@@ -5554,12 +5564,20 @@
 									<visible>Control.IsVisible(8014) + !IsEmpty(ListItem(1).Art(thumb))</visible>
 									<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014) + !IsEmpty(ListItem(1).Art(thumb))">Conditional</animation>
 								</control>
-								<control type="image">
+								<!--<control type="image">
 									<posx>-148</posx>
 									<posy>89</posy>
 									<width>253</width>
 									<height>360</height>
 									<texture diffuse="views/shelf/thumb_shelf_diffuse.png">views/shelf/thumb_shelf_glas.png</texture>
+									<aspectratio scalediffuse="false">stretch</aspectratio>
+								</control>-->
+								<control type="image">
+									<posx>-143</posx>
+									<posy>120</posy>
+									<width>242</width>
+									<height>319</height>
+									<texture>views/shelf/thumb_shelf_glas_box.png</texture>
 									<aspectratio scalediffuse="false">stretch</aspectratio>
 								</control>
 								<control type="image">
@@ -5572,7 +5590,7 @@
 									<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
 									<animation effect="fade" start="90" end="100" time="200" delay="0" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)]">Conditional</animation>
 								</control>
-								<!--
+								
 								<control type="image">
 									<posx>-148</posx>
 									<posy>89</posy>
@@ -5580,7 +5598,7 @@
 									<height>359</height>
 									<texture background="true">views/shelf/thumb_shelf_box_overlay.png</texture>
 									<aspectratio scalediffuse="false">stretch</aspectratio>
-								</control>-->
+								</control>
 							</control>
 						</control>
 
