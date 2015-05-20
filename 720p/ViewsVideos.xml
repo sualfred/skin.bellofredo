@@ -4896,6 +4896,7 @@
 						<colordiffuse>77white</colordiffuse>
 						<aspectratio align="left" aligny="center">keep</aspectratio>
 						<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
+						<visible>!IsEmpty(ListItem.AudioCodec)</visible>
 					</control>
 					<control type="image">
 						<width>40</width>
@@ -4903,6 +4904,7 @@
 						<colordiffuse>77white</colordiffuse>
 						<aspectratio align="left" aligny="center">keep</aspectratio>
 						<texture>$VAR[ViewsDef3DFlags]</texture>
+						<visible>!IsEmpty(ListItem.VideoResolution)</visible>
 					</control>
 					<control type="label">
 						<left>0</left>
@@ -5578,7 +5580,6 @@
 						<control type="group">
 							<top>-40</top>
 							<left>420</left>
-							<visible>!Container.Content(sets)</visible>
 							<animation effect="fade" start="0" end="100" time="350" delay="70">Visible</animation>
 							<animation type="Conditional" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)] + !StringCompare(ListItem.Label,..)" reversible="true">
 								<!--<effect type="fade" start="0" end="100" time="200" delay="0" tween="sine" easing="out"/>-->
@@ -5591,6 +5592,7 @@
 							<animation type="WindowClose">
 								<!--<effect type="fade" start="100" end="0" time="500" delay="300" tween="sine" easing="out"/>-->
 								<effect type="slide" start="-150,0" end="100,0" time="780" delay="0" tween="sine" easing="out"/>
+
 							</animation>
 							<!-- disc -->
 							<control type="group">
@@ -5673,7 +5675,7 @@
 
 				<!--labels-->
 				<control type="grouplist">
-					<left>45</left>
+					<left>47</left>
 					<top>543</top>
 					<width>950</width>
 					<height>100</height>
@@ -5894,6 +5896,7 @@
 					</itemlayout>
 					<focusedlayout width="248" height="362">
 					</focusedlayout>
+					<visible>Container.Content(sets) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 				</control>
 			</control>
 		</control>
