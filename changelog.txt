@@ -1,4 +1,10 @@
-﻿[B][COLOR=FF56ADDA]v4.2.9[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.3.0[/COLOR][/B]
+• Added: Artist logo in music visualisation OSD if available
+• Added: New additional shelf case style (can be set in the sideblade menu)
+• Improved: Shelf disc art animations (on/off/onnext/onprevious)
+• Fixed: Unwanted genre label in programs shelf view
+
+[B][COLOR=FF56ADDA]v4.2.9[/COLOR][/B]
 • Fixed: Item labels on season level (NetFilx view)
 • Fixed: Movie Set disc art animation (Shelf view)
 • Fixed: Crossfade-Labels animation in some views

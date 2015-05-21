@@ -137,6 +137,14 @@
 					<selected>!Skin.HasSetting(HideHandwrittenDiscArt)</selected>
 					<onclick>Skin.ToggleSetting(HideHandwrittenDiscArt)</onclick>
 				</control>
+				<control type="radiobutton" id="985">
+					<description>Artist Logo</description>
+					<width>553</width>
+					<label>$LOCALIZE[31342]</label>
+					<include>DialogsRadioButton</include>
+					<selected>!Skin.HasSetting(ArtistLogo)</selected>
+					<onclick>Skin.ToggleSetting(ArtistLogo)</onclick>
+				</control>
 			</control>
 		</control>
 	</controls>

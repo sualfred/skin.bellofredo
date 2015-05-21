@@ -1166,7 +1166,7 @@
 				<control type="grouplist">
 					<left>47</left>
 					<top>543</top>
-					<width>950</width>
+					<width>1280</width>
 					<height>100</height>
 					<itemgap>20</itemgap>
 					<orientation>horizontal</orientation>
@@ -1183,30 +1183,16 @@
 					
 					<!--title and sub info-->
 					<control type="group">
-						<width>960</width>
-						<control type="grouplist">
-							<orientation>horizontal</orientation>
-							<width>910</width>
-							<height>50</height>
-							<itemgap>0</itemgap>
-							<control type="label">
-								<label>$VAR[ListItem.Label]</label>
-								<width max="590">590</width>
-								<font>FontSize_28B</font>
-								<textcolor>white</textcolor>
-								<shadowcolor>77000000</shadowcolor>
-								<visible>!stringcompare(ListItem.Label,..)</visible>
-							</control>
-							<control type="label">
-								<label>$INFO[ListItem.Genre]</label>
-								<width max="320">320</width>
-								<align>right</align>
-								<font>FontSize_28</font>
-								<textcolor>44white</textcolor>
-								<shadowcolor>77000000</shadowcolor>
-								<visible>!stringcompare(ListItem.Label,..)</visible>
-							</control>
-						</control>						
+						<width>1280</width>
+						<height>50</height>
+						<control type="label">
+							<label>$VAR[ListItem.Label]</label>
+							<width>590</width>
+							<font>FontSize_28B</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+						</control>
 						<control type="textbox">
 							<top>32</top>
 							<left>0</left>

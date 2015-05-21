@@ -1397,6 +1397,10 @@ msgctxt "#31341"
 msgid "Retail Box"
 msgstr ""
 
+msgctxt "#31342"
+msgid "Artist Logo"
+msgstr ""
+
 #: empty strings from id 31335 to 31349 PVR
 msgctxt "#31350"
 msgid "Available Groups"
