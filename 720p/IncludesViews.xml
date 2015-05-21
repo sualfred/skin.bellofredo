@@ -709,6 +709,12 @@
   <value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">views/wall/bluray.png</value>
   <value condition="!IntegerGreaterThan(ListItem.VideoResolution,719)">views/wall/dvd.png</value>
 </variable>
+<variable name="RetailCaseType">
+  <value condition="Container.Content(movies)">views/shelf/thumb_shelf_box_overlay_movie.png</value>
+  <value condition="Container.Content(tvshows)">views/shelf/thumb_shelf_box_overlay_tvshow.png</value>
+  <value condition="Container.Content(seasons)">views/shelf/thumb_shelf_box_overlay_season.png</value>
+  <value condition="Container.Content(sets)">views/shelf/thumb_shelf_box_overlay_set.png</value>
+</variable>
 <variable name="DiscArtTypeShelf">
   <value condition="Container.Content(tvshows)">$INFO[ListItem.Art(fanart)]</value>
   <value condition="Container.Content(seasons)">$INFO[ListItem.Art(fanart)]</value>

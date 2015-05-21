@@ -189,6 +189,15 @@
 					<visible>Container.Content(movies) + Control.IsVisible(579)</visible>
 				</control>
 				<control type="togglebutton" id="303">
+					<description>Retail Shelf Box Toogle</description>
+					<include>TopLeftMenusButton</include>
+					<label>$LOCALIZE[31340]: $LOCALIZE[602]</label>
+					<altlabel>$LOCALIZE[31340]: $LOCALIZE[31341]</altlabel>
+					<onclick>Skin.ToggleSetting(ShelfRetailBox)</onclick>
+					<selected>Skin.HasSetting(ShelfRetailBox)</selected>
+					<visible>Control.IsVisible(579)</visible>
+				</control>
+				<control type="togglebutton" id="304">
 					<description>Extra Fanart Toggle</description>
 					<include>TopLeftMenusButton</include>
 					<label>$LOCALIZE[31051]: $LOCALIZE[31066]</label>

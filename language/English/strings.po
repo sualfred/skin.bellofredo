@@ -1389,6 +1389,14 @@ msgctxt "#31339"
 msgid "Back"
 msgstr ""
 
+msgctxt "#31340"
+msgid "Case Style"
+msgstr ""
+
+msgctxt "#31341"
+msgid "Retail Box"
+msgstr ""
+
 #: empty strings from id 31335 to 31349 PVR
 msgctxt "#31350"
 msgid "Available Groups"
