@@ -5774,43 +5774,43 @@
 									</control>
 									<control type="textbox">
 										<left>43</left>
-										<top>410</top>
+										<top>400</top>
 										<width>120</width>
-										<height>40</height>
+										<height>42</height>
 										<align>center</align>
-										<aligny>top</aligny>
+										<aligny>center</aligny>
 										<font>font10_title</font>
 										<textcolor>white</textcolor>
 										<label>$VAR[DiscArtTvShowLabel]</label>	
-										<animation effect="slide" time="0" start="0,0" end="0,20" condition="Container.Content(seasons)">Conditional</animation>
-										<visible>[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] | Container.Content(seasons)</visible>
+										<animation effect="slide" time="0" start="0,0" end="0,17" condition="Container.Content(seasons)">Conditional</animation>
+										<visible>!Control.IsVisible(8014) + !Control.IsVisible(8013) + [[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] | Container.Content(seasons)]</visible>
 									</control>
 									<control type="textbox">
 										<left>43</left>
-										<top>410</top>
+										<top>400</top>
 										<width>120</width>
-										<height>40</height>
+										<height>42</height>
 										<align>center</align>
-										<aligny>top</aligny>
+										<aligny>center</aligny>
 										<font>font10_title</font>
 										<textcolor>white</textcolor>
 										<label>$VAR[DiscArtTvShowLabelPrevious]</label>	
-										<animation effect="slide" time="0" start="0,0" end="0,20" condition="Container.Content(seasons)">Conditional</animation>
-										<visible>Control.IsVisible(8013) + [IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] | Container.Content(seasons)</visible>
+										<animation effect="slide" time="0" start="0,0" end="0,17" condition="Container.Content(seasons)">Conditional</animation>
+										<visible>Control.IsVisible(8013) + [[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] | Container.Content(seasons)]</visible>
 										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013)">Conditional</animation>
 									</control>
 									<control type="textbox">
 										<left>43</left>
-										<top>410</top>
+										<top>400</top>
 										<width>120</width>
-										<height>40</height>
+										<height>42</height>
 										<align>center</align>
-										<aligny>top</aligny>
+										<aligny>center</aligny>
 										<font>font10_title</font>
 										<textcolor>white</textcolor>
 										<label>$VAR[DiscArtTvShowLabelNext]</label>	
-										<animation effect="slide" time="0" start="0,0" end="0,20" condition="Container.Content(seasons)">Conditional</animation>
-										<visible>Control.IsVisible(8014) + [IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] | Container.Content(seasons)</visible>
+										<animation effect="slide" time="0" start="0,0" end="0,17" condition="Container.Content(seasons)">Conditional</animation>
+										<visible>Control.IsVisible(8014) + [[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] | Container.Content(seasons)]</visible>
 										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014)">Conditional</animation>
 									</control>
 									<control type="image">
@@ -5939,49 +5939,49 @@
 									</control>
 									<control type="textbox">
 										<left>43</left>
-										<top>-520</top>
+										<top>-530</top>
 										<width>120</width>
-										<height>40</height>
+										<height>45</height>
 										<align>center</align>
-										<aligny>top</aligny>
+										<aligny>center</aligny>
 										<font>font10_title</font>
 										<textcolor>white</textcolor>
 										<label>$VAR[DiscArtTvShowLabel]</label>	
 										<animation effect="rotatex" time="0" start="0" end="180" condition="true">Conditional</animation>
-										<animation effect="fade" time="0" start="10" end="10" condition="true">Conditional</animation>
-										<animation effect="slide" time="0" start="0,0" end="0,20" condition="Container.Content(seasons)">Conditional</animation>	
-										<visible>!Control.IsVisible(8013) + !Control.IsVisible(8014) + IsEmpty(ListItem.Art(clearlogo))</visible>
+										<animation effect="fade" time="0" start="5" end="5" condition="true">Conditional</animation>
+										<animation effect="slide" time="0" start="0,0" end="0,15" condition="Container.Content(seasons)">Conditional</animation>
+										<visible>!Control.IsVisible(8014) + !Control.IsVisible(8013) + [[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] | Container.Content(seasons)]</visible>
 									</control>
 									<control type="textbox">
 										<left>43</left>
-										<top>-520</top>
+										<top>-530</top>
 										<width>120</width>
-										<height>40</height>
+										<height>45</height>
 										<align>center</align>
-										<aligny>top</aligny>
+										<aligny>center</aligny>
 										<font>font10_title</font>
 										<textcolor>white</textcolor>
 										<label>$VAR[DiscArtTvShowLabelPrevious]</label>	
 										<animation effect="rotatex" time="0" start="0" end="180" condition="true">Conditional</animation>
-										<animation effect="fade" time="0" start="10" end="10" condition="true">Conditional</animation>
-										<animation effect="slide" time="0" start="0,0" end="0,20" condition="Container.Content(seasons)">Conditional</animation>	
-										<visible>Control.IsVisible(8013) + IsEmpty(ListItem.Art(clearlogo))</visible>
+										<animation effect="fade" time="0" start="5" end="5" condition="true">Conditional</animation>
+										<animation effect="slide" time="0" start="0,0" end="0,15" condition="Container.Content(seasons)">Conditional</animation>	
+										<visible>Control.IsVisible(8013) + [[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] | Container.Content(seasons)]</visible>
 										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013)">Conditional</animation>
 									</control>
 									<control type="textbox">
 										<left>43</left>
-										<top>-520</top>
+										<top>-530</top>
 										<width>120</width>
-										<height>40</height>
+										<height>45</height>
 										<align>center</align>
-										<aligny>top</aligny>
+										<aligny>center</aligny>
 										<font>font10_title</font>
 										<textcolor>white</textcolor>
 										<label>$VAR[DiscArtTvShowLabelNext]</label>	
 										<animation effect="rotatex" time="0" start="0" end="180" condition="true">Conditional</animation>
-										<animation effect="fade" time="0" start="10" end="10" condition="true">Conditional</animation>
-										<animation effect="slide" time="0" start="0,0" end="0,20" condition="Container.Content(seasons)">Conditional</animation>	
-										<visible>Control.IsVisible(8014) + IsEmpty(ListItem.Art(clearlogo))</visible>
+										<animation effect="fade" time="0" start="5" end="5" condition="true">Conditional</animation>
+										<animation effect="slide" time="0" start="0,0" end="0,15" condition="Container.Content(seasons)">Conditional</animation>	
+										<visible>Control.IsVisible(8014) + [[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] | Container.Content(seasons)]</visible>
 										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014)">Conditional</animation>
 									</control>
 									<control type="image">

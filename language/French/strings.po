@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-05-19 14:22+0000\n"
+"PO-Revision-Date: 2015-05-21 14:17+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/bello-fredo/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -1382,14 +1382,26 @@ msgstr "Activer les infos d'enregistrement dans l'horloge d'accueil"
 
 msgctxt "#31337"
 msgid "TV Show Disc Art"
-msgstr ""
+msgstr "Image disque de série"
 
 msgctxt "#31338"
 msgid "Movie Disc Art"
-msgstr ""
+msgstr "Image disque de film"
 
 msgctxt "#31339"
 msgid "Back"
+msgstr "Retour"
+
+msgctxt "#31340"
+msgid "Case Style"
+msgstr ""
+
+msgctxt "#31341"
+msgid "Retail Box"
+msgstr ""
+
+msgctxt "#31342"
+msgid "Artist Logo"
 msgstr ""
 
 #: empty strings from id 31335 to 31349 PVR

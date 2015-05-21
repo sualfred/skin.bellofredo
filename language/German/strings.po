@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-05-19 14:24+0000\n"
+"PO-Revision-Date: 2015-05-21 14:17+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -1391,6 +1391,18 @@ msgstr "Film Disc Art"
 msgctxt "#31339"
 msgid "Back"
 msgstr "Zurück"
+
+msgctxt "#31340"
+msgid "Case Style"
+msgstr "Stil der Hülle"
+
+msgctxt "#31341"
+msgid "Retail Box"
+msgstr "Retail Box"
+
+msgctxt "#31342"
+msgid "Artist Logo"
+msgstr "Artist Logo"
 
 #: empty strings from id 31335 to 31349 PVR
 msgctxt "#31350"

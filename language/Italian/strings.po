@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-04-28 13:16+0000\n"
+"PO-Revision-Date: 2015-05-21 14:17+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/bello-fredo/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -79,6 +79,11 @@ msgctxt "#31014"
 msgid "Enable Startup Intro Video"
 msgstr "Abilita il Video Introduttivo"
 
+msgctxt "#31015"
+msgid "Show YouTube Channel Logo in Fullscreen Video"
+msgstr "Mostra il Logo del Canale YouTube a schermo intero"
+
+#: empty string with 31015
 msgctxt "#31016"
 msgid "File Manager"
 msgstr "Gestore File"
@@ -714,8 +719,8 @@ msgid "Update Art"
 msgstr "Aggiorna Art"
 
 msgctxt "#31172"
-msgid "Empty Label"
-msgstr "Etichetta Vuota"
+msgid "Not configured"
+msgstr "Non configurato"
 
 msgctxt "#31173"
 msgid "Custom Widgets #1"
@@ -795,35 +800,35 @@ msgstr "Aggiorna Impostazioni"
 
 msgctxt "#31192"
 msgid "Hide Widget Item Counter"
-msgstr ""
+msgstr "Nascondi il contatore dei widget"
 
 msgctxt "#31193"
 msgid "Critics Consensus"
-msgstr ""
+msgstr "Consenso della Critica"
 
 msgctxt "#31194"
 msgid "No plot information available"
-msgstr ""
+msgstr "Nessun trama disponibile"
 
 msgctxt "#31195"
 msgid "Revenue"
-msgstr ""
+msgstr "Ricavato"
 
 msgctxt "#31196"
 msgid "In Production"
-msgstr ""
+msgstr "In Produzione"
 
 msgctxt "#31197"
 msgid "Post Production"
-msgstr ""
+msgstr "Post Produzione"
 
 msgctxt "#31198"
 msgid "Ended"
-msgstr ""
+msgstr "Terminato"
 
 msgctxt "#31199"
 msgid "Returning Series"
-msgstr ""
+msgstr "Serie Rinnovate"
 
 msgctxt "#31200"
 msgid "My Movies"
@@ -1115,35 +1120,35 @@ msgstr "Abilita la funzione di variazione contenuto wiget"
 
 msgctxt "#31272"
 msgid "Budget"
-msgstr ""
+msgstr "Budget"
 
 msgctxt "#31273"
 msgid "Place of Birth"
-msgstr ""
+msgstr "Luogo di Nascita"
 
 msgctxt "#31274"
 msgid "Birthday"
-msgstr ""
+msgstr "Compleanno"
 
 msgctxt "#31275"
 msgid "Deathday"
-msgstr ""
+msgstr "Data di Morte"
 
 msgctxt "#31276"
 msgid "Also known as"
-msgstr ""
+msgstr "Anche conosciuto come"
 
 msgctxt "#31277"
 msgid "Filmography"
-msgstr ""
+msgstr "Filmografia"
 
 msgctxt "#31278"
 msgid "Planned"
-msgstr ""
+msgstr "Pianificato"
 
 msgctxt "#31279"
 msgid "Menu Position"
-msgstr ""
+msgstr "Posizione Menu'"
 
 msgctxt "#31280"
 msgid "Open Playlist"
@@ -1203,12 +1208,28 @@ msgstr "Addon Fanart Predefinito [COLOR=55white](se disponibile)[/COLOR]"
 
 msgctxt "#31294"
 msgid "BelloFredo - Extrapack"
-msgstr ""
+msgstr "BelloFredo - Extrapack"
 
-#: empty strings from id 31295 to 31298
+msgctxt "#31295"
+msgid "Note"
+msgstr "Note"
+
+msgctxt "#31296"
+msgid "Path extraction from a favourite only works for nodes and directories!"
+msgstr "L'estrazione da un favorito funziona solo per i nodi e le cartelle!"
+
+msgctxt "#31297"
+msgid "Enable PVR Recording Info Box"
+msgstr "Abilita il box informazioni per le registrazioni PVR"
+
+msgctxt "#31298"
+msgid "Only if LiveTV is focused"
+msgstr "Solo se Live TV è selezionato"
+
+#: empty strings from id 31298 to 31298
 msgctxt "#31299"
 msgid "Conditional Weather Fanarts"
-msgstr ""
+msgstr "Fanart Condizioni Meteo"
 
 msgctxt "#31300"
 msgid "Muted"
@@ -1284,21 +1305,105 @@ msgstr "Modalità Compatibile "
 
 msgctxt "#31318"
 msgid "Use Extrapack Weather Fanarts"
-msgstr ""
+msgstr "Usa l'Extrapack Meteo Fanart"
 
 msgctxt "#31319"
 msgid "Download Extras & available Updates"
-msgstr ""
+msgstr "Scarica Extra e Aggiornamenti disponibili"
 
 msgctxt "#31320"
 msgid "Force Extrapack Refresh"
-msgstr ""
+msgstr "Forza il Refresh dell'Extrapack"
 
 msgctxt "#31321"
 msgid "Check of Updates on Startup"
+msgstr "Verifica gli aggiornamenti all'avvio"
+
+msgctxt "#31322"
+msgid "Choose Widget Content"
+msgstr "Scegli il contenuto dei Widget"
+
+msgctxt "#31323"
+msgid "Mixed item group"
+msgstr "Elementi Gruppo Miscelati"
+
+msgctxt "#31324"
+msgid "Extract custom path from a existing favourite"
+msgstr "Estrai in un percorso personalizzato da uno dei preferiti esistenti"
+
+msgctxt "#31325"
+msgid "Other"
+msgstr "Altro"
+
+msgctxt "#31326"
+msgid "Square"
+msgstr "Quadrato"
+
+msgctxt "#31327"
+msgid "Other custom path (extracted from a favourite)"
+msgstr "Altri percorsi personalizzati (estratti da un preferito)"
+
+msgctxt "#31328"
+msgid "Add own or edit existing extracted path"
+msgstr "Aggiungi o edita un percorso estratto gia' esistente"
+
+msgctxt "#31329"
+msgid "Reset Widget"
+msgstr "Resetta Widget"
+
+msgctxt "#31330"
+msgid "Widget Label"
+msgstr "Etichetta Widget"
+
+msgctxt "#31331"
+msgid "Content Path"
+msgstr "Contenuto del Percorso"
+
+msgctxt "#31332"
+msgid "Widget Layout"
+msgstr "Schema del Widget"
+
+msgctxt "#31333"
+msgid "Content Type"
+msgstr "Tipo di Contenuto"
+
+msgctxt "#31334"
+msgid "Not required"
+msgstr "Non Richiesto"
+
+msgctxt "#31335"
+msgid "REC SCHEDULED"
+msgstr "REC Programmato"
+
+msgctxt "#31336"
+msgid "Enable REC Information at the Home Screen Clock"
+msgstr "Abilita informazioni REC all'orologio nella home"
+
+msgctxt "#31337"
+msgid "TV Show Disc Art"
+msgstr "Disc Art Serie TV"
+
+msgctxt "#31338"
+msgid "Movie Disc Art"
+msgstr "Disc Art Film"
+
+msgctxt "#31339"
+msgid "Back"
+msgstr "Indietro"
+
+msgctxt "#31340"
+msgid "Case Style"
 msgstr ""
 
-#: empty strings from id 31322 to 31349 PVR
+msgctxt "#31341"
+msgid "Retail Box"
+msgstr ""
+
+msgctxt "#31342"
+msgid "Artist Logo"
+msgstr ""
+
+#: empty strings from id 31335 to 31349 PVR
 msgctxt "#31350"
 msgid "Available Groups"
 msgstr "Gruppi Disponibili"
@@ -1362,11 +1467,11 @@ msgstr "Widget Personalizzato"
 
 msgctxt "#31381"
 msgid "Center"
-msgstr ""
+msgstr "Centro"
 
 msgctxt "#31382"
 msgid "Bottom"
-msgstr ""
+msgstr "Basso"
 
 #: empty strings from id 31383 to 31408 settings Category Description & Header
 #: Labels

@@ -3,6 +3,7 @@
 • Added: New additional shelf case style (can be set in the sideblade menu)
 • Improved: Shelf disc art animations (on/off/onnext/onprevious)
 • Fixed: Unwanted genre label in programs shelf view
+And what I forgot :P
 
 [B][COLOR=FF56ADDA]v4.2.9[/COLOR][/B]
 • Fixed: Item labels on season level (NetFilx view)
