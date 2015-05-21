@@ -5478,7 +5478,7 @@
 									<posx>84</posx>
 									<posy>40</posy>
 									<width>56</width>
-									<height>458</height>
+									<height>457.5</height>
 									<texture>views/shelf/shelf_case.png</texture>
 									<aspectratio>stretch</aspectratio>
 								</control>
@@ -5713,24 +5713,23 @@
 							<left>420</left>
 							<animation effect="fade" start="0" end="100" time="350" delay="70">Visible</animation>
 							<animation type="Conditional" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)] + !StringCompare(ListItem.Label,..)" reversible="true">
-								<!--<effect type="fade" start="0" end="100" time="200" delay="0" tween="sine" easing="out"/>-->
 								<effect type="slide" start="350,0" end="0,0" time="500" delay="0" tween="sine" easing="in"/>
 							</animation>
-							<animation type="WindowOpen">
-								<!--<effect type="fade" start="0" end="100" time="200" delay="1400" tween="sine" easing="out"/>-->
-								<effect type="slide" start="50,0" end="-150,0" time="980" delay="1150" tween="sine" easing="out"/>
+							<animation type="WindowOpen"><effect type="slide" start="50,0" end="-150,0" time="980" delay="1150" tween="sine" easing="out"/>
 							</animation>
 							<animation type="WindowClose">
-								<!--<effect type="fade" start="100" end="0" time="500" delay="300" tween="sine" easing="out"/>-->
 								<effect type="slide" start="-150,0" end="100,0" time="780" delay="0" tween="sine" easing="out"/>
-
 							</animation>
 							<!-- disc -->
 							<control type="group">
 								<visible>!StringCompare(ListItem.Label,..) + [[Container.Content(movies) + !Skin.HasSetting(ShelfMovieDiscArt)] | [[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(ShelfTVShowDiscArt)]]</visible>
 								<animation type="Visible">
-									<effect type="fade" start="100" end="100" time="200" delay="300" tween="sine" easing="out"/>
+									<effect type="slide" start="350,0" end="0,0" time="500" delay="0" tween="sine" easing="in"/>
 								</animation>
+								<animation type="Hidden">
+									<effect type="slide" start="0,0" end="350,0" time="500" delay="0" tween="sine" easing="in"/>
+								</animation>
+
 								<control type="image">
 									<top>260</top>
 									<width>206</width>
@@ -5744,6 +5743,24 @@
 									<height>206</height>
 									<aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="views/shelf/disc_diffuse.png" fallback="views/shelf/disc_fallback.png">$VAR[DiscArtTypeShelf]</texture>
+								</control>
+								<control type="image">
+									<top>260</top>
+									<width>206</width>
+									<height>206</height>
+									<aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
+									<texture background="true" diffuse="views/shelf/disc_diffuse.png" fallback="views/shelf/disc_fallback.png">$VAR[DiscArtTypeShelfPrevious]</texture>
+									<visible>Control.IsVisible(8013)</visible>
+									<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013)">Conditional</animation>
+								</control>
+								<control type="image">
+									<top>260</top>
+									<width>206</width>
+									<height>206</height>
+									<aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
+									<texture background="true" diffuse="views/shelf/disc_diffuse.png" fallback="views/shelf/disc_fallback.png">$VAR[DiscArtTypeShelfNext]</texture>
+									<visible>Control.IsVisible(8014)</visible>
+									<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014)">Conditional</animation>
 								</control>
 								<control type="group">
 									<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(ListItem.Art(thumb))</visible>
@@ -5768,6 +5785,34 @@
 										<animation effect="slide" time="0" start="0,0" end="0,20" condition="Container.Content(seasons)">Conditional</animation>
 										<visible>[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] | Container.Content(seasons)</visible>
 									</control>
+									<control type="textbox">
+										<left>43</left>
+										<top>410</top>
+										<width>120</width>
+										<height>40</height>
+										<align>center</align>
+										<aligny>top</aligny>
+										<font>font10_title</font>
+										<textcolor>white</textcolor>
+										<label>$VAR[DiscArtTvShowLabelPrevious]</label>	
+										<animation effect="slide" time="0" start="0,0" end="0,20" condition="Container.Content(seasons)">Conditional</animation>
+										<visible>Control.IsVisible(8013) + [IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] | Container.Content(seasons)</visible>
+										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013)">Conditional</animation>
+									</control>
+									<control type="textbox">
+										<left>43</left>
+										<top>410</top>
+										<width>120</width>
+										<height>40</height>
+										<align>center</align>
+										<aligny>top</aligny>
+										<font>font10_title</font>
+										<textcolor>white</textcolor>
+										<label>$VAR[DiscArtTvShowLabelNext]</label>	
+										<animation effect="slide" time="0" start="0,0" end="0,20" condition="Container.Content(seasons)">Conditional</animation>
+										<visible>Control.IsVisible(8014) + [IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] | Container.Content(seasons)</visible>
+										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014)">Conditional</animation>
+									</control>
 									<control type="image">
 										<left>43</left>
 										<top>400</top>
@@ -5777,7 +5822,31 @@
 										<aligny>top</aligny>
 										<aspectratio align="center" aligny="top">keep</aspectratio>
 										<texture background="true">$VAR[DiscArtTvShowLogo]</texture>
-										<visible>Container.Content(tvshows)</visible>
+										<visible>!Control.IsVisible(8013) + !Control.IsVisible(8014) + Container.Content(tvshows)</visible>
+									</control>
+									<control type="image">
+										<left>43</left>
+										<top>400</top>
+										<width>120</width>
+										<height>40</height>
+										<align>center</align>
+										<aligny>top</aligny>
+										<aspectratio align="center" aligny="top">keep</aspectratio>
+										<texture background="true">$VAR[DiscArtTvShowLogoPrevious]</texture>
+										<visible>Control.IsVisible(8013) + Container.Content(tvshows)</visible>
+										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013)">Conditional</animation>
+									</control>
+									<control type="image">
+										<left>43</left>
+										<top>400</top>
+										<width>120</width>
+										<height>40</height>
+										<align>center</align>
+										<aligny>top</aligny>
+										<aspectratio align="center" aligny="top">keep</aspectratio>
+										<texture background="true">$VAR[DiscArtTvShowLogoNext]</texture>
+										<visible>Control.IsVisible(8014) + Container.Content(tvshows)</visible>
+										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014)">Conditional</animation>
 									</control>
 									<control type="image">
 										<left>43</left>
@@ -5788,7 +5857,31 @@
 										<aligny>top</aligny>
 										<aspectratio align="center" aligny="top">keep</aspectratio>
 										<texture background="true">$VAR[DiscArtTvShowLogo]</texture>
-										<visible>Container.Content(seasons)</visible>
+										<visible>!Control.IsVisible(8013) + !Control.IsVisible(8014) + Container.Content(seasons)</visible>	
+									</control>
+									<control type="image">
+										<left>43</left>
+										<top>395</top>
+										<width>120</width>
+										<height>35</height>
+										<align>center</align>
+										<aligny>top</aligny>
+										<aspectratio align="center" aligny="top">keep</aspectratio>
+										<texture background="true">$VAR[DiscArtTvShowLogoPrevious]</texture>
+										<visible>Control.IsVisible(8013) + Container.Content(seasons)</visible>
+										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013)">Conditional</animation>
+									</control>
+									<control type="image">
+										<left>43</left>
+										<top>395</top>
+										<width>120</width>
+										<height>35</height>
+										<align>center</align>
+										<aligny>top</aligny>
+										<aspectratio align="center" aligny="top">keep</aspectratio>
+										<texture background="true">$VAR[DiscArtTvShowLogoNext]</texture>
+										<visible>Control.IsVisible(8014) + Container.Content(seasons)</visible>
+										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014)">Conditional</animation>
 									</control>
 								</control>
 							</control>
@@ -5796,7 +5889,10 @@
 							<control type="group">
 								<visible>!StringCompare(ListItem.Label,..) + [[Container.Content(movies) + !Skin.HasSetting(ShelfMovieDiscArt)] | [[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(ShelfTVShowDiscArt)]]</visible>
 								<animation type="Visible">
-									<effect type="fade" start="100" end="100" time="200" delay="300" tween="sine" easing="out"/>
+									<effect type="slide" start="350,0" end="0,0" time="500" delay="0" tween="sine" easing="in"/>
+								</animation>
+								<animation type="Hidden">
+									<effect type="slide" start="0,0" end="350,0" time="500" delay="0" tween="sine" easing="in"/>
 								</animation>
 								<control type="image">
 									<top>465</top>
@@ -5812,6 +5908,24 @@
 									<height>206</height>
 									<aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
 									<texture flipy="true" diffuse="views/shelf/shelf_disc_reflect_diffuse.png" background="true" fallback="views/shelf/disc_fallback.png">$VAR[DiscArtTypeShelf]</texture>
+								</control>
+								<control type="image">
+									<top>465</top>
+									<width>206</width>
+									<height>206</height>
+									<aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
+									<texture flipy="true" diffuse="views/shelf/shelf_disc_reflect_diffuse.png" background="true" fallback="views/shelf/disc_fallback.png">$VAR[DiscArtTypeShelfPrevious]</texture>
+									<visible>Control.IsVisible(8013)</visible>
+									<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013)">Conditional</animation>
+								</control>
+								<control type="image">
+									<top>465</top>
+									<width>206</width>
+									<height>206</height>
+									<aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
+									<texture flipy="true" diffuse="views/shelf/shelf_disc_reflect_diffuse.png" background="true" fallback="views/shelf/disc_fallback.png">$VAR[DiscArtTypeShelfNext]</texture>
+									<visible>Control.IsVisible(8014)</visible>
+									<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014)">Conditional</animation>
 								</control>
 								<control type="group">
 									<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(ListItem.Art(thumb))</visible>
@@ -5836,7 +5950,39 @@
 										<animation effect="rotatex" time="0" start="0" end="180" condition="true">Conditional</animation>
 										<animation effect="fade" time="0" start="10" end="10" condition="true">Conditional</animation>
 										<animation effect="slide" time="0" start="0,0" end="0,20" condition="Container.Content(seasons)">Conditional</animation>	
-										<visible>IsEmpty(ListItem.Art(clearlogo))</visible>
+										<visible>!Control.IsVisible(8013) + !Control.IsVisible(8014) + IsEmpty(ListItem.Art(clearlogo))</visible>
+									</control>
+									<control type="textbox">
+										<left>43</left>
+										<top>-520</top>
+										<width>120</width>
+										<height>40</height>
+										<align>center</align>
+										<aligny>top</aligny>
+										<font>font10_title</font>
+										<textcolor>white</textcolor>
+										<label>$VAR[DiscArtTvShowLabelPrevious]</label>	
+										<animation effect="rotatex" time="0" start="0" end="180" condition="true">Conditional</animation>
+										<animation effect="fade" time="0" start="10" end="10" condition="true">Conditional</animation>
+										<animation effect="slide" time="0" start="0,0" end="0,20" condition="Container.Content(seasons)">Conditional</animation>	
+										<visible>Control.IsVisible(8013) + IsEmpty(ListItem.Art(clearlogo))</visible>
+										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013)">Conditional</animation>
+									</control>
+									<control type="textbox">
+										<left>43</left>
+										<top>-520</top>
+										<width>120</width>
+										<height>40</height>
+										<align>center</align>
+										<aligny>top</aligny>
+										<font>font10_title</font>
+										<textcolor>white</textcolor>
+										<label>$VAR[DiscArtTvShowLabelNext]</label>	
+										<animation effect="rotatex" time="0" start="0" end="180" condition="true">Conditional</animation>
+										<animation effect="fade" time="0" start="10" end="10" condition="true">Conditional</animation>
+										<animation effect="slide" time="0" start="0,0" end="0,20" condition="Container.Content(seasons)">Conditional</animation>	
+										<visible>Control.IsVisible(8014) + IsEmpty(ListItem.Art(clearlogo))</visible>
+										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014)">Conditional</animation>
 									</control>
 									<control type="image">
 										<left>43</left>
@@ -5846,7 +5992,29 @@
 										<bordersize>10</bordersize>
 										<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>	
 										<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$VAR[DiscArtTvShowLogo]</texture>	
-										<visible>Container.Content(tvshows)</visible>
+										<visible>!Control.IsVisible(8013) + !Control.IsVisible(8014) + Container.Content(tvshows)</visible>
+									</control>
+									<control type="image">
+										<left>43</left>
+										<top>480</top>
+										<width>120</width>
+										<height>60</height>
+										<bordersize>10</bordersize>
+										<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>	
+										<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$VAR[DiscArtTvShowLogoPrevious]</texture>	
+										<visible>Control.IsVisible(8013) + Container.Content(tvshows)</visible>
+										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013)">Conditional</animation>
+									</control>
+									<control type="image">
+										<left>43</left>
+										<top>480</top>
+										<width>120</width>
+										<height>60</height>
+										<bordersize>10</bordersize>
+										<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>	
+										<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$VAR[DiscArtTvShowLogoNext]</texture>	
+										<visible>Control.IsVisible(8014) + Container.Content(tvshows)</visible>
+										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014)">Conditional</animation>
 									</control>
 									<control type="image">
 										<left>43</left>
@@ -5856,7 +6024,29 @@
 										<bordersize>10</bordersize>
 										<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>		
 										<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$VAR[DiscArtTvShowLogo]</texture>	
-										<visible>Container.Content(seasons)</visible>
+										<visible>!Control.IsVisible(8013) + !Control.IsVisible(8014) + Container.Content(seasons)</visible>
+									</control>
+									<control type="image">
+										<left>43</left>
+										<top>490</top>
+										<width>120</width>
+										<height>60</height>
+										<bordersize>10</bordersize>
+										<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>		
+										<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$VAR[DiscArtTvShowLogoPrevious]</texture>	
+										<visible>Control.IsVisible(8013) + Container.Content(tvshows)</visible>
+										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013)">Conditional</animation>
+									</control>
+									<control type="image">
+										<left>43</left>
+										<top>490</top>
+										<width>120</width>
+										<height>60</height>
+										<bordersize>10</bordersize>
+										<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>		
+										<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$VAR[DiscArtTvShowLogoNext]</texture>	
+										<visible>Control.IsVisible(8014) + Container.Content(tvshows)</visible>
+										<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014)">Conditional</animation>
 									</control>
 								</control>
 							</control>

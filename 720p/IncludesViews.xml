@@ -722,13 +722,43 @@
   <value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">views/shelf/disc_bluray.png</value>
   <value condition="!IntegerGreaterThan(ListItem.VideoResolution,719)">views/shelf/disc_dvd.png</value>
 </variable>
+<variable name="DiscArtTypeShelfPrevious">
+  <value condition="Container.Content(tvshows)">$INFO[ListItem(-1).Art(fanart)]</value>
+  <value condition="Container.Content(seasons)">$INFO[ListItem(-1).Art(fanart)]</value>
+  <value condition="!IsEmpty(ListItem(-1).Art(discart))">$INFO[ListItem(-1).Art(discart)]</value>
+  <value condition="IntegerGreaterThan(ListItem(-1).VideoResolution,719)">views/shelf/disc_bluray.png</value>
+  <value condition="!IntegerGreaterThan(ListItem(-1).VideoResolution,719)">views/shelf/disc_dvd.png</value>
+</variable>
+<variable name="DiscArtTypeShelfNext">
+  <value condition="Container.Content(tvshows)">$INFO[ListItem(1).Art(fanart)]</value>
+  <value condition="Container.Content(seasons)">$INFO[ListItem(1).Art(fanart)]</value>
+  <value condition="!IsEmpty(ListItem(1).Art(discart))">$INFO[ListItem(1).Art(discart)]</value>
+  <value condition="IntegerGreaterThan(ListItem(1).VideoResolution,719)">views/shelf/disc_bluray.png</value>
+  <value condition="!IntegerGreaterThan(ListItem(1).VideoResolution,719)">views/shelf/disc_dvd.png</value>
+</variable>
 <variable name="DiscArtTvShowLabel">
   <value condition="Container.Content(tvshows)">$INFO[ListItem.TVShowTitle]</value>
   <value condition="Container.Content(seasons)">$INFO[ListItem.Season,$LOCALIZE[20373] ]</value>
 </variable>
+<variable name="DiscArtTvShowLabelNext">
+  <value condition="Container.Content(tvshows)">$INFO[ListItem(1).TVShowTitle]</value>
+  <value condition="Container.Content(seasons)">$INFO[ListItem(1).Season,$LOCALIZE[20373] ]</value>
+</variable>
+<variable name="DiscArtTvShowLabelPrevious">
+  <value condition="Container.Content(tvshows)">$INFO[ListItem(-1).TVShowTitle]</value>
+  <value condition="Container.Content(seasons)">$INFO[ListItem(-1).Season,$LOCALIZE[20373] ]</value>
+</variable>
 <variable name="DiscArtTvShowLogo">
   <value condition="Container.Content(tvshows)">$INFO[ListItem.Art(clearlogo)]</value>
   <value condition="Container.Content(seasons)">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
+</variable>
+<variable name="DiscArtTvShowLogoNext">
+  <value condition="Container.Content(tvshows)">$INFO[ListItem(1).Art(clearlogo)]</value>
+  <value condition="Container.Content(seasons)">$INFO[ListItem(1).Art(tvshow.clearlogo)]</value>
+</variable>
+<variable name="DiscArtTvShowLogoPrevious">
+  <value condition="Container.Content(tvshows)">$INFO[ListItem(-1).Art(clearlogo)]</value>
+  <value condition="Container.Content(seasons)">$INFO[ListItem(-1).Art(tvshow.clearlogo)]</value>
 </variable>
 
 </includes>    

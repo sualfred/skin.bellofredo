@@ -1152,7 +1152,7 @@
 			<left>$PARAM[left]</left>
 			<posy>97</posy>
 			<width>37</width>
-			<height>306</height>
+			<height>305.5</height>
 			<texture>views/shelf/shelf_case.png</texture>
 			<aspectratio>stretch</aspectratio>
 			<animation effect="slide" end="149,2" time="0" condition="true">Conditional</animation>
