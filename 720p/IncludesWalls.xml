@@ -1150,7 +1150,7 @@
 		</control>
 		<control type="image">
 			<left>$PARAM[left]</left>
-			<posy>97</posy>
+			<posy>96.5</posy>
 			<width>37</width>
 			<height>305.5</height>
 			<texture>views/shelf/shelf_case.png</texture>
