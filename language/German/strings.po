@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-05-21 14:17+0000\n"
+"PO-Revision-Date: 2015-05-22 13:37+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -1401,8 +1401,24 @@ msgid "Retail Box"
 msgstr "Retail Box"
 
 msgctxt "#31342"
-msgid "Artist Logo"
-msgstr "Artist Logo"
+msgid "Artist Logo Location"
+msgstr "Interpreten Logo Speicherort"
+
+msgctxt "#31343"
+msgid "Logo is stored in the parent folder of the album - Example: MP3/Artist"
+msgstr "Logo ist im übergeordnetem Verzeichnis vom Album gespeichert - z.B. MP3/Interpret"
+
+msgctxt "#31344"
+msgid "Logo is stored in the folder of the album - Example: MP3/Artist/Album"
+msgstr "Logo ist im Verzeichnis vom Album gespeichert - z.B. MP3/Interpret/Album"
+
+msgctxt "#31345"
+msgid "Artist Folder"
+msgstr "Interpreten Ordner"
+
+msgctxt "#31346"
+msgid "Album Folder"
+msgstr "Album Ordner"
 
 #: empty strings from id 31335 to 31349 PVR
 msgctxt "#31350"

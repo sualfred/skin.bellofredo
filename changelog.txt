@@ -1,4 +1,9 @@
-﻿[B][COLOR=FF56ADDA]v4.3.0a[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.3.1[/COLOR][/B]
+• Improved: Recreated a lot of the Shelf default case textures to reduce the flickering, increase the sharpness, etc. Faking 3D isn't fun...
+• Added: New background option to use playlists as fanart source
+• Added: Setting to select where the artist logo.png is stored (Album or artist folder)
+
+[B][COLOR=FF56ADDA]v4.3.0a[/COLOR][/B]
 I can't tell you how much I hate it when I find damn bugs right after I have pushed an update...
 • Fixed: Broken TV show disc art label animation (Shelf)
 
