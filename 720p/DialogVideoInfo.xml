@@ -441,35 +441,7 @@
 							<label>$VAR[GlobalPlotDescription]</label>
 							<autoscroll time="3000" delay="5000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 							<visible>Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)</visible>
-						</control>					
-						<!--<control type="label">
-							<description>Rated</description>
-							<posx>0</posx>
-							<posy>410</posy>
-							<width>850</width>
-							<height>30</height>
-							<font>FontSize_22</font>
-							<label>$INFO[ListItem.MPAA,* ]</label>
-							<align>left</align>
-							<aligny>center</aligny>
-							<textcolor>white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<visible>Container.Content(Movies)</visible>
-						</control>
-						<control type="label">
-							<description>Rated</description>
-							<posx>0</posx>
-							<posy>410</posy>
-							<width>850</width>
-							<height>30</height>
-							<font>FontSize_22</font>
-							<label>$INFO[ListItem.MPAA,* $LOCALIZE[20074]: ]</label>
-							<align>left</align>
-							<aligny>center</aligny>
-							<textcolor>white</textcolor>
-							<shadowcolor>99000000</shadowcolor>
-							<visible>!Container.Content(Movies)</visible>
-						</control>-->
+						</control>		
 					</control>
 				</control>
 			</control>

@@ -5469,7 +5469,7 @@
 								<control type="image">
 									<posx>84</posx>
 									<posy>372</posy>
-									<width>56</width>
+									<width>53</width>
 									<height>459</height>
 									<texture>views/shelf/shelf_reflected_case_full.png</texture>
 									<aspectratio>stretch</aspectratio>
@@ -5477,7 +5477,7 @@
 								<control type="image">
 									<posx>84</posx>
 									<posy>40</posy>
-									<width>56</width>
+									<width>53</width>
 									<height>457.5</height>
 									<texture>views/shelf/shelf_case.png</texture>
 									<aspectratio>stretch</aspectratio>

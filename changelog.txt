@@ -1,9 +1,13 @@
-﻿[B][COLOR=FF56ADDA]v4.3.0[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.3.0a[/COLOR][/B]
+I can't tell you how much I hate it when I find damn bugs right after I have pushed an update...
+• Fixed: Broken TV show disc art label animation (Shelf)
+
+[B][COLOR=FF56ADDA]v4.3.0[/COLOR][/B]
 • Added: Artist logo in music visualisation OSD if available
 • Added: New additional shelf case style (can be set in the sideblade menu)
 • Improved: Shelf disc art animations (on/off/onnext/onprevious)
 • Fixed: Unwanted genre label in programs shelf view
-And what I forgot :P
+And what I've forgotten :P
 
 [B][COLOR=FF56ADDA]v4.2.9[/COLOR][/B]
 • Fixed: Item labels on season level (NetFilx view)
