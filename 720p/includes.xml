@@ -2354,7 +2354,8 @@
 </variable>
 
 <variable name="backgroundMainmenu">
-	<!--home menu-->
+	<!--home menu-->	
+	<value condition="StringCompare(Container(20).ListItem.Property(background),playlistBackground)">$INFO[Container(30).ListItem.Art(fanart)]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(background),DefaultAddon)">$INFO[Container(20).ListItem.Property(defaultID),special://home/addons/,/fanart.jpg]</value>
 	<value condition="!StringCompare(Container(20).ListItem.Property(background),DefaultAddon)">$INFO[Container(20).ListItem.Property(Background)]</value>
 </variable>

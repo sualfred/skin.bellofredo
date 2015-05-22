@@ -213,6 +213,8 @@
 	<background label="YouTube" condition="System.HasAddon(plugin.video.youtube)">special://skin/extras/backgrounds/defaults/yt.jpg</background>
 	<backgrounddefault defaultID="plugin.video.youtube">special://skin/extras/backgrounds/defaults/yt.jpg</backgrounddefault>
 
+	<background label="Fanarts of ::PLAYLIST::">playlistBackground</background>
+
 	<!-- =============== -->
 	<!-- Icons Overrides -->
 	<!-- =============== -->
