@@ -2365,6 +2365,12 @@
 	<value>$LOCALIZE[31298]</value>
 </variable>
 
+<variable name="ArtistLogoLabel">
+	<value condition="StringCompare(Skin.String(ArtistLogo),AlbumDir)">$LOCALIZE[31346]</value>
+	<value condition="StringCompare(Skin.String(ArtistLogo),disabled)">$LOCALIZE[13113]</value>	
+	<value>$LOCALIZE[31345]</value>
+</variable>
+
 <variable name="CustomDialogOKHeadLabel">
 	<value condition="Window.IsVisible(SkinSettings)">$LOCALIZE[31169]</value>
 	<value condition="Window.IsVisible(SubtitleSearch)">KODI $LOCALIZE[24012]</value>

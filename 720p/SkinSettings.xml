@@ -1074,12 +1074,18 @@
 							<selected>!Skin.HasSetting(HideHandwrittenDiscArt)</selected>
 							<onclick>Skin.ToggleSetting(HideHandwrittenDiscArt)</onclick>
 						</control>
-						<control type="radiobutton" id="8763">
+						<control type="button" id="8763">
 							<description>Artist Logo</description>
 							<label>$LOCALIZE[31342]</label>
-							<include>SettingsRadioButton</include>
-							<selected>!Skin.HasSetting(ArtistLogo)</selected>
-							<onclick>Skin.ToggleSetting(ArtistLogo)</onclick>
+							<label2>[COLOR=selected]$VAR[ArtistLogoLabel][/COLOR]</label2>
+							<include>SettingsButton</include>
+							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31343])</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.Reset(ArtistLogo))</onclick>
+							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31344])</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(ArtistLogo,AlbumDir))</onclick>
+							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[13113])</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(ArtistLogo,Disabled))</onclick>
+							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31342])</onclick>							
 						</control>
 					</control>
 					<control type="scrollbar" id="60">

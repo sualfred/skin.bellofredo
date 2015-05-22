@@ -1398,7 +1398,23 @@ msgid "Retail Box"
 msgstr ""
 
 msgctxt "#31342"
-msgid "Artist Logo"
+msgid "Artist Logo Location"
+msgstr ""
+
+msgctxt "#31343"
+msgid "Logo is stored in the parent folder of the album - Example: MP3/Artist"
+msgstr ""
+
+msgctxt "#31344"
+msgid "Logo is stored in the folder of the album - Example: MP3/Artist/Album"
+msgstr ""
+
+msgctxt "#31345"
+msgid "Artist Folder"
+msgstr ""
+
+msgctxt "#31346"
+msgid "Album Folder"
 msgstr ""
 
 #: empty strings from id 31335 to 31349 PVR

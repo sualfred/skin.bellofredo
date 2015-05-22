@@ -273,9 +273,27 @@
 				<effect type="slide" start="0,0" end="200,0" time="350" delay="0" tween="sine" easing="out" />
 				<effect type="fade" start="100" end="0" time="300" delay="0" tween="sine" easing="out" />
 			</animation>
+			<texture>$INFO[Player.Folderpath,,../logo.png]</texture>
+			<visible>IsEmpty(Skin.String(ArtistLogo)) + [Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(MusicOSD)]</visible>
+			<visible>IsEmpty(Skin.String(ArtistLogo)) + !Window.IsVisible(AddonSettings) + !Window.IsVisible(SelectDialog) + !Window.IsVisible(VisualisationPresetList) + !Window.IsVisible(1112) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites)</visible>
+		</control>
+		<control type="image">
+			<left>970</left>
+			<top>280r</top>
+			<width>255</width>
+			<height>100</height>
+			<aspectratio align="center" aligny="center">keep</aspectratio>
+			<animation type="Visible" reversible="false">
+				<effect type="slide" start="150,0" end="0,0" time="350" delay="0" tween="sine" easing="out" />
+				<effect type="fade" start="0" end="100" time="300" delay="0" tween="sine" easing="out" />
+			</animation>
+			<animation type="Hidden" reversible="false">
+				<effect type="slide" start="0,0" end="200,0" time="350" delay="0" tween="sine" easing="out" />
+				<effect type="fade" start="100" end="0" time="300" delay="0" tween="sine" easing="out" />
+			</animation>
 			<texture>$INFO[Player.Folderpath,,logo.png]</texture>
-			<visible>!Skin.HasSetting(ArtistLogo) + [Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(MusicOSD)]</visible>
-			<visible>!Skin.HasSetting(ArtistLogo) + !Window.IsVisible(AddonSettings) + !Window.IsVisible(SelectDialog) + !Window.IsVisible(VisualisationPresetList) + !Window.IsVisible(1112) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites)</visible>
+			<visible>StringCompare(Skin.String(ArtistLogo),AlbumDir) + [Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(MusicOSD)]</visible>
+			<visible>StringCompare(Skin.String(ArtistLogo),AlbumDir) + !Window.IsVisible(AddonSettings) + !Window.IsVisible(SelectDialog) + !Window.IsVisible(VisualisationPresetList) + !Window.IsVisible(1112) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites)</visible>
 		</control>
 		
 		<control type="group">
