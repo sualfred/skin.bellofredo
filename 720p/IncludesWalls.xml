@@ -1162,44 +1162,48 @@
 			<posy>367</posy>
 			<width>162</width>
 			<height>241</height>
-			<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">views/shelf/thumb_shelf_fallback.png</texture>
+			<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect_poster.png" background="true">views/shelf/thumb_shelf_fallback.png</texture>
 			<aspectratio>stretch</aspectratio>
 			<visible>$PARAM[visible]</visible>
 		</control>
 		<!-- default case -->
 		<control type="image">
 			<left>$PARAM[left]</left>
-			<posy>367</posy>
-			<width>162</width>
-			<height>241</height>
-			<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$INFO[ListItem($PARAM[icon]).Icon]</texture>
+			<animation effect="slide" time="0" start="0,0" end="3,0" condition="true">Conditional</animation>
+			<posy>370</posy>
+			<width>157</width>			
+			<height>237</height>
+			<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect_poster.png" background="true">$INFO[ListItem($PARAM[icon]).Icon]</texture>
 			<aspectratio>stretch</aspectratio>
 			<visible>[!Skin.HasSetting(ShelfRetailBox) | Container.Content(Addons)] + $PARAM[visible]</visible>
 		</control>
 		<control type="image">
 			<left>$PARAM[left]</left>
-			<posy>131</posy>
-			<width>162</width>
-			<height>241</height>
-			<texture diffuse="views/shelf/thumb_shelf_diffuse.png">views/shelf/thumb_shelf_fallback.png</texture>
+			<animation effect="slide" time="0" start="0,0" end="3,0" condition="true">Conditional</animation>
+			<posy>133</posy>
+			<width>157</width>			
+			<height>237</height>
+			<texture diffuse="views/shelf/thumb_shelf_diffuse_poster.png">views/shelf/thumb_shelf_fallback.png</texture>
 			<aspectratio>stretch</aspectratio>
 			<visible>[!Skin.HasSetting(ShelfRetailBox) | Container.Content(Addons)]</visible>
 		</control>
 		<control type="image">
-			<left>$PARAM[left]</left>
-			<posy>131</posy>
-			<width>162</width>
-			<height>241</height>
-			<texture diffuse="views/shelf/thumb_shelf_diffuse.png" background="true">$INFO[ListItem($PARAM[icon]).Icon]</texture>
+			<left>$PARAM[left]</left>			
+			<animation effect="slide" time="0" start="0,0" end="3,0" condition="true">Conditional</animation>
+			<posy>133</posy>
+			<width>157</width>
+			<height>237</height>
+			<texture diffuse="views/shelf/thumb_shelf_diffuse_poster.png" background="true">$INFO[ListItem($PARAM[icon]).Icon]</texture>
 			<aspectratio>stretch</aspectratio>
 			<visible>[!Skin.HasSetting(ShelfRetailBox) | Container.Content(Addons)]</visible>
 		</control>
 		<control type="image">
-			<left>$PARAM[left]</left>
+			<left>$PARAM[left]</left>	
+			<animation effect="slide" time="0" start="0,0" end="1,0" condition="true">Conditional</animation>		
 			<posy>131</posy>
-			<width>162</width>
+			<width>161</width>
 			<height>241</height>
-			<texture diffuse="views/shelf/thumb_shelf_diffuse.png">views/shelf/thumb_shelf_glas.png</texture>
+			<texture>views/shelf/thumb_shelf_glas.png</texture>
 			<aspectratio>stretch</aspectratio>
 			<visible>[!Skin.HasSetting(ShelfRetailBox) | Container.Content(Addons)]</visible>
 		</control>

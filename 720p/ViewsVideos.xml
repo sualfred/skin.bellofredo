@@ -5493,31 +5493,31 @@
 									<visible>!Skin.HasSetting(ShelfRetailBox)</visible>
 								</control>
 								<control type="image">
-									<posx>-148</posx>
-									<posy>441</posy>
-									<width>253</width>
-									<height>360</height>
-									<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$INFO[ListItem.Icon]</texture>
+									<posx>-144</posx>
+									<posy>444</posy>
+									<width>245</width>
+									<height>354</height>
+									<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect_poster.png" background="true">$INFO[ListItem.Icon]</texture>
 									<aspectratio>stretch</aspectratio>
 									<visible>!Skin.HasSetting(ShelfRetailBox)</visible>
 								</control>
 								<control type="image">
-									<posx>-148</posx>
-									<posy>441</posy>
-									<width>253</width>
-									<height>360</height>
-									<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$INFO[ListItem(1).Icon]</texture>
+									<posx>-144</posx>
+									<posy>444</posy>
+									<width>245</width>
+									<height>354</height>
+									<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect_poster.png" background="true">$INFO[ListItem(1).Icon]</texture>
 									<aspectratio>stretch</aspectratio>
 									<visible>Control.IsVisible(8014) + !IsEmpty(ListItem(1).Art(thumb))</visible>
 									<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014) + !IsEmpty(ListItem(1).Art(thumb))">Conditional</animation>
 									<visible>!Skin.HasSetting(ShelfRetailBox)</visible>
 								</control>
 								<control type="image">
-									<posx>-148</posx>
-									<posy>441</posy>
-									<width>253</width>
-									<height>360</height>
-									<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$INFO[ListItem(-1).Icon]</texture>
+									<posx>-144</posx>
+									<posy>444</posy>
+									<width>245</width>
+									<height>354</height>
+									<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect_poster.png" background="true">$INFO[ListItem(-1).Icon]</texture>
 									<aspectratio>stretch</aspectratio>
 									<visible>Control.IsVisible(8013) + !IsEmpty(ListItem(-1).Art(thumb))</visible>
 									<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013) + !IsEmpty(ListItem(-1).Art(thumb))">Conditional</animation>
@@ -5593,31 +5593,31 @@
 								</control>
 								<!-- default box -->
 								<control type="image">
-									<posx>-148</posx>
-									<posy>89</posy>
-									<width>253</width>
-									<height>359</height>-->
-									<texture diffuse="views/shelf/thumb_shelf_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+									<posx>-144</posx>
+									<posy>92</posy>
+									<width>245</width>
+									<height>354</height>
+									<texture diffuse="views/shelf/thumb_shelf_diffuse_poster.png" background="true">$INFO[ListItem.Icon]</texture>
 									<aspectratio scalediffuse="false">stretch</aspectratio>
 									<visible>!Skin.HasSetting(ShelfRetailBox)</visible>
 								</control>
 								<control type="image">
-									<posx>-148</posx>
-									<posy>89</posy>
-									<width>253</width>
-									<height>360</height>
-									<texture diffuse="views/shelf/thumb_shelf_diffuse.png" background="true">$INFO[ListItem(-1).Icon]</texture>
+									<posx>-144</posx>
+									<posy>92</posy>
+									<width>245</width>
+									<height>354</height>
+									<texture diffuse="views/shelf/thumb_shelf_diffuse_poster.png" background="true">$INFO[ListItem(-1).Icon]</texture>
 									<aspectratio scalediffuse="false">stretch</aspectratio>									
 									<visible>Control.IsVisible(8013) + !IsEmpty(ListItem(-1).Art(thumb))</visible>
 									<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8013) + !IsEmpty(ListItem(-1).Art(thumb))">Conditional</animation>
 									<visible>!Skin.HasSetting(ShelfRetailBox)</visible>
 								</control>
 								<control type="image">
-									<posx>-148</posx>
-									<posy>89</posy>
-									<width>253</width>
-									<height>360</height>
-									<texture diffuse="views/shelf/thumb_shelf_diffuse.png" background="true">$INFO[ListItem(1).Icon]</texture>
+									<posx>-144</posx>
+									<posy>92</posy>
+									<width>245</width>
+									<height>354</height>
+									<texture diffuse="views/shelf/thumb_shelf_diffuse_poster.png" background="true">$INFO[ListItem(1).Icon]</texture>
 									<aspectratio scalediffuse="false">stretch</aspectratio>
 									<visible>Control.IsVisible(8014) + !IsEmpty(ListItem(1).Art(thumb))</visible>
 									<animation effect="fade" start="100" end="0" time="200" delay="150" condition="Control.IsVisible(8014) + !IsEmpty(ListItem(1).Art(thumb))">Conditional</animation>
