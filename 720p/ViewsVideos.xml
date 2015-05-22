@@ -5584,11 +5584,11 @@
 								</control>
 								<!-- fallback filler-->
 								<control type="image">
-									<posx>-148</posx>
-									<posy>89</posy>
-									<width>253</width>
-									<height>360</height>
-									<texture diffuse="views/shelf/thumb_shelf_diffuse.png">views/shelf/thumb_shelf_fallback.png</texture>
+									<posx>-144</posx>
+									<posy>92</posy>
+									<width>245</width>
+									<height>354</height>
+									<texture diffuse="views/shelf/thumb_shelf_diffuse_poster.png">views/shelf/thumb_shelf_fallback.png</texture>
 									<aspectratio scalediffuse="false">stretch</aspectratio>
 								</control>
 								<!-- default box -->
