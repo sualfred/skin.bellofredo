@@ -15,11 +15,11 @@
 			<content>video</content>
 			<content>customvideonode</content>
 			<!-- Custom Shortcuts -->
-			<shortcut label="::LOCAL::31260" type="item" grouping="customvideonode" icon="DefaultInProgressMovies.png" condition="Library.HasContent(movies)">ActivateWindow(Videos,special://skin/extras/playlists/Movies_InProgress.xsp,return)</shortcut>
-			<shortcut label="::LOCAL::31263" type="item" grouping="customvideonode" icon="DefaultMovies.png" condition="Library.HasContent(movies)">ActivateWindow(Videos,special://skin/extras/playlists/Movies_Unwatched.xsp,return)</shortcut>
-			<shortcut label="::LOCAL::31264" type="item" grouping="customvideonode" icon="DefaultTVShows.png" condition="Library.HasContent(tvshows)">ActivateWindow(Videos,special://skin/extras/playlists/TVShows_Unwatched.xsp,return)</shortcut>
-			<shortcut label="::LOCAL::31265" type="item" grouping="customvideonode" icon="DefaultTVShows.png" condition="Library.HasContent(tvshows)">ActivateWindow(Videos,special://skin/extras/playlists/Episodes_Unwatched.xsp,return)</shortcut>
-			<shortcut label="::LOCAL::31001" type="::LOCAL::31002" grouping="customvideonode" icon="DefaultTVShows.png" condition="System.HasAddon(script.tv.show.next.aired) + Library.HasContent(TVShows)">RunAddon(script.tv.show.next.aired)</shortcut>
+			<shortcut label="::LOCAL::31260" type="item" grouping="customvideonode" icon="special://skin/extras/icons/movies.png" condition="Library.HasContent(movies)">ActivateWindow(Videos,special://skin/extras/playlists/Movies_InProgress.xsp,return)</shortcut>
+			<shortcut label="::LOCAL::31263" type="item" grouping="customvideonode" icon="special://skin/extras/icons/movies.png" condition="Library.HasContent(movies)">ActivateWindow(Videos,special://skin/extras/playlists/Movies_Unwatched.xsp,return)</shortcut>
+			<shortcut label="::LOCAL::31264" type="item" grouping="customvideonode" icon="special://skin/extras/icons/tvshows.png" condition="Library.HasContent(tvshows)">ActivateWindow(Videos,special://skin/extras/playlists/TVShows_Unwatched.xsp,return)</shortcut>
+			<shortcut label="::LOCAL::31265" type="item" grouping="customvideonode" icon="special://skin/extras/icons/tvshows.png" condition="Library.HasContent(tvshows)">ActivateWindow(Videos,special://skin/extras/playlists/Episodes_Unwatched.xsp,return)</shortcut>
+			<shortcut label="::LOCAL::31001" type="::LOCAL::31002" grouping="customvideonode" icon="special://skin/extras/icons/tvshows.png" condition="System.HasAddon(script.tv.show.next.aired) + Library.HasContent(TVShows)">RunAddon(script.tv.show.next.aired)</shortcut>
 			<!-- Video Addons -->
 			<node label="32010">
 				<content>addon-video</content>
@@ -40,9 +40,9 @@
 		<node label="32031">
 			<content>music</content>
 			<!-- Custom Shortcuts -->
-			<shortcut label="Virgin TV" type="::LOCAL::33002" grouping="musicvideo" icon="DefaultMusicVideos.png">PlayMedia("special://skin/extras/streams/VirginTV.strm")</shortcut>
-			<shortcut label="Radio105 TV" type="::LOCAL::33002" grouping="musicvideo" icon="DefaultMusicVideos.png">PlayMedia("special://skin/extras/streams/Radio105TV.strm")</shortcut>
-			<shortcut label="Radio Montecarlo TV" type="::LOCAL::33002" grouping="musicvideo" icon="DefaultMusicVideos.png">PlayMedia("special://skin/extras/streams/RadioMontecarloTV.strm")</shortcut>
+			<shortcut label="Virgin TV" type="::LOCAL::33002" grouping="musicvideo" icon="special://skin/extras/icons/musicvideos.png">PlayMedia("special://skin/extras/streams/VirginTV.strm")</shortcut>
+			<shortcut label="Radio105 TV" type="::LOCAL::33002" grouping="musicvideo" icon="special://skin/extras/icons/musicvideos.png">PlayMedia("special://skin/extras/streams/Radio105TV.strm")</shortcut>
+			<shortcut label="Radio Montecarlo TV" type="::LOCAL::33002" grouping="musicvideo" icon="special://skin/extras/icons/musicvideos.png">PlayMedia("special://skin/extras/streams/RadioMontecarloTV.strm")</shortcut>
 			<node label="32040">
 				<content>playlist-audio</content>
 			</node>
@@ -84,19 +84,19 @@
 		<!-- ======= -->
 		<node label="32007">
 			<node label="32009">
-				<shortcut label="10001" type="32021" icon="DefaultAddonProgram.png">ActivateWindow(Programs,Addons,return)</shortcut>
+				<shortcut label="10001" type="32021" icon="special://skin/extras/icons/programs.png">ActivateWindow(Programs,Addons,return)</shortcut>
 				<content>addon-program</content>
 			</node>
 			<node label="32010">
-				<shortcut label="1037" type="32014" icon="DefaultAddonVideo.png">ActivateWindow(Videos,Addons,return)</shortcut>
+				<shortcut label="1037" type="32014" icon="special://skin/extras/icons/videos.png">ActivateWindow(Videos,Addons,return)</shortcut>
 				<content>addon-video</content>
 			</node>
 			<node label="32011">
-				<shortcut label="1038" type="32019" icon="DefaultAddonMusic.png">ActivateWindow(MusicLibrary,Addons,return)</shortcut>
+				<shortcut label="1038" type="32019" icon="special://skin/extras/icons/music.png">ActivateWindow(MusicLibrary,Addons,return)</shortcut>
 				<content>addon-audio</content>
 			</node>
 			<node label="32012">
-				<shortcut label="1039" type="32020" icon="DefaultAddonPicture.png">ActivateWindow(Pictures,Addons,return)</shortcut>
+				<shortcut label="1039" type="32020" icon="special://skin/extras/icons/pictures.png">ActivateWindow(Pictures,Addons,return)</shortcut>
 				<content>addon-image</content>
 			</node>
 		</node>
@@ -218,7 +218,7 @@
 	<!-- =============== -->
 	<!-- Icons Overrides -->
 	<!-- =============== -->
-	<icon labelID="settings">special://skin/extras/icons/Settings.png</icon>
+	<!--<icon labelID="settings">special://skin/extras/icons/Settings.png</icon>
 	<icon labelID="7">special://skin/extras/icons/FileManager.png</icon>
 	<icon labelID="10007">special://skin/extras/icons/SystemInfo.png</icon>
 	<icon labelID="dvd">DefaultDVD.png</icon>
@@ -256,6 +256,63 @@
 	<icon labelID="24001">DefaultAddon.png</icon>
 	<icon labelID="14036">DefaultNetwork.png</icon>
 	<icon labelID="13000">special://skin/extras/icons/System.png</icon>
-	<icon labelID="20077">special://skin/extras/icons/Skin.png</icon>
-
+	<icon labelID="20077">special://skin/extras/icons/Skin.png</icon>-->
+	<icon labelID="plugin.video.youtube">special://skin/extras/icons/youtube.png</icon>
+	<icon labelID="plugin.video.amazon">special://skin/extras/icons/amazon.png</icon>
+	<icon labelID="plugin.video.prime_instant">special://skin/extras/icons/amazon.png</icon>
+	<icon labelID="weather">special://skin/extras/icons/weather.png</icon>
+	<icon labelID="plugin.audio.tuneinradio">special://skin/extras/icons/radio.png</icon>
+	<icon labelID="plugin.program.advanced.launcher">special://skin/extras/icons/games.png</icon>
+	<icon labelID="livetv">special://skin/extras/icons/livetv.png</icon>	
+	<icon labelID="radio">special://skin/extras/icons/radio.png</icon>	
+	<icon labelID="settings">special://skin/extras/icons/system.png</icon>	
+	<icon labelID="$INFO[Skin.String(TrailersAddon_Path)]">special://skin/extras/icons/trailer.png</icon>	
+	<!-- videos -->
+	<icon image="DefaultVideos.png">special://skin/extras/icons/videos.png</icon>	
+	<icon image="DefaultVideo.png">special://skin/extras/icons/videos.png</icon>	
+	<icon image="DefaultVideoPlaylists.png">special://skin/extras/icons/videos.png</icon>		
+	<icon image="DefaultGenre.png">special://skin/extras/icons/videos.png</icon>
+	<icon image="DefaultStudios.png">special://skin/extras/icons/videos.png</icon>
+	<icon image="DefaultYear.png">special://skin/extras/icons/videos.png</icon>
+	<!-- addons -->
+	<icon image="DefaultAddonVideo.png">special://skin/extras/icons/videos.png</icon>
+	<icon image="DefaultAddonMusic.png">special://skin/extras/icons/music.png</icon>
+	<icon image="DefaultAddonPicture.png">special://skin/extras/icons/pictures.png</icon>
+	<icon image="DefaultAddonProgram.png">special://skin/extras/icons/programs.png</icon>
+	<!-- radio -->
+	<icon image="DefaultAudio.png">special://skin/extras/icons/radio.png</icon>
+	<!-- music -->
+	<icon image="DefaultMusicAlbums.png">special://skin/extras/icons/music.png</icon>
+	<icon image="DefaultMusicGenre.png">special://skin/extras/icons/music.png</icon>
+	<icon image="DefaultMusicArtists.png">special://skin/extras/icons/music.png</icon>
+	<icon image="DefaultMusicAlbums.png">special://skin/extras/icons/music.png</icon>
+	<icon image="DefaultMusicSongs.png">special://skin/extras/icons/music.png</icon>
+	<icon image="DefaultMusicYears.png">special://skin/extras/icons/music.png</icon>
+	<icon image="DefaultMusicPlaylists.png">special://skin/extras/icons/music.png</icon>
+	<icon image="DefaultMusicTop100.png">special://skin/extras/icons/music.png</icon>
+	<icon image="DefaultMusicTop100Songs.png">special://skin/extras/icons/music.png</icon>
+	<icon image="DefaultMusicTop100Albums.png">special://skin/extras/icons/music.png</icon>
+	<icon image="DefaultMusicRecentlyAdded.png">special://skin/extras/icons/music.png</icon>
+	<icon image="DefaultMusicRecentlyPlayed.png">special://skin/extras/icons/music.png</icon>
+	<!-- music videos -->
+	<icon image="DefaultMusicVideos.png">special://skin/extras/icons/musicvideos.png</icon>
+	<icon image="DefaultMusicVideoTitle.png">special://skin/extras/icons/musicvideos.png</icon>
+	<icon image="DefaultRecentlyAddedMusicVideos.png">special://skin/extras/icons/musicvideos.png</icon>
+	<!-- movies -->
+	<icon image="DefaultMovies.png">special://skin/extras/icons/movies.png</icon>
+	<icon image="DefaultRecentlyAddedMovies.png">special://skin/extras/icons/movies.png</icon>
+	<icon image="DefaultMovieTitle.png">special://skin/extras/icons/movies.png</icon>
+	<icon image="DefaultSets.png">special://skin/extras/icons/movies.png</icon>
+	<!-- tvshows -->
+	<icon image="DefaultTVShows.png">special://skin/extras/icons/tvshows.png</icon>
+	<icon image="DefaultTVShowTitle.png">special://skin/extras/icons/tvshows.png</icon>
+	<icon image="DefaultRecentlyAddedEpisodes.png">special://skin/extras/icons/tvshows.png</icon>
+	<icon image="DefaultInProgressShows.png">special://skin/extras/icons/tvshows.png</icon>
+	<!-- pictures -->
+	<icon image="DefaultPicture.png">special://skin/extras/icons/pictures.png</icon>	
+	<icon image="DefaultProgram.png">special://skin/extras/icons/programs.png</icon>
+	<icon image="DefaultShortcut.png">special://skin/extras/icons/shortcut.png</icon>
+	<icon image="DefaultDVDFull.png">special://skin/extras/icons/dvd.png</icon>	
+	<icon image="DefaultFolder.png">special://skin/extras/icons/folder.png</icon>	
+	
 </overrides>

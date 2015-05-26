@@ -235,6 +235,13 @@
 							<label2>[COLOR=blue]$LOCALIZE[31109][/COLOR]</label2>
 							<onclick>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=mainmenu)</onclick>
 						</control>
+						<control type="radiobutton" id="8320">
+							<description>Disable PurpleBar</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31347]</label>
+							<onclick>Skin.ToggleSetting(SymbolMainMenu)</onclick>
+							<selected>Skin.HasSetting(SymbolMainMenu)</selected>
+						</control>
 						<control type="radiobutton" id="8302">
 							<description>Disable PurpleBar</description>
 							<include>SettingsRadioButton</include>

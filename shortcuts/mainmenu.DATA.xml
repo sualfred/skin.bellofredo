@@ -6,7 +6,7 @@
 		<label>$LOCALIZE[31002]</label>
 		<label2>32034</label2>
 		<defaultID>tvshows</defaultID>
-		<icon>DefaultTVShows.png</icon>
+		<icon>special://skin/extras/icons/tvshows.png</icon>
 		<thumb />
 		<action>ActivateWindow(Videos,TVShowTitles,return)</action>
 	</shortcut>
@@ -16,7 +16,7 @@
 		<label>$LOCALIZE[342]</label>
 		<label2>32034</label2>
 		<defaultID>movies</defaultID>
-		<icon>DefaultMovies.png</icon>
+		<icon>special://skin/extras/icons/movies.png</icon>
 		<thumb />
 		<action>ActivateWindow(Videos,MovieTitles,return)</action>
 	</shortcut>
@@ -26,7 +26,7 @@
 		<label>$LOCALIZE[10006]</label>
 		<label2>32034</label2>
 		<defaultID>videos</defaultID>
-		<icon>DefaultVideo.png</icon>
+		<icon>special://skin/extras/icons/videos.png</icon>
 		<thumb />
 		<action>ActivateWindow(videos,sources://video/,return)</action>
 	</shortcut>
@@ -46,8 +46,8 @@
 		<label>Amazon</label>
 		<label2>Video Add-On</label2>
 		<defaultID>plugin.video.amazon</defaultID>
-		<icon>DefaultShortcut.png</icon>
-		<thumb>special://home/addons/plugin.video.amazon/icon.png</thumb> 
+		<icon>special://skin/extras/icons/amazon.png</icon>
+		<thumb />
 		<action>ActivateWindow(10025,"plugin://plugin.video.amazon",return)</action>
 		<visible>System.HasAddon(plugin.video.amazon)</visible>	
 	</shortcut>
@@ -57,8 +57,8 @@
 		<label>YouTube</label>
 		<label2>Video Add-On</label2>
 		<defaultID>plugin.video.youtube</defaultID>
-		<icon>DefaultShortcut.png</icon>
-		<thumb>special://home/addons/plugin.video.youtube/icon.png</thumb> 
+		<icon>special://skin/extras/icons/youtube.png</icon>
+		<thumb />
 		<action>ActivateWindow(10025,"plugin://plugin.video.youtube",return)</action>
 		<visible>System.HasAddon(plugin.video.youtube)</visible>	
 	</shortcut>
@@ -68,7 +68,7 @@
 		<label>$LOCALIZE[31018]</label>
 		<label2>32034</label2>
 		<defaultID>trailers</defaultID>
-		<icon>DefaultShortcut.png</icon>
+		<icon>special://skin/extras/icons/trailer.png</icon>
 		<thumb />
 		<action>ActivateWindow(videos,plugin://$INFO[Skin.String(TrailersAddon_Path)])</action>
 	</shortcut>
@@ -78,7 +78,7 @@
 		<label>$LOCALIZE[10005]</label>
 		<label2>32034</label2>
 		<defaultID>music</defaultID>
-		<icon>DefaultMusicAlbums.png</icon>
+		<icon>special://skin/extras/icons/music.png</icon>
 		<thumb />
 		<action>ActivateWindow(Music)</action>
 	</shortcut>
@@ -88,8 +88,8 @@
 		<label>TuneIn Radio</label>
 		<label2>Music Add-On</label2>
 		<defaultID>plugin.audio.tuneinradio</defaultID>
-		<icon>DefaultShortcut.png</icon>
-		<thumb>special://home/addons/plugin.audio.tuneinradio/icon.png</thumb> 
+		<icon>special://skin/extras/icons/radio.png</icon>
+		<thumb />
 		<action>ActivateWindow(10501,"plugin://plugin.audio.tuneinradio",return)</action>
 		<visible>System.HasAddon(plugin.audio.tuneinradio)</visible>	
 	</shortcut>
@@ -99,8 +99,8 @@
 		<label>Games</label>
 		<defaultID>plugin.program.advanced.launcher</defaultID>
 		<label2>32034</label2>
-		<icon>DefaultShortcut.png</icon>
-		<thumb>special://home/addons/plugin.program.advanced.launcher/icon.png</thumb> 
+		<icon>special://skin/extras/icons/games.png</icon>
+		<thumb />
 		<action>ActivateWindow(10001,"plugin://plugin.program.advanced.launcher/?default",return)</action>
 		<visible>System.HasAddon(plugin.program.advanced.launcher)</visible>	
 	</shortcut>
@@ -110,7 +110,7 @@
 		<label>$LOCALIZE[24001]</label>
 		<label2>32034</label2>
 		<defaultID>addons</defaultID>
-		<icon>DefaultAddon.png</icon>
+		<icon>special://skin/extras/icons/addons.png</icon>
 		<thumb />
 		<action>ActivateWindow(Videos,Addons,return)</action>
 	</shortcut>
@@ -120,7 +120,7 @@
 		<label>$LOCALIZE[10002]</label>
 		<label2>32034</label2>
 		<defaultID>pictures</defaultID>
-		<icon>DefaultPicture.png</icon>
+		<icon>special://skin/extras/icons/pictures.png</icon>
 		<thumb />
 		<action>ActivateWindow(Pictures)</action>
 	</shortcut>
@@ -130,7 +130,7 @@
 		<label>$LOCALIZE[10001]</label>
 		<label2>32034</label2>
 		<defaultID>programs</defaultID>
-		<icon>DefaultProgram.png</icon>
+		<icon>special://skin/extras/icons/programs.png</icon>
 		<thumb />
 		<action>ActivateWindow(Programs,Addons,return)</action>
 	</shortcut>
@@ -140,7 +140,7 @@
 		<label>$LOCALIZE[12600]</label>
 		<label2>32034</label2>
 		<defaultID>weather</defaultID>
-		<icon>special://skin/extras/icons/Weather.png</icon>
+		<icon>special://skin/extras/icons/weather.png</icon>
 		<thumb />
 		<action>ActivateWindow(Weather)</action>
 	</shortcut>
@@ -150,7 +150,7 @@
 		<label>$LOCALIZE[10004]</label>
 		<label2>32034</label2>
 		<defaultID>settings</defaultID>
-		<icon>special://skin/extras/icons/Settings.png</icon>
+		<icon>special://skin/extras/icons/settings.png</icon>
 		<thumb />
 		<action>ActivateWindow(AppearanceSettings)</action>
 	</shortcut>

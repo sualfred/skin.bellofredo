@@ -5358,7 +5358,7 @@
 		<!-- default group -->
 		<control type="group">
 			<include>DialogZoomInOutAnimation</include>
-			<visible>Control.IsVisible(579)</visible>
+			<visible>Control.IsVisible(579)</visible>			
 			<control type="image">
 				<heigth>720</heigth>
 				<width>1400</width>
@@ -5374,6 +5374,7 @@
 				</animation>
 			</control>
 			<control type="group">
+
 				<!--itemlayout-->
 				<control type="group">
 					<left>0</left>

@@ -392,7 +392,20 @@
 								<aspectratio align="center" aligny="center">keep</aspectratio>
 								<texture background="true" fallback="DefaultAddon.png">$INFO[Listitem.Icon]</texture>
 								<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
-								<bordersize>6</bordersize>
+								<bordersize>6</bordersize>								
+								<visible>!SubString(ListItem.ActualIcon,extras/icons/)</visible>
+							</control>
+							<control type="image">
+								<left>1</left>
+								<top>1</top>
+								<width>65</width>
+								<height>65</height>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+								<texture background="true" fallback="DefaultAddon.png">$INFO[Listitem.Icon]</texture>
+								<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
+								<bordersize>17</bordersize>
+								<colordiffuse>blue</colordiffuse>								
+								<visible>SubString(ListItem.ActualIcon,extras/icons/)</visible>
 							</control>
 							<control type="label">
 								<left>70</left>
@@ -463,6 +476,19 @@
 								<texture background="true" fallback="DefaultAddon.png">$INFO[Listitem.Icon]</texture>
 								<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
 								<bordersize>6</bordersize>
+								<visible>!SubString(ListItem.ActualIcon,extras/icons/)</visible>
+							</control>
+							<control type="image">
+								<left>1</left>
+								<top>1</top>
+								<width>65</width>
+								<height>65</height>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+								<texture background="true" fallback="DefaultAddon.png">$INFO[Listitem.Icon]</texture>
+								<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
+								<bordersize>17</bordersize>
+								<colordiffuse>blue</colordiffuse>
+								<visible>SubString(ListItem.ActualIcon,extras/icons/)</visible>
 							</control>
 							<control type="label">
 								<left>70</left>

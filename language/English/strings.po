@@ -1417,6 +1417,10 @@ msgctxt "#31346"
 msgid "Album Folder"
 msgstr ""
 
+msgctxt "#31347"
+msgid "Use Symbols for the Menu Items"
+msgstr ""
+
 #: empty strings from id 31335 to 31349 PVR
 msgctxt "#31350"
 msgid "Available Groups"

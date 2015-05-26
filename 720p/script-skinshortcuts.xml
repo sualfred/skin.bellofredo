@@ -74,10 +74,10 @@
 				<visible>!Window.IsActive(contextmenu)</visible>
 				<itemlayout height="44" width="400">
 					<control type="image">
-						<left>-8</left>
-						<top>-6</top>
-						<width>60</width>
-						<height>56</height>
+						<left>7</left>
+						<top>5</top>
+						<width>30</width>
+						<height>30</height>
 						<colordiffuse>77white</colordiffuse>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture fallback="DefaultShortcut.png">$INFO[ListItem.ActualIcon]</texture>
@@ -114,10 +114,10 @@
 						<visible>!Control.HasFocus(211)</visible>
 					</control>
 					<control type="image">
-						<left>-8</left>
-						<top>-6</top>
-						<width>60</width>
-						<height>56</height>
+						<left>7</left>
+						<top>5</top>
+						<width>30</width>
+						<height>30</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture fallback="DefaultShortcut.png">$INFO[ListItem.ActualIcon]</texture>
 						<animation effect="fade" start="100" end="50" time="100" condition="!Control.HasFocus(211)">conditional</animation>
@@ -220,8 +220,6 @@
 				<height>352</height>
 				<onleft>211</onleft>
 				<onright>10001</onright>
-				<onup>30000</onup>
-				<ondown>30000</ondown>
 				<onback>RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;options=clonewidgets&amp;mainmenuID=20)</onback>
 				<itemgap>4</itemgap>
 				<control type="button" id="401">
@@ -254,6 +252,22 @@
 					<textoffsetx>10</textoffsetx>
 					<label>$ADDON[script.skinshortcuts 32025]</label>
 					<label2>[COLOR=selected]$INFO[Container(211).ListItem.Label][/COLOR]</label2>
+				</control>				
+				<control type="button" id="306">
+					<description>Thumbnail</description>
+					<width>400</width>
+					<height>40</height>
+					<font>FontSize_20</font>
+					<textcolor>77white</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<disabledcolor>33white</disabledcolor>
+					<shadowcolor>99000000</shadowcolor>
+					<texturefocus>buttons/focus.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<align>left</align>
+					<textoffsetx>10</textoffsetx>
+					<label>$ADDON[script.skinshortcuts 32026]</label>
+					<label2>[COLOR=selected]$INFO[Container(211).ListItem.Thumb][/COLOR]</label2>
 				</control>
 				<control type="button" id="307">
 					<description>Change Action</description>
@@ -303,23 +317,6 @@
 					<label>$ADDON[script.skinshortcuts 32044]</label>
 					<label2>[COLOR=selected]$INFO[Container(211).ListItem.Property(widgetName)][/COLOR]</label2>
 					<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
-				</control>
-				<control type="button" id="306">
-					<description>add widget</description>
-					<width>400</width>
-					<height>40</height>
-					<font>FontSize_20</font>
-					<textcolor>77white</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<disabledcolor>33white</disabledcolor>
-					<shadowcolor>99000000</shadowcolor>
-					<texturefocus>buttons/focus.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<align>left</align>
-					<textoffsetx>10</textoffsetx>
-					<label>$ADDON[script.skinshortcuts 32026]</label>
-					<label2>[COLOR=selected]$INFO[Container(211).ListItem.Property(widgetName)][/COLOR]</label2>
-					<visible>SubString(Window.Property(groupname),widgetgroup)</visible>
 				</control>
 				<control type="button" id="310">
 					<description>Select HomeBG</description>
