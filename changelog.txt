@@ -1,4 +1,9 @@
-﻿[B][COLOR=FF56ADDA]v4.3.1[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.3.2[/COLOR][/B]
+• Added: New 3D BluRay, BluRay, DVD, HDTV, TV Show, Season, Set, Movie retail box covers for the Shelf view
+• Added: NetFilx to Programs and Pictures
+• Added: Second main menu style with icons (WIP)
+
+[B][COLOR=FF56ADDA]v4.3.1[/COLOR][/B]
 • Improved: Recreated a lot of the Shelf default case textures to reduce the flickering, increase the sharpness, etc. Faking 3D isn't fun...
 • Added: New background option to use playlists as fanart source
 • Added: Setting to select where the artist logo.png is stored (Album or artist folder)
