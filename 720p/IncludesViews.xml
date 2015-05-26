@@ -50,6 +50,7 @@
     <include>GalleryView_Pictures</include> <!-- id = 52 -->
     <include>ThumbnailsView</include> <!-- id = 56 -->
     <include>ThumbnailsView_Pictures</include> <!-- id = 560 -->
+    <include>NetfilxView_Pictures</include> <!-- id = 59 -->
   </include>
 
   <include name="ProgramsViews">

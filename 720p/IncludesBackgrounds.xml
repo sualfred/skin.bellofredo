@@ -337,7 +337,6 @@
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
 			<visible>Control.IsVisible(59) + !Window.IsActive(movieinformation) + IsEmpty(Control.GetLabel(5900))</visible>
 			<include>BackgroundAnimation</include>
-			<!--<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>-->
 		</control>	
 		<control type="multiimage" id="5900">
 			<description>NetFilx Fanart extrafanart</description>
@@ -354,7 +353,6 @@
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
 			<visible>Control.IsVisible(59) + !Window.IsActive(movieinformation) + Skin.HasSetting(ViewsExtraFanart) + !SubString(Container.Folderpath,plugin://,left)</visible>
 			<include>BackgroundAnimation</include>
-			<!--<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>-->
 		</control>		
 		<control type="image">
 			<description>Pictures Fanart</description>
@@ -363,11 +361,25 @@
 			<texture background="true">$INFO[ListItem.FileNameAndPath]</texture>
 			<include>FanartFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
-			<visible>Window.IsVisible(Pictures) + Container.HasFiles</visible>
+			<visible>Window.IsVisible(Pictures) + Container.HasFiles + !Control.IsVisible(59)</visible>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
 			<include>BackgroundAnimation</include>
 			<!--<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>-->
 		</control>
+		<control type="image">
+			<description>Pictures Fanart NetFilx</description>
+			<left>360</left>
+			<top>0</top>
+			<width>920</width>
+			<height>530</height>
+			<aspectratio>scale</aspectratio>
+			<texture background="true" diffuse="views/netfilx/fanart_diffuse.png">$INFO[ListItem.FileNameAndPath]</texture>
+			<include>FanartFade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<visible>!Skin.HasSetting(HideBGFanart)</visible>
+			<visible>Window.IsVisible(Pictures) + Container.HasFiles + Control.IsVisible(59)</visible>
+			<include>BackgroundAnimation</include>
+		</control>	
 		<control type="image">
 			<description>TVGuide Fanart</description>
 			<include>FullscreenDimensions</include>
