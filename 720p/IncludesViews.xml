@@ -713,7 +713,37 @@
   <value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">views/wall/bluray.png</value>
   <value condition="!IntegerGreaterThan(ListItem.VideoResolution,719)">views/wall/dvd.png</value>
 </variable>
+<variable name="RetailCaseTypeItemLayout">
+  <value condition="Container.Content(movies)">views/shelf/thumb_shelf_box_overlay_movie.png</value>
+  <value condition="Container.Content(tvshows)">views/shelf/thumb_shelf_box_overlay_tvshow.png</value>
+  <value condition="Container.Content(seasons)">views/shelf/thumb_shelf_box_overlay_season.png</value>
+  <value condition="Container.Content(sets)">views/shelf/thumb_shelf_box_overlay_set.png</value>
+</variable>
+<variable name="RetailCaseTypePrevious">
+  <value condition="SubString(ListItem(-1).FileNameAndPath,hdtv)">views/shelf/thumb_shelf_box_overlay_hdtv.png</value>
+  <value condition="ListItem(-1).IsStereoscopic">views/shelf/thumb_shelf_box_overlay_3D.png</value>
+  <value condition="IntegerGreaterThan(ListItem(-1).VideoResolution,719)">views/shelf/thumb_shelf_box_overlay_bluray.png</value>
+  <value condition="!IntegerGreaterThan(ListItem(-1).VideoResolution,719) + !IsEmpty(ListItem(-1).VideoResolution)">views/shelf/thumb_shelf_box_overlay_dvd.png</value>
+  <value condition="Container.Content(movies)">views/shelf/thumb_shelf_box_overlay_movie.png</value>
+  <value condition="Container.Content(tvshows)">views/shelf/thumb_shelf_box_overlay_tvshow.png</value>
+  <value condition="Container.Content(seasons)">views/shelf/thumb_shelf_box_overlay_season.png</value>
+  <value condition="Container.Content(sets)">views/shelf/thumb_shelf_box_overlay_set.png</value>
+</variable>
+<variable name="RetailCaseTypeNext">
+  <value condition="SubString(ListItem(1).FileNameAndPath,hdtv)">views/shelf/thumb_shelf_box_overlay_hdtv.png</value>
+  <value condition="ListItem(1).IsStereoscopic">views/shelf/thumb_shelf_box_overlay_3D.png</value>
+  <value condition="IntegerGreaterThan(ListItem(1).VideoResolution,719)">views/shelf/thumb_shelf_box_overlay_bluray.png</value>
+  <value condition="!IntegerGreaterThan(ListItem(1).VideoResolution,719) + !IsEmpty(ListItem(1).VideoResolution)">views/shelf/thumb_shelf_box_overlay_dvd.png</value>
+  <value condition="Container.Content(movies)">views/shelf/thumb_shelf_box_overlay_movie.png</value>
+  <value condition="Container.Content(tvshows)">views/shelf/thumb_shelf_box_overlay_tvshow.png</value>
+  <value condition="Container.Content(seasons)">views/shelf/thumb_shelf_box_overlay_season.png</value>
+  <value condition="Container.Content(sets)">views/shelf/thumb_shelf_box_overlay_set.png</value>
+</variable>
 <variable name="RetailCaseType">
+  <value condition="SubString(ListItem.FileNameAndPath,hdtv)">views/shelf/thumb_shelf_box_overlay_hdtv.png</value>
+  <value condition="ListItem.IsStereoscopic">views/shelf/thumb_shelf_box_overlay_3D.png</value>
+  <value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">views/shelf/thumb_shelf_box_overlay_bluray.png</value>
+  <value condition="!IntegerGreaterThan(ListItem.VideoResolution,719) + !IsEmpty(ListItem.VideoResolution)">views/shelf/thumb_shelf_box_overlay_dvd.png</value>
   <value condition="Container.Content(movies)">views/shelf/thumb_shelf_box_overlay_movie.png</value>
   <value condition="Container.Content(tvshows)">views/shelf/thumb_shelf_box_overlay_tvshow.png</value>
   <value condition="Container.Content(seasons)">views/shelf/thumb_shelf_box_overlay_season.png</value>

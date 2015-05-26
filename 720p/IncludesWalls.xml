@@ -1238,6 +1238,15 @@
 		</control>
 		<control type="image">
 			<left>$PARAM[left]</left>
+			<posy>367</posy>
+			<width>162</width>
+			<height>241</height>
+			<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">views/shelf/thumb_shelf_box_overlay_dvd.png</texture>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons)] + !IntegerGreaterThan(ListItem($PARAM[icon]).VideoResolution,719)</visible>
+		</control>
+		<control type="image">
+			<left>$PARAM[left]</left>
 			<posy>131</posy>
 			<width>162</width>
 			<height>241</height>
@@ -1270,9 +1279,45 @@
 			<posy>131</posy>
 			<width>162</width>
 			<height>241</height>
-			<texture background="true">$VAR[RetailCaseType]</texture>
+			<texture background="true">$VAR[RetailCaseTypeItemLayout]</texture>
 			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons)]</visible>
+			<visible>Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + IsEmpty(ListItem($PARAM[icon]).VideoResolution) + !SubString(ListItem($PARAM[icon]).FileNameAndPath,hdtv)</visible>
+		</control>
+		<control type="image">
+			<left>$PARAM[left]</left>
+			<posy>131</posy>
+			<width>162</width>
+			<height>241</height>
+			<texture background="true">views/shelf/thumb_shelf_box_overlay_3D.png</texture>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<visible>Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + ListItem($PARAM[icon]).IsStereoscopic + !SubString(ListItem($PARAM[icon]).FileNameAndPath,hdtv)</visible>
+		</control>	
+		<control type="image">
+			<left>$PARAM[left]</left>
+			<posy>131</posy>
+			<width>162</width>
+			<height>241</height>
+			<texture background="true">views/shelf/thumb_shelf_box_overlay_bluray.png</texture>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<visible>Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !IsEmpty(ListItem($PARAM[icon]).VideoResolution) + IntegerGreaterThan(ListItem($PARAM[icon]).VideoResolution,719) + !ListItem($PARAM[icon]).IsStereoscopic + !SubString(ListItem($PARAM[icon]).FileNameAndPath,hdtv)</visible>
+		</control>	
+		<control type="image">
+			<left>$PARAM[left]</left>
+			<posy>131</posy>
+			<width>162</width>
+			<height>241</height>
+			<texture background="true">views/shelf/thumb_shelf_box_overlay_dvd.png</texture>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<visible>Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !IsEmpty(ListItem($PARAM[icon]).VideoResolution) + !IntegerGreaterThan(ListItem($PARAM[icon]).VideoResolution,719) + !ListItem($PARAM[icon]).IsStereoscopic + !SubString(ListItem($PARAM[icon]).FileNameAndPath,hdtv)</visible>
+		</control>		
+		<control type="image">
+			<left>$PARAM[left]</left>
+			<posy>131</posy>
+			<width>162</width>
+			<height>241</height>
+			<texture background="true">views/shelf/thumb_shelf_box_overlay_hdtv.png</texture>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<visible>Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + SubString(ListItem($PARAM[icon]).FileNameAndPath,hdtv) + !IntegerGreaterThan(ListItem($PARAM[icon]).VideoResolution,719) + !ListItem($PARAM[icon]).IsStereoscopic</visible>
 		</control>	
 	</include>
 	<!-- OnNext -->
