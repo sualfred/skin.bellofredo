@@ -1230,5 +1230,181 @@
 			</control>
 		</control>
 	</include>
+
+
+	<!--===========================-->
+	<!--==== Netflix View "59" ====-->
+	<!--===========================-->
+	<include name="NetfilxView_Programs">
+		<control type="group">
+			<visible>Control.IsVisible(59)</visible>
+			<include>DialogZoomInOutAnimation</include>
+			<include>CommonSlideAnimations</include>
+			<!--label subinfo logo-->
+			<control type="group">
+				<left>25</left>
+				<top>310</top>
+				<visible>Control.IsVisible(59)</visible>
+				<animation type="Conditional" reversible="false" condition="![Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)]">
+					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+				</animation>
+				<animation type="Conditional" reversible="false" condition="Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)">
+					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+				</animation>
+				<control type="label">
+					<left>20</left>
+					<top>-10</top>
+					<height>50</height>
+					<width>1000</width>
+					<textcolor>white</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<font>FontSize_36B</font>
+					<scroll>false</scroll>
+					<align>left</align>
+					<label>$VAR[ListItem.Label]</label>
+					<visible>!stringcompare(ListItem.Label,..)</visible>
+				</control>
+				<!--Sublabel Info-->
+				<control type="grouplist">
+					<left>20</left>
+					<top>38</top>
+					<width>850</width>
+					<height>30</height>
+					<itemgap>10</itemgap>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width min="0" max="850">auto</width>
+						<height>22</height>
+						<textcolor>99white</textcolor>
+						<shadowcolor>77000000</shadowcolor>
+						<font>FontSize_22</font>
+						<scroll>false</scroll>
+						<align>left</align>
+						<aligny>center</aligny><label fallback="195">$VAR[GlobalInfo]</label>
+						<visible>!stringcompare(ListItem.Label,..)</visible>
+					</control>
+				</control>
+			</control>
+			<!--content container-->
+			<control type="fixedlist" id="59">
+				<left>47</left>
+				<top>420</top>
+				<width>2495</width>
+				<height>800</height>
+				<onleft>59</onleft>
+				<onright>59</onright>
+				<onup>9000</onup>
+				<ondown>60</ondown>
+				<viewtype label="Netflix">List</viewtype>
+				<scrolltime tween="Quadratic" easing="out">300</scrolltime>
+				<orientation>horizontal</orientation>
+				<preloaditems>2</preloaditems>
+				<focusposition>0</focusposition>
+				<pagecontrol>60</pagecontrol>
+				<itemlayout width="299.5" height="256">
+					<control type="image">
+						<left>-2</left>
+						<top>30</top>
+						<width>291</width>
+						<height>165</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="30">views/other/panel.png</texture>
+					</control>
+					<control type="image">
+						<left>-2</left>
+						<top>194</top>
+						<width>291</width>
+						<height>165</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="30" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png">views/other/panel2.png</texture>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>32</top>
+						<width>287</width>
+						<height>161</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
+						<bordertexture border="15">thumbs/thumb_border.png</bordertexture>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>197</top>
+						<width>287</width>
+						<height>161</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
+						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
+						<bordersize>6</bordersize>
+					</control>
+				</itemlayout>
+				<focusedlayout width="299.5" height="256">
+					<control type="image">
+						<left>-2</left>
+						<top>30</top>
+						<width>291</width>
+						<height>165</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="30">views/other/panel.png</texture>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>32</top>
+						<width>287</width>
+						<height>161</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
+						<bordertexture border="15">thumbs/thumb_border.png</bordertexture>
+						<bordersize>8</bordersize>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>196</top>
+						<width>287</width>
+						<height>161</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
+						<bordersize>8</bordersize>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="image">
+				<left>45</left>
+				<top>450</top>
+				<width>291</width>
+				<height>165</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture border="15">views/other/focus_blue.png</texture>
+			</control>
+			<control type="image">
+				<left>45</left>
+				<top>614</top>
+				<width>291</width>
+				<height>165</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture border="15" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png">views/other/focus_blue.png</texture>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>45</left>
+				<top>702</top>
+				<width>1188</width>
+				<height>8</height>
+				<texturesliderbackground>-</texturesliderbackground>
+				<texturesliderbar border="14,0,14,0">views/scrollbar/scrollbar_horizontal.png</texturesliderbar>
+				<texturesliderbarfocus border="14,0,14,0">views/scrollbar/scrollbar_horizontal.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<onup>59</onup>
+				<ondown>59</ondown>
+				<showonepage>false</showonepage>
+				<orientation>horizontal</orientation>
+				<animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+				<visible>Control.IsVisible(59)</visible>
+			</control>
+		</control>
+	</include>
 	
 </includes>

@@ -60,6 +60,7 @@
     <include>ThumbListView_Programs</include> <!-- id = 582 -->
     <include>ClassicSlideView_Programs</include> <!-- id = 583 -->
     <include>ViewShelf_Programs</include> <!-- id = 579 -->
+    <include>NetfilxView_Programs</include> <!-- id = 59 -->
   </include>
 
   <include name="AddonsViews">
@@ -605,8 +606,10 @@
 </variable>
 
 <variable name="NetFlixLandscapeThumb">
-  <value condition="StringCompare(ListItem.Label,..)">thumbs/DefaultFolderBack.png/folderback_fanart_tp.png</value>
-  <value condition="Container.Content(TVShows) + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>    
+  <value condition="StringCompare(ListItem.Label,..)">thumbs/DefaultFolderBack.png/folderback_fanart_tp.png</value>  
+  <value condition="!Skin.HasSetting(NetFilxAddonViewThumb) + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+  <value condition="!Skin.HasSetting(NetFilxAddonViewThumb) + IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(fanart)]</value>
+  <value condition="Skin.HasSetting(NetFilxAddonViewThumb) + IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(fanart)]</value>   
   <value condition="Container.Content(TVShows) + !IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>    
   <value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>        
   <value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>         

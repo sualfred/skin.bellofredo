@@ -831,66 +831,6 @@
 			<visible>Control.IsVisible(59)</visible>
 			<include>DialogZoomInOutAnimation</include>
 			<include>CommonSlideAnimations</include>
-			<control type="group" id="5902">
-				<left>47</left>
-				<top>215</top>
-				<visible>[!Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.HasFocus(5901)] | Skin.HasSetting(NetfilxAlwaysShowPlot)</visible>
-				<animation type="Conditional" reversible="false" condition="![Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)]">
-					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
-				</animation>
-				<animation type="Conditional" reversible="false" condition="Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)">
-					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-				</animation>
-				<animation type="Visible" reversible="true">
-					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
-					<effect type="slide" start="0,55" end="0,0" time="350" tween="cubic" easing="out" />
-				</animation>
-				<animation type="Hidden" reversible="true">
-					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
-					<effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="inout" />
-				</animation>
-				<control type="button" id="5901">
-					<description>Get Plot</description>
-					<visible>false</visible>
-				</control>
-				<control type="textbox">
-					<top>35</top>
-					<width>500</width>
-					<height>155</height>
-					<font>FontSize_22</font>
-					<textcolor>99white</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<align>left</align>
-					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-					<label>$VAR[GlobalPlotDescription]</label>
-					<visible>Container.Content(Movies) + !Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
-				</control>
-				<control type="textbox">
-					<top>35</top>
-					<width>500</width>
-					<height>155</height>
-					<font>FontSize_22</font>
-					<textcolor>99white</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<align>left</align>
-					<label>$VAR[GlobalPlotDescription]</label>
-					<autoscroll delay="8000" time="2000" repeat="8000">[Substring(ListItem.Path,videodb://movies/sets/,left) + IntegerGreaterThan(Window(home).Property(Set.Movies.Count),1)]</autoscroll>
-					<visible>Container.Content(Sets) | Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
-				</control>
-				<control type="textbox">
-					<top>35</top>
-					<width>500</width>
-					<height>180</height>
-					<font>FontSize_22</font>
-					<textcolor>99white</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<align>left</align>
-					<label>$VAR[GlobalPlotDescription]</label>
-					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-					<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
-				</control>
-			</control>
-			<!--label subinfo logo-->
 			<control type="group">
 				<left>25</left>
 				<top>310</top>
@@ -933,6 +873,7 @@
 						<scroll>false</scroll>
 						<align>left</align>
 						<aligny>center</aligny><label fallback="195">$VAR[GlobalInfo]</label>
+						<visible>!stringcompare(ListItem.Label,..)</visible>
 					</control>
 				</control>
 			</control>
@@ -981,16 +922,6 @@
 					</control>
 					<control type="image">
 						<left>0</left>
-						<top>32</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
-						<bordersize>40</bordersize>
-					</control>
-					<control type="image">
-						<left>0</left>
 						<top>197</top>
 						<width>287</width>
 						<height>161</height>
@@ -998,51 +929,6 @@
 						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
 						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
 						<bordersize>6</bordersize>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>197</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" >$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
-						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
-						<bordersize>40</bordersize>
-						<animation type="Conditional" reversible="false" condition="true">
-							<effect type="fade" start="100" end="30" time="0" tween="sine" easing="out" />
-						</animation>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>32</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
-						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
-						<bordersize>6</bordersize>
-					</control>
-					<control type="image">
-						<left>213</left>
-						<top>157</top>
-						<width>61</width>
-						<height>24</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture border="1">views/other/episode_number.png</texture>
-						<visible>[Container.Content(Seasons) | Container.Content(Episodes) | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)] + !stringcompare(ListItem.Label,..)</visible>
-					</control>
-					<control type="label">
-						<left>213</left>
-						<top>147</top>
-						<width>61</width>
-						<height>43</height>
-						<font>FontSize_16B</font>
-						<textcolor>white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>$VAR[ThumbnailsOnThumbLabel]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="299.5" height="256">
@@ -1066,67 +952,12 @@
 					</control>
 					<control type="image">
 						<left>0</left>
-						<top>32</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
-						<bordersize>40</bordersize>
-					</control>
-					<control type="image">
-						<left>0</left>
 						<top>196</top>
 						<width>287</width>
 						<height>161</height>
 						<aspectratio align="center" aligny="center">scale</aspectratio>
 						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
 						<bordersize>8</bordersize>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>197</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" >$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
-						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
-						<bordersize>40</bordersize>
-						<animation type="Conditional" reversible="false" condition="true">
-							<effect type="fade" start="100" end="30" time="0" tween="sine" easing="out" />
-						</animation>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>32</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
-						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
-						<bordersize>8</bordersize>
-					</control>
-					<control type="image">
-						<left>213</left>
-						<top>157</top>
-						<width>61</width>
-						<height>24</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture border="1">views/other/episode_number.png</texture>
-						<visible>[Container.Content(Seasons) | Container.Content(Episodes) | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)] + !stringcompare(ListItem.Label,..)</visible>
-					</control>
-					<control type="label">
-						<left>213</left>
-						<top>147</top>
-						<width>61</width>
-						<height>43</height>
-						<font>FontSize_16B</font>
-						<textcolor>white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>$VAR[ThumbnailsOnThumbLabel]</label>
 					</control>
 				</focusedlayout>
 			</control>
