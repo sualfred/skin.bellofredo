@@ -187,7 +187,7 @@
 							<animation effect="fade" end="35" condition="true" time="0">Conditional</animation>
 						</control>
 					</itemlayout>
-					<focusedlayout width="455" conditon="StringCompare(Skin.String(MainMenuStyle),3icons)">
+					<focusedlayout width="455" condition="StringCompare(Skin.String(MainMenuStyle),3icons)">
 						<control type="image">
 							<left>188</left>
 							<top>140</top>
@@ -278,7 +278,7 @@
 						</control>
 					</focusedlayout>
 					<!-- 5 icon menu style -->
-					<itemlayout width="300" condition="StringCompare(Skin.String(MainMenuStyle),5icons)">
+					<itemlayout width="300" conditiion="StringCompare(Skin.String(MainMenuStyle),5icons)">
 						<control type="image">
 							<left>192</left>
 							<top>170</top>
@@ -291,7 +291,7 @@
 							<animation effect="fade" end="35" condition="true" time="0">Conditional</animation>
 						</control>
 					</itemlayout>
-					<focusedlayout width="350" conditon="StringCompare(Skin.String(MainMenuStyle),5icons)">
+					<focusedlayout width="350" condition="StringCompare(Skin.String(MainMenuStyle),5icons)">
 						<control type="image">
 							<left>188</left>
 							<top>140</top>
