@@ -187,7 +187,7 @@
 							<animation effect="fade" end="35" condition="true" time="0">Conditional</animation>
 						</control>
 					</itemlayout>
-					<focusedlayout width="400" conditon="StringCompare(Skin.String(MainMenuStyle),3icons)">
+					<focusedlayout width="455" conditon="StringCompare(Skin.String(MainMenuStyle),3icons)">
 						<control type="image">
 							<left>188</left>
 							<top>140</top>

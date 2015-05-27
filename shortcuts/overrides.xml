@@ -218,45 +218,8 @@
 	<!-- =============== -->
 	<!-- Icons Overrides -->
 	<!-- =============== -->
-	<!--<icon labelID="settings">special://skin/extras/icons/Settings.png</icon>
-	<icon labelID="7">special://skin/extras/icons/FileManager.png</icon>
-	<icon labelID="10007">special://skin/extras/icons/SystemInfo.png</icon>
-	<icon labelID="dvd">DefaultDVD.png</icon>
-	<icon labelID="32033">DefaultDVD.png</icon>
-	<icon labelID="13200">DefaultActor.png</icon>
-	<icon labelID="1036">special://skin/extras/icons/Favourites.png</icon>
-	<icon labelID="weather">special://skin/extras/icons/Weather.png</icon>
-	<icon labelID="32046">special://skin/extras/icons/UpdateVideoLibrary.png</icon>
-	<icon labelID="32047">special://skin/extras/icons/UpdateMusicLibrary.png</icon>
-	<icon labelID="32055">special://skin/extras/icons/CleanVideoLibrary.png</icon>
-	<icon labelID="32056">special://skin/extras/icons/CleanMusicLibrary.png</icon>
-	<icon labelID="livetv">DefaultLiveTV.png</icon>
-	<icon labelID="19023">DefaultLiveTV.png</icon>
-	<icon labelID="19024">DefaultLiveTV.png</icon>
-	<icon labelID="19183">DefaultLiveTV.png</icon>
-	<icon labelID="19069">DefaultLiveTV.png</icon>
-	<icon labelID="19163">DefaultLiveTV.png</icon>
-	<icon labelID="32023">DefaultLiveTV.png</icon>
-	<icon labelID="32066">DefaultLiveTV.png</icon>
-	<icon labelID="32067">DefaultLiveTV.png</icon>
-	<icon labelID="32068">DefaultLiveTV.png</icon>
-	<icon labelID="32076">DefaultLiveTV.png</icon>
-	<icon labelID="32077">DefaultLiveTV.png</icon>
-	<icon labelID="744">DefaultFile.png</icon>
-	<icon labelID="1037">DefaultAddon.png</icon>
-	<icon labelID="1038">DefaultAddon.png</icon>
-	<icon labelID="1039">DefaultAddon.png</icon>
-	<icon labelID="32023">DefaultAddon.png</icon>
-	<icon labelID="480">special://skin/extras/icons/Appearance.png</icon>
-	<icon labelID="3">DefaultVideo.png</icon>
-	<icon labelID="19020">DefaultLiveTV.png</icon>
-	<icon labelID="2">DefaultAudio.png</icon>
-	<icon labelID="1">DefaultPicture.png</icon>
-	<icon labelID="8">special://skin/extras/icons/Weather.png</icon>
-	<icon labelID="24001">DefaultAddon.png</icon>
-	<icon labelID="14036">DefaultNetwork.png</icon>
-	<icon labelID="13000">special://skin/extras/icons/System.png</icon>
-	<icon labelID="20077">special://skin/extras/icons/Skin.png</icon>-->
+	<!--<thumbnailBrowse default="special://skin/extras/icons/">True</thumbnailBrowse>-->
+
 	<icon labelID="plugin.video.youtube">special://skin/extras/icons/youtube.png</icon>
 	<icon labelID="plugin.video.amazon">special://skin/extras/icons/amazon.png</icon>
 	<icon labelID="plugin.video.prime_instant">special://skin/extras/icons/amazon.png</icon>
