@@ -6362,8 +6362,8 @@
 				<width>1900</width>
 				<onleft>579</onleft>
 				<onright>579</onright>
-				<!--<onup>9000</onup>-->
-				<onup>SetFocus(5791)</onup>
+				<onup condition="IsEmpty(ListItem.Plot)">9000</onup>
+				<onup condition="!IsEmpty(ListItem.Plot)">SetFocus(5791)</onup>
 				<ondown>60</ondown>
 				<orientation>horizontal</orientation>
 				<preloaditems>2</preloaditems>
