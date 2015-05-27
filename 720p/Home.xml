@@ -19,7 +19,7 @@
 		<control type="group">
 			<visible>!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4)</visible>
 			<control type="group">				
-				<animation effect="slide" time="0" start="0,0" end="0,100" condition="Skin.HasSetting(MoveMenuPosition) + !Skin.HasSetting(SymbolMainMenu)">Conditional</animation>
+				<animation effect="slide" time="0" start="0,0" end="0,100" condition="StringCompare(Skin.String(MainMenuStyle),textbottom)">Conditional</animation>
 				<include>HomeMenuWraplist</include>
 				<include>HomeSubMenus</include>
 			</control>
@@ -29,7 +29,7 @@
 			<include>HomeWeatherAndClock</include>
 			<include>PVRRecordingInfo</include>
 			<control type="group">				
-				<animation effect="slide" time="0" start="0,0" end="0,100" condition="Skin.HasSetting(MoveMenuPosition) + !Skin.HasSetting(SymbolMainMenu)">Conditional</animation>
+				<animation effect="slide" time="0" start="0,0" end="0,100" condition="StringCompare(Skin.String(MainMenuStyle),textbottom)">Conditional</animation>
 				<animation type="Conditional" condition="Window.IsVisible(contextmenu)" reversible="false">
 					<effect type="slide" end="0,-25" time="350" tween="cubic" easing="out" />			
 				</animation>

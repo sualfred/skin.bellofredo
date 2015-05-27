@@ -57,7 +57,8 @@
 					<include>WidgetMainMenuSlideAnimations</include>
 					<description>Home Container</description>
 					<left>-10</left>
-					<animation effect="slide" start="0,0" end="-225.5,0" time="0" condition="Skin.HasSetting(SymbolMainMenu)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-225.5,0" time="0" condition="StringCompare(Skin.String(MainMenuStyle),5icons)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-26,0" time="0" condition="StringCompare(Skin.String(MainMenuStyle),3icons)">Conditional</animation>
 					<top>110</top>
 					<width>1600</width>
 					<height>720</height>
@@ -82,14 +83,14 @@
 					<onright>20</onright>
 					<itemgap>0</itemgap>
 					<orientation>horizontal</orientation>
-					<include condition="Skin.HasSetting(SymbolMainMenu)" name="MainMenuFocusPosition">
+					<include condition="StringCompare(Skin.String(MainMenuStyle),5icons)" name="MainMenuFocusPosition">
 						<param name="position">2</param>						
 					</include>
-					<include condition="!Skin.HasSetting(SymbolMainMenu)" name="MainMenuFocusPosition" >
+					<include condition="!StringCompare(Skin.String(MainMenuStyle),5icons)" name="MainMenuFocusPosition" >
 						<param name="position">1</param>						
 					</include>	
 					<scrolltime tween="Quadratic" easing="out">300</scrolltime>
-					<itemlayout width="400" condition="!Skin.HasSetting(SymbolMainMenu)">
+					<itemlayout width="400" condition="!StringCompare(Skin.String(MainMenuStyle),3icons) + !StringCompare(Skin.String(MainMenuStyle),5icons)">
 						<control type="label">
 							<left>0</left>
 							<top>200</top>
@@ -101,7 +102,7 @@
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout width="500" condition="!Skin.HasSetting(SymbolMainMenu)">													
+					<focusedlayout width="500" condition="!StringCompare(Skin.String(MainMenuStyle),3icons) + !StringCompare(Skin.String(MainMenuStyle),5icons)">													
 						<control type="label">
 							<left>-15</left>
 							<top>200</top>
@@ -172,8 +173,8 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<!-- icon menu style -->
-					<itemlayout width="300" condition="Skin.HasSetting(SymbolMainMenu)">
+					<!-- 3 icon menu style -->
+					<itemlayout width="400" condition="StringCompare(Skin.String(MainMenuStyle),3icons)">
 						<control type="image">
 							<left>192</left>
 							<top>170</top>
@@ -186,7 +187,111 @@
 							<animation effect="fade" end="35" condition="true" time="0">Conditional</animation>
 						</control>
 					</itemlayout>
-					<focusedlayout width="350" conditon="Skin.HasSetting(SymbolMainMenu)">
+					<focusedlayout width="400" conditon="StringCompare(Skin.String(MainMenuStyle),3icons)">
+						<control type="image">
+							<left>188</left>
+							<top>140</top>
+							<width>175</width>
+							<height>175</height>
+							<align>center</align>
+							<aligny>bottom</aligny>
+							<texture diffuse="icons/icon_diffuse_big.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio align="center" aligny="bottom">keep</aspectratio>
+							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
+								<effect type="zoom" start="66" end="100" time="200" tween="sine" easing="out" center="auto" />
+								<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
+							</animation>
+						</control>
+						<control type="label">							
+							<visible>Control.HasFocus(20)</visible>
+							<include>FocusVisibleFadeEffect</include>
+							<left>10</left>
+							<top>325</top>
+							<width>530</width>
+							<textcolor>ddwhite</textcolor>
+							<shadowcolor>55000000</shadowcolor>
+							<font>FontSize_24B</font>
+							<align>center</align>
+							<label>$INFO[ListItem.Label]</label>
+							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
+								<effect type="zoom" start="66" end="100" time="200" tween="sine" easing="out" center="250,285" />
+								<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
+							</animation>
+						</control>		
+						<control type="fadelabel">
+							<visible>Control.HasFocus(20) + !Skin.HasSetting(HideLibraryStats) + !IsEmpty(Control.GetLabel(17))</visible>
+							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
+								<effect type="zoom" start="66" end="100" time="200" tween="sine" easing="out" center="250,285" />
+								<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
+							</animation>
+							<include>FocusVisibleFadeEffect</include>
+							<left>10</left>
+							<top>355</top>		
+							<width>530</width>
+							<height>18</height>
+							<textcolor>77white</textcolor>
+							<shadowcolor>55000000</shadowcolor>
+							<font>FontSize_16</font>
+							<align>center</align>			
+							<label>$INFO[Control.GetLabel(17)]</label>						
+							<label>$INFO[Control.GetLabel(18)]</label>						
+							<label>$INFO[Control.GetLabel(19)]</label>
+							<scroll>false</scroll>
+							<scrollout>false</scrollout>
+							<scrollspeed>100</scrollspeed>
+							<pauseatend>4000</pauseatend>						
+						</control>
+						<control type="grouplist">
+							<animation effect="slide" time="0" start="0,0" end="0,24" condition="Control.IsVisible(16) + !IsEmpty(Control.GetLabel(17))">Conditional</animation>
+							<visible>Control.HasFocus(20) + !Container(20).OnNext + !Container(20).OnPrevious</visible>
+							<itemgap>0</itemgap>
+							<orientation>horizontal</orientation>
+							<width>530</width>
+							<height>21</height>
+							<left>10</left>	
+							<top>360</top>							
+							<align>center</align>
+							<animation effect="fade" time="250" delay="50">Visible</animation>
+							<animation effect="fade" time="0">Hidden</animation>
+							<control type="image" id="201">									
+								<width>21</width>
+								<height>18</height>
+								<texture background="true">buttons/arrow.png</texture>
+								<colordiffuse>CCFFFFFF</colordiffuse>
+								<visible>IntegerGreaterThan(Container(23).NumItems,0)</visible>
+								<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
+									<effect type="fade" start="0" end="100" delay="900" time="900"  />
+									<effect type="slide" start="0,-2" end="0,4" tween="sine" easing="inout" delay="900" time="900" />
+								</animation>
+							</control>
+							<control type="image" id="202">
+								<width>21</width>
+								<height>18</height>
+								<texture background="true">buttons/arrow_top.png</texture>
+								<colordiffuse>CCFFFFFF</colordiffuse>
+								<visible>!IsEmpty(Container(20).ListItem.Property(widget))</visible>
+								<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
+									<effect type="fade" start="0" end="100" delay="900" time="900"  />
+									<effect type="slide" start="0,2" end="0,-4" tween="sine" easing="inout" delay="900" time="900" />
+								</animation>
+							</control>
+						</control>
+					</focusedlayout>
+					<!-- 5 icon menu style -->
+					<itemlayout width="300" condition="StringCompare(Skin.String(MainMenuStyle),5icons)">
+						<control type="image">
+							<left>192</left>
+							<top>170</top>
+							<width>115</width>
+							<height>115</height>
+							<align>center</align>
+							<aligny>bottom</aligny>
+							<texture diffuse="icons/icon_diffuse_big.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio align="center" aligny="bottom">keep</aspectratio>
+							<animation effect="fade" end="35" condition="true" time="0">Conditional</animation>
+						</control>
+					</itemlayout>
+					<focusedlayout width="350" conditon="StringCompare(Skin.String(MainMenuStyle),5icons)">
 						<control type="image">
 							<left>188</left>
 							<top>140</top>
@@ -538,12 +643,14 @@
 					<include>TopButton</include>
 					<onclick>SetFocus(20)</onclick>
 					<onclick>ActivateWindow(favourites)</onclick>
+					<visible>!Skin.HasSetting(DisableFavouritesButton)</visible>
 				</control>
 				<control type="button" id="211">
 					<description>Search</description>
 					<include>TopButton</include>
 					<onclick>SetFocus(20)</onclick>
 					<onclick>RunScript(script.globalsearch)</onclick>
+					<visible>!Skin.HasSetting(DisableSearchButton)</visible>
 				</control>
 				<control type="button" id="212">
 					<description>Refresh Library</description>
@@ -557,17 +664,18 @@
 					<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31062])</onclick>
 					<onclick>SetProperty(Dialog.4.BuiltIn,CleanLibrary(music)||SetFocus(20))</onclick>
 					<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[799])</onclick>
-					<visible>!Skin.HasSetting(DisableLibraryRefreshButton)</visible>
 					<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31093])</onclick>
 					<onclick>SetProperty(Dialog.5.BuiltIn,RunScript(script.imdbupdate,movies|top250,hidden)||SetFocus(20))</onclick>
 					<onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31190])</onclick>
 					<onclick>SetProperty(Dialog.6.BuiltIn,RunScript(script.imdbupdate,mpaa,hidden)||SetFocus(20))</onclick>	
+					<visible>!Skin.HasSetting(DisableLibraryRefreshButton)</visible>
 				</control>
 				<control type="button" id="214">
 					<description>Power</description>
 					<include>TopButton</include>
 					<onclick>SetFocus(20)</onclick>
 					<onclick>ActivateWindow(shutdownmenu)</onclick>
+					<visible>!Skin.HasSetting(DisablePowerButton)</visible>
 				</control>
 			</control>
 			<control type="image">
@@ -599,12 +707,14 @@
 					<label>$LOCALIZE[1036]</label>
 					<animation effect="fade" start="100" end="70" time="100" tween="sine" easing="in" condition="!Control.HasFocus(210)" reversible="true">Conditional</animation>
 					<animation effect="zoom"  start="100" end="95" time="100" tween="sine" easing="in" center="auto" condition="!Control.HasFocus(210)" reversible="true">Conditional</animation>
+					<visible>!Skin.HasSetting(DisableFavouritesButton)</visible>
 				</control>
 				<control type="label">
 					<include>TopSmallLabel</include>
 					<label>$LOCALIZE[137]</label>
 					<animation effect="fade" start="100" end="70" time="100" tween="sine" easing="in" condition="!Control.HasFocus(211)" reversible="true">Conditional</animation>
 					<animation effect="zoom"  start="100" end="95" time="100" tween="sine" easing="in" center="auto" condition="!Control.HasFocus(211)" reversible="true">Conditional</animation>
+					<visible>!Skin.HasSetting(DisableSearchButton)</visible>
 				</control>
 				<control type="label">
 					<include>TopSmallLabel</include>
@@ -618,6 +728,7 @@
 					<label>$LOCALIZE[33060]</label>
 					<animation effect="fade" start="100" end="70" time="100" tween="sine" easing="in" condition="!Control.HasFocus(214)" reversible="true">Conditional</animation>
 					<animation effect="zoom"  start="100" end="95" time="100" tween="sine" easing="in" center="auto" condition="!Control.HasFocus(214)" reversible="true">Conditional</animation>
+					<visible>!Skin.HasSetting(DisablePowerButton)</visible>
 				</control>
 			</control>
 			<control type="group">

@@ -1868,13 +1868,15 @@
 	<value condition="StringCompare(Skin.String(WatchedFlag),watched)">watched</value>
 </variable>
 
-<variable name="MenuPositionLabel">
+<!--<variable name="MenuPositionLabel">
 	<value condition="Skin.HasSetting(MoveMenuPosition)">$LOCALIZE[31382]</value>
 	<value>$LOCALIZE[31381]</value>
-</variable>
+</variable>-->
 <variable name="MenuStyleLabel">
-	<value condition="Skin.HasSetting(SymbolMainMenu)">$LOCALIZE[536]</value>
-	<value>$LOCALIZE[571]</value>
+	<value condition="StringCompare(Skin.String(MainMenuStyle),5icons)">$LOCALIZE[31348]</value>
+	<value condition="StringCompare(Skin.String(MainMenuStyle),3icons)">$LOCALIZE[31349]</value>
+	<value condition="StringCompare(Skin.String(MainMenuStyle),textbottom)">$LOCALIZE[31382]</value>	
+	<value>$LOCALIZE[31354]</value>
 </variable>
 
 <variable name="MenuGroupHeader">

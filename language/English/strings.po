@@ -277,7 +277,7 @@ msgid ""
 msgstr ""
 
 msgctxt "#31064"
-msgid "Enable Library Refresh Button on the Home Screen"
+msgid "Enable Library Refresh Button"
 msgstr ""
 
 msgctxt "#31065"
@@ -437,7 +437,7 @@ msgid "Hide Now Playing Music Info"
 msgstr ""
 
 msgctxt "#31104"
-msgid "Hide Now Playing Cover on Home"
+msgid "Enable Now Playing Cover on Home"
 msgstr ""
 
 msgctxt "#31105"
@@ -797,7 +797,7 @@ msgid "Update Settings"
 msgstr ""
 
 msgctxt "#31192"
-msgid "Hide Widget Item Counter"
+msgid "Enable Widget Item Counter"
 msgstr ""
 
 msgctxt "#31193"
@@ -1421,6 +1421,14 @@ msgctxt "#31347"
 msgid "Main Menu Layout"
 msgstr ""
 
+msgctxt "#31348"
+msgid "5 Icons"
+msgstr ""
+
+msgctxt "#31349"
+msgid "3 Icons"
+msgstr ""
+
 #: empty strings from id 31335 to 31349 PVR
 msgctxt "#31350"
 msgid "Available Groups"
@@ -1436,6 +1444,30 @@ msgstr ""
 
 msgctxt "#31353"
 msgid "Delete Group"
+msgstr ""
+
+msgctxt "#31354"
+msgid "Centered Labels (Default)"
+msgstr ""
+
+msgctxt "#31355"
+msgid "Main Menu"
+msgstr ""
+
+msgctxt "#31356"
+msgid "Top Menu"
+msgstr ""
+
+msgctxt "#31357"
+msgid "Enable Favourites Button"
+msgstr ""
+
+msgctxt "#31358"
+msgid "Enable Search Button"
+msgstr ""
+
+msgctxt "#31359"
+msgid "Enable Power Button"
 msgstr ""
 
 #: empty strings from id 31354 to 31369 Quick Navigation labels
@@ -1488,7 +1520,7 @@ msgid "Center"
 msgstr ""
 
 msgctxt "#31382"
-msgid "Bottom"
+msgid "Bottom Labels"
 msgstr ""
 
 #: empty strings from id 31383 to 31408 settings Category Description & Header
