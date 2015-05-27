@@ -235,12 +235,29 @@
 							<label2>[COLOR=blue]$LOCALIZE[31109][/COLOR]</label2>
 							<onclick>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=mainmenu)</onclick>
 						</control>
-						<control type="radiobutton" id="8320">
+						<!--<control type="radiobutton" id="8320">
 							<description>Disable PurpleBar</description>
 							<include>SettingsRadioButton</include>
 							<label>- $LOCALIZE[31347]</label>
 							<onclick>Skin.ToggleSetting(SymbolMainMenu)</onclick>
 							<selected>Skin.HasSetting(SymbolMainMenu)</selected>
+						</control>-->
+						<control type="button" id="8320">
+							<description>style of the menu</description>
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31347]</label>
+							<label2>[COLOR=selected]$VAR[MenuStyleLabel][/COLOR]</label2>
+							<onclick>Skin.ToggleSetting(SymbolMainMenu)</onclick>
+							<selected>Skin.HasSetting(SymbolMainMenu)</selected>
+						</control>
+						<control type="button" id="8305">
+							<description>menu position</description>
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31279]</label>
+							<label2>[COLOR=selected]$VAR[MenuPositionLabel][/COLOR]</label2>
+							<onclick>Skin.ToggleSetting(MoveMenuPosition)</onclick>
+							<selected>Skin.HasSetting(MoveMenuPosition)</selected>
+							<enable>!Skin.HasSetting(SymbolMainMenu)</enable>
 						</control>
 						<control type="radiobutton" id="8302">
 							<description>Disable PurpleBar</description>
@@ -262,14 +279,6 @@
 							<label>- $LOCALIZE[31192]</label>
 							<onclick>Skin.ToggleSetting(HideWidgetCounter)</onclick>
 							<selected>Skin.HasSetting(HideWidgetCounter)</selected>
-						</control>
-						<control type="button" id="8305">
-							<description>menu position</description>
-							<include>SettingsButton</include>
-							<label>- $LOCALIZE[31279]</label>
-							<label2>[COLOR=selected]$VAR[MenuPositionLabel][/COLOR]</label2>
-							<onclick>Skin.ToggleSetting(MoveMenuPosition)</onclick>
-							<selected>Skin.HasSetting(MoveMenuPosition)</selected>
 						</control>
 						<control type="button" id="8306">
 							<disabledcolor>55white</disabledcolor>

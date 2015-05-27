@@ -1868,6 +1868,10 @@
 	<value condition="Skin.HasSetting(MoveMenuPosition)">$LOCALIZE[31382]</value>
 	<value>$LOCALIZE[31381]</value>
 </variable>
+<variable name="MenuStyleLabel">
+	<value condition="Skin.HasSetting(SymbolMainMenu)">$LOCALIZE[536]</value>
+	<value>$LOCALIZE[571]</value>
+</variable>
 
 <variable name="MenuGroupHeader">
 	<value condition="!StringCompare(Window.Property(groupname),mainmenu) + !IsEmpty(Window.Property(groupDisplayName))">$LOCALIZE[31050] $INFO[Window.Property(groupDisplayName),","]</value>			

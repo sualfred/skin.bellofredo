@@ -267,6 +267,11 @@
 	<icon labelID="radio">special://skin/extras/icons/radio.png</icon>	
 	<icon labelID="settings">special://skin/extras/icons/system.png</icon>	
 	<icon labelID="$INFO[Skin.String(TrailersAddon_Path)]">special://skin/extras/icons/trailer.png</icon>	
+	<icon labelID="32046">special://skin/extras/icons/update.png</icon>	
+	<icon labelID="32047">special://skin/extras/icons/update.png</icon>	
+	<icon labelID="744">special://skin/extras/icons/file.png</icon>	
+	<icon labelID="136">special://skin/extras/icons/playlist.png</icon>	
+	<icon labelID="136">special://skin/extras/icons/playlist.png</icon>	
 	<!-- videos -->
 	<icon image="DefaultVideos.png">special://skin/extras/icons/videos.png</icon>	
 	<icon image="DefaultVideo.png">special://skin/extras/icons/videos.png</icon>	

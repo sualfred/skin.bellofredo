@@ -1418,7 +1418,7 @@ msgid "Album Folder"
 msgstr ""
 
 msgctxt "#31347"
-msgid "Use Symbols for the Menu Items"
+msgid "Main Menu Layout"
 msgstr ""
 
 #: empty strings from id 31335 to 31349 PVR
