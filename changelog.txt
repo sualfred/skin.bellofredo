@@ -1,4 +1,11 @@
-﻿[B][COLOR=FF56ADDA]v4.3.2[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.3.3[/COLOR][/B]
+• Reworked: Main menu part in the skin settings
+• Added: Option for 4 different main menu styles (centered labels, bottom labels, 3 icons, 5 icons)
+• Added: Option to disable single top menu items
+• Added: New and more icons for the icon main menu style
+• Added: Plot in Shelf view
+
+[B][COLOR=FF56ADDA]v4.3.2[/COLOR][/B]
 • Added: New 3D BluRay, BluRay, DVD, HDTV, TV Show, Season, Set, Movie retail box covers for the Shelf view
 • Added: NetFilx to Programs and Pictures
 • Added: Second main menu style with icons (WIP)
