@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-05-27 12:42+0000\n"
+"PO-Revision-Date: 2015-05-28 09:38+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -1472,6 +1472,22 @@ msgstr "Zeige Suche Button"
 msgctxt "#31359"
 msgid "Enable Power Button"
 msgstr "Zeige Ausschalten Button"
+
+msgctxt "#31360"
+msgid "Labels"
+msgstr "Labels"
+
+msgctxt "#31361"
+msgid "Home Top Menu Style"
+msgstr "Startseite Top-Menü Stil"
+
+msgctxt "#31362"
+msgid "Enable Icon Menu Labels"
+msgstr "Zeige Labels unter den Icons"
+
+msgctxt "#31363"
+msgid "Next"
+msgstr "Nächste"
 
 #: empty strings from id 31354 to 31369 Quick Navigation labels
 msgctxt "#31370"

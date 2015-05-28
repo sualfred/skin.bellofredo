@@ -204,7 +204,7 @@
 						</control>
 						<control type="label">							
 							<visible>Control.HasFocus(20) + !Skin.HasSetting(HideIconMenuLabels)</visible>
-							<include>FocusVisibleFadeEffect</include>
+							<include condition="!Skin.HasSetting(HideIconMenuLabels)">FocusVisibleFadeEffect</include>
 							<left>10</left>
 							<top>325</top>
 							<width>530</width>
@@ -310,7 +310,7 @@
 						</control>
 						<control type="label">							
 							<visible>Control.HasFocus(20) + !Skin.HasSetting(HideIconMenuLabels)</visible>
-							<include>FocusVisibleFadeEffect</include>
+							<include condition="!Skin.HasSetting(HideIconMenuLabels)">FocusVisibleFadeEffect</include>
 							<left>10</left>
 							<top>325</top>
 							<width>530</width>
@@ -323,7 +323,7 @@
 								<effect type="zoom" start="66" end="100" time="200" tween="sine" easing="out" center="250,285" />
 								<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
 							</animation>
-						</control>		
+						</control>	
 						<control type="fadelabel">
 							<visible>Control.HasFocus(20) + !Skin.HasSetting(HideLibraryStats) + !IsEmpty(Control.GetLabel(17))</visible>
 							<animation effect="slide" start="0,0" end="0,-24" time="0" condition="Skin.HasSetting(HideIconMenuLabels)">Conditional</animation>

@@ -1482,6 +1482,10 @@ msgctxt "#31362"
 msgid "Enable Icon Menu Labels"
 msgstr ""
 
+msgctxt "#31363"
+msgid "Next"
+msgstr ""
+
 #: empty strings from id 31354 to 31369 Quick Navigation labels
 msgctxt "#31370"
 msgid "Update Video Library"

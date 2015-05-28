@@ -1854,7 +1854,7 @@
 				<shadowcolor>AA000000</shadowcolor>
 				<align>right</align>
 				<aligny>center</aligny>
-				<label>[B]$LOCALIZE[209]:[/B] $INFO[PVR.NextRecordingChannel]$INFO[PVR.NextRecordingTitle, • ]</label>
+				<label>[B]$LOCALIZE[31363]:[/B] $INFO[PVR.NextRecordingChannel]$INFO[PVR.NextRecordingTitle, • ]</label>
 				<visible>PVR.HasNonRecordingTimer</visible>
 			</control>
 		</control>
