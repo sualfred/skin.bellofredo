@@ -36,7 +36,7 @@
 				<animation type="Conditional" condition="!Window.IsVisible(contextmenu)" reversible="false">
 					<effect type="slide" start="0,-25" end="0,0" time="350" tween="sine" easing="out" />			
 				</animation>				
-				<include>FredHomeWidgets</include>			
+				<include>HomeWidgetsContainer</include>			
 			</control>
 			<include>CommonDialogsFadeOutBG</include>
 		</control>	

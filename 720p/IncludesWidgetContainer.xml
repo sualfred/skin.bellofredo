@@ -456,7 +456,7 @@
 	</include>
 
 
-	<include name="FredHomeWidgets">
+	<include name="HomeWidgetsContainer">
 
 		<!-- =========== -->
 		<!-- Movies 	 -->

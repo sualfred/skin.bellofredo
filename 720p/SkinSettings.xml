@@ -256,6 +256,14 @@
 							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(MainMenuStyle,5icons))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31347])</onclick>
 						</control>
+						<control type="radiobutton" id="8308">
+							<description>Disable Icon Labels</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31362]</label>
+							<onclick>Skin.ToggleSetting(HideIconMenuLabels)</onclick>
+							<selected>!Skin.HasSetting(HideIconMenuLabels)</selected>
+							<enable>SubString(Skin.String(MainMenuStyle),icons)</enable>
+						</control>
 						<control type="radiobutton" id="8304">
 							<description>Disable PurpleBar</description>
 							<include>SettingsRadioButton</include>
