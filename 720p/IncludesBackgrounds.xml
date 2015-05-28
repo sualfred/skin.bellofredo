@@ -223,7 +223,6 @@
 						<include>BackgroundAnimation</include>
 						<visible>!Skin.HasSetting(HideBGFanart) + Skin.HasSetting(DiffuseWidgetFanart)</visible>
 						<visible>!Window.IsActive(playercontrols)</visible>
-						<!--<visible>ControlGroup(9050).HasFocus() | ControlGroup(9060).HasFocus() | ControlGroup(9070).HasFocus() | ControlGroup(9071).HasFocus() | ControlGroup(9072).HasFocus() | ControlGroup(9090).HasFocus() | ControlGroup(9091).HasFocus() | ControlGroup(9094).HasFocus() | ControlGroup(9093).HasFocus() | ControlGroup(9073).HasFocus() | ControlGroup(9074).HasFocus() | ControlGroup(9098).HasFocus() | ControlGroup(9080).HasFocus()</visible>-->
 						<visible>[ControlGroup(9050).HasFocus | ControlGroup(9060).HasFocus | ControlGroup(9070).HasFocus | ControlGroup(9073).HasFocus | ControlGroup(9074).HasFocus | ControlGroup(9080).HasFocus | ControlGroup(9090).HasFocus | ControlGroup(9091).HasFocus | ControlGroup(9093).HasFocus | ControlGroup(9094).HasFocus | ControlGroup(9099).HasFocus | ControlGroup(9071).HasFocus | ControlGroup(9072).HasFocus | ControlGroup(9098).HasFocus]</visible>
 					</control>
 					<control type="image">
@@ -240,6 +239,8 @@
 				</control>
 			</control>
 		</control>
+
+		<include condition="[!IsEmpty(Skin.String(ConditionalWeatherArt)) + !IsEmpty(Skin.String(WeatherFanartDir))]">BackgroundWeather</include>
 		<control type="videowindow">
 			<description>Video</description>
 			<include>FullscreenDimensions</include>
@@ -281,7 +282,6 @@
 			<visible>Player.HasAudio + Skin.HasSetting(AmbilightMode)</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>
-		<include condition="[!IsEmpty(Skin.String(ConditionalWeatherArt)) + !IsEmpty(Skin.String(WeatherFanartDir))]">BackgroundWeather</include>
 	</include>
 	<include name="GlobalFanart">
 		<include>BackgroundAnimation</include>
@@ -314,7 +314,6 @@
 			<include>FanartFade</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
 			<visible>[!Skin.HasSetting(NetFilxSemiTrans) + Control.IsVisible(59) + !Window.IsActive(movieinformation)]</visible>
-			<!--<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>-->
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>
@@ -323,7 +322,6 @@
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
 			<visible>Control.IsVisible(59) + !Window.IsActive(movieinformation)</visible>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
-			<!--<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>-->
 		</control>
 		<control type="image">
 			<description>NetFilx Fanart</description>
@@ -365,7 +363,6 @@
 			<visible>Window.IsVisible(Pictures) + Container.HasFiles + !Control.IsVisible(59)</visible>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
 			<include>BackgroundAnimation</include>
-			<!--<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>-->
 		</control>
 		<control type="image">
 			<description>Pictures Fanart NetFilx</description>
@@ -389,7 +386,6 @@
 			<texture background="true">$VAR[TVGuideFanart]</texture>
 			<visible>!Skin.HasSetting(HideTVGuideFanart)</visible>
 			<include>BackgroundAnimation</include>
-			<!--<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>-->
 		</control>
 	</include>
 
@@ -424,7 +420,6 @@
 			<include>FullscreenDimensions</include>
 			<texture background="true">windows/bg/bg_diffuse.png</texture>
 			<include>FanartFade</include>
-			<!--  <colordiffuse>ddFFFFFF</colordiffuse> -->
 			<visible>[Control.IsVisible(50) + !Window.IsVisible(weather) + !Window.IsVisible(musicplaylisteditor) + !Window.IsVisible(profiles)]
 				| [Control.IsVisible(57) + !Window.IsVisible(profiles)]
 				| Control.IsVisible(56)
