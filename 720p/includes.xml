@@ -24,8 +24,8 @@
 	<constant name="ButtonsLabelsZoom">95</constant>
 
 	<variable name="LibraryInfoLabel">
-		<value condition="StringCompare(Container(20).ListItem.Property(defaultID),movies)">$INFO[Window(Home).Property(Movies.Count),$LOCALIZE[20342]: ]</value>
-		<value condition="StringCompare(Container(20).ListItem.Property(defaultID),tvshows)">$INFO[Window(Home).Property(TVShows.Count),$LOCALIZE[31002]: ]</value>
+		<value condition="StringCompare(Container(20).ListItem.Property(defaultID),movies)">$INFO[Window(Home).Property(Movies.Count),$LOCALIZE[20161]: ]</value>
+		<value condition="StringCompare(Container(20).ListItem.Property(defaultID),tvshows)">$INFO[Window(Home).Property(TVShows.Count),$LOCALIZE[20161]: ]</value>
 		<value condition="StringCompare(Container(20).ListItem.Property(defaultID),music)">$INFO[Window(Home).Property(Music.AlbumsCount),$LOCALIZE[132]: ]</value>
 	</variable>
 	<variable name="LibraryInfoLabel2">
