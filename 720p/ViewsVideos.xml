@@ -5355,7 +5355,7 @@
 			</control>
 		</control>
 
-		<!-- default group -->
+		<!-- view -->
 		<control type="group">
 			<include>DialogZoomInOutAnimation</include>
 			<visible>Control.IsVisible(579)</visible>			
@@ -6106,7 +6106,7 @@
 
 			<!--labels-->
 			<control type="grouplist">
-				<left>47</left>
+				<left>45</left>
 				<top>543</top>
 				<width>850</width>
 				<height>600</height>
@@ -6313,7 +6313,7 @@
 			</control>
 			<!--plot-->
 			<control type="group">
-				<left>47</left>
+				<left>45</left>
 				<top>543</top>
 				<width>850</width>
 				<height>600</height>
@@ -6343,7 +6343,7 @@
 					<shadowcolor>77000000</shadowcolor>
 					<align>justify</align>
 					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-					<label>$INFO[ListItem.Tagline,[COLOR=blue],[/COLOR][CR]]$VAR[GlobalPlotDescription]</label>
+					<label>$INFO[ListItem.Tagline,[COLOR=white]","[/COLOR][CR]]$VAR[GlobalPlotDescription]</label>
 					<visible>Control.HasFocus(5791)</visible>
 					<animation type="Conditional" condition="Control.HasFocus(5791)" reversible="false">
 						<effect type="fade" start="0" end="100" time="780" delay="550" tween="sine" easing="out"/>

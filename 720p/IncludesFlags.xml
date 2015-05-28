@@ -63,6 +63,7 @@
 			<description>Video Resolution Image</description>
 			<include>FlagsLayout</include>
 			<texture>$INFO[ListItem.VideoResolution,flags/res/,.png]</texture>
+			<visible>!IsEmpty(ListItem.VideoResolution)</visible>
 		</control>
 	</include>
 
@@ -71,6 +72,7 @@
 			<description>Video Codec Image</description>
 			<include>FlagsLayout</include>
 			<texture>$VAR[VideoCodec,flags/video/,.png]</texture>
+			<visible>!IsEmpty(ListItem.VideoCodec)</visible>
 		</control>
 	</include>
 
@@ -87,7 +89,8 @@
 		<control type="image">
 			<description>Audio Codec Image</description>
 			<include>FlagsLayout</include>
-			<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
+			<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>			
+			<visible>!IsEmpty(ListItem.AudioCodec)</visible>
 		</control>
 	</include>
 	
@@ -95,7 +98,8 @@
 		<control type="image">
 			<description>Audio Channel Image</description>
 			<include>FlagsLayout</include>
-			<texture>$INFO[ListItem.AudioChannels,flags/audiochannels/,.png]</texture>
+			<texture>$INFO[ListItem.AudioChannels,flags/audiochannels/,.png]</texture>		
+			<visible>!IsEmpty(ListItem.AudioChannels)</visible>
 		</control>
 	</include>
 
@@ -103,7 +107,8 @@
 		<control type="image">
 			<description>Aspectratio Image</description>
 			<include>FlagsLayout</include>
-			<texture>$INFO[ListItem.VideoAspect,flags/aspect/,.png]</texture>
+			<texture>$INFO[ListItem.VideoAspect,flags/aspect/,.png]</texture>	
+			<visible>!IsEmpty(ListItem.VideoAspect)</visible>
 		</control>
 	</include>
 

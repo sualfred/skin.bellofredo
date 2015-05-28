@@ -291,6 +291,14 @@
 							<label>$LOCALIZE[31356]</label>
 							<enable>false</enable>
 						</control>
+						<control type="button" id="8317">
+							<description>Style of item</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31361]</label>
+							<label2>[COLOR=blue]$VAR[TopMenuStyleLabel][/COLOR]</label2>
+							<onclick>Skin.ToggleSetting(IconTopMenuStyle)</onclick>
+							<selected>!Skin.HasSetting(ShowKodiSymbol)</selected>
+						</control>
 						<control type="radiobutton" id="8311">
 							<description>Enable Kodi Icon</description>
 							<include>SettingsRadioButton</include>

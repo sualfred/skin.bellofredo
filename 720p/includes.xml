@@ -120,6 +120,13 @@
 		<aligny>center</aligny>
 		<scroll>false</scroll>
 	</include>
+	<include name="TopSmallIcon">
+		<height>61</height>
+		<width>22</width>
+		<align>center</align>
+		<aligny>center</aligny>		
+		<aspectratio aligny="center" align="center">keep</aspectratio>
+	</include>
 	<include name="TopBigLabel">
 		<height>50</height>
 		<width min="10" max="1280">auto</width>
@@ -1282,7 +1289,7 @@
 <include name="CommonNowPlaying">
 	<control type="group">
 		<visible>!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4)</visible>
-		<left>45</left>
+		<left>44</left>
 		<top>640</top>
 		<include>HomeNowPlayingSlideAnimations</include>
 		<control type="grouplist">
@@ -1868,10 +1875,11 @@
 	<value condition="StringCompare(Skin.String(WatchedFlag),watched)">watched</value>
 </variable>
 
-<!--<variable name="MenuPositionLabel">
-	<value condition="Skin.HasSetting(MoveMenuPosition)">$LOCALIZE[31382]</value>
-	<value>$LOCALIZE[31381]</value>
-</variable>-->
+<variable name="TopMenuStyleLabel">
+	<value condition="Skin.HasSetting(IconTopMenuStyle)">$LOCALIZE[536]</value>
+	<value>$LOCALIZE[31360]</value>
+</variable>
+
 <variable name="MenuStyleLabel">
 	<value condition="StringCompare(Skin.String(MainMenuStyle),5icons)">$LOCALIZE[31348]</value>
 	<value condition="StringCompare(Skin.String(MainMenuStyle),3icons)">$LOCALIZE[31349]</value>

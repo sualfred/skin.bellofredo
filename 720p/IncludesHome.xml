@@ -702,33 +702,65 @@
 					<include>TopBigLabel</include>
 					<label>10000</label>
 				</control>
+				<!--favourite -->
 				<control type="label">
 					<include>TopSmallLabel</include>
 					<label>$LOCALIZE[1036]</label>
 					<animation effect="fade" start="100" end="70" time="100" tween="sine" easing="in" condition="!Control.HasFocus(210)" reversible="true">Conditional</animation>
 					<animation effect="zoom"  start="100" end="95" time="100" tween="sine" easing="in" center="auto" condition="!Control.HasFocus(210)" reversible="true">Conditional</animation>
-					<visible>!Skin.HasSetting(DisableFavouritesButton)</visible>
+					<visible>!Skin.HasSetting(DisableFavouritesButton) + !Skin.HasSetting(IconTopMenuStyle)</visible>
 				</control>
+				<control type="image">
+					<include>TopSmallIcon</include>
+					<texture background="true">icons/fav_small.png</texture>
+					<animation effect="fade" start="100" end="60" time="100" tween="sine" easing="in" condition="!Control.HasFocus(210)" reversible="true">Conditional</animation>
+					<animation effect="zoom"  start="100" end="95" time="100" tween="sine" easing="in" center="auto" condition="!Control.HasFocus(210)" reversible="true">Conditional</animation>
+					<visible>!Skin.HasSetting(DisableFavouritesButton) + Skin.HasSetting(IconTopMenuStyle)</visible>
+				</control>
+				<!--search -->
 				<control type="label">
 					<include>TopSmallLabel</include>
 					<label>$LOCALIZE[137]</label>
 					<animation effect="fade" start="100" end="70" time="100" tween="sine" easing="in" condition="!Control.HasFocus(211)" reversible="true">Conditional</animation>
 					<animation effect="zoom"  start="100" end="95" time="100" tween="sine" easing="in" center="auto" condition="!Control.HasFocus(211)" reversible="true">Conditional</animation>
-					<visible>!Skin.HasSetting(DisableSearchButton)</visible>
+					<visible>!Skin.HasSetting(DisableSearchButton) + !Skin.HasSetting(IconTopMenuStyle)</visible>
 				</control>
+				<control type="image">
+					<include>TopSmallIcon</include>
+					<texture background="true">icons/search_small.png</texture>
+					<animation effect="fade" start="100" end="60" time="100" tween="sine" easing="in" condition="!Control.HasFocus(211)" reversible="true">Conditional</animation>
+					<animation effect="zoom"  start="100" end="95" time="100" tween="sine" easing="in" center="auto" condition="!Control.HasFocus(211)" reversible="true">Conditional</animation>
+					<visible>!Skin.HasSetting(DisableSearchButton) + Skin.HasSetting(IconTopMenuStyle)</visible>
+				</control>
+				<!--library update -->
 				<control type="label">
 					<include>TopSmallLabel</include>
 					<label>$LOCALIZE[799]</label>
 					<animation effect="fade" start="100" end="70" time="100" tween="sine" easing="in" condition="!Control.HasFocus(212)" reversible="true">Conditional</animation>
 					<animation effect="zoom"  start="100" end="95" time="100" tween="sine" easing="in" center="auto" condition="!Control.HasFocus(212)" reversible="true">Conditional</animation>
-					<visible>!Skin.HasSetting(DisableLibraryRefreshButton)</visible>
+					<visible>!Skin.HasSetting(DisableLibraryRefreshButton) + !Skin.HasSetting(IconTopMenuStyle)</visible>
 				</control>
+				<control type="image">
+					<include>TopSmallIcon</include>
+					<texture background="true">icons/update_small.png</texture>
+					<animation effect="fade" start="100" end="60" time="100" tween="sine" easing="in" condition="!Control.HasFocus(212)" reversible="true">Conditional</animation>
+					<animation effect="zoom"  start="100" end="95" time="100" tween="sine" easing="in" center="auto" condition="!Control.HasFocus(212)" reversible="true">Conditional</animation>
+					<visible>!Skin.HasSetting(DisableLibraryRefreshButton) + Skin.HasSetting(IconTopMenuStyle)</visible>
+				</control>
+				<!--power -->
 				<control type="label">
 					<include>TopSmallLabel</include>
 					<label>$LOCALIZE[33060]</label>
 					<animation effect="fade" start="100" end="70" time="100" tween="sine" easing="in" condition="!Control.HasFocus(214)" reversible="true">Conditional</animation>
 					<animation effect="zoom"  start="100" end="95" time="100" tween="sine" easing="in" center="auto" condition="!Control.HasFocus(214)" reversible="true">Conditional</animation>
-					<visible>!Skin.HasSetting(DisablePowerButton)</visible>
+					<visible>!Skin.HasSetting(DisablePowerButton) + !Skin.HasSetting(IconTopMenuStyle)</visible>
+				</control>				
+				<control type="image">
+					<include>TopSmallIcon</include>
+					<texture background="true">icons/power_small.png</texture>
+					<animation effect="fade" start="100" end="60" time="100" tween="sine" easing="in" condition="!Control.HasFocus(214)" reversible="true">Conditional</animation>
+					<animation effect="zoom"  start="100" end="95" time="100" tween="sine" easing="in" center="auto" condition="!Control.HasFocus(214)" reversible="true">Conditional</animation>
+					<visible>!Skin.HasSetting(DisablePowerButton) + Skin.HasSetting(IconTopMenuStyle)</visible>
 				</control>
 			</control>
 			<control type="group">

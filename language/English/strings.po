@@ -1470,6 +1470,14 @@ msgctxt "#31359"
 msgid "Enable Power Button"
 msgstr ""
 
+msgctxt "#31360"
+msgid "Labels"
+msgstr ""
+
+msgctxt "#31361"
+msgid "Home Top Menu Style"
+msgstr ""
+
 #: empty strings from id 31354 to 31369 Quick Navigation labels
 msgctxt "#31370"
 msgid "Update Video Library"
