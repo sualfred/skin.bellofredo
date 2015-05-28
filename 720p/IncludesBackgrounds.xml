@@ -438,6 +438,7 @@
 				| [Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(movieinformation)]
 				| [Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(movieinformation)]
 			</visible>
+			<animation effect="fade" time="0" end="40" condition="Control.IsVisible(560) | Control.IsVisible(561)">Conditional</animation>
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>
