@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-05-21 14:17+0000\n"
+"PO-Revision-Date: 2015-05-28 09:36+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/bello-fredo/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -280,8 +280,8 @@ msgid ""
 msgstr "Forcer l'utilisation de l'affiche locale pour la saison [COLOR=55white](ex : seasonXX-poster.jpg)[/COLOR]"
 
 msgctxt "#31064"
-msgid "Enable Library Refresh Button on the Home Screen"
-msgstr "Activer le bouton de MàJ médiathèque sur l'écran d'accueil"
+msgid "Enable Library Refresh Button"
+msgstr "Activer le bouton de rafraîchissement de Médiathèque"
 
 msgctxt "#31065"
 msgid "Enabled"
@@ -440,8 +440,8 @@ msgid "Hide Now Playing Music Info"
 msgstr "Masquer les infos de lecture en cours Musique"
 
 msgctxt "#31104"
-msgid "Hide Now Playing Cover on Home"
-msgstr "Masquer les infos de lecture en cours sur l'accueil"
+msgid "Enable Now Playing Cover on Home"
+msgstr ""
 
 msgctxt "#31105"
 msgid "Amazon [COLOR=55white](Sandmann's Plugin)[/COLOR]"
@@ -800,8 +800,8 @@ msgid "Update Settings"
 msgstr "Mise à jour réglages"
 
 msgctxt "#31192"
-msgid "Hide Widget Item Counter"
-msgstr "Masquer le compteur d'éléments des widgets"
+msgid "Enable Widget Item Counter"
+msgstr ""
 
 msgctxt "#31193"
 msgid "Critics Consensus"
@@ -1394,14 +1394,42 @@ msgstr "Retour"
 
 msgctxt "#31340"
 msgid "Case Style"
-msgstr ""
+msgstr "Style de boitier"
 
 msgctxt "#31341"
 msgid "Retail Box"
-msgstr ""
+msgstr "Coffret"
 
 msgctxt "#31342"
-msgid "Artist Logo"
+msgid "Artist Logo Location"
+msgstr "Emplacement du logo artiste"
+
+msgctxt "#31343"
+msgid "Logo is stored in the parent folder of the album - Example: MP3/Artist"
+msgstr "Le logo est rangé dans le dossier parent de l'album - Ex : MP3/Artiste"
+
+msgctxt "#31344"
+msgid "Logo is stored in the folder of the album - Example: MP3/Artist/Album"
+msgstr "Le logo est rangé dans le dossier de l'album - Ex : MP3/Artiste/Album"
+
+msgctxt "#31345"
+msgid "Artist Folder"
+msgstr "Dossier artiste"
+
+msgctxt "#31346"
+msgid "Album Folder"
+msgstr "Dossier album"
+
+msgctxt "#31347"
+msgid "Main Menu Layout"
+msgstr ""
+
+msgctxt "#31348"
+msgid "5 Icons"
+msgstr ""
+
+msgctxt "#31349"
+msgid "3 Icons"
 msgstr ""
 
 #: empty strings from id 31335 to 31349 PVR
@@ -1420,6 +1448,46 @@ msgstr "Renommer le groupe"
 msgctxt "#31353"
 msgid "Delete Group"
 msgstr "Supprimer le groupe"
+
+msgctxt "#31354"
+msgid "Centered Labels (Default)"
+msgstr ""
+
+msgctxt "#31355"
+msgid "Main Menu"
+msgstr ""
+
+msgctxt "#31356"
+msgid "Top Menu"
+msgstr ""
+
+msgctxt "#31357"
+msgid "Enable Favourites Button"
+msgstr ""
+
+msgctxt "#31358"
+msgid "Enable Search Button"
+msgstr ""
+
+msgctxt "#31359"
+msgid "Enable Power Button"
+msgstr ""
+
+msgctxt "#31360"
+msgid "Labels"
+msgstr ""
+
+msgctxt "#31361"
+msgid "Home Top Menu Style"
+msgstr ""
+
+msgctxt "#31362"
+msgid "Enable Icon Menu Labels"
+msgstr ""
+
+msgctxt "#31363"
+msgid "Next"
+msgstr ""
 
 #: empty strings from id 31354 to 31369 Quick Navigation labels
 msgctxt "#31370"
@@ -1471,8 +1539,8 @@ msgid "Center"
 msgstr "Centré"
 
 msgctxt "#31382"
-msgid "Bottom"
-msgstr "En bas"
+msgid "Bottom Labels"
+msgstr ""
 
 #: empty strings from id 31383 to 31408 settings Category Description & Header
 #: Labels

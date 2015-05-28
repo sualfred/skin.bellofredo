@@ -779,6 +779,7 @@
 				<height>492</height>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 				<texture border="39,39,39,39">views/other/panel.png</texture>
+				<animation effect="fade" end="75" time="0" condition="true">Conditional</animation>
 				<bordersize>41</bordersize>
 			</control>
 			<control type="wraplist" id="52">
@@ -984,6 +985,7 @@
 				<height>410</height>
 				<aspectratio>stretch</aspectratio>
 				<texture background="true">views/gallery/sides_fade.png</texture>
+				<animation effect="fade" end="40" time="0" condition="true">Conditional</animation>
 			</control>
 			<control type="scrollbar" id="60">
 				<left>305</left>
@@ -4667,42 +4669,38 @@
 					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
 					<effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="inout" />
 				</animation>
-				<control type="button" id="5901">
-					<description>Get Plot</description>
-					<visible>false</visible>
-				</control>
 				<control type="textbox">
 					<top>35</top>
-					<width>500</width>
+					<width>530</width>
 					<height>155</height>
 					<font>FontSize_22</font>
 					<textcolor>99white</textcolor>
 					<shadowcolor>77000000</shadowcolor>
-					<align>left</align>
+					<align>justify</align>
 					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<label>$VAR[GlobalPlotDescription]</label>
 					<visible>Container.Content(Movies) + !Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
 				</control>
 				<control type="textbox">
 					<top>35</top>
-					<width>500</width>
+					<width>530</width>
 					<height>155</height>
 					<font>FontSize_22</font>
 					<textcolor>99white</textcolor>
 					<shadowcolor>77000000</shadowcolor>
-					<align>left</align>
+					<align>justify</align>
 					<label>$VAR[GlobalPlotDescription]</label>
 					<autoscroll delay="8000" time="2000" repeat="8000">[Substring(ListItem.Path,videodb://movies/sets/,left) + IntegerGreaterThan(Window(home).Property(Set.Movies.Count),1)]</autoscroll>
 					<visible>Container.Content(Sets) | Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
 				</control>
 				<control type="textbox">
 					<top>35</top>
-					<width>500</width>
+					<width>530</width>
 					<height>180</height>
 					<font>FontSize_22</font>
 					<textcolor>99white</textcolor>
 					<shadowcolor>77000000</shadowcolor>
-					<align>left</align>
+					<align>justify</align>
 					<label>$VAR[GlobalPlotDescription]</label>
 					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
@@ -4949,7 +4947,7 @@
 				</control>
 			</control>
 			<!--content container-->
-			<control type="fixedlist" id="59">
+			<control type="wraplist" id="59">
 				<left>47</left>
 				<top>420</top>
 				<width>2495</width>

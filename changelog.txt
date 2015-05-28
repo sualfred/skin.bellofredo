@@ -1,4 +1,19 @@
-﻿[B][COLOR=FF56ADDA]v4.3.3[/COLOR][/B]
+[B][COLOR=FF56ADDA]v4.3.4[/COLOR][/B]
+• Added: Option to replace the home top menu elements with icons
+• Added: Option to hide the labels for the icon main menu style
+• Changed: Filemanager focus texture from purple to blue
+• Changed: Moved labels/plot to the center of the screen (3D Wall view)
+• Changed: Changed plot width and display method to justify (NetFilx view)
+• Changed: Changed fixedlist container to wraplist (NetFilx view)
+• Changed: Reduced fanart diffuse to 50% (Thumbnail views and favourites window)
+• Changed: Panel and side diffuse texture transparency to get a more lighter and glossy look (Gallery view)
+• Fixed: NowPlaying info and Shelf plot positions
+• Fixed: DialogVideoInfo blank flag fields if the info label is empty
+• Fixed: Plot control can be focused even with no available plot (Shelf)
+• Fixed: Aspectratio of the border and border fade texture (Thumbnail view)
+• Fixed: Weather background is visible if music or video playback is in progress
+
+[B][COLOR=FF56ADDA]v4.3.3[/COLOR][/B]
 • Reworked: Main menu part in the skin settings
 • Added: Option for 4 different main menu styles (centered labels, bottom labels, 3 icons, 5 icons)
 • Added: Option to disable single top menu items

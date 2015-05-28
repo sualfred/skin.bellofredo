@@ -607,6 +607,7 @@
 				<height>492</height>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 				<texture border="39,39,39,39">views/other/panel.png</texture>
+				<animation effect="fade" end="75" time="0" condition="true">Conditional</animation>
 				<bordersize>41</bordersize>
 			</control>
 			<control type="wraplist" id="52">
@@ -728,6 +729,7 @@
 				<width>1280</width>
 				<height>410</height>
 				<texture>views/gallery/sides_fade.png</texture>
+				<animation effect="fade" end="40" time="0" condition="true">Conditional</animation>
 			</control>
 			<control type="scrollbar" id="60">
 				<left>305</left>

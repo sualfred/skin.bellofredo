@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-05-21 14:17+0000\n"
+"PO-Revision-Date: 2015-05-28 09:36+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/bello-fredo/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -279,8 +279,8 @@ msgid ""
 msgstr "Priverstinai naudoti lokaliai saugoma sezono iliustraciją [COLOR=55white](pvz.: seasonXX-poster.jpg)[/COLOR]"
 
 msgctxt "#31064"
-msgid "Enable Library Refresh Button on the Home Screen"
-msgstr "Įjungti bibliotekos atnaujinimo mygtuką pradiniame ekrane"
+msgid "Enable Library Refresh Button"
+msgstr ""
 
 msgctxt "#31065"
 msgid "Enabled"
@@ -439,8 +439,8 @@ msgid "Hide Now Playing Music Info"
 msgstr "Slėpti dabar atkuriamos muzikos informaciją"
 
 msgctxt "#31104"
-msgid "Hide Now Playing Cover on Home"
-msgstr "Slėpti šiuo metu atkuriamo įrašo viršelį pradiniame ekrane"
+msgid "Enable Now Playing Cover on Home"
+msgstr ""
 
 msgctxt "#31105"
 msgid "Amazon [COLOR=55white](Sandmann's Plugin)[/COLOR]"
@@ -799,8 +799,8 @@ msgid "Update Settings"
 msgstr "Atnaujinti nustatymus"
 
 msgctxt "#31192"
-msgid "Hide Widget Item Counter"
-msgstr "Slėpti valdiklio elementų skaitiklį"
+msgid "Enable Widget Item Counter"
+msgstr ""
 
 msgctxt "#31193"
 msgid "Critics Consensus"
@@ -1393,14 +1393,42 @@ msgstr "Galas"
 
 msgctxt "#31340"
 msgid "Case Style"
-msgstr ""
+msgstr "Dėkliuko stilius"
 
 msgctxt "#31341"
 msgid "Retail Box"
-msgstr ""
+msgstr "Prekybinė dėžutė"
 
 msgctxt "#31342"
-msgid "Artist Logo"
+msgid "Artist Logo Location"
+msgstr "Atlikėjo logotipo vieta"
+
+msgctxt "#31343"
+msgid "Logo is stored in the parent folder of the album - Example: MP3/Artist"
+msgstr "Logotipas saugomas pagrindiniame albumų aplanke - pavyzdžiui, MP3/Atlikėjas"
+
+msgctxt "#31344"
+msgid "Logo is stored in the folder of the album - Example: MP3/Artist/Album"
+msgstr "Logotipas saugomas albumo aplanke - pavyzdžiui, MP3/Atlikėjas/Albumas"
+
+msgctxt "#31345"
+msgid "Artist Folder"
+msgstr "Atlikėjo aplankas"
+
+msgctxt "#31346"
+msgid "Album Folder"
+msgstr "Albumo aplankas"
+
+msgctxt "#31347"
+msgid "Main Menu Layout"
+msgstr ""
+
+msgctxt "#31348"
+msgid "5 Icons"
+msgstr ""
+
+msgctxt "#31349"
+msgid "3 Icons"
 msgstr ""
 
 #: empty strings from id 31335 to 31349 PVR
@@ -1419,6 +1447,46 @@ msgstr "Pervadinti grupę"
 msgctxt "#31353"
 msgid "Delete Group"
 msgstr "Pašalinti grupę"
+
+msgctxt "#31354"
+msgid "Centered Labels (Default)"
+msgstr ""
+
+msgctxt "#31355"
+msgid "Main Menu"
+msgstr ""
+
+msgctxt "#31356"
+msgid "Top Menu"
+msgstr ""
+
+msgctxt "#31357"
+msgid "Enable Favourites Button"
+msgstr ""
+
+msgctxt "#31358"
+msgid "Enable Search Button"
+msgstr ""
+
+msgctxt "#31359"
+msgid "Enable Power Button"
+msgstr ""
+
+msgctxt "#31360"
+msgid "Labels"
+msgstr ""
+
+msgctxt "#31361"
+msgid "Home Top Menu Style"
+msgstr ""
+
+msgctxt "#31362"
+msgid "Enable Icon Menu Labels"
+msgstr ""
+
+msgctxt "#31363"
+msgid "Next"
+msgstr ""
 
 #: empty strings from id 31354 to 31369 Quick Navigation labels
 msgctxt "#31370"
@@ -1470,8 +1538,8 @@ msgid "Center"
 msgstr "Centras"
 
 msgctxt "#31382"
-msgid "Bottom"
-msgstr "Apačia"
+msgid "Bottom Labels"
+msgstr ""
 
 #: empty strings from id 31383 to 31408 settings Category Description & Header
 #: Labels

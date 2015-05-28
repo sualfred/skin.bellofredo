@@ -1288,7 +1288,7 @@
 				</control>
 			</control>
 			<!--content container-->
-			<control type="fixedlist" id="59">
+			<control type="wraplist" id="59">
 				<left>47</left>
 				<top>420</top>
 				<width>2495</width>
