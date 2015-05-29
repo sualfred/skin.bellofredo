@@ -4947,292 +4947,13 @@
 				</control>
 			</control>
 			<!--content container-->
-			<control type="wraplist" id="59">
-				<left>47</left>
-				<top>420</top>
-				<width>2495</width>
-				<height>800</height>
-				<onleft>59</onleft>
-				<onright>59</onright>
-				<onup condition="Skin.HasSetting(NetfilxAlwaysShowPlot)">100</onup>
-				<onup condition="!Skin.HasSetting(NetfilxAlwaysShowPlot)">5901</onup>
-				<ondown>60</ondown>
-				<viewtype label="Netflix">List</viewtype>
-				<scrolltime tween="Quadratic" easing="out">300</scrolltime>
-				<orientation>horizontal</orientation>
-				<preloaditems>2</preloaditems>
-				<focusposition>0</focusposition>
-				<pagecontrol>60</pagecontrol>
-				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
-				<!--Movies-->
-				<itemlayout condition="Container.Content(Movies) | Container.Content(Sets)" width="149.5" height="256">
-					<control type="image">
-						<width>140</width>
-						<height>203</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture border="30">views/other/panel.png</texture>
-					</control>
-					<control type="image">
-						<top>200</top>
-						<width>142</width>
-						<height>203</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture border="30" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png">views/other/panel.png</texture>
-					</control>
-					<control type="image">
-						<left>1</left>
-						<top>2</top>
-						<width>138</width>
-						<height>199</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture background="true" fallback="thumbs/fallback_poster_tp.png">$VAR[VarArtPoster]</texture>
-						<bordertexture border="15">thumbs/thumb_border.png</bordertexture>
-						<bordersize>6</bordersize>
-					</control>
-					<control type="image">
-						<left>1</left>
-						<top>204</top>
-						<width>138</width>
-						<height>199</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" fallback="thumbs/fallback_poster_tp.png">$VAR[VarArtPoster]</texture>
-						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
-						<bordersize>6</bordersize>
-					</control>
-					<control type="image">
-						<left>1</left>
-						<top>2</top>
-						<width>138</width>
-						<height>199</height>
-						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</texture>
-						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
-						<bordersize>6</bordersize>
-					</control>
-				</itemlayout>
-				<focusedlayout condition="Container.Content(Movies) | Container.Content(Sets)" width="149.5" height="256">
-					<control type="image">
-						<width>140</width>
-						<height>203</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture border="30">views/other/panel.png</texture>
-					</control>
-					<control type="image">
-						<top>200</top>
-						<width>142</width>
-						<height>203</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture border="30" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png">views/other/panel.png</texture>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>2</top>
-						<width>138</width>
-						<height>199</height>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="thumbs/fallback_poster_tp.png">$VAR[VarArtPoster]</texture>
-						<bordertexture border="15">thumbs/thumb_border.png</bordertexture>
-						<bordersize>8</bordersize>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>204</top>
-						<width>138</width>
-						<height>199</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" fallback="thumbs/fallback_poster_tp.png">$VAR[VarArtPoster]</texture>
-						<bordersize>8</bordersize>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>2</top>
-						<width>138</width>
-						<height>199</height>
-						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</texture>
-						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
-						<bordersize>8</bordersize>
-					</control>
-				</focusedlayout>
-				<!--tvshows-->
-				<itemlayout condition="Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)" width="299.5" height="256">
-					<control type="image">
-						<left>-2</left>
-						<top>30</top>
-						<width>291</width>
-						<height>165</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture border="30">views/other/panel.png</texture>
-					</control>
-					<control type="image">
-						<left>-2</left>
-						<top>194</top>
-						<width>291</width>
-						<height>165</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture border="30" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png">views/other/panel2.png</texture>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>32</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
-						<bordertexture border="15">thumbs/thumb_border.png</bordertexture>
-						<bordersize>6</bordersize>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>32</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
-						<bordersize>40</bordersize>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>197</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
-						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
-						<bordersize>6</bordersize>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>197</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" >$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
-						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
-						<bordersize>40</bordersize>
-						<animation type="Conditional" reversible="false" condition="true">
-							<effect type="fade" start="100" end="30" time="0" tween="sine" easing="out" />
-						</animation>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>32</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
-						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
-						<bordersize>6</bordersize>
-					</control>
-					<control type="image">
-						<left>213</left>
-						<top>157</top>
-						<width>61</width>
-						<height>24</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture border="1">views/other/episode_number.png</texture>
-						<visible>[Container.Content(Seasons) | Container.Content(Episodes) | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)] + !stringcompare(ListItem.Label,..)</visible>
-					</control>
-					<control type="label">
-						<left>213</left>
-						<top>147</top>
-						<width>61</width>
-						<height>43</height>
-						<font>FontSize_16B</font>
-						<textcolor>white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>$VAR[ThumbnailsOnThumbLabel]</label>
-					</control>
-				</itemlayout>
-				<focusedlayout condition="Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)" width="299.5" height="256">
-					<control type="image">
-						<left>-2</left>
-						<top>30</top>
-						<width>291</width>
-						<height>165</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture border="30">views/other/panel.png</texture>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>32</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
-						<bordertexture border="15">thumbs/thumb_border.png</bordertexture>
-						<bordersize>8</bordersize>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>32</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
-						<bordersize>40</bordersize>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>196</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
-						<bordersize>8</bordersize>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>197</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" >$INFO[ListItem.Art(clearlogo)]</texture>
-						<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
-						<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
-						<bordersize>40</bordersize>
-						<animation type="Conditional" reversible="false" condition="true">
-							<effect type="fade" start="100" end="30" time="0" tween="sine" easing="out" />
-						</animation>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>32</top>
-						<width>287</width>
-						<height>161</height>
-						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
-						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
-						<bordersize>8</bordersize>
-					</control>
-					<control type="image">
-						<left>213</left>
-						<top>157</top>
-						<width>61</width>
-						<height>24</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture border="1">views/other/episode_number.png</texture>
-						<visible>[Container.Content(Seasons) | Container.Content(Episodes) | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)] + !stringcompare(ListItem.Label,..)</visible>
-					</control>
-					<control type="label">
-						<left>213</left>
-						<top>147</top>
-						<width>61</width>
-						<height>43</height>
-						<font>FontSize_16B</font>
-						<textcolor>white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>$VAR[ThumbnailsOnThumbLabel]</label>
-					</control>
-				</focusedlayout>
-			</control>
+							<include condition="!Skin.HasSetting(NetFilxFixed)" name="NetFilxContainer">
+								<param name="listtype">wraplist</param>
+							</include>
+							<include condition="Skin.HasSetting(NetFilxFixed)" name="NetFilxContainer">
+								<param name="listtype">fixedlist</param>
+							</include>
+			
 			<control type="image">
 				<left>45</left>
 				<top>420</top>
@@ -5295,6 +5016,295 @@
 				<visible>Control.IsVisible(59)</visible>
 			</control>
 		</control>
+	</include>
+
+	<include name="NetFilxContainer">
+		<control type="$PARAM[listtype]" id="59">
+			<visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+		<left>47</left>
+		<top>420</top>
+		<width>2495</width>
+		<height>800</height>
+		<onleft>59</onleft>
+		<onright>59</onright>
+		<onup condition="Skin.HasSetting(NetfilxAlwaysShowPlot)">100</onup>
+		<onup condition="!Skin.HasSetting(NetfilxAlwaysShowPlot)">5901</onup>
+		<ondown>60</ondown>
+		<viewtype label="Netflix">List</viewtype>
+		<scrolltime tween="Quadratic" easing="out">300</scrolltime>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<focusposition>0</focusposition>
+		<pagecontrol>60</pagecontrol>
+		<!--Movies-->
+		<itemlayout condition="Container.Content(Movies) | Container.Content(Sets)" width="149.5" height="256">
+			<control type="image">
+				<width>140</width>
+				<height>203</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture border="30">views/other/panel.png</texture>
+			</control>
+			<control type="image">
+				<top>200</top>
+				<width>142</width>
+				<height>203</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture border="30" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png">views/other/panel.png</texture>
+			</control>
+			<control type="image">
+				<left>1</left>
+				<top>2</top>
+				<width>138</width>
+				<height>199</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_poster_tp.png">$VAR[VarArtPoster]</texture>
+				<bordertexture border="15">thumbs/thumb_border.png</bordertexture>
+				<bordersize>6</bordersize>
+			</control>
+			<control type="image">
+				<left>1</left>
+				<top>204</top>
+				<width>138</width>
+				<height>199</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" fallback="thumbs/fallback_poster_tp.png">$VAR[VarArtPoster]</texture>
+				<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
+				<bordersize>6</bordersize>
+			</control>
+			<control type="image">
+				<left>1</left>
+				<top>2</top>
+				<width>138</width>
+				<height>199</height>
+				<aspectratio aligny="center" align="center">stretch</aspectratio>
+				<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</texture>
+				<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+				<bordersize>6</bordersize>
+			</control>
+		</itemlayout>
+		<focusedlayout condition="Container.Content(Movies) | Container.Content(Sets)" width="149.5" height="256">
+			<control type="image">
+				<width>140</width>
+				<height>203</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture border="30">views/other/panel.png</texture>
+			</control>
+			<control type="image">
+				<top>200</top>
+				<width>142</width>
+				<height>203</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture border="30" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png">views/other/panel.png</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>2</top>
+				<width>138</width>
+				<height>199</height>
+				<aspectratio align="center" aligny="center">scale</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_poster_tp.png">$VAR[VarArtPoster]</texture>
+				<bordertexture border="15">thumbs/thumb_border.png</bordertexture>
+				<bordersize>8</bordersize>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>204</top>
+				<width>138</width>
+				<height>199</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" fallback="thumbs/fallback_poster_tp.png">$VAR[VarArtPoster]</texture>
+				<bordersize>8</bordersize>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>2</top>
+				<width>138</width>
+				<height>199</height>
+				<aspectratio aligny="center" align="center">stretch</aspectratio>
+				<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</texture>
+				<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+				<bordersize>8</bordersize>
+			</control>
+		</focusedlayout>
+	</control>
+		<!--tvshows-->
+		<itemlayout condition="Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)" width="299.5" height="256">
+			<control type="image">
+				<left>-2</left>
+				<top>30</top>
+				<width>291</width>
+				<height>165</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture border="30">views/other/panel.png</texture>
+			</control>
+			<control type="image">
+				<left>-2</left>
+				<top>194</top>
+				<width>291</width>
+				<height>165</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture border="30" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png">views/other/panel2.png</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>32</top>
+				<width>287</width>
+				<height>161</height>
+				<aspectratio align="center" aligny="center">scale</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
+				<bordertexture border="15">thumbs/thumb_border.png</bordertexture>
+				<bordersize>6</bordersize>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>32</top>
+				<width>287</width>
+				<height>161</height>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+				<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
+				<bordersize>40</bordersize>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>197</top>
+				<width>287</width>
+				<height>161</height>
+				<aspectratio align="center" aligny="center">scale</aspectratio>
+				<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
+				<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
+				<bordersize>6</bordersize>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>197</top>
+				<width>287</width>
+				<height>161</height>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" >$INFO[ListItem.Art(clearlogo)]</texture>
+				<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
+				<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
+				<bordersize>40</bordersize>
+				<animation type="Conditional" reversible="false" condition="true">
+					<effect type="fade" start="100" end="30" time="0" tween="sine" easing="out" />
+				</animation>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>32</top>
+				<width>287</width>
+				<height>161</height>
+				<aspectratio aligny="center" align="center">stretch</aspectratio>
+				<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
+				<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+				<bordersize>6</bordersize>
+			</control>
+			<control type="image">
+				<left>213</left>
+				<top>157</top>
+				<width>61</width>
+				<height>24</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture border="1">views/other/episode_number.png</texture>
+				<visible>[Container.Content(Seasons) | Container.Content(Episodes) | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)] + !stringcompare(ListItem.Label,..)</visible>
+			</control>
+			<control type="label">
+				<left>213</left>
+				<top>147</top>
+				<width>61</width>
+				<height>43</height>
+				<font>FontSize_16B</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>99000000</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[ThumbnailsOnThumbLabel]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout condition="Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)" width="299.5" height="256">
+			<control type="image">
+				<left>-2</left>
+				<top>30</top>
+				<width>291</width>
+				<height>165</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture border="30">views/other/panel.png</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>32</top>
+				<width>287</width>
+				<height>161</height>
+				<aspectratio align="center" aligny="center">scale</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
+				<bordertexture border="15">thumbs/thumb_border.png</bordertexture>
+				<bordersize>8</bordersize>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>32</top>
+				<width>287</width>
+				<height>161</height>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+				<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
+				<bordersize>40</bordersize>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>196</top>
+				<width>287</width>
+				<height>161</height>
+				<aspectratio align="center" aligny="center">scale</aspectratio>
+				<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
+				<bordersize>8</bordersize>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>197</top>
+				<width>287</width>
+				<height>161</height>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture background="true" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png" >$INFO[ListItem.Art(clearlogo)]</texture>
+				<visible>!Container.Content(Episodes) + IsEmpty(ListItem.Art(landscape)) + IsEmpty(ListItem.Art(tvshow.landscape)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
+				<bordertexture border="15">thumbs/thumb_border_fade.png</bordertexture>
+				<bordersize>40</bordersize>
+				<animation type="Conditional" reversible="false" condition="true">
+					<effect type="fade" start="100" end="30" time="0" tween="sine" easing="out" />
+				</animation>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>32</top>
+				<width>287</width>
+				<height>161</height>
+				<aspectratio aligny="center" align="center">stretch</aspectratio>
+				<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
+				<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+				<bordersize>8</bordersize>
+			</control>
+			<control type="image">
+				<left>213</left>
+				<top>157</top>
+				<width>61</width>
+				<height>24</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture border="1">views/other/episode_number.png</texture>
+				<visible>[Container.Content(Seasons) | Container.Content(Episodes) | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)] + !stringcompare(ListItem.Label,..)</visible>
+			</control>
+			<control type="label">
+				<left>213</left>
+				<top>147</top>
+				<width>61</width>
+				<height>43</height>
+				<font>FontSize_16B</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>99000000</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[ThumbnailsOnThumbLabel]</label>
+			</control>
+		</focusedlayout>
 	</include>
 	<!--========================-->
 	<!--==== ViewShelf "579" ====-->

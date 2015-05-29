@@ -1486,6 +1486,18 @@ msgctxt "#31363"
 msgid "Next"
 msgstr ""
 
+msgctxt "#31364"
+msgid "List Style"
+msgstr ""
+
+msgctxt "#31365"
+msgid "Wrap List"
+msgstr ""
+
+msgctxt "#31366"
+msgid "Fixed List"
+msgstr ""
+
 #: empty strings from id 31354 to 31369 Quick Navigation labels
 msgctxt "#31370"
 msgid "Update Video Library"

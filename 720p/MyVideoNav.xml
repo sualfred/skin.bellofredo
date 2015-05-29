@@ -135,7 +135,18 @@
 					<visible>Control.IsVisible(560) + stringcompare(Container.FolderPath,addons://sources/video/)</visible>
 				</control>
 				<control type="togglebutton" id="297">
-					<description>Show Logo As Ttile</description>
+					<description>toggle netfilx container type</description>
+					<include>TopLeftMenusButton</include>
+					<label>$LOCALIZE[31364]: $LOCALIZE[31365]</label>
+					<altlabel>$LOCALIZE[31364]: $LOCALIZE[31366]</altlabel>
+					<onclick>Skin.ToggleSetting(NetFilxFixed)</onclick>
+					<onclick>XBMC.ReloadSkin()</onclick>
+					<onclick>SetFocus(9000)</onclick>
+					<selected>Skin.HasSetting(NetFilxFixed)</selected>
+					<visible>Control.IsVisible(59) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+				</control>
+				<control type="togglebutton" id="305">
+					<description>Show Logo As Title</description>
 					<include>TopLeftMenusButton</include>
 					<label>$LOCALIZE[31219]: $LOCALIZE[31012]</label>
 					<altlabel>$LOCALIZE[31219]: $LOCALIZE[31011]</altlabel>
