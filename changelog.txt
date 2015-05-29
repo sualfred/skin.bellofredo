@@ -1,3 +1,9 @@
+[B][COLOR=FF56ADDA]v4.3.5[/COLOR][/B]
+• Added: Toggle to change the list from wraplist to fixedlist in videos view (NetFilx)
+• Added: New media flag icons for DialogVideoInfo and video OSD
+• Added: Icons to BelloFredo Extrapack addon
+• Added: Skin provided thumbnail icon selection for menu editing dialog
+
 [B][COLOR=FF56ADDA]v4.3.4[/COLOR][/B]
 • Added: Option to replace the home top menu elements with icons
 • Added: Option to hide the labels for the icon main menu style
