@@ -46,8 +46,8 @@
 
 	<include name="FlagsLayout">
 		<width>65</width>
-		<height>28</height>
-		<colordiffuse>99ffffff</colordiffuse>
+		<height>25</height>
+		<colordiffuse>bbffffff</colordiffuse>
 		<aspectratio align="center">keep</aspectratio>
 	</include>
 
@@ -62,7 +62,7 @@
 		<control type="image">
 			<description>Video Resolution Image</description>
 			<include>FlagsLayout</include>
-			<texture>$INFO[ListItem.VideoResolution,flags/res/,.png]</texture>
+			<texture>$INFO[ListItem.VideoResolution,flags/res/dialog/,.png]</texture>
 			<visible>!IsEmpty(ListItem.VideoResolution)</visible>
 		</control>
 	</include>
@@ -71,7 +71,7 @@
 		<control type="image">
 			<description>Video Codec Image</description>
 			<include>FlagsLayout</include>
-			<texture>$VAR[VideoCodec,flags/video/,.png]</texture>
+			<texture>$VAR[VideoCodec,flags/video/dialog/,.png]</texture>
 			<visible>!IsEmpty(ListItem.VideoCodec)</visible>
 		</control>
 	</include>
@@ -79,8 +79,9 @@
 	<include name="VideoStereoscopicsFlagsConditions">
 		<control type="image">
 			<description>Video Stereoscopics Image</description>
+			<width>39</width>
 			<include>FlagsLayout</include>
-			<texture>flags/video/3d.png</texture>
+			<texture>flags/video/dialog/3d.png</texture>
 			<visible>ListItem.IsStereoscopic</visible>
 		</control>
 	</include>
@@ -89,7 +90,7 @@
 		<control type="image">
 			<description>Audio Codec Image</description>
 			<include>FlagsLayout</include>
-			<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>			
+			<texture>$INFO[ListItem.AudioCodec,flags/audio/dialog/,.png]</texture>			
 			<visible>!IsEmpty(ListItem.AudioCodec)</visible>
 		</control>
 	</include>
@@ -98,7 +99,7 @@
 		<control type="image">
 			<description>Audio Channel Image</description>
 			<include>FlagsLayout</include>
-			<texture>$INFO[ListItem.AudioChannels,flags/audiochannels/,.png]</texture>		
+			<texture>$INFO[ListItem.AudioChannels,flags/audiochannels/dialog/,.png]</texture>		
 			<visible>!IsEmpty(ListItem.AudioChannels)</visible>
 		</control>
 	</include>
@@ -106,8 +107,9 @@
 	<include name="AspectRatioFlagsConditions">
 		<control type="image">
 			<description>Aspectratio Image</description>
+			<width>55</width>
 			<include>FlagsLayout</include>
-			<texture>$INFO[ListItem.VideoAspect,flags/aspect/,.png]</texture>	
+			<texture>$INFO[ListItem.VideoAspect,flags/aspect/dialog/,.png]</texture>	
 			<visible>!IsEmpty(ListItem.VideoAspect)</visible>
 		</control>
 	</include>
@@ -205,11 +207,11 @@
 				<visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
 				<control type="image">
 					<include>FlagsLayout</include>
-					<texture>flags/language/language_flag.png</texture>
+					<texture>flags/language/dialog/language_flag.png</texture>
 				</control>
 				<control type="image">
 					<left>30</left>
-					<top>4</top>
+					<top>3</top>
 					<include>VideoLanguageFlagsLayout</include>
 					<texture>$INFO[Window(movieinformation).Property(AudioLanguage.1),flags/language/,.png]</texture>
 				</control>

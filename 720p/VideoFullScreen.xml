@@ -683,13 +683,13 @@
 						<height>23</height>
 						<colordiffuse>77ffffff</colordiffuse>
 						<aspectratio align="center">keep</aspectratio>
-						<texture>flags/language/language_flag.png</texture>
+						<texture>flags/language/dialog/language_flag.png</texture>
 					</control>
 					<control type="image" id="1">
-						<left>27</left>
+						<left>26</left>
 						<top>3</top>
 						<width>24</width>
-						<height>17</height>
+						<height>16.5</height>
 						<aspectratio align="center">keep</aspectratio>
 						<texture>$INFO[VideoPlayer.AudioLanguage,flags/language/,.png]</texture>
 					</control>
@@ -703,25 +703,26 @@
 						<height>23</height>
 						<colordiffuse>77ffffff</colordiffuse>
 						<aspectratio align="center">keep</aspectratio>
-						<texture>flags/language/subtitle_flag.png</texture>
+						<texture>flags/language/dialog/subtitle_flag.png</texture>
 					</control>
 					<control type="image" id="1">
-						<left>27</left>
+						<left>26</left>
 						<top>3</top>
 						<width>24</width>
-						<height>17</height>
+						<height>16.5</height>
 						<aspectratio align="center">keep</aspectratio>
 						<texture>$INFO[VideoPlayer.SubtitleLanguage,flags/language/,.png]</texture>
 					</control>
 				</control>
 				<!-- Stereoscopic -->
 				<control type="group" id="1">
-					<width>54</width>
+					<width>31</width>
 					<visible>VideoPlayer.IsStereoscopic</visible>
 					<control type="image" id="1">
+						<width>31</width>
 						<description>Video Stereoscopics Image</description>
 						<include>FlagsOSDLayout</include>
-						<texture>flags/video/3d.png</texture>
+						<texture>flags/video/dialog/3d.png</texture>
 					</control>
 				</control>
 				<!-- Video Resolution -->
@@ -731,7 +732,7 @@
 					<control type="image" id="1">
 						<description>Video Resolution Flag</description>
 						<include>FlagsOSDLayout</include>
-						<texture>$INFO[VideoPlayer.VideoResolution,flags/res/,.png]</texture>
+						<texture>$INFO[VideoPlayer.VideoResolution,flags/res/dialog/,.png]</texture>
 						<!-- <visible>IsEmpty(VideoPlayer.IsStereoscopic) + ![SubString(Player.FileNameAndPath,.3D.) | SubString(Player.FileNameAndPath,-3D.) | SubString(Player.Filenameandpath,.3dbd.)]</visible> -->
 					</control>
 				</control>
@@ -742,7 +743,7 @@
 					<control type="image" id="1">
 						<description>Audio Codec Flag</description>
 						<include>FlagsOSDLayout</include>
-						<texture>$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
+						<texture>$INFO[VideoPlayer.AudioCodec,flags/audio/dialog/,.png]</texture>
 					</control>
 				</control>
 				<!-- Audio Channels -->
@@ -752,7 +753,7 @@
 					<control type="image" id="1">
 						<description>Audio Channel Flag</description>
 						<include>FlagsOSDLayout</include>
-						<texture>$INFO[VideoPlayer.AudioChannels,flags/audiochannels/,.png]</texture>
+						<texture>$INFO[VideoPlayer.AudioChannels,flags/audiochannels/dialog/,.png]</texture>
 					</control>
 				</control>
 			</control>
