@@ -253,7 +253,7 @@
 					<label>$ADDON[script.skinshortcuts 32025]</label>
 					<label2>[COLOR=selected]$INFO[Container(211).ListItem.Label][/COLOR]</label2>
 				</control>				
-				<control type="button" id="306">
+				<control type="button" id="311">
 					<description>Thumbnail</description>
 					<width>400</width>
 					<height>40</height>

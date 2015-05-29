@@ -218,7 +218,7 @@
 	<!-- =============== -->
 	<!-- Icons Overrides -->
 	<!-- =============== -->
-	<!--<thumbnailBrowse default="special://skin/extras/icons/">True</thumbnailBrowse>-->
+    <thumbnailBrowseDefault>special://profile/addon_data/skin.bellofredo.extrapack/icons/</thumbnailBrowseDefault>
 
 	<icon labelID="plugin.video.youtube">special://skin/extras/icons/youtube.png</icon>
 	<icon labelID="plugin.video.amazon">special://skin/extras/icons/amazon.png</icon>
@@ -283,4 +283,49 @@
 	<icon image="DefaultDVDFull.png">special://skin/extras/icons/dvd.png</icon>	
 	<icon image="DefaultFolder.png">special://skin/extras/icons/folder.png</icon>	
 	
+
+	<!-- provided thumbnails -->
+	<thumbnail label="Addons">special://skin/extras/icons/addons.png</thumbnail>
+	<thumbnail label="Amazon Instant Video">special://skin/extras/icons/amazon.png</thumbnail>
+	<thumbnail label="Download">special://skin/extras/icons/download.png</thumbnail>
+	<thumbnail label="DropBox">special://skin/extras/icons/dropbox.png</thumbnail>
+	<thumbnail label="Disc">special://skin/extras/icons/dvd.png</thumbnail>
+	<thumbnail label="Edit">special://skin/extras/icons/edit.png</thumbnail>
+	<thumbnail label="Edit #2">special://skin/extras/icons/edit2.png</thumbnail>
+	<thumbnail label="EPG">special://skin/extras/icons/epg.png</thumbnail>
+	<thumbnail label="Favourites">special://skin/extras/icons/favourites.png</thumbnail>
+	<thumbnail label="File">special://skin/extras/icons/file.png</thumbnail>
+	<thumbnail label="Folder">special://skin/extras/icons/folder.png</thumbnail>
+	<thumbnail label="Games">special://skin/extras/icons/games.png</thumbnail>
+	<thumbnail label="GameBoy">special://skin/extras/icons/games2.png</thumbnail>
+	<thumbnail label="HDTV">special://skin/extras/icons/hdtv.png</thumbnail>
+	<thumbnail label="Home">special://skin/extras/icons/home.png</thumbnail>
+	<thumbnail label="Live TV">special://skin/extras/icons/livetv.png</thumbnail>
+	<thumbnail label="Menu">special://skin/extras/icons/menu.png</thumbnail>
+	<thumbnail label="Movies">special://skin/extras/icons/movies.png</thumbnail>
+	<thumbnail label="Music">special://skin/extras/icons/music.png</thumbnail>
+	<thumbnail label="Music Videos">special://skin/extras/icons/musicvideos.png</thumbnail>
+	<thumbnail label="Network">special://skin/extras/icons/network.png</thumbnail>
+	<thumbnail label="Network #2">special://skin/extras/icons/network2.png</thumbnail>
+	<thumbnail label="Pictures">special://skin/extras/icons/pictures.png</thumbnail>
+	<thumbnail label="Play">special://skin/extras/icons/play.png</thumbnail>
+	<thumbnail label="Playlist">special://skin/extras/icons/playlist.png</thumbnail>
+	<thumbnail label="Power">special://skin/extras/icons/power.png</thumbnail>
+	<thumbnail label="Programs">special://skin/extras/icons/programs.png</thumbnail>
+	<thumbnail label="Radio">special://skin/extras/icons/radio.png</thumbnail>
+	<thumbnail label="Search">special://skin/extras/icons/search.png</thumbnail>
+	<thumbnail label="Shortcut">special://skin/extras/icons/shortcut.png</thumbnail>
+	<thumbnail label="Stream">special://skin/extras/icons/stream.png</thumbnail>
+	<thumbnail label="System">special://skin/extras/icons/system.png</thumbnail>
+	<thumbnail label="Settings">special://skin/extras/icons/system2.png</thumbnail>
+	<thumbnail label="Trailer">special://skin/extras/icons/trailer.png</thumbnail>
+	<thumbnail label="TV Show">special://skin/extras/icons/tvshows.png</thumbnail>
+	<thumbnail label="Update">special://skin/extras/icons/update.png</thumbnail>
+	<thumbnail label="User">special://skin/extras/icons/user.png</thumbnail>
+	<thumbnail label="Videos">special://skin/extras/icons/videos.png</thumbnail>
+	<thumbnail label="Videos #2">special://skin/extras/icons/videos2.png</thumbnail>
+	<thumbnail label="Videos #3">special://skin/extras/icons/videos3.png</thumbnail>
+	<thumbnail label="Videos #4">special://skin/extras/icons/videos4.png</thumbnail>
+	<thumbnail label="Weather">special://skin/extras/icons/weather.png</thumbnail>
+	<thumbnail label="YouTube">special://skin/extras/icons/youtube.png</thumbnail>
 </overrides>
