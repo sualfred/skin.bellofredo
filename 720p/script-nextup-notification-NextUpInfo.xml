@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1118">
+	<defaultcontrol always="true">3012</defaultcontrol>
+	<zorder>0</zorder>
+	<controls>
+		<control type="group">
+			<control type="image" id="1">
+				<left>0</left>
+				<top>410</top>
+				<width>1280</width>
+				<height>220</height>
+				<fadetime>200</fadetime>
+				<texture background="true">osd/tile.png</texture>
+				<colordiffuse>D9FFFFFF</colordiffuse>
+				<include>FanartFade</include>
+			</control>
+			<control type="group" id="1">
+				<left>35</left>
+				<top>325</top>
+				<animation type="WindowOpen">
+					<effect type="slide" start="-150,0" end="0,0" time="450" delay="0" tween="sine" easing="out" />
+					<effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="out" />
+				</animation>
+				<animation type="WindowClose">
+					<effect type="slide" start="0,0" end="-200,0" time="400" delay="0" tween="sine" easing="out" />
+					<effect type="fade" start="100" end="0" time="400" delay="0" tween="sine" easing="out" />
+				</animation>
+				<animation type="Visible">
+					<effect type="slide" start="-150,0" end="0,0" time="450" delay="0" tween="sine" easing="out" />
+					<effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="out" />
+				</animation>
+				<animation type="Hidden">
+					<effect type="slide" start="0,0" end="-300,0" time="400" delay="0" tween="sine" easing="out" />
+					<effect type="fade" start="100" end="0" time="400" delay="0" tween="sine" easing="out" />
+				</animation>
+				<!--poster-->
+				<control type="image" id="3009">
+					<left>-70</left>
+					<top>-226</top>
+					<width>1</width>
+					<height>1</height>
+				</control>
+				<!--logoart-->
+				<control type="image" id="3006">
+					<left>-70</left>
+					<top>-226</top>
+					<width>1</width>
+					<height>1</height>
+				</control>
+				<!--episode thumb-->
+				<control type="image" id="3008">
+					<left>-70</left>
+					<top>-226</top>
+					<width>1</width>
+					<height>1</height>
+				</control>
+				<!--Cover-->
+				<control type="group" id="1">
+					<!--thumbnail-->
+					<control type="image" id="1">
+						<left>8</left>
+						<top>73</top>
+						<width>274</width>
+						<height>199</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image" id="1">
+						<left>8</left>
+						<top>73</top>
+						<width>274</width>
+						<height>199</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+						<texture background="true" diffuse="thumbs/video_diffuse.png">$INFO[Control.GetLabel(3008)]</texture>
+						<fadetime>800</fadetime>
+					</control>
+					<control type="image" id="1">
+						<left>0</left>
+						<top>65</top>
+						<width>289</width>
+						<height>215</height>
+						<texture background="true">thumbs/video_overlay.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<fadetime>800</fadetime>
+					</control>
+					<!--Labels-->
+					<control type="group" id="1">
+						<left>300</left>
+						<top>100</top>
+						<include>OSDPlotAnimation</include>
+						<!--addon filled labels-->
+						<control type="label" description="episode/season info" id="3002">
+							<visible>false</visible>
+						</control>
+						<control type="label" description="Title" id="3000">
+							<visible>false</visible>
+						</control>
+						<control type="label" id="3003" description="rating">
+							<visible>false</visible>
+						</control>
+						<control type="label" id="3004" description="year/runtime">
+							<visible>false</visible>
+						</control>
+						<!--plot-->
+						<control type="textbox" description="Plot" id="3001">
+							<width>690</width>
+							<top>78</top>
+							<height>68</height>
+							<font>FontSize_22</font>
+							<align>justify</align>
+							<left>0</left>
+							<autoscroll time="3000" delay="5000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+							<textcolor>99white</textcolor>
+							<visible>false</visible>
+						</control>
+						<control type="label" id="1">
+							<description>Title label</description>
+							<left>0</left>
+							<top>15</top>
+							<height>30</height>
+							<width>690</width>
+							<label>$INFO[Control.GetLabel(3002),[COLOR=blue]$LOCALIZE[31384]:[/COLOR] , ]$INFO[Control.GetLabel(3000)]</label>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>FontSize_36</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>55000000</shadowcolor>
+						</control>
+						<!--subinfo-->
+						<control type="label" id="1">
+							<description>Label</description>
+							<left>2</left>
+							<top>46</top>
+							<height>30</height>
+							<width>690</width>
+							<label>$LOCALIZE[31383]</label>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>FontSize_22</font>
+							<textcolor>99white</textcolor>
+							<shadowcolor>55000000</shadowcolor>
+						</control>
+						<!--cancel message-->
+						<control type="label" description="Next up">
+							<top>140</top>
+							<width>500</width>
+							<bottom>30</bottom>
+							<height>40</height>
+							<font>FontSize_22</font>
+							<textcolor>99white</textcolor>
+							<shadowcolor>55000000</shadowcolor>
+							<label>$LOCALIZE[31369]</label>
+						</control>
+						<!--remaining time-->
+						<control type="label" description="Total Time">
+							<top>76</top>
+							<height>68</height>
+							<width>400</width>
+							<font>WeatherTemp</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>55000000</shadowcolor>
+							<label>$INFO[Player.TimeRemaining(ss),-]</label>
+						</control>
+					</control>
+				</control>
+			</control>
+			<!--buttons-->
+			<control type="group">
+				<top>548</top>
+				<right>35</right>
+				<width>110</width>
+				<height>55</height>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="slide" start="150,0" end="0,0" time="450" delay="0" tween="sine" easing="out" />
+					<effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="out" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="slide" start="0,0" end="200,0" time="450" delay="0" tween="sine" easing="out" />
+					<effect type="fade" start="100" end="0" time="450" delay="0" tween="sine" easing="out" />
+				</animation>
+				<animation type="Visible" reversible="false">
+					<effect type="slide" start="150,0" end="0,0" time="450" delay="0" tween="sine" easing="out" />
+					<effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="out" />
+				</animation>
+				<animation type="Hidden" reversible="false">
+					<effect type="slide" start="0,0" end="200,0" time="450" delay="0" tween="sine" easing="out" />
+					<effect type="fade" start="100" end="0" time="450" delay="0" tween="sine" easing="out" />
+				</animation>
+				<control type="button" id="3012">
+					<description>Watch Now</description>
+					<width>55</width>
+					<height>55</height>
+					<onright>3013</onright>
+					<onleft>3013</onleft>
+					<font>FontSize_24</font>
+					<align>center</align>
+					<label>-</label>
+					<textoffsetx>64</textoffsetx>
+					<texturefocus>osd/play_fo.png</texturefocus>
+					<texturenofocus>osd/play_nf.png</texturenofocus>
+				</control>
+				<control type="button" id="3013">
+					<description>Cancel</description>
+					<right>0</right>
+					<width>55</width>
+					<height>55</height>
+					<onright>3012</onright>
+					<onleft>3012</onleft>
+					<font>FontSize_24</font>
+					<align>center</align>
+					<label>-</label>
+					<textoffsetx>64</textoffsetx>
+					<texturefocus>osd/stop_fo.png</texturefocus>
+					<texturenofocus>osd/stop_nf.png</texturenofocus>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>
