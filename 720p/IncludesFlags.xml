@@ -222,7 +222,7 @@
 				<visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.1),Window(movieinformation).Property(AudioLanguage.2))</visible>
 				<control type="image">
 					<include>FlagsLayout</include>
-					<texture>flags/language/language_flag.png</texture>
+					<texture>flags/language/dialog/language_flag.png</texture>
 				</control>
 				<control type="image">
 					<left>30</left>
@@ -238,7 +238,7 @@
 				<visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.2),Window(movieinformation).Property(AudioLanguage.3))</visible>
 				<control type="image">
 					<include>FlagsLayout</include>
-					<texture>flags/language/language_flag.png</texture>
+					<texture>flags/language/dialog/language_flag.png</texture>
 				</control>
 				<control type="image">
 					<left>30</left>
@@ -253,7 +253,7 @@
 				<visible>!IsEmpty(Window(movieinformation).Property(SubtitleLanguage.1))</visible>
 				<control type="image">
 					<include>FlagsLayout</include>
-					<texture>flags/language/subtitle_flag.png</texture>
+					<texture>flags/language/dialog/subtitle_flag.png</texture>
 				</control>
 				<control type="image">
 					<left>30</left>
@@ -268,7 +268,7 @@
 				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.1),Window(movieinformation).Property(SubtitleLanguage.2))</visible>
 				<control type="image">
 					<include>FlagsLayout</include>
-					<texture>flags/language/subtitle_flag.png</texture>
+					<texture>flags/language/dialog/subtitle_flag.png</texture>
 				</control>
 				<control type="image">
 					<left>30</left>
@@ -284,7 +284,7 @@
 				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.2),Window(movieinformation).Property(SubtitleLanguage.3))</visible>
 				<control type="image">
 					<include>FlagsLayout</include>
-					<texture>flags/language/subtitle_flag.png</texture>
+					<texture>flags/language/dialog/subtitle_flag.png</texture>
 				</control>
 				<control type="image">
 					<left>30</left>
@@ -301,7 +301,7 @@
 				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.3),Window(movieinformation).Property(SubtitleLanguage.4))</visible>
 				<control type="image">
 					<include>FlagsLayout</include>
-					<texture>flags/language/subtitle_flag.png</texture>
+					<texture>flags/language/dialog/subtitle_flag.png</texture>
 				</control>
 				<control type="image">
 					<left>30</left>
@@ -319,7 +319,7 @@
 				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.4),Window(movieinformation).Property(SubtitleLanguage.5))</visible>
 				<control type="image">
 					<include>FlagsLayout</include>
-					<texture>flags/language/subtitle_flag.png</texture>
+					<texture>flags/language/dialog/subtitle_flag.png</texture>
 				</control>
 				<control type="image">
 					<left>30</left>
@@ -338,7 +338,7 @@
 				<visible>!Stringcompare(Window(movieinformation).Property(SubtitleLanguage.5),Window(movieinformation).Property(SubtitleLanguage.6))</visible>
 				<control type="image">
 					<include>FlagsLayout</include>
-					<texture>flags/language/subtitle_flag.png</texture>
+					<texture>flags/language/dialog/subtitle_flag.png</texture>
 				</control>
 				<control type="image">
 					<left>30</left>

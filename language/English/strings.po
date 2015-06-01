@@ -1498,6 +1498,18 @@ msgctxt "#31366"
 msgid "Fixed List"
 msgstr ""
 
+msgctxt "#31367"
+msgid "Set"
+msgstr ""
+
+msgctxt "#31368"
+msgid "Next Episode"
+msgstr ""
+
+msgctxt "#31369"
+msgid "Press stop to cancel automatic play of next episode"
+msgstr ""
+
 #: empty strings from id 31354 to 31369 Quick Navigation labels
 msgctxt "#31370"
 msgid "Update Video Library"
@@ -1549,6 +1561,18 @@ msgstr ""
 
 msgctxt "#31382"
 msgid "Bottom Labels"
+msgstr ""
+
+msgctxt "#31383"
+msgid "Episode will start in ..."
+msgstr ""
+
+msgctxt "#31384"
+msgid "Next Up"
+msgstr ""
+
+msgctxt "#31385"
+msgid "Library Update"
 msgstr ""
 
 #: empty strings from id 31383 to 31408 settings Category Description & Header

@@ -739,7 +739,7 @@
 				<!--library update -->
 				<control type="label">
 					<include>TopSmallLabel</include>
-					<label>$LOCALIZE[799]</label>
+					<label>$LOCALIZE[31385]</label>
 					<animation effect="fade" start="100" end="70" time="100" tween="sine" easing="in" condition="!Control.HasFocus(212)" reversible="true">Conditional</animation>
 					<animation effect="zoom"  start="100" end="95" time="100" tween="sine" easing="in" center="auto" condition="!Control.HasFocus(212)" reversible="true">Conditional</animation>
 					<visible>!Skin.HasSetting(DisableLibraryRefreshButton) + !Skin.HasSetting(IconTopMenuStyle)</visible>
