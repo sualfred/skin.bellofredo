@@ -66,8 +66,7 @@
 				<texturefocus>osd/rec_fo.png</texturefocus>
 				<texturenofocus>osd/rec_nf.png</texturenofocus>
 				<onclick>PlayerControl(Record)</onclick>
-				<enable>Player.CanRecord</enable>
-				<visible>VideoPlayer.Content(LiveTV)</visible>
+				<visible>Player.CanRecord + VideoPlayer.Content(LiveTV)</visible>
 			</control>						
 			<control type="button" id="108">
 				<width>55</width>
