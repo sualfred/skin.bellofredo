@@ -1,3 +1,9 @@
+[B][COLOR=FF56ADDA]v4.3.6[/COLOR][/B]
+• Added: Support for NextUp Notification script
+• Fixed: Missing new flag icons for additional subtitle and language flags
+• Changed: Language string of "Movie Set" and "Library Update"
+• Updated: GER translations
+
 [B][COLOR=FF56ADDA]v4.3.5[/COLOR][/B]
 • Added: Toggle to change the list from wraplist to fixedlist in videos view (NetFilx)
 • Added: New media flag icons for DialogVideoInfo and video OSD
