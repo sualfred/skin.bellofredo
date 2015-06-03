@@ -35,6 +35,15 @@
 						<texture>$INFO[Container(50).ListItem.Icon]</texture>
 						<visible>!IsEmpty(Container(50).ListItem.Icon)</visible>
 					</control>
+					<control type="image">
+						<left>10</left>
+						<top>-113</top>
+						<width>295</width>
+						<height>100</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[Container(50).ListItem.Icon]</texture>
+						<visible>!IsEmpty(Container(50).ListItem.Icon)</visible>
+					</control>
 					<control type="label">
 						<left>10</left>
 						<top>5</top>

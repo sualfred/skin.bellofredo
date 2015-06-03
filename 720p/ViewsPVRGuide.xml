@@ -527,7 +527,7 @@
 						<visible>Control.IsVisible(11)</visible>
 						<control type="list" id="11">
 							<left>35</left>
-							<top>70</top>
+							<top>270</top>
 							<width>1200</width>
 							<height>350</height>
 							<onleft>32</onleft>
