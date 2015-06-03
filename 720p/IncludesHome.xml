@@ -771,26 +771,51 @@
 				<visible>Skin.HasSetting(ShowLibraryTotals)</visible>
 				<animation effect="slide" end="-3,3" reversible="false" condition="stringcompare(System.Language,Greek) | stringcompare(System.Language,Italian)">Conditional</animation>
 				<include>HomeSlideAnimations</include>
-				<control type="fadelabel">
-					<animation effect="slide" time="0" start="0,0" end="0,0" condition="!Skin.HasSetting(ShowKodiSymbol)">Conditional</animation>
+
+				<!-- small database info -->
+				<control type="grouplist">					
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
 					<left>3</left>
 					<top>48</top>
 					<width>500</width>
-					<height>20</height>
-					<font>FontSize_18</font>
-					<textcolor>blue</textcolor>
-					<shadowcolor>55000000</shadowcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label>$INFO[Window(Home).Property(Movies.Count),$LOCALIZE[20342]: ]</label>
-					<label>$INFO[Window(Home).Property(TVShows.Count),$LOCALIZE[31002]: ]</label>
-					<label>$INFO[Window(Home).Property(Music.AlbumsCount),$LOCALIZE[132]: ]</label>
-					<label>$INFO[Window(Home).Property(Music.SongsCount),$LOCALIZE[134]: ]</label>
-					<scroll>false</scroll>
-					<scrollout>false</scrollout>
-					<scrollspeed>100</scrollspeed>
-					<pauseatend>8000</pauseatend>
+					<control type="fadelabel">		
+						<width>500</width>
+						<height>20</height>
+						<font>FontSize_18</font>
+						<textcolor>blue</textcolor>
+						<shadowcolor>55000000</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[Window(Home).Property(Movies.Count),$LOCALIZE[20342]: ]</label>
+						<label>$INFO[Window(Home).Property(TVShows.Count),$LOCALIZE[31002]: ]</label>
+						<label>$INFO[Window(Home).Property(Music.AlbumsCount),$LOCALIZE[132]: ]</label>
+						<label>$INFO[Window(Home).Property(Music.SongsCount),$LOCALIZE[134]: ]</label>
+						<scroll>false</scroll>
+						<scrollout>false</scrollout>
+						<scrollspeed>100</scrollspeed>
+						<pauseatend>8000</pauseatend>
+					</control>
+					<control type="fadelabel">		
+						<width>500</width>
+						<height>20</height>
+						<font>FontSize_14</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>AA000000</shadowcolor>
+						<shadowcolor>55000000</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]Latest Movie:[/B] $INFO[Window.Property(LatestMovie.1.Title)] ($INFO[Window.Property(LatestMovie.1.Year)])</label>
+						<label>[B]Latest Episode:[/B] $INFO[Window.Property(LatestEpisode.1.ShowTitle),, - ]$INFO[Window.Property(LatestEpisode.1.EpisodeSeason),,x]$INFO[Window.Property(LatestEpisode.1.EpisodeNumber),,. ]$INFO[Window.Property(LatestEpisode.1.EpisodeTitle)]</label>
+						<label>[B]Latest Album:[/B] $INFO[Window.Property(LatestAlbum.1.Artist),, - ]$INFO[Window.Property(LatestAlbum.1.Title)]</label>
+						<label>[B]Latest Song:[/B] $INFO[Window.Property(LatestSong.1.Artist),, - ]$INFO[Window.Property(LatestSong.1.Title)]</label>
+						<scroll>false</scroll>
+						<scrollout>false</scrollout>
+						<scrollspeed>100</scrollspeed>
+						<pauseatend>8000</pauseatend>
+					</control>
 				</control>
+
 			</control>
 		</control>
 	</include>

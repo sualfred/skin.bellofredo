@@ -1795,7 +1795,7 @@
 			</control>
 		</control>
 	</control>
-
+	<!-- small recording info -->
 	<control type="group">
 		<left>1187</left>
 		<visible>[PVR.IsRecording | PVR.HasNonRecordingTimer]</visible>
