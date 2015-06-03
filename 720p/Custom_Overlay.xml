@@ -30,7 +30,6 @@
 			<visible>true</visible>
 			
 			<!-- player content information -->
-			
 			<control type="label">
 				<width>780</width>
 				<height>21</height>
@@ -38,32 +37,8 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>blubb: $INFO[VideoPlayer.Plot]</label>
+				<label>Temporary Info: $INFO[ListItem.AudioCodec]</label>
 			</control>
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
-				<label>Costum Fav Var: $INFO[Skin.String(CustomWidgetPath1.List)]</label>
-			</control>
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
-				<label>Source quelle: $INFO[$VAR[QuickNav_WidgetListContentCustomPath]]</label>
-			</control>
-			<!--<control type="image">
-						<width>238</width>
-						<height>340</height>
-						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture diffuse="views/slide/poster_diffuse_nf.png">overlays/unwatched/slide/$VAR[WatchedStateOverlay]_Poster.png</texture>
-			</control>-->
 			<control type="label">
 				<width>780</width>
 				<height>21</height>
