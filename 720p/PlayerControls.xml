@@ -1229,8 +1229,7 @@
 							<width>186</width>
 							<height>186</height>
 							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-							<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">thumbs/thumb_back.png</texture>
-							
+							<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">thumbs/thumb_back.png</texture>							
 						</control>				
 						<control type="image">
 							<left>0</left>
@@ -1238,8 +1237,7 @@
 							<width>186</width>
 							<height>186</height>
 							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-							<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$INFO[Player.Art(thumb)]</texture>
-							
+							<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$INFO[Player.Art(thumb)]</texture>							
 							<visible>Player.HasAudio</visible>
 						</control>		
 						<control type="image">
@@ -1248,8 +1246,7 @@
 							<width>186</width>
 							<height>186</height>
 							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-							<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$VAR[VideoPlayerThumb]</texture>
-							
+							<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$VAR[VideoPlayerThumb]</texture>							
 							<visible>!Player.HasAudio + !VideoPlayer.Content(LiveTV)</visible>
 						</control>	
 						<control type="image">
@@ -1258,8 +1255,7 @@
 							<width>186</width>
 							<height>186</height>
 							<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-							<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$VAR[VideoPlayerThumb]</texture>
-							
+							<texture background="true" fallback="DefaultLiveTV.png" diffuse="thumbs/music_diffuse.png">$VAR[VideoPlayerThumb]</texture>
 							<visible>!Player.HasAudio + VideoPlayer.Content(LiveTV)</visible>
 						</control>
 						<control type="image">
@@ -1268,8 +1264,7 @@
 							<width>200</width>
 							<height>200</height>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
-							<texture background="true">thumbs/music_overlay.png</texture>
-							
+							<texture background="true">thumbs/music_overlay.png</texture>							
 						</control>
 						<control type="image">
 							<description>paused indicator</description>

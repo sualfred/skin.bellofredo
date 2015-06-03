@@ -312,7 +312,7 @@
 						<width>199</width>
 						<height>199</height>
 						<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-						<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="thumbs/music_diffuse.png">$VAR[VideoPlayerThumb]</texture>
+						<texture background="true" fallback="DefaultLiveTV.png" diffuse="thumbs/music_diffuse.png">$VAR[VideoPlayerThumb]</texture>
 						<fadetime>800</fadetime>
 					</control>
 					<control type="image" id="1">
