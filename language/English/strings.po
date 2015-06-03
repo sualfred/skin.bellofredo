@@ -1575,6 +1575,14 @@ msgctxt "#31385"
 msgid "Library Update"
 msgstr ""
 
+msgctxt "#31386"
+msgid "Still there?"
+msgstr ""
+
+msgctxt "#31387"
+msgid "Press Play to continue with the next episode"
+msgstr ""
+
 #: empty strings from id 31383 to 31408 settings Category Description & Header
 #: Labels
 msgctxt "#31409"
