@@ -1,3 +1,10 @@
+[B][COLOR=FF56ADDA]v4.3.7[/COLOR][/B]
+• Added: Recently changes of NextUp script
+• Added: Latest movie/episode/album/song to the library statistic in the top menu
+• Changed: Minor layout adjustment of the EPG view 
+• Changed: Minor layout adjustment of the TV Channel view
+• Changed: Fallback images if no LiveTV channel icon is available
+
 [B][COLOR=FF56ADDA]v4.3.6[/COLOR][/B]
 • Added: Support for NextUp Notification script
 • Fixed: Missing new flag icons for additional subtitle and language flags
