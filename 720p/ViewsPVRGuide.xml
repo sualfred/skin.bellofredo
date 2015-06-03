@@ -19,7 +19,7 @@
 					<left>35</left>
 					<top>220</top>
 					<width>1245</width>
-					<height>400</height>
+					<height>350</height>
 					<onleft>9000</onleft>
 					<onright>9000</onright>
 					<onup>10</onup>
@@ -527,7 +527,7 @@
 						<visible>Control.IsVisible(11)</visible>
 						<control type="list" id="11">
 							<left>35</left>
-							<top>270</top>
+							<top>70</top>
 							<width>1200</width>
 							<height>350</height>
 							<onleft>32</onleft>

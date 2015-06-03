@@ -26,6 +26,15 @@
 						<texture border="4">windows/pvr/seperator.png</texture>
 						<include>VisibleFadeEffect2</include>
 					</control>
+					<control type="image">
+						<left>10</left>
+						<top>-113</top>
+						<width>295</width>
+						<height>100</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[Container(50).ListItem.Icon]</texture>
+						<visible>!IsEmpty(Container(50).ListItem.Icon)</visible>
+					</control>
 					<control type="label">
 						<left>10</left>
 						<top>5</top>
@@ -33,7 +42,7 @@
 						<height>35</height>
 						<font>FontSize_20B</font>
 						<label fallback="..">$INFO[Container(50).ListItem.Title]</label>
-						<textcolor>99white</textcolor>
+						<textcolor>white</textcolor>
 						<shadowcolor>99000000</shadowcolor>
 						<scroll>false</scroll>
 						<visible>Container(50).ListItem.HasEpg</visible>
@@ -45,7 +54,7 @@
 						<height>25</height>
 						<font>FontSize_18</font>
 						<label>$INFO[Container(50).ListItem.StartTime,, - ]$INFO[Container(50).ListItem.EndTime]</label>
-						<textcolor>99white</textcolor>
+						<textcolor>white</textcolor>
 						<shadowcolor>99000000</shadowcolor>
 						<scroll>false</scroll>
 						<visible>Container(50).ListItem.HasEpg</visible>
@@ -69,7 +78,7 @@
 						<height>45</height>
 						<font>FontSize_18</font>
 						<label>$INFO[Container(50).ListItem.NextTitle,[B]$LOCALIZE[19031]:[/B] , ]$INFO[Container(50).ListItem.NextStartTime,(,)]</label>
-						<textcolor>66white</textcolor>
+						<textcolor>77white</textcolor>
 						<shadowcolor>99000000</shadowcolor>
 						<scroll>false</scroll>
 						<visible>Container(50).ListItem.HasEpg</visible>
