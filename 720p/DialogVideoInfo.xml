@@ -624,7 +624,58 @@
 			<animation type="Hidden" reversible="false">
 				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 				<effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="out" />
-			</animation>
+			</animation>	
+			<!-- Top250 -->
+			<control type="grouplist">
+				<posx>0</posx>
+				<posy>56</posy>
+				<height>40</height>
+				<width>1190</width>
+				<itemgap>5</itemgap>
+				<align>right</align>
+				<orientation>horizontal</orientation>
+				<animation type="Conditional" reversible="false" condition="!Window.IsActive(VolumeBar)">
+					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+					<effect type="slide" start="0,35" end="0,0" time="350" tween="cubic" easing="out" />
+				</animation>
+				<animation type="Conditional" reversible="false" condition="Window.IsActive(VolumeBar)">
+					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+					<effect type="slide" start="0,0" end="0,35" time="350" tween="sine" easing="out" />
+				</animation>
+				<visible>!IsEmpty(ListItem.Top250)</visible>
+				<control type="image">
+					<width>38</width>
+					<width>38</width>
+					<height>40</height>
+					<aspectratio aligny="center" align="center">stretch</aspectratio>
+					<texture background="true">flags/imdb/imdb-badge.png</texture>
+				</control>
+				<control type="group">
+					<width>54</width>
+					<height>40</height>
+					<control type="label">
+						<height>19</height>
+						<width>48</width>
+						<font>FontSize_12</font>
+						<textcolor>99white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>TOP250</label>
+					</control>
+					<control type="label">
+						<top>15</top>
+						<height>21</height>
+						<width>48</width>
+						<font>FontSize_18B</font>
+						<textcolor>99white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Top250,#]</label>
+					</control>
+				</control>
+			</control>
 			<!-- NumberRating -->
 			<control type="grouplist">
 				<posx>0</posx>
@@ -702,10 +753,10 @@
 					<onclick condition="[Container.Content(seasons) | Container.Content(episodes)] + !IsEmpty(Window(home).Property(SeasonNumber))">Dialog.Close(movieinformation)</onclick>
 					<include>TopButton</include>
 					<visible>
-					Container.Content(movies) 
-					| Container.Content(tvshows) 
-					| [Container.Content(episodes) + !substring(Container.FolderPath,plugin://plugin.video,left) + !IsEmpty(Window(home).Property(SeasonNumber)] 
-					| [Container.Content(seasons) + !IsEmpty(Window(home).Property(SeasonNumber))]
+						Container.Content(movies) 
+						| Container.Content(tvshows) 
+						| [Container.Content(episodes) + !substring(Container.FolderPath,plugin://plugin.video,left) + !IsEmpty(Window(home).Property(SeasonNumber)] 
+						| [Container.Content(seasons) + !IsEmpty(Window(home).Property(SeasonNumber))]
 					</visible>
 				</control>
 				<control type="button" id="105">
@@ -775,10 +826,10 @@
 					<animation effect="fade" start="100" end="70" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(104)" reversible="true">Conditional</animation>
 					<animation effect="zoom"  start="100" end="90" time="200" tween="cubic" easing="inout" center="auto" condition="!Control.HasFocus(104)" reversible="true">Conditional</animation>
 					<visible>
-					Container.Content(movies) 
-					| Container.Content(tvshows) 
-					| [Container.Content(episodes) + !substring(Container.FolderPath,plugin://plugin.video,left) + !IsEmpty(Window(home).Property(SeasonNumber)] 
-					| [Container.Content(seasons) + !IsEmpty(Window(home).Property(SeasonNumber))]
+						Container.Content(movies) 
+						| Container.Content(tvshows) 
+						| [Container.Content(episodes) + !substring(Container.FolderPath,plugin://plugin.video,left) + !IsEmpty(Window(home).Property(SeasonNumber)] 
+						| [Container.Content(seasons) + !IsEmpty(Window(home).Property(SeasonNumber))]
 					</visible>
 				</control>
 				<control type="label">
