@@ -74,7 +74,7 @@
 						<width>441</width>
 						<height>248</height>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-						<texture background="true" diffuse="views/episode/episode_diffuse.png">$INFO[Control.GetLabe(4002)]</texture>
+						<texture background="true" diffuse="views/episode/episode_diffuse.png">$INFO[Control.GetLabel(4002)]</texture>
 						<fadetime>FanartCrossfadeTime</fadetime>
 					</control>
 					<control type="image">
