@@ -413,7 +413,7 @@
 			<description>Vignette</description>
 			<include>FullscreenDimensions</include>
 			<texture background="true">windows/bg/bg_vignette.png</texture>			
-			<visible>!Window.IsActive(visualisation)</visible>
+			<visible>!Window.IsActive(visualisation) + !Window.IsVisible(script-nextup-notification-NextUpInfo.xml) + !Window.IsVisible(script-nextup-notification-StillWatchingInfo.xml)</visible>
 			<include>BackgroundFade</include>
 		</control>
 		<control type="image">
