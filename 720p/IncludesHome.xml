@@ -805,10 +805,10 @@
 						<shadowcolor>55000000</shadowcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>[B]Latest Movie:[/B] $INFO[Window.Property(LatestMovie.1.Title)] ($INFO[Window.Property(LatestMovie.1.Year)])</label>
-						<label>[B]Latest Episode:[/B] $INFO[Window.Property(LatestEpisode.1.ShowTitle),, - ]$INFO[Window.Property(LatestEpisode.1.EpisodeSeason),,x]$INFO[Window.Property(LatestEpisode.1.EpisodeNumber),,. ]$INFO[Window.Property(LatestEpisode.1.EpisodeTitle)]</label>
-						<label>[B]Latest Album:[/B] $INFO[Window.Property(LatestAlbum.1.Artist),, - ]$INFO[Window.Property(LatestAlbum.1.Title)]</label>
-						<label>[B]Latest Song:[/B] $INFO[Window.Property(LatestSong.1.Artist),, - ]$INFO[Window.Property(LatestSong.1.Title)]</label>
+						<label>$INFO[Window.Property(LatestMovie.1.Title),[B]$LOCALIZE[31388]:[/B] ] $INFO[Window.Property(LatestMovie.1.Year),(,)]</label>
+						<label>$INFO[Window.Property(LatestEpisode.1.ShowTitle),[B]$LOCALIZE[31389]:[/B] , - ]$INFO[Window.Property(LatestEpisode.1.EpisodeSeason),,x]$INFO[Window.Property(LatestEpisode.1.EpisodeNumber),,. ]$INFO[Window.Property(LatestEpisode.1.EpisodeTitle)]</label>
+						<label>$INFO[Window.Property(LatestAlbum.1.Artist),[B]$LOCALIZE[31390]:[/B] , - ]$INFO[Window.Property(LatestAlbum.1.Title)]</label>
+						<label>$INFO[Window.Property(LatestSong.1.Artist),[B]$LOCALIZE[31391]:[/B] , - ]$INFO[Window.Property(LatestSong.1.Title)]</label>
 						<scroll>false</scroll>
 						<scrollout>false</scrollout>
 						<scrollspeed>100</scrollspeed>

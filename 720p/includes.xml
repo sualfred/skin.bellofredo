@@ -2433,7 +2433,8 @@
 </variable>
 
 <variable name="DialogsInfo">
-	<value condition="Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Artists)">$INFO[ListItem.Genre]</value>
+	<value condition="Container.Content(Movies)">$INFO[ListItem.Genre]$INFO[Listitem.Year, (,) ]</value>
+	<value condition="Container.Content(TVShows) | Container.Content(Artists)">$INFO[ListItem.Genre]</value>
 	<value condition="Container.Content(Episodes) + ![IsEmpty(ListItem.Season) + IsEmpty(ListItem.Episode)]">$INFO[ListItem.TVShowTitle] $INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,  •  ]$INFO[ListItem.Premiered,$LOCALIZE[31003] ]</value>
 	<value condition="Container.Content(Albums)">$INFO[ListItem.Artist]</value>
 	<value condition="Container.Content(Songs)">$INFO[ListItem.Album]$INFO[ListItem.Artist, - ]</value>

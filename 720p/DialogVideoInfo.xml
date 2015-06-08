@@ -30,14 +30,84 @@
 					<texture background="true">thumbs/poster_overlay_big.png</texture>
 				</control>
 				<control type="group">
+					<!-- Top250 -->
+					<control type="grouplist">
+						<posx>-115</posx>
+						<top>-1</top>
+						<height>40</height>
+						<width>1190</width>
+						<itemgap>5</itemgap>
+						<align>right</align>
+						<orientation>horizontal</orientation>
+						<visible>!IsEmpty(ListItem.Top250)</visible>
+						<control type="image">
+							<width>34</width>
+							<height>40</height>
+							<aspectratio aligny="center" align="center">keep</aspectratio>
+							<texture background="true">flags/imdb/imdb-badge.png</texture>
+						</control>
+						<control type="group">
+							<width>60</width>
+							<control type="label">
+								<height>24</height>						
+								<width>65</width>
+								<font>FontSize_14</font>
+								<textcolor>99white</textcolor>
+								<shadowcolor>99000000</shadowcolor>
+								<align>left</align>
+								<aligny>center</aligny>
+								<label>TOP250</label>
+							</control>
+							<control type="label">
+								<top>15</top>
+								<height>25</height>
+								<width>48</width>
+								<font>FontSize_18B</font>
+								<textcolor>99white</textcolor>
+								<shadowcolor>99000000</shadowcolor>
+								<align>left</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Top250,#]</label>
+							</control>
+						</control>
+					</control>
+					<!-- NumberRating -->
+					<control type="grouplist">
+						<posx>0</posx>
+						<top>-1</top>
+						<height>0</height>
+						<width>1190</width>
+						<itemgap>5</itemgap>
+						<align>right</align>
+						<orientation>horizontal</orientation>
+						<control type="image">
+							<width>40</width>
+							<height>38</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$VAR[VideoInfoStarRating]</texture>
+						</control>
+						<control type="label">
+							<height>40</height>
+							<width min="10" max="1280">auto</width>
+							<font>FontSize_40</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<scroll>false</scroll>
+							<label fallback="0.0">$INFO[ListItem.Rating]</label>
+						</control>
+					</control>
+				</control>
+				<control type="group">
 					<posx>330</posx>
 					<posy>7</posy>
 					<control type="label">
 						<description>Title</description>
 						<posy>-3</posy>
-						<width>855</width>
+						<width>640</width>
 						<font>FontSize_40</font>
-						<label>$INFO[Listitem.Title]$INFO[Listitem.Year, (,) ]</label>
+						<label>$INFO[Listitem.Title]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<textcolor>white</textcolor>
@@ -418,7 +488,7 @@
 							<description>Description Value</description>
 							<posx>0</posx>
 							<posy>215</posy>
-							<width>850</width>
+							<width>855</width>
 							<height>185</height>
 							<font>FontSize_22</font>
 							<align>justify</align>
@@ -432,7 +502,7 @@
 							<description>Description Value</description>
 							<posx>0</posx>
 							<posy>250</posy>
-							<width>850</width>
+							<width>855</width>
 							<height>185</height>
 							<font>FontSize_22</font>
 							<align>justify</align>
@@ -624,93 +694,7 @@
 			<animation type="Hidden" reversible="false">
 				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 				<effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="out" />
-			</animation>	
-			<!-- Top250 -->
-			<control type="grouplist">
-				<posx>0</posx>
-				<posy>56</posy>
-				<height>40</height>
-				<width>1190</width>
-				<itemgap>5</itemgap>
-				<align>right</align>
-				<orientation>horizontal</orientation>
-				<animation type="Conditional" reversible="false" condition="!Window.IsActive(VolumeBar)">
-					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
-					<effect type="slide" start="0,35" end="0,0" time="350" tween="cubic" easing="out" />
-				</animation>
-				<animation type="Conditional" reversible="false" condition="Window.IsActive(VolumeBar)">
-					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-					<effect type="slide" start="0,0" end="0,35" time="350" tween="sine" easing="out" />
-				</animation>
-				<visible>!IsEmpty(ListItem.Top250)</visible>
-				<control type="image">
-					<width>38</width>
-					<width>38</width>
-					<height>40</height>
-					<aspectratio aligny="center" align="center">stretch</aspectratio>
-					<texture background="true">flags/imdb/imdb-badge.png</texture>
-				</control>
-				<control type="group">
-					<width>54</width>
-					<height>40</height>
-					<control type="label">
-						<height>19</height>
-						<width>48</width>
-						<font>FontSize_12</font>
-						<textcolor>99white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>TOP250</label>
-					</control>
-					<control type="label">
-						<top>15</top>
-						<height>21</height>
-						<width>48</width>
-						<font>FontSize_18B</font>
-						<textcolor>99white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Top250,#]</label>
-					</control>
-				</control>
-			</control>
-			<!-- NumberRating -->
-			<control type="grouplist">
-				<posx>0</posx>
-				<posy>6</posy>
-				<height>0</height>
-				<width>1190</width>
-				<itemgap>5</itemgap>
-				<align>right</align>
-				<orientation>horizontal</orientation>
-				<animation type="Conditional" reversible="false" condition="!Window.IsActive(VolumeBar)">
-					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
-					<effect type="slide" start="0,35" end="0,0" time="350" tween="cubic" easing="out" />
-				</animation>
-				<animation type="Conditional" reversible="false" condition="Window.IsActive(VolumeBar)">
-					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-					<effect type="slide" start="0,0" end="0,35" time="350" tween="sine" easing="out" />
-				</animation>
-				<control type="image">
-					<width>40</width>
-					<height>38</height>
-					<aspectratio>keep</aspectratio>
-					<texture>$VAR[VideoInfoStarRating]</texture>
-				</control>
-				<control type="label">
-					<height>40</height>
-					<width min="10" max="1280">auto</width>
-					<font>FontSize_40</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>99000000</shadowcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<scroll>false</scroll>
-					<label fallback="0.0">$INFO[ListItem.Rating]</label>
-				</control>
-			</control>
+			</animation>
 			<!-- Main Buttons -->
 			<control type="grouplist" id="9000">
 				<posx>0</posx>
