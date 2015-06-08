@@ -1,3 +1,7 @@
+[B][COLOR=FF56ADDA]v4.3.8[/COLOR][/B]
+• Added: IMDB Top250 to DialogVideoInfo
+• Changed: Layout of NextUp script overlays
+
 [B][COLOR=FF56ADDA]v4.3.7[/COLOR][/B]
 • Added: Recently changes of NextUp script
 • Added: Latest movie/episode/album/song to the library statistic in the top menu
