@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<window>
-	<defaultcontrol always="true">4012</defaultcontrol>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1121">
+	<zorder>2</zorder>
 	<controls>
 		<control type="group">
 			<control type="image">
@@ -15,39 +15,52 @@
 			<animation type="WindowClose" reversible="false">
 				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 			</animation>
-			<control type="image" id="4001">
-				<visible>false</visible>
-			</control>
-			<control type="image" id="4002">
-				<visible>false</visible>
-			</control>
-			<control type="label" id="4003">
-				<visible>false</visible>
-			</control>
-			<control type="label" id="4004">
-				<visible>false</visible>
-			</control>
-			<control type="image" id="4005">
-				<visible>false</visible>
-			</control>
-			<control type="textbox" id="4006">
-				<visible>false</visible>
-			</control>
-			<control type="image" id="4007">
-				<visible>false</visible>
-			</control>
-			<control type="label" id="4008">
-				<visible>false</visible>
-			</control>
-			<control type="label" id="4009">
-				<visible>false</visible>
-			</control>
-			<control type="label" id="4011">
-				<visible>false</visible>
-			</control>
-			<!-- Main group -->
+			<animation type="Visible" reversible="false">
+				<effect type="fade" start="0" end="100" time="400" tween="sine" easing="in"  />
+				<effect type="slide" start="0,100" end="0,0" time="450" tween="cubic" easing="out" />
+			</animation>
+			<animation type="Hidden" reversible="false">
+				<effect type="fade" start="100" end="0" time="400" tween="sine" easing="out" />
+				<effect type="slide" start="0,-100" end="0,0" time="450" tween="sine" easing="out" />
+			</animation>
 
-			<control type="group">				
+			<control type="label" id="3000">
+				<visible>false</visible>
+			</control>
+			<control type="textbox" id="3001">
+				<visible>false</visible>
+			</control>
+			<control type="label" id="3002">
+				<visible>false</visible>
+			</control>
+			<control type="label" id="3003">
+				<visible>false</visible>
+			</control>
+			<control type="label" id="3004">
+				<visible>false</visible>
+			</control>
+			<control type="image" id="3005">
+				<visible>false</visible>
+			</control>
+			<control type="image" id="3006">
+				<visible>false</visible>
+			</control>
+			<control type="image" id="3009">
+				<visible>false</visible>
+			</control>
+			<control type="image" id="3010">
+				<visible>false</visible>
+			</control>
+			<control type="label" id="3011">
+				<visible>false</visible>
+			</control>
+			<control type="label" id="3015">
+				<visible>false</visible>
+			</control>
+			<control type="label" id="3016">
+				<visible>false</visible>
+			</control>
+			<control type="group">
 				<animation type="WindowOpen" reversible="false">
 					<effect type="slide" start="0,150" end="0,0" time="450" delay="0" tween="sine" easing="out" />
 					<effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="out" />
@@ -64,16 +77,8 @@
 					<effect type="slide" start="0,0" end="200" time="450" delay="0" tween="sine" easing="out" />
 					<effect type="fade" start="100" end="0" time="450" delay="0" tween="sine" easing="out" />
 				</animation>
-				<animation type="Conditional" conditon="Window.IsVisible(script-nextup-notification-StillWatchingInfo.xml)" reversible="false">
-					<effect type="slide" start="0,150" end="0,0" time="450" delay="0" tween="sine" easing="out" />
-					<effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="out" />
-				</animation>
-				<animation type="Conditional" condition="!Window.IsVisible(script-nextup-notification-StillWatchingInfo.xml)" reversible="false">
-					<effect type="slide" start="0,0" end="200" time="450" delay="0" tween="sine" easing="out" />
-					<effect type="fade" start="100" end="0" time="450" delay="0" tween="sine" easing="out" />
-				</animation>
 				<left>900</left>
-				<top>300</top>
+				<top>250</top>
 				<!-- image -->
 				<control type="group">
 					<left>-100</left>
@@ -98,7 +103,7 @@
 						<width>441</width>
 						<height>248</height>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-						<texture background="true" diffuse="views/episode/episode_diffuse.png">$INFO[Control.GetLabel(4002)]</texture>
+						<texture background="true" diffuse="views/episode/episode_diffuse.png">$INFO[ListItem.Art(thumb)]</texture>
 						<fadetime>FanartCrossfadeTime</fadetime>
 					</control>
 					<control type="image">
@@ -126,9 +131,10 @@
 						<shadowcolor>77000000</shadowcolor>
 						<align>left</align>
 						<aligny>bottom</aligny>
-						<label>$INFO[Control.GetLabel(4009),$LOCALIZE[20373] ], $INFO[Control.GetLabel(4008),Ep. ]</label>
+						<label>$LOCALIZE[20373] 2, Ep. 3 </label>
+						<label>$INFO[Control.GetLabel(3015),$LOCALIZE[20373] ], $INFO[Control.GetLabel(3016),Ep. ]</label>
 					</control>
-					<control type="label" id="4000">
+					<control type="label">
 						<left>14</left>
 						<top>195</top>
 						<width>300</width>
@@ -137,7 +143,9 @@
 						<textcolor>77white</textcolor>
 						<shadowcolor>77000000</shadowcolor>
 						<align>left</align>
-						<aligny>center</aligny>						
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Title]</label>
+						<label>$INFO[Control.GetLabel(3015),$LOCALIZE[20373] ], $INFO[Control.GetLabel(3016),Ep. ]</label>
 					</control>
 					<!--remaining time-->
 					<control type="label" description="Total Time">
@@ -149,6 +157,7 @@
 						<font>WeatherTemp</font>
 						<textcolor>white</textcolor>
 						<shadowcolor>55000000</shadowcolor>
+						<label>-27</label>
 						<label>$INFO[Player.TimeRemaining(ss),-]</label>
 					</control>
 					<!--buttons -->
@@ -163,19 +172,19 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
-						<label>$LOCALIZE[31393]</label>
+						<label>Still there? Otherwise I'll stop.</label>
 					</control>
 					<control type="group">
 						<top>252</top>
 						<right>24</right>
 						<width>110</width>
 						<height>55</height>
-						<control type="button" id="4012">
+						<control type="button" id="3012">
 							<description>Watch Now</description>
 							<width>55</width>
 							<height>55</height>
-							<onright>4013</onright>
-							<onleft>4013</onleft>
+							<onright>3013</onright>
+							<onleft>3013</onleft>
 							<font>FontSize_24</font>
 							<align>center</align>
 							<label>-</label>
@@ -183,13 +192,13 @@
 							<texturefocus>osd/play_fo.png</texturefocus>
 							<texturenofocus>osd/play_nf.png</texturenofocus>
 						</control>
-						<control type="button" id="4013">
+						<control type="button" id="3013">
 							<description>Cancel</description>
 							<left>47</left>
 							<width>55</width>
 							<height>55</height>
-							<onright>4012</onright>
-							<onleft>4012</onleft>
+							<onright>3012</onright>
+							<onleft>3012</onleft>
 							<font>FontSize_24</font>
 							<align>center</align>
 							<label>-</label>
