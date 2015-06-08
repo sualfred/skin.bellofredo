@@ -4,7 +4,7 @@
 	<visible>!Window.IsVisible(startup)</visible>
 	<controls>
 		<control type="group">
-			<visible>false</visible>
+			<visible>true</visible>
 			<!--Global debug grid-->
 			<control type="image">
 				<visible>Skin.HasSetting(ShowSkinDebugTools) + Skin.HasSetting(DebugGrid)</visible>
@@ -955,7 +955,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>true</visible>
+			<visible>false</visible>
 			<control type="image">
 				<description>Vignette</description>
 				<include>FullscreenDimensions</include>
