@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-06-01 14:16+0000\n"
+"PO-Revision-Date: 2015-06-08 15:15+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -1577,6 +1577,38 @@ msgstr "Nächste Folge"
 msgctxt "#31385"
 msgid "Library Update"
 msgstr "Datenbank Update"
+
+msgctxt "#31386"
+msgid "Still there?"
+msgstr "Noch da?"
+
+msgctxt "#31387"
+msgid "Press Play to continue with the next episode"
+msgstr "Drücke Play um die nächste Episode abzuspielen"
+
+msgctxt "#31388"
+msgid "Latest Movie"
+msgstr "Neuester Film"
+
+msgctxt "#31389"
+msgid "Latest Episode"
+msgstr "Neueste Episode"
+
+msgctxt "#31390"
+msgid "Latest Album"
+msgstr "Neuestes Album"
+
+msgctxt "#31391"
+msgid "Latest Song"
+msgstr "Neuestes Lied"
+
+msgctxt "#31392"
+msgid "Continue with next episode?"
+msgstr "Mit nächster Episode fortsetzen?"
+
+msgctxt "#31393"
+msgid "Still there? Otherwise I'll stop."
+msgstr "Noch da? Wenn nicht, stoppe ich."
 
 #: empty strings from id 31383 to 31408 settings Category Description & Header
 #: Labels

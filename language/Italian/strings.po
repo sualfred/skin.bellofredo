@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-05-28 09:36+0000\n"
+"PO-Revision-Date: 2015-06-08 15:13+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/bello-fredo/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -280,7 +280,7 @@ msgstr "Forza utilizzo delle \"season art\" locali [COLOR=55white](eg: seasonXX-
 
 msgctxt "#31064"
 msgid "Enable Library Refresh Button"
-msgstr ""
+msgstr "Abilita Bottone Aggiornamento Libreria"
 
 msgctxt "#31065"
 msgid "Enabled"
@@ -440,7 +440,7 @@ msgstr "Nascondi Informazioni Musicali in Esecuzione"
 
 msgctxt "#31104"
 msgid "Enable Now Playing Cover on Home"
-msgstr ""
+msgstr "Abilita Cover nella Home"
 
 msgctxt "#31105"
 msgid "Amazon [COLOR=55white](Sandmann's Plugin)[/COLOR]"
@@ -800,7 +800,7 @@ msgstr "Aggiorna Impostazioni"
 
 msgctxt "#31192"
 msgid "Enable Widget Item Counter"
-msgstr ""
+msgstr "Abilita Contatore Elementi Widget"
 
 msgctxt "#31193"
 msgid "Critics Consensus"
@@ -1393,43 +1393,43 @@ msgstr "Indietro"
 
 msgctxt "#31340"
 msgid "Case Style"
-msgstr ""
+msgstr "Stile Custodia"
 
 msgctxt "#31341"
 msgid "Retail Box"
-msgstr ""
+msgstr "Retail Box"
 
 msgctxt "#31342"
 msgid "Artist Logo Location"
-msgstr ""
+msgstr "Posizione Logo Artista"
 
 msgctxt "#31343"
 msgid "Logo is stored in the parent folder of the album - Example: MP3/Artist"
-msgstr ""
+msgstr "Il Logo è salvato nella cartella superiore dell'album - Es: Mp3/Artista"
 
 msgctxt "#31344"
 msgid "Logo is stored in the folder of the album - Example: MP3/Artist/Album"
-msgstr ""
+msgstr "Il Logo è salvato nella cartella  dell'album - Es: Mp3/Artista/Album"
 
 msgctxt "#31345"
 msgid "Artist Folder"
-msgstr ""
+msgstr "Cartella Artista"
 
 msgctxt "#31346"
 msgid "Album Folder"
-msgstr ""
+msgstr "Cartella Album"
 
 msgctxt "#31347"
 msgid "Main Menu Layout"
-msgstr ""
+msgstr "Disposizione Menu' Principale"
 
 msgctxt "#31348"
 msgid "5 Icons"
-msgstr ""
+msgstr "5 Icone"
 
 msgctxt "#31349"
 msgid "3 Icons"
-msgstr ""
+msgstr "3 Icone"
 
 #: empty strings from id 31335 to 31349 PVR
 msgctxt "#31350"
@@ -1450,43 +1450,67 @@ msgstr "Cancella Gruppo"
 
 msgctxt "#31354"
 msgid "Centered Labels (Default)"
-msgstr ""
+msgstr "Etichette Centrale (Predefinito)"
 
 msgctxt "#31355"
 msgid "Main Menu"
-msgstr ""
+msgstr "Menu' Principale"
 
 msgctxt "#31356"
 msgid "Top Menu"
-msgstr ""
+msgstr "Menu' Alto"
 
 msgctxt "#31357"
 msgid "Enable Favourites Button"
-msgstr ""
+msgstr "Abilita Bottone Preferiti"
 
 msgctxt "#31358"
 msgid "Enable Search Button"
-msgstr ""
+msgstr "Abilita Bottone Cerca"
 
 msgctxt "#31359"
 msgid "Enable Power Button"
-msgstr ""
+msgstr "Abilita Bottone Power"
 
 msgctxt "#31360"
 msgid "Labels"
-msgstr ""
+msgstr "Etichette"
 
 msgctxt "#31361"
 msgid "Home Top Menu Style"
-msgstr ""
+msgstr "Stile Menu' \"Home Top\""
 
 msgctxt "#31362"
 msgid "Enable Icon Menu Labels"
-msgstr ""
+msgstr "Abilita Etichette Icone del Menu'"
 
 msgctxt "#31363"
 msgid "Next"
-msgstr ""
+msgstr "Prossimo"
+
+msgctxt "#31364"
+msgid "List Style"
+msgstr "Stile Lista"
+
+msgctxt "#31365"
+msgid "Wrap List"
+msgstr "Lista Circolare"
+
+msgctxt "#31366"
+msgid "Fixed List"
+msgstr "Lista Fissa"
+
+msgctxt "#31367"
+msgid "Set"
+msgstr "Serie"
+
+msgctxt "#31368"
+msgid "Next Episode"
+msgstr "Prossimo Episodio"
+
+msgctxt "#31369"
+msgid "Press stop to cancel automatic play of next episode"
+msgstr "Premi stop per cancellare l'esecuzione automatica del prossimo episodio"
 
 #: empty strings from id 31354 to 31369 Quick Navigation labels
 msgctxt "#31370"
@@ -1539,6 +1563,50 @@ msgstr "Centro"
 
 msgctxt "#31382"
 msgid "Bottom Labels"
+msgstr "Etichette Basse"
+
+msgctxt "#31383"
+msgid "Episode will start in ..."
+msgstr "L'episodio inizierà in....."
+
+msgctxt "#31384"
+msgid "Next Up"
+msgstr "Prossimo"
+
+msgctxt "#31385"
+msgid "Library Update"
+msgstr "Aggiornamento Libreria"
+
+msgctxt "#31386"
+msgid "Still there?"
+msgstr ""
+
+msgctxt "#31387"
+msgid "Press Play to continue with the next episode"
+msgstr ""
+
+msgctxt "#31388"
+msgid "Latest Movie"
+msgstr ""
+
+msgctxt "#31389"
+msgid "Latest Episode"
+msgstr ""
+
+msgctxt "#31390"
+msgid "Latest Album"
+msgstr ""
+
+msgctxt "#31391"
+msgid "Latest Song"
+msgstr ""
+
+msgctxt "#31392"
+msgid "Continue with next episode?"
+msgstr ""
+
+msgctxt "#31393"
+msgid "Still there? Otherwise I'll stop."
 msgstr ""
 
 #: empty strings from id 31383 to 31408 settings Category Description & Header
