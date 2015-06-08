@@ -5,7 +5,7 @@
 		<control type="group">
 			<left>45</left>
 			<top>640</top>
-			<visible>!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4) + !Window.IsActive(ShutdownMenu) + !Window.IsVisible(startup) + !Window.IsVisible(loginscreen)</visible>
+			<visible>!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4) + !Window.IsActive(ShutdownMenu) + !Window.IsVisible(startup) + !Window.IsVisible(loginscreen) + !Window.IsVisible(script-nextup-notification-NextUpInfo.xml) + !Window.IsVisible(script-nextup-notification-StillWatchingInfo.xml)</visible>
 			<animation effect="slide" start="0,0" end="0,150" time="260" tween="sine" easing="inout" condition="[Window.IsActive(Favourites) + Window.IsActive(ContextMenu)]">Conditional</animation>
 			<include>NowPlaying</include>
 			<control type="grouplist">

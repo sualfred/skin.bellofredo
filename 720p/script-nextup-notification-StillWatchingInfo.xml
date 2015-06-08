@@ -49,7 +49,7 @@
 
 			<control type="group">
 				<left>900</left>
-				<top>250</top>
+				<top>300</top>
 				<!-- image -->
 				<control type="group">
 					<left>-100</left>
