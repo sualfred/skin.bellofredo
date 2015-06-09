@@ -1,3 +1,10 @@
+[B][COLOR=FF56ADDA]v4.3.9[/COLOR][/B]
+• Added: Skinned T9Search dialog of ExtendedInfo script
+• Added: Global support of auto completion for the virtual keyboard (latest ExtendedInfo script required)
+• Replaced: Purple virtual keyboard buttons with blue ones 
+• Replaced: NextUp overlay background diffuse
+• And fixed/changed a few animations/conditions etc.
+
 [B][COLOR=FF56ADDA]v4.3.8[/COLOR][/B]
 • Added: IMDB Top250 to DialogVideoInfo
 • Changed: Layout of NextUp script overlays
