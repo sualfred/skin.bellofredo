@@ -4,6 +4,7 @@
 	<visible>!Player.IsInternetStream</visible>
 	<zorder>0</zorder>
 	<onload condition="Window.IsVisible(MusicOSD)">Dialog.Close(MusicOSD)</onload>
+	<onload condition="Player.IsInternetStream">Dialog.Close</onload>
 	<animation effect="fade" start="0" end="100" delay="300" time="200" reversible="false">WindowOpen</animation>
 	<animation effect="fade" start="100" end="0" time="200" reversible="false">WindowClose</animation>	
 	<controls>
