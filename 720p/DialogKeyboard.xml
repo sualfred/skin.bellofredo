@@ -5,6 +5,7 @@
 
 		<control type="group">
 			<include>DialogAnimation</include>
+			<animation effect="slide" start="0,0" end="0,-27" time="300" condition="IntegerGreaterThan(Container(9091).NumItems,0)">Conditional</animation>
 			<visible>!Window.IsVisible(NumericInput)</visible>
 			<control type="image">
 				<left>227</left>
@@ -607,7 +608,8 @@
 					<control type="button" id="309">
 						<description>K/B Layout button</description>
 						<onup>304</onup>
-						<ondown>7001</ondown>
+						<ondown condition="!IntegerGreaterThan(Container(9091).NumItems,0)">7001</ondown>
+						<ondown condition="IntegerGreaterThan(Container(9091).NumItems,0)">9091</ondown>
 						<width>185</width>
 						<height>48</height>
 						<texturenofocus border="20,20,20,20">dialogs/keyboard/button_nf.png</texturenofocus>
@@ -623,7 +625,8 @@
 					<control type="button" id="32">
 						<description>'Space' button</description>
 						<onup>7004</onup>
-						<ondown>7001</ondown>
+						<ondown condition="!IntegerGreaterThan(Container(9091).NumItems,0)">7001</ondown>
+						<ondown condition="IntegerGreaterThan(Container(9091).NumItems,0)">9091</ondown>
 						<width>400</width>
 						<height>48</height>
 						<texturenofocus border="20,20,20,20">dialogs/keyboard/button_nf.png</texturenofocus>
@@ -640,7 +643,8 @@
 					<control type="button" id="300">
 						<description>'Done' button</description>
 						<onup>306</onup>
-						<ondown>7001</ondown>
+						<ondown condition="!IntegerGreaterThan(Container(9091).NumItems,0)">7001</ondown>
+						<ondown condition="IntegerGreaterThan(Container(9091).NumItems,0)">9091</ondown>
 						<width>185</width>
 						<height>48</height>
 						<texturenofocus border="6,8,6,8">dialogs/keyboard/button_nf.png</texturenofocus>
@@ -655,6 +659,75 @@
 						<label>20177</label>
 					</control>
 				</control>
+			</control>
+			<!-- auto completion -->				
+			<control type="panel" id="9091">
+				<content>plugin://script.extendedinfo?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).index(1)]</content>
+				<left>227</left>
+				<top>580</top>
+				<width>840</width>
+				<height>55</height>
+				<onup>7005</onup>
+				<ondown>9090</ondown>
+				<onback>noop</onback>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic" easing="out">200</scrolltime>
+				<itemlayout height="55" width="278">
+					<control type="image">
+						<left>0</left>
+						<width>270</width>
+						<height>50</height>
+						<texture border="20,20,20,20">dialogs/keyboard/autocomplete_nf.png</texture>
+					</control>
+					<control type="label">
+						<width>270</width>
+						<height>50</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<textcolor>99grey</textcolor>
+						<label>$INFO[ListItem.Label]</label>                        
+						<textoffsetx>5</textoffsetx>
+					</control>
+				</itemlayout>
+				<focusedlayout height="55" width="278">
+					<control type="image">
+						<left>0</left>
+						<width>270</width>
+						<height>50</height>
+						<texture border="20,20,20,20">dialogs/keyboard/autocomplete_nf.png</texture>
+						<visible>!Control.HasFocus(9091)</visible>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<width>270</width>
+						<height>50</height>
+						<texture border="20,20,20,20">dialogs/keyboard/button_fo.png</texture>
+						<visible>Control.HasFocus(9091)</visible>
+					</control>
+					<control type="label">
+						<width>270</width>
+						<height>50</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<textcolor>99grey</textcolor>
+						<label>$INFO[ListItem.Label]</label>                      
+						<textoffsetx>5</textoffsetx>                        
+						<visible>!Control.HasFocus(9091)</visible>
+					</control>
+					<control type="label">
+						<width>270</width>
+						<height>50</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[ListItem.Label]</label>                      
+						<textoffsetx>5</textoffsetx>
+						<visible>Control.HasFocus(9091)</visible>
+					</control>
+				</focusedlayout>
 			</control>
 		</control>
 
