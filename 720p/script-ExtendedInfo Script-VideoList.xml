@@ -164,7 +164,7 @@
 
 		<control type="group">
 			<include>ThumbnailsAnimations</include>
-			<include>DialogZoomInOutAnimation</include>
+			<include>DialogZoomInOutAnimation</include>			
 			<control type="panel" id="500">				
 				<animation type="Conditional" condition="Window.IsActive(script-ExtendedInfo Script-T9Search.xml)" reversible="false">
 					<effect type="slide" start="0,0" end="250,0" tween="back" easing="out" time="900" />
@@ -404,7 +404,7 @@
 					<description>Search</description>
 					<label>137</label>
 					<include>TopLeftMenusButton</include>
-				</control>	
+				</control>		
 				<control type="button" id="5005">
 					<description>Clear Filter</description>
 					<label>$ADDON[script.extendedinfo 32022]</label>
