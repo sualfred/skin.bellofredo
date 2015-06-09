@@ -157,7 +157,7 @@
 		<control type="image">
 			<include>FullscreenDimensions</include>
 			<texture background="true">views/other/menus_overlay.png</texture>
-			<visible>Window.IsActive(script-ExtendedInfo Script-T9Search.xml)</visible>
+			<visible>Window.IsActive(script-ExtendedInfo Script-T9Search.xml) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(ContextMenu) + !Window.IsActive(Playercontrols) + !Window.IsActive(virtualkeyboard)</visible>
 			<animation effect="fade" time="300" start="0" end="80" tween="sine" easing="out">Visible</animation>
 			<animation effect="fade" time="300" start="80" end="0" tween="sine" easing="in">Hidden</animation>
 		</control>
@@ -270,10 +270,11 @@
 					<scroll>false</scroll>
 					<align>left</align>
 					<label>$INFO[Container(500).ListItem.label] $INFO[Container(500).ListItem.Property(User_Rating),[COLOR=selected]  |  ,[/COLOR]]</label>	
-					<visible>!Window.IsActive(script-ExtendedInfo Script-T9Search.xml)</visible>									
+					<visible>!Window.IsActive(script-ExtendedInfo Script-T9Search.xml) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(ContextMenu) + !Window.IsActive(Playercontrols) + !Window.IsActive(virtualkeyboard)</visible>									
 				</control>				
 				<!-- filter rules -->
 				<control type="grouplist">
+					<visible>!Window.IsActive(ShutdownMenu) + !Window.IsActive(ContextMenu) + !Window.IsActive(Playercontrols) + !Window.IsActive(virtualkeyboard)</visible>
 					<right>47</right>
 					<top>7</top>
 					<width>900</width>
@@ -301,7 +302,7 @@
 						<scroll>false</scroll>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label fallback="16018">$INFO[Window.Property(Filter_Label)]</label>
+						<label fallback="16018">$INFO[Window.Property(Filter_Label)]</label>						
 					</control>
 				</control>				
 			</control>			           

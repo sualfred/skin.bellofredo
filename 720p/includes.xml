@@ -92,7 +92,7 @@
 			<animation effect="fade" time="300" start="100" end="0" tween="sine" easing="in">Hidden</animation>
 			<visible>
 				[Window.IsActive(script-ExtendedInfo Script-VideoList.xml) + [Window.IsActive(Shutdownmenu) 
-				| ControlGroup(9000).HasFocus] + !Window.IsActive(script-ExtendedInfo Script-T9Search.xml)] 
+				| ControlGroup(9000).HasFocus] + !Window.IsActive(script-ExtendedInfo Script-T9Search.xml) + !Window.IsActive(virtualkeyboard)] 
 				| ControlGroup(9111).HasFocus 
 				| Window.IsActive(FileStackingDialog) 
 				| [Window.IsActive(contextmenu) + ![Window.IsActive(home) | Window.IsActive(locksettings) | Window.IsActive(musicplaylisteditor) | Window.IsActive(filemanager) | Window.IsVisible(pvrchannelmanager)]] 
