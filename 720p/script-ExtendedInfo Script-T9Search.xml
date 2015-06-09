@@ -27,7 +27,7 @@
                     </control>
                     <control type="label">
                         <left>0</left>
-                        <top>15</top>
+                        <top>19</top>
                         <width>57</width>
                         <height>57</height>
                         <align>center</align>
@@ -38,7 +38,7 @@
                     </control>
                     <control type="label">
                         <left>0</left>
-                        <top>35</top>
+                        <top>37</top>
                         <width>57</width>
                         <height>57</height>
                         <align>center</align>
@@ -58,7 +58,7 @@
                     </control>
                     <control type="label">
                         <left>0</left>
-                        <top>15</top>
+                        <top>19</top>
                         <width>57</width>
                         <height>57</height>
                         <align>center</align>
@@ -69,7 +69,7 @@
                     </control>
                     <control type="label">
                         <left>0</left>
-                        <top>35</top>
+                        <top>37</top>
                         <width>57</width>
                         <height>57</height>
                         <align>center</align>
