@@ -178,10 +178,10 @@
 			<include>DialogZoomInOutAnimation</include>			
 			<control type="panel" id="500">				
 				<animation type="Conditional" condition="Window.IsActive(script-ExtendedInfo Script-T9Search.xml)" reversible="false">
-					<effect type="slide" start="0,0" end="250,0" tween="back" easing="out" time="900" />
+					<effect type="slide" start="0,0" end="260,0" tween="back" easing="out" time="900" />
 				</animation>
 				<animation type="Conditional" condition="!Window.IsActive(script-ExtendedInfo Script-T9Search.xml)" reversible="false">
-					<effect type="slide" start="250,0" end="0,0" tween="back" easing="out" time="900" />
+					<effect type="slide" start="260,0" end="0,0" tween="back" easing="out" time="900" />
 				</animation>
 				<left>40</left>
 				<top>95</top>

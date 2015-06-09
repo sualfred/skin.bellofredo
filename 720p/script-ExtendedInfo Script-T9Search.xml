@@ -6,7 +6,7 @@
             <visible>!Window.IsActive(ShutdownMenu) + !Window.IsActive(Playercontrols) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog) + !Window.IsActive(yesnodialog) + !Window.IsActive(selectdialog)</visible>
             <include>GlobalSearchSlideAnimations</include>
             <control type="panel" id="9090">
-                <left>25</left>
+                <left>45</left>
                 <top>25</top>
                 <width>250</width>
                 <height>708</height>
@@ -82,7 +82,7 @@
                 </focusedlayout>
             </control>
             <control type="list" id="9091">
-                <left>15</left>
+                <left>45</left>
                 <top>397</top>
                 <width>250</width>
                 <height>275</height>
@@ -151,7 +151,7 @@
                 </focusedlayout>
             </control>
             <control type="label" id="600">
-                <left>15</left>
+                <left>45</left>
                 <top>351</top>
                 <width>230</width>
                 <height>50</height>
