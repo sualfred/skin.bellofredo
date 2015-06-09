@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+    <defaultcontrol always="true">9090</defaultcontrol>
+    <controls>
+        <control type="group">
+            <visible>!Window.IsActive(ShutdownMenu) + !Window.IsActive(Playercontrols) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog) + !Window.IsActive(yesnodialog) + !Window.IsActive(selectdialog)</visible>
+            <include>GlobalSearchSlideAnimations</include>
+            <control type="panel" id="9090">
+                <left>25</left>
+                <top>25</top>
+                <width>250</width>
+                <height>708</height>
+                <onleft>9090</onleft>
+                <onright>Action(Close)</onright>
+                <onup condition="IntegerGreaterThan(Container(9091).NumItems,0)">Control.SetFocus(9091,999)</onup>
+                <ondown condition="IntegerGreaterThan(Container(9091).NumItems,0)">Control.SetFocus(9091,0)</ondown>
+                <onback>noop</onback>
+                <orientation>vertical</orientation>
+                <scrolltime tween="quadratic" easing="out">200</scrolltime>
+                <itemlayout height="80" width="80">
+                    <control type="image">
+                        <left>0</left>
+                        <top>27</top>
+                        <width>57</width>
+                        <height>57</height>
+                        <texture>dialogs/keyboard/button_nf.png</texture>
+                    </control>
+                    <control type="label">
+                        <left>0</left>
+                        <top>15</top>
+                        <width>57</width>
+                        <height>57</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>font12</font>
+                        <textcolor>99grey</textcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                    <control type="label">
+                        <left>0</left>
+                        <top>35</top>
+                        <width>57</width>
+                        <height>57</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>font9</font>
+                        <textcolor>99grey</textcolor>
+                        <label>$INFO[ListItem.Label2]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="80" width="80">
+                    <control type="image">
+                        <left>0</left>
+                        <top>27</top>
+                        <width>57</width>
+                        <height>57</height>
+                        <texture>dialogs/keyboard/button_fo.png</texture>
+                    </control>
+                    <control type="label">
+                        <left>0</left>
+                        <top>15</top>
+                        <width>57</width>
+                        <height>57</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>font12</font>
+                        <textcolor>white</textcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                    <control type="label">
+                        <left>0</left>
+                        <top>35</top>
+                        <width>57</width>
+                        <height>57</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>font9</font>
+                        <textcolor>white</textcolor>
+                        <label>$INFO[ListItem.Label2]</label>                      
+                        <textoffsetx>5</textoffsetx>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="list" id="9091">
+                <left>15</left>
+                <top>397</top>
+                <width>250</width>
+                <height>275</height>
+                <onleft>9091</onleft>
+                <onright>Action(Close)</onright>
+                <onup>9090</onup>
+                <ondown>9090</ondown>
+                <onback>noop</onback>
+                <orientation>vertical</orientation>
+                <scrolltime tween="quadratic" easing="out">200</scrolltime>
+                <itemlayout height="55" width="250">
+                    <control type="image">
+                        <left>0</left>
+                        <width>230</width>
+                        <height>50</height>
+                        <texture border="20,20,20,20">dialogs/keyboard/button_nf.png</texture>
+                    </control>
+                    <control type="label">
+                        <width>230</width>
+                        <height>50</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>font12</font>
+                        <textcolor>99grey</textcolor>
+                        <label>$INFO[ListItem.Label]</label>                        
+                        <textoffsetx>5</textoffsetx>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="55" width="250">
+                    <control type="image">
+                        <left>0</left>
+                        <width>230</width>
+                        <height>50</height>
+                        <texture border="20,20,20,20">dialogs/keyboard/button_nf.png</texture>
+                        <visible>!Control.HasFocus(9091)</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <width>230</width>
+                        <height>50</height>
+                        <texture border="20,20,20,20">dialogs/keyboard/button_fo.png</texture>
+                        <visible>Control.HasFocus(9091)</visible>
+                    </control>
+                    <control type="label">
+                        <width>230</width>
+                        <height>50</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>font12</font>
+                        <textcolor>99grey</textcolor>
+                        <label>$INFO[ListItem.Label]</label>                      
+                        <textoffsetx>5</textoffsetx>                        
+                        <visible>!Control.HasFocus(9091)</visible>
+                    </control>
+                    <control type="label">
+                        <width>230</width>
+                        <height>50</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>font12</font>
+                        <textcolor>white</textcolor>
+                        <label>$INFO[ListItem.Label]</label>                      
+                        <textoffsetx>5</textoffsetx>
+                        <visible>Control.HasFocus(9091)</visible>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="label" id="600">
+                <left>15</left>
+                <top>351</top>
+                <width>230</width>
+                <height>50</height>
+                <align>center</align>
+                <textoffsetx>15</textoffsetx>
+                <textcolor>white</textcolor>
+                <scroll>true</scroll>
+                <scrollspeed>20</scrollspeed>
+            </control>
+        </control>
+    </controls>
+</window>

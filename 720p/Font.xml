@@ -358,6 +358,11 @@
 
 		<!-- Confluence Fonts (For Add-On Compatibility) -->
 		<font>
+			<name>font9</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>12</size>
+		</font>
+		<font>
 			<name>font10</name>
 			<filename>Roboto-Regular.ttf</filename>
 			<size>14</size>

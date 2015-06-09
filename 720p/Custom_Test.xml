@@ -6,7 +6,7 @@
 			<control type="image">
 				<description>Vignette</description>
 				<include>FullscreenDimensions</include>
-				<texture background="true">windows/bg/bg_vignette.png</texture>			
+				<texture background="true">windows/bg/bg_nextup_vignette.png</texture>			
 				<include>BackgroundFade</include>
 			</control>
 			<animation type="WindowOpen" reversible="false">
@@ -78,7 +78,7 @@
 					<effect type="fade" start="100" end="0" time="450" delay="0" tween="sine" easing="out" />
 				</animation>
 				<left>900</left>
-				<top>250</top>
+				<top>300</top>
 				<!-- image -->
 				<control type="group">
 					<left>-100</left>
