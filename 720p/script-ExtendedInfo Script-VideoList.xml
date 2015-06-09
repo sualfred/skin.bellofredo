@@ -162,6 +162,17 @@
 			<animation effect="fade" time="300" start="80" end="0" tween="sine" easing="in">Hidden</animation>
 		</control>
 
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture background="true">windows/bg/bg_diffuse.png</texture>
+			<animation effect="fade" time="300" start="0" end="100" tween="sine" easing="out">WindowOpen</animation>
+			<animation effect="fade" time="300" start="100" end="0" tween="sine" easing="in">WindowClose</animation>
+			<animation effect="fade" time="300" start="0" end="100" tween="sine" easing="out">Visible</animation>
+			<animation effect="fade" time="300" start="100" end="0" tween="sine" easing="in">Hidden</animation>
+			<colordiffuse>ddFFFFFF</colordiffuse>
+			<visible>IsActive(virtualkeyboard)</visible>	
+		</control>
+
 		<control type="group">
 			<include>ThumbnailsAnimations</include>
 			<include>DialogZoomInOutAnimation</include>			

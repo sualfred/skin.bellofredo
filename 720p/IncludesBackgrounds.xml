@@ -437,6 +437,7 @@
 				| [Window.IsActive(script-globalsearch-main.xml) + Skin.HasSetting(HideBGFanart)]
 				| [Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(movieinformation)]
 				| [Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(movieinformation)]
+				| Window.IsActive(virtualkeyboard)
 			</visible>
 			<animation effect="fade" time="0" end="50" condition="Window.IsActive(favourites) | Control.IsVisible(560) | Control.IsVisible(561)">Conditional</animation>
 		</control>

@@ -680,6 +680,7 @@
 						<texture border="20,20,20,20">dialogs/keyboard/autocomplete_nf.png</texture>
 					</control>
 					<control type="label">
+						<top>-1</top>
 						<width>270</width>
 						<height>50</height>
 						<align>center</align>
@@ -706,6 +707,7 @@
 						<visible>Control.HasFocus(9091)</visible>
 					</control>
 					<control type="label">
+						<top>-1</top>
 						<width>270</width>
 						<height>50</height>
 						<align>center</align>
@@ -717,6 +719,7 @@
 						<visible>!Control.HasFocus(9091)</visible>
 					</control>
 					<control type="label">
+						<top>-1</top>
 						<width>270</width>
 						<height>50</height>
 						<align>center</align>
