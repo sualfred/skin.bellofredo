@@ -771,7 +771,6 @@
 				<visible>Skin.HasSetting(ShowLibraryTotals)</visible>
 				<animation effect="slide" end="-3,3" reversible="false" condition="stringcompare(System.Language,Greek) | stringcompare(System.Language,Italian)">Conditional</animation>
 				<include>HomeSlideAnimations</include>
-
 				<!-- small database info -->
 				<control type="grouplist">					
 					<orientation>vertical</orientation>
@@ -807,7 +806,7 @@
 						<aligny>center</aligny>
 						<label>$INFO[Window.Property(LatestMovie.1.Title),[B]$LOCALIZE[31388]:[/B] ] $INFO[Window.Property(LatestMovie.1.Year),(,)]</label>
 						<label>$INFO[Window.Property(LatestEpisode.1.ShowTitle),[B]$LOCALIZE[31389]:[/B] , - ]$INFO[Window.Property(LatestEpisode.1.EpisodeSeason),,x]$INFO[Window.Property(LatestEpisode.1.EpisodeNumber),,. ]$INFO[Window.Property(LatestEpisode.1.EpisodeTitle)]</label>
-						<label>$INFO[Window.Property(LatestAlbum.1.Artist),[B]$LOCALIZE[31390]:[/B] , - ]$INFO[Window.Property(LatestAlbum.1.Title)]</label>
+						<label>$INFO[Window.Property(LatestAlbum.1.Title),[B]$LOCALIZE[31390]:[/B] ,]$INFO[Window.Property(LatestAlbum.1.Artist), - ]</label>
 						<label>$INFO[Window.Property(LatestSong.1.Artist),[B]$LOCALIZE[31391]:[/B] , - ]$INFO[Window.Property(LatestSong.1.Title)]</label>
 						<scroll>false</scroll>
 						<scrollout>false</scrollout>
