@@ -96,12 +96,12 @@
                 <itemlayout height="55" width="250">
                     <control type="image">
                         <left>0</left>
-                        <width>230</width>
+                        <width>217</width>
                         <height>50</height>
                         <texture border="20,20,20,20">dialogs/keyboard/button_nf.png</texture>
                     </control>
                     <control type="label">
-                        <width>230</width>
+                        <width>217</width>
                         <height>50</height>
                         <align>center</align>
                         <aligny>center</aligny>
@@ -114,20 +114,20 @@
                 <focusedlayout height="55" width="250">
                     <control type="image">
                         <left>0</left>
-                        <width>230</width>
+                        <width>217</width>
                         <height>50</height>
                         <texture border="20,20,20,20">dialogs/keyboard/button_nf.png</texture>
                         <visible>!Control.HasFocus(9091)</visible>
                     </control>
                     <control type="image">
                         <left>0</left>
-                        <width>230</width>
+                        <width>217</width>
                         <height>50</height>
                         <texture border="20,20,20,20">dialogs/keyboard/button_fo.png</texture>
                         <visible>Control.HasFocus(9091)</visible>
                     </control>
                     <control type="label">
-                        <width>230</width>
+                        <width>217</width>
                         <height>50</height>
                         <align>center</align>
                         <aligny>center</aligny>
@@ -138,7 +138,7 @@
                         <visible>!Control.HasFocus(9091)</visible>
                     </control>
                     <control type="label">
-                        <width>230</width>
+                        <width>217</width>
                         <height>50</height>
                         <align>center</align>
                         <aligny>center</aligny>
@@ -153,7 +153,7 @@
             <control type="label" id="600">
                 <left>45</left>
                 <top>351</top>
-                <width>230</width>
+                <width>217</width>
                 <height>50</height>
                 <align>center</align>
                 <textoffsetx>15</textoffsetx>
