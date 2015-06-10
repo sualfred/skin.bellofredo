@@ -903,7 +903,7 @@
 						</control>
 						<control type="radiobutton" id="8604">
 							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[36146]</label>
+							<label>- $LOCALIZE[31400]</label>
 							<onclick>Skin.ToggleSetting(AutoRunExtrapack)</onclick>
 							<selected>Skin.HasSetting(AutoRunExtrapack)</selected>
 						</control>
@@ -913,11 +913,11 @@
 							<label>$LOCALIZE[31396]</label>
 							<enable>false</enable>
 						</control>
-						<control type="radiobutton" id="8606">
-							<include>SettingsRadioButton</include>
-							<label>- Move Overlays to Top  [COLOR=55white](Requires NextUp Add-on)[/COLOR]</label>
+						<control type="button" id="8606">
+							<include>SettingsButton</include>
+							<label>- NextUp Overlay Position  [COLOR=55white](Requires NextUp Add-on)[/COLOR]</label>
+							<label2>[COLOR=blue]$VAR[NextUpStyleLabel][/COLOR]</label2>
 							<onclick>Skin.ToggleSetting(NextUpTop)</onclick>
-							<selected>Skin.HasSetting(NextUpTop)</selected>
 							<enable>System.HasAddon(service.nextup.notification)</enable>
 						</control>
 						<control type="button" id="8607">

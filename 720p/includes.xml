@@ -1879,6 +1879,11 @@
 	<value condition="SStringCompare(Skin.String(WatchedFlag),watched) + !stringcompare(ListItem.Overlay,OverlayWatched.png)">blank</value>
 </variable>
 
+<variable name="NextUpStyleLabel">
+	<value condition="Skin.HasSetting(NextUpTop)">$LOCALIZE[31398]</value>
+	<value>$LOCALIZE[31399]</value>
+</variable>
+
 <variable name="TopMenuStyleLabel">
 	<value condition="Skin.HasSetting(IconTopMenuStyle)">$LOCALIZE[536]</value>
 	<value>$LOCALIZE[31360]</value>

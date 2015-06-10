@@ -1623,6 +1623,18 @@ msgctxt "#31397"
 msgid "Protected"
 msgstr ""
 
+msgctxt "#31398"
+msgid "Top"
+msgstr ""
+
+msgctxt "#31399"
+msgid "Bottom"
+msgstr ""
+
+msgctxt "#31400"
+msgid "Enable Auto Update on Startup"
+msgstr ""
+
 #: empty strings from id 31383 to 31408 settings Category Description & Header
 #: Labels
 msgctxt "#31409"

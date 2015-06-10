@@ -1,3 +1,10 @@
+[B][COLOR=FF56ADDA]v4.4.0[/COLOR][/B]
+• Fixed: Auto complete suggestions width in T9Search of ExtendedInfo script
+• Added: Option to move the NextUp notification overlay to the top
+• Reworked: Add-on skin setting category
+• Removed: Experimental YouTube channel overlay 
+• Fixed: PinSentry add-on compatiblity
+
 [B][COLOR=FF56ADDA]v4.3.9[/COLOR][/B]
 • Added: Skinned T9Search dialog of ExtendedInfo script
 • Added: Global support of auto completion for the virtual keyboard (latest ExtendedInfo script required)

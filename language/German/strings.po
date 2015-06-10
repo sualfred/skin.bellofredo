@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-06-08 15:15+0000\n"
+"PO-Revision-Date: 2015-06-10 14:57+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -1609,6 +1609,34 @@ msgstr "Mit nächster Episode fortsetzen?"
 msgctxt "#31393"
 msgid "Still there? Otherwise I'll stop."
 msgstr "Noch da? Wenn nicht, stoppe ich."
+
+msgctxt "#31394"
+msgid "TV Tunes Add-on"
+msgstr "Tv Tunes Add-on"
+
+msgctxt "#31395"
+msgid "Next Aired Add-on"
+msgstr "Next Aired Add-on"
+
+msgctxt "#31396"
+msgid "NextUp Add-on"
+msgstr "NextUp Add-on"
+
+msgctxt "#31397"
+msgid "Protected"
+msgstr "Geschützt"
+
+msgctxt "#31398"
+msgid "Top"
+msgstr "Oben"
+
+msgctxt "#31399"
+msgid "Bottom"
+msgstr "Unten"
+
+msgctxt "#31400"
+msgid "Enable Auto Update on Startup"
+msgstr "Suche nach Updates beim Start"
 
 #: empty strings from id 31383 to 31408 settings Category Description & Header
 #: Labels

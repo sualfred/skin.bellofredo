@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.bellofredo" version="4.3.9" name="Bello Fredo" provider-name="sualfred">
+<addon id="skin.bellofredo" version="4.4.0" name="Bello Fredo" provider-name="sualfred">
   <requires>
 		<import addon="xbmc.gui" version="5.9.0" />
 		<import addon="service.skin.widgets" version="0.0.29"/>
@@ -29,7 +29,7 @@
 	</extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">A GUI for Kodi Media Center</summary>
-    <description lang="en">Mod for Kodi 15 Isengard of Nessus's Bello skin with a lot of modifications, such as 100% customizable widgets, new themes, modded elements, hundreds of improvements, and much more...</description>
+    <description lang="en">This skin started as an unofficial Port of the Bello skin (by Nessus) for the Kodi 15.x Nightlies and ended up in an independent skin with a lot of modifications, such as 100% customizable widgets, new themes, modded elements, hundreds of improvements, and much more...</description>
     <disclaimer lang="en">Mouse usage is not supported</disclaimer>
     <platform>all</platform>
     <license>Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported License</license>
