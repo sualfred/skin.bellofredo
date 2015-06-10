@@ -360,6 +360,7 @@
 </variable>
 
 <variable name="ListItem.Label">
+  <value condition="StringCompare(Container.FolderName,PinSentry) + StringCompare(ListItem.Overlay,OverlayWatched.png)">$INFO[ListItem.Label] [COLOR=selected]($LOCALIZE[31397])[/COLOR]</value>  
   <value condition="ListItem.IsPlaying">[COLOR=selected]$INFO[ListItem.Label][/COLOR]</value>
   <value>$INFO[ListItem.Label]</value>
 </variable>
@@ -371,6 +372,7 @@
 
 <variable name="ListItemLabel2">
   <value condition="!IsEmpty(ListItem.Label2)">[COLOR=selected]$INFO[ListItem.Label2][/COLOR]</value>
+  <value condition="StringCompare(Container.FolderName,PinSentry) + StringCompare(ListItem.Overlay,OverlayWatched.png)">[COLOR=selected]$LOCALIZE[31397][/COLOR]</value>  
   <value>$INFO[ListItem.Property(Addon.Version)]</value>
 </variable>	
 

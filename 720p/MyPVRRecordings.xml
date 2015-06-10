@@ -155,7 +155,7 @@
 								<align>center</align>
 								<aligny>center</aligny>
 	              <aspectratio>stretch</aspectratio>
-							  <visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+							  
 								<texture border="20">overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Banner.png</texture>
 							</control>
 	          </control>
@@ -249,7 +249,7 @@
 								<align>center</align>
 								<aligny>center</aligny>
 	              <aspectratio>stretch</aspectratio>
-							  <visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+							  
 								<texture border="20">overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Banner.png</texture>
 							</control>
 	          </control>

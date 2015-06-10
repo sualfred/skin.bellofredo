@@ -50,7 +50,7 @@
 						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Square.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<bordersize>6</bordersize>
-						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+						
 					</control>
 					<control type="image">
 						<left>9</left>
@@ -89,7 +89,7 @@
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Square.png</texture>
 						<bordersize>6</bordersize>
-						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+						
 					</control>
 					<control type="image">
 						<left>9</left>
@@ -128,7 +128,7 @@
 						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Square.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<bordersize>6</bordersize>
-						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+						
 					</control>
 					<control type="image">
 						<left>9</left>
@@ -176,7 +176,7 @@
 						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Square.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<bordersize>6</bordersize>
-						<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+						
 					</control>
 					<control type="image">
 						<left>9</left>
@@ -724,7 +724,7 @@
 							<height>366</height>
 							<aspectratio aligny="center" align="center">stretch</aspectratio>
 							<texture scalediffuse="true" diffuse="views/ClassicSlide/square_diffuse.png">overlays/unwatched/classicslide/$VAR[WatchedStateOverlay]_square.png</texture>
-							<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+							
 							<animation effect="fade" start="90" end="100" time="200" delay="0" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)]">Conditional</animation>
 						</control>
 						<control type="group">
@@ -1154,7 +1154,7 @@
 									<height>360</height>
 									<aspectratio aligny="center" align="center">stretch</aspectratio>
 									<texture flipy="false" flipx="false" diffuse="views/shelf/thumb_shelf_diffuse.png">overlays/unwatched/shelf/$VAR[WatchedStateOverlay]_Poster.png</texture>
-									<visible>[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]</visible>
+									
 									<animation effect="fade" start="90" end="100" time="200" delay="0" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)]">Conditional</animation>
 								</control>
 							</control>

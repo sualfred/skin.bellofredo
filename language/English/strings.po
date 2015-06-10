@@ -1619,6 +1619,10 @@ msgctxt "#31396"
 msgid "NextUp Add-on"
 msgstr ""
 
+msgctxt "#31397"
+msgid "Protected"
+msgstr ""
+
 #: empty strings from id 31383 to 31408 settings Category Description & Header
 #: Labels
 msgctxt "#31409"

@@ -1870,9 +1870,13 @@
 	<value condition="PVR.HasNonRecordingTimer">$LOCALIZE[31335]</value>
 </variable>
 
-<variable name="WatchedStateOverlay">
-	<value condition="StringCompare(Skin.String(WatchedFlag),unwatched)">unwatched</value>
-	<value condition="StringCompare(Skin.String(WatchedFlag),watched)">watched</value>
+<variable name="WatchedStateOverlay">	
+	<value condition="StringCompare(Container.FolderName,PinSentry) + stringcompare(ListItem.Overlay,OverlayWatched.png)">watched</value>
+	<value condition="StringCompare(Container.FolderName,PinSentry) + !stringcompare(ListItem.Overlay,OverlayWatched.png)">blank</value>
+	<value condition="StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)">unwatched</value>
+	<value condition="StringCompare(Skin.String(WatchedFlag),unwatched) + !stringcompare(ListItem.Overlay,OverlayUnWatched.png)">blank</value>
+	<value condition="SStringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)">watched</value>
+	<value condition="SStringCompare(Skin.String(WatchedFlag),watched) + !stringcompare(ListItem.Overlay,OverlayWatched.png)">blank</value>
 </variable>
 
 <variable name="TopMenuStyleLabel">
