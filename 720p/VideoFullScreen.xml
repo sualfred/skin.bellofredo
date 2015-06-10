@@ -32,7 +32,7 @@
 
 		<!-- ============================ -->
 		<!-- === YouTube Info Line   ==== -->
-		<!-- ============================ -->
+		<!-- ============================ 
 		<control type="group" id="1">
 			<left>27</left>
 			<top>27</top>
@@ -98,7 +98,7 @@
 					<textcolor>ccblack</textcolor>
 				</control>
 			</control>
-		</control>
+		</control>-->
          
 		<!-- ============================ -->
 		<!-- === VideoFullcreen Code ==== -->

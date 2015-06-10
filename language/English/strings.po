@@ -1607,6 +1607,18 @@ msgctxt "#31393"
 msgid "Still there? Otherwise I'll stop."
 msgstr ""
 
+msgctxt "#31394"
+msgid "TV Tunes Add-on"
+msgstr ""
+
+msgctxt "#31395"
+msgid "Next Aired Add-on"
+msgstr ""
+
+msgctxt "#31396"
+msgid "NextUp Add-on"
+msgstr ""
+
 #: empty strings from id 31383 to 31408 settings Category Description & Header
 #: Labels
 msgctxt "#31409"

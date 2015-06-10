@@ -910,75 +910,113 @@
 						<control type="button" id="8605">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
-							<label>$LOCALIZE[1047]</label>
+							<label>$LOCALIZE[31396]</label>
 							<enable>false</enable>
 						</control>
-						<control type="radiobutton" id="8616">
+						<control type="radiobutton" id="8606">
 							<include>SettingsRadioButton</include>
-							<label>$LOCALIZE[31015]</label>
-							<onclick>Skin.ToggleSetting(ShowYouTubeChannelOSD)</onclick>
-							<selected>Skin.HasSetting(ShowYouTubeChannelOSD)</selected>
-							<enable>System.HasAddon(plugin.video.youtube)</enable>
-						</control>
-						<control type="button" id="8606">
-							<include>SettingsButton</include>
-							<label>$LOCALIZE[31141]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(LyricScript_Path))][/COLOR]</label2>
-							<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
+							<label>- Move Overlays to Top  [COLOR=55white](Requires NextUp Add-on)[/COLOR]</label>
+							<onclick>Skin.ToggleSetting(NextUpTop)</onclick>
+							<selected>Skin.HasSetting(NextUpTop)</selected>
+							<enable>System.HasAddon(service.nextup.notification)</enable>
 						</control>
 						<control type="button" id="8607">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[1045]</label>
+							<onclick>Addon.OpenSettings(service.nextup.notification)</onclick>
+							<visible>System.HasAddon(service.nextup.notification)</visible>
+						</control>
+						<!--
+						<control type="radiobutton" id="8607">
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31015]</label>
+							<onclick>Skin.ToggleSetting(ShowYouTubeChannelOSD)</onclick>
+							<selected>Skin.HasSetting(ShowYouTubeChannelOSD)</selected>
+							<enable>System.HasAddon(plugin.video.youtube)</enable>
+						</control>	-->																				
+						<control type="button" id="8608">
+							<disabledcolor>55white</disabledcolor>
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[24013]</label>
+							<enable>false</enable>
+						</control>
+						<control type="button" id="8609">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31141]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(LyricScript_Path))][/COLOR]</label2>
+							<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
+						</control>
+						<control type="button" id="8610">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[1045]</label>
 							<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
 							<visible>!IsEmpty(Skin.String(LyricScript_Path))</visible>
-						</control>
-						<control type="button" id="8608">
+						</control>																					
+						<control type="button" id="8611">
+							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
-							<label>$LOCALIZE[31154]</label>
+							<label>$LOCALIZE[20410]</label>
+							<enable>false</enable>
+						</control>
+						<control type="button" id="8612">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31154]</label>
 							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(TrailersAddon_Path))][/COLOR]</label2>
 							<onclick>Skin.SetAddon(TrailersAddon_Path,xbmc.addon.video)</onclick>
 							<enable>Skin.HasSetting(trailers)</enable>
 						</control>
-						<control type="button" id="8609">
+						<control type="button" id="8613">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[1045]</label>
 							<onclick>Addon.OpenSettings($INFO[Skin.String(TrailersAddon_Path)])</onclick>
 							<visible>Skin.HasSetting(trailers) + !IsEmpty(Skin.String(TrailersAddon_Path))</visible>
+						</control>																					
+						<control type="button" id="8614">
+							<disabledcolor>55white</disabledcolor>
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[31395]</label>
+							<enable>false</enable>
 						</control>
-						<control type="radiobutton" id="8610">
+						<control type="radiobutton" id="8615">
 							<include>SettingsRadioButton</include>
-							<label>$LOCALIZE[31143]</label>
+							<label>- $LOCALIZE[31143]</label>
 							<onclick>Skin.ToggleSetting(NextAiredEnabled)</onclick>
 							<selected>Skin.HasSetting(NextAiredEnabled)</selected>
 							<enable>System.HasAddon(script.tv.show.next.aired)</enable>
 						</control>
-						<control type="button" id="8611">
+						<control type="button" id="8616">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[1045]</label>
 							<onclick>Addon.OpenSettings(script.tv.show.next.aired)</onclick>
 							<visible>Skin.HasSetting(NextAiredEnabled) + System.HasAddon(script.tv.show.next.aired)</visible>
 						</control>
-						<control type="radiobutton" id="8612">
+						<control type="radiobutton" id="8617">
 							<include>SettingsRadioButton</include>
 							<label>- $LOCALIZE[31137]</label>
 							<onclick>Skin.ToggleSetting(EnableNextAiredNotifications)</onclick>
 							<selected>Skin.HasSetting(EnableNextAiredNotifications)</selected>
 							<visible>Skin.HasSetting(NextAiredEnabled) + System.HasAddon(script.tv.show.next.aired)</visible>
+						</control>																				
+						<control type="button" id="8618">
+							<disabledcolor>55white</disabledcolor>
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[31394]</label>
+							<enable>false</enable>
 						</control>
-						<control type="radiobutton" id="8613">
+						<control type="radiobutton" id="8619">
 							<include>SettingsRadioButton</include>
-							<label>$LOCALIZE[31144]</label>
+							<label>- $LOCALIZE[31144]</label>
 							<onclick>Skin.ToggleSetting(TVTunesEnabled)</onclick>
 							<selected>Skin.HasSetting(TVTunesEnabled)</selected>
 							<enable>System.HasAddon(script.tvtunes)</enable>
 						</control>
-						<control type="button" id="8614">
+						<control type="button" id="8620">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[1045]</label>
 							<onclick>Addon.OpenSettings(script.tvtunes)</onclick>
 							<visible>Skin.HasSetting(TVTunesEnabled) + System.HasAddon(script.tvtunes)</visible>
 						</control>
-						<control type="button" id="8615">
+						<control type="button" id="8621">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31145]</label>
 							<onclick>XBMC.RunScript(script.tvtunes)</onclick>
