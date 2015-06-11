@@ -1,25 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <shortcuts>
-
-  <!-- TVShows -->
-	<shortcut>
-		<label>$LOCALIZE[31002]</label>
-		<label2>32034</label2>
-		<defaultID>tvshows</defaultID>
-		<icon>special://skin/extras/icons/tvshows.png</icon>
-		<thumb />
-		<action>ActivateWindow(Videos,TVShowTitles,return)</action>
-	</shortcut>
-
-  <!-- Movies -->
-	<shortcut>
-		<label>$LOCALIZE[342]</label>
-		<label2>32034</label2>
-		<defaultID>movies</defaultID>
-		<icon>special://skin/extras/icons/movies.png</icon>
-		<thumb />
-		<action>ActivateWindow(Videos,MovieTitles,return)</action>
-	</shortcut>
 	
 	<!-- Videos -->
 	<shortcut>
@@ -30,6 +10,26 @@
 		<thumb />
 		<action>ActivateWindow(videos,sources://video/,return)</action>
 	</shortcut>
+
+	<!-- TVShows -->
+	<shortcut>
+		<label>$LOCALIZE[31002]</label>
+		<label2>32034</label2>
+		<defaultID>tvshows</defaultID>
+		<icon>special://skin/extras/icons/tvshows.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,TVShowTitles,return)</action>
+	</shortcut>
+
+	<!-- Movies -->
+	<shortcut>
+		<label>$LOCALIZE[342]</label>
+		<label2>32034</label2>
+		<defaultID>movies</defaultID>
+		<icon>special://skin/extras/icons/movies.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,MovieTitles,return)</action>
+	</shortcut>
 	
 	<!-- Live TV -->
 	<shortcut>
@@ -38,7 +38,7 @@
 		<defaultID>livetv</defaultID>
 		<icon>DefaultLiveTV.png</icon>
 		<thumb />
-    <action>ActivateWindow(TVChannels)</action>
+		<action>ActivateWindow(TVChannels)</action>
 	</shortcut>
 	
 	<!-- Amazon -->
@@ -63,7 +63,7 @@
 		<visible>System.HasAddon(plugin.video.youtube)</visible>	
 	</shortcut>
 
-	  <!-- Trailers -->
+	<!-- Trailers -->
 	<shortcut>
 		<label>$LOCALIZE[31018]</label>
 		<label2>32034</label2>
@@ -73,7 +73,7 @@
 		<action>ActivateWindow(videos,plugin://$INFO[Skin.String(TrailersAddon_Path)])</action>
 	</shortcut>
 	
-  <!-- Music -->
+	<!-- Music -->
 	<shortcut>
 		<label>$LOCALIZE[10005]</label>
 		<label2>32034</label2>
@@ -83,7 +83,7 @@
 		<action>ActivateWindow(Music)</action>
 	</shortcut>
 
-  <!-- TuneIn -->
+	<!-- TuneIn -->
 	<shortcut>
 		<label>TuneIn Radio</label>
 		<label2>Music Add-On</label2>
@@ -105,7 +105,7 @@
 		<visible>System.HasAddon(plugin.program.advanced.launcher)</visible>	
 	</shortcut>
 	
-  <!-- Add-ons -->
+	<!-- Add-ons -->
 	<shortcut>
 		<label>$LOCALIZE[24001]</label>
 		<label2>32034</label2>
@@ -115,7 +115,7 @@
 		<action>ActivateWindow(Videos,Addons,return)</action>
 	</shortcut>
 
-  <!-- Pictures -->
+	<!-- Pictures -->
 	<shortcut>
 		<label>$LOCALIZE[10002]</label>
 		<label2>32034</label2>
@@ -125,7 +125,7 @@
 		<action>ActivateWindow(Pictures)</action>
 	</shortcut>
 
-  <!-- Programs -->
+	<!-- Programs -->
 	<shortcut>
 		<label>$LOCALIZE[10001]</label>
 		<label2>32034</label2>
@@ -135,7 +135,7 @@
 		<action>ActivateWindow(Programs,Addons,return)</action>
 	</shortcut>
 
-  <!-- Weather -->
+	<!-- Weather -->
 	<shortcut>
 		<label>$LOCALIZE[12600]</label>
 		<label2>32034</label2>
@@ -145,7 +145,7 @@
 		<action>ActivateWindow(Weather)</action>
 	</shortcut>
 
-  <!-- Settings -->
+	<!-- Settings -->
 	<shortcut>
 		<label>$LOCALIZE[10004]</label>
 		<label2>32034</label2>
