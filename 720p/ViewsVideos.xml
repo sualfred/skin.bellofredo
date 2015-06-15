@@ -354,7 +354,6 @@
 							<height>14</height>
 							<aspectratio align="left" aligny="center">stretch</aspectratio>
 							<texture background="true" colordiffuse="77white">overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
-							<!---->
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
