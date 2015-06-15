@@ -423,8 +423,6 @@
 			<visible>[Control.IsVisible(50) + !Window.IsVisible(weather) + !Window.IsVisible(musicplaylisteditor) + !Window.IsVisible(profiles)]
 				| [Control.IsVisible(57) + !Window.IsVisible(profiles)]
 				| Control.IsVisible(56)
-				| Control.IsVisible(560)
-				| Control.IsVisible(561)
 				| Control.IsVisible(582)
 				| Window.IsActive(PlayerControls)
 				| Window.IsActive(shutdownmenu)
@@ -433,13 +431,22 @@
 				| Window.IsActive(musicinformation)
 				| Window.IsActive(songinformation)
 				| Window.IsActive(addoninformation)
-				| Window.IsActive(favourites)
 				| [Window.IsActive(script-globalsearch-main.xml) + Skin.HasSetting(HideBGFanart)]
 				| [Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(movieinformation)]
 				| [Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(movieinformation)]
 				| Window.IsActive(virtualkeyboard)
 			</visible>
-			<animation effect="fade" time="0" end="50" condition="Window.IsActive(favourites) | Control.IsVisible(560) | Control.IsVisible(561)">Conditional</animation>
+			<!--<animation effect="fade" time="0" end="50" condition="Window.IsActive(favourites) | Control.IsVisible(560) | Control.IsVisible(561)">Conditional</animation>-->
+		</control>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture background="true">windows/bg/bg_diffuse.png</texture>
+			<include>FanartFade</include>
+			<visible>Control.IsVisible(560)
+				| Control.IsVisible(561)
+				| Window.IsActive(favourites)
+			</visible>
+			<animation effect="fade" time="0" end="50" condition="true">Conditional</animation>
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>
