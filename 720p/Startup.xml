@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window >
-	<defaultcontrol always="true">10</defaultcontrol>
+	<defaultcontrol always="true">30</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<backgroundcolor>0</backgroundcolor>
 	<onload condition="System.HasAddon(script.skin.info.service)">RunScript(script.skin.info.service)</onload>
@@ -43,23 +43,17 @@
 	<onload condition="!Skin.HasSetting(BelloFredoFirstRun) + !Skin.HasSetting(AmbilightMode)">Skin.ToggleSetting(AmbilightMode)</onload>
 	<onload condition="!Skin.HasSetting(BelloFredoFirstRun)">Skin.ToggleSetting(BelloFredoFirstRun)</onload>
 	<controls>
-		<control type="button" id="10">
-			<description>trigger</description>
-			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
-			<onfocus condition="system.getbool(input.enablemouse) + !Skin.HasSetting(BelloFredoFirstRun)">ActivateWindow(1110)</onfocus>
-			<texturenofocus>-</texturenofocus>
-			<texturefocus>-</texturefocus>
-			<visible>!Skin.HasSetting(Use_Startup_Playlist) + !Skin.HasSetting(UseIntro)</visible>
-		</control>
-		<control type="button" id="10">
-			<description>trigger with startup Playlist</description>
+
+		<control type="button" id="30">
+			<description>trigger with startup playlist</description>
 			<onfocus>XBMC.PlayMedia($INFO[Skin.String(Startup_Playlist_Path)])</onfocus>
 			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>
 			<visible>Skin.HasSetting(Use_Startup_Playlist) + !Skin.HasSetting(UseIntro)</visible>
 		</control>
-		<control type="button" id="10">
+
+		<control type="button" id="30">
 			<description>trigger with startup intro</description>
 			<onfocus>XBMC.PlayMedia(special://skin/extras/intro/intro.mp4,1)</onfocus>
 			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
@@ -67,6 +61,34 @@
 			<texturefocus>-</texturefocus>
 			<visible>!Skin.HasSetting(Use_Startup_Playlist) + Skin.HasSetting(UseIntro)</visible>
 		</control>
+
+		<control type="button" id="30">
+			<description>trigger without playlist or intro</description>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>			
+			<onfocus>SetFocus(20)</onfocus>
+			<visible>!Skin.HasSetting(Use_Startup_Playlist) + !Skin.HasSetting(UseIntro)</visible>
+		</control>
+
+		<control type="button" id="20">
+			<description>check if fanart grabber is ready</description>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>			
+			<!--ready, move to home window-->
+			<onfocus condition="!IsEmpty(Window(Home).Property(script.grab.fanart.Ready))">AlarmClock(GrabberReady,SetFocus(40),00:01,silent)</onfocus>
+			<!--not ready, re-check-->
+			<onfocus condition="IsEmpty(Window(Home).Property(script.grab.fanart.Ready))">SetFocus(30)</onfocus>
+		</control>
+
+		<control type="button" id="40">
+			<description>move on to home</description>
+			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
+			<onfocus condition="system.getbool(input.enablemouse) + !Skin.HasSetting(BelloFredoFirstRun)">ActivateWindow(1110)</onfocus>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+		</control>
+
+		<!-- loading bg -->
 		<include>BackgroundContent</include>
 		<include>BackgroundVignette</include>
 		<control type="label">
