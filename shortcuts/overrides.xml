@@ -213,6 +213,12 @@
 	<background label="YouTube" condition="System.HasAddon(plugin.video.youtube)">special://skin/extras/backgrounds/defaults/yt.jpg</background>
 	<backgrounddefault defaultID="plugin.video.youtube">special://skin/extras/backgrounds/defaults/yt.jpg</backgrounddefault>
 
+	<background label="Disc" >special://skin/extras/backgrounds/defaults/DVD.jpg</background>
+	<backgrounddefault defaultID="dvd">special://skin/extras/backgrounds/defaults/DVD.jpg</backgrounddefault>
+
+	<background label="Videos" >special://skin/extras/backgrounds/defaults/DVD.jpg</background>
+	<backgrounddefault defaultID="videos">special://skin/extras/backgrounds/defaults/DVD.jpg</backgrounddefault>
+
 	<background label="Fanarts of ::PLAYLIST::">playlistBackground</background>
 
 	<!-- =============== -->

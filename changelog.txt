@@ -1,5 +1,10 @@
+[B][COLOR=FF56ADDA]v4.4.2[/COLOR][/B]
+• Fixed: Swapped Lithuanian and French language files
+• Improved: Startup loading behaviour
+
 [B][COLOR=FF56ADDA]v4.4.1[/COLOR][/B]
 • Fixed: Watched state indicator bug
+• Fixed: Background diffuse won't change while changing some views to another
 
 [B][COLOR=FF56ADDA]v4.4.0[/COLOR][/B]
 • Fixed: Auto complete suggestions width in T9Search of ExtendedInfo script
