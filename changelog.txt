@@ -1,6 +1,7 @@
 [B][COLOR=FF56ADDA]v4.4.2[/COLOR][/B]
 • Fixed: Swapped Lithuanian and French language files
 • Improved: Startup loading behaviour
+• Changed: Some default wallpaper
 
 [B][COLOR=FF56ADDA]v4.4.1[/COLOR][/B]
 • Fixed: Watched state indicator bug
