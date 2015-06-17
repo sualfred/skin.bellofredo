@@ -1,3 +1,9 @@
+[B][COLOR=FF56ADDA]v4.4.3[/COLOR][/B]
+• Fixed: Broken Shelf view in Advance Launcher
+• Changed: Some minor Extended Info dialog adjustments
+• Changed: New startup loading animation
+• Fixed: Overlapping video resolution icon in List view (for Music Videos)
+
 [B][COLOR=FF56ADDA]v4.4.2[/COLOR][/B]
 • Fixed: Swapped Lithuanian and French language files
 • Improved: Startup loading behaviour
