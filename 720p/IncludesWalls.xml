@@ -1175,7 +1175,7 @@
 			<height>237</height>
 			<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect_poster.png" background="true">$INFO[ListItem($PARAM[icon]).Icon]</texture>
 			<aspectratio>stretch</aspectratio>
-			<visible>[!Skin.HasSetting(ShelfRetailBox) | Container.Content(Addons)] + $PARAM[visible]</visible>
+			<visible>[!Skin.HasSetting(ShelfRetailBox) | Container.Content(Addons) | SubString(Container.FolderPath,plugin://plugin.program,left)] + $PARAM[visible]</visible>
 		</control>
 		<control type="image">
 			<left>$PARAM[left]</left>
@@ -1185,7 +1185,7 @@
 			<height>237</height>
 			<texture diffuse="views/shelf/thumb_shelf_diffuse_poster.png">views/shelf/thumb_shelf_fallback.png</texture>
 			<aspectratio>stretch</aspectratio>
-			<visible>[!Skin.HasSetting(ShelfRetailBox) | Container.Content(Addons)]</visible>
+			<visible>[!Skin.HasSetting(ShelfRetailBox) | Container.Content(Addons) | SubString(Container.FolderPath,plugin://plugin.program,left)]</visible>
 		</control>
 		<control type="image">
 			<left>$PARAM[left]</left>			
@@ -1195,7 +1195,7 @@
 			<height>237</height>
 			<texture diffuse="views/shelf/thumb_shelf_diffuse_poster.png" background="true">$INFO[ListItem($PARAM[icon]).Icon]</texture>
 			<aspectratio>stretch</aspectratio>
-			<visible>[!Skin.HasSetting(ShelfRetailBox) | Container.Content(Addons)]</visible>
+			<visible>[!Skin.HasSetting(ShelfRetailBox) | Container.Content(Addons) | SubString(Container.FolderPath,plugin://plugin.program,left)]</visible>
 		</control>
 		<control type="image">
 			<left>$PARAM[left]</left>	
@@ -1205,7 +1205,7 @@
 			<height>241</height>
 			<texture>views/shelf/thumb_shelf_glas.png</texture>
 			<aspectratio>stretch</aspectratio>
-			<visible>[!Skin.HasSetting(ShelfRetailBox) | Container.Content(Addons)]</visible>
+			<visible>[!Skin.HasSetting(ShelfRetailBox) | Container.Content(Addons) | SubString(Container.FolderPath,plugin://plugin.program,left)]</visible>
 		</control>
 		<!-- retail case -->
 		<control type="image">
@@ -1215,7 +1215,7 @@
 			<height>213</height>
 			<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect_box.png" background="true">$INFO[ListItem($PARAM[icon]).Icon]</texture>
 			<aspectratio>stretch</aspectratio>
-			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons)] + $PARAM[visible]</visible>
+			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !SubString(Container.FolderPath,plugin://plugin.program,left)] + $PARAM[visible]</visible>
 			<animation effect="slide" time="0" start="0,0" end="2,0" condition="true">Conditional</animation>
 		</control>		
 		<control type="image">
@@ -1225,7 +1225,7 @@
 			<height>213</height>
 			<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect_box.png" >views/shelf/thumb_shelf_glas_box.png</texture>
 			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons)]</visible>
+			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !SubString(Container.FolderPath,plugin://plugin.program,left)]</visible>
 		</control>
 		<control type="image">
 			<left>$PARAM[left]</left>
@@ -1234,7 +1234,7 @@
 			<height>241</height>
 			<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">$VAR[RetailCaseType]</texture>
 			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons)]</visible>
+			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !SubString(Container.FolderPath,plugin://plugin.program,left)]</visible>
 		</control>
 		<control type="image">
 			<left>$PARAM[left]</left>
@@ -1243,7 +1243,7 @@
 			<height>241</height>
 			<texture flipy="true" diffuse="views/shelf/thumb_shelf_reflect.png" background="true">views/shelf/thumb_shelf_box_overlay_dvd.png</texture>
 			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons)] + !IntegerGreaterThan(ListItem($PARAM[icon]).VideoResolution,719)</visible>
+			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !SubString(Container.FolderPath,plugin://plugin.program,left)] + !IntegerGreaterThan(ListItem($PARAM[icon]).VideoResolution,719)</visible>
 		</control>
 		<control type="image">
 			<left>$PARAM[left]</left>
@@ -1252,7 +1252,7 @@
 			<height>241</height>
 			<texture diffuse="views/shelf/thumb_shelf_diffuse.png">views/shelf/thumb_shelf_fallback.png</texture>
 			<aspectratio>stretch</aspectratio>
-			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons)]</visible>
+			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !SubString(Container.FolderPath,plugin://plugin.program,left)]</visible>
 		</control>
 		<control type="image">
 			<left>$PARAM[left]</left>
@@ -1261,7 +1261,7 @@
 			<height>213</height>
 			<texture background="true">$INFO[ListItem($PARAM[icon]).Icon]</texture>
 			<aspectratio>stretch</aspectratio>
-			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons)]</visible>
+			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !SubString(Container.FolderPath,plugin://plugin.program,left)]</visible>
 			<animation effect="slide" time="0" start="0,0" end="2,0" condition="true">Conditional</animation>
 		</control>
 		<control type="image">
@@ -1271,7 +1271,7 @@
 			<height>213</height>
 			<texture>views/shelf/thumb_shelf_glas_box.png</texture>
 			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons)]</visible>
+			<visible>[Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !SubString(Container.FolderPath,plugin://plugin.program,left)]</visible>
 			<animation effect="slide" time="0" start="0,0" end="2,0" condition="true">Conditional</animation>
 		</control>		
 		<control type="image">
@@ -1281,7 +1281,7 @@
 			<height>241</height>
 			<texture background="true">$VAR[RetailCaseTypeItemLayout]</texture>
 			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<visible>Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + IsEmpty(ListItem($PARAM[icon]).VideoResolution) + !SubString(ListItem($PARAM[icon]).FileNameAndPath,hdtv)</visible>
+			<visible>Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !SubString(Container.FolderPath,plugin://plugin.program,left) + IsEmpty(ListItem($PARAM[icon]).VideoResolution) + !SubString(ListItem($PARAM[icon]).FileNameAndPath,hdtv)</visible>
 		</control>
 		<control type="image">
 			<left>$PARAM[left]</left>
@@ -1290,7 +1290,7 @@
 			<height>241</height>
 			<texture background="true">views/shelf/thumb_shelf_box_overlay_3D.png</texture>
 			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<visible>Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + ListItem($PARAM[icon]).IsStereoscopic + !SubString(ListItem($PARAM[icon]).FileNameAndPath,hdtv)</visible>
+			<visible>Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !SubString(Container.FolderPath,plugin://plugin.program,left) + ListItem($PARAM[icon]).IsStereoscopic + !SubString(ListItem($PARAM[icon]).FileNameAndPath,hdtv)</visible>
 		</control>	
 		<control type="image">
 			<left>$PARAM[left]</left>
@@ -1299,7 +1299,7 @@
 			<height>241</height>
 			<texture background="true">views/shelf/thumb_shelf_box_overlay_bluray.png</texture>
 			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<visible>Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !IsEmpty(ListItem($PARAM[icon]).VideoResolution) + IntegerGreaterThan(ListItem($PARAM[icon]).VideoResolution,719) + !ListItem($PARAM[icon]).IsStereoscopic + !SubString(ListItem($PARAM[icon]).FileNameAndPath,hdtv)</visible>
+			<visible>Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !SubString(Container.FolderPath,plugin://plugin.program,left) + !IsEmpty(ListItem($PARAM[icon]).VideoResolution) + IntegerGreaterThan(ListItem($PARAM[icon]).VideoResolution,719) + !ListItem($PARAM[icon]).IsStereoscopic + !SubString(ListItem($PARAM[icon]).FileNameAndPath,hdtv)</visible>
 		</control>	
 		<control type="image">
 			<left>$PARAM[left]</left>
@@ -1308,7 +1308,7 @@
 			<height>241</height>
 			<texture background="true">views/shelf/thumb_shelf_box_overlay_dvd.png</texture>
 			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<visible>Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !IsEmpty(ListItem($PARAM[icon]).VideoResolution) + !IntegerGreaterThan(ListItem($PARAM[icon]).VideoResolution,719) + !ListItem($PARAM[icon]).IsStereoscopic + !SubString(ListItem($PARAM[icon]).FileNameAndPath,hdtv)</visible>
+			<visible>Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !SubString(Container.FolderPath,plugin://plugin.program,left) + !IsEmpty(ListItem($PARAM[icon]).VideoResolution) + !IntegerGreaterThan(ListItem($PARAM[icon]).VideoResolution,719) + !ListItem($PARAM[icon]).IsStereoscopic + !SubString(ListItem($PARAM[icon]).FileNameAndPath,hdtv)</visible>
 		</control>		
 		<control type="image">
 			<left>$PARAM[left]</left>
@@ -1317,7 +1317,7 @@
 			<height>241</height>
 			<texture background="true">views/shelf/thumb_shelf_box_overlay_hdtv.png</texture>
 			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<visible>Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + SubString(ListItem($PARAM[icon]).FileNameAndPath,hdtv) + !IntegerGreaterThan(ListItem($PARAM[icon]).VideoResolution,719) + !ListItem($PARAM[icon]).IsStereoscopic</visible>
+			<visible>Skin.HasSetting(ShelfRetailBox) + !Container.Content(Addons) + !SubString(Container.FolderPath,plugin://plugin.program,left) + SubString(ListItem($PARAM[icon]).FileNameAndPath,hdtv) + !IntegerGreaterThan(ListItem($PARAM[icon]).VideoResolution,719) + !ListItem($PARAM[icon]).IsStereoscopic</visible>
 		</control>	
 	</include>
 	<!-- OnNext -->
