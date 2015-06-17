@@ -4367,7 +4367,6 @@
 						<height>14</height>
 						<aspectratio align="left" aligny="center">stretch</aspectratio>
 						<texture background="true" colordiffuse="selected">overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
-						
 						<visible>ListItem.IsPlaying</visible>
 					</control>
 					<control type="image">
@@ -4377,7 +4376,6 @@
 						<height>14</height>
 						<aspectratio align="left" aligny="center">stretch</aspectratio>
 						<texture background="true" colordiffuse="77white">overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
-						
 						<visible>!ListItem.IsPlaying</visible>
 					</control>
 					<control type="label">
@@ -4472,7 +4470,7 @@
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$VAR[ListItemLabel2]</label>
-						<visible>![Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Window.IsVisible(VideoPlaylist) | Substring(ListItem.Path,videodb://movies/sets/)]</visible>
+						<visible>![Container.Content(MusicVideos) | Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Window.IsVisible(VideoPlaylist) | Substring(ListItem.Path,videodb://movies/sets/)]</visible>
 						<visible>!Stringcompare(ListItem.Label,..)</visible>
 					</control>
 				</itemlayout>
@@ -4497,7 +4495,6 @@
 						<height>14</height>
 						<aspectratio align="left" aligny="center">stretch</aspectratio>
 						<texture background="true" colordiffuse="selected">overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
-						
 						<visible>ListItem.IsPlaying</visible>
 					</control>
 					<control type="image">
@@ -4507,7 +4504,6 @@
 						<height>14</height>
 						<aspectratio align="left" aligny="center">stretch</aspectratio>
 						<texture background="true" colordiffuse="77white">overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
-						
 						<visible>!ListItem.IsPlaying</visible>
 					</control>
 					<control type="label">
@@ -4602,7 +4598,7 @@
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$VAR[ListItemLabel2]</label>
-						<visible>![Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Window.IsVisible(VideoPlaylist) | Substring(ListItem.Path,videodb://movies/sets/)]</visible>
+						<visible>![Container.Content(MusicVideos) | Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Window.IsVisible(VideoPlaylist) | Substring(ListItem.Path,videodb://movies/sets/)]</visible>
 						<visible>!Stringcompare(ListItem.Label,..)</visible>
 					</control>
 				</focusedlayout>
@@ -7094,7 +7090,16 @@
 							<font>FontSize_28</font>
 							<textcolor>55white</textcolor>
 							<shadowcolor>77000000</shadowcolor>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!stringcompare(ListItem.Label,..) + !IsEmpty(ListItem.Premiered)</visible>
+						</control>
+						<control type="label">
+							<label>$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
+							<width max="320">320</width>
+							<align>right</align>
+							<font>FontSize_28</font>
+							<textcolor>55white</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+							<visible>!stringcompare(ListItem.Label,..) + IsEmpty(ListItem.Premiered)</visible>
 						</control>
 					</control>
 					<control type="textbox">
