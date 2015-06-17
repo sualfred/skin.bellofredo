@@ -89,20 +89,60 @@
 		</control>
 
 		<!-- loading bg -->
-		<include>BackgroundContent</include>
-		<include>BackgroundVignette</include>
-		<control type="label">
-			<include>FullscreenDimensions</include>
-			<align>center</align>
-			<aligny>center</aligny>
-			<textcolor>55white</textcolor>
-			<font>FontSize_40B</font>
-			<shadowcolor>55000000</shadowcolor>			
-			<label>$LOCALIZE[31128]</label>
-			<animation type="Conditional" condition="true" pulse="true">
-				<effect type="fade" start="0" end="100" delay="0" time="1000"  />
-			</animation>
-			<visible>!Skin.HasSetting(Use_Startup_Playlist) + !Skin.HasSetting(UseIntro)</visible>
+		<control type="group">			
+			<include>BackgroundContent</include>
+			<include>BackgroundVignette</include>
+			<control type="image">				
+				<animation type="WindowClose" reversible="true">
+					<effect type="fade" start="100" end="0" time="300" delay="250" tween="sine" easing="inout" />
+				</animation>
+				<height>720</height>
+				<width>3280</width>
+				<left>-1000</left>
+				<texture background="true">windows/bg/colors_pulse.png</texture>
+			</control>		
+			<control type="group">
+				<width>1280</width>
+				<align>center</align>
+				<top>235</top>
+				<animation type="WindowClose" reversible="true">
+					<effect type="fade" start="100" end="0" time="300" delay="250" tween="sine" easing="inout" />
+					<effect type="slide" start="0,0" end="0,55" time="350" delay="250" tween="sine" easing="inout" />
+				</animation>
+				<control type="image">
+					<description>Busy animation</description>
+					<width>1280</width>
+					<align>center</align>
+					<height>150</height>
+					<texture>dialogs/busy/startup_1.png</texture>
+					<colordiffuse>77white</colordiffuse>
+					<aspectratio>keep</aspectratio>
+					<animation effect="rotate" start="0" end="360" center="auto" time="2500" loop="true" condition="true">conditional</animation>
+				</control>
+				<control type="image">
+					<description>Busy animation</description>
+					<width>1280</width>
+					<align>center</align>
+					<height>150</height>
+					<colordiffuse>99white</colordiffuse>
+					<texture>dialogs/busy/startup_2.png</texture>
+					<aspectratio>keep</aspectratio>
+					<animation effect="rotate" start="0" end="-360" center="auto" time="2500" loop="true" condition="true">conditional</animation>
+				</control>
+				<control type="label">
+					<width>1280</width>
+					<align>center</align>
+					<top>150</top>
+					<textcolor>77white</textcolor>
+					<font>FontSize_30B</font>
+					<shadowcolor>55000000</shadowcolor>			
+					<label>$LOCALIZE[31128]</label>
+					<animation type="Conditional" condition="true" pulse="true">
+						<effect type="fade" start="0" end="90" delay="0" time="1000"  />
+					</animation>
+					<visible>!Skin.HasSetting(Use_Startup_Playlist) + !Skin.HasSetting(UseIntro)</visible>
+				</control>
+			</control>
 		</control>
 	</controls>
 </window>
