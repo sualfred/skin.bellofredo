@@ -548,7 +548,7 @@
 					<description>Cast</description>
 					<posx>0</posx>
 					<posy>0</posy>
-					<width>860</width>
+					<width>960</width>
 					<height>250</height>
 					<orientation>horizontal</orientation>
 					<scrolltime tween="cubic" easing="out">350</scrolltime>
@@ -625,7 +625,7 @@
 							<textcolor>white</textcolor>
 							<shadowcolor>99000000</shadowcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label] ($INFO[ListItem.Label2]) </label>
+							<label>$INFO[ListItem.Label] $INFO[ListItem.Label2,$LOCALIZE[20347] ]</label>
 							<visible>Control.HasFocus(50)</visible>
 							<animation effect="fade" start="0" end="100" time="200" condition="Control.HasFocus(50)">Conditional</animation>
 							<animation reversible="false" effect="fade" start="0" end="100" time="400">Focus</animation>

@@ -379,7 +379,7 @@
 					<description>Known Movies</description>
 					<posx>0</posx>
 					<posy>0</posy>
-					<width>860</width>
+					<width>980</width>
 					<height>250</height>
 					<orientation>horizontal</orientation>
 					<scrolltime tween="cubic" easing="out">350</scrolltime>
@@ -426,7 +426,7 @@
 					<description>recommended</description>
 					<posx>0</posx>
 					<posy>0</posy>
-					<width>860</width>
+					<width>980</width>
 					<height>250</height>
 					<orientation>horizontal</orientation>
 					<scrolltime tween="cubic" easing="out">350</scrolltime>
@@ -621,7 +621,7 @@
 					<description>crew</description>
 					<posx>0</posx>
 					<posy>0</posy>
-					<width>860</width>
+					<width>980</width>
 					<height>250</height>
 					<orientation>horizontal</orientation>
 					<scrolltime tween="cubic" easing="out">350</scrolltime>
@@ -668,7 +668,7 @@
 					<description>crew</description>
 					<posx>0</posx>
 					<posy>0</posy>
-					<width>860</width>
+					<width>980</width>
 					<height>250</height>
 					<orientation>horizontal</orientation>
 					<scrolltime tween="cubic" easing="out">350</scrolltime>
@@ -715,7 +715,7 @@
 		<!-- ================== -->    
 		<control type="grouplist">
 			<posx>0</posx>
-			<posy>150</posy>
+			<posy>148</posy>
 			<height>0</height>
 			<width>1218</width>
 			<itemgap>5</itemgap>
