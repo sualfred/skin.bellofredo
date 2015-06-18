@@ -1,3 +1,6 @@
+[B][COLOR=FF56ADDA]v4.4.4a[/COLOR][/B]
+• Fixed: Broken NetFilx landscape thumbs
+
 [B][COLOR=FF56ADDA]v4.4.4[/COLOR][/B]
 • Fixed: Ugly startup animation behaviour in combination with intro/playlist
 • Fixed: Background duplicate
