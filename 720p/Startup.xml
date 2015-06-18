@@ -102,6 +102,7 @@
 				<texture background="true">windows/bg/colors_pulse.png</texture>
 			</control>		
 			<control type="group">
+				<visible>!Skin.HasSetting(Use_Startup_Playlist) + !Skin.HasSetting(UseIntro)</visible>
 				<width>1280</width>
 				<align>center</align>
 				<top>235</top>
@@ -140,7 +141,6 @@
 					<animation type="Conditional" condition="true" pulse="true">
 						<effect type="fade" start="0" end="90" delay="0" time="1000"  />
 					</animation>
-					<visible>!Skin.HasSetting(Use_Startup_Playlist) + !Skin.HasSetting(UseIntro)</visible>
 				</control>
 			</control>
 		</control>

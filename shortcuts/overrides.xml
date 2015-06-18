@@ -217,7 +217,6 @@
 	<backgrounddefault defaultID="dvd">special://skin/extras/backgrounds/defaults/DVD.jpg</backgrounddefault>
 
 	<background label="Videos" >special://skin/extras/backgrounds/defaults/videos.jpg</background>
-	<backgrounddefault defaultID="videos">special://skin/extras/backgrounds/defaults/videos.jpg</backgrounddefault>
 
 	<background label="Fanarts of ::PLAYLIST::">playlistBackground</background>
 
