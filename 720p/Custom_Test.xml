@@ -20,7 +20,7 @@
 			<control type="group">
 				<width>1280</width>
 				<align>center</align>
-				<top>235</top>
+				<top>255</top>
 				<control type="image">
 					<description>Busy animation</description>
 					<width>1280</width>
@@ -44,7 +44,7 @@
 				<control type="label">
 					<width>1280</width>
 					<align>center</align>
-					<top>150</top>
+					<top>145</top>
 					<textcolor>77white</textcolor>
 					<font>FontSize_30B</font>
 					<shadowcolor>55000000</shadowcolor>			

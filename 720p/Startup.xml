@@ -105,7 +105,7 @@
 				<visible>!Skin.HasSetting(Use_Startup_Playlist) + !Skin.HasSetting(UseIntro)</visible>
 				<width>1280</width>
 				<align>center</align>
-				<top>235</top>
+				<top>255</top>
 				<animation type="WindowClose" reversible="true">
 					<effect type="fade" start="100" end="0" time="300" delay="250" tween="sine" easing="inout" />
 					<effect type="slide" start="0,0" end="0,55" time="350" delay="250" tween="sine" easing="inout" />
@@ -133,7 +133,7 @@
 				<control type="label">
 					<width>1280</width>
 					<align>center</align>
-					<top>150</top>
+					<top>145</top>
 					<textcolor>77white</textcolor>
 					<font>FontSize_30B</font>
 					<shadowcolor>55000000</shadowcolor>			
