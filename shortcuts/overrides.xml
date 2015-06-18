@@ -215,6 +215,9 @@
 
 	<background label="Disc" >special://skin/extras/backgrounds/defaults/DVD.jpg</background>
 	<backgrounddefault defaultID="dvd">special://skin/extras/backgrounds/defaults/DVD.jpg</backgrounddefault>
+	
+	<background label="Music Videos" >special://skin/extras/backgrounds/defaults/musicvideos.jpg</background>
+	<backgrounddefault defaultID="musicvideos">special://skin/extras/backgrounds/defaults/musicvideos.jpg</backgrounddefault>
 
 	<background label="Videos" >special://skin/extras/backgrounds/defaults/videos.jpg</background>
 
