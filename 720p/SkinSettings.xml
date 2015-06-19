@@ -765,167 +765,188 @@
 							<onclick>ActivateWindow(1118)</onclick>
 						</control>
 						<!--Music Views-->
-						<control type="button" id="8503">
+						<control type="button" id="8516">
 							<description>Hide Music Views</description>
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31157]</label>
 							<onclick>SetProperty(ManageButtons,managemusicviews)</onclick>
 							<onclick>ActivateWindow(1118)</onclick>
-						</control>											
-						<control type="button" id="8504">
-							<disabledcolor>55white</disabledcolor>
+						</control>	
+						<!--Show IDs-->
+						<control type="button" id="8503">
+							<description>Hide Music Views</description>
 							<include>SettingsButton</include>
-							<label>$LOCALIZE[31180]</label>
-							<enable>false</enable>
+							<label>- Show IDs</label>
+							<onclick>RunScript(script.toolbox,info=textviewer,header=Skin View IDs,text=Slide  51
+Gallery  52
+3D Wall  53
+Wall  54
+List Wall  58
+Video Wall  580
+LoveFilm  581
+NetFilx  59
+Poster  55
+Thumbnails  56 560 561
+Banners  57
+Thumb List  582
+Classic Slide  583
+Shelf  584)
+</onclick>
+							</control>											
+							<control type="button" id="8504">
+								<disabledcolor>55white</disabledcolor>
+								<include>SettingsButton</include>
+								<label>$LOCALIZE[31180]</label>
+								<enable>false</enable>
+							</control>
+							<control type="button" id="8505">
+								<include>SettingsButton</include>
+								<label>- $LOCALIZE[31119]</label>
+								<label2>[CAPITALIZE][COLOR=selected]$INFO[Skin.String(WatchedFlag)][/COLOR][/CAPITALIZE]</label2>
+								<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31120])</onclick>
+								<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(WatchedFlag,unwatched))</onclick>
+								<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31121])</onclick>
+								<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(WatchedFlag,watched))</onclick>
+								<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31122])</onclick>
+								<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(WatchedFlag,hidden))</onclick>
+								<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31119])</onclick>
+							</control>		
+							<!--IMDb Rating Update-->
+							<control type="button" id="8506">
+								<description>IMDb Rating Updater</description>
+								<label>- $LOCALIZE[31092]</label>
+								<include>SettingsButton</include>
+								<label2>[COLOR=selected]$VAR[IMDbUpdateLabels][/COLOR]</label2>
+								<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31187] / $LOCALIZE[31188] / $LOCALIZE[31189])</onclick>
+								<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(AutoUpdateRatings,all))</onclick>
+								<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31187] / $LOCALIZE[31188])</onclick>
+								<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(AutoUpdateRatings,onlymovies))</onclick>
+								<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31187])</onclick>
+								<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(AutoUpdateRatings,top250))</onclick>
+								<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31188])</onclick>
+								<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(AutoUpdateRatings,movies))</onclick>
+								<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31189])</onclick>
+								<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(AutoUpdateRatings,mpaa))</onclick>
+								<onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31066])</onclick>
+								<onclick>SetProperty(Dialog.6.BuiltIn,Skin.Reset(AutoUpdateRatings))</onclick>
+								<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31191])</onclick>
+								<enable>System.HasAddon(script.imdbupdate)</enable>
+							</control>
+							<!--Artwork Downloader-->
+							<control type="radiobutton" id="8507">
+								<description>Artwork Downloader</description>
+								<include>SettingsRadioButton</include>
+								<label>- $LOCALIZE[31047]</label>
+								<onclick>Skin.ToggleSetting(AutoUpdateArt)</onclick>
+								<selected>Skin.HasSetting(AutoUpdateArt)</selected>
+								<enable>System.HasAddon(script.artwork.downloader)</enable>
+							</control>																	
+							<control type="button" id="8508">
+								<disabledcolor>55white</disabledcolor>
+								<include>SettingsButton</include>
+								<label>$LOCALIZE[31181]</label>
+								<enable>false</enable>
+							</control>
+							<control type="button" id="8509">
+								<include>SettingsButton</include>
+								<label>- $LOCALIZE[31146]</label>
+								<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,clearlogo)</onclick>
+								<visible>System.HasAddon(script.artwork.downloader)</visible>
+							</control>
+							<control type="button" id="8510">
+								<include>SettingsButton</include>
+								<label>- $LOCALIZE[31147]</label>
+								<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,clearart)</onclick>
+								<visible>System.HasAddon(script.artwork.downloader)</visible>
+							</control>
+							<control type="button" id="8511">
+								<include>SettingsButton</include>
+								<label>- $LOCALIZE[31148]</label>
+								<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,landscape)</onclick>
+								<visible>System.HasAddon(script.artwork.downloader)</visible>
+							</control>
+							<control type="button" id="8512">
+								<include>SettingsButton</include>
+								<label>- $LOCALIZE[31149]</label>
+								<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,banner)</onclick>
+								<visible>System.HasAddon(script.artwork.downloader)</visible>
+							</control>
+							<control type="button" id="8513">
+								<include>SettingsButton</include>
+								<label>- $LOCALIZE[31150]</label>
+								<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,poster)</onclick>
+								<visible>System.HasAddon(script.artwork.downloader)</visible>
+							</control>
+							<control type="button" id="8514">
+								<include>SettingsButton</include>
+								<label>- $LOCALIZE[31165]</label>
+								<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,discart)</onclick>
+								<visible>System.HasAddon(script.artwork.downloader)</visible>
+							</control>
+							<control type="button" id="8515">
+								<include>SettingsButton</include>
+								<label>- $LOCALIZE[31160]</label>
+								<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,clearlogo)</onclick>
+								<visible>System.HasAddon(script.artwork.downloader)</visible>
+							</control>
 						</control>
-						<control type="button" id="8505">
-							<include>SettingsButton</include>
-							<label>- $LOCALIZE[31119]</label>
-							<label2>[CAPITALIZE][COLOR=selected]$INFO[Skin.String(WatchedFlag)][/COLOR][/CAPITALIZE]</label2>
-							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31120])</onclick>
-							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(WatchedFlag,unwatched))</onclick>
-							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31121])</onclick>
-							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(WatchedFlag,watched))</onclick>
-							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31122])</onclick>
-							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(WatchedFlag,hidden))</onclick>
-							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31119])</onclick>
-						</control>		
-						<!--IMDb Rating Update-->
-						<control type="button" id="8506">
-							<description>IMDb Rating Updater</description>
-							<label>- $LOCALIZE[31092]</label>
-							<include>SettingsButton</include>
-							<label2>[COLOR=selected]$VAR[IMDbUpdateLabels][/COLOR]</label2>
-							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31187] / $LOCALIZE[31188] / $LOCALIZE[31189])</onclick>
-							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(AutoUpdateRatings,all))</onclick>
-							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31187] / $LOCALIZE[31188])</onclick>
-							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(AutoUpdateRatings,onlymovies))</onclick>
-							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31187])</onclick>
-							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(AutoUpdateRatings,top250))</onclick>
-							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31188])</onclick>
-							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(AutoUpdateRatings,movies))</onclick>
-							<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31189])</onclick>
-							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(AutoUpdateRatings,mpaa))</onclick>
-							<onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31066])</onclick>
-							<onclick>SetProperty(Dialog.6.BuiltIn,Skin.Reset(AutoUpdateRatings))</onclick>
-							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31191])</onclick>
-							<enable>System.HasAddon(script.imdbupdate)</enable>
-						</control>
-						<!--Artwork Downloader-->
-						<control type="radiobutton" id="8507">
-							<description>Artwork Downloader</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31047]</label>
-							<onclick>Skin.ToggleSetting(AutoUpdateArt)</onclick>
-							<selected>Skin.HasSetting(AutoUpdateArt)</selected>
-							<enable>System.HasAddon(script.artwork.downloader)</enable>
-						</control>																	
-						<control type="button" id="8508">
-							<disabledcolor>55white</disabledcolor>
-							<include>SettingsButton</include>
-							<label>$LOCALIZE[31181]</label>
-							<enable>false</enable>
-						</control>
-						<control type="button" id="8509">
-							<include>SettingsButton</include>
-							<label>- $LOCALIZE[31146]</label>
-							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,clearlogo)</onclick>
-							<visible>System.HasAddon(script.artwork.downloader)</visible>
-						</control>
-						<control type="button" id="8510">
-							<include>SettingsButton</include>
-							<label>- $LOCALIZE[31147]</label>
-							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,clearart)</onclick>
-							<visible>System.HasAddon(script.artwork.downloader)</visible>
-						</control>
-						<control type="button" id="8511">
-							<include>SettingsButton</include>
-							<label>- $LOCALIZE[31148]</label>
-							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,landscape)</onclick>
-							<visible>System.HasAddon(script.artwork.downloader)</visible>
-						</control>
-						<control type="button" id="8512">
-							<include>SettingsButton</include>
-							<label>- $LOCALIZE[31149]</label>
-							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,banner)</onclick>
-							<visible>System.HasAddon(script.artwork.downloader)</visible>
-						</control>
-						<control type="button" id="8513">
-							<include>SettingsButton</include>
-							<label>- $LOCALIZE[31150]</label>
-							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,poster)</onclick>
-							<visible>System.HasAddon(script.artwork.downloader)</visible>
-						</control>
-						<control type="button" id="8514">
-							<include>SettingsButton</include>
-							<label>- $LOCALIZE[31165]</label>
-							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,discart)</onclick>
-							<visible>System.HasAddon(script.artwork.downloader)</visible>
-						</control>
-						<control type="button" id="8515">
-							<include>SettingsButton</include>
-							<label>- $LOCALIZE[31160]</label>
-							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,clearlogo)</onclick>
-							<visible>System.HasAddon(script.artwork.downloader)</visible>
-						</control>
-					</control>
-					<!--============-->
-					<!--== Addons ==-->
-					<!--============-->
-					<control type="grouplist" id="8600">
-						<include>CloseAnimation</include>
-						<visible>Container(8800).Hasfocus(6)</visible>
-						<left>297</left>
-						<top>0</top>
-						<width>782</width>
-						<height>414</height>
-						<itemgap>2</itemgap>
-						<pagecontrol>60</pagecontrol>
-						<onleft>8800</onleft>
-						<onright>9000</onright>
-						<onup>8600</onup>
-						<ondown>8600</ondown>																
-						<control type="button" id="8601">
-							<disabledcolor>55white</disabledcolor>
-							<include>SettingsButton</include>
-							<label>$LOCALIZE[31294]</label>
-							<enable>false</enable>
-						</control>
-						<control type="button" id="8602">
-							<include>SettingsButton</include>
-							<label>- $LOCALIZE[31319]</label>
-							<onclick>RunScript(script.bellofredo.extrapack)</onclick>
-						</control>
-						<control type="button" id="8603">
-							<include>SettingsButton</include>
-							<label>- $LOCALIZE[31320]</label>
-							<onclick>RunScript(script.bellofredo.extrapack,mode=forcerefresh)</onclick>
-						</control>
-						<control type="radiobutton" id="8604">
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31400]</label>
-							<onclick>Skin.ToggleSetting(AutoRunExtrapack)</onclick>
-							<selected>Skin.HasSetting(AutoRunExtrapack)</selected>
-						</control>
-						<control type="button" id="8605">
-							<disabledcolor>55white</disabledcolor>
-							<include>SettingsButton</include>
-							<label>$LOCALIZE[31396]</label>
-							<enable>false</enable>
-						</control>
-						<control type="button" id="8606">
-							<include>SettingsButton</include>
-							<label>- NextUp Overlay Position  [COLOR=55white](Requires NextUp Add-on)[/COLOR]</label>
-							<label2>[COLOR=blue]$VAR[NextUpStyleLabel][/COLOR]</label2>
-							<onclick>Skin.ToggleSetting(NextUpTop)</onclick>
-							<enable>System.HasAddon(service.nextup.notification)</enable>
-						</control>
-						<control type="button" id="8607">
-							<include>SettingsButton</include>
-							<label>- $LOCALIZE[1045]</label>
-							<onclick>Addon.OpenSettings(service.nextup.notification)</onclick>
-							<visible>System.HasAddon(service.nextup.notification)</visible>
-						</control>
+						<!--============-->
+						<!--== Addons ==-->
+						<!--============-->
+						<control type="grouplist" id="8600">
+							<include>CloseAnimation</include>
+							<visible>Container(8800).Hasfocus(6)</visible>
+							<left>297</left>
+							<top>0</top>
+							<width>782</width>
+							<height>414</height>
+							<itemgap>2</itemgap>
+							<pagecontrol>60</pagecontrol>
+							<onleft>8800</onleft>
+							<onright>9000</onright>
+							<onup>8600</onup>
+							<ondown>8600</ondown>																
+							<control type="button" id="8601">
+								<disabledcolor>55white</disabledcolor>
+								<include>SettingsButton</include>
+								<label>$LOCALIZE[31294]</label>
+								<enable>false</enable>
+							</control>
+							<control type="button" id="8602">
+								<include>SettingsButton</include>
+								<label>- $LOCALIZE[31319]</label>
+								<onclick>RunScript(script.bellofredo.extrapack)</onclick>
+							</control>
+							<control type="button" id="8603">
+								<include>SettingsButton</include>
+								<label>- $LOCALIZE[31320]</label>
+								<onclick>RunScript(script.bellofredo.extrapack,mode=forcerefresh)</onclick>
+							</control>
+							<control type="radiobutton" id="8604">
+								<include>SettingsRadioButton</include>
+								<label>- $LOCALIZE[31400]</label>
+								<onclick>Skin.ToggleSetting(AutoRunExtrapack)</onclick>
+								<selected>Skin.HasSetting(AutoRunExtrapack)</selected>
+							</control>
+							<control type="button" id="8605">
+								<disabledcolor>55white</disabledcolor>
+								<include>SettingsButton</include>
+								<label>$LOCALIZE[31396]</label>
+								<enable>false</enable>
+							</control>
+							<control type="button" id="8606">
+								<include>SettingsButton</include>
+								<label>- NextUp Overlay Position  [COLOR=55white](Requires NextUp Add-on)[/COLOR]</label>
+								<label2>[COLOR=blue]$VAR[NextUpStyleLabel][/COLOR]</label2>
+								<onclick>Skin.ToggleSetting(NextUpTop)</onclick>
+								<enable>System.HasAddon(service.nextup.notification)</enable>
+							</control>
+							<control type="button" id="8607">
+								<include>SettingsButton</include>
+								<label>- $LOCALIZE[1045]</label>
+								<onclick>Addon.OpenSettings(service.nextup.notification)</onclick>
+								<visible>System.HasAddon(service.nextup.notification)</visible>
+							</control>
 						<!--
 						<control type="radiobutton" id="8607">
 							<include>SettingsRadioButton</include>
