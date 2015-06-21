@@ -31,7 +31,7 @@
 					<shadowcolor>FF000000</shadowcolor>
 					<font>font13</font>
 					<align>left</align>
-					<label>Temporary Info: $INFO[ListItem.MPAA]</label>
+					<label>Temporary Info: $INFO[ListItem.Genre]</label>
 				</control>
 				<control type="label">
 					<width>780</width>

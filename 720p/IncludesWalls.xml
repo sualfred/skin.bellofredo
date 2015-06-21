@@ -1479,7 +1479,20 @@
 			<param name="icon">1</param>
 		</include>
 	</include>
-
+	<!-- ClassicSlide Genre Definitions-->
+	<include name="ParamClassicSlideGenre">
+		<control type="image">
+			<left>$PARAM[leftSquare]</left>
+			<top>240</top>
+			<width>242</width>
+			<height>242</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="special://skin/extras/videogenres/default.jpg">$PARAM[genre]</texture>
+			<bordersize>2</bordersize>
+			<visible>Container.Content(genres) + $PARAM[genreCondition]</visible>	
+			<visible>$PARAM[visibleSquare] </visible>		
+		</control>
+	</include>
 	<!-- ClassicSlide Definitions -->
 	<include name="ParamClassicSlidePoster">
 		<control type="image">
@@ -1524,11 +1537,185 @@
 			<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]</visible>
 			<visible>$PARAM[visibleSquare]</visible>
 		</control>
+
+		<!-- genre stuff -->
+
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/default.png</param>
+			<param name="genreCondition">Container.Content(genres) + !StringCompare(ListItem($PARAM[icon]).Label,..)</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/adventure.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,Adventure) | SubString(ListItem($PARAM[icon]).Label,Abenteuer)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/action.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,Action)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/sport.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,sport)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/animation.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,animation)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/3D.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,3D)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/horror.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,horror)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/film-noir.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,noir)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/love.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,Love) | SubString(ListItem($PARAM[icon]).Label,romance) | SubString(ListItem.Label,romanze)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/history.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,history) | SubString(ListItem($PARAM[icon]).Label,geschichte) | SubString(ListItem($PARAM[icon]).Label,historie)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/kids.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,kids) | SubString(ListItem($PARAM[icon]).Label,children) | SubString(ListItem($PARAM[icon]).Label,kinder)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/thriller.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,thriller)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/drama.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,drama)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/comedy.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,comedy) | SubString(ListItem($PARAM[icon]).Label,komödie)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/musical.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,musical) | SubString(ListItem($PARAM[icon]).Label,music)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/mystery.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,mystery) | SubString(ListItem($PARAM[icon]).Label,mysterie)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/crime.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,crime) | SubString(ListItem($PARAM[icon]).Label,krimi)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/fantasy.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,fantasy) | SubString(ListItem($PARAM[icon]).Label,fantasie) | SubString(ListItem($PARAM[icon]).Label,märchen)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/biography.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,biography) | SubString(ListItem($PARAM[icon]).Label,biographie)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/documentation.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,docu) | SubString(ListItem($PARAM[icon]).Label,doku)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/family.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,family) | SubString(ListItem($PARAM[icon]).Label,familie)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/war.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,war) | SubString(ListItem($PARAM[icon]).Label,krieg)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/suspense.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,Suspense) | SubString(ListItem($PARAM[icon]).Label,spannung)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/short.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,short) | SubString(ListItem($PARAM[icon]).Label,kurz)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/western.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,western) | SubString(ListItem($PARAM[icon]).Label,cowboy)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/special-interest.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,special) | SubString(ListItem($PARAM[icon]).Label,spezial)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/science-fiction.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,Sci-Fi) | SubString(ListItem($PARAM[icon]).Label,SciFi) | SubString(ListItem($PARAM[icon]).Label,Science Fiction) | SubString(ListItem($PARAM[icon]).Label,Science-Fiction)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/miniseries.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,mini)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
+		<include name="ParamClassicSlideGenre">
+			<param name="genre">special://skin/extras/videogenres/food.png</param>
+			<param name="genreCondition">Container.Content(genres) + [SubString(ListItem($PARAM[icon]).Label,cook) | SubString(ListItem($PARAM[icon]).Label,food) | SubString(ListItem($PARAM[icon]).Label,essen) | SubString(ListItem($PARAM[icon]).Label,kochen)]</param>
+			<param name="visibleSquare">$PARAM[visibleSquare]</param>
+			<param name="leftSquare">$PARAM[leftSquare]</param>
+		</include>
 	</include>
 	
-	<include name="ParamClassicSlideSquare">
-		
-	</include>
 	<!-- OnNext -->
 	<include name="Includes_OnNext_ClassicSlide">
 		<include name="ParamClassicSlidePoster">
