@@ -251,6 +251,18 @@
 						<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
 						<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
 						<bordersize>6</bordersize>
+						<visible>!Container.Content(genres)</visible>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>223</width>
+						<height>210</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[VarArtGenre]</texture>
+						<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
+						<bordersize>6</bordersize>
+						<visible>Container.Content(genres)</visible>
 					</control>
 					<control type="image">
 						<left>9</left>
@@ -259,8 +271,7 @@
 						<height>210</height>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Square.png</texture>
-						<bordersize>6</bordersize>
-						
+						<bordersize>6</bordersize>						
 					</control>
 					<control type="image">
 						<left>9</left>
@@ -303,6 +314,18 @@
 						<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture>
 						<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
 						<bordersize>6</bordersize>
+						<visible>!Container.Content(genres)</visible>
+					</control>
+					<control type="image">
+						<left>9</left>
+						<top>9</top>
+						<width>223</width>
+						<height>210</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[VarArtGenre]</texture>
+						<bordertexture border="6">thumbs/thumb_border.png</bordertexture>
+						<bordersize>6</bordersize>
+						<visible>Container.Content(genres)</visible>
 					</control>
 					<!-- *NOT USED*					
 					<control type="image"><left>9</left><top>9</top><width>223</width><height>210</height><colordiffuse>FF04aeda</colordiffuse><aspectratio align="center" aligny="center">scale</aspectratio><texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture><bordersize>6</bordersize><visible>![SubString(Container.FolderPath,addons://sources,left) | SubString(Container.FolderPath,plugin://plugin,left) | Container.Content(Files) | [Container.HasFolders + !IsEmpty(ListItem.FolderName)] | [Container.HasFiles + !IsEmpty(ListItem.FolderName)] | Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(Actors) | Container.Content(Genres) | Window.IsVisible(addonbrowser)] | IsEmpty(ListItem.Thumb)</visible></control><control type="image"><left>9</left><top>9</top><width>223</width><height>210</height><aspectratio align="center" aligny="center">scale</aspectratio><texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[ThumbnailsIcon]</texture><bordersize>6</bordersize><visible>[SubString(Container.FolderPath,addons://sources,left) | SubString(Container.FolderPath,plugin://plugin,left) | Container.Content(Files) | [Container.HasFolders + !IsEmpty(ListItem.FolderName)] | [Container.HasFiles + !IsEmpty(ListItem.FolderName)] | Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(Actors) | Container.Content(Genres) | Window.IsVisible(addonbrowser)] + !IsEmpty(ListItem.Thumb)</visible></control>-->

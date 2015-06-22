@@ -1638,7 +1638,7 @@
 		</include>
 		<include name="ParamClassicSlideGenre">
 			<param name="genre">special://skin/extras/musicgenres/rnb.png</param>
-			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,rnb) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31423]) | SubString(ListItem($PARAM[icon]).Label,r&b) | SubString(ListItem($PARAM[icon]).Label,r'n'b)]</param>
+			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,rnb) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31423]) | SubString(ListItem($PARAM[icon]).Label,r'n'b)]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>

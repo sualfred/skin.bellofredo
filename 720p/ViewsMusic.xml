@@ -1177,8 +1177,7 @@
 						<height>150</height>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Square.png</texture>
-						<bordersize>6</bordersize>
-						
+						<bordersize>6</bordersize>						
 					</control>
 					<control type="image">
 						<left>9</left>
@@ -1342,8 +1341,7 @@
 						<height>150</height>
 						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Square.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<bordersize>6</bordersize>
-						
+						<bordersize>6</bordersize>						
 					</control>
 					<control type="image">
 						<left>9</left>
@@ -1390,8 +1388,7 @@
 						<height>232</height>
 						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Square.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<bordersize>6</bordersize>
-						
+						<bordersize>6</bordersize>						
 					</control>
 					<control type="image">
 						<left>9</left>
@@ -1438,8 +1435,7 @@
 						<height>150</height>
 						<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Square.png</texture>
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<bordersize>6</bordersize>
-						
+						<bordersize>6</bordersize>						
 					</control>
 					<control type="image">
 						<left>9</left>

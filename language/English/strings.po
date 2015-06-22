@@ -1795,7 +1795,7 @@ msgid "Horror"
 msgstr ""
 
 msgctxt "#31438"
-msgid "film-noir)"
+msgid "film-noir"
 msgstr ""
 
 msgctxt "#31439"
