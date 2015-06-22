@@ -1487,7 +1487,7 @@
 			<width>242</width>
 			<height>242</height>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/default.jpg">$PARAM[genre]</texture>
+			<texture background="true" fallback="DefaultFolder.png">$PARAM[genre]</texture>
 			<bordersize>2</bordersize>
 			<visible>$PARAM[genreCondition]</visible>	
 			<visible>$PARAM[visibleSquare] </visible>		
@@ -1534,18 +1534,16 @@
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<texture background="true" fallback="thumbs/fallback_square.png">$INFO[ListItem($PARAM[icon]).Icon]</texture>
 			<bordersize>2</bordersize>
-			<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]</visible>
+			<visible>![SubString(Container.FolderPath,musicdb://genres) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)] | [SubString(Container.FolderPath,musicdb://genres) + StringCompare(ListItem($PARAM[icon]).Label,..)]</visible>
 			<visible>$PARAM[visibleSquare]</visible>
 		</control>
 		<!---music db genre -->
-
 		<include name="ParamClassicSlideGenre">
 			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/default.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + !StringCompare(ListItem($PARAM[icon]).Label,..)</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
-
 		<include name="ParamClassicSlideGenre">
 			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/blues.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,blues) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31401])]</param>
@@ -1644,7 +1642,6 @@
 		</include>
 
 		<!-- video db genre stuff -->
-
 		<include name="ParamClassicSlideGenre">
 			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/default.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + !StringCompare(ListItem($PARAM[icon]).Label,..)</param>
