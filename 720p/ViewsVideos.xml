@@ -7001,7 +7001,6 @@
 							<height>366</height>
 							<aspectratio aligny="center" align="center">stretch</aspectratio>
 							<texture scalediffuse="true" diffuse="views/ClassicSlide/square_diffuse.png">overlays/unwatched/classicslide/$VAR[WatchedStateOverlay]_square.png</texture>
-
 							<animation effect="fade" start="90" end="100" time="200" delay="0" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)]">Conditional</animation>
 						</control>
 						<control type="group">
@@ -7071,7 +7070,7 @@
 								<height>366</height>
 								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 								<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png" fallback="thumbs/fallback_square.png">$VAR[VarArtGenreNext]</texture>
-								<visible>Container.Content(genres) + !StringCompare(ListItem(11).Label,..)</visible>
+								<visible>Container.Content(genres) + !StringCompare(ListItem(1).Label,..)</visible>
 							</control>
 							<control type="image">
 								<left>185</left>
