@@ -1487,7 +1487,7 @@
 			<width>242</width>
 			<height>242</height>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="special://skin/extras/videogenres/default.jpg">$PARAM[genre]</texture>
+			<texture background="true" fallback="special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/default.jpg">$PARAM[genre]</texture>
 			<bordersize>2</bordersize>
 			<visible>$PARAM[genreCondition]</visible>	
 			<visible>$PARAM[visibleSquare] </visible>		
@@ -1540,104 +1540,104 @@
 		<!---music db genre -->
 
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/default.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/default.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + !StringCompare(ListItem($PARAM[icon]).Label,..)</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/blues.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/blues.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,blues) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31401])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/classic.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/classic.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,classic) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31403]) | SubString(ListItem.Label,klassik)]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/jazz.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/jazz.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,jazz) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31424])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/gospel.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/gospel.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,gospel) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31407])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/various.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/various.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,various) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31430]) | SubString(ListItem($PARAM[icon]).Label,ost) | SubString(ListItem($PARAM[icon]).Label,soundtrack)]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/rock.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/rock.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,rock) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31402])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/reggae.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/reggae.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,reggae) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31427])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/rap.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/rap.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,rap) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31426])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/metal.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/metal.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,metal) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31425])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/country.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/country.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,country) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31404])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/punk.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/punk.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,punk) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31429])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/pop.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/pop.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,pop) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31428])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/electro.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/electro.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,electro) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31405]) | SubString(ListItem($PARAM[icon]).Label,techno)]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/hiphop.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/hiphop.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [[SubString(ListItem($PARAM[icon]).Label,hip) + SubString(ListItem($PARAM[icon]).Label,hop)] | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31408])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/folk.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/folk.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,folk) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31406]) | SubString(ListItem($PARAM[icon]).Label,volks)]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/musicgenres/rnb.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/musicgenres/rnb.png</param>
 			<param name="genreCondition">SubString(Container.FolderPath,musicdb://genres) + [SubString(ListItem($PARAM[icon]).Label,rnb) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31423]) | SubString(ListItem($PARAM[icon]).Label,r'n'b)]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
@@ -1646,169 +1646,169 @@
 		<!-- video db genre stuff -->
 
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/default.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/default.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + !StringCompare(ListItem($PARAM[icon]).Label,..)</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/adventure.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/adventure.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,Adventure) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31433]) | SubString(ListItem($PARAM[icon]).Label,Abenteuer)]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/action.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/action.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,Action) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31434])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/sport.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/sport.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,sport) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31435])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/animation.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/animation.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,animation) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31436])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/horror.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/horror.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,horror) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31437])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/film-noir.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/film-noir.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,noir) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31438])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/love.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/love.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,Love) | SubString(ListItem($PARAM[icon]).Label,romance) | SubString(ListItem.Label,romanze) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31439])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/history.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/history.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,history) | SubString(ListItem($PARAM[icon]).Label,geschichte) | SubString(ListItem($PARAM[icon]).Label,historie) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31440])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/kids.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/kids.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,kids) | SubString(ListItem($PARAM[icon]).Label,children) | SubString(ListItem($PARAM[icon]).Label,kinder) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31441])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/thriller.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/thriller.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,thriller) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31442])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/drama.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/drama.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,drama) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31443])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/comedy.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/comedy.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,comedy) | SubString(ListItem($PARAM[icon]).Label,komödie) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31444])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/musical.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/musical.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,musical) | SubString(ListItem($PARAM[icon]).Label,music) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31445])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/mystery.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/mystery.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,mystery) | SubString(ListItem($PARAM[icon]).Label,mysterie) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31446])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/crime.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/crime.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,crime) | SubString(ListItem($PARAM[icon]).Label,krimi) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31447])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/fantasy.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/fantasy.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,fantasy) | SubString(ListItem($PARAM[icon]).Label,fantasie) | SubString(ListItem($PARAM[icon]).Label,märchen) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31448])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/biography.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/biography.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,biography) | SubString(ListItem($PARAM[icon]).Label,biographie) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31449])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/documentation.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/documentation.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,docu) | SubString(ListItem($PARAM[icon]).Label,doku) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31450])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/family.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/family.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,family) | SubString(ListItem($PARAM[icon]).Label,familie) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31451])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/war.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/war.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,war) | SubString(ListItem($PARAM[icon]).Label,krieg) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31452])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/suspense.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/suspense.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,Suspense) | SubString(ListItem($PARAM[icon]).Label,spannung) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31453])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/short.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/short.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,short) | SubString(ListItem($PARAM[icon]).Label,kurz) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31454])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/western.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/western.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,western) | SubString(ListItem($PARAM[icon]).Label,cowboy) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31455])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/special-interest.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/special-interest.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,special) | SubString(ListItem($PARAM[icon]).Label,spezial) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31456])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/science-fiction.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/science-fiction.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,Sci-Fi) | SubString(ListItem($PARAM[icon]).Label,SciFi) | SubString(ListItem($PARAM[icon]).Label,Science Fiction) | SubString(ListItem($PARAM[icon]).Label,Science-Fiction) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31457])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/miniseries.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/miniseries.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,mini) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31459])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>
 		</include>
 		<include name="ParamClassicSlideGenre">
-			<param name="genre">special://skin/extras/videogenres/food.png</param>
+			<param name="genre">special://profile/addon_data/skin.bellofredo.extrapack/genreicons/videogenres/food.png</param>
 			<param name="genreCondition">[SubString(Container.FolderPath,videodb://movies/genres) | SubString(Container.FolderPath,videodb://tvshows/genres)] + [SubString(ListItem($PARAM[icon]).Label,cook) | SubString(ListItem($PARAM[icon]).Label,food) | SubString(ListItem($PARAM[icon]).Label,essen) | SubString(ListItem($PARAM[icon]).Label,kochen) | SubString(ListItem($PARAM[icon]).Label,$LOCALIZE[31458])]</param>
 			<param name="visibleSquare">$PARAM[visibleSquare]</param>
 			<param name="leftSquare">$PARAM[leftSquare]</param>

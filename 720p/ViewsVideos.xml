@@ -4155,7 +4155,7 @@
 				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture background="true" diffuse="views/episode/episode_diffuse.png">$VAR[VarArtGenre]</texture>
 				<fadetime>FanartCrossfadeTime</fadetime>
-				<visible>Container.Content(genres)</visible>
+				<visible>Container.Content(genres) + !StringCompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="image">
 				<left>46</left>
@@ -6982,7 +6982,7 @@
 							<width>366</width>
 							<height>366</height>
 							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-							<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png" fallback="thumbs/fallback_square.png">$VAR[VarArtGenre]</texture>
+							<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png" fallback="DefaultFolder.png">$VAR[VarArtGenre]</texture>
 							<animation effect="fade" start="90" end="100" time="200" delay="0" condition="![Control.IsVisible(8013) | Control.IsVisible(8014)]">Conditional</animation>
 							<visible>Container.Content(genres) + !StringCompare(ListItem.Label,..)</visible>
 						</control>
@@ -7030,7 +7030,7 @@
 								<width>366</width>
 								<height>366</height>
 								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-								<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png" fallback="thumbs/fallback_square.png">$VAR[VarArtGenrePrevious]</texture>
+								<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png" fallback="DefaultFolder.png">$VAR[VarArtGenrePrevious]</texture>
 								<visible>Container.Content(genres) + !StringCompare(ListItem(-1).Label,..)</visible>
 							</control>
 							<control type="image">
@@ -7069,7 +7069,7 @@
 								<width>366</width>
 								<height>366</height>
 								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-								<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png" fallback="thumbs/fallback_square.png">$VAR[VarArtGenreNext]</texture>
+								<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png" fallback="DefaultFolder.png">$VAR[VarArtGenreNext]</texture>
 								<visible>Container.Content(genres) + !StringCompare(ListItem(1).Label,..)</visible>
 							</control>
 							<control type="image">

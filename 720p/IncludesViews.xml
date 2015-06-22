@@ -353,7 +353,7 @@
    <width>500</width>
    <height>256</height>
    <aspectratio align="right" aligny="top">keep</aspectratio>
-   <texture fallback="thumbs/fallback_square_tp.png">$VAR[VarArtGenre]</texture>
+   <texture fallback="DefaultFolder.png">$VAR[VarArtGenre]</texture>
    <bordertexture border="31">views/other/panel2.png</bordertexture>
    <bordersize>10</bordersize>   
    <visible>Container.Content(genres)</visible>
