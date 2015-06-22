@@ -142,7 +142,7 @@
 						<shadowcolor>77000000</shadowcolor>
 						<align>left</align>
 						<aligny>bottom</aligny>
-						<label>$INFO[Control.GetLabel(4009),$LOCALIZE[20373] ], $INFO[Control.GetLabel(4008),Ep. ]</label>
+						<label>$INFO[Control.GetLabel(4008),$LOCALIZE[20373] ], $INFO[Control.GetLabel(4009),Ep. ]</label>
 					</control>
 					<control type="label" id="4000">
 						<left>14</left>
