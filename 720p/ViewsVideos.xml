@@ -4788,7 +4788,7 @@
 					<effect type="slide" start="0,-140" end="0,0" time="250" delay="100" tween="sine" easing="out"  />
 				</animation>
 
-				<animation type="Conditional" reversible="false" condition="[[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]] + Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.IsVisible(5902)">
+				<animation type="Conditional" reversible="false" condition="[[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]] + Skin.HasSetting(NetfilxAlwaysShowPlot) + [Control.IsVisible(5902) | Control.HasFocus(5901)]">
 					<effect type="slide" start="0,0" end="0,-180" time="0" tween="sine" easing="in"  />
 				</animation>
 				<animation type="Conditional" reversible="false" condition="[[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]] + !Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.HasFocus(5901)">
