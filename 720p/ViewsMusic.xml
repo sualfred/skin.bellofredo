@@ -1546,7 +1546,7 @@
 				<width>441</width>
 				<height>248</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-				<texture background="true" diffuse="views/episode/episode_diffuse.png" fallback="DefaulFolder.png">$VAR[VarArtGenre]</texture>
+				<texture background="true" diffuse="views/episode/episode_diffuse.png" fallback="DefaultFolder.png">$VAR[VarArtGenre]</texture>
 				<visible>Container.Content(genres) + !StringCompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="image">

@@ -154,6 +154,24 @@
 					<selected>Skin.HasSetting(ShowLogoAsTtile)</selected>
 					<visible>Control.IsVisible(59) + [Container.Content(Movies) | Container.Content(TVShows)]</visible>
 				</control>
+				<control type="togglebutton" id="306">
+					<description>NetFilx TV Show Poster Toggle</description>
+					<include>TopLeftMenusButton</include>
+					<label>$LOCALIZE[31464]: $LOCALIZE[31218]</label>
+					<altlabel>$LOCALIZE[31464]: $LOCALIZE[31084]</altlabel>
+					<onclick>Skin.ToggleSetting(NetFilxPosterTVShows)</onclick>
+					<selected>Skin.HasSetting(NetFilxPosterTVShows)</selected>
+					<visible>Control.IsVisible(59) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+				</control>
+				<control type="togglebutton" id="307">
+					<description>NetFilx Movie Poster Toggle</description>
+					<include>TopLeftMenusButton</include>
+					<label>$LOCALIZE[31464]: $LOCALIZE[31084]</label>
+					<altlabel>$LOCALIZE[31464]: $LOCALIZE[31218]</altlabel>
+					<onclick>Skin.ToggleSetting(NetFilxLandscapeMovies)</onclick>
+					<selected>Skin.HasSetting(NetFilxLandscapeMovies)</selected>
+					<visible>Control.IsVisible(59) + [Container.Content(Movies) | Container.Content(Sets)]</visible>
+				</control>
 				<control type="togglebutton" id="298">
 					<description>Show Logo As Ttile</description>
 					<include>TopLeftMenusButton</include>

@@ -18,7 +18,7 @@
 		<include>BackgroundItems</include>
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
-			<visible>![Window.IsActive(PlayerControls) + ![Skin.HasSetting(DisableQuickNav) + !Player.HasMedia]] + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites) + !Window.IsActive(addonsettings) + !Window.IsActive(filebrowser) + !Window.IsActive(yesnodialog) + !Window.IsActive(selectdialog) + !Window.IsActive(DialogSelect.xml) + !Window.IsActive(script-skinshortcuts.xml) + !Window.IsActive(1117) + !Window.IsActive(1118) + !Window.IsActive(1119) + !Window.IsActive(1120)</visible>
+			<visible>![Window.IsActive(PlayerControls) + ![Skin.HasSetting(DisableQuickNav) + !Player.HasMedia]] + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites) + !Window.IsActive(addonsettings) + !Window.IsActive(filebrowser) + !Window.IsActive(yesnodialog) + !Window.IsActive(selectdialog) + !Window.IsActive(DialogTextViewer.xml) + !Window.IsActive(DialogSelect.xml) + !Window.IsActive(script-skinshortcuts.xml) + !Window.IsActive(1117) + !Window.IsActive(1118) + !Window.IsActive(1119) + !Window.IsActive(1120)</visible>
 			<control type="group">
 				<include>Window_OpenClose_Animation</include>
 				<control type="image">
@@ -777,21 +777,7 @@
 							<description>Hide Music Views</description>
 							<include>SettingsButton</include>
 							<label>- Show IDs</label>
-							<onclick>RunScript(script.toolbox,info=textviewer,header=Skin View IDs,text=Slide  51
-Gallery  52
-3D Wall  53
-Wall  54
-List Wall  58
-Video Wall  580
-LoveFilm  581
-NetFilx  59
-Poster  55
-Thumbnails  56 560 561
-Banners  57
-Thumb List  582
-Classic Slide  583
-Shelf  584)
-</onclick>
+							<onclick>RunScript(script.toolbox,info=textviewer,header=Skin View IDs,text=$LOCALIZE[31465][CR][CR]Slide [COLOR=blue]51[/COLOR] / Gallery [COLOR=blue]52[/COLOR] / 3D Wall [COLOR=blue]53[/COLOR] / Wall [COLOR=blue]54[/COLOR] / List Wall [COLOR=blue]58[/COLOR] / Video Wall [COLOR=blue]580[/COLOR] / LoveFilm [COLOR=blue]581[/COLOR] / NetFilx [COLOR=blue]59[/COLOR] / Poster [COLOR=blue]55[/COLOR] / Thumbnails Video [COLOR=blue]560[/COLOR] / Thumbnails Poster [COLOR=blue]561[/COLOR] / Banners [COLOR=blue]57[/COLOR] / ThumbList [COLOR=blue]582[/COLOR] / Classic Slide [COLOR=blue]583[/COLOR] / Shelf [COLOR=blue]584[/COLOR][CR][CR]$LOCALIZE[31466])</onclick>
 							</control>											
 							<control type="button" id="8504">
 								<disabledcolor>55white</disabledcolor>
@@ -810,6 +796,19 @@ Shelf  584)
 								<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31122])</onclick>
 								<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(WatchedFlag,hidden))</onclick>
 								<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31119])</onclick>
+							</control>	
+							<!-- genre icons -->
+							<control type="button" id="8520">
+								<include>SettingsButton</include>
+								<label>- $LOCALIZE[31460]</label>
+								<label2>[CAPITALIZE][COLOR=selected]$VAR[VarGenreSourceLabel][/COLOR][/CAPITALIZE]</label2>
+								<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31294])</onclick>
+								<onclick>SetProperty(Dialog.1.BuiltIn,Skin.Reset(GenreSource))</onclick>
+								<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31461])</onclick>
+								<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(GenreSource,own)||Skin.SetPath(OwnGenreIconSource))</onclick>
+								<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[24075])</onclick>
+								<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(GenreSource,disabled))</onclick>
+								<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31460])</onclick>
 							</control>		
 							<!--IMDb Rating Update-->
 							<control type="button" id="8506">

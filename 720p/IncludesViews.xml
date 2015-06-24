@@ -624,12 +624,10 @@
   <value condition="SubString(Container.FolderPath,plugin.program.advanced.launcher) + !Skin.HasSetting(NetFilxAddonViewThumb) + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
   <value condition="SubString(Container.FolderPath,plugin.program.advanced.launcher) + !Skin.HasSetting(NetFilxAddonViewThumb) + IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(fanart)]</value>
   <value condition="SubString(Container.FolderPath,plugin.program.advanced.launcher) + Skin.HasSetting(NetFilxAddonViewThumb) + IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(fanart)]</value>   
-  <value condition="Container.Content(TVShows) + !IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>    
-  <value condition="Container.Content(TVShows) + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>    
-  <value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>        
-  <value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>         
   <value condition="Container.Content(Episodes) + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>   
   <value condition="Container.Content(Episodes) + IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(fanart)]</value>   
+  <value condition="!IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>    
+  <value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>    
   <value condition="!IsEmpty(ListItem.Art(fanart)">$INFO[ListItem.Art(fanart)]</value>
   <value>$INFO[ListItem.Icon]</value>     
 </variable>

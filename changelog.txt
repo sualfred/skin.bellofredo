@@ -1,3 +1,10 @@
+[B][COLOR=FF56ADDA]v4.4.6[/COLOR][/B]
+• Added: Grunge/Alternative music genre icon
+• Added: Support to set an own genre icon folder (has to look the same as the Extrapack source)
+• Added: Scrollbar to Wall and 3D Wall view
+• Added: Option to switch between Poster/Landscape in NetFilx view
+• Added: Info dialog to show all used Video/Audio viewtype IDs
+
 [B][COLOR=FF56ADDA]v4.4.5[/COLOR][/B]
 • Fixed: NextUp still there dialog swapped episode/season labels
 • Added: Video/music genre icons (more icons/options will come). Requires Extrapack refresh

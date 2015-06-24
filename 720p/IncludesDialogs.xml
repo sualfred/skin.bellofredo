@@ -96,17 +96,6 @@
 		<focusedcolor>white</focusedcolor>
 		<shadowcolor>99000000</shadowcolor>
 	</include>
-	<!--*NOT USED*
-	<include name="DialogsButtonLabelNoFocus">
-		<height>62</height>
-		<width min="10" max="552">auto</width>
-		<font>FontSize_20</font>
-		<textcolor>white</textcolor>
-		<shadowcolor>99000000</shadowcolor>
-		<align>left</align>
-		<aligny>center</aligny>
-		<scroll>false</scroll>
-	</include>-->
 	<include name="KeyboardButton">
 		<width>48</width>
 		<height>48</height>
@@ -228,9 +217,7 @@
 			<left>15</left>
 			<top>12</top>
 			<width>630</width>
-			<include>DialogsHeaderLabel</include>
-			<!--
-				<label>Remove ID to Test, Remove ID to Test, Remove ID to Test</label>--></control>
+			<include>DialogsHeaderLabel</include></control>
 				<control type="textbox" id="9">
 					<left>15</left>
 					<top>60</top>
@@ -241,8 +228,7 @@
 					<textcolor>99white</textcolor>
 					<shadowcolor>99000000</shadowcolor>
 					<autoscroll time="3000" delay="3000" repeat="5000">true</autoscroll>
-			<!--
-				<label>Remove ID to Test, Remove ID to Test, Remove ID to Test, Remove ID to Test, Remove ID to Test, Remove ID to Test, Remove ID to Test, Remove ID to Test, Remove ID to Test, Remove ID to Test, Remove ID to Test, Remove ID to Test</label>--></control>
+			</control>
 			</include>
 			<!--===========================-->
 			<!--== Dialog Select Default ==-->

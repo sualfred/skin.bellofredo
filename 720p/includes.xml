@@ -82,7 +82,7 @@
 			<animation effect="fade" time="300" start="100" end="0" tween="sine" easing="in">Hidden</animation>
 			<colordiffuse>ddFFFFFF</colordiffuse>
 			<visible>!Window.IsVisible(home) + !Window.IsVisible(Favourites) + !Window.IsVisible(playercontrols)</visible>
-			<visible>Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(yesnodialog) | Window.IsActive(contextmenu) | Window.IsActive(virtualkeyboard)</visible>	
+			<visible>Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(DialogTextViewer.xml) | Window.IsActive(yesnodialog) | Window.IsActive(contextmenu) | Window.IsActive(virtualkeyboard)</visible>	
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>
@@ -1919,6 +1919,17 @@
 	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup3) + !IsEmpty(Skin.String(widgetgroup.3.Label))">$INFO[Skin.String(widgetgroup.3.Label)]</value>
 	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup4) + !IsEmpty(Skin.String(widgetgroup.4.Label))">$INFO[Skin.String(widgetgroup.4.Label)]</value>
 	<value>$LOCALIZE[31172]</value>
+</variable>
+
+<variable name="VarGenreSource">
+	<value condition="StringCompare(Skin.String(GenreSource),own)">$INFO[Skin.String(OwnGenreIconSource)]</value>
+	<value condition="StringCompare(Skin.String(GenreSource),disabled)">-</value>	
+	<value>special://profile/addon_data/skin.bellofredo.extrapack/genreicons/</value>	
+</variable>
+<variable name="VarGenreSourceLabel">
+	<value condition="StringCompare(Skin.String(GenreSource),own)">$INFO[Skin.String(OwnGenreIconSource)]</value>
+	<value condition="StringCompare(Skin.String(GenreSource),disabled)">$LOCALIZE[31066]</value>	
+	<value>$LOCALIZE[31294]</value>	
 </variable>
 
 <variable name="CustomWidgetLabel1">

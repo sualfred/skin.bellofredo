@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-06-10 14:57+0000\n"
+"PO-Revision-Date: 2015-06-24 12:31+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -1638,6 +1638,38 @@ msgctxt "#31400"
 msgid "Enable Auto Update on Startup"
 msgstr "Suche nach Updates beim Start"
 
+msgctxt "#31401"
+msgid "blues"
+msgstr "blues"
+
+msgctxt "#31402"
+msgid "rock"
+msgstr "rock"
+
+msgctxt "#31403"
+msgid "classic"
+msgstr "klassik"
+
+msgctxt "#31404"
+msgid "country"
+msgstr "land"
+
+msgctxt "#31405"
+msgid "electro"
+msgstr "elektro"
+
+msgctxt "#31406"
+msgid "folk"
+msgstr "volk"
+
+msgctxt "#31407"
+msgid "gospel"
+msgstr "gospel"
+
+msgctxt "#31408"
+msgid "hip-hop"
+msgstr "hiphop"
+
 #: empty strings from id 31383 to 31408 settings Category Description & Header
 #: Labels
 msgctxt "#31409"
@@ -1696,6 +1728,42 @@ msgctxt "#31421"
 msgid "Library"
 msgstr "Bibliothek"
 
+msgctxt "#31422"
+msgid "soundtrack"
+msgstr "sound track"
+
+msgctxt "#31423"
+msgid "r&b"
+msgstr "r&b"
+
+msgctxt "#31424"
+msgid "jazz"
+msgstr "jazz"
+
+msgctxt "#31425"
+msgid "metal"
+msgstr "metal"
+
+msgctxt "#31426"
+msgid "rap"
+msgstr "rap"
+
+msgctxt "#31427"
+msgid "reggae"
+msgstr "reggae"
+
+msgctxt "#31428"
+msgid "pop"
+msgstr "pop"
+
+msgctxt "#31429"
+msgid "punk"
+msgstr "punk"
+
+msgctxt "#31430"
+msgid "various"
+msgstr "verschieden"
+
 #: empty strings from id 31422 to 31430 Help Messages
 msgctxt "#31431"
 msgid ""
@@ -1708,3 +1776,144 @@ msgid ""
 "Mouse usage is not supported.[CR]Please disable it from "
 "Settings>System>Input Devices>[CR]\"Enable mouse and Touch Screen support\"."
 msgstr "Das benutzen der Maus wird nicht unterstützt.[CR]Bitte unter Einstellungen>System>Eingabegräte>[CR]\"Maus- und Touchscreen-Unterstützung aktivieren\" deaktivieren."
+
+msgctxt "#31433"
+msgid "Adventure"
+msgstr "abenteuer"
+
+msgctxt "#31434"
+msgid "Action"
+msgstr "aktion"
+
+msgctxt "#31435"
+msgid "sport"
+msgstr "sport"
+
+msgctxt "#31436"
+msgid "Animation"
+msgstr "animation"
+
+msgctxt "#31437"
+msgid "Horror"
+msgstr "horror"
+
+msgctxt "#31438"
+msgid "film-noir"
+msgstr "Film-Noir"
+
+msgctxt "#31439"
+msgid "Love"
+msgstr "liebe"
+
+msgctxt "#31440"
+msgid "history"
+msgstr "geschichte"
+
+msgctxt "#31441"
+msgid "kids"
+msgstr "kinder"
+
+msgctxt "#31442"
+msgid "thriller"
+msgstr "thriller"
+
+msgctxt "#31443"
+msgid "drama"
+msgstr "drama"
+
+msgctxt "#31444"
+msgid "comedy"
+msgstr "komödie"
+
+msgctxt "#31445"
+msgid "musical"
+msgstr "musik"
+
+msgctxt "#31446"
+msgid "mystery"
+msgstr "mysterie"
+
+msgctxt "#31447"
+msgid "crime"
+msgstr "krimi"
+
+msgctxt "#31448"
+msgid "fantasy"
+msgstr "fantasie"
+
+msgctxt "#31449"
+msgid "biography"
+msgstr "bio"
+
+msgctxt "#31450"
+msgid "docu"
+msgstr "doku"
+
+msgctxt "#31451"
+msgid "family"
+msgstr "familie"
+
+msgctxt "#31452"
+msgid "war"
+msgstr "krieg"
+
+msgctxt "#31453"
+msgid "Suspense"
+msgstr "spannung"
+
+msgctxt "#31454"
+msgid "short"
+msgstr "kurz"
+
+msgctxt "#31455"
+msgid "western"
+msgstr "western"
+
+msgctxt "#31456"
+msgid "special"
+msgstr "spezial"
+
+msgctxt "#31457"
+msgid "Science-Fiction"
+msgstr "zukunft"
+
+msgctxt "#31458"
+msgid "food"
+msgstr "essen"
+
+msgctxt "#31459"
+msgid "mini"
+msgstr "mini"
+
+msgctxt "#31460"
+msgid "Genre Icons"
+msgstr "Genre Icons"
+
+msgctxt "#31461"
+msgid "Own icon path"
+msgstr "Eigener Icon Pfad"
+
+msgctxt "#31462"
+msgid "alternative"
+msgstr "alternative"
+
+msgctxt "#31463"
+msgid "grunge"
+msgstr "grunge"
+
+msgctxt "#31464"
+msgid "Artwork Style"
+msgstr "Artwork Stil"
+
+msgctxt "#31465"
+msgid ""
+"These are the used IDs for the included viewtypes. You can use them to "
+"override or force the usage of a view in some add-ons."
+msgstr "Dies sind die vorhandenen View IDs. Du kannst sie benutzen um bei Add-ons, welche dies unterstützen, festgelegte Views zu überschreiben bzw. zu erzwingen."
+
+msgctxt "#31466"
+msgid ""
+"Please note that a lot of views are only available for some sorts of "
+"contents. [CR]Example: Shelf only will only work for Movies/Sets/TV "
+"Shows/Seasons and the add-on has to set its content correctly."
+msgstr "Bitte denkt daran, das viele Views nur für eine bestimmte Art von Content funktionieren.[CR]Beispiel: Shelf funktioniert nur für Filme/Zusammenstellungen/Serien/Staffeln und das Add-on muss den Content auch noch korrekt gesetzt haben."

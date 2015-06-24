@@ -1268,7 +1268,7 @@
 				<height>362</height>
 				<onleft>53</onleft>
 				<onright>53</onright>
-				<ondown condition="!Skin.HasSetting(EnableKioskMode)">9111</ondown>
+				<ondown>60</ondown>
 				<onup condition="!Skin.HasSetting(EnableKioskMode)">9111</onup>
 				<viewtype label="31082">Multiple Walls</viewtype>
 				<pagecontrol>60</pagecontrol>
@@ -1289,6 +1289,23 @@
 						<texture>-</texture>
 					</control>
 				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>45</left>
+				<top>710</top>
+				<width>1190</width>
+				<height>9</height>
+				<texturesliderbackground>-</texturesliderbackground>
+				<texturesliderbar border="14,0,14,0">views/scrollbar/scrollbar_horizontal.png</texturesliderbar>
+				<texturesliderbarfocus border="14,0,14,0">views/scrollbar/scrollbar_horizontal.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<onup>53</onup>
+				<ondown>53</ondown>
+				<showonepage>false</showonepage>
+				<orientation>horizontal</orientation>
+				<animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+				<visible>Control.IsVisible(53)</visible>
 			</control>
 		</control>
 	</include>
@@ -1567,7 +1584,7 @@
 				<height>362</height>
 				<onleft>54</onleft>
 				<onright>54</onright>
-				<ondown condition="!Skin.HasSetting(EnableKioskMode)">9111</ondown>
+				<ondown>60</ondown>
 				<onup condition="!Skin.HasSetting(EnableKioskMode)">9111</onup>
 				<viewtype label="31083">Multiple Walls</viewtype>
 				<pagecontrol>60</pagecontrol>
@@ -1588,6 +1605,23 @@
 						<texture>-</texture>
 					</control>
 				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>285</left>
+				<top>560</top>
+				<width>690</width>
+				<height>9</height>
+				<texturesliderbackground>-</texturesliderbackground>
+				<texturesliderbar border="14,0,14,0">views/scrollbar/scrollbar_horizontal.png</texturesliderbar>
+				<texturesliderbarfocus border="14,0,14,0">views/scrollbar/scrollbar_horizontal.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<onup>54</onup>
+				<ondown>54</ondown>
+				<showonepage>false</showonepage>
+				<orientation>horizontal</orientation>
+				<animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+				<visible>Control.IsVisible(54)</visible>
 			</control>
 		</control>
 	</include>
@@ -4153,7 +4187,7 @@
 				<width>441</width>
 				<height>248</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-				<texture background="true" diffuse="views/episode/episode_diffuse.png">$VAR[VarArtGenre]</texture>
+				<texture background="true" fallback="DefaultFolder.png" diffuse="views/episode/episode_diffuse.png">$VAR[VarArtGenre]</texture>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<visible>Container.Content(genres) + !StringCompare(ListItem.Label,..)</visible>
 			</control>
@@ -4658,6 +4692,7 @@
 				<left>47</left>
 				<top>215</top>
 				<visible>[!Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.HasFocus(5901)] | Skin.HasSetting(NetfilxAlwaysShowPlot)</visible>
+			
 				<animation type="Conditional" reversible="false" condition="![Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)]">
 					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
 				</animation>
@@ -4682,19 +4717,10 @@
 					<align>justify</align>
 					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<label>$VAR[GlobalPlotDescription]</label>
-					<visible>Container.Content(Movies) + !Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
-				</control>
-				<control type="textbox">
-					<top>35</top>
-					<width>530</width>
-					<height>155</height>
-					<font>FontSize_22</font>
-					<textcolor>99white</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<align>justify</align>
-					<label>$VAR[GlobalPlotDescription]</label>
-					<autoscroll delay="8000" time="2000" repeat="8000">[Substring(ListItem.Path,videodb://movies/sets/,left) + IntegerGreaterThan(Window(home).Property(Set.Movies.Count),1)]</autoscroll>
-					<visible>Container.Content(Sets) | Substring(ListItem.Path,videodb://movies/sets/,left)</visible>
+					<visible>
+						[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(NetFilxPosterTVShows)] |
+						[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(NetFilxLandscapeMovies)]
+					</visible>
 				</control>
 				<control type="textbox">
 					<top>35</top>
@@ -4706,11 +4732,15 @@
 					<align>justify</align>
 					<label>$VAR[GlobalPlotDescription]</label>
 					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-					<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
+					<visible>
+						[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | 
+						[[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]
+					</visible>
 				</control>
 			</control>
 			<!--imdb top 250-->
 			<control type="group">
+				<animation effect="slide" reversible="false" start="0,0" end="0,40" time="0" condition="[[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]]">Conditional</animation>
 				<right>50</right>
 				<top>345</top>
 				<width>183</width>
@@ -4742,24 +4772,35 @@
 				<left>25</left>
 				<top>310</top>
 				<visible>Control.IsVisible(59)</visible>
-				<animation type="Conditional" reversible="false" condition="![Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)]">
-					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
-				</animation>
-				<animation type="Conditional" reversible="false" condition="Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)">
-					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-				</animation>
-				<animation type="Conditional" reversible="false" condition="Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.IsVisible(5902)">
+
+				<animation effect="slide" reversible="false" start="0,0" end="0,40" time="0" condition="[[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]]">Conditional</animation>
+
+				<animation type="Conditional" reversible="false" condition="![[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]] + Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.IsVisible(5902)">
 					<effect type="slide" start="0,0" end="0,-140" time="0" tween="sine" easing="in"  />
 				</animation>
-				<animation type="Conditional" reversible="false" condition="!Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.HasFocus(5901)">
+				<animation type="Conditional" reversible="false" condition="![[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]] + !Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.HasFocus(5901)">
 					<effect type="slide" start="0,0" end="0,-140" time="250" tween="sine" easing="in"  />
 				</animation>
-				<animation type="Conditional" reversible="false" condition="Skin.HasSetting(NetfilxAlwaysShowPlot) + !Control.IsVisible(5902)">
+				<animation type="Conditional" reversible="false" condition="![[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]] + Skin.HasSetting(NetfilxAlwaysShowPlot) + !Control.IsVisible(5902)">
 					<effect type="slide" start="0,-140" end="0,0" time="0" delay="100" tween="sine" easing="out"  />
 				</animation>
-				<animation type="Conditional" reversible="false" condition="!Skin.HasSetting(NetfilxAlwaysShowPlot) + !Control.HasFocus(5901)">
+				<animation type="Conditional" reversible="false" condition="![[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]] + !Skin.HasSetting(NetfilxAlwaysShowPlot) + !Control.HasFocus(5901)">
 					<effect type="slide" start="0,-140" end="0,0" time="250" delay="100" tween="sine" easing="out"  />
 				</animation>
+
+				<animation type="Conditional" reversible="false" condition="[[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]] + Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.IsVisible(5902)">
+					<effect type="slide" start="0,0" end="0,-180" time="0" tween="sine" easing="in"  />
+				</animation>
+				<animation type="Conditional" reversible="false" condition="[[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]] + !Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.HasFocus(5901)">
+					<effect type="slide" start="0,0" end="0,-180" time="250" tween="sine" easing="in"  />
+				</animation>
+				<animation type="Conditional" reversible="false" condition="[[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]] + Skin.HasSetting(NetfilxAlwaysShowPlot) + !Control.IsVisible(5902)">
+					<effect type="slide" start="0,-180" end="0,0" time="0" delay="100" tween="sine" easing="out"  />
+				</animation>
+				<animation type="Conditional" reversible="false" condition="[[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]] + !Skin.HasSetting(NetfilxAlwaysShowPlot) + !Control.HasFocus(5901)">
+					<effect type="slide" start="0,-180" end="0,0" time="250" delay="100" tween="sine" easing="out"  />
+				</animation>
+
 				<control type="image">
 					<animation type="Conditional" reversible="false" condition="Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.IsVisible(5902)">
 						<effect type="zoom" start="100" end="60" center="20,20" time="0" tween="sine" easing="in"  />
@@ -4956,7 +4997,7 @@
 			<include condition="Skin.HasSetting(NetFilxFixed)" name="NetFilxContainer">
 				<param name="listtype">fixedlist</param>
 			</include>
-			
+
 			<control type="image">
 				<left>45</left>
 				<top>420</top>
@@ -4964,15 +5005,7 @@
 				<height>203</height>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 				<texture border="15">views/other/focus_blue.png</texture>
-				<visible>[Container.Content(Movies) | Container.Content(Sets)]</visible>
-				<animation type="Focus" reversible="false" condition="Container(59).OnNext">
-					<effect type="slide" start="26,0" end="0,0" time="150" tween="Cubic" easing="out" />
-					<effect type="fade" start="20" end="100" time="750" delay="0" tween="sine" easing="out" />
-				</animation>
-				<animation type="Focus" reversible="false" condition="Container(59).OnPrevious">
-					<effect type="slide" start="-26,0" end="0,0" time="150" tween="Cubic" easing="out" />
-					<effect type="fade" start="20" end="100" time="750" delay="0" tween="sine" easing="out" />
-				</animation>
+				<visible>[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(NetFilxLandscapeMovies)]</visible>
 			</control>
 			<control type="image">
 				<left>45</left>
@@ -4981,7 +5014,7 @@
 				<height>203</height>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 				<texture border="15" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png">views/other/focus_blue.png</texture>
-				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
+				<visible>[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(NetFilxLandscapeMovies)]</visible>
 			</control>
 			<control type="image">
 				<left>45</left>
@@ -4990,7 +5023,7 @@
 				<height>165</height>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 				<texture border="15">views/other/focus_blue.png</texture>
-				<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
+				<visible>[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]</visible>
 			</control>
 			<control type="image">
 				<left>45</left>
@@ -4999,7 +5032,7 @@
 				<height>165</height>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 				<texture border="15" flipy="true" diffuse="thumbs/reflection_diffuse_sq.png">views/other/focus_blue.png</texture>
-				<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
+				<visible>[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]</visible>
 			</control>
 			<control type="scrollbar" id="60">
 				<left>45</left>
@@ -5040,7 +5073,7 @@
 			<focusposition>0</focusposition>
 			<pagecontrol>60</pagecontrol>
 			<!--Movies-->
-			<itemlayout condition="Container.Content(Movies) | Container.Content(Sets)" width="149.5" height="256">
+			<itemlayout condition="[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(NetFilxLandscapeMovies)]" width="149.5" height="256">
 				<control type="image">
 					<width>140</width>
 					<height>203</height>
@@ -5081,11 +5114,11 @@
 					<height>199</height>
 					<aspectratio aligny="center" align="center">stretch</aspectratio>
 					<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</texture>
-					
+
 					<bordersize>6</bordersize>
 				</control>
 			</itemlayout>
-			<focusedlayout condition="Container.Content(Movies) | Container.Content(Sets)" width="149.5" height="256">
+			<focusedlayout condition="[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(NetFilxLandscapeMovies)]" width="149.5" height="256">
 				<control type="image">
 					<width>140</width>
 					<height>203</height>
@@ -5124,13 +5157,12 @@
 					<width>138</width>
 					<height>199</height>
 					<aspectratio aligny="center" align="center">stretch</aspectratio>
-					<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</texture>
-					
+					<texture>overlays/unwatched/thumbs/$VAR[WatchedStateOverlay]_Poster.png</texture>					
 					<bordersize>8</bordersize>
 				</control>
 			</focusedlayout>
 			<!--tvshows-->
-			<itemlayout condition="Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)" width="299.5" height="256">
+			<itemlayout condition="[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]" width="299.5" height="256">
 				<control type="image">
 					<left>-2</left>
 					<top>30</top>
@@ -5197,33 +5229,34 @@
 					<width>287</width>
 					<height>161</height>
 					<aspectratio aligny="center" align="center">stretch</aspectratio>
-					<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
-					
+					<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>					
 					<bordersize>6</bordersize>
 				</control>
-				<control type="image">
-					<left>213</left>
-					<top>157</top>
-					<width>61</width>
-					<height>24</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture border="1">views/other/episode_number.png</texture>
+				<control type="group">
 					<visible>[Container.Content(Seasons) | Container.Content(Episodes) | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)] + !stringcompare(ListItem.Label,..)</visible>
-				</control>
-				<control type="label">
-					<left>213</left>
-					<top>147</top>
-					<width>61</width>
-					<height>43</height>
-					<font>FontSize_16B</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>99000000</shadowcolor>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>$VAR[ThumbnailsOnThumbLabel]</label>
+					<control type="image">
+						<left>213</left>
+						<top>157</top>
+						<width>61</width>
+						<height>24</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="1">views/other/episode_number.png</texture>						
+					</control>
+					<control type="label">
+						<left>213</left>
+						<top>147</top>
+						<width>61</width>
+						<height>43</height>
+						<font>FontSize_16B</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$VAR[ThumbnailsOnThumbLabel]</label>
+					</control>
 				</control>
 			</itemlayout>
-			<focusedlayout condition="Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)" width="299.5" height="256">
+			<focusedlayout condition="[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(NetFilxPosterTVShows)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(NetFilxLandscapeMovies)]" width="299.5" height="256">
 				<control type="image">
 					<left>-2</left>
 					<top>30</top>
@@ -5282,29 +5315,31 @@
 					<height>161</height>
 					<aspectratio aligny="center" align="center">stretch</aspectratio>
 					<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Episodes.png</texture>
-					
+
 					<bordersize>8</bordersize>
 				</control>
-				<control type="image">
-					<left>213</left>
-					<top>157</top>
-					<width>61</width>
-					<height>24</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture border="1">views/other/episode_number.png</texture>
+				<control type="group">
 					<visible>[Container.Content(Seasons) | Container.Content(Episodes) | IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)] + !stringcompare(ListItem.Label,..)</visible>
-				</control>
-				<control type="label">
-					<left>213</left>
-					<top>147</top>
-					<width>61</width>
-					<height>43</height>
-					<font>FontSize_16B</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>99000000</shadowcolor>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>$VAR[ThumbnailsOnThumbLabel]</label>
+					<control type="image">
+						<left>213</left>
+						<top>157</top>
+						<width>61</width>
+						<height>24</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture border="1">views/other/episode_number.png</texture>						
+					</control>
+					<control type="label">
+						<left>213</left>
+						<top>147</top>
+						<width>61</width>
+						<height>43</height>
+						<font>FontSize_16B</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$VAR[ThumbnailsOnThumbLabel]</label>
+					</control>
 				</control>
 			</focusedlayout>
 		</control>
@@ -5480,7 +5515,7 @@
 
 					<control type="group">
 						<animation reversible="true" effect="zoom" start="100" end="95" center="340,340" time="300" tween="quadratic" easing="in" condition="Control.IsVisible(8013) | Control.IsVisible(8014)">Conditional</animation>
-						
+
 						<!--poster-->
 						<control type="group">
 							<width>297</width>

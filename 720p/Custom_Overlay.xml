@@ -31,7 +31,16 @@
 					<shadowcolor>FF000000</shadowcolor>
 					<font>font13</font>
 					<align>left</align>
-					<label>Temporary Info: $INFO[ListItem.Genre]</label>
+					<label>Temporary Info: $INFO[Skin.String(OwnGenreIconSource)]</label>
+				</control>
+				<control type="label">
+					<width>780</width>
+					<height>21</height>
+					<textcolor>FFFF0000</textcolor>
+					<shadowcolor>FF000000</shadowcolor>
+					<font>font13</font>
+					<align>left</align>
+					<label>Temporary Info: $VAR[VarArtGenre]</label>
 				</control>
 				<control type="label">
 					<width>780</width>

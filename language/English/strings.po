@@ -1881,3 +1881,36 @@ msgstr ""
 msgctxt "#31459"
 msgid "mini"
 msgstr ""
+
+msgctxt "#31460"
+msgid "Genre Icons"
+msgstr ""
+
+msgctxt "#31461"
+msgid "Own icon path"
+msgstr ""
+
+msgctxt "#31462"
+msgid "alternative"
+msgstr ""
+
+msgctxt "#31463"
+msgid "grunge"
+msgstr ""
+
+msgctxt "#31464"
+msgid "Artwork Style"
+msgstr ""
+
+msgctxt "#31465"
+msgid ""
+"These are the used IDs for the included viewtypes. You can use them to "
+"override or force the usage of a view in some add-ons."
+msgstr ""
+
+msgctxt "#31466"
+msgid ""
+"Please note that a lot of views are only available for some sorts of "
+"contents. [CR]Example: Shelf only will only work for Movies/Sets/TV "
+"Shows/Seasons and the add-on has to set its content correctly."
+msgstr ""
