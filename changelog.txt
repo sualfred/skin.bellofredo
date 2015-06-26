@@ -1,3 +1,6 @@
+[B][COLOR=FF56ADDA]v4.4.7[/COLOR][/B]
+• Fixed: Set issues in some viewtypes if the setting "Group movies into sets" is activated
+
 [B][COLOR=FF56ADDA]v4.4.6[/COLOR][/B]
 • Added: Grunge/Alternative music genre icon
 • Added: Support to set an own genre icon folder (has to look the same as the Extrapack source)

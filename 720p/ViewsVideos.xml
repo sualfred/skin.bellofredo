@@ -3492,34 +3492,39 @@
 				<height>18</height>
 				<colordiffuse>99white</colordiffuse>
 				<aspectratio align="left" aligny="center">stretch</aspectratio>
-				<texture>overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
-				
+				<texture>overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>				
 			</control>
-			<control type="label">
-				<left>21</left>
-				<top>30</top>
-				<width>840</width>
-				<height>30</height>
-				<label>$INFO[ListItem.Genre]</label>
-				<font>FontSize_22</font>
-				<textcolor>99white</textcolor>
-				<shadowcolor>77000000</shadowcolor>
-				<scroll>false</scroll>
-				<visible>!stringcompare(ListItem.Label,..) + IsEmpty(ListItem.Tagline)</visible>
-				<animation effect="slide" start="0,0" end="25,0" time="60" tween="sine" easing="inout" condition="[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]">Conditional</animation>
-			</control>
-			<control type="label">
-				<left>21</left>
-				<top>30</top>
-				<width>840</width>
-				<height>30</height>
-				<label>$INFO[ListItem.Tagline]</label>
-				<font>FontSize_22</font>
-				<textcolor>99white</textcolor>
-				<shadowcolor>77000000</shadowcolor>
-				<scroll>false</scroll>
+			<control type="group">
 				<visible>!stringcompare(ListItem.Label,..)</visible>
 				<animation effect="slide" start="0,0" end="25,0" time="60" tween="sine" easing="inout" condition="[StringCompare(Skin.String(WatchedFlag),unwatched) + stringcompare(ListItem.Overlay,OverlayUnWatched.png)] | [StringCompare(Skin.String(WatchedFlag),watched) + stringcompare(ListItem.Overlay,OverlayWatched.png)]">Conditional</animation>
+				<control type="label">
+					<left>21</left>
+					<top>31</top>
+					<align>left</align>
+					<width>840</width>
+					<height>30</height>
+					<font>FontSize_22</font>
+					<textcolor>99white</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<label>$VAR[TagLineInfo]</label>
+					<include name="FakeFadeLabel">
+						<param name="condition">stringcompare(ListItem.Label,..) | !IsEmpty(ListItem.Tagline) | !IsEmpty(Window(home).Property(Set.Movies.Count))</param>
+					</include>
+				</control>
+				<control type="label">
+					<left>21</left>
+					<top>31</top>
+					<align>left</align>
+					<width>840</width>
+					<height>30</height>
+					<font>FontSize_22</font>
+					<textcolor>99white</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<include name="FakeFadeLabel2">
+						<param name="condition">stringcompare(ListItem.Label,..) | !IsEmpty(ListItem.Tagline) | !IsEmpty(Window(home).Property(Set.Movies.Count))</param>
+					</include>
+					<label>$VAR[TagLineInfoGenre]</label>
+				</control>
 			</control>
 			<!--Small Down Info-->
 			<control type="grouplist">
@@ -3593,7 +3598,7 @@
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<colordiffuse>77white</colordiffuse>
 					<texture fallback="flags/mpaa/film/rating-nr.png">$VAR[MPAAFilmRating]</texture>
-					<visible>Container.Content(Movies) |  Container.Content(Sets)</visible>
+					<visible>Container.Content(Movies) + !Substring(ListItem.Path,videodb://movies/sets/)</visible>
 				</control>
 				<control type="image">
 					<width>60</width>
@@ -3765,8 +3770,7 @@
 					<height>18</height>
 					<colordiffuse>99white</colordiffuse>
 					<aspectratio align="left" aligny="center">stretch</aspectratio>
-					<texture>overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>
-					
+					<texture>overlays/unwatched/list/$VAR[WatchedStateOverlay].png</texture>					
 				</control>
 				<control type="group">
 					<visible>!stringcompare(ListItem.Label,..)</visible>
@@ -3872,7 +3876,7 @@
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<colordiffuse>77white</colordiffuse>
 						<texture fallback="flags/mpaa/film/rating-nr.png">$VAR[MPAAFilmRating]</texture>
-						<visible>Container.Content(Movies) |  Container.Content(Sets)</visible>
+						<visible>Container.Content(Movies) + !Substring(ListItem.Path,videodb://movies/sets/)</visible>
 					</control>
 					<control type="image">
 						<width>60</width>
@@ -4692,7 +4696,7 @@
 				<left>47</left>
 				<top>215</top>
 				<visible>[!Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.HasFocus(5901)] | Skin.HasSetting(NetfilxAlwaysShowPlot)</visible>
-			
+
 				<animation type="Conditional" reversible="false" condition="![Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)]">
 					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
 				</animation>
@@ -5818,7 +5822,7 @@
 							</animation>
 							<!-- disc -->
 							<control type="group">
-								<visible>!StringCompare(ListItem.Label,..) + [[Container.Content(movies) + !Skin.HasSetting(ShelfMovieDiscArt)] | [[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(ShelfTVShowDiscArt)]]</visible>
+								<visible>!StringCompare(ListItem.Label,..) + !Substring(ListItem.Path,videodb://movies/sets/,left) + [[Container.Content(movies) + !Skin.HasSetting(ShelfMovieDiscArt)] | [[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(ShelfTVShowDiscArt)]]</visible>
 								<animation type="Visible">
 									<effect type="slide" start="350,0" end="0,0" time="500" delay="0" tween="sine" easing="in"/>
 								</animation>
@@ -5983,7 +5987,7 @@
 							</control>
 							<!-- disc reflected -->
 							<control type="group">
-								<visible>!StringCompare(ListItem.Label,..) + [[Container.Content(movies) + !Skin.HasSetting(ShelfMovieDiscArt)] | [[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(ShelfTVShowDiscArt)]]</visible>
+								<visible>!StringCompare(ListItem.Label,..) + !Substring(ListItem.Path,videodb://movies/sets/,left) + [[Container.Content(movies) + !Skin.HasSetting(ShelfMovieDiscArt)] | [[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(ShelfTVShowDiscArt)]]</visible>
 								<animation type="Visible">
 									<effect type="slide" start="350,0" end="0,0" time="500" delay="0" tween="sine" easing="in"/>
 								</animation>
@@ -6329,7 +6333,7 @@
 								<aspectratio align="center" aligny="center">keep</aspectratio>
 								<colordiffuse>44white</colordiffuse>
 								<texture fallback="flags/mpaa/film/rating-nr.png">$VAR[MPAAFilmRating]</texture>
-								<visible>Container.Content(Movies)</visible>
+								<visible>Container.Content(Movies) + !Substring(ListItem.Path,videodb://movies/sets/)</visible>
 							</control>
 							<control type="image">
 								<width>60</width>
@@ -6405,8 +6409,8 @@
 					<width>1900</width>
 					<onleft>579</onleft>
 					<onright>579</onright>
-					<onup condition="IsEmpty(ListItem.Plot)">9000</onup>
-					<onup condition="!IsEmpty(ListItem.Plot)">SetFocus(5791)</onup>
+					<onup condition="IsEmpty(ListItem.Plot) + IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot))">9000</onup>
+					<onup condition="!IsEmpty(ListItem.Plot) | !IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot))">SetFocus(5791)</onup>
 					<ondown>60</ondown>
 					<orientation>horizontal</orientation>
 					<preloaditems>2</preloaditems>
@@ -6916,7 +6920,7 @@
 								<aspectratio align="center" aligny="center">keep</aspectratio>
 								<colordiffuse>44white</colordiffuse>
 								<texture fallback="flags/mpaa/film/rating-nr.png">$VAR[MPAAFilmRating]</texture>
-								<visible>Container.Content(Movies)</visible>
+								<visible>Container.Content(Movies) + !Substring(ListItem.Path,videodb://movies/sets/)</visible>
 							</control>
 							<control type="image">
 								<width>60</width>

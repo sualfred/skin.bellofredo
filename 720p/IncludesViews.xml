@@ -689,10 +689,10 @@
   <value condition="Container.Content(Seasons) + StringCompare(ListItem.Title,$LOCALIZE[20366])">[CAPITALIZE]$LOCALIZE[20366][/CAPITALIZE]</value>
 
   <value condition="Container.Content(TVShows)">[CAPITALIZE]$LOCALIZE[36902][/CAPITALIZE]</value>
+  <value condition="Container.Content(Sets) | Substring(ListItem.Path,videodb://movies/sets/,left)">[CAPITALIZE]$LOCALIZE[31367][/CAPITALIZE]</value>
   <value condition="Container.Content(Movies)">[CAPITALIZE]$LOCALIZE[36900][/CAPITALIZE]</value>
   <value condition="Container.Content(Playlists)">[CAPITALIZE]$LOCALIZE[559][/CAPITALIZE]</value>
   <value condition="Container.Content(Plugins)">[CAPITALIZE]$LOCALIZE[559][/CAPITALIZE]</value>
-  <value condition="Container.Content(Sets)">[CAPITALIZE]$LOCALIZE[31367][/CAPITALIZE]</value>
   <value condition="Container.Content(Artists)">[CAPITALIZE]$LOCALIZE[557][/CAPITALIZE]</value>
   <value condition="!IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>
   <value>$LOCALIZE[19499]</value>
