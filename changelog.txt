@@ -1,4 +1,5 @@
 [B][COLOR=FF56ADDA]v4.4.8[/COLOR][/B]
+• Fixed: ClassicSlide previos texture issue while moving
 • Fixed: Unmatched parentheses errors and other code issues
 • Fixed: Fall back of A_DTS / A_EAC3 video flags
 • Fixed: Small navigation issue in Skin Settings
