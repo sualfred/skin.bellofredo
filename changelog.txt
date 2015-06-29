@@ -1,4 +1,10 @@
 [B][COLOR=FF56ADDA]v4.4.7[/COLOR][/B]
+• Fixed: Unmatched parentheses errors and other code issues
+• Fixed: Fall back of A_DTS / A_EAC3 video flags
+• Fixed: Small navigation issue in Skin Settings
+• Changed: Clock with start / finish time will be displayed if the player is paused
+
+[B][COLOR=FF56ADDA]v4.4.7[/COLOR][/B]
 • Fixed: Plot for sets (Shelf)
 • Fixed: Visible empty disc art if "group movies to sets" is activated (Shelf)
 • Fixed: Wrong labels if "group movies to sets" is activated (Thumb List & Video Wall)

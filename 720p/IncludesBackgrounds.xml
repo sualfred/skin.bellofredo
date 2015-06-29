@@ -309,7 +309,7 @@
 			<visible>![[Control.IsVisible(55) | Control.IsVisible(59) | Control.IsVisible(583) | Control.IsVisible(579)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + !Control.IsVisible(581) + Skin.HasSetting(ViewsExtraFanart) + !SubString(Container.Folderpath,plugin://,left)</visible>
 		</control>	
 		<control type="image">
-			<include>NetFilx Fanart Transparency</include>
+			<description>NetFilx Fanart Transparency</description>
 			<texture background="true">SKINDEFAULT.jpg</texture>
 			<include>FanartFade</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>

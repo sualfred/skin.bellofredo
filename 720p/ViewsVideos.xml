@@ -7061,7 +7061,7 @@
 								<height>366</height>
 								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 								<texture background="true" diffuse="views/ClassicSlide/square_diffuse.png" fallback="thumbs/fallback_square.png">$INFO[ListItem(-1).Icon]</texture>
-								<visible>!Container.Content(genres) |  + StringCompare(ListItem(-1).Label,..)</visible>
+								<visible>!Container.Content(genres) + !StringCompare(ListItem(-1).Label,..)</visible>
 							</control>
 							<control type="image">
 								<left>185</left>

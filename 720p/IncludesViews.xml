@@ -628,7 +628,7 @@
   <value condition="Container.Content(Episodes) + IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(fanart)]</value>   
   <value condition="!IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>    
   <value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>    
-  <value condition="!IsEmpty(ListItem.Art(fanart)">$INFO[ListItem.Art(fanart)]</value>
+  <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
   <value>$INFO[ListItem.Icon]</value>     
 </variable>
 
@@ -647,7 +647,7 @@
 </variable>
 
 <variable name="ThumbnailsOnThumbLabel">
-  <value condition="Container.Content(Seasons) + SubString(ListItem.Label,*">$LOCALIZE[593]</value>
+  <value condition="Container.Content(Seasons) + SubString(ListItem.Label,*)">$LOCALIZE[593]</value>
   <value condition="Container.Content(Seasons) + IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Season,S]</value>
   <value condition="Container.Content(Seasons) + !IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Season,S0]</value>
   <value condition="IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + !IsEmpty(ListItem.Property(UnWatchedEpisodes))">$INFO[ListItem.Property(UnWatchedEpisodes)]</value>
@@ -717,7 +717,7 @@
   <value condition="Container.Content(Movies) + Skin.HasSetting(EpisodeViewLandscape) + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>   
   <value condition="Container.Content(Movies) + Skin.HasSetting(EpisodeViewLandscape) + IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(fanart)]</value>
   <value condition="Container.Content(Movies) + !Skin.HasSetting(EpisodeViewLandscape)">$INFO[ListItem.Art(fanart)]</value>   
-  <value condition="!IsEmpty(ListItem.Art(fanart)">$INFO[ListItem.Art(fanart)]</value>
+  <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
   
 </variable>
 
