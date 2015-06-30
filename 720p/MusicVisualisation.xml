@@ -265,6 +265,14 @@
 			<width>255</width>
 			<height>100</height>
 			<aspectratio align="center" aligny="center">keep</aspectratio>
+			<animation type="WindowOpen">
+				<effect type="slide" start="150,0" end="0,0" time="450" delay="0" tween="sine" easing="out" />
+				<effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="out" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="200,0" time="400" delay="0" tween="sine" easing="out" />
+				<effect type="fade" start="100" end="0" time="400" delay="0" tween="sine" easing="out" />
+			</animation>
 			<animation type="Visible" reversible="false">
 				<effect type="slide" start="150,0" end="0,0" time="350" delay="0" tween="sine" easing="out" />
 				<effect type="fade" start="0" end="100" time="300" delay="0" tween="sine" easing="out" />
@@ -282,7 +290,15 @@
 			<top>280r</top>
 			<width>255</width>
 			<height>100</height>
-			<aspectratio align="center" aligny="center">keep</aspectratio>
+			<aspectratio align="center" aligny="center">keep</aspectratio>			
+			<animation type="WindowOpen">
+				<effect type="slide" start="150,0" end="0,0" time="450" delay="0" tween="sine" easing="out" />
+				<effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="out" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="200,0" time="400" delay="0" tween="sine" easing="out" />
+				<effect type="fade" start="100" end="0" time="400" delay="0" tween="sine" easing="out" />
+			</animation>
 			<animation type="Visible" reversible="false">
 				<effect type="slide" start="150,0" end="0,0" time="350" delay="0" tween="sine" easing="out" />
 				<effect type="fade" start="0" end="100" time="300" delay="0" tween="sine" easing="out" />
@@ -316,8 +332,7 @@
 				<effect type="fade" start="100" end="0" time="400" delay="0" tween="sine" easing="out" />
 			</animation>
 			<visible>[Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(MusicOSD)]</visible>
-			<visible>!Window.IsVisible(AddonSettings) + !Window.IsVisible(SelectDialog) + !Window.IsVisible(VisualisationPresetList) + !Window.IsVisible(1112) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites)</visible>
-			
+			<visible>!Window.IsVisible(AddonSettings) + !Window.IsVisible(SelectDialog) + !Window.IsVisible(VisualisationPresetList) + !Window.IsVisible(1112) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites)</visible>			
 			<control type="group">				
 				<top>-70</top>
 				<control type="group">
