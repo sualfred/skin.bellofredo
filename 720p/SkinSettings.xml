@@ -1112,20 +1112,6 @@
 							<onclick>Skin.ToggleSetting(AmbilightMode)</onclick>
 							<visible>!Skin.HasSetting(Vis-Visualization)</visible>
 						</control>
-						<control type="button" id="8753">
-							<description>Select Visualization Type Button</description>
-							<label>- $LOCALIZE[31308]</label>
-							<include>SettingsButton</include>
-							<onclick>SendClick(120,500)</onclick>
-							<visible>!Skin.HasSetting(Vis-Visualization)</visible>
-						</control>
-						<control type="button" id="8754">
-							<description>Visualization Presets Button</description>
-							<label>- $LOCALIZE[31309]</label>
-							<include>SettingsButton</include>
-							<onclick>ActivateWindow(visualisationpresetlist)</onclick>
-							<visible>!Skin.HasSetting(Vis-Visualization)</visible>
-						</control>
 						<control type="button" id="8755">
 							<description>Visualization Settings Button</description>
 							<label>- $LOCALIZE[31310]</label>
