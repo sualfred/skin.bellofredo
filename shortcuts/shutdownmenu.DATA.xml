@@ -62,7 +62,7 @@
 		<label2 />
 		<icon>special://skin/extras/icons/system.png</icon>
 		<thumb />
-		<action>ActivateWindow(Settings)</action>
+		<action>ActivateWindow(AppearanceSettings)</action>
 	</shortcut>
 	<shortcut>
 		<defaultID>10007</defaultID>
@@ -80,7 +80,7 @@
 		<thumb />
 		<action>ActivateWindow(Profiles)</action>
 	</shortcut>
-	<shortcut>
+	<shortcut>s
 		<defaultID>31467</defaultID>
 		<label>31467</label>
 		<label2 />
