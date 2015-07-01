@@ -7,7 +7,7 @@
 			<visible>true</visible>
 			<!--Global debug grid-->
 			<control type="image">
-				<visible>Skin.HasSetting(ShowSkinDebugTools) + Skin.HasSetting(DebugGrid)</visible>
+				<visible>Skin.HasSetting(DebugGrid)</visible>
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>1280</width>
@@ -21,7 +21,7 @@
 				<width>780</width>
 				<height>450</height>
 				<itemgap>12</itemgap>
-				<visible>Skin.HasSetting(ShowSkinDebugTools) + Skin.HasSetting(BelloFredoDebug)</visible>
+				<visible>Skin.HasSetting(BelloFredoDebug)</visible>
 				<visible>true</visible>
 				<!--player content information-->
 				<control type="label">

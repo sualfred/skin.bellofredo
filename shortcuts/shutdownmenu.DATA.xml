@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+	<shortcut>
+		<defaultID>13009</defaultID>
+		<label>13009</label>
+		<label2 />
+		<icon>special://skin/extras/icons/shortcut.png</icon>
+		<thumb />
+		<action>Quit</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>13013</defaultID>
+		<label>13013</label>
+		<label2 />
+		<icon>special://skin/extras/icons/shortcut.png</icon>
+		<thumb />
+		<action>Reboot</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>13005</defaultID>
+		<label>13005</label>
+		<label2 />
+		<icon>special://skin/extras/icons/shortcut.png</icon>
+		<thumb />
+		<action>ShutDown</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>13010</defaultID>
+		<label>13010</label>
+		<label2 />
+		<icon>special://skin/extras/icons/shortcut.png</icon>
+		<thumb />
+		<action>Hibernate</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>13011</defaultID>
+		<label>13011</label>
+		<label2 />
+		<icon>special://skin/extras/icons/shortcut.png</icon>
+		<thumb />
+		<action>Suspend</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>19026</defaultID>
+		<label>19026</label>
+		<label2 />
+		<icon>special://skin/extras/icons/shortcut.png</icon>
+		<thumb />
+		<action>AlarmClock(shutdowntimer,XBMC.Shutdown())</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>20151</defaultID>
+		<label>20151</label>
+		<label2 />
+		<icon>special://skin/extras/icons/shortcut.png</icon>
+		<thumb />
+		<action>CancelAlarm(shutdowntimer)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>settings</defaultID>
+		<label>10004</label>
+		<label2 />
+		<icon>special://skin/extras/icons/system.png</icon>
+		<thumb />
+		<action>ActivateWindow(Settings)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>10007</defaultID>
+		<label>10007</label>
+		<label2 />
+		<icon>special://skin/extras/icons/shortcut.png</icon>
+		<thumb />
+		<action>ActivateWindow(SystemInfo)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>13200</defaultID>
+		<label>13200</label>
+		<label2 />
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>ActivateWindow(Profiles)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>31467</defaultID>
+		<label>31467</label>
+		<label2 />
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>System.LogOff</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>32033</defaultID>
+		<label>32033</label>
+		<label2 />
+		<icon>DefaultDVDFull.png</icon>
+		<thumb />
+		<action>EjectTray()</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>debuggrid</defaultID>
+		<label>31289</label>
+		<label2 />
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>Skin.ToggleSetting(DebugGrid)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>debugtools</defaultID>
+		<label>31290</label>
+		<label2 />
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>Skin.ToggleSetting(BelloFredoDebug)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>reloadskin</defaultID>
+		<label>20183</label>
+		<label2 />
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>XBMC.ReloadSkin()</action>
+	</shortcut>
+</shortcuts>

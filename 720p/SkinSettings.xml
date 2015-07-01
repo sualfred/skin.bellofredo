@@ -205,12 +205,12 @@
 							<onclick>Skin.ToggleSetting(ShowVideoInfo)</onclick>
 							<selected>Skin.HasSetting(ShowVideoInfo)</selected>
 						</control>
-						<control type="radiobutton" id="8110">
+						<!--<control type="radiobutton" id="8110">
 							<include>SettingsRadioButton</include>
 							<label>31291</label>
 							<onclick>Skin.ToggleSetting(ShowSkinDebugTools)</onclick>
 							<selected>Skin.HasSetting(ShowSkinDebugTools)</selected>
-						</control>
+						</control>-->
 					</control>
 					<!--===========-->
 					<!--== home ==-->

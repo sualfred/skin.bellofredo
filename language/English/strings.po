@@ -1914,3 +1914,8 @@ msgid ""
 "contents. [CR]Example: Shelf only will only work for Movies/Sets/TV "
 "Shows/Seasons and the add-on has to set its content correctly."
 msgstr ""
+
+#: \shortcuts\shutdownmenu.DATA.xml:158
+msgctxt "#31467"
+msgid "Logout"
+msgstr ""

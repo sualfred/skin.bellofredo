@@ -5,7 +5,7 @@
 	<!--======================-->
 	<include name="HomeMenuWraplist">
 		<control type="group">					
-			<visible allowhiddenfocus="true">IsEmpty(Window(Home).Property(closeworkaround)) + !SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4) + !Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
+			<visible allowhiddenfocus="true">!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4) + !Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
 			<include>HomeSlideAnimations</include>
 			<control type="group">
 				<include>HomeSlideAnimations</include>

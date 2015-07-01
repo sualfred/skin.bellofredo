@@ -1,3 +1,7 @@
+[B][COLOR=FF56ADDA]v4.4.9[/COLOR][/B]
+• Fixed: Window open / close music logo animation
+• Added: Customizable shutdownmenu
+
 [B][COLOR=FF56ADDA]v4.4.8[/COLOR][/B]
 • Fixed: ClassicSlide previos texture issue while moving
 • Fixed: Unmatched parentheses errors and other code issues
