@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-06-24 12:31+0000\n"
+"PO-Revision-Date: 2015-07-01 18:57+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -1917,3 +1917,18 @@ msgid ""
 "contents. [CR]Example: Shelf only will only work for Movies/Sets/TV "
 "Shows/Seasons and the add-on has to set its content correctly."
 msgstr "Bitte denkt daran, das viele Views nur für eine bestimmte Art von Content funktionieren.[CR]Beispiel: Shelf funktioniert nur für Filme/Zusammenstellungen/Serien/Staffeln und das Add-on muss den Content auch noch korrekt gesetzt haben."
+
+#: \shortcuts\shutdownmenu.DATA.xml:158
+msgctxt "#31467"
+msgid "Logout"
+msgstr "Ausloggen"
+
+#: \720p\SkinSettings.xml:424
+msgctxt "#31468"
+msgid "Edit Shutdown Menu Items"
+msgstr "Bearbeite Shutdown-Menü Einträge"
+
+#: \720p\SkinSettings.xml:418
+msgctxt "#31469"
+msgid "Shutdown Menu"
+msgstr "Shutdown-Menü"
