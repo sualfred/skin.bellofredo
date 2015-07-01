@@ -1919,3 +1919,13 @@ msgstr ""
 msgctxt "#31467"
 msgid "Logout"
 msgstr ""
+
+#: \720p\SkinSettings.xml:424
+msgctxt "#31468"
+msgid "Edit Shutdown Menu Items"
+msgstr ""
+
+#: \720p\SkinSettings.xml:418
+msgctxt "#31469"
+msgid "Shutdown Menu"
+msgstr ""

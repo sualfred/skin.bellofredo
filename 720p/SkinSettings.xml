@@ -415,13 +415,13 @@
 						<control type="button" id="8340">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
-							<label>Shutdown Menu</label>
+							<label>$LOCALIZE[31469]</label>
 							<enable>false</enable>
 						</control>
 						<control type="button" id="8341">
 							<description>edit shutdownmenu</description>
 							<include>SettingsButton</include>
-							<label>- Edit shutdownmenu items</label>
+							<label>- $LOCALIZE[31468]</label>
 							<onclick>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=shutdownmenu)</onclick>
 						</control>
 						
