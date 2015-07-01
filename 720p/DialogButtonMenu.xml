@@ -2,7 +2,7 @@
 <window type="buttonMenu" id="111">
 	<defaultcontrol>9000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-    <zorder>5</zorder>
+	<zorder>5</zorder>
 	<onload>Dialog.Close(playercontrols)</onload>	
 	<include>OnLoadDialogsClose</include>
 	<controls>
@@ -11,7 +11,58 @@
 			<left>45</left>
 			<top>25</top>
 			<include>TopOptionsSlideAnimations</include>
-			<control type="grouplist" id="9000">
+			<control type="list" id="9000">
+				<left>0</left>
+				<top>50</top>
+				<width>460</width>
+				<height>520</height>
+				<onleft>Close</onleft>
+				<onright>Close</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<itemlayout width="460" height="37">
+					<control type="image">
+						<height>37</height>
+						<aspectratio align="left" aligny="center">keep</aspectratio>
+						<texture>buttons/contextmenu_nf.png</texture>			
+					</control>
+					<control type="label">
+						<width>425</width>
+						<height>37</height>
+						<font>FontSize_22</font>
+						<textcolor>77white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<align>left</align>
+						<aligny>top</aligny>
+						<textwidth>390</textwidth>
+						<textoffsetx>25</textoffsetx>
+						<textoffsety>4</textoffsety>	
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="460" height="37">
+					<control type="image">
+						<height>37</height>
+						<aspectratio align="left" aligny="center">keep</aspectratio>
+						<texture>buttons/contextmenu_fo.png</texture>						
+					</control>
+					<control type="label">
+						<width>425</width>
+						<height>37</height>
+						<font>FontSize_22</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>99000000</shadowcolor>
+						<align>left</align>
+						<aligny>top</aligny>
+						<textwidth>390</textwidth>
+						<textoffsetx>25</textoffsetx>
+						<textoffsety>4</textoffsety>	
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content><include>skinshortcuts-group-shutdownmenu</include></content>
+			</control>
+			<!--<control type="grouplist" id="9000">
 				<left>0</left>
 				<top>50</top>
 				<width>460</width>
@@ -150,7 +201,7 @@
 					<onclick>XBMC.ReloadSkin()</onclick>
 					<label>$LOCALIZE[20183]</label>
 				</control>
-			</control>
+			</control>-->
 
 			<!-- ================ -->
 			<!-- Top Content Info -->

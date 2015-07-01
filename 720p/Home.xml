@@ -10,7 +10,8 @@
 	<onload>Dialog.Close(songinformation)</onload>
 	<onload>Dialog.Close(pictureinfo)</onload>
 	<onload>SetProperty(RefreshList,1,Home)</onload>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=20&amp;group=mainmenu|widgetgroup1|widgetgroup2|widgetgroup3|widgetgroup4)</onload>
+	<onload>ClearProperty(closeworkaround,Home)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=20&amp;group=mainmenu|widgetgroup1|widgetgroup2|widgetgroup3|widgetgroup4|shutdownmenu)</onload>
 	<allowoverlay>yes</allowoverlay>
 	<backgroundcolor>0</backgroundcolor>
 	<controls>		

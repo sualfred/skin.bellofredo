@@ -120,8 +120,19 @@
 		<!-- ============= -->
 		<node label="32054">
 			<content>commands</content>
+			<!-- Custom Shortcuts -->
+			<shortcut label="Reload Skin" type="::LOCAL::20183" grouping="commands" icon="DefaultShortcut.png">XBMC.ReloadSkin()</shortcut>
+			<shortcut label="Debug Tools" type="::LOCAL::31290" grouping="commands" icon="DefaultShortcut.png">Skin.ToggleSetting(BelloFredoDebug)</shortcut>
+			<shortcut label="Profiles" type="::LOCAL::13200" grouping="commands" icon="DefaultShortcut.png">ActivateWindow(Profiles)</shortcut>
+			<shortcut label="Logout" type="::LOCAL::20126" grouping="commands" icon="DefaultShortcut.png">System.LogOff</shortcut>
 		</node>
+
+		
 	</groupings>
+ 
+    <groupoverride group="shutdownmenu" condition="Window.IsActive(DialogButtonMenu.xml)">SetProperty(closeworkaround,1,Home)</groupoverride>  
+    <groupoverride group="shutdownmenu" condition="Window.IsActive(DialogButtonMenu.xml)">Close</groupoverride>  
+    <groupoverride group="shutdownmenu" condition="Window.IsActive(DialogButtonMenu.xml)">AlarmClock(closeworkaround,ClearProperty(closeworkaround,Home),00:01,silent)</groupoverride>  
 
 	<!-- ============= -->
 	<!-- Widgets	   -->
