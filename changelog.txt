@@ -1,3 +1,6 @@
+[B][COLOR=FF56ADDA]v4.4.9a[/COLOR][/B]
+• Added: Edit Shutdow Menu and Edit Main Menu to the default shutdown menu entries if somebody can't access the settings to perform a reset (skinshortcuts script bug)
+
 [B][COLOR=FF56ADDA]v4.4.9[/COLOR][/B]
 • Fixed: Window open / close music logo animation
 • Added: Customizable shutdownmenu

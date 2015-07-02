@@ -97,6 +97,22 @@
 		<action>EjectTray()</action>
 	</shortcut>
 	<shortcut>
+		<defaultID>editmainmenu</defaultID>
+		<label>31471</label>
+		<label2 />
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=mainmenu)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>editshutdownmenu</defaultID>
+		<label>31470</label>
+		<label2 />
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=shutdownmenu)</action>
+	</shortcut>
+	<shortcut>
 		<defaultID>debuggrid</defaultID>
 		<label>31289</label>
 		<label2 />

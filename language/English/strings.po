@@ -1929,3 +1929,13 @@ msgstr ""
 msgctxt "#31469"
 msgid "Shutdown Menu"
 msgstr ""
+
+#: \shortcuts\overrides.xml:129
+msgctxt "#31470"
+msgid "Edit Shutdown Menu"
+msgstr ""
+
+#: \shortcuts\overrides.xml:130
+msgctxt "#31471"
+msgid "Edit Main Menu"
+msgstr ""

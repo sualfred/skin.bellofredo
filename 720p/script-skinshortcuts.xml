@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol always="true">30000</defaultcontrol>
 	<onunload condition="Window.IsVisible(home) + !StringCompare(Window.Property(groupname),mainmenu)">ReplaceWindow(home)</onunload>
-	<onunload condition="![Window.IsVisible(home) | StringCompare(Window.Property(groupname),mainmenu)] + !Window.IsActive(1120)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=20&amp;group=mainmenu|widgetgroup1|widgetgroup2|widgetgroup3|widgetgroup4|shutdownmenu)</onunload>
+	<onunload condition="Window.IsActive(home) | [![Window.IsVisible(home) | StringCompare(Window.Property(groupname),mainmenu)] + !Window.IsActive(1120)]">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=20&amp;group=mainmenu|widgetgroup1|widgetgroup2|widgetgroup3|widgetgroup4|shutdownmenu)</onunload>
 	<onload>SetProperty(level)</onload>
 	<controls>
 
