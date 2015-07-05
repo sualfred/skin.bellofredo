@@ -2603,6 +2603,10 @@
 	<value>$LOCALIZE[31066]</value>
 </variable>
 
+<variable name="ViewIDText">
+	<value>$LOCALIZE[31465][CR][CR]Slide [COLOR=blue]51[/COLOR] / Gallery [COLOR=blue]52[/COLOR] / 3D Wall [COLOR=blue]53[/COLOR] / Wall [COLOR=blue]54[/COLOR] / List Wall [COLOR=blue]58[/COLOR] / Video Wall [COLOR=blue]580[/COLOR] / LoveFilm [COLOR=blue]581[/COLOR] / NetFilx [COLOR=blue]59[/COLOR] / Poster [COLOR=blue]55[/COLOR] / Thumbnails Video [COLOR=blue]560[/COLOR] / Thumbnails Poster [COLOR=blue]561[/COLOR] / Banners [COLOR=blue]57[/COLOR] / ThumbList [COLOR=blue]582[/COLOR] / Classic Slide [COLOR=blue]583[/COLOR] / Shelf [COLOR=blue]584[/COLOR][CR][CR]$LOCALIZE[31466]</value>
+</variable>
+
 <include name="OnLoadDialogsClose">
 	<onload condition="Window.IsActive(subtitlesearch)">Dialog.Close(subtitlesearch)</onload>
 	<onload condition="Window.IsActive(contextmenu)">Dialog.Close(contextmenu)</onload>

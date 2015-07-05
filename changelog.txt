@@ -1,3 +1,7 @@
+[B][COLOR=FF56ADDA]v4.5.0[/COLOR][/B]
+• Fixed: Fixed viewtype settings for YouTube plugin (I hope so)
+• Fixed: "Show IDs" dialog
+
 [B][COLOR=FF56ADDA]v4.4.9a[/COLOR][/B]
 • Added: Edit Shutdow Menu and Edit Main Menu to the default shutdown menu entries if somebody can't access the settings to perform a reset (skinshortcuts script bug)
 

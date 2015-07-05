@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-07-01 18:57+0000\n"
+"PO-Revision-Date: 2015-07-03 09:09+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -1932,3 +1932,13 @@ msgstr "Bearbeite Shutdown-Menü Einträge"
 msgctxt "#31469"
 msgid "Shutdown Menu"
 msgstr "Shutdown-Menü"
+
+#: \shortcuts\overrides.xml:129
+msgctxt "#31470"
+msgid "Edit Shutdown Menu"
+msgstr ""
+
+#: \shortcuts\overrides.xml:130
+msgctxt "#31471"
+msgid "Edit Main Menu"
+msgstr ""

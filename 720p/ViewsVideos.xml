@@ -4382,7 +4382,6 @@
 		<control type="group">
 			<include>DialogZoomInOutAnimation</include>
 			<include>ListViewAnimationsRight</include>
-			<visible>Control.IsVisible(582)</visible>
 			<control type="list" id="582">
 				<left>570</left>
 				<top>150</top>
@@ -4696,7 +4695,6 @@
 				<left>47</left>
 				<top>215</top>
 				<visible>[!Skin.HasSetting(NetfilxAlwaysShowPlot) + Control.HasFocus(5901)] | Skin.HasSetting(NetfilxAlwaysShowPlot)</visible>
-
 				<animation type="Conditional" reversible="false" condition="![Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)]">
 					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
 				</animation>
