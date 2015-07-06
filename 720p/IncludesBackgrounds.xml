@@ -313,16 +313,29 @@
 			<texture background="true">SKINDEFAULT.jpg</texture>
 			<include>FanartFade</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>[!Skin.HasSetting(NetFilxSemiTrans) + Control.IsVisible(59) + !Window.IsActive(movieinformation)]</visible>
+			<visible>[!Skin.HasSetting(NetFilxSemiTrans) + [Control.IsVisible(59) | Control.IsVisible(584)] + !Window.IsActive(movieinformation)]</visible>
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>
 			<texture background="true">windows/bg/bg_diffuse.png</texture>
 			<include>FanartFade</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>Control.IsVisible(59) + !Window.IsActive(movieinformation)</visible>
+			<visible>[Control.IsVisible(59) | Control.IsVisible(584)] + !Window.IsActive(movieinformation)</visible>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
 		</control>
+		<control type="image">
+			<description>BannerList Fanart</description>
+			<left>260</left>
+			<top>0</top>
+			<width>1020</width>
+			<height>600</height>
+			<aspectratio aligny="top">scale</aspectratio>
+			<texture background="true" diffuse="views/netfilx/fanart_diffuse.png">$INFO[ListItem.Art(fanart)]</texture>
+			<include>FanartFade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<visible>Control.IsVisible(584) + !Window.IsActive(movieinformation) + IsEmpty(Control.GetLabel(5900))</visible>
+			<include>BackgroundAnimation</include>
+		</control>	
 		<control type="image">
 			<description>NetFilx Fanart</description>
 			<left>360</left>
