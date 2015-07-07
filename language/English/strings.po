@@ -1939,3 +1939,7 @@ msgstr ""
 msgctxt "#31471"
 msgid "Edit Main Menu"
 msgstr ""
+
+msgctxt "#31472"
+msgid "Banner Art"
+msgstr ""

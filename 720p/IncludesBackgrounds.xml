@@ -325,10 +325,10 @@
 		</control>
 		<control type="image">
 			<description>BannerList Fanart</description>
-			<left>260</left>
+			<left>310</left>
 			<top>0</top>
-			<width>1020</width>
-			<height>600</height>
+			<width>970</width>
+			<height>550</height>
 			<aspectratio aligny="top">scale</aspectratio>
 			<texture background="true" diffuse="views/netfilx/fanart_diffuse.png">$INFO[ListItem.Art(fanart)]</texture>
 			<include>FanartFade</include>
@@ -437,6 +437,7 @@
 				| [Control.IsVisible(57) + !Window.IsVisible(profiles)]
 				| Control.IsVisible(56)
 				| Control.IsVisible(582)
+				| [Control.IsVisible(584) + IsEmpty(ListItem.Art(fanart))]
 				| Window.IsActive(PlayerControls)
 				| Window.IsActive(shutdownmenu)
 				| Window.IsActive(weather)

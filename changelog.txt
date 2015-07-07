@@ -1,3 +1,7 @@
+[B][COLOR=FF56ADDA]v4.5.1[/COLOR][/B]
+• Added: New viewtype "Banner Art" for Movies/TV Shows/Seasons
+• Fixed: Addon.xml requirements for newest skinshortcuts script
+
 [B][COLOR=FF56ADDA]v4.5.0[/COLOR][/B]
 • Fixed: Fixed viewtype settings for YouTube plugin (I hope so)
 • Fixed: "Show IDs" dialog

@@ -7232,7 +7232,6 @@
 			<visible>Control.IsVisible(584)</visible>
 			<include>DialogZoomInOutAnimation</include>
 			<include>CommonSlideAnimations</include>
-
 			<!-- plot overlay -->
 			<control type="button" id="5841">
 				<description>Get Plot</description>
@@ -7249,84 +7248,95 @@
 				<animation effect="fade" time="550" delay="350" tween="sine" easing="out" reversible="false">Visible</animation>
 				<animation effect="fade" time="350" tween="sine" easing="in" reversible="false">Hidden</animation>	
 			</control>
-
-			<control type="fixedlist" id="584">
+			<control type="wraplist" id="584">
 				<left>39</left>
 				<top>125</top>
 				<width>750</width>
-				<height>505</height>
+				<height>520</height>
 				<onleft>60</onleft>
 				<onright>5841</onright>
-				<onup>57</onup>
-				<ondown>57</ondown>
-				<viewtype label="Banner List">list</viewtype>
+				<onup>584</onup>
+				<ondown>584</ondown>
+				<viewtype label="$LOCALIZE[31472]">list</viewtype>
 				<pagecontrol>60</pagecontrol>
-				<focusposition>1</focusposition>
+				<focusposition>3</focusposition>
 				<preloaditems>2</preloaditems>
-				<movement>4</movement>
-				<wraparound>true</wraparound>
+				<movement>3</movement>
+				<include condition="Container.Content(seasons)" name="BannerArtFocusPosition">
+					<param name="focuspostion">0</param>						
+					<param name="movement">0</param>						
+				</include>
 				<scrolltime tween="Quadratic" easing="out">300</scrolltime>
-				<visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons)]</visible>
-				<itemlayout width="410" height="84">
-					<control type="group">						
-						<top>5</top>
-						<left>5</left>
+				<visible>[Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons)]</visible>
+				<itemlayout width="410" height="74">
+					<control type="group">	
+						<width>410</width>
+						<height>74</height>
 						<control type="image">
-							<width>400</width>
+							<width>410</width>
 							<heigth>74</heigth>
 							<aspectratio align="center" scalediffuse="false" aligny="center">scale</aspectratio>
 							<texture background="true" diffuse="views/bannerlist/diffuse.png">thumbs/thumb_back.png</texture>
-							<bordersize>2</bordersize>
+							<bordersize>4</bordersize>
 						</control>
 						<control type="image">
-							<width>400</width>
+							<width>410</width>
 							<heigth>74</heigth>
 							<aspectratio align="center" scalediffuse="false" aligny="center">scale</aspectratio>
-							<bordersize>2</bordersize>
 							<texture background="true" diffuse="views/bannerlist/diffuse.png" fallback="thumbs/fallback_banner_tp.png">$VAR[VarArtBanner]</texture>
+							<bordersize>4</bordersize>
+							<colordiffuse>55white</colordiffuse>
 						</control>						
 						<control type="image">
-							<top>-1</top>
-							<width>400</width>
-							<aspectratio align="center" scalediffuse="false" aligny="center">keep</aspectratio>
-							<bordersize>2</bordersize>
-							<texture diffuse="views/bannerlist/diffuse.png" >overlays/unwatched/bannerlist/$VAR[WatchedStateOverlay]_Banner.png</texture>
+							<left>19</left>
+							<width>410</width>
+							<heigth>74</heigth>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture diffuse="views/bannerlist/diffuse.png">overlays/unwatched/bannerlist/$VAR[WatchedStateOverlay]_Banner.png</texture>
+							<bordersize>4</bordersize>
+							<colordiffuse>grey3</colordiffuse>
 						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout width="410" height="84">
+				<focusedlayout th="410" height="74">
 					<control type="group">
-						<top>5</top>
-						<left>5</left>
-						<include>BannerListFocusAnimation</include>
+						<include>BannerListFocusAnimation</include>	
+						<width>410</width>
+						<height>74</height>
 						<control type="image">
-							<width>400</width>
+							<width>410</width>
+							<heigth>74</heigth>
+							<aspectratio align="center" scalediffuse="false" aligny="center">scale</aspectratio>
+							<texture background="true">views/bannerlist/focus_bg.png</texture>
+						</control>	
+						<control type="image">
+							<width>410</width>
 							<heigth>74</heigth>
 							<aspectratio align="center" scalediffuse="false" aligny="center">scale</aspectratio>
 							<texture background="true" diffuse="views/bannerlist/diffuse.png">thumbs/thumb_back.png</texture>
-							<bordersize>2</bordersize>
+							<bordersize>4</bordersize>
 						</control>
 						<control type="image">
-							<width>400</width>
+							<width>410</width>
 							<heigth>74</heigth>
 							<aspectratio align="center" scalediffuse="false" aligny="center">scale</aspectratio>
-							<bordersize>2</bordersize>
 							<texture background="true" diffuse="views/bannerlist/diffuse.png" fallback="thumbs/fallback_banner_tp.png">$VAR[VarArtBanner]</texture>
-						</control>						
-						<control type="image">
-							<top>-1</top>
-							<width>400</width>
-							<aspectratio align="center" scalediffuse="false" aligny="center">keep</aspectratio>
-							<bordersize>2</bordersize>
-							<texture diffuse="views/bannerlist/diffuse.png" >overlays/unwatched/bannerlist/$VAR[WatchedStateOverlay]_Banner.png</texture>
+							<bordersize>4</bordersize>
 						</control>
-						<control type="image">							
-							<top>-1</top>
-							<left>-5</left>
+						<control type="image">
+							<left>19</left>
 							<width>410</width>
-							<aspectratio>stretch</aspectratio>
-							<texture>views/bannerlist/focus.png</texture>
-							<bordersize>2</bordersize>
+							<heigth>74</heigth>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture diffuse="views/bannerlist/diffuse.png">overlays/unwatched/bannerlist/$VAR[WatchedStateOverlay]_Banner.png</texture>
+							<bordersize>4</bordersize>
+						</control>
+						<control type="image">
+							<width>410</width>
+							<heigth>74</heigth>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture diffuse="views/bannerlist/diffuse.png" background="true">views/bannerlist/focus_shadow.png</texture>
+							<bordersize>4</bordersize>
 						</control>
 					</control>
 				</focusedlayout>
@@ -7334,10 +7344,60 @@
 			<!-- logo and sub labels -->
 			<control type="group">
 				<visible>Control.IsVisible(584)</visible>
-				<top>153</top>
-				<left>450</left>
+				<top>167</top>
+				<left>452</left>
 				<width>785</width>
 				<height>520</height>
+				<!-- Top250 -->				
+				<control type="grouplist">
+					<animation type="Conditional" condition="Control.HasFocus(5841)" reversible="false">
+						<effect type="slide" start="0,0" end="0,-250" time="550" delay="500" tween="sine" easing="out"/>						
+					</animation>
+					<animation type="Conditional" condition="!Control.HasFocus(5841)" reversible="false">
+						<effect type="slide" start="0,-250" end="0,0" time="550" delay="0" tween="sine" easing="out"/>
+					</animation>
+					<animation type="Conditional" condition="IsEmpty(ListItem.Art(clearlogo))" reversible="false">
+						<effect type="slide" start="0,0" end="0,140" time="0" delay="0" tween="sine" easing="out"/>
+					</animation>
+					<top>195</top>
+					<width>100%</width>	
+					<height>40</height>
+					<itemgap>5</itemgap>
+					<align>right</align>
+					<orientation>horizontal</orientation>
+					<visible>!IsEmpty(ListItem.Top250)</visible>
+					<control type="image">
+						<width>34</width>
+						<height>40</height>
+						<aspectratio aligny="center" align="center">keep</aspectratio>
+						<texture background="true">flags/imdb/imdb-badge.png</texture>
+					</control>
+					<control type="group">
+						<width>60</width>
+						<control type="label">
+							<height>24</height>						
+							<width>55</width>
+							<font>FontSize_14</font>
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>TOP250</label>
+						</control>
+						<control type="label">
+							<top>15</top>
+							<height>25</height>
+							<width>55</width>
+							<font>FontSize_18B</font>
+							<textcolor>99white</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Top250,#]</label>
+						</control>
+					</control>
+				</control>
+				<!--logo-->
 				<control type="image">
 					<top>235</top>
 					<width>100%</width>					
@@ -7351,7 +7411,7 @@
 						<effect type="slide" start="0,-250" end="0,0" time="550" delay="0" tween="sine" easing="out"/>
 					</animation>
 					<visible>!IsEmpty(ListItem.Art(clearlogo))</visible>
-				</control>
+				</control>				
 				<control type="label">
 					<top>315</top>
 					<width>100%</width>					
@@ -7373,7 +7433,7 @@
 						<effect type="slide" start="0,-250" end="0,0" time="550" delay="0" tween="sine" easing="out"/>
 					</animation>
 					<visible>IsEmpty(ListItem.Art(clearlogo))</visible>
-				</control>
+				</control>		
 				<!-- plot -->
 				<control type="textbox">
 					<top>207</top>
@@ -7396,6 +7456,7 @@
 						<effect type="fade" start="100" end="0" time="500" delay="0" tween="sine" easing="out"/>
 					</animation>					
 				</control>
+				
 				<!-- sub labels -->				
 				<control type="grouplist">
 					<visible>!stringcompare(ListItem.Label,..)</visible>
@@ -7500,9 +7561,9 @@
 			<!--scrollbar-->
 			<control type="scrollbar" id="60">
 				<left>25</left>
-				<top>130</top>
+				<top>125</top>
 				<width>9</width>
-				<height>500</height>
+				<height>515</height>
 				<texturesliderbackground>-</texturesliderbackground>
 				<texturesliderbar border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbar>
 				<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbarfocus>

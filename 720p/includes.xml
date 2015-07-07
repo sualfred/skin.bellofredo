@@ -1866,6 +1866,7 @@
 	<focusposition>$PARAM[position]</focusposition>
 </include>
 
+
 <variable name="ClockRecLabel">
 	<value condition="PVR.IsRecording">$LOCALIZE[31035]</value>
 	<value condition="PVR.HasNonRecordingTimer">$LOCALIZE[31335]</value>

@@ -22,7 +22,7 @@
     <include condition="!Skin.HasSetting(ThumbnailsVideos)">ThumbnailsView_Videos</include> <!-- id = 560 -->
     <include condition="!Skin.HasSetting(ThumbnailsVideos)">ThumbnailsView_Videos_Posters</include> <!-- id = 561 -->
     <include condition="!Skin.HasSetting(BannersViewVideos)">BannersView_Videos</include> <!-- id = 57 -->      
-    <include>BannersListView_Videos</include> <!-- id = 584 -->      
+    <include condition="!Skin.HasSetting(BannerArtViewVideos)">BannersListView_Videos</include> <!-- id = 584 -->      
     <include condition="!Skin.HasSetting(ThumbListView)">ThumbListView</include> <!-- id = 582 -->      
     <include condition="!Skin.HasSetting(ClassicSlideView)">ClassicSlideView</include> <!-- id = 583 -->      
     <include condition="!Skin.HasSetting(ShelfView)">ViewShelf</include> <!-- id = 583 -->      
