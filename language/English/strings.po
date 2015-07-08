@@ -1911,7 +1911,7 @@ msgstr ""
 msgctxt "#31466"
 msgid ""
 "Please note that a lot of views are only available for some sorts of "
-"contents. [CR]Example: Shelf only will only work for Movies/Sets/TV "
+"contents. [CR]Example: Shelf only will work for Movies/Sets/TV "
 "Shows/Seasons and the add-on has to set its content correctly."
 msgstr ""
 

@@ -1914,9 +1914,9 @@ msgstr "Dies sind die vorhandenen View IDs. Du kannst sie benutzen um bei Add-on
 msgctxt "#31466"
 msgid ""
 "Please note that a lot of views are only available for some sorts of "
-"contents. [CR]Example: Shelf only will only work for Movies/Sets/TV "
+"contents. [CR]Example: Shelf only will work for Movies/Sets/TV "
 "Shows/Seasons and the add-on has to set its content correctly."
-msgstr "Bitte denkt daran, das viele Views nur für eine bestimmte Art von Content funktionieren.[CR]Beispiel: Shelf funktioniert nur für Filme/Zusammenstellungen/Serien/Staffeln und das Add-on muss den Content auch noch korrekt gesetzt haben."
+msgstr "Bitte denkt daran, dass viele Views nur für eine bestimmte Art von Content funktionieren.[CR]Beispiel: Shelf funktioniert nur für Filme/Zusammenstellungen/Serien/Staffeln und das Add-on muss den Content auch noch korrekt gesetzt haben."
 
 #: \shortcuts\shutdownmenu.DATA.xml:158
 msgctxt "#31467"
