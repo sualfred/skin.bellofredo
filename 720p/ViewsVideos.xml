@@ -5067,8 +5067,8 @@
 			<height>800</height>
 			<onleft>59</onleft>
 			<onright>59</onright>
-			<onup condition="!Skin.HasSetting(EnableKioskMode) + Skin.HasSetting(NetfilxAlwaysShowPlot)">9111</onup>
-			<onup condition="!Skin.HasSetting(NetfilxAlwaysShowPlot)">5901</onup>
+			<onup condition="!Skin.HasSetting(EnableKioskMode) + [Skin.HasSetting(NetfilxAlwaysShowPlot) | IsEmpty(ListItem.Plot)]">9111</onup>
+			<onup condition="!Skin.HasSetting(NetfilxAlwaysShowPlot) + !IsEmpty(ListItem.Plot)">5901</onup>
 			<ondown>60</ondown>
 			<viewtype label="Netflix">List</viewtype>
 			<scrolltime tween="Quadratic" easing="out">300</scrolltime>
@@ -5484,7 +5484,8 @@
 				<!-- plot overlay -->
 				<control type="button" id="5791">
 					<description>Get Plot</description>
-					<onup>100</onup>
+					<onup condition="!Skin.HasSetting(EnableKioskMode)">9111</onup>
+					<onup condition="Skin.HasSetting(EnableKioskMode)">59</onup>
 					<ondown>59</ondown>
 					<onleft>59</onleft>
 					<onright>59</onright>
@@ -6409,7 +6410,7 @@
 					<width>1900</width>
 					<onleft>579</onleft>
 					<onright>579</onright>
-					<onup condition="IsEmpty(ListItem.Plot) + IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot))">9000</onup>
+					<onup condition="!Skin.HasSetting(EnableKioskMode) + IsEmpty(ListItem.Plot) + IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot))">9111</onup>
 					<onup condition="!IsEmpty(ListItem.Plot) | !IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot))">SetFocus(5791)</onup>
 					<ondown>60</ondown>
 					<orientation>horizontal</orientation>

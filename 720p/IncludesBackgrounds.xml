@@ -438,6 +438,7 @@
 				| Control.IsVisible(56)
 				| Control.IsVisible(582)
 				| [Control.IsVisible(584) + IsEmpty(ListItem.Art(fanart))]
+				| [Control.IsVisible(59) + IsEmpty(ListItem.Art(fanart))]
 				| Window.IsActive(PlayerControls)
 				| Window.IsActive(shutdownmenu)
 				| Window.IsActive(weather)
