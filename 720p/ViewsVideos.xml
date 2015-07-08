@@ -4686,7 +4686,8 @@
 			<!--Plot Info-->
 			<control type="button" id="5901">
 				<description>Get Plot</description>
-				<onup>100</onup>
+				<onup condition="!Skin.HasSetting(EnableKioskMode)">9111</onup>
+				<onup condition="Skin.HasSetting(EnableKioskMode)">59</onup>
 				<ondown>59</ondown>
 				<onleft>59</onleft>
 				<onright>59</onright>
@@ -5066,7 +5067,7 @@
 			<height>800</height>
 			<onleft>59</onleft>
 			<onright>59</onright>
-			<onup condition="Skin.HasSetting(NetfilxAlwaysShowPlot)">100</onup>
+			<onup condition="!Skin.HasSetting(EnableKioskMode) + Skin.HasSetting(NetfilxAlwaysShowPlot)">9111</onup>
 			<onup condition="!Skin.HasSetting(NetfilxAlwaysShowPlot)">5901</onup>
 			<ondown>60</ondown>
 			<viewtype label="Netflix">List</viewtype>
