@@ -7250,11 +7250,29 @@
 				<animation effect="fade" time="550" delay="350" tween="sine" easing="out" reversible="false">Visible</animation>
 				<animation effect="fade" time="350" tween="sine" easing="in" reversible="false">Hidden</animation>	
 			</control>
-			<control type="wraplist" id="584">
+			<!-- arrows -->
+			<control type="image">
+				<left>237</left>
+				<top>131</top>
+				<width>24</width>
+				<height>21</height>
+				<texture>views/scrollbar/arrow.png</texture>
+				<!--<visible>Container.HasPrevious</visible>-->
+			</control>
+			<control type="image">
+				<left>237</left>
+				<top>612</top>
+				<width>24</width>
+				<height>21</height>
+				<texture flipy="true">views/scrollbar/arrow.png</texture>
+				<!--<visible>Container.HasNext</visible>-->
+			</control>
+			<!--container-->
+			<control type="list" id="584">
 				<left>39</left>
-				<top>125</top>
+				<top>160</top>
 				<width>750</width>
-				<height>520</height>
+				<height>445</height>
 				<onleft>60</onleft>
 				<onright>5841</onright>
 				<onup>584</onup>
@@ -7263,7 +7281,7 @@
 				<pagecontrol>60</pagecontrol>
 				<focusposition>3</focusposition>
 				<preloaditems>2</preloaditems>
-				<movement>3</movement>
+				<movement>5</movement>
 				<include condition="Container.Content(seasons)" name="BannerArtFocusPosition">
 					<param name="focuspostion">0</param>						
 					<param name="movement">0</param>						
@@ -7287,7 +7305,7 @@
 							<aspectratio align="center" scalediffuse="false" aligny="center">scale</aspectratio>
 							<texture background="true" diffuse="views/bannerlist/diffuse.png" fallback="thumbs/fallback_banner_tp.png">$VAR[VarArtBanner]</texture>
 							<bordersize>4</bordersize>
-							<colordiffuse>55white</colordiffuse>
+							<colordiffuse>44white</colordiffuse>
 						</control>						
 						<control type="image">
 							<left>19</left>
@@ -7301,6 +7319,14 @@
 					</control>
 				</itemlayout>
 				<focusedlayout th="410" height="74">
+					<control type="image">
+						<top>-65</top>
+						<left>-75</left>
+						<width>570</width>
+						<height>200</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<texture background="true">views/list/shine.png</texture>
+					</control>
 					<control type="group">
 						<include>BannerListFocusAnimation</include>	
 						<width>410</width>
@@ -7346,7 +7372,7 @@
 			<!-- logo and sub labels -->
 			<control type="group">
 				<visible>Control.IsVisible(584)</visible>
-				<top>167</top>
+				<top>158</top>
 				<left>452</left>
 				<width>785</width>
 				<height>520</height>
@@ -7563,9 +7589,9 @@
 			<!--scrollbar-->
 			<control type="scrollbar" id="60">
 				<left>25</left>
-				<top>125</top>
+				<top>162</top>
 				<width>9</width>
-				<height>515</height>
+				<height>441</height>
 				<texturesliderbackground>-</texturesliderbackground>
 				<texturesliderbar border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbar>
 				<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbarfocus>
