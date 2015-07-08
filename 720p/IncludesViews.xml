@@ -164,6 +164,7 @@
   <height>231</height>
   <aspectratio align="center" aligny="center">stretch</aspectratio>
   <texture background="true" border="39">views/other/panel.png</texture>
+  <animation effect="fade" time="0" start="100" end="70" condition="true">Conditional</animation>
 </control>
 </include>
 
@@ -176,7 +177,6 @@
    <height>668</height>
    <aspectratio align="center" aligny="center">stretch</aspectratio>
    <texture background="true">views/list/shine.png</texture>
-   <!-- <colordiffuse>ccffffff</colordiffuse> -->
  </control>
  <control type="image">
    <left>606</left>

@@ -3050,8 +3050,13 @@
 		<control type="group">
 			<visible>Control.IsVisible(57)</visible>
 			<include>DialogZoomInOutAnimation</include>
+			<control type="image">
+				<top>-10</top>
+				<include>FullscreenDimensions</include>			
+				<texture background="true">views/list/shine.png</texture>					
+			</control>
 			<include>CommonSlideAnimations</include>
-			<control type="fixedlist" id="57">
+			<control type="wraplist" id="57">
 				<left>270</left>
 				<top>110</top>
 				<width>750</width>
@@ -3223,6 +3228,7 @@
 					</control>
 				</focusedlayout>
 				<focusedlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" width="560" height="260">
+					
 					<control type="group">
 						<include>BannerListFocusAnimation</include>
 						<include>BannersView_Panel</include>
@@ -3234,7 +3240,7 @@
 							<aspectratio align="center" aligny="center">scale</aspectratio>
 							<texture background="true" fallback="thumbs/fallback_banner_tp.png">$VAR[VarArtBanner]</texture>
 							<bordertexture border="20">thumbs/thumb_border.png</bordertexture>
-							<bordersize>6</bordersize>
+							<bordersize>6</bordersize>							
 						</control>
 						<control type="image">
 							<left>18</left>
@@ -3243,8 +3249,7 @@
 							<height>123</height>
 							<aspectratio align="center" aligny="center">stretch</aspectratio>
 							<texture>overlays/unwatched/banners/$VAR[WatchedStateOverlay]_Banner.png</texture>
-							<bordersize>6</bordersize>
-							
+							<bordersize>6</bordersize>							
 						</control>
 						<control type="image">
 							<left>585</left>
@@ -3276,6 +3281,7 @@
 							<align>left</align>
 							<label>$INFO[ListItem.Genre]</label>
 						</control>
+
 						<!--Small Down Info-->
 						<control type="group">
 							<left>25</left>

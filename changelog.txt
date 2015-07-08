@@ -1,3 +1,11 @@
+[B][COLOR=FF56ADDA]v4.5.2[/COLOR][/B]
+• Fixed: Sideblade menu access issues in Shelf/NetFilx, if the view type "Slide" is disabled
+• Fixed: Some more NetFilx issues (background, onup-conditions)
+• Fixed: Not working Kios Mode in NetFilx/Shelf
+• Changed: Some minor layout adjustments of the recently indroduced Banner Art view
+• Changed: Adjusted the look and feel of the Banner List view
+• Fixed: Typo and missing views in the Show IDs dialog
+
 [B][COLOR=FF56ADDA]v4.5.1[/COLOR][/B]
 • Added: New viewtype "Banner Art" for Movies/TV Shows/Seasons
 • Fixed: Addon.xml requirements for newest skinshortcuts script
