@@ -181,7 +181,7 @@
 					<selected>Skin.HasSetting(NetfilxAlwaysShowPlot)</selected>
 					<visible>Control.IsVisible(59)</visible>
 				</control>
-				<control type="togglebutton" id="299">
+				<!--<control type="togglebutton" id="299">
 					<description>NetFilx Semi Trans Toggle</description>
 					<include>TopLeftMenusButton</include>
 					<label>$LOCALIZE[31043]: $LOCALIZE[31012]</label>
@@ -189,7 +189,7 @@
 					<onclick>Skin.ToggleSetting(NetFilxSemiTrans)</onclick>
 					<selected>Skin.HasSetting(NetFilxSemiTrans)</selected>
 					<visible>Control.IsVisible(59)</visible>
-				</control>
+				</control>-->
 				<control type="togglebutton" id="300">
 					<description>Episode View Landscape Toggle</description>
 					<include>TopLeftMenusButton</include>

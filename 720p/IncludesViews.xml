@@ -566,8 +566,6 @@
  
 <variable name="VarArtPoster">  
   <value condition="Container.Content(Sets)">$INFO[Window(home).Property(Set.Movie.1.Art(poster))]</value>
-  <value condition="Skin.HasSetting(LocalArtworks) + Container.Content(Seasons) + !IsEmpty(ListItem.Season) + !IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season0,-poster.jpg]</value>
-  <value condition="Skin.HasSetting(LocalArtworks) + Container.Content(Seasons) + !IsEmpty(ListItem.Season) + IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-poster.jpg]</value>
   <value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
   <value condition="Container.Content(Episodes) + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
   <value condition="Container.Content(Episodes) + IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(poster)]</value>
@@ -592,8 +590,6 @@
 
 <variable name="VarArtBanner">
   <value condition="StringCompare(ListItem.Label,..)">$INFO[ListItem.ActualIcon,thumbs/,/folderback_banner_tp.png]</value>  
-  <value condition="Skin.HasSetting(LocalArtworks) + !SubString(ListItem.Path,plugin:,left) + Container.Content(Seasons) + !IsEmpty(ListItem.Season) + !IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season0,-banner.jpg]</value>
-  <value condition="Skin.HasSetting(LocalArtworks) + !SubString(ListItem.Path,plugin:,left) + Container.Content(Seasons) + !IsEmpty(ListItem.Season) + IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-banner.jpg]</value>
   <value condition="!IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
   <value condition="!IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
   <value>$INFO[ListItem.Icon]</value>
@@ -635,8 +631,6 @@
 
 <variable name="LandscapeVars">
   <value condition="[Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Sets)] + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
-  <value condition="Skin.HasSetting(LocalArtworks) + !SubString(ListItem.Path,plugin:,left) + Container.Content(Seasons) + !IsEmpty(ListItem.Season) + !IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season0,-landscape.jpg]</value>
-  <value condition="Skin.HasSetting(LocalArtworks) + !SubString(ListItem.Path,plugin:,left) + Container.Content(Seasons) + !IsEmpty(ListItem.Season) + IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-landscape.jpg]</value>
   <value condition="Container.Content(Seasons) + !IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
   <value>$INFO[ListItem.ActualIcon,thumbs/,/folderback_fanart_tp.png]</value>
 </variable>

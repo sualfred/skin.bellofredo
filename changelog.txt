@@ -1,3 +1,7 @@
+[B][COLOR=FF56ADDA]v4.5.3[/COLOR][/B]
+• Changed: Increased the logo size in NetFilx
+• Changed: Improved the movement controls for the menu editing dialog
+
 [B][COLOR=FF56ADDA]v4.5.2[/COLOR][/B]
 • Fixed: Sideblade menu access issues in Shelf/NetFilx, if the view type "Slide" is disabled
 • Fixed: Some more NetFilx issues (background, onup-conditions)

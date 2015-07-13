@@ -313,7 +313,7 @@
 			<texture background="true">SKINDEFAULT.jpg</texture>
 			<include>FanartFade</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>[!Skin.HasSetting(NetFilxSemiTrans) + [Control.IsVisible(59) | Control.IsVisible(584)] + !Window.IsActive(movieinformation)]</visible>
+			<visible>[Control.IsVisible(59) | Control.IsVisible(584)] + !Window.IsActive(movieinformation)</visible>
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>
@@ -436,6 +436,7 @@
 			<visible>[Control.IsVisible(50) + !Window.IsVisible(weather) + !Window.IsVisible(musicplaylisteditor) + !Window.IsVisible(profiles)]
 				| Control.IsVisible(56)
 				| Control.IsVisible(582)
+				| [Control.IsVisible(57) + !Window.IsVisible(profiles)]
 				| [Control.IsVisible(584) + IsEmpty(ListItem.Art(fanart))]
 				| [Control.IsVisible(59) + IsEmpty(ListItem.Art(fanart))]
 				| Window.IsActive(PlayerControls)
@@ -460,14 +461,6 @@
 				| Window.IsActive(favourites)
 			</visible>
 			<animation effect="fade" time="0" end="50" condition="true">Conditional</animation>
-		</control>
-		<control type="image">
-			<include>FullscreenDimensions</include>
-			<texture background="true">windows/bg/bg_diffuse.png</texture>
-			<include>FanartFade</include>
-			<visible>[Control.IsVisible(57) + !Window.IsVisible(profiles)]
-			</visible>
-			<animation effect="fade" time="0" end="90" condition="true">Conditional</animation>
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>

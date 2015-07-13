@@ -4825,9 +4825,9 @@
 						<effect type="zoom" start="60" end="100" center="20,20" delay="100" time="250" tween="sine" easing="out"  />
 					</animation>
 					<left>20</left>
-					<top>-90</top>
-					<width>290</width>
-					<height>110</height>
+					<top>-190</top>
+					<width>390</width>
+					<height>210</height>
 					<fadetime>100</fadetime>
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
 					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
@@ -6160,6 +6160,7 @@
 						</control>
 					</control>
 				</control>
+
 				<!--labels-->
 				<control type="grouplist">
 					<left>45</left>
