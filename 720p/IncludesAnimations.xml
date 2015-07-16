@@ -686,6 +686,17 @@
 		</animation>
 	</include>
 
+	<include name="MovingListFocusAnimation">
+		<animation type="Focus" reversible="false" condition="Container(10).OnPrevious | Container(11).OnPrevious | Container(12).OnPrevious | Container(13).OnPrevious | Container(50).OnPrevious">
+			<effect type="fade" start="20" end="100" time="700"/>
+			<effect type="slide" start="0,45" end="0,0" time="400" tween="back" easing="out"/>
+		</animation>
+		<animation type="Focus" reversible="false" condition="Container(10).OnNext | Container(11).OnNext | Container(12).OnNext | Container(13).OnNext | Container(50).OnNext">
+			<effect type="fade" start="20" end="100" time="700"/>
+			<effect type="slide" start="0,-45" end="0,0" time="400" tween="back" easing="out"/>
+		</animation>
+	</include>
+
 	<include name="VizBackAnimation">
 		<animation effect="zoom" start="110" end="130" center="auto" time="14000" pulse="true" condition="Skin.HasSetting(Vis-Animation)" reversible="false">Conditional</animation>
 		<animation effect="slide" start="-20,-20" end="40,40" time="15000" pulse="true" condition="Skin.HasSetting(Vis-Animation)" reversible="false">Conditional</animation>

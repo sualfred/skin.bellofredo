@@ -180,7 +180,7 @@
 		<top>25</top>
 		<include>OSDSlideAnimations</include>
 		<visible>Window.IsActive(VideoOSD)</visible>
-		<visible>Player.HasVideo + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites) + !Window.IsActive(NumericInput) + !Window.IsActive(SliderDialog) + !Window.IsActive(videobookmarks) + !Window.IsActive(PVROSDChannels) + !Window.IsActive(PVROSDGuide) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)</visible>
+		<visible>Player.HasVideo + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites) + !Window.IsActive(NumericInput) + !Window.IsActive(SliderDialog) + !Window.IsActive(videobookmarks) + !Window.IsActive(PVROSDChannels) + !Window.IsActive(PVROSDGuide) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 		<control type="grouplist">
 			<left>0</left>
 			<top>0</top>
@@ -332,7 +332,7 @@
 		<top>445</top>
 		<include>OSDPlotAnimation</include>
 		<visible>Window.IsActive(VideoOSD)</visible>
-		<visible>![Window.IsActive(ShutdownMenu) | Window.IsActive(favourites) | IsEmpty(VideoPlayer.Plot)] + Control.HasFocus(200) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)</visible>
+		<visible>![Window.IsActive(ShutdownMenu) | Window.IsActive(favourites) | IsEmpty(VideoPlayer.Plot)] + Control.HasFocus(200) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 		<animation effect="slide" start="0,0" end="90,0" condition="![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] | SubString(Player.Filenameandpath,rtmp://) | SubString(Player.Filenameandpath,http)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="-75,0" condition="VideoPlayer.Content(LiveTV)">Conditional</animation>
 		<control type="label">

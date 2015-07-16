@@ -120,6 +120,7 @@
 							<height>30</height>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 							<texture fallback="DefaultShortcut.png">$INFO[ListItem.ActualIcon]</texture>
+							<include>ListFocusAnimation</include>
 							<animation effect="fade" start="100" end="50" time="100" condition="!Control.HasFocus(211) + !Control.HasFocus(303) + !Control.HasFocus(304)">conditional</animation>
 						</control>
 						<control type="label">
@@ -133,10 +134,12 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
+							<include>ListFocusAnimation</include>
 							<animation effect="fade" start="100" end="50" time="100" condition="!Control.HasFocus(211) + !Control.HasFocus(303) + !Control.HasFocus(304)">conditional</animation>
 						</control>
 						<!-- arrows -->
 						<control type="group">
+							<include>ListFocusAnimation</include>
 							<left>350</left>
 							<top>11</top>
 							<control type="image">
