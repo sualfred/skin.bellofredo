@@ -2352,9 +2352,9 @@
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazon)">$LOCALIZE[31052]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),youtube)">YouTube</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1) + IsEmpty(Skin.String(widgetgroup.1.Label2))">$LOCALIZE[31173]</value>
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2) + IsEmpty(Skin.String(widgetgroup.1.Label2))">$LOCALIZE[31174]</value>
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3) + IsEmpty(Skin.String(widgetgroup.1.Label2))">$LOCALIZE[31175]</value>
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4) + IsEmpty(Skin.String(widgetgroup.1.Label2))">$LOCALIZE[31176]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2) + IsEmpty(Skin.String(widgetgroup.2.Label2))">$LOCALIZE[31174]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3) + IsEmpty(Skin.String(widgetgroup.3.Label2))">$LOCALIZE[31175]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4) + IsEmpty(Skin.String(widgetgroup.4.Label2))">$LOCALIZE[31176]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)">$INFO[Skin.String(widgetgroup.1.Label2)]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)">$INFO[Skin.String(widgetgroup.2.Label2)]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)">$INFO[Skin.String(widgetgroup.3.Label2)]</value>

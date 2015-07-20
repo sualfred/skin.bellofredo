@@ -1,6 +1,7 @@
 [B][COLOR=FF56ADDA]v4.5.4[/COLOR][/B]
 • Added: New custom widget path selection method (based on the lastest Skinshortcuts GitHub release)
 • Added: Valid source check for custom widget path
+• Added: Option to change the right bottom custom widget label
 • Changed: Some conditions, which can cause overlappings
 • Merged: Translations
 
