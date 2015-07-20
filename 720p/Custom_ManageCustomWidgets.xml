@@ -36,7 +36,6 @@
 				<height>4</height>
 				<aspectratio>stretch</aspectratio>
 				<texture background="true">dialogs/other/header_line.png</texture>
-				<animation effect="slide" start="0,0" end="0,-25" time="0" condition="Control.IsVisible(6)">Conditional</animation>
 			</control>
 			<control type="label" id="1">
 				<description>header label</description>
@@ -57,7 +56,21 @@
 				<onright>10000</onright>
 				<ondown>1000</ondown>
 				<scrolltime>250</scrolltime>
-				<!-- Default Visible Buttons -->
+				<!-- Default Visible Buttons -->								
+				<control type="button" id="1004">
+					<description>Source</description>
+					<width>553</width>
+					<include>DialogsButton</include>
+					<label>$LOCALIZE[31331]</label>
+					<label2>[COLOR=selected]$VAR[CustomWidgetSourceLabels][/COLOR]</label2>
+					<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31323])</onclick>
+					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,mixed)||RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup$VAR[CustomWidgetNumber]))</onclick>					
+					<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31324])</onclick>
+					<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,pathfav)||RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=widgetgroup.$VAR[CustomWidgetNumber].Label&amp;skinList=CustomWidgetPath$VAR[CustomWidgetNumber].List&amp;skinType=widgetgroup.$VAR[CustomWidgetNumber].Label2&amp;showNone=True))</onclick>
+					<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31328])</onclick>
+					<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,pathown)||Skin.SetString(CustomWidgetPath$VAR[CustomWidgetNumber].List))</onclick>
+					<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31322])</onclick>
+				</control>
 				<control type="button" id="1001">
 					<description>Label</description>
 					<width>553</width>
@@ -65,6 +78,14 @@
 					<label>$LOCALIZE[31330]</label>
 					<label2>[COLOR=selected]$VAR[CustomWidgetLabel][/COLOR]</label2>
 					<onclick>Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Label)</onclick>
+				</control>				
+				<control type="button" id="1006">
+					<description>Label</description>
+					<width>553</width>
+					<include>DialogsButton</include>
+					<label>Right Bottom Label</label>
+					<label2>[COLOR=selected]$VAR[CustomWidgetLabel2][/COLOR]</label2>
+					<onclick>Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Label2)</onclick>
 				</control>
 				<control type="button" id="1002">
 					<description>layout</description>
@@ -77,20 +98,6 @@
 					<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31326])</onclick>
 					<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Layout,Square))</onclick>    
 					<onclick>RunScript(script.toolbox,info=selectdialog,header=Layout)</onclick>
-				</control>				
-				<control type="button" id="1004">
-					<description>Source</description>
-					<width>553</width>
-					<include>DialogsButton</include>
-					<label>$LOCALIZE[31331]</label>
-					<label2>[COLOR=selected]$VAR[CustomWidgetSourceLabels][/COLOR]</label2>
-					<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31323])</onclick>
-					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,mixed)||RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup$VAR[CustomWidgetNumber]))</onclick>
-					<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31324])</onclick>
-					<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,pathfav)||RunScript(script.favourites,property=CustomWidgetPath$VAR[CustomWidgetNumber]))</onclick>
-					<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31328])</onclick>
-					<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,pathown)||Skin.SetString(CustomWidgetPath$VAR[CustomWidgetNumber].List))</onclick>
-					<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31322])</onclick>
 				</control>
 				<control type="button" id="1003">
 					<description>target</description>
@@ -124,18 +131,11 @@
 						[SubString(Skin.String(widgetgroup.1.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1) + !IsEmpty(Skin.String(CustomWidgetPath1.List))] | [SubString(Skin.String(widgetgroup.2.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup2) + !IsEmpty(Skin.String(CustomWidgetPath2.List))] | [SubString(Skin.String(widgetgroup.3.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup3) + !IsEmpty(Skin.String(CustomWidgetPath3.List))] | [SubString(Skin.String(widgetgroup.4.Source),path) + StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup4) + !IsEmpty(Skin.String(CustomWidgetPath4.List))]
 					</enable>
 				</control>
-				<control type="label" id="1006">
-					<description>target</description>
-					<width>553</width>
-					<include>DialogsButton</include>
-					<scroll>true</scroll>
-					<label>[B]$LOCALIZE[31295]:[/B] $LOCALIZE[31296]</label>	
-				</control>
 			</control>
 			<!--Control Buttons-->
 			<control type="group"  id="10000">
 				<control type="button" id="5">
-					<description>Get More/Manual</description>
+					<description>Save</description>
 					<left>940</left>
 					<top>488</top>
 					<width>190</width>
@@ -147,13 +147,33 @@
 					<onclick>Close</onclick>
 					<onleft>1000</onleft>
 					<onright>1000</onright>
-					<onup>1000</onup>
-					<ondown>1000</ondown>
+					<onup>6</onup>
+					<ondown>6</ondown>
+				</control>
+				<control type="button" id="6">
+					<description>reset</description>
+					<left>940</left>
+					<top>438</top>
+					<width>190</width>
+					<textwidth>140</textwidth>
+					<include>DialogsButtonsText</include>
+					<texturefocus border="49,0,49,0">dialogs/buttons/cancel_focus.png</texturefocus>
+					<texturenofocus border="49,0,49,0">dialogs/buttons/cancel_nofocus.png</texturenofocus>
+					<label>$LOCALIZE[31329]</label>
+					<onclick>Skin.Reset(widgetgroup.$VAR[CustomWidgetNumber].Source)</onclick>
+					<onclick>Skin.Reset(widgetgroup.$VAR[CustomWidgetNumber].Label)</onclick>
+					<onclick>Skin.Reset(widgetgroup.$VAR[CustomWidgetNumber].Label2)</onclick>
+					<onclick>Skin.Reset(CustomWidgetPath$VAR[CustomWidgetNumber].List)</onclick>
+					<onclick>Skin.Reset(widgetgroup.$VAR[CustomWidgetNumber].Limit)</onclick>
+					<onclick>Skin.Reset(widgetgroup.$VAR[CustomWidgetNumber].Target)</onclick>
+					<onclick>Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Layout,Poster)</onclick>
+					<onleft>1000</onleft>
+					<onright>1000</onright>
+					<onup>5</onup>
+					<ondown>5</ondown>
 				</control>
 			</control>
 		</control>
-
-		<!-- Manage Widget Buttons -->
 		
 	</controls>
 </window>

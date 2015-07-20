@@ -1326,7 +1326,7 @@ msgid "Mixed item group"
 msgstr ""
 
 msgctxt "#31324"
-msgid "Extract custom path from a existing favourite"
+msgid "Select custom path"
 msgstr ""
 
 msgctxt "#31325"
@@ -1342,7 +1342,7 @@ msgid "Other custom path (extracted from a favourite)"
 msgstr ""
 
 msgctxt "#31328"
-msgid "Add own or edit existing extracted path"
+msgid "Add own or edit existing custom path"
 msgstr ""
 
 msgctxt "#31329"

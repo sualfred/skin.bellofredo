@@ -1922,6 +1922,17 @@
 	<value>$LOCALIZE[31172]</value>
 </variable>
 
+<variable name="CustomWidgetLabel2">
+	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1) + !IsEmpty(Skin.String(widgetgroup.1.Label2))">$INFO[Skin.String(widgetgroup.1.Label2)]</value>
+	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup2) + !IsEmpty(Skin.String(widgetgroup.2.Label2))">$INFO[Skin.String(widgetgroup.2.Label2)]</value>
+	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup3) + !IsEmpty(Skin.String(widgetgroup.3.Label2))">$INFO[Skin.String(widgetgroup.3.Label2)]</value>
+	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup4) + !IsEmpty(Skin.String(widgetgroup.4.Label2))">$INFO[Skin.String(widgetgroup.4.Label2)]</value>	
+	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup1) + IsEmpty(Skin.String(widgetgroup.1.Label2))">$LOCALIZE[31173]</value>
+	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup2) + IsEmpty(Skin.String(widgetgroup.2.Label2))">$LOCALIZE[31174]</value>
+	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup3) + IsEmpty(Skin.String(widgetgroup.3.Label2))">$LOCALIZE[31175]</value>
+	<value condition="StringCompare(Window(SkinSettings).Property(EditCustomWidgets),widgetgroup4) + IsEmpty(Skin.String(widgetgroup.4.Label2))">$LOCALIZE[31176]</value>	
+</variable>
+
 <variable name="VarGenreSource">
 	<value condition="StringCompare(Skin.String(GenreSource),own)">$INFO[Skin.String(OwnGenreIconSource)]</value>
 	<value condition="StringCompare(Skin.String(GenreSource),disabled)">-</value>	
@@ -1933,22 +1944,22 @@
 	<value>$LOCALIZE[31294]</value>	
 </variable>
 
-<variable name="CustomWidgetLabel1">
+<variable name="CustomWidgetSettingsLabel1">
 	<value condition="!IsEmpty(Skin.String(widgetgroup.1.Label))">$INFO[Skin.String(widgetgroup.1.Label)]</value>
 	<value>$LOCALIZE[31172]</value>
 </variable>
 
-<variable name="CustomWidgetLabel2">
+<variable name="CustomWidgetSettingsLabel2">
 	<value condition="!IsEmpty(Skin.String(widgetgroup.2.Label))">$INFO[Skin.String(widgetgroup.2.Label)]</value>
 	<value>$LOCALIZE[31172]</value>
 </variable>
 
-<variable name="CustomWidgetLabel3">
+<variable name="CustomWidgetSettingsLabel3">
 	<value condition="!IsEmpty(Skin.String(widgetgroup.3.Label))">$INFO[Skin.String(widgetgroup.3.Label)]</value>
 	<value>$LOCALIZE[31172]</value>
 </variable>
 
-<variable name="CustomWidgetLabel4">
+<variable name="CustomWidgetSettingsLabel4">
 	<value condition="!IsEmpty(Skin.String(widgetgroup.4.Label))">$INFO[Skin.String(widgetgroup.4.Label)]</value>
 	<value>$LOCALIZE[31172]</value>
 </variable>
@@ -2285,11 +2296,15 @@
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),music) | Control.HasFocus(450) | Control.HasFocus(45)">$VAR[QuickNavSettingsMusicName]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),tunein) | Control.HasFocus(550) | Control.HasFocus(55)">$VAR[QuickNavSettingsTuneInName]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb)">$VAR[QuickNavSettingsAmazonDBName]</value>
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazon)">$VAR[QuickNavSettingsAmazonName]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazon)">$VAR[QuickNavSettingsAmazonName]</value>	
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1) + IsEmpty(Skin.String(widgetgroup.1.Label))">$LOCALIZE[31172]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2) + IsEmpty(Skin.String(widgetgroup.2.Label))">$LOCALIZE[31172]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3) + IsEmpty(Skin.String(widgetgroup.3.Label))">$LOCALIZE[31172]</value>		
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4) + IsEmpty(Skin.String(widgetgroup.4.Label))">$LOCALIZE[31172]</value>	
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)">$INFO[Skin.String(widgetgroup.1.Label)]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)">$INFO[Skin.String(widgetgroup.2.Label)]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)">$INFO[Skin.String(widgetgroup.3.Label)]</value>		
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)">$INFO[Skin.String(widgetgroup.4.Label)]</value>		
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)">$INFO[Skin.String(widgetgroup.4.Label)]</value>	
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget)">$VAR[RSSVideoFeedName]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),youtube)">$VAR[QuickNavSettingsYouTubeName]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),Playlist)">$INFO[Container(20).ListItem.Property(widgetName)]</value>	
@@ -2328,10 +2343,14 @@
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb)">$LOCALIZE[31052]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazon)">$LOCALIZE[31052]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),youtube)">YouTube</value>
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)">$LOCALIZE[31173]</value>
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)">$LOCALIZE[31174]</value>
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)">$LOCALIZE[31175]</value>
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)">$LOCALIZE[31176]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1) + IsEmpty(Skin.String(widgetgroup.1.Label2))">$LOCALIZE[31173]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2) + IsEmpty(Skin.String(widgetgroup.1.Label2))">$LOCALIZE[31174]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3) + IsEmpty(Skin.String(widgetgroup.1.Label2))">$LOCALIZE[31175]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4) + IsEmpty(Skin.String(widgetgroup.1.Label2))">$LOCALIZE[31176]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)">$INFO[Skin.String(widgetgroup.1.Label2)]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)">$INFO[Skin.String(widgetgroup.2.Label2)]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)">$INFO[Skin.String(widgetgroup.3.Label2)]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)">$INFO[Skin.String(widgetgroup.4.Label2)]</value>
 	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music) + !IsEmpty(Container(651).ListItem.Label2)">$INFO[Container(651).ListItem.Label2,,[CR]]$LOCALIZE[559]</value>		
 	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)">$LOCALIZE[559]</value>
 	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video) + !IsEmpty(Container(652).ListItem.Label) + !IsEmpty(Container(652).ListItem.TVShowTitle)">$INFO[Container(652).ListItem.Label,,[CR]]$LOCALIZE[559]</value>

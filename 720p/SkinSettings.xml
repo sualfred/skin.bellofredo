@@ -452,28 +452,28 @@
 						<control type="button" id="8502">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31380] #1</label>
-							<label2>[COLOR=selected]$VAR[CustomWidgetLabel1][/COLOR]</label2>
+							<label2>[COLOR=selected]$VAR[CustomWidgetSettingsLabel1][/COLOR]</label2>
 							<onclick>SetProperty(EditCustomWidgets,widgetgroup1,SkinSettings)</onclick>
 							<onclick>ActivateWindow(1120)</onclick>
 						</control>
 						<control type="button" id="8503">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31380] #2</label>
-							<label2>[COLOR=selected]$VAR[CustomWidgetLabel2][/COLOR]</label2>
+							<label2>[COLOR=selected]$VAR[CustomWidgetSettingsLabel2][/COLOR]</label2>
 							<onclick>SetProperty(EditCustomWidgets,widgetgroup2,SkinSettings)</onclick>
 							<onclick>ActivateWindow(1120)</onclick>
 						</control>
 						<control type="button" id="8504">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31380] #3</label>
-							<label2>[COLOR=selected]$VAR[CustomWidgetLabel3][/COLOR]</label2>
+							<label2>[COLOR=selected]$VAR[CustomWidgetSettingsLabel3][/COLOR]</label2>
 							<onclick>SetProperty(EditCustomWidgets,widgetgroup3,SkinSettings)</onclick>
 							<onclick>ActivateWindow(1120)</onclick>
 						</control>
 						<control type="button" id="8505">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31380] #4</label>
-							<label2>[COLOR=selected]$VAR[CustomWidgetLabel4][/COLOR]</label2>							
+							<label2>[COLOR=selected]$VAR[CustomWidgetSettingsLabel4][/COLOR]</label2>							
 							<onclick>SetProperty(EditCustomWidgets,widgetgroup4,SkinSettings)</onclick>
 							<onclick>ActivateWindow(1120)</onclick>
 						</control>
