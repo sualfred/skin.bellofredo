@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-06-24 12:27+0000\n"
+"PO-Revision-Date: 2015-07-20 09:57+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
-"Language-Team: Italian (http://www.transifex.com/projects/p/bello-fredo/language/it/)\n"
+"Language-Team: Italian (http://www.transifex.com/p/bello-fredo/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1328,8 +1328,8 @@ msgid "Mixed item group"
 msgstr "Elementi Gruppo Miscelati"
 
 msgctxt "#31324"
-msgid "Extract custom path from a existing favourite"
-msgstr "Estrai in un percorso personalizzato da uno dei preferiti esistenti"
+msgid "Select custom path"
+msgstr ""
 
 msgctxt "#31325"
 msgid "Other"
@@ -1344,8 +1344,8 @@ msgid "Other custom path (extracted from a favourite)"
 msgstr "Altri percorsi personalizzati (estratti da un preferito)"
 
 msgctxt "#31328"
-msgid "Add own or edit existing extracted path"
-msgstr "Aggiungi o edita un percorso estratto gia' esistente"
+msgid "Add own or edit existing custom path"
+msgstr ""
 
 msgctxt "#31329"
 msgid "Reset Widget"
@@ -1913,6 +1913,35 @@ msgstr ""
 msgctxt "#31466"
 msgid ""
 "Please note that a lot of views are only available for some sorts of "
-"contents. [CR]Example: Shelf only will only work for Movies/Sets/TV "
-"Shows/Seasons and the add-on has to set its content correctly."
+"contents. [CR]Example: Shelf only will work for Movies/Sets/TV Shows/Seasons"
+" and the add-on has to set its content correctly."
+msgstr ""
+
+#: \shortcuts\shutdownmenu.DATA.xml:158
+msgctxt "#31467"
+msgid "Logout"
+msgstr ""
+
+#: \720p\SkinSettings.xml:424
+msgctxt "#31468"
+msgid "Edit Shutdown Menu Items"
+msgstr ""
+
+#: \720p\SkinSettings.xml:418
+msgctxt "#31469"
+msgid "Shutdown Menu"
+msgstr ""
+
+#: \shortcuts\overrides.xml:129
+msgctxt "#31470"
+msgid "Edit Shutdown Menu"
+msgstr ""
+
+#: \shortcuts\overrides.xml:130
+msgctxt "#31471"
+msgid "Edit Main Menu"
+msgstr ""
+
+msgctxt "#31472"
+msgid "Banner Art"
 msgstr ""

@@ -1,3 +1,7 @@
+[B][COLOR=FF56ADDA]v4.5.4[/COLOR][/B]
+• Added: New custom widget path selection method (based on the lastest Skinshortcuts GitHub release)
+• Changed: Some conditions, which can cause overlappings
+
 [B][COLOR=FF56ADDA]v4.5.3[/COLOR][/B]
 • Changed: Increased the logo size in NetFilx
 • Changed: Improved the movement controls for the menu editing dialog

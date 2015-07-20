@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-06-24 12:27+0000\n"
+"PO-Revision-Date: 2015-07-20 09:57+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
-"Language-Team: Lithuanian (http://www.transifex.com/projects/p/bello-fredo/language/lt/)\n"
+"Language-Team: Lithuanian (http://www.transifex.com/p/bello-fredo/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1328,8 +1328,8 @@ msgid "Mixed item group"
 msgstr "Mišrių elementų grupė"
 
 msgctxt "#31324"
-msgid "Extract custom path from a existing favourite"
-msgstr "Išgauti savą kelią iš egzistuojančio mėgstamiausiojo"
+msgid "Select custom path"
+msgstr ""
 
 msgctxt "#31325"
 msgid "Other"
@@ -1344,8 +1344,8 @@ msgid "Other custom path (extracted from a favourite)"
 msgstr "Kitas savas kelias (išgautas iš mėgstamiausiojo)"
 
 msgctxt "#31328"
-msgid "Add own or edit existing extracted path"
-msgstr "Pridėti savą ar keisti egzistuojantį išgautą kelią"
+msgid "Add own or edit existing custom path"
+msgstr ""
 
 msgctxt "#31329"
 msgid "Reset Widget"
@@ -1886,33 +1886,62 @@ msgstr "mini"
 
 msgctxt "#31460"
 msgid "Genre Icons"
-msgstr ""
+msgstr "Žanro piktogramos"
 
 msgctxt "#31461"
 msgid "Own icon path"
-msgstr ""
+msgstr "Savų piktogramų kelias"
 
 msgctxt "#31462"
 msgid "alternative"
-msgstr ""
+msgstr "alternatyva"
 
 msgctxt "#31463"
 msgid "grunge"
-msgstr ""
+msgstr "granžas"
 
 msgctxt "#31464"
 msgid "Artwork Style"
-msgstr ""
+msgstr "Iliustracijos stilius"
 
 msgctxt "#31465"
 msgid ""
 "These are the used IDs for the included viewtypes. You can use them to "
 "override or force the usage of a view in some add-ons."
-msgstr ""
+msgstr "Tai yra rodinių tipų naudojami ID. Galite juos panaudoti, jei norite perrašyti ar priverstinai naudoti rodinį kai kuriuose prieduose."
 
 msgctxt "#31466"
 msgid ""
 "Please note that a lot of views are only available for some sorts of "
-"contents. [CR]Example: Shelf only will only work for Movies/Sets/TV "
-"Shows/Seasons and the add-on has to set its content correctly."
-msgstr ""
+"contents. [CR]Example: Shelf only will work for Movies/Sets/TV Shows/Seasons"
+" and the add-on has to set its content correctly."
+msgstr "Atminkite, kad daug rodinių galimi tik tam tikro tipo turiniui.[CR]Pavyzdžiui, lentyna veiks tik filmams/rinkiniams/TV laidoms/sezonams ir priedas turi teisingai nustatyti savo turinį."
+
+#: \shortcuts\shutdownmenu.DATA.xml:158
+msgctxt "#31467"
+msgid "Logout"
+msgstr "Atsijungti"
+
+#: \720p\SkinSettings.xml:424
+msgctxt "#31468"
+msgid "Edit Shutdown Menu Items"
+msgstr "Redaguoti išjungimo meniu elementus"
+
+#: \720p\SkinSettings.xml:418
+msgctxt "#31469"
+msgid "Shutdown Menu"
+msgstr "Išjungimo meniu"
+
+#: \shortcuts\overrides.xml:129
+msgctxt "#31470"
+msgid "Edit Shutdown Menu"
+msgstr "Redaguoti išjungimo meniu"
+
+#: \shortcuts\overrides.xml:130
+msgctxt "#31471"
+msgid "Edit Main Menu"
+msgstr "Redaguoti pagrindinį meniu"
+
+msgctxt "#31472"
+msgid "Banner Art"
+msgstr "Reklamjuostės iliustracija"
