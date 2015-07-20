@@ -64,11 +64,11 @@
 					<label>$LOCALIZE[31331]</label>
 					<label2>[COLOR=selected]$VAR[CustomWidgetSourceLabels][/COLOR]</label2>
 					<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31323])</onclick>
-					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,mixed)||RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup$VAR[CustomWidgetNumber]))</onclick>					
+					<onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=widgetgroup$VAR[CustomWidgetNumber])||Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,mixed))</onclick>					
 					<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31324])</onclick>
-					<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,pathfav)||RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=widgetgroup.$VAR[CustomWidgetNumber].Label&amp;skinList=CustomWidgetPath$VAR[CustomWidgetNumber].List&amp;skinType=widgetgroup.$VAR[CustomWidgetNumber].Label2&amp;showNone=True))</onclick>
+					<onclick>SetProperty(Dialog.2.BuiltIn,RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=widgetgroup.$VAR[CustomWidgetNumber].Label&amp;skinList=CustomWidgetPath$VAR[CustomWidgetNumber].List&amp;skinType=widgetgroup.$VAR[CustomWidgetNumber].Label2&amp;showNone=True)||Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,pathfav))</onclick>
 					<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31328])</onclick>
-					<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,pathown)||Skin.SetString(CustomWidgetPath$VAR[CustomWidgetNumber].List))</onclick>
+					<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(CustomWidgetPath$VAR[CustomWidgetNumber].List)||Skin.SetString(widgetgroup.$VAR[CustomWidgetNumber].Source,pathown))</onclick>
 					<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31322])</onclick>
 				</control>
 				<control type="button" id="1001">
