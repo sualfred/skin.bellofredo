@@ -1911,8 +1911,8 @@ msgstr ""
 msgctxt "#31466"
 msgid ""
 "Please note that a lot of views are only available for some sorts of "
-"contents. [CR]Example: Shelf only will work for Movies/Sets/TV "
-"Shows/Seasons and the add-on has to set its content correctly."
+"contents. [CR]Example: Shelf only will work for Movies/Sets/TV Shows/Seasons"
+" and the add-on has to set its content correctly."
 msgstr ""
 
 #: \shortcuts\shutdownmenu.DATA.xml:158
@@ -1942,4 +1942,8 @@ msgstr ""
 
 msgctxt "#31472"
 msgid "Banner Art"
+msgstr ""
+
+msgctxt "#31473"
+msgid "[COLOR=invalid]Error: No valid path[/COLOR]"
 msgstr ""
