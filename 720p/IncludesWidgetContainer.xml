@@ -12,7 +12,7 @@
 	<include name="ParamWidgetCounterLoading">
 		<control type="label">
 			<left>0</left>
-			<top>236</top>
+			<top>216</top>
 			<width>1280</width>
 			<height>70</height>
 			<aligny>top</aligny>
@@ -27,10 +27,10 @@
 		</control>
 		<control type="grouplist">			
 			<visible>Container($PARAM[Container]).IsUpdating</visible>
-			<include>DownUpAnimation</include>
-			<left>295</left>
-			<top>$PARAM[Top]</top>
-			<width>707</width>
+			<include>DownUpAnimation</include>			
+			<top>471</top>			
+			<centerleft>50%</centerleft>
+			<width>864</width>
 			<height>70</height>
 			<height>70</height>
 			<align>left</align>
@@ -84,7 +84,7 @@
 			<visible>Skin.HasTheme(Original-Bello)</visible>				
 		</control>
 		<control type="grouplist">
-			<top>185</top>
+			<top>165</top>
 			<height>50</height>
 			<width>1280</width>
 			<align>center</align>
@@ -103,7 +103,8 @@
 				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>				
 			</control>			
 			<control type="label">
-				<description>header title</description>			
+				<description>header title</description>							
+				<centerleft>50%</centerleft>
 				<width>auto</width>
 				<height>50</height>
 				<align>center</align>
@@ -112,7 +113,7 @@
 				<textcolor>white</textcolor>
 				<shadowcolor>77000000</shadowcolor>				
 				<scroll>false</scroll>						
-				<label>$VAR[QuickNavWidgetHeaderTitle]</label>						
+				<label>$VAR[QuickNavWidgetHeaderTitle]</label>				
 			</control>
 			<control type="image">  					
 				<left>763</left>
@@ -125,6 +126,7 @@
 				<visible>Control.HasFocus(25) | Control.HasFocus(35) | Control.HasFocus(65) | Control.HasFocus(46) | Control.HasFocus(55) | Control.HasFocus(75) | Control.HasFocus(76) | Control.HasFocus(66)</visible>
 				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
 			</control>
+			<animation effect="slide" time="0" end="0,17" condition="Skin.HasSetting(HideWidgetCounter)">Conditional</animation>
 		</control>
 	</include>
 
@@ -132,9 +134,10 @@
 		<control type="button">
 			<visible>!Container($PARAM[Container]).IsUpdating</visible>
 			<include>DownUpAnimation</include>
-			<left>288</left>
-			<top>$PARAM[Top]</top>
-			<width>707</width>
+			<centerleft>50%</centerleft>
+			<width>880</width>
+			<!--<top>$PARAM[Top]</top>-->
+			<top>465</top>
 			<height>70</height>
 			<font>FontSize_22</font>
 			<textcolor>bbwhite</textcolor>
@@ -151,42 +154,42 @@
 	</include>
 
 	<include name="WidgetEmptyBoxes">
-		<top>262</top>
-		<left>455</left>
-		<width>734</width>
+		<top>250</top>
+		<centerleft>50%</centerleft>
+		<width>902</width>
 		<height>275</height>
-		<control type="image">
-			<left>-159</left>
-			<top>5</top>
-			<width>154</width>
-			<height>154</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
-			<fadetime>800</fadetime>
-		</control> 
 		<control type="image">
 			<left>20</left>
 			<top>5</top>
-			<width>154</width>
-			<height>154</height>
+			<width>192.5</width>
+			<height>192.5</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
 		</control> 
 		<control type="image">
-			<left>200</left>
+			<left>245</left>
 			<top>5</top>
-			<width>154</width>
-			<height>154</height>
+			<width>192.5</width>
+			<height>192.5</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
+			<fadetime>800</fadetime>
+		</control> 
+		<control type="image">
+			<left>470</left>
+			<top>5</top>
+			<width>192.5</width>
+			<height>192.5</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
 		</control>
 		<control type="image">
-			<left>380</left>
+			<left>695</left>
 			<top>5</top>
-			<width>154</width>
-			<height>154</height>
+			<width>192.5</width>
+			<height>192.5</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
@@ -194,62 +197,62 @@
 	</include>
 
 	<include name="WidgetEmptyPosters">
-		<top>262</top>
-		<left>419</left>
-		<width>734</width>
+		<top>242</top>
+		<centerleft>50%</centerleft>
+		<width>908</width>
 		<height>275</height>
-		<control type="image">
-			<left>-121.5</left>
-			<top>5</top>
-			<width>116.5</width>
-			<height>167.5</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
-			<fadetime>800</fadetime>
-		</control> 
 		<control type="image">
 			<left>22</left>
 			<top>5</top>
-			<width>116.5</width>
-			<height>167.5</height>
+			<width>145.6</width>
+			<height>209.4</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
 		</control> 
 		<control type="image">
-			<left>166</left>
+			<left>202</left>
 			<top>5</top>
-			<width>116.5</width>
-			<height>167.5</height>
+			<width>145.6</width>
+			<height>209.4</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
 		</control>
 		<control type="image">
-			<left>310</left>
+			<left>382</left>
 			<top>5</top>
-			<width>116.5</width>
-			<height>167.5</height>
+			<width>145.6</width>
+			<height>209.4</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
 		</control>
 		<control type="image">
-			<left>454</left>
+			<left>562</left>
 			<top>5</top>
-			<width>116.5</width>
-			<height>167.5</height>
+			<width>145.6</width>
+			<height>209.4</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
-		</control>			
+		</control>		
+		<control type="image">
+			<left>742</left>
+			<top>5</top>
+			<width>145.6</width>
+			<height>209.4</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
+			<fadetime>800</fadetime>
+		</control> 
 	</include>
 
 	<include name="WidgetPosterLayout">
-		<left>274</left>
-		<top>262</top>
-		<width>736</width>
-		<height>360</height>
+		<top>242</top>		
+		<centerleft>50%</centerleft>
+		<width>908</width>
+		<height>450</height>
 		<preloaditems>3</preloaditems>
 		<focusposition>0</focusposition>
 		<onup condition="Control.IsVisible(25)">SetFocus(25)</onup>
@@ -262,33 +265,33 @@
 		<movement>4</movement>
 		<orientation>horizontal</orientation>
 		<scrolltime tween="Quadratic" easing="out">300</scrolltime>
-		<itemlayout height="200" width="144">
+		<itemlayout height="250" width="180">
 			<control type="image">
 				<left>22</left>
 				<top>5</top>
-				<width>116.5</width>
-				<height>167.5</height>
+				<width>145.6</width>
+				<height>209.4</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back.png</texture>
 			</control>
 			<control type="image">
 				<left>22</left>
 				<top>5</top>
-				<width>116.5</width>
-				<height>167.5</height>
+				<width>145.6</width>
+				<height>209.4</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="osd/widgets/poster_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
 			</control>
 			<control type="image">
-				<left>15.5</left>
+				<left>15.0</left>
 				<top>-1</top>
-				<width>128.5</width>
-				<height>178.5</height>
+				<width>157.6</width>
+				<height>220.1</height>
 				<texture background="true">osd/widgets/poster_overlay.png</texture>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 			</control>
 		</itemlayout>
-		<focusedlayout height="200" width="144">
+		<focusedlayout height="250" width="180">
 			<control type="group">
 				<animation type="Focus" reversible="false" >
 					<effect type="zoom" start="100" end="95" time="100" tween="back" easing="in" center="auto"/>
@@ -301,34 +304,34 @@
 				<control type="image">
 					<left>22</left>
 					<top>5</top>
-					<width>116.5</width>
-					<height>167.5</height>
+					<width>145.6</width>
+					<height>209.4</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 					<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back.png</texture>
 				</control>
 				<control type="image">
 					<left>22</left>
 					<top>5</top>
-					<width>116.5</width>
-					<height>167.5</height>
+					<width>145.6</width>
+					<height>209.4</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 					<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="osd/widgets/poster_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
 				</control>
 				<control type="image">
-					<left>15.5</left>
+					<left>15.0</left>
 					<top>-1</top>
-					<width>128.5</width>
-					<height>178.5</height>
+					<width>157.6</width>
+					<height>220.1</height>
 					<texture background="true">osd/widgets/poster_overlay.png</texture>
 					<aspectratio align="center" aligny="center">stretch</aspectratio>
 				</control>
 				<control type="image">
-					<left>18</left>
-					<top>2</top>
-					<width>126</width>
-					<height>173</height>
+					<left>17</left>
+					<top>0</top>
+					<width>158</width>
+					<height>216</height>
 					<aspectratio align="center" aligny="center">stretch</aspectratio>
-					<texture>osd/widgets/poster_focus.png</texture>
+					<texture border="10,10,10,10">osd/widgets/poster_focus.png</texture>
 					<animation type="Conditional" condition="![Control.IsVisible(4513) | Control.IsVisible(4514)]" reversible="false">
 						<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
 						<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
@@ -345,9 +348,9 @@
 	</include>
 
 	<include name="WidgetSquareLayout">
-		<left>275</left>
-		<top>262</top>
-		<width>734</width>
+		<top>250</top>		
+		<centerleft>50%</centerleft>
+		<width>902</width>
 		<height>360</height>
 		<preloaditems>3</preloaditems>
 		<focusposition>0</focusposition>
@@ -360,33 +363,33 @@
 		<movement>3</movement>
 		<orientation>horizontal</orientation>
 		<scrolltime tween="Quadratic" easing="out">300</scrolltime>
-		<itemlayout height="200" width="180">
+		<itemlayout height="200" width="225">
 			<control type="image">
 				<left>20</left>
 				<top>5</top>
-				<width>154</width>
-				<height>154</height>
+				<width>192.5</width>
+				<height>192.5</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
 			</control>
 			<control type="image">
 				<left>20</left>
 				<top>5</top>
-				<width>154</width>
-				<height>154</height>
+				<width>192.5</width>
+				<height>192.5</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
 			</control>
 			<control type="image">
 				<left>14</left>
 				<top>-1</top>
-				<width>165</width>
-				<height>165</height>
-				<texture background="true">osd/widgets/square_overlay.png</texture>
+				<width>203</width>
+				<height>203</height>
+				<texture border="10,10,10,10" background="true">osd/widgets/square_overlay.png</texture>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 			</control>
 		</itemlayout>
-		<focusedlayout height="200" width="180">
+		<focusedlayout height="200" width="225">
 			<control type="group">				
 				<animation type="Focus" reversible="false" >
 					<effect type="zoom" start="100" end="95" time="100" tween="back" easing="in" center="auto"/>
@@ -399,34 +402,34 @@
 				<control type="image">
 					<left>20</left>
 					<top>5</top>
-					<width>154</width>
-					<height>154</height>
+					<width>192.5</width>
+					<height>192.5</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 					<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
 				</control>
 				<control type="image">
 					<left>20</left>
 					<top>5</top>
-					<width>154</width>
-					<height>154</height>
+					<width>192.5</width>
+					<height>192.5</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
 				</control>
 				<control type="image">
 					<left>14</left>
 					<top>-1</top>
-					<width>165</width>
-					<height>165</height>
-					<texture background="true">osd/widgets/square_overlay.png</texture>
+					<width>202.5</width>
+					<height>202.5</height>
+					<texture border="10,10,10,10" background="true">osd/widgets/square_overlay.png</texture>
 					<aspectratio align="center" aligny="center">stretch</aspectratio>
 				</control>
 				<control type="image">
-					<left>17</left>
-					<top>1</top>
-					<width>160</width>
-					<height>160</height>
+					<left>15</left>
+					<top>0</top>
+					<width>200</width>
+					<height>200</height>
 					<aspectratio align="center" aligny="center">stretch</aspectratio>				
-					<texture border="3,2,3,2">osd/widgets/square_focus.png</texture>
+					<texture border="10,10,10,10">osd/widgets/square_focus.png</texture>
 					<animation type="Conditional" condition="![Control.IsVisible(4513) | Control.IsVisible(4514)]" reversible="false">
 						<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
 						<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
@@ -443,16 +446,13 @@
 	</include>
 
 	<include name="ArrowDimension">
-		<left>248</left>
+		<left>150</left>
 		<top>337</top>
-		<width>788</width>
+		<width>828</width>
 		<height>25</height>
 	</include>
 	<include name="ArrowWidth">
-		<left>764</left>
-	</include>
-	<include name="ArrowWidthSquare">
-		<left>763</left>
+		<left>956</left>
 	</include>
 
 
@@ -545,11 +545,9 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">250</param>
-				<param name="Top">445</param>
 			</include>			
 			<include name="ParamWidgetCounterLoading">
-				<param name="Container">250</param>
-				<param name="Top">451</param>
+				<param name="Container">250</param>  
 			</include>
 		</control>
 
@@ -637,11 +635,9 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">350</param>
-				<param name="Top">445</param>
 			</include>			
 			<include name="ParamWidgetCounterLoading">
-				<param name="Container">350</param>
-				<param name="Top">451</param>
+				<param name="Container">350</param>  
 			</include>
 		</control>
 
@@ -684,7 +680,7 @@
 					<visible>Container(450).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidthSquare</include>
+					<include>ArrowWidth</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -736,12 +732,10 @@
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">Skin.SetString(QuickNavWidgetMusicType,1)</onleft>
 			</control>
 			<include name="WidgetBottomLabels">
-				<param name="Container">450</param>
-				<param name="Top">432</param>
+				<param name="Container">450</param>  
 			</include>			
 			<include name="ParamWidgetCounterLoading">
-				<param name="Container">450</param>
-				<param name="Top">438</param>
+				<param name="Container">450</param>   
 			</include>
 		</control>
 
@@ -831,11 +825,9 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">750</param>
-				<param name="Top">445</param>
 			</include>				
 			<include name="ParamWidgetCounterLoading">
-				<param name="Container">750</param>
-				<param name="Top">451</param>
+				<param name="Container">750</param>  
 			</include>
 		</control>
 
@@ -922,11 +914,9 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">751</param>
-				<param name="Top">445</param>
 			</include>		
 			<include name="ParamWidgetCounterLoading">
-				<param name="Container">751</param>
-				<param name="Top">451</param>
+				<param name="Container">751</param>  
 			</include>
 		</control>
 
@@ -965,7 +955,7 @@
 					<visible>Container(550).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidthSquare</include>
+					<include>ArrowWidth</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1011,12 +1001,10 @@
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">Skin.SetString(QuickNavWidgetTuneInType,1)</onleft>
 			</control>
 			<include name="WidgetBottomLabels">
-				<param name="Container">550</param>
-				<param name="Top">432</param>
+				<param name="Container">550</param>  
 			</include>			
 			<include name="ParamWidgetCounterLoading">
-				<param name="Container">550</param>
-				<param name="Top">438</param>
+				<param name="Container">550</param>  
 			</include>
 		</control>
 
@@ -1055,7 +1043,7 @@
 					<visible>Container(653).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidthSquare</include>
+					<include>ArrowWidth</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1103,12 +1091,10 @@
 				<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">Skin.SetString(QuickNavWidgetYouTubeType,1)</onleft>
 			</control>
 			<include name="WidgetBottomLabels">
-				<param name="Container">653</param>
-				<param name="Top">432</param>
+				<param name="Container">653</param>  
 			</include>			
 			<include name="ParamWidgetCounterLoading">
-				<param name="Container">653</param>
-				<param name="Top">438</param>
+				<param name="Container">653</param>   
 			</include>
 		</control>
 
@@ -1147,7 +1133,7 @@
 					<visible>Container(551).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidthSquare</include>
+					<include>ArrowWidth</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1180,22 +1166,12 @@
 					<param name="Limit">$INFO[Skin.String(widgetgroup.1.Limit)]</param>
 				</include>
 			</control>
-			<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)" name="WidgetBottomLabels">
-				<param name="Container">551</param>
-				<param name="Top">432</param>
+			<include name="WidgetBottomLabels">
+				<param name="Container">551</param>  
 			</include>		
-			<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)" name="ParamWidgetCounterLoading">
-				<param name="Container">551</param>
-				<param name="Top">438</param>
-			</include>			
-			<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)" name="WidgetBottomLabels">
-				<param name="Container">551</param>
-				<param name="Top">445</param>
-			</include>		
-			<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)" name="ParamWidgetCounterLoading">
-				<param name="Container">551</param>
-				<param name="Top">451</param>
-			</include>
+			<include name="ParamWidgetCounterLoading">
+				<param name="Container">551</param>   
+			</include>	
 		</control>
 
 		<!-- =========== -->
@@ -1233,7 +1209,7 @@
 					<visible>Container(552).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidthSquare</include>
+					<include>ArrowWidth</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1266,22 +1242,12 @@
 					<param name="Limit">$INFO[Skin.String(widgetgroup.2.Limit)]</param>
 				</include>
 			</control>
-			<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)" name="WidgetBottomLabels">
-				<param name="Container">552</param>
-				<param name="Top">432</param>
+			<include name="WidgetBottomLabels">
+				<param name="Container">552</param>  
 			</include>		
-			<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)" name="ParamWidgetCounterLoading">
-				<param name="Container">552</param>
-				<param name="Top">438</param>
-			</include>			
-			<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)" name="WidgetBottomLabels">
-				<param name="Container">552</param>
-				<param name="Top">445</param>
-			</include>		
-			<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)" name="ParamWidgetCounterLoading">
-				<param name="Container">552</param>
-				<param name="Top">451</param>
-			</include>
+			<include name="ParamWidgetCounterLoading">
+				<param name="Container">552</param>   
+			</include>	
 		</control>
 
 		<!-- =========== -->
@@ -1319,7 +1285,7 @@
 					<visible>Container(553).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidthSquare</include>
+					<include>ArrowWidth</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1352,22 +1318,12 @@
 					<param name="Limit">$INFO[Skin.String(widgetgroup.3.Limit)]</param>
 				</include>
 			</control>
-			<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)" name="WidgetBottomLabels">
-				<param name="Container">553</param>
-				<param name="Top">432</param>
+			<include name="WidgetBottomLabels">
+				<param name="Container">553</param>  
 			</include>		
-			<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)" name="ParamWidgetCounterLoading">
-				<param name="Container">553</param>
-				<param name="Top">438</param>
-			</include>			
-			<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)" name="WidgetBottomLabels">
-				<param name="Container">553</param>
-				<param name="Top">445</param>
-			</include>		
-			<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)" name="ParamWidgetCounterLoading">
-				<param name="Container">553</param>
-				<param name="Top">451</param>
-			</include>
+			<include name="ParamWidgetCounterLoading">
+				<param name="Container">553</param>   
+			</include>	
 		</control>
 
 		<!-- =========== -->
@@ -1405,7 +1361,7 @@
 					<visible>Container(554).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidthSquare</include>
+					<include>ArrowWidth</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1438,22 +1394,12 @@
 					<param name="Limit">$INFO[Skin.String(widgetgroup.4.Limit)]</param>
 				</include>
 			</control>
-			<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)" name="WidgetBottomLabels">
-				<param name="Container">554</param>
-				<param name="Top">432</param>
+			<include name="WidgetBottomLabels">
+				<param name="Container">554</param>  
 			</include>		
-			<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)" name="ParamWidgetCounterLoading">
-				<param name="Container">554</param>
-				<param name="Top">438</param>
-			</include>			
-			<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)" name="WidgetBottomLabels">
-				<param name="Container">554</param>
-				<param name="Top">445</param>
-			</include>		
-			<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)" name="ParamWidgetCounterLoading">
-				<param name="Container">554</param>
-				<param name="Top">451</param>
-			</include>
+			<include name="ParamWidgetCounterLoading">
+				<param name="Container">554</param>   
+			</include>	
 		</control>
 
 		<!-- =========== -->
@@ -1491,7 +1437,7 @@
 					<visible>Container(650).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidthSquare</include>
+					<include>ArrowWidth</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1558,12 +1504,10 @@
 				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Custom)">Skin.SetString(RSSVideoFeedURL,NBA)</onleft>
 			</control>
 			<include name="WidgetBottomLabels">
-				<param name="Container">650</param>
-				<param name="Top">432</param>
+				<param name="Container">650</param>  
 			</include>		
 			<include name="ParamWidgetCounterLoading">
-				<param name="Container">650</param>
-				<param name="Top">438</param>
+				<param name="Container">650</param>   
 			</include>
 		</control>
 
@@ -1601,7 +1545,7 @@
 					<visible>Container(651).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidthSquare</include>
+					<include>ArrowWidth</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1626,12 +1570,10 @@
 				<content target="music">$VAR[QuickNav_WidgetListContentPlaylists]</content>
 			</control>
 			<include name="WidgetBottomLabels">
-				<param name="Container">651</param>
-				<param name="Top">432</param>
+				<param name="Container">651</param>  
 			</include>		
 			<include name="ParamWidgetCounterLoading">
-				<param name="Container">651</param>
-				<param name="Top">438</param>
+				<param name="Container">651</param>   
 			</include>
 		</control>
 
@@ -1695,11 +1637,9 @@
 			</control>
 			<include name="WidgetBottomLabels">
 				<param name="Container">652</param>
-				<param name="Top">445</param>
 			</include>			
 			<include name="ParamWidgetCounterLoading">
-				<param name="Container">652</param>
-				<param name="Top">451</param>
+				<param name="Container">652</param>  
 			</include>
 		</control>
 	</include>
