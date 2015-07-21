@@ -156,7 +156,7 @@
 	<include name="WidgetEmptyBoxes">
 		<top>250</top>
 		<centerleft>50%</centerleft>
-		<width>902</width>
+		<width>905</width>
 		<height>275</height>
 		<control type="image">
 			<left>20</left>
@@ -350,7 +350,7 @@
 	<include name="WidgetSquareLayout">
 		<top>250</top>		
 		<centerleft>50%</centerleft>
-		<width>902</width>
+		<width>905</width>
 		<height>360</height>
 		<preloaditems>3</preloaditems>
 		<focusposition>0</focusposition>
@@ -385,7 +385,7 @@
 				<top>-1</top>
 				<width>203</width>
 				<height>203</height>
-				<texture border="10,10,10,10" background="true">osd/widgets/square_overlay.png</texture>
+				<texture background="true">osd/widgets/square_overlay.png</texture>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 			</control>
 		</itemlayout>
@@ -420,7 +420,7 @@
 					<top>-1</top>
 					<width>202.5</width>
 					<height>202.5</height>
-					<texture border="10,10,10,10" background="true">osd/widgets/square_overlay.png</texture>
+					<texture background="true">osd/widgets/square_overlay.png</texture>
 					<aspectratio align="center" aligny="center">stretch</aspectratio>
 				</control>
 				<control type="image">
@@ -520,7 +520,7 @@
 			<control type="button" id="25">
 				<description>invisible control button for category</description>
 				<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
-				<onup>SetFocus(21)</onup>
+				<onup>SetFocus(21)</onup>				
 				<ondown condition="IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(90501)</ondown>
 				<ondown condition="!IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(20)</ondown>
 				<onback condition="IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(90501)</onback>
@@ -1065,7 +1065,6 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="653">	
-				<visible>System.HasAddon(plugin.audio.tuneinradio)</visible>
 				<include>WidgetSquareLayout</include>
 				<content target="video">$VAR[QuickNav_WidgetListContentYouTube]</content>
 			</control>
@@ -1154,7 +1153,6 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="551">
-				<visible>ControlGroup(9090).HasFocus</visible>	
 				<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetSquareLayout</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetPosterLayout</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.1.Source),mixed)" name="widgetgroup-customgroup">
@@ -1230,7 +1228,6 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="552">					
-				<visible>ControlGroup(9091).HasFocus</visible>	
 				<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetSquareLayout</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetPosterLayout</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.2.Source),mixed)" name="widgetgroup-customgroup">
@@ -1306,7 +1303,6 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="553">					
-				<visible>ControlGroup(9093).HasFocus</visible>	
 				<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetSquareLayout</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetPosterLayout</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.3.Source),mixed)" name="widgetgroup-customgroup">
@@ -1382,7 +1378,6 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="554">	
-				<visible>ControlGroup(9094).HasFocus</visible>	
 				<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetSquareLayout</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetPosterLayout</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.4.Source),mixed)" name="widgetgroup-customgroup">

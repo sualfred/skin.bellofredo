@@ -623,10 +623,13 @@
 		<visible>Player.HasMedia + !Window.IsActive(busydialog) + !SubString(Window(Videos).Property(TvTunesIsAlive),True) + !Window.IsActive(ProgressDialog) + !SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4)</visible>		
 		<!-- Music Cover -->
 		<control type="group" id="2555">
+			<visible>Player.HasAudio</visible>
 			<left>45</left>
 			<top>525</top>
 			<include>HomeNowPlayingCoversSlideAnimations</include>
-			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + Player.HasAudio + !Window.IsActive(virtualkeyboard)</visible>			
+			<include name="HomeNowPlayingCoversHideAnimations">
+				<param name="slide">-175</param>
+			</include>			
 			<control type="image">
 				<left>-110</left>
 				<top>-100</top>
@@ -771,7 +774,10 @@
 			<left>45</left>
 			<top>502</top>
 			<include>HomeNowPlayingCoversSlideAnimations</include>
-			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + Player.HasVideo + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster)) | SubString(Player.Folderpath,/lovefilm/)] + !VideoPlayer.Content(LiveTV) + !Window.IsActive(virtualkeyboard)</visible>
+			<include name="HomeNowPlayingCoversHideAnimations">
+				<param name="slide">-145</param>
+			</include>
+			<visible>Player.HasVideo + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster)) | SubString(Player.Folderpath,/lovefilm/)] + !VideoPlayer.Content(LiveTV)</visible>
 			<control type="image">
 				<left>-110</left>
 				<top>-100</top>
@@ -803,7 +809,7 @@
 				<left>-7</left>
 				<top>-7</top>
 				<width>145</width>
-				<height>200</height>
+				<height>199</height>
 				<texture background="true">thumbs/poster_overlay.png</texture>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 				<fadetime>800</fadetime>
@@ -834,91 +840,15 @@
 				</animation>				
 			</control>
 		</control>
-		<!-- Videos Cover -->
-		<control type="group" id="27">
-			<left>45</left>
-			<top>527</top>
-			<include>HomeNowPlayingCoversSlideAnimations</include>
-			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + Player.HasVideo + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !SubString(Player.Folderpath,/lovefilm/) + !VideoPlayer.Content(LiveTV) + !Window.IsActive(virtualkeyboard)</visible>
-			<control type="image">
-				<left>-110</left>
-				<top>-100</top>
-				<width>460</width>
-				<height>400</height>
-				<aspectratio align="center" aligny="center">stretch</aspectratio>
-				<texture background="true">views/list/shine.png</texture>
-				<animation effect="fade" end="40" reversible="false" condition="true" time="0">Conditional</animation>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>240</width>
-				<height>160</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
-				<fadetime>800</fadetime>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>240</width>
-				<height>160</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-				<texture background="true" diffuse="thumbs/video_diffuse.png">$INFO[VideoPlayer.Cover]</texture>
-				<fadetime>800</fadetime>
-				<visible>!VideoPlayer.HasMenu</visible>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>240</width>
-				<height>160</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-				<texture background="true" fallback="thumbs/fallback_disc_tp.png" diffuse="thumbs/video_diffuse.png">$VAR[VideoPlayerThumb]</texture>
-				<fadetime>800</fadetime>
-				<visible>VideoPlayer.HasMenu</visible>
-			</control>
-			<control type="image">
-				<left>-6</left>
-				<top>-6</top>
-				<width>252</width>
-				<height>172</height>
-				<aspectratio align="center" aligny="center">stretch</aspectratio>
-				<texture background="true">thumbs/video_overlay.png</texture>
-				<fadetime>800</fadetime>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>162</top>
-				<width>240</width>
-				<height>160</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-				<texture background="true" fallback="thumbs/fallback_episode.png" flipy="true" diffuse="thumbs/video_reflection_diffuse.png">$INFO[VideoPlayer.Cover]</texture>
-				<fadetime>800</fadetime>
-				<colordiffuse>A0ffffff</colordiffuse>
-			</control>			 
-			<control type="image">
-				<description>paused indicator</description>
-				<left>-1</left>
-				<top>-1</top>
-				<width>241</width>
-				<height>161</height>
-				<texture background="true" diffuse="thumbs/video_diffuse.png">osd/paused-overlay.png</texture>
-				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-				<animation type="conditional" condition="!Player.Paused" reversible="false">
-					<effect type="fade" start="50" end="0" time="300" />
-				</animation>	
-				<animation type="conditional" condition="Player.Paused" reversible="false">
-					<effect type="fade" start="0" end="50" time="300" />
-				</animation>				
-			</control>
-		</control>
 		<!-- LiveTV Cover -->
 		<control type="group" id="28">
 			<left>45</left>
 			<top>527</top>
 			<include>HomeNowPlayingCoversSlideAnimations</include>
-			<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(Favourites)] + VideoPlayer.Content(LiveTV) + !Window.IsActive(virtualkeyboard)</visible>	
+			<include name="HomeNowPlayingCoversHideAnimations">
+				<param name="slide">-175</param>
+			</include>
+			<visible>Player.HasVideo + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !SubString(Player.Folderpath,/lovefilm/)</visible>	
 			<control type="image">
 				<left>-110</left>
 				<top>-100</top>
@@ -945,6 +875,17 @@
 				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
 				<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$VAR[VideoPlayerThumb]</texture>
 				<fadetime>800</fadetime>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>160</width>
+				<height>160</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_square.png" diffuse="thumbs/music_diffuse.png">$VAR[VideoPlayerThumb]</texture>
+				<fadetime>800</fadetime>
+				<visible>!VideoPlayer.Content(LiveTV)</visible>
 			</control>
 			<control type="image">
 				<left>-7</left>
@@ -964,6 +905,18 @@
 				<texture background="true" fallback="thumbs/fallback_square.png" flipy="true" diffuse="thumbs/music_reflection_diffuse.png">thumbs/thumb_back.png</texture>
 				<fadetime>800</fadetime>
 				<colordiffuse>a0ffffff</colordiffuse>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>162</top>
+				<width>160</width>
+				<height>160</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_square.png" flipy="true" diffuse="thumbs/music_reflection_diffuse.png">$VAR[VideoPlayerThumb]</texture>
+				<fadetime>800</fadetime>
+				<colordiffuse>a0ffffff</colordiffuse>
+				<visible>!VideoPlayer.Content(LiveTV)</visible>
 			</control>
 			<control type="image">
 				<left>0</left>
@@ -998,8 +951,10 @@
 			<!-- Movies and episodes -->			
 			<control type="grouplist">
 				<include>HomeNowPlayingCoversSlideAnimations</include>
-				<animation effect="slide" start="-145,0" end="0,0" time="260" tween="sine" easing="inout" condition="!Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(virtualkeyboard)">Conditional</animation>
-				<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + Player.HasVideo + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster)) | SubString(Player.Folderpath,/lovefilm/)] + !VideoPlayer.Content(LiveTV)</visible>	
+				<include name="HomeNowPlayingCoversSlideTextAnimations">
+					<param name="slide">-145</param>
+				</include>
+				<visible>Player.HasVideo + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster)) | SubString(Player.Folderpath,/lovefilm/)] + !VideoPlayer.Content(LiveTV)</visible>	
 				<left>145</left>
 				<top>0</top>
 				<width>1000</width>
@@ -1033,7 +988,7 @@
 						<textcolor>blue</textcolor>
 						<shadowcolor>77000000</shadowcolor>
 					</control>
-					<control type="fadelabel">
+					<control type="label">
 						<left>0</left>
 						<top>20</top>
 						<width>480</width>
@@ -1050,8 +1005,10 @@
 			<!-- Music -->	
 			<control type="grouplist">
 				<include>HomeNowPlayingCoversSlideAnimations</include>
-				<animation effect="slide" start="-175,0" end="0,0" time="260" tween="sine" easing="inout" condition="!Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(virtualkeyboard)">Conditional</animation>
-				<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + Player.HasAudio</visible>	
+				<include name="HomeNowPlayingCoversSlideTextAnimations">
+					<param name="slide">-175</param>
+				</include>
+				<visible>Player.HasAudio</visible>	
 				<left>175</left>
 				<top>0</top>
 				<width>1000</width>
@@ -1140,9 +1097,11 @@
 			<!-- videos -->			
 			<control type="grouplist">
 				<include>HomeNowPlayingCoversSlideAnimations</include>
-				<animation effect="slide" start="-255,0" end="0,0" time="260" tween="sine" easing="inout" condition="!Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(virtualkeyboard)">Conditional</animation>
-				<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + Player.HasVideo + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !SubString(Player.Folderpath,/lovefilm/) + !VideoPlayer.Content(LiveTV)</visible>
-				<left>255</left>
+				<include name="HomeNowPlayingCoversSlideTextAnimations">
+					<param name="slide">-175</param>
+				</include>
+				<visible>Player.HasVideo + IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + !SubString(Player.Folderpath,/lovefilm/) + !VideoPlayer.Content(LiveTV)</visible>
+				<left>175</left>
 				<top>0</top>
 				<width>1000</width>
 				<height>60</height>
@@ -1192,8 +1151,10 @@
 			<!-- live tv -->			
 			<control type="grouplist">
 				<include>HomeNowPlayingCoversSlideAnimations</include>
-				<animation effect="slide" start="-175,0" end="0,0" time="260" tween="sine" easing="inout" condition="!Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(virtualkeyboard)">Conditional</animation>
-				<visible>![Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | [Window.IsActive(ContextMenu) + [Window.IsVisible(Favourites) | Window.IsVisible(playercontrols)]] | Window.IsActive(script-globalsearch-main.xml)] + VideoPlayer.Content(LiveTV)</visible>	
+				<include name="HomeNowPlayingCoversSlideTextAnimations">
+					<param name="slide">-175</param>
+				</include>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
 				<left>175</left>
 				<top>0</top>
 				<width>1000</width>
@@ -1279,7 +1240,6 @@
 					</control>
 				</control>
 			</control>
-
 		</control>
 	</control>
 </include>
@@ -2167,56 +2127,56 @@
 <!--sandmann-->
 <variable name="QuickNav_WidgetListContentAmazonDB">
 	<!--watchlist movies-->
-	<value condition="ControlGroup(9073).HasFocus + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),1)">plugin://plugin.video.amazon/?url=&lt;%2Fgp%2Faw%2Fwl%2F%3Ffilter%3Dmovie&gt;&amp;mode=&lt;appfeed&gt;&amp;sitemode=&lt;ListCont&gt;&amp;name=&lt;Filme&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),1)">plugin://plugin.video.amazon/?url=&lt;%2Fgp%2Faw%2Fwl%2F%3Ffilter%3Dmovie&gt;&amp;mode=&lt;appfeed&gt;&amp;sitemode=&lt;ListCont&gt;&amp;name=&lt;Filme&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
 	<!--watchlist tvshows-->
-	<value condition="ControlGroup(9073).HasFocus + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),2)">plugin://plugin.video.amazon/?url=&lt;%2Fgp%2Faw%2Fwl%2F%3Ffilter%3Dtv&gt;&amp;mode=&lt;appfeed&gt;&amp;sitemode=&lt;ListCont&gt;&amp;name=&lt;Serien&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),2)">plugin://plugin.video.amazon/?url=&lt;%2Fgp%2Faw%2Fwl%2F%3Ffilter%3Dtv&gt;&amp;mode=&lt;appfeed&gt;&amp;sitemode=&lt;ListCont&gt;&amp;name=&lt;Serien&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
 	<!-- new movies -->
-	<value condition="ControlGroup(9073).HasFocus + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),3)">plugin://plugin.video.amazon/?url=&lt;recent&gt;&amp;mode=&lt;listmovie&gt;&amp;sitemode=&lt;LIST_MOVIES_SORTED&gt;&amp;name=&lt;Recently+Added&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),3)">plugin://plugin.video.amazon/?url=&lt;recent&gt;&amp;mode=&lt;listmovie&gt;&amp;sitemode=&lt;LIST_MOVIES_SORTED&gt;&amp;name=&lt;Recently+Added&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
 	<!-- new shows -->
-	<value condition="ControlGroup(9073).HasFocus + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),4)">plugin://plugin.video.amazon/?url=&lt;recent&gt;&amp;mode=&lt;listtv&gt;&amp;sitemode=&lt;LIST_TVSEASON_SORTED&gt;&amp;name=&lt;Recently+Added&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),4)">plugin://plugin.video.amazon/?url=&lt;recent&gt;&amp;mode=&lt;listtv&gt;&amp;sitemode=&lt;LIST_TVSEASON_SORTED&gt;&amp;name=&lt;Recently+Added&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
 	<!-- popular movies -->
-	<value condition="ControlGroup(9073).HasFocus + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),5)">plugin://plugin.video.amazon/?url=&lt;popularity&gt;&amp;mode=&lt;listmovie&gt;&amp;sitemode=&lt;LIST_MOVIES_SORTED&gt;&amp;name=&lt;Popular&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),5)">plugin://plugin.video.amazon/?url=&lt;popularity&gt;&amp;mode=&lt;listmovie&gt;&amp;sitemode=&lt;LIST_MOVIES_SORTED&gt;&amp;name=&lt;Popular&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
 	<!-- popular tv shows -->
-	<value condition="ControlGroup(9073).HasFocus + StringCompare(Skin.String(QuickNavWidgetAmazonDBType),6)">plugin://plugin.video.amazon/?url=&lt;popularity&gt;&amp;mode=&lt;listtv&gt;&amp;sitemode=&lt;LIST_TVSHOWS_SORTED&gt;&amp;name=&lt;Popular&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),6)">plugin://plugin.video.amazon/?url=&lt;popularity&gt;&amp;mode=&lt;listtv&gt;&amp;sitemode=&lt;LIST_TVSHOWS_SORTED&gt;&amp;name=&lt;Popular&gt;&amp;page=&lt;1&gt;&amp;opt=&lt;&gt;</value>
 </variable>
 
 <!-- addonscriptor-->
 <variable name="QuickNav_WidgetListContentAmazon">
 	<!--watchlist movies -->
-	<value condition="ControlGroup(9074).HasFocus + StringCompare(Skin.String(QuickNavWidgetAmazonType),1)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fvideo%2Fwatchlist%2Fmovie%2F%3Fie%3DUTF8%26show%3Dall%26sort%3DDATE_ADDED_DESC&amp;mode=listWatchList&amp;thumb=&amp;videoType=</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),1)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fvideo%2Fwatchlist%2Fmovie%2F%3Fie%3DUTF8%26show%3Dall%26sort%3DDATE_ADDED_DESC&amp;mode=listWatchList&amp;thumb=&amp;videoType=</value>
 	<!--watchlist shows -->
-	<value condition="ControlGroup(9074).HasFocus + StringCompare(Skin.String(QuickNavWidgetAmazonType),2)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fvideo%2Fwatchlist%2Ftv%2F%3Fie%3DUTF8%26show%3Dall%26sort%3DDATE_ADDED_DESC&amp;mode=listWatchList&amp;thumb=&amp;videoType=</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),2)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fvideo%2Fwatchlist%2Ftv%2F%3Fie%3DUTF8%26show%3Dall%26sort%3DDATE_ADDED_DESC&amp;mode=listWatchList&amp;thumb=&amp;videoType=</value>
 	<!-- new movies -->
-	<value condition="ControlGroup(9074).HasFocus + StringCompare(Skin.String(QuickNavWidgetAmazonType),3)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3279204031%252Cn%253A%213010076031%252Cn%253A3356018031%26sort%3Ddate-desc-rank&amp;mode=listMovies&amp;thumb=&amp;videoType=</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),3)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3279204031%252Cn%253A%213010076031%252Cn%253A3356018031%26sort%3Ddate-desc-rank&amp;mode=listMovies&amp;thumb=&amp;videoType=</value>
 	<!-- new shows -->
-	<value condition="ControlGroup(9074).HasFocus + StringCompare(Skin.String(QuickNavWidgetAmazonType),4)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3279204031%252Cn%253A3010075031%252Cn%253A3015916031%26sort%3Ddate-desc-rank&amp;mode=listShows&amp;thumb=&amp;videoType=</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),4)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3279204031%252Cn%253A3010075031%252Cn%253A3015916031%26sort%3Ddate-desc-rank&amp;mode=listShows&amp;thumb=&amp;videoType=</value>
 	<!-- popular movies -->
-	<value condition="ControlGroup(9074).HasFocus + StringCompare(Skin.String(QuickNavWidgetAmazonType),5)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3010075031%252Cn%253A3356018031%26sort%3Dpopularity-rank&amp;mode=listMovies&amp;thumb=&amp;videoType=</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),5)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3010075031%252Cn%253A3356018031%26sort%3Dpopularity-rank&amp;mode=listMovies&amp;thumb=&amp;videoType=</value>
 	<!-- popular shows -->
-	<value condition="ControlGroup(9074).HasFocus + StringCompare(Skin.String(QuickNavWidgetAmazonType),6)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3010075031%252Cn%253A3356019031%26sort%3Dpopularity-rank&amp;mode=listShows&amp;thumb=&amp;videoType=</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),6)">plugin://plugin.video.prime_instant/?url=http%3A%2F%2Fwww.amazon.de%2Fgp%2Fsearch%2Fajax%2F%3F_encoding%3DUTF8%26rh%3Dn%253A3010075031%252Cn%253A3356019031%26sort%3Dpopularity-rank&amp;mode=listShows&amp;thumb=&amp;videoType=</value>
 </variable>
 
 <variable name="QuickNav_WidgetListContentYouTube">
-	<value condition="ControlGroup(9098).HasFocus + stringcompare(Skin.String(QuickNavWidgetYouTubeType),1)">plugin://plugin.video.youtube/special/popular_right_now/</value>
-	<value condition="ControlGroup(9098).HasFocus + stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">plugin://plugin.video.youtube/special/new_uploaded_videos_tv/</value>
-	<value condition="ControlGroup(9098).HasFocus + stringcompare(Skin.String(QuickNavWidgetYouTubeType),3)">plugin://plugin.video.youtube/channel/mine/</value>
-	<value condition="ControlGroup(9098).HasFocus + stringcompare(Skin.String(QuickNavWidgetYouTubeType),4)">plugin://plugin.video.youtube/subscriptions/list/</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),1)">plugin://plugin.video.youtube/special/popular_right_now/</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">plugin://plugin.video.youtube/special/new_uploaded_videos_tv/</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),3)">plugin://plugin.video.youtube/channel/mine/</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),4)">plugin://plugin.video.youtube/subscriptions/list/</value>
 </variable>
 
 <variable name="RSSVideoFeedURL">
-	<value condition="ControlGroup(9099).HasFocus + stringcompare(Skin.String(RSSVideoFeedURL),Euronews)">Euronews</value>
-	<value condition="ControlGroup(9099).HasFocus + stringcompare(Skin.String(RSSVideoFeedURL),BBC News)">bbcnews</value>
-	<value condition="ControlGroup(9099).HasFocus + stringcompare(Skin.String(RSSVideoFeedURL),Vice)">vice</value>
-	<value condition="ControlGroup(9099).HasFocus + stringcompare(Skin.String(RSSVideoFeedURL),TMZ)">TMZ</value>
-	<value condition="ControlGroup(9099).HasFocus + stringcompare(Skin.String(RSSVideoFeedURL),The Ellen Show)">TheEllenShow</value>
-	<value condition="ControlGroup(9099).HasFocus + stringcompare(Skin.String(RSSVideoFeedURL),TEDx Talks)">TEDxTalks</value>
-	<value condition="ControlGroup(9099).HasFocus + stringcompare(Skin.String(RSSVideoFeedURL),VH1)">VH1</value>
-	<value condition="ControlGroup(9099).HasFocus + stringcompare(Skin.String(RSSVideoFeedURL),VEVO)">vevo</value>
-	<value condition="ControlGroup(9099).HasFocus + stringcompare(Skin.String(RSSVideoFeedURL),Comedy Central)">comedycentral</value>
-	<value condition="ControlGroup(9099).HasFocus + stringcompare(Skin.String(RSSVideoFeedURL),Funny Or Die)">FunnyorDie</value>
-	<value condition="ControlGroup(9099).HasFocus + stringcompare(Skin.String(RSSVideoFeedURL),GameTrailers)">gametrailers</value>
-	<value condition="ControlGroup(9099).HasFocus + stringcompare(Skin.String(RSSVideoFeedURL),NBA)">NBA</value>
-	<value condition="ControlGroup(9099).HasFocus + stringcompare(Skin.String(RSSVideoFeedURL),Custom)">$INFO[Skin.String(SearchStringURL)]</value>
+	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),Euronews)">Euronews</value>
+	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),BBC News)">bbcnews</value>
+	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),Vice)">vice</value>
+	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),TMZ)">TMZ</value>
+	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),The Ellen Show)">TheEllenShow</value>
+	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),TEDx Talks)">TEDxTalks</value>
+	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),VH1)">VH1</value>
+	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),VEVO)">vevo</value>
+	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),Comedy Central)">comedycentral</value>
+	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),Funny Or Die)">FunnyorDie</value>
+	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),GameTrailers)">gametrailers</value>
+	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),NBA)">NBA</value>
+	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),Custom)">$INFO[Skin.String(SearchStringURL)]</value>
 </variable>
 <variable name="RSSVideoFeedName">
 	<value condition="stringcompare(Skin.String(RSSVideoFeedURL),Euronews)">Euronews</value>
@@ -2235,66 +2195,66 @@
 </variable>
 
 <variable name="QuickNavSettingsMovieName">
-	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),1)">[CAPITALIZE]$LOCALIZE[31241][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),2)">[CAPITALIZE]$LOCALIZE[342] $LOCALIZE[575][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),3)">[CAPITALIZE]$LOCALIZE[31247][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">[CAPITALIZE]$LOCALIZE[31256][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">[CAPITALIZE]$LOCALIZE[31257][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),6)">[CAPITALIZE]$LOCALIZE[31269][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),7)">[CAPITALIZE]$LOCALIZE[31263][/CAPITALIZE]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),1)">$LOCALIZE[31241]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),2)">$LOCALIZE[31260]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),3)">$LOCALIZE[31247]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">$LOCALIZE[31256]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">$LOCALIZE[31257]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),6)">$LOCALIZE[31269]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),7)">$LOCALIZE[31263]</value>
 </variable>
 <variable name="QuickNavSettingsTVShowName">
-	<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">[CAPITALIZE]$LOCALIZE[31242][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),2)">[CAPITALIZE]$LOCALIZE[31002] $LOCALIZE[575][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),3)">[CAPITALIZE]$LOCALIZE[31248][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),4)">[CAPITALIZE]$LOCALIZE[31258][/CAPITALIZE]</value>		
-	<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),5)">[CAPITALIZE]$LOCALIZE[31270][/CAPITALIZE]</value>		
+	<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">$LOCALIZE[31242]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),2)">$LOCALIZE[31261]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),3)">$LOCALIZE[31248]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),4)">$LOCALIZE[31258]</value>		
+	<value condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),5)">$LOCALIZE[31270]</value>		
 </variable>
 <variable name="QuickNavSettingsMusicName">
-	<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),1)">[CAPITALIZE]$LOCALIZE[31243][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">[CAPITALIZE]$LOCALIZE[2] $LOCALIZE[575][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),3)">[CAPITALIZE]$LOCALIZE[31249][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">[CAPITALIZE]$LOCALIZE[31259][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5)">[CAPITALIZE]$LOCALIZE[517][/CAPITALIZE]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),1)">$LOCALIZE[31243]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">$LOCALIZE[31262]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),3)">$LOCALIZE[31249]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">$LOCALIZE[31259]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5)">$LOCALIZE[517]</value>
 </variable>
 <variable name="QuickNavSettingsTuneInName">
-	<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">[CAPITALIZE]$LOCALIZE[31286][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">[CAPITALIZE]$LOCALIZE[31287][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">[CAPITALIZE]$LOCALIZE[31292][/CAPITALIZE]</value>		
+	<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">$LOCALIZE[31286]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">$LOCALIZE[31287]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">$LOCALIZE[31292]</value>		
 </variable>
 <variable name="QuickNavSettingsYouTubeName">
-	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),1)">[CAPITALIZE]$LOCALIZE[31112][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">[CAPITALIZE]$LOCALIZE[31113][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),3)">[CAPITALIZE]$LOCALIZE[31114][/CAPITALIZE]</value>
-	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),4)">[CAPITALIZE]$LOCALIZE[31115][/CAPITALIZE]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),1)">$LOCALIZE[31112]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">$LOCALIZE[31113]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),3)">$LOCALIZE[31114]</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),4)">$LOCALIZE[31115]</value>
 </variable>
 <variable name="QuickNavSettingsAmazonDBName">
 	<!--watchlist movies-->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),1)">[CAPITALIZE]$LOCALIZE[31055] $LOCALIZE[36901][/CAPITALIZE]</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),1)">$LOCALIZE[31055] $LOCALIZE[36901]</value>
 	<!--watchlist tvshows-->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),2)">[CAPITALIZE]$LOCALIZE[31055] $LOCALIZE[36903][/CAPITALIZE]</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),2)">$LOCALIZE[31055] $LOCALIZE[36903]</value>
 	<!-- new movies -->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),3)">[CAPITALIZE]$LOCALIZE[31241][/CAPITALIZE]</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),3)">$LOCALIZE[31241]</value>
 	<!-- new shows -->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),4)">[CAPITALIZE]$LOCALIZE[31242][/CAPITALIZE]</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),4)">$LOCALIZE[31242]</value>
 	<!-- popular movies -->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),5)">[CAPITALIZE]$LOCALIZE[31257][/CAPITALIZE]</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),5)">$LOCALIZE[31257]</value>
 	<!-- popular tv shows -->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),6)">[CAPITALIZE]$LOCALIZE[31258][/CAPITALIZE]</value>	
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonDBType),6)">$LOCALIZE[31258]</value>	
 </variable>
 <variable name="QuickNavSettingsAmazonName">
 	<!--watchlist movies-->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),1)">[CAPITALIZE]$LOCALIZE[31055] $LOCALIZE[36901][/CAPITALIZE]</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),1)">$LOCALIZE[31055] $LOCALIZE[36901]</value>
 	<!--watchlist tvshows-->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),2)">[CAPITALIZE]$LOCALIZE[31055] $LOCALIZE[36903][/CAPITALIZE]</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),2)">$LOCALIZE[31055] $LOCALIZE[36903]</value>
 	<!-- new movies -->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),3)">[CAPITALIZE]$LOCALIZE[31241][/CAPITALIZE]</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),3)">$LOCALIZE[31241]</value>
 	<!-- new shows -->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),4)">[CAPITALIZE]$LOCALIZE[31242][/CAPITALIZE]</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),4)">$LOCALIZE[31242]</value>
 	<!-- popular movies -->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),5)">[CAPITALIZE]$LOCALIZE[31257][/CAPITALIZE]</value>
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),5)">$LOCALIZE[31257]</value>
 	<!-- popular tv shows -->
-	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),6)">[CAPITALIZE]$LOCALIZE[31258][/CAPITALIZE]</value>	
+	<value condition="StringCompare(Skin.String(QuickNavWidgetAmazonType),6)">$LOCALIZE[31258]</value>	
 </variable>
 
 

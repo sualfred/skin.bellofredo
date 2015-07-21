@@ -1109,7 +1109,7 @@ msgid "My IMDb Top250 Movies"
 msgstr ""
 
 msgctxt "#31270"
-msgid "Recently watched episodes"
+msgid "Recently Watched Episodes"
 msgstr ""
 
 msgctxt "#31271"

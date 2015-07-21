@@ -130,6 +130,19 @@
 		</animation>
 	</include>
 
+	<include name="HomeNowPlayingCoversHideAnimations">
+		<animation type="Conditional" condition="![Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)] | Window.IsActive(shutdownmenu) | Window.IsActive(favourites) | Window.IsActive(virtualkeyboard) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(contextmenu) | Window.IsActive(playercontrols)" reversible="true">
+			<effect type="fade" start="100" end="0" time="250" tween="sine" easing="inout" />
+			<effect type="slide" start="0,0" end="$PARAM[slide],0" time="250" tween="sine" easing="in" />
+		</animation>
+	</include>
+	<include name="HomeNowPlayingCoversSlideTextAnimations">
+		<animation type="Conditional" condition="![Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)] | Window.IsActive(shutdownmenu) | Window.IsActive(favourites) | Window.IsActive(virtualkeyboard) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(contextmenu) | Window.IsActive(playercontrols)" reversible="true">
+			<effect type="slide" start="0,0" end="$PARAM[slide],0" time="250" tween="sine" easing="in" />
+		</animation>
+	</include>
+
+
 	<include name="DownUpAnimation">
 		<animation type="WindowOpen" reversible="false">
 			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="in"  />
