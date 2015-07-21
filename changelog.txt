@@ -1,8 +1,9 @@
 [B][COLOR=FF56ADDA]v4.5.6[/COLOR][/B]
+• Added: Option to open the widget content in the library view by clicking on the headline of the widgets (except custom and playlists widgets)
 • Changed: No more forced capitalized widget headlines
 • Changed: Changed 16:9 Now Playing thumb to a square layout (width reasons)
 • Changed: Visiblity and animations of the Now Playing covers
-• Fixed: Now Playing scrolling
+• Fixed: Now Playing scrolling labels
 • Fixed: Widget visible/hidden animations
 • Fixed: Square widget position
 

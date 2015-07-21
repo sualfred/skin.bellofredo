@@ -3,6 +3,7 @@
 # Addon id: skin.bellofredo
 # Addon Provider: Sualfred
 # Translators:
+# Translators:
 # sualfred <su4lfred@gmail.com>, 2015
 # sualfred <su4lfred@gmail.com>, 2015
 msgid ""
@@ -10,9 +11,9 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-07-20 09:58+0000\n"
+"PO-Revision-Date: 2015-07-21 09:16+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
-"Language-Team: German (http://www.transifex.com/p/bello-fredo/language/de/)\n"
+"Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1946,3 +1947,7 @@ msgstr "Bearbeite Hauptmenü"
 msgctxt "#31472"
 msgid "Banner Art"
 msgstr "Banner Art"
+
+msgctxt "#31473"
+msgid "[COLOR=invalid]Error: No valid path[/COLOR]"
+msgstr "[COLOR=invalid]Fehler: Pfad nicht gültig[/COLOR]"
