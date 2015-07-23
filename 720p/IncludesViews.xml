@@ -450,7 +450,7 @@
 
 <variable name="ClassicSlideMusicPlot">
   <value condition="Container.Content(Artists)">$INFO[ListItem.Property(Artist_Description)]</value>
-  <value condition="Container.Content(Albums) + !IsEmpty(ListItem.Property(Album_Description)">[COLOR=blue]$INFO[ListItem.Year]$INFO[Window(home).Property(Album.Songs.Count),  •  , $LOCALIZE[182]  •  ]$INFO[Window(home).Property(Album.Songs.Duration),, $LOCALIZE[180]][/COLOR]$INFO[ListItem.Property(Album_Description),  |  ]</value>
+  <value condition="Container.Content(Albums) + !IsEmpty(ListItem.Property(Album_Description))">[COLOR=blue]$INFO[ListItem.Year]$INFO[Window(home).Property(Album.Songs.Count),  •  , $LOCALIZE[182]  •  ]$INFO[Window(home).Property(Album.Songs.Duration),, $LOCALIZE[180]][/COLOR]$INFO[ListItem.Property(Album_Description),  |  ]</value>
   <value condition="Container.Content(Songs)">[COLOR=blue]$INFO[ListItem.TrackNumber,$LOCALIZE[554] ,  •  ]$INFO[ListItem.Duration][/COLOR]$INFO[ListItem.Comment,  |  ]</value>
   <value condition="Container.Content(Addons)">$INFO[ListItem.Property(Addon.Description)]</value>
 </variable>

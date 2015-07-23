@@ -10,6 +10,7 @@
 			<control type="group">
 				<include>HomeSlideAnimations</include>
 				<control type="image">
+					<top>-20</top>
 					<include>FullscreenDimensions</include>			
 					<texture background="true">views/list/shine.png</texture>
 					<visible>!Skin.HasTheme(Original-Bello) + !Window.IsActive(playercontrols)</visible>
@@ -104,13 +105,17 @@
 					</itemlayout>
 					<focusedlayout width="500" condition="!StringCompare(Skin.String(MainMenuStyle),3icons) + !StringCompare(Skin.String(MainMenuStyle),5icons)">	
 						<control type="group">
-							<animation type="Focus" reversible="false" condition="Container(20).OnPrevious">
-								<effect type="fade" start="33" end="100" time="700"/>
-								
+							<animation type="Focus" reversible="false" condition="Container(20).OnNext | Container(20).OnPrevious">
+								<effect type="fade" start="35" end="100" time="700"/>
+								<effect type="zoom" center="100,217" easing="inout" effect="zoom" end="100" start="66" time="300" tween="sine"/>
 							</animation>
-							<animation type="Focus" reversible="false" condition="Container(20).OnNext">
-								<effect type="fade" start="33" end="100" time="700" />
-								
+							<animation type="UnFocus" reversible="false" condition="Container(20).OnNext | Container(20).OnPrevious">
+								<effect type="fade" start="100" end="35" time="170"/>
+								<effect type="zoom" center="100,217" easing="inout" effect="zoom" end="66" start="100" time="300" tween="sine"/>
+							</animation>
+							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
+								<effect type="zoom" start="66" end="100" time="250" tween="sine" easing="inout" center="300,217"  />
+								<effect type="fade" start="35" end="100" time="250" tween="sine" />
 							</animation>
 							<control type="label">
 								<left>-15</left>
@@ -121,10 +126,6 @@
 								<font>FontSize_100</font>
 								<align>center</align>
 								<label>$INFO[ListItem.Label]</label>
-								<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
-									<effect type="zoom" start="80" end="100" time="200" tween="sine" easing="out" center="300,200" />
-									<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
-								</animation>
 							</control>			
 							<control type="fadelabel">
 								<visible>Control.HasFocus(20) + !Skin.HasSetting(HideLibraryStats) + !IsEmpty(Control.GetLabel(17))</visible>
@@ -199,11 +200,17 @@
 					</itemlayout>
 					<focusedlayout width="455" condition="StringCompare(Skin.String(MainMenuStyle),3icons)">
 						<control type="group">
-							<animation type="Focus" reversible="false" condition="Container(20).OnPrevious">
-								<effect type="fade" start="33" end="100" time="700"/>
+							<animation type="Focus" reversible="false" condition="Container(20).OnNext | Container(20).OnPrevious">
+								<effect type="fade" start="35" end="100" time="700"/>
+								<effect type="zoom" center="250,228" easing="inout" effect="zoom" end="100" start="66" time="300" tween="sine"/>
 							</animation>
-							<animation type="Focus" reversible="false" condition="Container(20).OnNext">
-								<effect type="fade" start="33" end="100" time="700"/>
+							<animation type="UnFocus" reversible="false" condition="Container(20).OnNext | Container(20).OnPrevious">
+								<effect type="fade" start="100" end="35" time="170"/>
+								<effect type="zoom" center="200,228" easing="inout" effect="zoom" end="66" start="100" time="300" tween="sine"/>
+							</animation>
+							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
+								<effect type="zoom" start="66" end="100" time="200" tween="sine" easing="out" center="275,228"  />
+								<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
 							</animation>
 							<control type="image">
 								<left>188</left>
@@ -214,85 +221,79 @@
 								<aligny>bottom</aligny>
 								<texture diffuse="icons/icon_diffuse_big.png">$INFO[ListItem.Icon]</texture>
 								<aspectratio align="center" aligny="bottom">keep</aspectratio>
-								<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
-									<effect type="zoom" start="66" end="100" time="200" tween="sine" easing="out" center="auto" />
-									<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
-								</animation>
 							</control>
-							<control type="label">							
-								<visible>Control.HasFocus(20) + !Skin.HasSetting(HideIconMenuLabels)</visible>
-								<include condition="!Skin.HasSetting(HideIconMenuLabels)">FocusVisibleFadeEffect</include>
-								<left>10</left>
-								<top>325</top>
-								<width>530</width>
-								<textcolor>ddwhite</textcolor>
-								<shadowcolor>55000000</shadowcolor>
-								<font>FontSize_24</font>
-								<align>center</align>
-								<label>$INFO[ListItem.Label]</label>
-								<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
-									<effect type="zoom" start="66" end="100" time="200" tween="sine" easing="out" center="250,285" />
-									<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
+
+							<control type="group">								
+								<animation type="UnFocus" reversible="false" condition="!Control.HasFocus(23) + !ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
+									<effect type="fade" start="100" end="0" time="0"/>								
 								</animation>
-							</control>		
-							<control type="fadelabel">							
-								<animation effect="slide" start="0,0" end="0,-24" time="0" condition="Skin.HasSetting(HideIconMenuLabels)">Conditional</animation>
-								<visible>Control.HasFocus(20) + !Skin.HasSetting(HideLibraryStats) + !IsEmpty(Control.GetLabel(17))</visible>
-								<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
-									<effect type="zoom" start="66" end="100" time="200" tween="sine" easing="out" center="250,285" />
-									<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
-								</animation>
-								<include>FocusVisibleFadeEffect</include>
-								<left>10</left>
-								<top>355</top>		
-								<width>530</width>
-								<height>18</height>
-								<textcolor>77white</textcolor>
-								<shadowcolor>55000000</shadowcolor>
-								<font>FontSize_16</font>
-								<align>center</align>			
-								<label>$INFO[Control.GetLabel(17)]</label>						
-								<label>$INFO[Control.GetLabel(18)]</label>						
-								<label>$INFO[Control.GetLabel(19)]</label>
-								<scroll>false</scroll>
-								<scrollout>false</scrollout>
-								<scrollspeed>100</scrollspeed>
-								<pauseatend>4000</pauseatend>						
-							</control>
-							<control type="grouplist">							
-								<animation effect="slide" start="0,0" end="0,-24" time="0" condition="Skin.HasSetting(HideIconMenuLabels)">Conditional</animation>
-								<animation effect="slide" time="0" start="0,0" end="0,24" condition="Control.IsVisible(16) + !IsEmpty(Control.GetLabel(17))">Conditional</animation>
-								<visible>Control.HasFocus(20) + !Container(20).OnNext + !Container(20).OnPrevious</visible>
-								<itemgap>0</itemgap>
-								<orientation>horizontal</orientation>
-								<width>530</width>
-								<height>21</height>
-								<left>10</left>	
-								<top>360</top>							
-								<align>center</align>
-								<animation effect="fade" time="250" delay="50">Visible</animation>
-								<animation effect="fade" time="0">Hidden</animation>
-								<control type="image" id="201">									
-									<width>21</width>
+								<control type="label">							
+									<visible>Control.HasFocus(20) + !Skin.HasSetting(HideIconMenuLabels)</visible>
+									<include condition="!Skin.HasSetting(HideIconMenuLabels)">FocusVisibleFadeEffect</include>
+									<left>10</left>
+									<top>325</top>
+									<width>530</width>
+									<textcolor>ddwhite</textcolor>
+									<shadowcolor>55000000</shadowcolor>
+									<font>FontSize_24</font>
+									<align>center</align>
+									<label>$INFO[ListItem.Label]</label>
+								</control>		
+								<control type="fadelabel">							
+									<animation effect="slide" start="0,0" end="0,-24" time="0" condition="Skin.HasSetting(HideIconMenuLabels)">Conditional</animation>
+									<visible>Control.HasFocus(20) + !Skin.HasSetting(HideLibraryStats) + !IsEmpty(Control.GetLabel(17))</visible>
+									<include>FocusVisibleFadeEffect</include>
+									<left>10</left>
+									<top>355</top>		
+									<width>530</width>
 									<height>18</height>
-									<texture background="true">buttons/arrow.png</texture>
-									<colordiffuse>CCFFFFFF</colordiffuse>
-									<visible>IntegerGreaterThan(Container(23).NumItems,0)</visible>
-									<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
-										<effect type="fade" start="0" end="100" delay="900" time="900"  />
-										<effect type="slide" start="0,-2" end="0,4" tween="sine" easing="inout" delay="900" time="900" />
-									</animation>
+									<textcolor>77white</textcolor>
+									<shadowcolor>55000000</shadowcolor>
+									<font>FontSize_16</font>
+									<align>center</align>			
+									<label>$INFO[Control.GetLabel(17)]</label>						
+									<label>$INFO[Control.GetLabel(18)]</label>						
+									<label>$INFO[Control.GetLabel(19)]</label>
+									<scroll>false</scroll>
+									<scrollout>false</scrollout>
+									<scrollspeed>100</scrollspeed>
+									<pauseatend>4000</pauseatend>						
 								</control>
-								<control type="image" id="202">
-									<width>21</width>
-									<height>18</height>
-									<texture background="true">buttons/arrow_top.png</texture>
-									<colordiffuse>CCFFFFFF</colordiffuse>
-									<visible>!IsEmpty(Container(20).ListItem.Property(widget))</visible>
-									<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
-										<effect type="fade" start="0" end="100" delay="900" time="900"  />
-										<effect type="slide" start="0,2" end="0,-4" tween="sine" easing="inout" delay="900" time="900" />
-									</animation>
+								<control type="grouplist">							
+									<animation effect="slide" start="0,0" end="0,-24" time="0" condition="Skin.HasSetting(HideIconMenuLabels)">Conditional</animation>
+									<animation effect="slide" time="0" start="0,0" end="0,24" condition="Control.IsVisible(16) + !IsEmpty(Control.GetLabel(17))">Conditional</animation>
+									<visible>Control.HasFocus(20) + !Container(20).OnNext + !Container(20).OnPrevious</visible>
+									<itemgap>0</itemgap>
+									<orientation>horizontal</orientation>
+									<width>530</width>
+									<height>21</height>
+									<left>10</left>	
+									<top>360</top>							
+									<align>center</align>
+									<animation effect="fade" time="250" delay="50">Visible</animation>
+									<animation effect="fade" time="0">Hidden</animation>
+									<control type="image" id="201">									
+										<width>21</width>
+										<height>18</height>
+										<texture background="true">buttons/arrow.png</texture>
+										<colordiffuse>CCFFFFFF</colordiffuse>
+										<visible>IntegerGreaterThan(Container(23).NumItems,0)</visible>
+										<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
+											<effect type="fade" start="0" end="100" delay="900" time="900"  />
+											<effect type="slide" start="0,-2" end="0,4" tween="sine" easing="inout" delay="900" time="900" />
+										</animation>
+									</control>
+									<control type="image" id="202">
+										<width>21</width>
+										<height>18</height>
+										<texture background="true">buttons/arrow_top.png</texture>
+										<colordiffuse>CCFFFFFF</colordiffuse>
+										<visible>!IsEmpty(Container(20).ListItem.Property(widget))</visible>
+										<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
+											<effect type="fade" start="0" end="100" delay="900" time="900"  />
+											<effect type="slide" start="0,2" end="0,-4" tween="sine" easing="inout" delay="900" time="900" />
+										</animation>
+									</control>
 								</control>
 							</control>
 						</control>
@@ -313,11 +314,17 @@
 					</itemlayout>
 					<focusedlayout width="350" condition="StringCompare(Skin.String(MainMenuStyle),5icons)">
 						<control type="group">
-							<animation type="Focus" reversible="false" condition="Container(20).OnPrevious">
-								<effect type="fade" start="33" end="100" time="700"/>
+							<animation type="Focus" reversible="false" condition="Container(20).OnNext | Container(20).OnPrevious">
+								<effect type="fade" start="35" end="100" time="700"/>
+								<effect type="zoom" center="250,228" easing="inout" effect="zoom" end="100" start="66" time="300" tween="sine"/>
 							</animation>
-							<animation type="Focus" reversible="false" condition="Container(20).OnNext">
-								<effect type="fade" start="33" end="100" time="700"/>
+							<animation type="UnFocus" reversible="false" condition="Container(20).OnNext | Container(20).OnPrevious">
+								<effect type="fade" start="100" end="35" time="170"/>
+								<effect type="zoom" center="200,228" easing="inout" effect="zoom" end="66" start="100" time="300" tween="sine"/>
+							</animation>
+							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
+								<effect type="zoom" start="66" end="100" time="200" tween="sine" easing="out" center="275,228"  />
+								<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
 							</animation>
 							<control type="image">
 								<left>188</left>
@@ -328,85 +335,76 @@
 								<aligny>bottom</aligny>
 								<texture diffuse="icons/icon_diffuse_big.png">$INFO[ListItem.Icon]</texture>
 								<aspectratio align="center" aligny="bottom">keep</aspectratio>
-								<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
-									<effect type="zoom" start="66" end="100" time="200" tween="sine" easing="out" center="auto" />
-									<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
-								</animation>
 							</control>
-							<control type="label">							
-								<visible>Control.HasFocus(20) + !Skin.HasSetting(HideIconMenuLabels)</visible>
-								<include condition="!Skin.HasSetting(HideIconMenuLabels)">FocusVisibleFadeEffect</include>
-								<left>10</left>
-								<top>325</top>
-								<width>530</width>
-								<textcolor>ddwhite</textcolor>
-								<shadowcolor>55000000</shadowcolor>
-								<font>FontSize_24</font>
-								<align>center</align>
-								<label>$INFO[ListItem.Label]</label>
-								<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
-									<effect type="zoom" start="66" end="100" time="200" tween="sine" easing="out" center="250,285" />
-									<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
+							<control type="group">								
+								<animation type="UnFocus" reversible="false" condition="!Control.HasFocus(23) + !ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
+									<effect type="fade" start="100" end="0" time="0"/>								
 								</animation>
-							</control>	
-							<control type="fadelabel">
-								<visible>Control.HasFocus(20) + !Skin.HasSetting(HideLibraryStats) + !IsEmpty(Control.GetLabel(17))</visible>
-								<animation effect="slide" start="0,0" end="0,-24" time="0" condition="Skin.HasSetting(HideIconMenuLabels)">Conditional</animation>
-								<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
-									<effect type="zoom" start="66" end="100" time="200" tween="sine" easing="out" center="250,285" />
-									<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
-								</animation>
-								<include>FocusVisibleFadeEffect</include>
-								<left>10</left>
-								<top>355</top>		
-								<width>530</width>
-								<height>18</height>
-								<textcolor>77white</textcolor>
-								<shadowcolor>55000000</shadowcolor>
-								<font>FontSize_16</font>
-								<align>center</align>			
-								<label>$INFO[Control.GetLabel(17)]</label>						
-								<label>$INFO[Control.GetLabel(18)]</label>						
-								<label>$INFO[Control.GetLabel(19)]</label>
-								<scroll>false</scroll>
-								<scrollout>false</scrollout>
-								<scrollspeed>100</scrollspeed>
-								<pauseatend>4000</pauseatend>						
-							</control>
-							<control type="grouplist">							
-								<animation effect="slide" start="0,0" end="0,-24" time="0" condition="Skin.HasSetting(HideIconMenuLabels)">Conditional</animation>
-								<animation effect="slide" time="0" start="0,0" end="0,24" condition="Control.IsVisible(16) + !IsEmpty(Control.GetLabel(17))">Conditional</animation>
-								<visible>Control.HasFocus(20) + !Container(20).OnNext + !Container(20).OnPrevious</visible>
-								<itemgap>0</itemgap>
-								<orientation>horizontal</orientation>
-								<width>530</width>
-								<height>21</height>
-								<left>10</left>	
-								<top>360</top>							
-								<align>center</align>
-								<animation effect="fade" time="250" delay="50">Visible</animation>
-								<animation effect="fade" time="0">Hidden</animation>
-								<control type="image" id="201">									
-									<width>21</width>
+								<control type="label">							
+									<visible>Control.HasFocus(20) + !Skin.HasSetting(HideIconMenuLabels)</visible>
+									<left>10</left>
+									<top>325</top>
+									<width>530</width>
+									<textcolor>ddwhite</textcolor>
+									<shadowcolor>55000000</shadowcolor>
+									<font>FontSize_24</font>
+									<align>center</align>
+									<label>$INFO[ListItem.Label]</label>
+								</control>	
+								<control type="fadelabel">
+									<visible>Control.HasFocus(20) + !Skin.HasSetting(HideLibraryStats) + !IsEmpty(Control.GetLabel(17))</visible>
+									<animation effect="slide" start="0,0" end="0,-24" time="0" condition="Skin.HasSetting(HideIconMenuLabels)">Conditional</animation>
+									<left>10</left>
+									<top>355</top>		
+									<width>530</width>
 									<height>18</height>
-									<texture background="true">buttons/arrow.png</texture>
-									<colordiffuse>CCFFFFFF</colordiffuse>
-									<visible>IntegerGreaterThan(Container(23).NumItems,0)</visible>
-									<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
-										<effect type="fade" start="0" end="100" delay="900" time="900"  />
-										<effect type="slide" start="0,-2" end="0,4" tween="sine" easing="inout" delay="900" time="900" />
-									</animation>
+									<textcolor>77white</textcolor>
+									<shadowcolor>55000000</shadowcolor>
+									<font>FontSize_16</font>
+									<align>center</align>			
+									<label>$INFO[Control.GetLabel(17)]</label>						
+									<label>$INFO[Control.GetLabel(18)]</label>						
+									<label>$INFO[Control.GetLabel(19)]</label>
+									<scroll>false</scroll>
+									<scrollout>false</scrollout>
+									<scrollspeed>100</scrollspeed>
+									<pauseatend>4000</pauseatend>						
 								</control>
-								<control type="image" id="202">
-									<width>21</width>
-									<height>18</height>
-									<texture background="true">buttons/arrow_top.png</texture>
-									<colordiffuse>CCFFFFFF</colordiffuse>
-									<visible>!IsEmpty(Container(20).ListItem.Property(widget))</visible>
-									<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
-										<effect type="fade" start="0" end="100" delay="900" time="900"  />
-										<effect type="slide" start="0,2" end="0,-4" tween="sine" easing="inout" delay="900" time="900" />
-									</animation>
+								<control type="grouplist">							
+									<animation effect="slide" start="0,0" end="0,-24" time="0" condition="Skin.HasSetting(HideIconMenuLabels)">Conditional</animation>
+									<animation effect="slide" time="0" start="0,0" end="0,24" condition="Control.IsVisible(16) + !IsEmpty(Control.GetLabel(17))">Conditional</animation>
+									<visible>Control.HasFocus(20) + !Container(20).OnNext + !Container(20).OnPrevious</visible>
+									<itemgap>0</itemgap>
+									<orientation>horizontal</orientation>
+									<width>530</width>
+									<height>21</height>
+									<left>10</left>	
+									<top>360</top>							
+									<align>center</align>
+									<animation effect="fade" time="250" delay="50">Visible</animation>
+									<animation effect="fade" time="0">Hidden</animation>
+									<control type="image" id="201">									
+										<width>21</width>
+										<height>18</height>
+										<texture background="true">buttons/arrow.png</texture>
+										<colordiffuse>CCFFFFFF</colordiffuse>
+										<visible>IntegerGreaterThan(Container(23).NumItems,0)</visible>
+										<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
+											<effect type="fade" start="0" end="100" delay="900" time="900"  />
+											<effect type="slide" start="0,-2" end="0,4" tween="sine" easing="inout" delay="900" time="900" />
+										</animation>
+									</control>
+									<control type="image" id="202">
+										<width>21</width>
+										<height>18</height>
+										<texture background="true">buttons/arrow_top.png</texture>
+										<colordiffuse>CCFFFFFF</colordiffuse>
+										<visible>!IsEmpty(Container(20).ListItem.Property(widget))</visible>
+										<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
+											<effect type="fade" start="0" end="100" delay="900" time="900"  />
+											<effect type="slide" start="0,2" end="0,-4" tween="sine" easing="inout" delay="900" time="900" />
+										</animation>
+									</control>
 								</control>
 							</control>
 						</control>
@@ -418,7 +416,7 @@
 			</control>
 		</control>
 	</include>
-	
+
 	<!--===========-->
 	<!--Recording Info-->
 	<!--===========-->

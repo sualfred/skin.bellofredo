@@ -135,7 +135,7 @@
 			<visible>!Container($PARAM[Container]).IsUpdating</visible>
 			<include>DownUpAnimation</include>
 			<centerleft>50%</centerleft>
-			<width>880</width>
+			<width>878</width>
 			<!--<top>$PARAM[Top]</top>-->
 			<top>465</top>
 			<height>70</height>
@@ -749,6 +749,7 @@
 		<!-- Amazon Sandmann Plugin 	 -->
 		<!-- =========== --> 
 		<control type="group" id="9073">
+			<visible>System.HasAddon(plugin.video.amazon)</visible>	
 			<include>HomeSlideAnimations</include>
 			<include>HomeAmazonDBWidgetAnimation</include>			
 			<include>WidgetContainer</include>				
@@ -800,7 +801,6 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="750">
-				<visible>true</visible>
 				<include>WidgetPosterLayout</include>
 				<content limit="15" target="video">$VAR[QuickNav_WidgetListContentAmazonDB]</content>				
 			</control>						
@@ -842,7 +842,8 @@
 		<!-- =========== -->
 		<!-- Amazon AddonScriptorDE Plugin 	 -->
 		<!-- =========== --> 
-		<control type="group" id="9074">
+		<control type="group" id="9074">,
+			<visible>System.HasAddon(plugin.video.prime_instant)</visible>	
 			<include>HomeSlideAnimations</include>
 			<include>HomeAmazonWidgetAnimation</include>			
 			<include>WidgetContainer</include>	

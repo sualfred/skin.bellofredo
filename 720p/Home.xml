@@ -19,8 +19,9 @@
 		<include>BackgroundVignette</include>			
 		<control type="group">
 			<visible>!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4)</visible>
-			<control type="group">				
+			<control type="group" id="15">				
 				<animation effect="slide" time="0" start="0,0" end="0,100" condition="StringCompare(Skin.String(MainMenuStyle),textbottom)">Conditional</animation>
+				<animation effect="slide" time="0" start="0,0" end="0,15" condition="!StringCompare(Skin.String(MainMenuStyle),textbottom) + !SubString(Skin.String(MainMenuStyle),icon)">Conditional</animation>
 				<include>HomeMenuWraplist</include>
 				<include>HomeSubMenus</include>
 			</control>
