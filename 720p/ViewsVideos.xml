@@ -5069,7 +5069,7 @@
 			<visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
 			<left>47</left>
 			<top>420</top>
-			<width>2495</width>
+			<width>1280</width>
 			<height>800</height>
 			<onleft>59</onleft>
 			<onright>59</onright>

@@ -1,5 +1,7 @@
 [B][COLOR=FF56ADDA]v4.5.7[/COLOR][/B]
 • Changed: Home menu animations (smoooooooth as hell)
+• Fixed: NetFlix views page width
+• Fixed: Amazon add-on warning
 
 [B][COLOR=FF56ADDA]v4.5.6[/COLOR][/B]
 • Added: Option to open the widget content in the library view by clicking on the headline of the widgets (except custom and playlists widgets)
