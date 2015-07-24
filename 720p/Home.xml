@@ -11,7 +11,9 @@
 	<onload>Dialog.Close(pictureinfo)</onload>
 	<onload>SetProperty(RefreshList,1,Home)</onload>
 	<onload>ClearProperty(closeworkaround,Home)</onload>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=20&amp;group=mainmenu|widgetgroup1|widgetgroup2|widgetgroup3|widgetgroup4|shutdownmenu)</onload>
+	<onunload>ClearProperty(WidgetHasFocus,Home)</onunload>
+	<onload>ClearProperty(WidgetHasFocus,Home)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=20&amp;group=mainmenu|widgetgroup1|widgetgroup2|widgetgroup3|widgetgroup4|shutdownmenu)</onload>	
 	<allowoverlay>yes</allowoverlay>
 	<backgroundcolor>0</backgroundcolor>
 	<controls>		
@@ -22,8 +24,10 @@
 			<control type="group" id="15">				
 				<animation effect="slide" time="0" start="0,0" end="0,100" condition="StringCompare(Skin.String(MainMenuStyle),textbottom)">Conditional</animation>
 				<animation effect="slide" time="0" start="0,0" end="0,15" condition="!StringCompare(Skin.String(MainMenuStyle),textbottom) + !SubString(Skin.String(MainMenuStyle),icon)">Conditional</animation>
-				<include>HomeMenuWraplist</include>
-				<include>HomeSubMenus</include>
+				<!--<include>HomeMenuWraplist</include>-->
+				<include>HomeMenuWraplist_Vertical</include>
+				<!--<include>HomeSubMenus</include>-->
+				<include>VerticalHomeSubMenus</include>
 			</control>
 			<include condition="!Skin.HasSetting(HideHomeNPCovers)">CoversNowPlaying</include>
 			<include condition="Skin.HasSetting(HideHomeNPCovers)">CommonNowPlaying</include>

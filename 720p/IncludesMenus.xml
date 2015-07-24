@@ -126,6 +126,91 @@
 			</content>
 		</control>				
 	</include>
+	<!-- Home SubMenus -->
+	<include name="VerticalHomeSubMenus">
+		<control type="list" id="23">
+			<description>SubMenu Container Movies</description>
+			<visible allowhiddenfocus="true">![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Container(20).OnNext | Container(20).OnPrevious] + Control.HasFocus(23)</visible>
+			<include>HomeSlideAnimations</include>
+			<left>45</left>
+			<top>140</top>
+			<width>1600</width>
+			<height>440</height>
+			<align>right</align>
+			<onright>20</onright>
+			<onleft>20</onleft>
+			<itemlayout width="350" height="40">
+				<control type="label">
+					<width>305</width>
+					<textcolor>55white</textcolor>
+					<shadowcolor>55000000</shadowcolor>
+					<font>FontSize_30</font>
+					<align>right</align>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="image">
+					<top>5</top>
+					<left>325</left>
+					<width>25</width>
+					<height>25</height>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<texture background="true" fallback="special://skin/extras/icons/shortcut.png">$INFO[ListItem.Icon]</texture>
+					<colordiffuse>55white</colordiffuse>
+				</control>
+			</itemlayout>
+			<focusedlayout width="350" height="40">
+				<animation type="Focus" reversible="false" condition="Container(23).OnPrevious ">
+					<effect type="fade" start="20" end="100" time="500"/>
+					<effect type="slide" start="0,45" end="0,0" time="400" tween="back" easing="out"/>
+				</animation>
+				<animation type="Focus" reversible="false" condition="Container(23).OnNext ">
+					<effect type="fade" start="20" end="100" time="500"/>
+					<effect type="slide" start="0,-45" end="0,0" time="400" tween="back" easing="out"/>
+				</animation>
+				<control type="label">
+					<width>305</width>
+					<textcolor>white</textcolor>
+					<shadowcolor>55000000</shadowcolor>
+					<font>FontSize_30B</font>
+					<align>right</align>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>Control.HasFocus(23)</visible>
+				</control>
+				<control type="label">
+					<width>305</width>
+					<textcolor>55white</textcolor>
+					<shadowcolor>55000000</shadowcolor>
+					<font>FontSize_30</font>
+					<align>right</align>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>!Control.HasFocus(23)</visible>
+				</control>
+				<control type="image">
+					<top>5</top>
+					<left>325</left>
+					<width>25</width>
+					<height>25</height>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<texture background="true" fallback="special://skin/extras/icons/shortcut.png">$INFO[ListItem.Icon]</texture>
+					<colordiffuse>white</colordiffuse>
+					<visible>Control.HasFocus(23)</visible>
+				</control>
+				<control type="image">
+					<top>5</top>
+					<left>325</left>
+					<width>25</width>
+					<height>25</height>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<texture background="true" fallback="special://skin/extras/icons/shortcut.png">$INFO[ListItem.Icon]</texture>
+					<colordiffuse>55white</colordiffuse>
+					<visible>!Control.HasFocus(23)</visible>
+				</control>
+			</focusedlayout>
+			<content>
+				<include>skinshortcuts-submenu</include>
+			</content>
+		</control>				
+	</include>
 
 
 	<!-- ================================== -->

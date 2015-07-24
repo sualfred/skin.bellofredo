@@ -4,7 +4,6 @@
 	<allowoverlay>yes</allowoverlay>
 	<views>50,51,52,53,54,58,580,581,582,583,584,579,59,55,56,560,561,57</views>
 	<backgroundcolor>0</backgroundcolor>
-	<onload condition="[SubString(Container.FolderPath,plugin://plugin.video.youtube) + Container.HasFiles]">Container.SetViewMode(560)</onload>
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Library.HasContent(TVShows) + Skin.HasSetting(NextAiredEnabled)">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<onload condition="System.HasAddon(script.tvtunes) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] + Skin.HasSetting(TVTunesEnabled) + !Player.HasMedia">RunScript(script.tvtunes,backend=True)</onload>
 	<onload condition="IsEmpty(Skin.String(ListViewWideThumbTVShows))">Skin.SetString(ListViewWideThumbTVShows,1)</onload>

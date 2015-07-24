@@ -17,7 +17,8 @@
 	<include file="IncludesPVR.xml" />
 	<include file="script-skinshortcuts-includes.xml" />
 	<include file="IncludesDialogs.xml" />
-	<include file="IncludesWidgetContainer.xml" />
+	<!--<include file="IncludesWidgetContainer.xml" />-->
+	<include file="IncludesWidgetContainer_Vertical.xml" />
 
 	<constant name="FanartCrossfadeTime">250</constant>
 	<constant name="IconCrossfadeTime">250</constant>
@@ -2116,9 +2117,9 @@
 	<value condition="[Window.IsVisible(playercontrols) | !Window.IsVisible(3050)] + stringcompare(Skin.String(QuickNavWidgetMusicType),5)">musicdb://recentlyplayedalbums/</value>
 </variable>
 <variable name="QuickNav_WidgetListContentTuneIn">
-	<value condition="[Window.IsVisible(playercontrols) | ControlGroup(9080).HasFocus] + stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">plugin://plugin.audio.tuneinradio/?path=recents</value>
-	<value condition="[Window.IsVisible(playercontrols) | ControlGroup(9080).HasFocus] + stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">plugin://plugin.audio.tuneinradio/?path=browse&amp;id=presets</value>
-	<value condition="[Window.IsVisible(playercontrols) | ControlGroup(9080).HasFocus] + stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">plugin://plugin.audio.tuneinradio/?path=browse&amp;c=local</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">plugin://plugin.audio.tuneinradio/?path=recents</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">plugin://plugin.audio.tuneinradio/?path=browse&amp;id=presets</value>
+	<value condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">plugin://plugin.audio.tuneinradio/?path=browse&amp;c=local</value>
 </variable>
 <variable name="QuickNav_WidgetListContentPlaylists">
 	<value condition="!Window.IsVisible(3050)">$INFO[Container(20).ListItem.Property(widgetPlaylist)]</value>
@@ -2299,6 +2300,34 @@
 </variable>
 
 <variable name="QuickNavWidgetListItemLabel2">
+	<value condition="[StringCompare(Container(20).ListItem.Property(widget),movies) | Control.HasFocus(25) | Control.HasFocus(250)] + !stringcompare(Skin.String(QuickNavWidgetMoviesType),4) + ![IsEmpty(Container(250).ListItem.Year) + IsEmpty(Container(250).ListItem.Rating) + IsEmpty(Container(250).ListItem.Duration)]">$INFO[Container(250).ListItem.Year]$INFO[Container(250).ListItem.Rating, • ]$INFO[Container(250).ListItem.Duration, • , $LOCALIZE[12391]]</value>
+	<value condition="[StringCompare(Container(20).ListItem.Property(widget),movies) | Control.HasFocus(25) | Control.HasFocus(250)] + ![IsEmpty(Container(250).ListItem.Premiered) + IsEmpty(Container(250).ListItem.Rating) + IsEmpty(Container(250).ListItem.Duration)]">$INFO[Container(250).ListItem.Premiered]$INFO[Container(250).ListItem.Rating, • ]$INFO[Container(250).ListItem.Duration, • , $LOCALIZE[12391]]</value>
+	<value condition="[StringCompare(Container(20).ListItem.Property(widget),tvshows) | Control.HasFocus(35) | Control.HasFocus(350)] + !stringcompare(Skin.String(QuickNavWidgetTVShowsType),4) + !IsEmpty(Container(350).ListItem.Title)">$INFO[Container(350).ListItem.Season]$INFO[Container(350).ListItem.Episode,x,. ]$INFO[Container(350).ListItem.Title]</value>
+	<value condition="[StringCompare(Container(20).ListItem.Property(widget),tvshows) | Control.HasFocus(35) | Control.HasFocus(350)] + !IsEmpty(Container(350).ListItem.TVShowTitle)">$INFO[Container(350).ListItem.Premiered,, • ]$INFO[Container(350).ListItem.Rating]</value>
+	<value condition="[StringCompare(Container(20).ListItem.Property(widget),music) | Control.HasFocus(45) | Control.HasFocus(450)] + !stringcompare(Skin.String(QuickNavWidgetMusicType),4) + !IsEmpty(Container(450).ListItem.Artist)">$INFO[Container(450).ListItem.Artist]</value>
+	<value condition="[StringCompare(Container(20).ListItem.Property(widget),music) | Control.HasFocus(45) | Control.HasFocus(450)] + stringcompare(Skin.String(QuickNavWidgetMusicType),5) + !IsEmpty(Container(450).ListItem.DBID)">$INFO[Container(450).ListItem.Artist]</value>
+	<value condition="[StringCompare(Container(20).ListItem.Property(widget),music) | Control.HasFocus(45) | Control.HasFocus(450)] + stringcompare(Skin.String(QuickNavWidgetMusicType),5) + IsEmpty(Container(450).ListItem.DBID)">$LOCALIZE[340]</value>
+	<value condition="[StringCompare(Container(20).ListItem.Property(widget),music) | Control.HasFocus(45) | Control.HasFocus(450)]">$INFO[Container(450).ListItem.Property(Listeners),,  $LOCALIZE[15200] $LOCALIZE[20455]]</value>		
+	<value condition="[StringCompare(Container(20).ListItem.Property(widget),tunein) | Control.HasFocus(55) | Control.HasFocus(550)]">$LOCALIZE[31138]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazondb)">$LOCALIZE[31052]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),amazon)">$LOCALIZE[31052]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),youtube)">YouTube</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1) + IsEmpty(Skin.String(widgetgroup.1.Label2))">$LOCALIZE[31173]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2) + IsEmpty(Skin.String(widgetgroup.2.Label2))">$LOCALIZE[31174]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3) + IsEmpty(Skin.String(widgetgroup.3.Label2))">$LOCALIZE[31175]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4) + IsEmpty(Skin.String(widgetgroup.4.Label2))">$LOCALIZE[31176]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)">$INFO[Skin.String(widgetgroup.1.Label2)]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)">$INFO[Skin.String(widgetgroup.2.Label2)]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)">$INFO[Skin.String(widgetgroup.3.Label2)]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)">$INFO[Skin.String(widgetgroup.4.Label2)]</value>
+	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music) + !IsEmpty(Container(651).ListItem.Label2)">$INFO[Container(651).ListItem.Label2,,[CR]]$LOCALIZE[559]</value>		
+	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)">$LOCALIZE[559]</value>
+	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video) + !IsEmpty(Container(652).ListItem.Label) + !IsEmpty(Container(652).ListItem.TVShowTitle)">$INFO[Container(652).ListItem.Label,,[CR]]$LOCALIZE[559]</value>
+	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video) + !IsEmpty(Container(652).ListItem.Label2)">$INFO[Container(652).ListItem.Label2,,[CR]]$LOCALIZE[559]</value>
+	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)">$LOCALIZE[559]</value>	
+</variable>
+
+<variable name="QuickNavVerticalWidgetListItemLabel2">
 	<value condition="[StringCompare(Container(20).ListItem.Property(widget),movies) | Control.HasFocus(25) | Control.HasFocus(250)] + !stringcompare(Skin.String(QuickNavWidgetMoviesType),4) + ![IsEmpty(Container(250).ListItem.Year) + IsEmpty(Container(250).ListItem.Rating) + IsEmpty(Container(250).ListItem.Duration)]">$INFO[Container(250).ListItem.Year]$INFO[Container(250).ListItem.Rating, • ]$INFO[Container(250).ListItem.Duration, • , $LOCALIZE[12391]]</value>
 	<value condition="[StringCompare(Container(20).ListItem.Property(widget),movies) | Control.HasFocus(25) | Control.HasFocus(250)] + ![IsEmpty(Container(250).ListItem.Premiered) + IsEmpty(Container(250).ListItem.Rating) + IsEmpty(Container(250).ListItem.Duration)]">$INFO[Container(250).ListItem.Premiered]$INFO[Container(250).ListItem.Rating, • ]$INFO[Container(250).ListItem.Duration, • , $LOCALIZE[12391]]</value>
 	<value condition="[StringCompare(Container(20).ListItem.Property(widget),tvshows) | Control.HasFocus(35) | Control.HasFocus(350)] + !stringcompare(Skin.String(QuickNavWidgetTVShowsType),4) + !IsEmpty(Container(350).ListItem.Title)">$INFO[Container(350).ListItem.Season]$INFO[Container(350).ListItem.Episode,x,. ]$INFO[Container(350).ListItem.Title]</value>

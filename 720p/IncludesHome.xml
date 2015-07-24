@@ -417,6 +417,238 @@
 		</control>
 	</include>
 
+
+	<include name="HomeMenuWraplist_Vertical">
+		<control type="group">					
+			<visible allowhiddenfocus="true">!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4) + !Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
+			<include>HomeSlideAnimations</include>
+			<control type="group">
+				<include>HomeSlideAnimations</include>
+				<control type="image">
+					<top>-20</top>
+					<include>FullscreenDimensions</include>			
+					<texture background="true">views/list/shine.png</texture>
+					<visible>!Skin.HasTheme(Original-Bello) + !Window.IsActive(playercontrols)</visible>
+					<animation effect="fade" time="0" start="100" end="75" condition="!Skin.HasTheme(ElegantDark) + [Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)]">Conditional</animation>
+					<animation effect="fade" time="0" start="100" end="50" condition="Skin.HasTheme(ElegantDark) + [Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)]">Conditional</animation>
+				</control>
+				<control type="image">
+					<include>FullscreenDimensions</include>
+					<texture background="true">windows/bg/black_pulse.png</texture>
+					<animation effect="fade" time="0" end="70" condition="true">Conditional</animation>
+					<visible>Skin.HasSetting(DisablePurpleBar)</visible>
+				</control>
+				<control type="image">
+					<include>FullscreenDimensions</include>
+					<texture background="true">windows/bg/colors_pulse.png</texture>
+					<visible>!Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar)</visible>
+				</control>
+				<control type="image">
+					<height>720</height>
+					<width>3280</width>
+					<texture>windows/bg/colors_pulse.png</texture>
+					<animation type="Conditional" condition="true" loop="true" reversible="false">
+						<effect type="slide" start="0,0" end="-2000,0" time="20350" />
+						<effect type="slide" start="0,0" end="2000,0" time="20350" delay="20350"/>
+					</animation>
+					<visible>Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar)</visible>
+				</control>
+
+				<control type="group" id="16">
+					<visible>!Skin.HasSetting(HideLibraryStats) + [StringCompare(Container(20).ListItem.Property(defaultID),movies) | StringCompare(Container(20).ListItem.Property(defaultID),music) | StringCompare(Container(20).ListItem.Property(defaultID),tvshows)]</visible>
+					<control type="label" id="17">
+						<label>$VAR[LibraryInfoLabel]</label>			
+						<include>TopButton</include>
+					</control>
+					<control type="label" id="18">
+						<label>$VAR[LibraryInfoLabel2]</label>
+						<include>TopButton</include>
+					</control>
+					<control type="label" id="19">
+						<label>$VAR[LibraryInfoLabel3]</label>
+						<include>TopButton</include>
+					</control>
+				</control>
+
+				<control type="fixedlist" id="20">
+					<include>WidgetMainMenuSlideAnimations</include>
+					<include>HomeSlideAnimations</include>
+					<visible allowhiddenfocus="true">!Control.HasFocus(23)</visible>
+
+					<description>Home Container</description>		
+					<left>45</left>
+					<top>140</top>
+					<width>1600</width>
+					<height>450</height>
+					<align>right</align>
+					<onright condition="!IsEmpty(Container(20).ListItem.Property(widget))">SetProperty(WidgetHasFocus,1,Home)</onright>
+					<onright condition="StringCompare(Container(20).ListItem.Property(widget),movies)">SetFocus(90501)</onright>
+					<onright condition="StringCompare(Container(20).ListItem.Property(widget),tvshows)">SetFocus(90601)</onright>
+					<onright condition="StringCompare(Container(20).ListItem.Property(widget),music)">SetFocus(45)</onright>
+					<onright condition="StringCompare(Container(20).ListItem.Property(widget),tunein)">SetFocus(90801)</onright>
+					<onright condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)">SetFocus(90901)</onright>
+					<onright condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)">SetFocus(90911)</onright>
+					<onright condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)">SetFocus(90931)</onright>
+					<onright condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)">SetFocus(90941)</onright>
+					<onright condition="StringCompare(Container(20).ListItem.Property(widget),rssvideowidget)">SetFocus(90991)</onright>					
+					<onright condition="StringCompare(Container(20).ListItem.Property(widget),amazondb)">SetFocus(90731)</onright>
+					<onright condition="StringCompare(Container(20).ListItem.Property(widget),amazon)">SetFocus(90741)</onright>					
+					<onright condition="StringCompare(Container(20).ListItem.Property(widget),youtube)">SetFocus(90981)</onright>					
+					<onright condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)">SetFocus(90711)</onright>
+					<onright condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)">SetFocus(90721)</onright>
+					<onup condition="IsEmpty(Container(20).ListItem.Property(widget))">SetFocus(21)</onup>
+					<onleft condition="IntegerGreaterThan(Container(23).NumItems,0)">SetFocus(23)</onleft>					
+					<onleft>20</onleft>
+					<onright>20</onright>
+					<itemgap>0</itemgap>
+					<orientation>vertical</orientation>
+					<focusposition>4</focusposition>
+					<movement>4</movement>						
+					<scrolltime tween="Quadratic" easing="out">400</scrolltime>
+					<itemlayout width="350" height="50">
+						<control type="label">
+							<width>305</width>
+							<textcolor>55white</textcolor>
+							<shadowcolor>55000000</shadowcolor>
+							<font>FontSize_40</font>
+							<align>right</align>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<top>5</top>
+							<left>325</left>
+							<width>25</width>
+							<height>25</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<colordiffuse>55white</colordiffuse>
+						</control>
+					</itemlayout>
+
+					<focusedlayout width="350" height="50">	
+						<control type="group">
+							<!--<animation type="Focus" reversible="false" condition="Container(20).OnNext | Container(20).OnPrevious">
+								<effect type="fade" start="35" end="100" time="700"/>
+							</animation>
+							<animation type="UnFocus" reversible="false" condition="Container(20).OnNext | Container(20).OnPrevious">
+								<effect type="fade" start="100" end="35" time="170"/>								
+							</animation>
+							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">								
+								<effect type="fade" start="35" end="100" time="250" tween="sine" />
+							</animation>-->
+							<animation type="Focus" reversible="false" condition="Container(20).OnPrevious ">
+								<effect type="fade" start="20" end="100" time="500"/>
+								<effect type="slide" start="0,45" end="0,0" time="400" tween="back" easing="out"/>
+							</animation>
+							<animation type="Focus" reversible="false" condition="Container(20).OnNext ">
+								<effect type="fade" start="20" end="100" time="500"/>
+								<effect type="slide" start="0,-45" end="0,0" time="400" tween="back" easing="out"/>
+							</animation>
+							<control type="label">
+								<width>305</width>
+								<textcolor>white</textcolor>
+								<shadowcolor>55000000</shadowcolor>
+								<font>FontSize_40B</font>
+								<align>right</align>
+								<label>$INFO[ListItem.Label]</label>
+								<visible>Control.HasFocus(20)</visible>
+							</control>
+							<control type="label">
+								<width>305</width>
+								<textcolor>55white</textcolor>
+								<shadowcolor>55000000</shadowcolor>
+								<font>FontSize_40</font>
+								<align>right</align>
+								<label>$INFO[ListItem.Label]</label>
+								<visible>!Control.HasFocus(20)</visible>
+							</control>
+							<control type="image">
+								<top>5</top>
+								<left>325</left>
+								<width>25</width>
+								<height>25</height>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+								<texture background="true">$INFO[ListItem.Icon]</texture>
+								<colordiffuse>white</colordiffuse>
+								<visible>Control.HasFocus(20)</visible>
+							</control>
+							<control type="image">
+								<top>5</top>
+								<left>325</left>
+								<width>25</width>
+								<height>25</height>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+								<texture background="true">$INFO[ListItem.Icon]</texture>
+								<colordiffuse>55white</colordiffuse>
+								<visible>!Control.HasFocus(20)</visible>
+							</control>
+							<!--		
+							<control type="fadelabel">
+								<visible>Control.HasFocus(20) + !Skin.HasSetting(HideLibraryStats) + !IsEmpty(Control.GetLabel(17))</visible>
+								<animation effect="fade" time="250" delay="50">Visible</animation>
+								<animation effect="fade" time="0">Hidden</animation>
+								<left>-15</left>
+								<top>264</top>		
+								<width>530</width>
+								<height>18</height>
+								<textcolor>77white</textcolor>
+								<shadowcolor>55000000</shadowcolor>
+								<font>FontSize_16</font>
+								<align>center</align>			
+								<label>$INFO[Control.GetLabel(17)]</label>						
+								<label>$INFO[Control.GetLabel(18)]</label>						
+								<label>$INFO[Control.GetLabel(19)]</label>
+								<scroll>false</scroll>
+								<scrollout>false</scrollout>
+								<scrollspeed>100</scrollspeed>
+								<pauseatend>4000</pauseatend>						
+							</control>
+							<control type="grouplist">
+								<visible>Control.HasFocus(20) + !Container(20).OnNext + !Container(20).OnPrevious</visible>
+								<animation effect="slide" time="0" start="0,0" end="0,27" condition="Control.IsVisible(16) + !IsEmpty(Control.GetLabel(17))">Conditional</animation>
+								<itemgap>0</itemgap>
+								<orientation>horizontal</orientation>
+								<width>530</width>
+								<height>21</height>
+								<left>-15</left>	
+								<top>265</top>							
+								<align>center</align>
+								<animation effect="fade" time="250" delay="50">Visible</animation>
+								<animation effect="fade" time="0">Hidden</animation>
+								<control type="image" id="201">									
+									<width>21</width>
+									<height>18</height>
+									<texture background="true">buttons/arrow.png</texture>
+									<colordiffuse>CCFFFFFF</colordiffuse>
+									<visible>IntegerGreaterThan(Container(23).NumItems,0)</visible>
+									<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
+										<effect type="fade" start="0" end="100" delay="900" time="900"  />
+										<effect type="slide" start="0,-2" end="0,4" tween="sine" easing="inout" delay="900" time="900" />
+									</animation>
+								</control>
+								<control type="image" id="202">
+									<width>21</width>
+									<height>18</height>
+									<texture background="true">buttons/arrow_top.png</texture>
+									<colordiffuse>CCFFFFFF</colordiffuse>
+									<visible>!IsEmpty(Container(20).ListItem.Property(widget))</visible>
+									<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
+										<effect type="fade" start="0" end="100" delay="900" time="900"  />
+										<effect type="slide" start="0,2" end="0,-4" tween="sine" easing="inout" delay="900" time="900" />
+									</animation>
+								</control>
+							</control>-->
+						</control>
+					</focusedlayout>
+
+					<content>
+						<include>skinshortcuts-mainmenu</include>
+					</content>
+				</control>
+			</control>
+		</control>
+	</include>
+
 	<!--===========-->
 	<!--Recording Info-->
 	<!--===========-->
