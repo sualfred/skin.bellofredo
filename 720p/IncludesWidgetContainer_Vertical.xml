@@ -1,27 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes> 
-	<include name="widgetgroup-custompath">
-		<content limit="$PARAM[Limit]" target="$PARAM[Target]">$INFO[Skin.String(CustomWidgetPath$PARAM[GroupNo].List)]</content>
-	</include>
-	<include name="widgetgroup-customgroup">
-		<content>
-			<include>skinshortcuts-group-widgetgroup$PARAM[GroupNo]</include>
-		</content>
-	</include>
 
-	<include name="ParamListSlideAnimation">
-		<!--<animation effect="slide" start="0,0" end="-90,0" time="300" tween="sine" easing="out" condition="">Conditional</animation>-->
-
+	<include name="ParamListSlideAnimation_Vertical">
 		<animation condition="!IsEmpty(Window(Home).Property(WidgetHasFocus)) + [Container($PARAM[Container]).Position(7) | Container($PARAM[Container]).Position(6) | Container($PARAM[Container]).Position(5) | Container($PARAM[Container]).Position(4)]" reversible="false" type="Conditional">
 			<effect delay="280" easing="in" end="-90,0" start="0,0" time="180" tween="sine" type="slide" />
 		</animation>
 		<animation condition="![!IsEmpty(Window(Home).Property(WidgetHasFocus)) + [Container($PARAM[Container]).Position(7) | Container($PARAM[Container]).Position(6) | Container($PARAM[Container]).Position(5) | Container($PARAM[Container]).Position(4)]]" reversible="false" type="Conditional">
 			<effect delay="0" easing="in" end="0,0" start="-90,0" time="180" tween="sine" type="slide" />
 		</animation>
-
 	</include>
 
-	<include name="ParamWidgetCounterLoading">
+	<include name="ParamWidgetCounterLoading_Vertical">
 		<control type="label">
 			<left>0</left>
 			<top>216</top>
@@ -88,7 +77,7 @@
 		</control>
 	</include>
 
-	<include name="WidgetContainer">
+	<include name="WidgetContainer_Vertical">
 		<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>		
 		<top>-35</top>
 		<left>450</left>
@@ -144,7 +133,7 @@
 		</control>
 	</include>
 
-	<include name="WidgetBottomLabels">
+	<include name="WidgetBottomLabels_Vertical">
 		<!--<control type="button">
 			<visible>!Container($PARAM[Container]).IsUpdating + !IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
 			<include>DownUpAnimation</include>
@@ -176,7 +165,7 @@
 			<orientation>horizontal</orientation>
 			<include>DialogZoomInOutAnimation</include>
 			<!--<visible>!Control.IsVisible(8013) + !Control.IsVisible(8014)</visible>-->
-		
+
 			<!--imdb top 250-->
 			<control type="group">
 				<width>48</width>
@@ -358,8 +347,8 @@
 			</control>
 		</control>
 	</include>
-    <!-- empty box fallbacks -->	
-	<include name="ParamEmptyBoxes">
+	<!-- empty box fallbacks -->	
+	<include name="ParamEmptyBoxes_Vertical">
 		<control type="image">
 			<left>$PARAM[left]</left>
 			<top>5</top>
@@ -370,31 +359,31 @@
 			<fadetime>800</fadetime>
 		</control> 
 	</include>
-	<include name="WidgetEmptyBoxes">
+	<include name="WidgetEmptyBoxes_Vertical">
 		<top>250</top>		
 		<left>1</left>
 		<width>1800</width>
 		<height>450</height>
-		<include name="ParamEmptyBoxes">
+		<include name="ParamEmptyBoxes_Vertical">
 			<param name="left">6</param>
 		</include>
-		<include name="ParamEmptyBoxes">
+		<include name="ParamEmptyBoxes_Vertical">
 			<param name="left">211</param>
 		</include>
-		<include name="ParamEmptyBoxes">
+		<include name="ParamEmptyBoxes_Vertical">
 			<param name="left">416</param>
 		</include>
-		<include name="ParamEmptyBoxes">
+		<include name="ParamEmptyBoxes_Vertical">
 			<param name="left">621</param>
 		</include>
-		<include name="ParamEmptyBoxes">
+		<include name="ParamEmptyBoxes_Vertical">
 			<param name="left">826</param>
 		</include>
-		<include name="ParamEmptyBoxes">
+		<include name="ParamEmptyBoxes_Vertical">
 			<param name="left">1031</param>
 		</include>
 	</include>
-	<include name="ParamEmptyPosters">
+	<include name="ParamEmptyPosters_Vertical">
 		<control type="image">
 			<left>$PARAM[left]</left>
 			<top>5</top>
@@ -405,38 +394,38 @@
 			<fadetime>800</fadetime>
 		</control> 
 	</include>
-	<include name="WidgetEmptyPosters">
+	<include name="WidgetEmptyPosters_Vertical">
 		<top>242</top>	
 		<width>1800</width>
 		<height>450</height>
-		<include name="ParamEmptyPosters">
+		<include name="ParamEmptyPosters_Vertical">
 			<param name="left">7</param>
 		</include>
-		<include name="ParamEmptyPosters">
+		<include name="ParamEmptyPosters_Vertical">
 			<param name="left">167</param>
 		</include>
-		<include name="ParamEmptyPosters">
+		<include name="ParamEmptyPosters_Vertical">
 			<param name="left">327</param>
 		</include>
-		<include name="ParamEmptyPosters">
+		<include name="ParamEmptyPosters_Vertical">
 			<param name="left">487</param>
 		</include>
-		<include name="ParamEmptyPosters">
+		<include name="ParamEmptyPosters_Vertical">
 			<param name="left">647</param>
 		</include>
-		<include name="ParamEmptyPosters">
+		<include name="ParamEmptyPosters_Vertical">
 			<param name="left">807</param>
 		</include>
-		<include name="ParamEmptyPosters">
+		<include name="ParamEmptyPosters_Vertical">
 			<param name="left">967</param>
 		</include>
-		<include name="ParamEmptyPosters">
+		<include name="ParamEmptyPosters_Vertical">
 			<param name="left">1127</param>
 		</include>
 	</include>
 
 	<!-- poster layout -->
-	<include name="WidgetPosterLayout">		
+	<include name="WidgetPosterLayout_Vertical">		
 		<top>242</top>	
 		<width>1280</width>
 		<height>450</height>
@@ -535,8 +524,8 @@
 			</control>
 		</focusedlayout>
 	</include>
-    <!-- box layout -->
-	<include name="WidgetSquareLayout">
+	<!-- box layout -->
+	<include name="WidgetSquareLayout_Vertical">
 		<top>250</top>
 		<left>1</left>	
 		<width>1800</width>
@@ -636,18 +625,18 @@
 
 
 
-	<include name="ArrowDimension">
+	<include name="ArrowDimension_Vertical">
 		<left>150</left>
 		<top>337</top>
 		<width>828</width>
 		<height>25</height>
 	</include>
-	<include name="ArrowWidth">
+	<include name="ArrowWidth_Vertical">
 		<left>956</left>
 	</include>
 
 
-	<include name="HomeWidgetsContainer">
+	<include name="HomeWidgetsContainer_Vertical">
 
 		<!-- =========== -->
 		<!-- Movies 	 -->
@@ -655,7 +644,7 @@
 		<control type="group" id="9050">
 			<visible>StringCompare(Container(20).ListItem.Property(widget),movies)</visible>
 			<include>HomeSlideAnimations</include>
-			<include>WidgetContainer</include>
+			<include>WidgetContainer_Vertical</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
 				<visible>Container(250).OnNext + IntegerGreaterThan(Container(250).NumItems,1)</visible>					
@@ -665,7 +654,7 @@
 				<visible>Container(250).OnPrevious + IntegerGreaterThan(Container(250).NumItems,1)</visible>
 			</control>
 			<control type="group">
-				<include>WidgetEmptyPosters</include>
+				<include>WidgetEmptyPosters_Vertical</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
@@ -681,7 +670,7 @@
 					<visible>Container(250).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidth</include>
+					<include>ArrowWidth_Vertical</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -709,7 +698,7 @@
 					<param name="Container">250</param>
 				</include>-->
 				<!--<animation effect="slide" start="0,0" end="-160,0" time="180" tween="sine"  delay="280" easing="in" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus)) + Container(250).Position(1)" reversible="false">Conditional</animation>-->
-				<include>WidgetPosterLayout</include>
+				<include>WidgetPosterLayout_Vertical</include>
 				<content>$VAR[QuickNav_WidgetListContentMovies]</content>
 			</control>
 			<control type="button" id="25">
@@ -740,10 +729,10 @@
 				<!-- on click command -->
 				<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentMovies])</onclick>	
 			</control>
-			<include name="WidgetBottomLabels">
+			<include name="WidgetBottomLabels_Vertical">
 				<param name="Container">250</param>
 			</include>			
-			<include name="ParamWidgetCounterLoading">
+			<include name="ParamWidgetCounterLoading_Vertical">
 				<param name="Container">250</param>  
 			</include>
 		</control>
@@ -754,7 +743,7 @@
 		<control type="group" id="9060">
 			<visible>StringCompare(Container(20).ListItem.Property(widget),tvshows)</visible>
 			<include>HomeSlideAnimations</include>
-			<include>WidgetContainer</include>	
+			<include>WidgetContainer_Vertical</include>	
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
 				<visible>Container(350).OnNext + IntegerGreaterThan(Container(350).NumItems,1)</visible>					
@@ -764,7 +753,7 @@
 				<visible>Container(350).OnPrevious + IntegerGreaterThan(Container(350).NumItems,1)</visible>
 			</control>
 			<control type="group">
-				<include>WidgetEmptyPosters</include>
+				<include>WidgetEmptyPosters_Vertical</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>				
@@ -780,7 +769,7 @@
 					<visible>Container(350).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidth</include>
+					<include>ArrowWidth_Vertical</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -804,7 +793,7 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="350">
-				<include>WidgetPosterLayout</include>
+				<include>WidgetPosterLayout_Vertical</include>
 				<content>$VAR[QuickNav_WidgetListContentTVShows]</content>				
 			</control>
 			<control type="button" id="35">
@@ -832,10 +821,10 @@
 				<!-- on click command -->
 				<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentTVShows])</onclick>			
 			</control>
-			<include name="WidgetBottomLabels">
+			<include name="WidgetBottomLabels_Vertical">
 				<param name="Container">350</param>
 			</include>			
-			<include name="ParamWidgetCounterLoading">
+			<include name="ParamWidgetCounterLoading_Vertical">
 				<param name="Container">350</param>  
 			</include>
 		</control>
@@ -846,7 +835,7 @@
 		<control type="group" id="9070">
 			<include>HomeSlideAnimations</include>
 			<visible>StringCompare(Container(20).ListItem.Property(widget),music)</visible>
-			<include>WidgetContainer</include>
+			<include>WidgetContainer_Vertical</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
 				<visible>Container(450).OnNext + IntegerGreaterThan(Container(450).NumItems,1)</visible>					
@@ -861,7 +850,7 @@
 				<visible>Control.IsVisible(581)</visible>				
 			</control>
 			<control type="group">
-				<include>WidgetEmptyBoxes</include>
+				<include>WidgetEmptyBoxes_Vertical</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
@@ -877,7 +866,7 @@
 					<visible>Container(450).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidth</include>
+					<include>ArrowWidth_Vertical</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -904,7 +893,7 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="450">
-				<include>WidgetSquareLayout</include>
+				<include>WidgetSquareLayout_Vertical</include>
 				<content target="music">$VAR[QuickNav_WidgetListContentMusic]</content>
 			</control>
 			<control type="button" id="46">
@@ -932,10 +921,10 @@
 				<!-- on click command -->
 				<onclick>ActivateWindow(Music,$VAR[QuickNav_WidgetListContentMusic])</onclick>						
 			</control>
-			<include name="WidgetBottomLabels">
+			<include name="WidgetBottomLabels_Vertical">
 				<param name="Container">450</param>  
 			</include>			
-			<include name="ParamWidgetCounterLoading">
+			<include name="ParamWidgetCounterLoading_Vertical">
 				<param name="Container">450</param>   
 			</include>
 		</control>
@@ -946,7 +935,7 @@
 		<control type="group" id="9073">
 			<visible>StringCompare(Container(20).ListItem.Property(widget),amazondb) + System.HasAddon(plugin.video.amazon)</visible>
 			<include>HomeSlideAnimations</include>
-			<include>WidgetContainer</include>				
+			<include>WidgetContainer_Vertical</include>				
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
 				<visible>Container(750).OnNext + IntegerGreaterThan(Container(750).NumItems,1)</visible>					
@@ -956,7 +945,7 @@
 				<visible>Container(750).OnPrevious + IntegerGreaterThan(Container(750).NumItems,1)</visible>
 			</control>
 			<control type="group">
-				<include>WidgetEmptyPosters</include>
+				<include>WidgetEmptyPosters_Vertical</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
@@ -972,7 +961,7 @@
 					<visible>Container(750).HasPrevious</visible>				
 				</control>
 				<control type="image">  					
-					<include>ArrowWidth</include>
+					<include>ArrowWidth_Vertical</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -996,7 +985,7 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="750">
-				<include>WidgetPosterLayout</include>
+				<include>WidgetPosterLayout_Vertical</include>
 				<content limit="15" target="video">$VAR[QuickNav_WidgetListContentAmazonDB]</content>				
 			</control>						
 			<control type="button" id="75">
@@ -1026,10 +1015,10 @@
 				<!-- on click command -->
 				<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentAmazonDB])</onclick>	
 			</control>
-			<include name="WidgetBottomLabels">
+			<include name="WidgetBottomLabels_Vertical">
 				<param name="Container">750</param>
 			</include>				
-			<include name="ParamWidgetCounterLoading">
+			<include name="ParamWidgetCounterLoading_Vertical">
 				<param name="Container">750</param>  
 			</include>
 		</control>
@@ -1040,7 +1029,7 @@
 		<control type="group" id="9074">,
 			<visible>StringCompare(Container(20).ListItem.Property(widget),amazon) + System.HasAddon(plugin.video.prime_instant)</visible>
 			<include>HomeSlideAnimations</include>
-			<include>WidgetContainer</include>	
+			<include>WidgetContainer_Vertical</include>	
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
 				<visible>Container(751).OnNext + IntegerGreaterThan(Container(751).NumItems,1)</visible>					
@@ -1050,7 +1039,7 @@
 				<visible>Container(751).OnPrevious + IntegerGreaterThan(Container(751).NumItems,1)</visible>
 			</control>
 			<control type="group">
-				<include>WidgetEmptyPosters</include>
+				<include>WidgetEmptyPosters_Vertical</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
@@ -1066,7 +1055,7 @@
 					<visible>Container(751).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidth</include>
+					<include>ArrowWidth_Vertical</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1090,7 +1079,7 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="751">
-				<include>WidgetPosterLayout</include>
+				<include>WidgetPosterLayout_Vertical</include>
 				<content limit="15" target="video">$VAR[QuickNav_WidgetListContentAmazon]</content>				
 			</control>								
 			<control type="button" id="76">
@@ -1118,10 +1107,10 @@
 				<!-- on click command -->
 				<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentAmazon])</onclick>	
 			</control>
-			<include name="WidgetBottomLabels">
+			<include name="WidgetBottomLabels_Vertical">
 				<param name="Container">751</param>
 			</include>		
-			<include name="ParamWidgetCounterLoading">
+			<include name="ParamWidgetCounterLoading_Vertical">
 				<param name="Container">751</param>  
 			</include>
 		</control>
@@ -1133,7 +1122,7 @@
 			<description>tunein radio widget</description>
 			<visible>StringCompare(Container(20).ListItem.Property(widget),tunein)</visible>
 			<include>HomeSlideAnimations</include>
-			<include>WidgetContainer</include>
+			<include>WidgetContainer_Vertical</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
 				<visible>Container(550).OnNext + IntegerGreaterThan(Container(550).NumItems,1)</visible>					
@@ -1143,7 +1132,7 @@
 				<visible>Container(550).OnPrevious + IntegerGreaterThan(Container(550).NumItems,1)</visible>
 			</control>
 			<control type="group">
-				<include>WidgetEmptyBoxes</include>
+				<include>WidgetEmptyBoxes_Vertical</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
@@ -1159,7 +1148,7 @@
 					<visible>Container(550).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidth</include>
+					<include>ArrowWidth_Vertical</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1184,7 +1173,7 @@
 			</control>
 			<control type="fixedlist" id="550">	
 				<visible>System.HasAddon(plugin.audio.tuneinradio)</visible>
-				<include>WidgetSquareLayout</include>
+				<include>WidgetSquareLayout_Vertical</include>
 				<content target="music">$VAR[QuickNav_WidgetListContentTuneIn]</content>
 			</control>
 			<control type="button" id="55">
@@ -1207,10 +1196,10 @@
 				<!-- on click command -->
 				<onclick>ActivateWindow(Music,$VAR[QuickNav_WidgetListContentTuneIn])</onclick>	
 			</control>
-			<include name="WidgetBottomLabels">
+			<include name="WidgetBottomLabels_Vertical">
 				<param name="Container">550</param>  
 			</include>			
-			<include name="ParamWidgetCounterLoading">
+			<include name="ParamWidgetCounterLoading_Vertical">
 				<param name="Container">550</param>  
 			</include>
 		</control>
@@ -1222,7 +1211,7 @@
 			<description>youtube widget</description>
 			<visible>StringCompare(Container(20).ListItem.Property(widget),youtube)</visible>
 			<include>HomeSlideAnimations</include>
-			<include>WidgetContainer</include>
+			<include>WidgetContainer_Vertical</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
 				<visible>Container(653).OnNext + IntegerGreaterThan(Container(653).NumItems,1)</visible>					
@@ -1232,7 +1221,7 @@
 				<visible>Container(653).OnPrevious + IntegerGreaterThan(Container(653).NumItems,1)</visible>
 			</control>
 			<control type="group">
-				<include>WidgetEmptyBoxes</include>
+				<include>WidgetEmptyBoxes_Vertical</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
@@ -1248,7 +1237,7 @@
 					<visible>Container(653).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidth</include>
+					<include>ArrowWidth_Vertical</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1272,7 +1261,7 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="653">	
-				<include>WidgetSquareLayout</include>
+				<include>WidgetSquareLayout_Vertical</include>
 				<content target="video">$VAR[QuickNav_WidgetListContentYouTube]</content>
 			</control>
 			<control type="button" id="66">
@@ -1298,10 +1287,10 @@
 				<!-- on click command -->
 				<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentYouTube])</onclick>	
 			</control>
-			<include name="WidgetBottomLabels">
+			<include name="WidgetBottomLabels_Vertical">
 				<param name="Container">653</param>  
 			</include>			
-			<include name="ParamWidgetCounterLoading">
+			<include name="ParamWidgetCounterLoading_Vertical">
 				<param name="Container">653</param>   
 			</include>
 		</control>
@@ -1313,7 +1302,7 @@
 			<description>custom widget group</description>
 			<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)</visible>
 			<include>HomeSlideAnimations</include>
-			<include>WidgetContainer</include>
+			<include>WidgetContainer_Vertical</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
 				<visible>Container(551).OnNext + IntegerGreaterThan(Container(551).NumItems,1)</visible>					
@@ -1323,8 +1312,8 @@
 				<visible>Container(551).OnPrevious + IntegerGreaterThan(Container(551).NumItems,1)</visible>
 			</control>
 			<control type="group">
-				<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetEmptyBoxes</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetEmptyPosters</include>
+				<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetEmptyBoxes_Vertical</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetEmptyPosters_Vertical</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
@@ -1339,7 +1328,7 @@
 					<visible>Container(551).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidth</include>
+					<include>ArrowWidth_Vertical</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1362,8 +1351,8 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="551">
-				<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetSquareLayout</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetPosterLayout</include>
+				<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetSquareLayout_Vertical</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetPosterLayout_Vertical</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.1.Source),mixed)" name="widgetgroup-customgroup">
 					<param name="GroupNo">1</param>
 				</include>
@@ -1373,10 +1362,10 @@
 					<param name="Limit">$INFO[Skin.String(widgetgroup.1.Limit)]</param>
 				</include>
 			</control>
-			<include name="WidgetBottomLabels">
+			<include name="WidgetBottomLabels_Vertical">
 				<param name="Container">551</param>  
 			</include>		
-			<include name="ParamWidgetCounterLoading">
+			<include name="ParamWidgetCounterLoading_Vertical">
 				<param name="Container">551</param>   
 			</include>	
 		</control>
@@ -1388,7 +1377,7 @@
 			<description>custom widget group2</description>
 			<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)</visible>
 			<include>HomeSlideAnimations</include>
-			<include>WidgetContainer</include>
+			<include>WidgetContainer_Vertical</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
 				<visible>Container(552).OnNext + IntegerGreaterThan(Container(552).NumItems,1)</visible>					
@@ -1398,8 +1387,8 @@
 				<visible>Container(552).OnPrevious + IntegerGreaterThan(Container(552).NumItems,1)</visible>
 			</control>
 			<control type="group">
-				<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetEmptyBoxes</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetEmptyPosters</include>
+				<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetEmptyBoxes_Vertical</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetEmptyPosters_Vertical</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
@@ -1414,7 +1403,7 @@
 					<visible>Container(552).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidth</include>
+					<include>ArrowWidth_Vertical</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1437,8 +1426,8 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="552">					
-				<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetSquareLayout</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetPosterLayout</include>
+				<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetSquareLayout_Vertical</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetPosterLayout_Vertical</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.2.Source),mixed)" name="widgetgroup-customgroup">
 					<param name="GroupNo">2</param>
 				</include>
@@ -1448,10 +1437,10 @@
 					<param name="Limit">$INFO[Skin.String(widgetgroup.2.Limit)]</param>
 				</include>
 			</control>
-			<include name="WidgetBottomLabels">
+			<include name="WidgetBottomLabels_Vertical">
 				<param name="Container">552</param>  
 			</include>		
-			<include name="ParamWidgetCounterLoading">
+			<include name="ParamWidgetCounterLoading_Vertical">
 				<param name="Container">552</param>   
 			</include>	
 		</control>
@@ -1463,7 +1452,7 @@
 			<description>custom widget group3</description>
 			<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)</visible>
 			<include>HomeSlideAnimations</include>
-			<include>WidgetContainer</include>
+			<include>WidgetContainer_Vertical</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
 				<visible>Container(553).OnNext + IntegerGreaterThan(Container(553).NumItems,1)</visible>					
@@ -1473,8 +1462,8 @@
 				<visible>Container(553).OnPrevious + IntegerGreaterThan(Container(553).NumItems,1)</visible>
 			</control>
 			<control type="group">
-				<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetEmptyBoxes</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetEmptyPosters</include>
+				<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetEmptyBoxes_Vertical</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetEmptyPosters_Vertical</include>
 			</control>			
 			<control type="group">
 				<description>arrows left right</description>
@@ -1489,7 +1478,7 @@
 					<visible>Container(553).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidth</include>
+					<include>ArrowWidth_Vertical</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1512,8 +1501,8 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="553">					
-				<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetSquareLayout</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetPosterLayout</include>
+				<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetSquareLayout_Vertical</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetPosterLayout_Vertical</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.3.Source),mixed)" name="widgetgroup-customgroup">
 					<param name="GroupNo">3</param>
 				</include>
@@ -1523,10 +1512,10 @@
 					<param name="Limit">$INFO[Skin.String(widgetgroup.3.Limit)]</param>
 				</include>
 			</control>
-			<include name="WidgetBottomLabels">
+			<include name="WidgetBottomLabels_Vertical">
 				<param name="Container">553</param>  
 			</include>		
-			<include name="ParamWidgetCounterLoading">
+			<include name="ParamWidgetCounterLoading_Vertical">
 				<param name="Container">553</param>   
 			</include>	
 		</control>
@@ -1538,7 +1527,7 @@
 			<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)</visible>
 			<description>custom widget group4</description>
 			<include>HomeSlideAnimations</include>
-			<include>WidgetContainer</include>
+			<include>WidgetContainer_Vertical</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
 				<visible>Container(554).OnNext + IntegerGreaterThan(Container(554).NumItems,1)</visible>					
@@ -1548,8 +1537,8 @@
 				<visible>Container(554).OnPrevious + IntegerGreaterThan(Container(554).NumItems,1)</visible>
 			</control>
 			<control type="group">
-				<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetEmptyBoxes</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetEmptyPosters</include>
+				<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetEmptyBoxes_Vertical</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetEmptyPosters_Vertical</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
@@ -1564,7 +1553,7 @@
 					<visible>Container(554).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidth</include>
+					<include>ArrowWidth_Vertical</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1587,8 +1576,8 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="554">	
-				<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetSquareLayout</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetPosterLayout</include>
+				<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetSquareLayout_Vertical</include>
+				<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetPosterLayout_Vertical</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.4.Source),mixed)" name="widgetgroup-customgroup">
 					<param name="GroupNo">4</param>
 				</include>
@@ -1598,10 +1587,10 @@
 					<param name="Limit">$INFO[Skin.String(widgetgroup.4.Limit)]</param>
 				</include>
 			</control>
-			<include name="WidgetBottomLabels">
+			<include name="WidgetBottomLabels_Vertical">
 				<param name="Container">554</param>  
 			</include>		
-			<include name="ParamWidgetCounterLoading">
+			<include name="ParamWidgetCounterLoading_Vertical">
 				<param name="Container">554</param>   
 			</include>	
 		</control>
@@ -1613,7 +1602,7 @@
 			<description>rss video feed widget</description>
 			<visible>StringCompare(Container(20).ListItem.Property(widget),rssvideowidget)</visible>
 			<include>HomeSlideAnimations</include>
-			<include>WidgetContainer</include>
+			<include>WidgetContainer_Vertical</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
 				<visible>Container(650).OnNext + IntegerGreaterThan(Container(650).NumItems,1)</visible>					
@@ -1623,7 +1612,7 @@
 				<visible>Container(650).OnPrevious + IntegerGreaterThan(Container(650).NumItems,1)</visible>
 			</control>
 			<control type="group">
-				<include>WidgetEmptyBoxes</include>
+				<include>WidgetEmptyBoxes_Vertical</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
@@ -1639,7 +1628,7 @@
 					<visible>Container(650).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidth</include>
+					<include>ArrowWidth_Vertical</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1663,7 +1652,7 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="650">	
-				<include>WidgetSquareLayout</include>
+				<include>WidgetSquareLayout_Vertical</include>
 				<content>plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=$VAR[RSSVideoFeedURL]</content>
 			</control>			
 			<control type="button" id="65">
@@ -1709,10 +1698,10 @@
 				<!-- on click command -->
 				<onclick>ActivateWindow(Videos,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=$VAR[RSSVideoFeedURL])</onclick>	
 			</control>
-			<include name="WidgetBottomLabels">
+			<include name="WidgetBottomLabels_Vertical">
 				<param name="Container">650</param>  
 			</include>		
-			<include name="ParamWidgetCounterLoading">
+			<include name="ParamWidgetCounterLoading_Vertical">
 				<param name="Container">650</param>   
 			</include>
 		</control>
@@ -1724,7 +1713,7 @@
 			<description>playlist widget</description>
 			<visible>SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)</visible>
 			<include>HomeSlideAnimations</include>
-			<include>WidgetContainer</include>
+			<include>WidgetContainer_Vertical</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
 				<visible>Container(651).OnNext + IntegerGreaterThan(Container(651).NumItems,1)</visible>					
@@ -1734,7 +1723,7 @@
 				<visible>Container(651).OnPrevious + IntegerGreaterThan(Container(651).NumItems,1)</visible>
 			</control>
 			<control type="group">
-				<include>WidgetEmptyBoxes</include>
+				<include>WidgetEmptyBoxes_Vertical</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>				
@@ -1749,7 +1738,7 @@
 					<visible>Container(651).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidth</include>
+					<include>ArrowWidth_Vertical</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1772,13 +1761,13 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="651">	
-				<include>WidgetSquareLayout</include>
+				<include>WidgetSquareLayout_Vertical</include>
 				<content target="music">$VAR[QuickNav_WidgetListContentPlaylists]</content>
 			</control>
-			<include name="WidgetBottomLabels">
+			<include name="WidgetBottomLabels_Vertical">
 				<param name="Container">651</param>  
 			</include>		
-			<include name="ParamWidgetCounterLoading">
+			<include name="ParamWidgetCounterLoading_Vertical">
 				<param name="Container">651</param>   
 			</include>
 		</control>
@@ -1790,7 +1779,7 @@
 			<description>playlist widget</description>
 			<visible>SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)</visible>
 			<include>HomeSlideAnimations</include>
-			<include>WidgetContainer</include>
+			<include>WidgetContainer_Vertical</include>
 			<control type="group" id="4513">
 				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
 				<visible>Container(652).OnNext + IntegerGreaterThan(Container(652).NumItems,1)</visible>					
@@ -1800,7 +1789,7 @@
 				<visible>Container(652).OnPrevious + IntegerGreaterThan(Container(652).NumItems,1)</visible>
 			</control>
 			<control type="group">
-				<include>WidgetEmptyBoxes</include>
+				<include>WidgetEmptyBoxes_Vertical</include>
 			</control>
 			<control type="group">
 				<description>arrows left right</description>
@@ -1815,7 +1804,7 @@
 					<visible>Container(652).HasPrevious</visible>
 				</control>
 				<control type="image">  					
-					<include>ArrowWidth</include>
+					<include>ArrowWidth_Vertical</include>
 					<width>25</width>
 					<height>25</height>
 					<texture background="true">buttons/arrow_right.png</texture>
@@ -1838,13 +1827,13 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="652">	
-				<include>WidgetPosterLayout</include>
+				<include>WidgetPosterLayout_Vertical</include>
 				<content target="videos">$VAR[QuickNav_WidgetListContentPlaylists]</content>
 			</control>
-			<include name="WidgetBottomLabels">
+			<include name="WidgetBottomLabels_Vertical">
 				<param name="Container">652</param>
 			</include>			
-			<include name="ParamWidgetCounterLoading">
+			<include name="ParamWidgetCounterLoading_Vertical">
 				<param name="Container">652</param>  
 			</include>
 		</control>

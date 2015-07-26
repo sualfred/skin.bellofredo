@@ -22,12 +22,15 @@
 		<control type="group">
 			<visible>!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4)</visible>
 			<control type="group" id="15">				
+				
 				<animation effect="slide" time="0" start="0,0" end="0,100" condition="StringCompare(Skin.String(MainMenuStyle),textbottom)">Conditional</animation>
-				<animation effect="slide" time="0" start="0,0" end="0,15" condition="!StringCompare(Skin.String(MainMenuStyle),textbottom) + !SubString(Skin.String(MainMenuStyle),icon)">Conditional</animation>
-				<!--<include>HomeMenuWraplist</include>-->
-				<include>HomeMenuWraplist_Vertical</include>
-				<!--<include>HomeSubMenus</include>-->
-				<include>VerticalHomeSubMenus</include>
+				<animation effect="slide" time="0" start="0,0" end="0,15" condition="!StringCompare(Skin.String(MainMenuStlye),vertical) + !StringCompare(Skin.String(MainMenuStyle),textbottom) + !SubString(Skin.String(MainMenuStyle),icon)">Conditional</animation>
+
+				<include condition="!StringCompare(Skin.String(MainMenuStyle),vertical)">HomeMenuWraplist</include>
+				<include condition="StringCompare(Skin.String(MainMenuStyle),vertical)">HomeMenuWraplist_Vertical</include>
+				<include condition="!StringCompare(Skin.String(MainMenuStyle),vertical)">HomeSubMenus</include>
+				<include condition="StringCompare(Skin.String(MainMenuStyle),vertical)">VerticalHomeSubMenus</include>
+
 			</control>
 			<include condition="!Skin.HasSetting(HideHomeNPCovers)">CoversNowPlaying</include>
 			<include condition="Skin.HasSetting(HideHomeNPCovers)">CommonNowPlaying</include>
@@ -42,7 +45,8 @@
 				<animation type="Conditional" condition="!Window.IsVisible(contextmenu)" reversible="false">
 					<effect type="slide" start="0,-25" end="0,0" time="350" tween="sine" easing="out" />			
 				</animation>				
-				<include>HomeWidgetsContainer</include>			
+				<include condition="!StringCompare(Skin.String(MainMenuStyle),vertical)">HomeWidgetsContainer</include>			
+				<include condition="StringCompare(Skin.String(MainMenuStyle),vertical)">HomeWidgetsContainer_Vertical</include>			
 			</control>
 			<include>CommonDialogsFadeOutBG</include>
 		</control>	

@@ -17,8 +17,8 @@
 	<include file="IncludesPVR.xml" />
 	<include file="script-skinshortcuts-includes.xml" />
 	<include file="IncludesDialogs.xml" />
-	<!--<include file="IncludesWidgetContainer.xml" />-->
-	<include file="IncludesWidgetContainer_Vertical.xml" />
+	<include file="IncludesWidgetContainer.xml" condition="!StringCompare(Skin.String(MainMenuStyle),vertical)" />
+	<include file="IncludesWidgetContainer_Vertical.xml" condition="StringCompare(Skin.String(MainMenuStyle),vertical)" />
 
 	<constant name="FanartCrossfadeTime">250</constant>
 	<constant name="IconCrossfadeTime">250</constant>
@@ -1856,6 +1856,7 @@
 	<value condition="StringCompare(Skin.String(MainMenuStyle),5icons)">$LOCALIZE[31348]</value>
 	<value condition="StringCompare(Skin.String(MainMenuStyle),3icons)">$LOCALIZE[31349]</value>
 	<value condition="StringCompare(Skin.String(MainMenuStyle),textbottom)">$LOCALIZE[31382]</value>	
+	<value condition="StringCompare(Skin.String(MainMenuStyle),vertical)">$LOCALIZE[31474]</value>	
 	<value>$LOCALIZE[31354]</value>
 </variable>
 
@@ -2984,6 +2985,16 @@
 		<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 		<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/video_overlay_noglass.png</texture>
 	</control>
+</include>
+
+
+<include name="widgetgroup-custompath">
+	<content limit="$PARAM[Limit]" target="$PARAM[Target]">$INFO[Skin.String(CustomWidgetPath$PARAM[GroupNo].List)]</content>
+</include>
+<include name="widgetgroup-customgroup">
+	<content>
+		<include>skinshortcuts-group-widgetgroup$PARAM[GroupNo]</include>
+	</content>
 </include>
 
 

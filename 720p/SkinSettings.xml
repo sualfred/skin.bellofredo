@@ -254,6 +254,8 @@
 							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(MainMenuStyle,3icons))</onclick>
 							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31348])</onclick>
 							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(MainMenuStyle,5icons))</onclick>
+							<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31474])</onclick>
+							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(MainMenuStyle,vertical))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31347])</onclick>
 						</control>
 						<control type="radiobutton" id="8308">

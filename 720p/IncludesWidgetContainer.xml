@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes> 
-	<include name="widgetgroup-custompath">
-		<content limit="$PARAM[Limit]" target="$PARAM[Target]">$INFO[Skin.String(CustomWidgetPath$PARAM[GroupNo].List)]</content>
-	</include>
-	<include name="widgetgroup-customgroup">
-		<content>
-			<include>skinshortcuts-group-widgetgroup$PARAM[GroupNo]</include>
-		</content>
-	</include>
-
 	<include name="ParamWidgetCounterLoading">
 		<control type="label">
 			<left>0</left>
