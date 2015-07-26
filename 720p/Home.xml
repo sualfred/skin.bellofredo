@@ -24,7 +24,7 @@
 			<control type="group" id="15">				
 				
 				<animation effect="slide" time="0" start="0,0" end="0,100" condition="StringCompare(Skin.String(MainMenuStyle),textbottom)">Conditional</animation>
-				<animation effect="slide" time="0" start="0,0" end="0,15" condition="!StringCompare(Skin.String(MainMenuStlye),vertical) + !StringCompare(Skin.String(MainMenuStyle),textbottom) + !SubString(Skin.String(MainMenuStyle),icon)">Conditional</animation>
+				<animation effect="slide" time="0" start="0,0" end="0,15" condition="!StringCompare(Skin.String(MainMenuStyle),vertical) + !StringCompare(Skin.String(MainMenuStyle),textbottom) + !SubString(Skin.String(MainMenuStyle),icon)">Conditional</animation>
 
 				<include condition="!StringCompare(Skin.String(MainMenuStyle),vertical)">HomeMenuWraplist</include>
 				<include condition="StringCompare(Skin.String(MainMenuStyle),vertical)">HomeMenuWraplist_Vertical</include>

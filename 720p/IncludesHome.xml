@@ -37,7 +37,7 @@
 						<effect type="slide" start="0,0" end="-2000,0" time="20350" />
 						<effect type="slide" start="0,0" end="2000,0" time="20350" delay="20350"/>
 					</animation>
-					<visible>Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar)</visible>
+					<visible>Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar) + </visible>
 				</control>
 
 				<control type="group" id="16">
