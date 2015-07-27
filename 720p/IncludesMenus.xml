@@ -482,6 +482,65 @@
 		</control>			
 	</include>
 
+		<include name="ContextMenuFavourites">
+		<control type="image" id="999">
+			<description>background image</description>
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>1280</height>
+			<texture>-</texture>
+			<aspectratio aligny="center">stretch</aspectratio>
+			<visible>false</visible>
+		</control>
+		<control type="grouplist" id="996">
+			<left>45</left>
+			<top>75</top>
+			<width>460</width>
+			<height max="520">auto</height>
+			<itemgap>0</itemgap>
+			<onleft>Close</onleft>
+			<onright>Close</onright>
+			<include>TopOptionsSlideAnimations</include>
+			<control type="button" id="991">
+				<description>button template</description>
+				<include>TopLeftMenusButton</include>
+				<onclick>SendClick(1001)</onclick>
+				<label>31028</label>
+			</control>
+			<control type="button" id="992">
+				<description>button template</description>
+				<include>TopLeftMenusButton</include>
+				<onclick>SendClick(1002)</onclick>
+				<label>31029</label>
+			</control>
+			<control type="button" id="993">
+				<description>button template</description>
+				<include>TopLeftMenusButton</include>
+				<onclick>SendClick(1003)</onclick>
+				<label>15015</label>
+			</control>
+			<control type="button" id="994">
+				<description>button template</description>
+				<include>TopLeftMenusButton</include>
+				<onclick>SendClick(1004)</onclick>
+				<label>118</label>
+			</control>
+			<control type="button" id="995">
+				<description>button template</description>
+				<include>TopLeftMenusButton</include>
+				<onclick>SendClick(1005)</onclick>
+				<label>20019</label>
+			</control>
+		</control>
+		<control type="button" id="1000">
+			<description>button template</description>
+			<include>TopButton</include>
+			<label>-</label>
+			<visible>false</visible>
+		</control>			
+	</include>
+
 
 
 	<!-- ========================== -->
@@ -834,7 +893,11 @@
 	<!-- ====================================== -->
 	<include name="ContextMenuWidgets">
 		<control type="group">
+			<animation type="Conditional" condition="StringCompare(Skin.String(MainMenuStyle),vertical)" reversible="false">
+				<effect type="slide" end="-30,25" time="0" />			
+			</animation>
 			<include>TopOptionsSlideAnimations</include>
+			<width>1280</width>
 			<top>65</top>
 			<left>0</left>
 			<control type="image" id="999">
@@ -855,8 +918,6 @@
 				<itemgap>0</itemgap>
 				<onleft>Close</onleft>
 				<onright>Close</onright>
-					<!--<animation effect="fade" start="0" end="100" time="250" reversible="true">WindowOpen</animation>
-					<animation effect="fade" start="100" end="0" time="200" reversible="true">WindowClose</animation>-->
 				</control>
 				<control type="button" id="1000">
 					<description>button template</description>

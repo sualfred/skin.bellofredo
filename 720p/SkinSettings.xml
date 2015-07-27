@@ -293,6 +293,7 @@
 							<label>- $LOCALIZE[31127]</label>
 							<onclick>Skin.ToggleSetting(HideLibraryStats)</onclick>
 							<selected>!Skin.HasSetting(HideLibraryStats)</selected>
+							<enable>!StringCompare(Skin.String(MainMenuStyle),vertical)</enable>
 						</control>
 						<!-- top menu -->
 						<control type="button" id="8310">
@@ -393,6 +394,7 @@
 							<label>- $LOCALIZE[31104]</label>
 							<onclick>Skin.ToggleSetting(HideHomeNPCovers)</onclick>
 							<selected>!Skin.HasSetting(HideHomeNPCovers)</selected>
+							<enable>!StringCompare(Skin.String(MainMenuStyle),vertical)</enable>
 						</control>
 						<control type="button" id="8332">
 							<include>SettingsButton</include>
@@ -405,6 +407,7 @@
 							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[13113])</onclick>
 							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(RecordingBox,disabled))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31297])</onclick>
+							<enable>!StringCompare(Skin.String(MainMenuStyle),vertical)</enable>					
 						</control>
 						<control type="radiobutton" id="8333">
 							<description>Hide Small Rec Info</description>

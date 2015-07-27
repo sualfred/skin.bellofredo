@@ -152,8 +152,8 @@
 		<control type="image">
 			<left>20</left>
 			<top>5</top>
-			<width>192.5</width>
-			<height>192.5</height>
+			<width>190.5</width>
+			<height>190.5</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
@@ -161,8 +161,8 @@
 		<control type="image">
 			<left>245</left>
 			<top>5</top>
-			<width>192.5</width>
-			<height>192.5</height>
+			<width>190.5</width>
+			<height>190.5</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
@@ -170,8 +170,8 @@
 		<control type="image">
 			<left>470</left>
 			<top>5</top>
-			<width>192.5</width>
-			<height>192.5</height>
+			<width>190.5</width>
+			<height>190.5</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
@@ -179,8 +179,8 @@
 		<control type="image">
 			<left>695</left>
 			<top>5</top>
-			<width>192.5</width>
-			<height>192.5</height>
+			<width>190.5</width>
+			<height>190.5</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
@@ -195,8 +195,8 @@
 		<control type="image">
 			<left>22</left>
 			<top>5</top>
-			<width>145.6</width>
-			<height>209.4</height>
+			<width>144.6</width>
+			<height>208.4</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
@@ -204,8 +204,8 @@
 		<control type="image">
 			<left>202</left>
 			<top>5</top>
-			<width>145.6</width>
-			<height>209.4</height>
+			<width>144.6</width>
+			<height>208.4</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
@@ -213,8 +213,8 @@
 		<control type="image">
 			<left>382</left>
 			<top>5</top>
-			<width>145.6</width>
-			<height>209.4</height>
+			<width>144.6</width>
+			<height>208.4</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
@@ -222,8 +222,8 @@
 		<control type="image">
 			<left>562</left>
 			<top>5</top>
-			<width>145.6</width>
-			<height>209.4</height>
+			<width>144.6</width>
+			<height>208.4</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
@@ -231,8 +231,8 @@
 		<control type="image">
 			<left>742</left>
 			<top>5</top>
-			<width>145.6</width>
-			<height>209.4</height>
+			<width>144.6</width>
+			<height>208.4</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
@@ -260,16 +260,16 @@
 			<control type="image">
 				<left>22</left>
 				<top>5</top>
-				<width>145.6</width>
-				<height>209.4</height>
+				<width>144.6</width>
+				<height>208.4</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back.png</texture>
 			</control>
 			<control type="image">
 				<left>22</left>
 				<top>5</top>
-				<width>145.6</width>
-				<height>209.4</height>
+				<width>144.6</width>
+				<height>208.4</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="osd/widgets/poster_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
 			</control>
@@ -295,16 +295,16 @@
 				<control type="image">
 					<left>22</left>
 					<top>5</top>
-					<width>145.6</width>
-					<height>209.4</height>
+					<width>144.6</width>
+					<height>208.4</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 					<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back.png</texture>
 				</control>
 				<control type="image">
 					<left>22</left>
 					<top>5</top>
-					<width>145.6</width>
-					<height>209.4</height>
+					<width>144.6</width>
+					<height>208.4</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 					<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="osd/widgets/poster_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
 				</control>
@@ -358,16 +358,16 @@
 			<control type="image">
 				<left>20</left>
 				<top>5</top>
-				<width>192.5</width>
-				<height>192.5</height>
+				<width>190.5</width>
+				<height>190.5</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
 			</control>
 			<control type="image">
 				<left>20</left>
 				<top>5</top>
-				<width>192.5</width>
-				<height>192.5</height>
+				<width>190.5</width>
+				<height>190.5</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
 			</control>
@@ -393,16 +393,16 @@
 				<control type="image">
 					<left>20</left>
 					<top>5</top>
-					<width>192.5</width>
-					<height>192.5</height>
+					<width>190.5</width>
+					<height>190.5</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 					<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
 				</control>
 				<control type="image">
 					<left>20</left>
 					<top>5</top>
-					<width>192.5</width>
-					<height>192.5</height>
+					<width>190.5</width>
+					<height>190.5</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
 				</control>
@@ -436,15 +436,7 @@
 		</focusedlayout>
 	</include>
 
-	<include name="ArrowDimension">
-		<left>150</left>
-		<top>337</top>
-		<width>828</width>
-		<height>25</height>
-	</include>
-	<include name="ArrowWidth">
-		<left>956</left>
-	</include>
+
 
 
 	<include name="HomeWidgetsContainer">
@@ -740,7 +732,7 @@
 		<!-- Amazon Sandmann Plugin 	 -->
 		<!-- =========== --> 
 		<control type="group" id="9073">
-			<visible>System.HasAddon(plugin.video.amazon)</visible>	
+			<visible>StringCompare(Container(20).ListItem.Property(widget),amazondb) + System.HasAddon(plugin.video.amazon)</visible>
 			<include>HomeSlideAnimations</include>
 			<include>HomeAmazonDBWidgetAnimation</include>			
 			<include>WidgetContainer</include>				
@@ -792,6 +784,7 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="750">
+				<visible>System.HasAddon(plugin.video.amazon)</visible>
 				<include>WidgetPosterLayout</include>
 				<content limit="15" target="video">$VAR[QuickNav_WidgetListContentAmazonDB]</content>				
 			</control>						
@@ -833,8 +826,8 @@
 		<!-- =========== -->
 		<!-- Amazon AddonScriptorDE Plugin 	 -->
 		<!-- =========== --> 
-		<control type="group" id="9074">,
-			<visible>System.HasAddon(plugin.video.prime_instant)</visible>	
+		<control type="group" id="9074">
+			<visible>StringCompare(Container(20).ListItem.Property(widget),amazon) + System.HasAddon(plugin.video.prime_instant)</visible>
 			<include>HomeSlideAnimations</include>
 			<include>HomeAmazonWidgetAnimation</include>			
 			<include>WidgetContainer</include>	
@@ -886,6 +879,7 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="751">
+				<visible>System.HasAddon(plugin.video.prime_instant)</visible>
 				<include>WidgetPosterLayout</include>
 				<content limit="15" target="video">$VAR[QuickNav_WidgetListContentAmazon]</content>				
 			</control>								

@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<include name="PulseBar">
+		<control type="image">
+			<top>-20</top>
+			<include>FullscreenDimensions</include>			
+			<texture background="true">views/list/shine.png</texture>
+			<visible>!Skin.HasTheme(Original-Bello) + !Window.IsActive(playercontrols)</visible>
+			<animation effect="fade" time="0" start="100" end="75" condition="!Skin.HasTheme(ElegantDark) + [Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)]">Conditional</animation>
+			<animation effect="fade" time="0" start="100" end="50" condition="Skin.HasTheme(ElegantDark) + [Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)]">Conditional</animation>
+		</control>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture background="true">windows/bg/black_pulse.png</texture>
+			<animation effect="fade" time="0" end="70" condition="true">Conditional</animation>
+			<visible>Skin.HasSetting(DisablePurpleBar)</visible>
+		</control>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture background="true">windows/bg/colors_pulse.png</texture>
+			<visible>!Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar)</visible>
+		</control>
+		<control type="image">
+			<height>720</height>
+			<width>3280</width>
+			<texture>windows/bg/colors_pulse.png</texture>
+			<animation type="Conditional" condition="true" loop="true" reversible="false">
+				<effect type="slide" start="0,0" end="-2000,0" time="20350" />
+				<effect type="slide" start="0,0" end="2000,0" time="20350" delay="20350"/>
+			</animation>
+			<visible>Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar)</visible>
+		</control>
+	</include>
+
+
 	<!--======================-->
 	<!--Main Home List Buttons-->
 	<!--======================-->
@@ -10,35 +43,8 @@
 			<include>HomeSlideAnimations</include>
 			<control type="group">
 				<include>HomeSlideAnimations</include>
-				<control type="image">
-					<top>-20</top>
-					<include>FullscreenDimensions</include>			
-					<texture background="true">views/list/shine.png</texture>
-					<visible>!Skin.HasTheme(Original-Bello) + !Window.IsActive(playercontrols)</visible>
-					<animation effect="fade" time="0" start="100" end="75" condition="!Skin.HasTheme(ElegantDark) + [Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)]">Conditional</animation>
-					<animation effect="fade" time="0" start="100" end="50" condition="Skin.HasTheme(ElegantDark) + [Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)]">Conditional</animation>
-				</control>
-				<control type="image">
-					<include>FullscreenDimensions</include>
-					<texture background="true">windows/bg/black_pulse.png</texture>
-					<animation effect="fade" time="0" end="70" condition="true">Conditional</animation>
-					<visible>Skin.HasSetting(DisablePurpleBar)</visible>
-				</control>
-				<control type="image">
-					<include>FullscreenDimensions</include>
-					<texture background="true">windows/bg/colors_pulse.png</texture>
-					<visible>!Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar)</visible>
-				</control>
-				<control type="image">
-					<height>720</height>
-					<width>3280</width>
-					<texture>windows/bg/colors_pulse.png</texture>
-					<animation type="Conditional" condition="true" loop="true" reversible="false">
-						<effect type="slide" start="0,0" end="-2000,0" time="20350" />
-						<effect type="slide" start="0,0" end="2000,0" time="20350" delay="20350"/>
-					</animation>
-					<visible>Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar) + </visible>
-				</control>
+
+				<include>PulseBar</include>
 
 				<control type="group" id="16">
 					<visible>!Skin.HasSetting(HideLibraryStats) + [StringCompare(Container(20).ListItem.Property(defaultID),movies) | StringCompare(Container(20).ListItem.Property(defaultID),music) | StringCompare(Container(20).ListItem.Property(defaultID),tvshows)]</visible>
@@ -114,8 +120,8 @@
 								<effect type="fade" start="100" end="35" time="170"/>
 								<effect type="zoom" center="100,217" easing="inout" effect="zoom" end="66" start="100" time="300" tween="sine"/>
 							</animation>
-							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
-								<effect type="zoom" start="66" end="100" time="250" tween="sine" easing="inout" center="300,217"  />
+							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog) + !Window.IsVisible(favourites) + !Window.IsVisible(virtualkeyboard)">
+								<effect type="zoom" start="66" end="100" time="250" tween="sine" easing="inout" center="255,217"  />
 								<effect type="fade" start="35" end="100" time="250" tween="sine" />
 							</animation>
 							<control type="label">
@@ -209,7 +215,7 @@
 								<effect type="fade" start="100" end="35" time="170"/>
 								<effect type="zoom" center="200,228" easing="inout" effect="zoom" end="66" start="100" time="300" tween="sine"/>
 							</animation>
-							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
+							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog) + !Window.IsVisible(favourites) + !Window.IsVisible(virtualkeyboard)">
 								<effect type="zoom" start="66" end="100" time="200" tween="sine" easing="out" center="275,228"  />
 								<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
 							</animation>
@@ -323,7 +329,7 @@
 								<effect type="fade" start="100" end="35" time="170"/>
 								<effect type="zoom" center="200,228" easing="inout" effect="zoom" end="66" start="100" time="300" tween="sine"/>
 							</animation>
-							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">
+							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog) + !Window.IsVisible(favourites) + !Window.IsVisible(virtualkeyboard)">
 								<effect type="zoom" start="66" end="100" time="200" tween="sine" easing="out" center="275,228"  />
 								<effect type="fade" start="35" end="100" time="200" tween="sine" easing="out" />
 							</animation>
@@ -418,44 +424,32 @@
 		</control>
 	</include>
 
-
+	<!--===========-->
+	<!--Vertical Menu-->
+	<!--===========-->
 	<include name="HomeMenuWraplist_Vertical">
+
+		<control type="image">
+			<animation type="Conditional" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">   
+				<effect type="fade" start="90" end="45" time="1000" tween="sine" easing="inout" />
+				<!--<effect type="slide" start="0,0" end="-55,0" time="350" tween="sine" easing="inout" />-->
+			</animation>	
+
+			<animation type="Conditional" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">
+				<effect type="fade" delay="0" start="45" end="90" time="500" tween="sine" easing="inout"  />
+				<!--<effect type="slide" delay="0" start="-55,0" end="0,0" time="350" tween="cubic" easing="out" />-->
+			</animation>	
+			<include>FullscreenDimensions</include>
+			<texture background="true">views/other/menus_overlay.png</texture>
+		</control>
+
+		<include>PulseBar</include>
+
 		<control type="group">
-		    <visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>					
+			<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>					
 			<visible allowhiddenfocus="true">!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4) + !Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
 			<include>HomeSlideAnimations</include>
 			<control type="group">
-				<include>HomeSlideAnimations</include>
-				<control type="image">
-					<top>-20</top>
-					<include>FullscreenDimensions</include>			
-					<texture background="true">views/list/shine.png</texture>
-					<visible>!Skin.HasTheme(Original-Bello) + !Window.IsActive(playercontrols)</visible>
-					<animation effect="fade" time="0" start="100" end="75" condition="!Skin.HasTheme(ElegantDark) + [Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)]">Conditional</animation>
-					<animation effect="fade" time="0" start="100" end="50" condition="Skin.HasTheme(ElegantDark) + [Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)]">Conditional</animation>
-				</control>
-				<control type="image">
-					<include>FullscreenDimensions</include>
-					<texture background="true">windows/bg/black_pulse.png</texture>
-					<animation effect="fade" time="0" end="70" condition="true">Conditional</animation>
-					<visible>Skin.HasSetting(DisablePurpleBar)</visible>
-				</control>
-				<control type="image">
-					<include>FullscreenDimensions</include>
-					<texture background="true">windows/bg/colors_pulse.png</texture>
-					<visible>!Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar)</visible>
-				</control>
-				<control type="image">
-					<height>720</height>
-					<width>3280</width>
-					<texture>windows/bg/colors_pulse.png</texture>
-					<animation type="Conditional" condition="true" loop="true" reversible="false">
-						<effect type="slide" start="0,0" end="-2000,0" time="20350" />
-						<effect type="slide" start="0,0" end="2000,0" time="20350" delay="20350"/>
-					</animation>
-					<visible>Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar)</visible>
-				</control>
-
 				<control type="group" id="16">
 					<visible>!Skin.HasSetting(HideLibraryStats) + [StringCompare(Container(20).ListItem.Property(defaultID),movies) | StringCompare(Container(20).ListItem.Property(defaultID),music) | StringCompare(Container(20).ListItem.Property(defaultID),tvshows)]</visible>
 					<control type="label" id="17">
@@ -473,15 +467,14 @@
 				</control>
 
 				<control type="fixedlist" id="20">
-					<include>WidgetMainMenuSlideAnimations</include>
+					<include>WidgetMainMenuSlideAnimations_Vertical</include>
 					<include>HomeSlideAnimations</include>
 					<visible allowhiddenfocus="true">!Control.HasFocus(23)</visible>
-
 					<description>Home Container</description>		
 					<left>45</left>
 					<top>140</top>
 					<width>1600</width>
-					<height>450</height>
+					<height>500</height>
 					<align>right</align>
 					<onright condition="!IsEmpty(Container(20).ListItem.Property(widget))">SetProperty(WidgetHasFocus,1,Home)</onright>
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),movies)">SetFocus(90501)</onright>
@@ -498,14 +491,14 @@
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),youtube)">SetFocus(90981)</onright>					
 					<onright condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)">SetFocus(90711)</onright>
 					<onright condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)">SetFocus(90721)</onright>
-					<onup condition="IsEmpty(Container(20).ListItem.Property(widget))">SetFocus(21)</onup>
+					<onup>SetFocus(21)</onup>
 					<onleft condition="IntegerGreaterThan(Container(23).NumItems,0)">SetFocus(23)</onleft>					
 					<onleft>20</onleft>
 					<onright>20</onright>
 					<itemgap>0</itemgap>
 					<orientation>vertical</orientation>
-					<focusposition>4</focusposition>
-					<movement>4</movement>						
+					<focusposition>1</focusposition>
+					<movement>8</movement>						
 					<scrolltime tween="Quadratic" easing="out">400</scrolltime>
 					<itemlayout width="350" height="50">
 						<control type="label">
@@ -538,11 +531,11 @@
 							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">								
 								<effect type="fade" start="35" end="100" time="250" tween="sine" />
 							</animation>-->
-							<animation type="Focus" reversible="false" condition="Container(20).OnPrevious ">
+							<animation type="Focus" reversible="false" condition="Container(20).OnPrevious">
 								<effect type="fade" start="20" end="100" time="500"/>
 								<effect type="slide" start="0,45" end="0,0" time="400" tween="back" easing="out"/>
 							</animation>
-							<animation type="Focus" reversible="false" condition="Container(20).OnNext ">
+							<animation type="Focus" reversible="false" condition="Container(20).OnNext">
 								<effect type="fade" start="20" end="100" time="500"/>
 								<effect type="slide" start="0,-45" end="0,0" time="400" tween="back" easing="out"/>
 							</animation>
@@ -658,6 +651,7 @@
 		<control type="group">
 			<include>HomeNowPlayingCoversSlideAnimations</include>
 			<include>WidgetMainMenuSlideAnimations</include>
+			<visible>!StringCompare(Skin.String(MainMenuStyle),vertical)</visible>
 			<visible>StringCompare(Skin.String(RecordingBox),global) | [IsEmpty(Skin.String(RecordingBox)) + StringCompare(Container(20).ListItem.Property(defaultID),livetv)]</visible>
 			<visible>![Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols) | Window.IsActive(selectdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(favourites) | Window.IsActive(progressdialog) | Window.IsActive(InfoDialog) | Window.IsActive(extendedprogressdialog) | Window.IsActive(ContextMenu) | Window.IsActive(script-globalsearch-main.xml) | Player.HasMedia] + [PVR.IsRecording | PVR.HasNonRecordingTimer]</visible>
 			<!--currently recording -->

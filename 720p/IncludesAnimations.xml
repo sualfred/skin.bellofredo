@@ -93,11 +93,11 @@
 	</include>
 
 	<include name="HomeNowPlayingSlideAnimations">
-		<animation type="WindowOpen" reversible="false" condition="Window.Previous(Visualisation) | Window.Previous(FullscreenVideo) | [Window.Previous(Home) + !Skin.HasSetting(HideHomeNPCovers)]">
+		<animation type="WindowOpen" reversible="false" condition="Window.Previous(Visualisation) | Window.Previous(FullscreenVideo) | [Window.Previous(Home) + !Skin.HasSetting(HideHomeNPCovers) + !StringCompare(Skin.String(MainMenuStyle),vertical)]">
 			<effect type="fade" start="0" end="100" time="400" tween="sine" easing="in"  />
 			<effect type="slide" start="0,55" end="0,0" time="450" tween="cubic" easing="out" />
 		</animation>
-		<animation type="WindowClose" reversible="false" condition="Window.Next(Visualisation) | Window.Previous(FullscreenVideo) | [Window.Next(Home) + !Skin.HasSetting(HideHomeNPCovers)]">
+		<animation type="WindowClose" reversible="false" condition="Window.Next(Visualisation) | Window.Previous(FullscreenVideo) | [Window.Next(Home) + !Skin.HasSetting(HideHomeNPCovers) + !StringCompare(Skin.String(MainMenuStyle),vertical)]">
 			<effect type="fade" start="100" end="0" time="300" delay="250" tween="sine" easing="out" />
 			<effect type="slide" start="0,0" end="0,55" time="350" delay="250" tween="sine" easing="out" />
 		</animation>
@@ -137,7 +137,7 @@
 		</animation>
 	</include>
 	<include name="HomeNowPlayingCoversSlideTextAnimations">
-		<animation type="Conditional" condition="![Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)] | Window.IsActive(shutdownmenu) | Window.IsActive(favourites) | Window.IsActive(virtualkeyboard) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(contextmenu) | Window.IsActive(playercontrols)" reversible="true">
+		<animation type="Conditional" condition="![Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)] | Window.IsActive(shutdownmenu) | Window.IsActive(favourites) | Window.IsActive(virtualkeyboard) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(contextmenu) | Window.IsActive(playercontrols) | StringCompare(Skin.String(MainMenuStyle),vertical)" reversible="true">
 			<effect type="slide" start="0,0" end="$PARAM[slide],0" time="250" tween="sine" easing="in" />
 		</animation>
 	</include>
@@ -182,15 +182,34 @@
 	</include>
 
 	<include name="WidgetMainMenuSlideAnimations">
-		<!--<animation type="Conditional" condition="[Control.HasFocus(250) | Control.HasFocus(350) | Control.HasFocus(450) | Control.HasFocus(45) | Control.HasFocus(550) | Control.HasFocus(551) | Control.HasFocus(552) | Control.HasFocus(553) | Control.HasFocus(554) | Control.HasFocus(650) | Control.HasFocus(651) | Control.HasFocus(652) | Control.HasFocus(750) | Control.HasFocus(751) | Control.HasFocus(25) | Control.HasFocus(35) | Control.HasFocus(65) | Control.HasFocus(46) | Control.HasFocus(55) | Control.HasFocus(75) | Control.HasFocus(76)]" reversible="false">-->     
 		<animation type="Conditional" condition="[ControlGroup(9050).HasFocus | ControlGroup(9060).HasFocus | ControlGroup(9070).HasFocus | ControlGroup(9073).HasFocus | ControlGroup(9074).HasFocus | ControlGroup(9080).HasFocus | ControlGroup(9090).HasFocus | ControlGroup(9091).HasFocus | ControlGroup(9093).HasFocus | ControlGroup(9094).HasFocus | ControlGroup(9099).HasFocus | ControlGroup(9071).HasFocus | ControlGroup(9072).HasFocus | ControlGroup(9098).HasFocus]" reversible="false">   
 			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
 			<effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="inout" />
 		</animation>				
-		<!--<animation type="Conditional" condition="!Control.HasFocus(250) + !Control.HasFocus(350) + !Control.HasFocus(450) + !Control.HasFocus(45) + !Control.HasFocus(550) + !Control.HasFocus(551) + !Control.HasFocus(552) + !Control.HasFocus(553) + !Control.HasFocus(554) + !Control.HasFocus(650) + !Control.HasFocus(651) + !Control.HasFocus(652) + !Control.HasFocus(750) + !Control.HasFocus(751) + !Control.HasFocus(25) + !Control.HasFocus(35) + !Control.HasFocus(65) + !Control.HasFocus(46) + !Control.HasFocus(55) + !Control.HasFocus(75) + !Control.HasFocus(76)" reversible="false">-->
 		<animation type="Conditional" condition="![ControlGroup(9050).HasFocus | ControlGroup(9060).HasFocus | ControlGroup(9070).HasFocus | ControlGroup(9073).HasFocus | ControlGroup(9074).HasFocus | ControlGroup(9080).HasFocus | ControlGroup(9090).HasFocus | ControlGroup(9091).HasFocus | ControlGroup(9093).HasFocus | ControlGroup(9094).HasFocus | ControlGroup(9099).HasFocus | ControlGroup(9071).HasFocus | ControlGroup(9072).HasFocus | ControlGroup(9098).HasFocus]" reversible="false">
 			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
 			<effect type="slide" start="0,55" end="0,0" time="350" tween="cubic" easing="out" />
+		</animation>		
+	</include>	
+
+	<include name="VerticalWidgetSlide">
+		<animation condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false" type="Conditional">
+			<effect delay="380" end="-400,35" start="0,0" time="350" tween="sine" easing="inout" type="slide" />
+		</animation>
+		<animation condition="IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false" type="Conditional">
+			<effect delay="180" end="0,0" start="-400,35" time="350" tween="sine" easing="inout" type="slide" />
+		</animation>
+	</include>
+	<include name="WidgetMainMenuSlideAnimations_Vertical">
+
+		<animation type="Conditional" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">   
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
+			<effect type="slide" start="0,0" end="-55,0" time="350" tween="sine" easing="inout" />
+		</animation>	
+
+		<animation type="Conditional" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">
+			<effect type="fade" delay="480" start="0" end="100" time="300" tween="sine" easing="in"  />
+			<effect type="slide" delay="480" start="-55,0" end="0,0" time="350" tween="cubic" easing="out" />
 		</animation>		
 	</include>
 

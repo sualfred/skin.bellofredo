@@ -1,36 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes> 
-
-	<include name="ParamListSlideAnimation_Vertical">
-		<animation condition="!IsEmpty(Window(Home).Property(WidgetHasFocus)) + [Container($PARAM[Container]).Position(7) | Container($PARAM[Container]).Position(6) | Container($PARAM[Container]).Position(5) | Container($PARAM[Container]).Position(4)]" reversible="false" type="Conditional">
-			<effect delay="280" easing="in" end="-90,0" start="0,0" time="180" tween="sine" type="slide" />
-		</animation>
-		<animation condition="![!IsEmpty(Window(Home).Property(WidgetHasFocus)) + [Container($PARAM[Container]).Position(7) | Container($PARAM[Container]).Position(6) | Container($PARAM[Container]).Position(5) | Container($PARAM[Container]).Position(4)]]" reversible="false" type="Conditional">
-			<effect delay="0" easing="in" end="0,0" start="-90,0" time="180" tween="sine" type="slide" />
-		</animation>
-	</include>
-
 	<include name="ParamWidgetCounterLoading_Vertical">
 		<control type="label">
-			<left>0</left>
+			<left>7</left>
 			<top>216</top>
 			<width>1280</width>
 			<height>70</height>
 			<aligny>top</aligny>
-			<align>center</align>
-			<label>$INFO[Container($PARAM[Container]).CurrentItem] / $INFO[Container($PARAM[Container]).NumItems]</label>
+			<align>left</align>			
 			<textcolor>77white</textcolor>
 			<shadowcolor>55000000</shadowcolor>
-			<font>FontSize_16</font>				
+			<font>FontSize_16</font>							
+			<include>VisibleFadeEffect4</include>		
+			<label>$INFO[Container($PARAM[Container]).CurrentItem] / $INFO[Container($PARAM[Container]).NumItems]</label>
 			<visible>!Container($PARAM[Container]).IsUpdating</visible>
-			<include>VisibleFadeEffect4</include>
 			<visible>!stringcompare(ListItem.Label,..) + !Skin.HasSetting(HideWidgetCounter) + IntegerGreaterThan(Container($PARAM[Container]).NumItems,0)</visible>
 		</control>
 		<control type="grouplist">			
 			<visible>Container($PARAM[Container]).IsUpdating</visible>
 			<include>DownUpAnimation</include>			
-			<top>471</top>			
-			<centerleft>50%</centerleft>
+			<top>471</top>		
+			<left>7</left>
 			<width>864</width>
 			<height>70</height>
 			<height>70</height>
@@ -78,15 +68,11 @@
 	</include>
 
 	<include name="WidgetContainer_Vertical">
-		<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>		
+		<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>	
+		<include>VerticalWidgetSlide</include>
 		<top>-35</top>
 		<left>450</left>
-		<animation condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false" type="Conditional">
-			<effect delay="280" easing="in" end="-400,35" start="0,0" time="180" tween="sine" type="slide" />
-		</animation>
-		<animation condition="IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false" type="Conditional">
-			<effect delay="0" easing="in" end="0,0" start="-400,35" time="180" tween="sine" type="slide" />
-		</animation>
+		<!-- headline -->
 		<control type="grouplist">
 			<top>165</top>
 			<left>7</left>
@@ -106,8 +92,7 @@
 				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>				
 			</control>			
 			<control type="label">
-				<description>header title</description>							
-				<centerleft>50%</centerleft>
+				<description>header title</description>		
 				<width>auto</width>
 				<height>50</height>
 				<align>center</align>
@@ -134,37 +119,17 @@
 	</include>
 
 	<include name="WidgetBottomLabels_Vertical">
-		<!--<control type="button">
-			<visible>!Container($PARAM[Container]).IsUpdating + !IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
-			<include>DownUpAnimation</include>
-			<left>-2</left>
-			<width>878</width>
-			<top>465</top>
-			<height>70</height>
-			<font>FontSize_22</font>
-			<textcolor>bbwhite</textcolor>
-			<focusedcolor>bbwhite</focusedcolor>
-			<disabledcolor>bbwhite</disabledcolor>
-			<shadowcolor>77000000</shadowcolor>
-			<texturefocus>-</texturefocus>
-			<texturenofocus>-</texturenofocus>
-			<align>left</align>
-			<aligny>top</aligny>
-			<label>$VAR[QuickNavWidgetListItemLabel]</label>
-			<label2>$VAR[QuickNavWidgetListItemLabel2]</label2>
-		</control>-->
-
 		<!--labels-->
 		<control type="grouplist">
 			<visible>!Container($PARAM[Container]).IsUpdating + !IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
 			<include>VisibleFadeEffect</include>
-			<width>878</width>
-			<top>465</top>
-			<height>600</height>
-			<itemgap>20</itemgap>
-			<orientation>horizontal</orientation>
 			<include>DialogZoomInOutAnimation</include>
-			<!--<visible>!Control.IsVisible(8013) + !Control.IsVisible(8014)</visible>-->
+			<width>1280</width>			
+			<height>600</height>
+			<top>465</top>
+			<left>7</left>
+			<itemgap>20</itemgap>
+			<orientation>horizontal</orientation>		
 
 			<!--imdb top 250-->
 			<control type="group">
@@ -212,16 +177,16 @@
 			</control>
 			<!--title and sub info-->
 			<control type="group">
-				<width>880</width>
+				<width>1200</width>
 				<control type="label">
-					<width>580</width>
-					<label>$INFO[Container($PARAM[Container]).ListItem.Season]$INFO[Container($PARAM[Container]).ListItem.Episode,x,. ]$INFO[Container($PARAM[Container]).ListItem.Label]$INFO[Container($PARAM[Container]).ListItem.TVShowTitle, - ,]</label>
+					<width>1200</width>
+					<label>$VAR[QuickNavWidgetListItemLabel_Vertical]</label>
 					<font>FontSize_28B</font>
 					<textcolor>white</textcolor>
 					<shadowcolor>77000000</shadowcolor>
 					<visible>!stringcompare(Container($PARAM[Container]).ListItem.Label,..)</visible>
 				</control>
-				<control type="label">
+				<control type="label">					
 					<top>33</top>
 					<left>0</left>
 					<align>left</align>
@@ -252,12 +217,13 @@
 
 				<!--Small Down Info-->
 				<control type="grouplist">
+					<animation effect="slide" time="0" end="0,-26" condition="IsEmpty(Container($PARAM[Container]).ListItem.Tagline) + IsEmpty(Container($PARAM[Container]).ListItem.Genre)">Conditional</animation>
 					<top>62</top>
 					<left>-1</left>
 					<orientation>horizontal</orientation>
 					<itemgap>10</itemgap>
 					<control type="group">
-						<visible>!IsEmpty(Container($PARAM[Container]).ListItem.Rating)</visible>
+						<visible>!IsEmpty(Container($PARAM[Container]).ListItem.Rating) + !IntegerGreaterThan(Container($PARAM[Container]).ListItem.Rating,10) + IntegerGreaterThan(Container($PARAM[Container]).ListItem.Rating,1) + [StringCompare(Container(20).ListItem.Property(widget),movies) | StringCompare(Container(20).ListItem.Property(widget),tvshows) | SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)] </visible>
 						<width>68</width>
 						<control type="image">
 							<width>71</width>
@@ -278,17 +244,15 @@
 							<label>$INFO[Container($PARAM[Container]).ListItem.Rating]</label>
 						</control>
 					</control>
-					<control type="group">
-						<width>115</width>
-						<control type="image">
-							<left>0</left>
-							<top>-2</top>
-							<width>118</width>
-							<height>24</height>
-							<colordiffuse>44white</colordiffuse>
-							<aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture background="true">rating/flat/$INFO[Container($PARAM[Container]).ListItem.StarRating]</texture>
-						</control>
+					<control type="image">
+						<left>0</left>
+						<top>-2</top>
+						<width>90</width>
+						<height>20</height>
+						<colordiffuse>44white</colordiffuse>
+						<aspectratio align="left" aligny="center">keep</aspectratio>
+						<texture background="true">rating/flat/$INFO[Container($PARAM[Container]).ListItem.StarRating]</texture>
+						<visible>!IsEmpty(Container($PARAM[Container]).ListItem.StarRating) + !IsEmpty(Container($PARAM[Container]).ListItem.Rating)</visible>						
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -311,23 +275,7 @@
 						<scroll>false</scroll>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[QuickNavWidgetListItemLabel2]</label>
-					</control>
-					<control type="image">
-						<width>60</width>
-						<height>22</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<colordiffuse>44white</colordiffuse>
-						<texture fallback="flags/mpaa/film/rating-nr.png">$VAR[MPAAFilmRating]</texture>
-						<visible>Container($PARAM[Container]).Content(Movies) + !Substring(Container($PARAM[Container]).ListItem.Path,videodb://movies/sets/)</visible>
-					</control>
-					<control type="image">
-						<width>60</width>
-						<height>22</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<colordiffuse>44white</colordiffuse>
-						<texture fallback="flags/mpaa/tv/tv-na.png">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
-						<visible>!Container($PARAM[Container]).Content(Movies) + !Container($PARAM[Container]).Content(Sets)</visible>
+						<label>$VAR[QuickNavWidgetListItemLabel2_Vertical]</label>
 					</control>
 					<control type="image">
 						<width>50</width>
@@ -341,9 +289,9 @@
 						<height>22</height>
 						<colordiffuse>44white</colordiffuse>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture>$VAR[ViewsDef3DFlags]</texture>
+						<texture>$VAR[ViewsDef3DFlags_Widgets]</texture>
 					</control>
-				</control>					
+				</control>	
 			</control>
 		</control>
 	</include>
@@ -352,8 +300,8 @@
 		<control type="image">
 			<left>$PARAM[left]</left>
 			<top>5</top>
-			<width>192.5</width>
-			<height>192.5</height>
+			<width>190.5</width>
+			<height>190.5</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
@@ -387,8 +335,8 @@
 		<control type="image">
 			<left>$PARAM[left]</left>
 			<top>5</top>
-			<width>145.6</width>
-			<height>209.4</height>
+			<width>144.6</width>
+			<height>208.4</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
@@ -447,16 +395,16 @@
 			<control type="image">
 				<left>7</left>
 				<top>5</top>
-				<width>145.6</width>
-				<height>209.4</height>
+				<width>144.6</width>
+				<height>208.4</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back.png</texture>
 			</control>
 			<control type="image">
 				<left>7</left>
 				<top>5</top>
-				<width>145.6</width>
-				<height>209.4</height>
+				<width>144.6</width>
+				<height>208.4</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="osd/widgets/poster_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
 			</control>
@@ -482,16 +430,16 @@
 				<control type="image">
 					<left>7</left>
 					<top>5</top>
-					<width>145.6</width>
-					<height>209.4</height>
+					<width>144.6</width>
+					<height>208.4</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 					<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back.png</texture>
 				</control>
 				<control type="image">
 					<left>7</left>
 					<top>5</top>
-					<width>145.6</width>
-					<height>209.4</height>
+					<width>144.6</width>
+					<height>208.4</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 					<texture background="true" fallback="thumbs/fallback_poster_tp.png" diffuse="osd/widgets/poster_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
 				</control>
@@ -547,16 +495,16 @@
 			<control type="image">
 				<left>6</left>
 				<top>5</top>
-				<width>192.5</width>
-				<height>192.5</height>
+				<width>190.5</width>
+				<height>190.5</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
 			</control>
 			<control type="image">
 				<left>6</left>
 				<top>5</top>
-				<width>192.5</width>
-				<height>192.5</height>
+				<width>190.5</width>
+				<height>190.5</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
 			</control>
@@ -581,16 +529,16 @@
 				<control type="image">
 					<left>6</left>
 					<top>5</top>
-					<width>192.5</width>
-					<height>192.5</height>
+					<width>190.5</width>
+					<height>190.5</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 					<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
 				</control>
 				<control type="image">
 					<left>6</left>
 					<top>5</top>
-					<width>192.5</width>
-					<height>192.5</height>
+					<width>190.5</width>
+					<height>190.5</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
 				</control>
@@ -656,37 +604,15 @@
 			<control type="group">
 				<include>WidgetEmptyPosters_Vertical</include>
 			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<visible>!Control.HasFocus(25)</visible>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(250).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth_Vertical</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(250).HasNext</visible>
-				</control>
-			</control>
 			<control type="button" id="90501">
 				<description>invisible control button for widgets</description>
 				<onleft>Control.Move(250,-1)</onleft>
 				<onright>Control.Move(250,1)</onright>
 				<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(25)">SetFocus(25)</onup>
 				<onup condition="Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(25)">SetFocus(21)</onup>
-				<ondown>SetFocus(20)</ondown>				
+				<ondown>SetFocus(20)</ondown>	
 				<onback>SetFocus(20)</onback>	
-				<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+				<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>
 				<onback>ClearProperty(WidgetHasFocus,Home)</onback>
 				<onclick>SetFocus(250)</onclick>
 				<onclick>Select</onclick>
@@ -694,10 +620,6 @@
 				<include>TopButton</include>
 			</control>
 			<control type="fixedlist" id="250">
-			<!--	<include name="ParamListSlideAnimation">
-					<param name="Container">250</param>
-				</include>-->
-				<!--<animation effect="slide" start="0,0" end="-160,0" time="180" tween="sine"  delay="280" easing="in" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus)) + Container(250).Position(1)" reversible="false">Conditional</animation>-->
 				<include>WidgetPosterLayout_Vertical</include>
 				<content>$VAR[QuickNav_WidgetListContentMovies]</content>
 			</control>
@@ -754,28 +676,6 @@
 			</control>
 			<control type="group">
 				<include>WidgetEmptyPosters_Vertical</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>				
-				<visible>!Control.HasFocus(35)</visible>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(350).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth_Vertical</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(350).HasNext</visible>
-				</control>
 			</control>
 			<control type="button" id="90601">
 				<description>invisible control button for widgets</description>
@@ -852,28 +752,6 @@
 			<control type="group">
 				<include>WidgetEmptyBoxes_Vertical</include>
 			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<visible>!Control.HasFocus(46)</visible>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(450).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth_Vertical</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(450).HasNext</visible>
-				</control>
-			</control>
 			<control type="button" id="45">
 				<description>invisible control button for music widgets</description>
 				<onleft>Control.Move(450,-1)</onleft>
@@ -946,29 +824,7 @@
 			</control>
 			<control type="group">
 				<include>WidgetEmptyPosters_Vertical</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<visible>!Control.HasFocus(75)</visible>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(750).HasPrevious</visible>				
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth_Vertical</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(750).HasNext</visible>
-				</control>
-			</control>			
+			</control>	
 			<control type="button" id="90731">
 				<description>invisible control button for widgets</description>
 				<onleft>Control.Move(750,-1)</onleft>
@@ -984,7 +840,8 @@
 				<onclick>SetFocus(90731)</onclick>	
 				<include>TopButton</include>
 			</control>
-			<control type="fixedlist" id="750">
+			<control type="fixedlist" id="750">				
+				<visible>System.HasAddon(plugin.video.amazon)</visible>
 				<include>WidgetPosterLayout_Vertical</include>
 				<content limit="15" target="video">$VAR[QuickNav_WidgetListContentAmazonDB]</content>				
 			</control>						
@@ -1041,28 +898,6 @@
 			<control type="group">
 				<include>WidgetEmptyPosters_Vertical</include>
 			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<visible>!Control.HasFocus(76)</visible>				
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(751).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth_Vertical</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(751).HasNext</visible>
-				</control>
-			</control>
 			<control type="button" id="90741">
 				<description>invisible control button for widgets</description>
 				<onleft>Control.Move(751,-1)</onleft>
@@ -1078,7 +913,8 @@
 				<onclick>SetFocus(90741)</onclick>	
 				<include>TopButton</include>
 			</control>
-			<control type="fixedlist" id="751">
+			<control type="fixedlist" id="751">				
+				<visible>System.HasAddon(plugin.video.prime_instant)</visible>
 				<include>WidgetPosterLayout_Vertical</include>
 				<content limit="15" target="video">$VAR[QuickNav_WidgetListContentAmazon]</content>				
 			</control>								
@@ -1133,28 +969,6 @@
 			</control>
 			<control type="group">
 				<include>WidgetEmptyBoxes_Vertical</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<visible>!Control.HasFocus(55)</visible>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(550).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth_Vertical</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(550).HasNext</visible>
-				</control>
 			</control>
 			<control type="button" id="90801">
 				<description>invisible control button for widgets</description>
@@ -1222,28 +1036,6 @@
 			</control>
 			<control type="group">
 				<include>WidgetEmptyBoxes_Vertical</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<visible>!Control.HasFocus(66)</visible>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(653).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth_Vertical</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(653).HasNext</visible>
-				</control>
 			</control>
 			<control type="button" id="90981">
 				<description>invisible control button for widgets</description>
@@ -1315,27 +1107,6 @@
 				<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetEmptyBoxes_Vertical</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetEmptyPosters_Vertical</include>
 			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(551).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth_Vertical</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(551).HasNext</visible>
-				</control>
-			</control>
 			<control type="button" id="90901">
 				<description>invisible control button for widgets</description>
 				<onleft>Control.Move(551,-1)</onleft>
@@ -1390,27 +1161,6 @@
 				<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetEmptyBoxes_Vertical</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetEmptyPosters_Vertical</include>
 			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(552).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth_Vertical</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(552).HasNext</visible>
-				</control>
-			</control>
 			<control type="button" id="90911">
 				<description>invisible control button for widgets</description>
 				<onleft>Control.Move(552,-1)</onleft>
@@ -1464,27 +1214,6 @@
 			<control type="group">
 				<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetEmptyBoxes_Vertical</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetEmptyPosters_Vertical</include>
-			</control>			
-			<control type="group">
-				<description>arrows left right</description>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(553).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth_Vertical</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(553).HasNext</visible>
-				</control>
 			</control>
 			<control type="button" id="90931">
 				<description>invisible control button for widgets</description>
@@ -1540,27 +1269,6 @@
 				<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetEmptyBoxes_Vertical</include>
 				<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetEmptyPosters_Vertical</include>
 			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(554).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth_Vertical</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(554).HasNext</visible>
-				</control>
-			</control>
 			<control type="button" id="90941">
 				<description>invisible control button for widgets</description>
 				<onleft>Control.Move(554,-1)</onleft>
@@ -1613,28 +1321,6 @@
 			</control>
 			<control type="group">
 				<include>WidgetEmptyBoxes_Vertical</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<visible>!Control.HasFocus(65)</visible>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(650).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth_Vertical</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(650).HasNext</visible>
-				</control>
 			</control>
 			<control type="button" id="90991">
 				<description>invisible control button for widgets</description>
@@ -1725,27 +1411,6 @@
 			<control type="group">
 				<include>WidgetEmptyBoxes_Vertical</include>
 			</control>
-			<control type="group">
-				<description>arrows left right</description>				
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(651).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth_Vertical</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(651).HasNext</visible>
-				</control>
-			</control>
 			<control type="button" id="90711">
 				<description>invisible control button for widgets</description>
 				<onleft>Control.Move(651,-1)</onleft>
@@ -1790,27 +1455,6 @@
 			</control>
 			<control type="group">
 				<include>WidgetEmptyBoxes_Vertical</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(652).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth_Vertical</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(652).HasNext</visible>
-				</control>
 			</control>
 			<control type="button" id="90721">
 				<description>invisible control button for widgets</description>

@@ -15,6 +15,7 @@
 		<value condition="SubString(ListItem.mpaa,0) | SubString(ListItem.mpaa,Rated 0) | SubString(ListItem.mpaa,Germany:0) | SubString(ListItem.mpaa,FSK 0) | SubString(ListItem.mpaa,ab 0)">flags/mpaa/fsk/fsk0.png</value>
 		<value>flags/mpaa/film/rating-nr.png</value>
 	</variable>
+
 	<variable name="MPAAFilmRatingExtendedInfo">
 		<!--international ratings-->
 		<value condition="StringCompare(Window.Property(movie.mpaa),G) | StringCompare(Window.Property(movie.mpaa),G) | SubString(Window.Property(movie.mpaa),Rated G) | SubString(Window.Property(movie.mpaa),USA:G)">flags/mpaa/film/rating-g.png</value>
