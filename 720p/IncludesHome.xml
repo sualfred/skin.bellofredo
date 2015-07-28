@@ -457,7 +457,7 @@
 		<!--pulse bar -->
 		<include>PulseBar</include>
 		<!-- main group -->
-		<control type="group">								
+		<control type="group">
 			<visible allowhiddenfocus="true">!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4) + !Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
 			<include>HomeSlideAnimations</include>
 			<!-- library stats -->		
@@ -518,9 +518,9 @@
 					<focusposition>1</focusposition>
 					<movement>8</movement>						
 					<scrolltime tween="Quadratic" easing="out">400</scrolltime>
-					<itemlayout width="350" height="55">
+					<itemlayout width="335" height="55">
 						<control type="label">
-							<width>305</width>
+							<width>290</width>
 							<textcolor>55white</textcolor>
 							<shadowcolor>55000000</shadowcolor>
 							<font>FontSize_36</font>
@@ -529,7 +529,7 @@
 						</control>
 						<control type="image">
 							<top>5</top>
-							<left>325</left>
+							<left>310</left>
 							<width>25</width>
 							<height>25</height>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
@@ -538,7 +538,7 @@
 						</control>
 					</itemlayout>
 
-					<focusedlayout width="350" height="55">	
+					<focusedlayout width="label" height="55">	
 						<control type="group">
 
 							<animation type="Focus" reversible="false" condition="Container(20).OnPrevious">
@@ -551,7 +551,7 @@
 							</animation>
 
 							<control type="label">
-								<width>305</width>
+								<width>290</width>
 								<textcolor>white</textcolor>
 								<shadowcolor>55000000</shadowcolor>
 								<font>FontSize_40B</font>
@@ -560,7 +560,7 @@
 								<visible>Control.HasFocus(20)</visible>
 							</control>
 							<control type="label">
-								<width>305</width>
+								<width>290</width>
 								<textcolor>55white</textcolor>
 								<shadowcolor>55000000</shadowcolor>
 								<font>FontSize_40</font>
@@ -570,7 +570,7 @@
 							</control>
 							<control type="image">
 								<top>5</top>
-								<left>325</left>
+								<left>310</left>
 								<width>25</width>
 								<height>25</height>
 								<aspectratio align="center" aligny="center">keep</aspectratio>
@@ -580,7 +580,7 @@
 							</control>
 							<control type="image">
 								<top>5</top>
-								<left>325</left>
+								<left>310</left>
 								<width>25</width>
 								<height>25</height>
 								<aspectratio align="center" aligny="center">keep</aspectratio>
