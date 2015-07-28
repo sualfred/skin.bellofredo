@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes> 
+	<!-- hidden library stat labels -->
+	<include name="HiddenLibraryStats">
+		<control type="group" id="16">
+			<visible>!Skin.HasSetting(HideLibraryStats) + [StringCompare(Container(20).ListItem.Property(defaultID),movies) | StringCompare(Container(20).ListItem.Property(defaultID),music) | StringCompare(Container(20).ListItem.Property(defaultID),tvshows)]</visible>
+			<control type="label" id="17">
+				<label>$VAR[LibraryInfoLabel]</label>			
+				<include>TopButton</include>
+			</control>
+			<control type="label" id="18">
+				<label>$VAR[LibraryInfoLabel2]</label>
+				<include>TopButton</include>
+			</control>
+			<control type="label" id="19">
+				<label>$VAR[LibraryInfoLabel3]</label>
+				<include>TopButton</include>
+			</control>
+		</control>
+	</include>
 
+	<!-- library stats vertical menu param defintions -->
+	<include name="ParamLibraryStatsVerticalMenu">
+		<control type="group">
+			<include>LibraryStatsVerticalMenu</include>
+			<visible>!Skin.HasSetting(HideLibraryStats) + !IsEmpty(Control.GetLabel(17)) + StringCompare(Container(20).ListItem.Property(defaultID),$PARAM[defaultID])</visible>
+			<animation effect="slide" end="0,-325" time="0" condition="IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">Conditional</animation>
+			<top>470</top>
+			<left>447</left>
+			<width>1235</width>
+			<control type="label">				
+				<width>1235</width>
+				<height>18</height>
+				<textcolor>white</textcolor>
+				<shadowcolor>55000000</shadowcolor>
+				<font>FontSize_30</font>
+				<align>left</align>			
+				<label>$PARAM[Headline]</label>										
+				<scroll>false</scroll>			
+			</control>
+			<control type="fadelabel">	
+				<top>31</top>
+				<left>0</left>
+				<width>1235</width>
+				<height>18</height>
+				<textcolor>77white</textcolor>
+				<shadowcolor>55000000</shadowcolor>
+				<font>FontSize_20</font>
+				<align>left</align>			
+				<label>$PARAM[Label1]</label>						
+				<label>$PARAM[Label2]</label>						
+				<label>$PARAM[Label3]</label>
+				<scroll>false</scroll>
+				<scrollout>false</scrollout>
+				<scrollspeed>100</scrollspeed>
+				<pauseatend>4000</pauseatend>						
+			</control>
+		</control>
+	</include>
+	
 	<!-- custom widget path -->
 	<include name="widgetgroup-custompath">
 		<content limit="$PARAM[Limit]" target="$PARAM[Target]">$INFO[Skin.String(CustomWidgetPath$PARAM[GroupNo].List)]</content>

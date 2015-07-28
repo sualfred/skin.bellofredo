@@ -293,7 +293,6 @@
 							<label>- $LOCALIZE[31127]</label>
 							<onclick>Skin.ToggleSetting(HideLibraryStats)</onclick>
 							<selected>!Skin.HasSetting(HideLibraryStats)</selected>
-							<enable>!StringCompare(Skin.String(MainMenuStyle),vertical)</enable>
 						</control>
 						<!-- top menu -->
 						<control type="button" id="8310">

@@ -147,6 +147,7 @@
 	<widget label="31105" condition="System.HasAddon(plugin.video.amazon)">amazondb</widget>
 	<widget label="31106" condition="System.HasAddon(plugin.video.prime_instant)">amazon</widget>
 	<widget label="31097">rssvideowidget</widget>
+	<widget label="19023">tvchannels</widget>
 	<widget label="YouTube" condition="System.HasAddon(plugin.video.youtube)">youtube</widget>
 	<widget label="31173">widgetgroup1</widget>
 	<widget label="31174">widgetgroup2</widget>
@@ -155,6 +156,7 @@
 	<widgetdefault defaultID="movies">movies</widgetdefault>
 	<widgetdefault defaultID="tvshows">tvshows</widgetdefault>
 	<widgetdefault defaultID="music">music</widgetdefault>
+	<widgetdefault defaultID="livetv">tvchannels</widgetdefault>
 	<widgetdefault defaultID="plugin.audio.tuneinradio">tunein</widgetdefault>
 	<widgetdefault defaultID="plugin.video.amazon">amazondb</widgetdefault>
 	<widgetdefault defaultID="plugin.video.prime_instant">amazon</widgetdefault>

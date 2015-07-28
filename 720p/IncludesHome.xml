@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+
+	<!--===========-->
+	<!--Pulse Bar -->
+	<!--===========-->
+
 	<include name="PulseBar">
 		<control type="image">
 			<top>-20</top>
@@ -37,30 +42,20 @@
 	<!--Main Home List Buttons-->
 	<!--======================-->
 	<include name="HomeMenuWraplist">
-		<control type="group">		
-			<visible>!StringCompare(Skin.String(MainMenuStyle),vertical)</visible>			
+
+		<control type="group">					
+			<visible>!StringCompare(Skin.String(MainMenuStyle),vertical)</visible>
+
 			<visible allowhiddenfocus="true">!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4) + !Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
+
 			<include>HomeSlideAnimations</include>
+			<!--pulse bar -->
+			<include>PulseBar</include>
+			<!-- main group -->
 			<control type="group">
 				<include>HomeSlideAnimations</include>
-
-				<include>PulseBar</include>
-
-				<control type="group" id="16">
-					<visible>!Skin.HasSetting(HideLibraryStats) + [StringCompare(Container(20).ListItem.Property(defaultID),movies) | StringCompare(Container(20).ListItem.Property(defaultID),music) | StringCompare(Container(20).ListItem.Property(defaultID),tvshows)]</visible>
-					<control type="label" id="17">
-						<label>$VAR[LibraryInfoLabel]</label>			
-						<include>TopButton</include>
-					</control>
-					<control type="label" id="18">
-						<label>$VAR[LibraryInfoLabel2]</label>
-						<include>TopButton</include>
-					</control>
-					<control type="label" id="19">
-						<label>$VAR[LibraryInfoLabel3]</label>
-						<include>TopButton</include>
-					</control>
-				</control>
+				
+				<!-- main menu -->
 				<control type="wraplist" id="20">
 					<include>WidgetMainMenuSlideAnimations</include>
 					<description>Home Container</description>
@@ -71,6 +66,7 @@
 					<width>1600</width>
 					<height>720</height>
 					<align>center</align>
+					<onup condition="!IsEmpty(Container(20).ListItem.Property(widget)) | !IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">SetProperty(WidgetHasFocus,1,Home)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),movies)">SetFocus(90501)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),tvshows)">SetFocus(90601)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),music)">SetFocus(45)</onup>
@@ -83,6 +79,7 @@
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),amazondb)">SetFocus(90731)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),amazon)">SetFocus(90741)</onup>					
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),youtube)">SetFocus(90981)</onup>					
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),tvchannels)">SetFocus(90641)</onup>					
 					<onup condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)">SetFocus(90711)</onup>
 					<onup condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)">SetFocus(90721)</onup>
 					<onup condition="IsEmpty(Container(20).ListItem.Property(widget))">SetFocus(21)</onup>
@@ -420,52 +417,73 @@
 						<include>skinshortcuts-mainmenu</include>
 					</content>
 				</control>
+
+				<!--widgets-->
+				<control type="group">	
+					<!-- widget position change -->
+					<animation effect="slide" time="0" start="0,0" end="0,100" condition="StringCompare(Skin.String(MainMenuStyle),textbottom)">Conditional</animation>
+					<!-- move widgets if context menu is visible -->
+					<animation type="Conditional" condition="Window.IsVisible(contextmenu)" reversible="false">
+						<effect type="slide" end="0,-25" time="350" tween="cubic" easing="out" />			
+					</animation>
+					<animation type="Conditional" condition="!Window.IsVisible(contextmenu)" reversible="false">
+						<effect type="slide" start="0,-25" end="0,0" time="350" tween="sine" easing="out" />			
+					</animation>
+					<include>HomeWidgetsContainer</include>					
+				</control>
+
+				<!-- sub menu -->
+				<include>HomeSubMenus</include>
 			</control>
 		</control>
 	</include>
 
 	<!--===========-->
-	<!--Vertical Menu-->
+	<!--Vertical Menu List Buttons-->
 	<!--===========-->
-	<include name="HomeMenuWraplist_Vertical">
-
+	<include name="HomeMenuWraplist_Vertical">		
+		<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
+		<!-- background diffuse -->
 		<control type="image">
 			<animation type="Conditional" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">   
 				<effect type="fade" start="90" end="45" time="1000" tween="sine" easing="inout" />
-				<!--<effect type="slide" start="0,0" end="-55,0" time="350" tween="sine" easing="inout" />-->
 			</animation>	
-
 			<animation type="Conditional" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">
 				<effect type="fade" delay="0" start="45" end="90" time="500" tween="sine" easing="inout"  />
-				<!--<effect type="slide" delay="0" start="-55,0" end="0,0" time="350" tween="cubic" easing="out" />-->
 			</animation>	
 			<include>FullscreenDimensions</include>
 			<texture background="true">views/other/menus_overlay.png</texture>
 		</control>
-
+		<!--pulse bar -->
 		<include>PulseBar</include>
-
-		<control type="group">
-			<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>					
+		<!-- main group -->
+		<control type="group">								
 			<visible allowhiddenfocus="true">!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4) + !Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
 			<include>HomeSlideAnimations</include>
+			<!-- library stats -->		
+			<include name="ParamLibraryStatsVerticalMenu">
+				<param name="defaultID">movies</param>
+				<param name="Headline">$LOCALIZE[31200]</param>
+				<param name="Label1">$INFO[Window(Home).Property(Movies.Count),, $LOCALIZE[20342]]</param>
+				<param name="Label2">$INFO[Window(Home).Property(Movies.UnWatched),, $LOCALIZE[31475]]</param>
+				<param name="Label3">$INFO[Window(Home).Property(Movies.Watched),, $LOCALIZE[31477]]</param>
+			</include>
+			<include name="ParamLibraryStatsVerticalMenu">
+				<param name="defaultID">tvshows</param>			
+				<param name="Headline">$LOCALIZE[31201]</param>			
+				<param name="Label1">$INFO[Window(Home).Property(TVShows.Count),, $LOCALIZE[31002]]</param>
+				<param name="Label2">$INFO[Window(Home).Property(Episodes.UnWatched),, $LOCALIZE[31476]]</param>
+				<param name="Label3">$INFO[Window(Home).Property(Episodes.Watched),, $LOCALIZE[31478]]</param>
+			</include>
+			<include name="ParamLibraryStatsVerticalMenu">
+				<param name="defaultID">music</param>			
+				<param name="Headline">$LOCALIZE[31202]</param>				
+				<param name="Label1">$INFO[Window(Home).Property(Music.AlbumsCount),, $LOCALIZE[132]]</param>
+				<param name="Label2">$INFO[Window(Home).Property(Music.SongsCount),, $LOCALIZE[134]]</param>
+				<param name="Label3">$INFO[Window(Home).Property(Music.ArtistsCount),, $LOCALIZE[133]]</param>
+			</include>
+			<!-- main menu -->
 			<control type="group">
-				<control type="group" id="16">
-					<visible>!Skin.HasSetting(HideLibraryStats) + [StringCompare(Container(20).ListItem.Property(defaultID),movies) | StringCompare(Container(20).ListItem.Property(defaultID),music) | StringCompare(Container(20).ListItem.Property(defaultID),tvshows)]</visible>
-					<control type="label" id="17">
-						<label>$VAR[LibraryInfoLabel]</label>			
-						<include>TopButton</include>
-					</control>
-					<control type="label" id="18">
-						<label>$VAR[LibraryInfoLabel2]</label>
-						<include>TopButton</include>
-					</control>
-					<control type="label" id="19">
-						<label>$VAR[LibraryInfoLabel3]</label>
-						<include>TopButton</include>
-					</control>
-				</control>
-
 				<control type="fixedlist" id="20">
 					<include>WidgetMainMenuSlideAnimations_Vertical</include>
 					<include>HomeSlideAnimations</include>
@@ -474,9 +492,10 @@
 					<left>45</left>
 					<top>140</top>
 					<width>1600</width>
-					<height>500</height>
+					<height>480</height>
 					<align>right</align>
-					<onright condition="!IsEmpty(Container(20).ListItem.Property(widget))">SetProperty(WidgetHasFocus,1,Home)</onright>
+					<onright condition="!IsEmpty(Container(20).ListItem.Property(widget)) | !IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">SetProperty(WidgetHasFocus,1,Home)</onright>
+					<onright condition="IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">Select</onright>
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),movies)">SetFocus(90501)</onright>
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),tvshows)">SetFocus(90601)</onright>
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),music)">SetFocus(45)</onright>
@@ -491,21 +510,20 @@
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),youtube)">SetFocus(90981)</onright>					
 					<onright condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)">SetFocus(90711)</onright>
 					<onright condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)">SetFocus(90721)</onright>
-					<onup>SetFocus(21)</onup>
+					<onright condition="StringCompare(Container(20).ListItem.Property(widget),tvchannels)">SetFocus(90641)</onright>
+					<onup condition="[Control.IsVisible(210) | Control.IsVisible(211) | Control.IsVisible(212) | Control.IsVisible(214)]">SetFocus(21)</onup>
 					<onleft condition="IntegerGreaterThan(Container(23).NumItems,0)">SetFocus(23)</onleft>					
-					<onleft>20</onleft>
-					<onright>20</onright>
 					<itemgap>0</itemgap>
 					<orientation>vertical</orientation>
 					<focusposition>1</focusposition>
 					<movement>8</movement>						
 					<scrolltime tween="Quadratic" easing="out">400</scrolltime>
-					<itemlayout width="350" height="50">
+					<itemlayout width="350" height="55">
 						<control type="label">
 							<width>305</width>
 							<textcolor>55white</textcolor>
 							<shadowcolor>55000000</shadowcolor>
-							<font>FontSize_40</font>
+							<font>FontSize_36</font>
 							<align>right</align>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
@@ -520,17 +538,9 @@
 						</control>
 					</itemlayout>
 
-					<focusedlayout width="350" height="50">	
+					<focusedlayout width="350" height="55">	
 						<control type="group">
-							<!--<animation type="Focus" reversible="false" condition="Container(20).OnNext | Container(20).OnPrevious">
-								<effect type="fade" start="35" end="100" time="700"/>
-							</animation>
-							<animation type="UnFocus" reversible="false" condition="Container(20).OnNext | Container(20).OnPrevious">
-								<effect type="fade" start="100" end="35" time="170"/>								
-							</animation>
-							<animation type="Conditional" condition="!ControlGroup(21).HasFocus + !Window.IsVisible(Selectdialog)">								
-								<effect type="fade" start="35" end="100" time="250" tween="sine" />
-							</animation>-->
+
 							<animation type="Focus" reversible="false" condition="Container(20).OnPrevious">
 								<effect type="fade" start="20" end="100" time="500"/>
 								<effect type="slide" start="0,45" end="0,0" time="400" tween="back" easing="out"/>
@@ -539,6 +549,7 @@
 								<effect type="fade" start="20" end="100" time="500"/>
 								<effect type="slide" start="0,-45" end="0,0" time="400" tween="back" easing="out"/>
 							</animation>
+
 							<control type="label">
 								<width>305</width>
 								<textcolor>white</textcolor>
@@ -577,70 +588,27 @@
 								<colordiffuse>55white</colordiffuse>
 								<visible>!Control.HasFocus(20)</visible>
 							</control>
-							<!--		
-							<control type="fadelabel">
-								<visible>Control.HasFocus(20) + !Skin.HasSetting(HideLibraryStats) + !IsEmpty(Control.GetLabel(17))</visible>
-								<animation effect="fade" time="250" delay="50">Visible</animation>
-								<animation effect="fade" time="0">Hidden</animation>
-								<left>-15</left>
-								<top>264</top>		
-								<width>530</width>
-								<height>18</height>
-								<textcolor>77white</textcolor>
-								<shadowcolor>55000000</shadowcolor>
-								<font>FontSize_16</font>
-								<align>center</align>			
-								<label>$INFO[Control.GetLabel(17)]</label>						
-								<label>$INFO[Control.GetLabel(18)]</label>						
-								<label>$INFO[Control.GetLabel(19)]</label>
-								<scroll>false</scroll>
-								<scrollout>false</scrollout>
-								<scrollspeed>100</scrollspeed>
-								<pauseatend>4000</pauseatend>						
-							</control>
-							<control type="grouplist">
-								<visible>Control.HasFocus(20) + !Container(20).OnNext + !Container(20).OnPrevious</visible>
-								<animation effect="slide" time="0" start="0,0" end="0,27" condition="Control.IsVisible(16) + !IsEmpty(Control.GetLabel(17))">Conditional</animation>
-								<itemgap>0</itemgap>
-								<orientation>horizontal</orientation>
-								<width>530</width>
-								<height>21</height>
-								<left>-15</left>	
-								<top>265</top>							
-								<align>center</align>
-								<animation effect="fade" time="250" delay="50">Visible</animation>
-								<animation effect="fade" time="0">Hidden</animation>
-								<control type="image" id="201">									
-									<width>21</width>
-									<height>18</height>
-									<texture background="true">buttons/arrow.png</texture>
-									<colordiffuse>CCFFFFFF</colordiffuse>
-									<visible>IntegerGreaterThan(Container(23).NumItems,0)</visible>
-									<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
-										<effect type="fade" start="0" end="100" delay="900" time="900"  />
-										<effect type="slide" start="0,-2" end="0,4" tween="sine" easing="inout" delay="900" time="900" />
-									</animation>
-								</control>
-								<control type="image" id="202">
-									<width>21</width>
-									<height>18</height>
-									<texture background="true">buttons/arrow_top.png</texture>
-									<colordiffuse>CCFFFFFF</colordiffuse>
-									<visible>!IsEmpty(Container(20).ListItem.Property(widget))</visible>
-									<animation type="Conditional" condition="Skin.HasSetting(HomeMenuArrowAnimation)" pulse="true">
-										<effect type="fade" start="0" end="100" delay="900" time="900"  />
-										<effect type="slide" start="0,2" end="0,-4" tween="sine" easing="inout" delay="900" time="900" />
-									</animation>
-								</control>
-							</control>-->
 						</control>
 					</focusedlayout>
-
 					<content>
 						<include>skinshortcuts-mainmenu</include>
 					</content>
 				</control>
+				<!--widgets-->
+				<control type="group">
+					<left>-10</left>
+					<!-- move widgets if context menu is visible -->			
+					<animation type="Conditional" condition="Window.IsVisible(contextmenu)" reversible="false">
+						<effect type="slide" end="0,-35" time="350" tween="cubic" easing="out" />			
+					</animation>
+					<animation type="Conditional" condition="!Window.IsVisible(contextmenu)" reversible="false">
+						<effect type="slide" start="0,-35" end="0,0" time="350" tween="sine" easing="out" />			
+					</animation>	
+					<include condition="StringCompare(Skin.String(MainMenuStyle),vertical)">HomeWidgetsContainer_Vertical</include>			
+				</control>
 			</control>
+			<!-- sub menu -->
+			<include>VerticalHomeSubMenus</include>			
 		</control>
 	</include>
 
@@ -890,7 +858,7 @@
 				<itemgap>0</itemgap>
 				<onleft>21</onleft>
 				<onright>21</onright>
-				<onup>20</onup>
+				<onup>20</onup>					
 				<ondown>20</ondown>
 				<align>left</align>
 				<orientation>horizontal</orientation>
@@ -898,12 +866,14 @@
 					<description>Favorites</description>
 					<include>TopButton</include>
 					<onclick>SetFocus(20)</onclick>
+					<onfocus>ClearProperty(WidgetHasFocus,Home)</onfocus>
 					<onclick>ActivateWindow(favourites)</onclick>
 					<visible>!Skin.HasSetting(DisableFavouritesButton)</visible>
 				</control>
 				<control type="button" id="211">
 					<description>Search</description>
 					<include>TopButton</include>
+					<onfocus>ClearProperty(WidgetHasFocus,Home)</onfocus>
 					<onclick>SetFocus(20)</onclick>
 					<onclick>RunScript(script.globalsearch)</onclick>
 					<visible>!Skin.HasSetting(DisableSearchButton)</visible>
@@ -911,6 +881,7 @@
 				<control type="button" id="212">
 					<description>Refresh Library</description>
 					<include>TopButton</include>
+					<onfocus>ClearProperty(WidgetHasFocus,Home)</onfocus>
 					<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31059])</onclick>
 					<onclick>SetProperty(Dialog.1.BuiltIn,UpdateLibrary(video)||SetFocus(20))</onclick>
 					<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31060])</onclick>
@@ -929,6 +900,7 @@
 				<control type="button" id="214">
 					<description>Power</description>
 					<include>TopButton</include>
+					<onfocus>ClearProperty(WidgetHasFocus,Home)</onfocus>
 					<onclick>SetFocus(20)</onclick>
 					<onclick>ActivateWindow(shutdownmenu)</onclick>
 					<visible>!Skin.HasSetting(DisablePowerButton)</visible>

@@ -11,56 +11,44 @@
 	<onload>Dialog.Close(pictureinfo)</onload>
 	<onload>SetProperty(RefreshList,1,Home)</onload>
 	<onload>ClearProperty(closeworkaround,Home)</onload>
-	<onunload>ClearProperty(WidgetHasFocus,Home)</onunload>
+	<onunload>ClearProperty(WidgetHasFocus,Home)</onunload>-->
 	<onload>ClearProperty(WidgetHasFocus,Home)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=20&amp;group=mainmenu|widgetgroup1|widgetgroup2|widgetgroup3|widgetgroup4|shutdownmenu)</onload>	
 	<allowoverlay>yes</allowoverlay>
 	<backgroundcolor>0</backgroundcolor>
 	<controls>		
 		<include>BackgroundContent</include>
-		<include>BackgroundVignette</include>			
+		<include>BackgroundVignette</include>	
+		<include>HiddenLibraryStats</include>
+
 		<control type="group">
 			<visible>!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4)</visible>
-			<control type="group" id="15">				
-				
+			
+			<control type="group" id="15">	
+
+				<control type="group" id="2013">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="50" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(20).OnNext + IntegerGreaterThan(Container(20).NumItems,1)</visible>					
+				</control>
+				<control type="group" id="2014">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="50" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(20).OnPrevious + IntegerGreaterThan(Container(20).NumItems,1)</visible>
+				</control>
+
 				<animation effect="slide" time="0" start="0,0" end="0,100" condition="StringCompare(Skin.String(MainMenuStyle),textbottom)">Conditional</animation>
 				<animation effect="slide" time="0" start="0,0" end="0,15" condition="!StringCompare(Skin.String(MainMenuStyle),vertical) + !StringCompare(Skin.String(MainMenuStyle),textbottom) + !SubString(Skin.String(MainMenuStyle),icon)">Conditional</animation>
 
 				<include condition="!StringCompare(Skin.String(MainMenuStyle),vertical)">HomeMenuWraplist</include>
 				<include condition="StringCompare(Skin.String(MainMenuStyle),vertical)">HomeMenuWraplist_Vertical</include>
-				<include condition="!StringCompare(Skin.String(MainMenuStyle),vertical)">HomeSubMenus</include>
-				<include condition="StringCompare(Skin.String(MainMenuStyle),vertical)">VerticalHomeSubMenus</include>
-
+				
 			</control>
+			
 			<include condition="!Skin.HasSetting(HideHomeNPCovers) + !StringCompare(Skin.String(MainMenuStyle),vertical)">CoversNowPlaying</include>
 			<include condition="Skin.HasSetting(HideHomeNPCovers) | StringCompare(Skin.String(MainMenuStyle),vertical)">CommonNowPlaying</include>
 			<include>TopHomeMenu</include>
 			<include>HomeWeatherAndClock</include>
-			<include>PVRRecordingInfo</include>
-			<control type="group">	
-
-				<animation effect="slide" time="0" start="0,0" end="0,100" condition="StringCompare(Skin.String(MainMenuStyle),textbottom)">Conditional</animation>
-
-				<animation effect="slide" time="0" start="0,0" end="-10,0" condition="StringCompare(Skin.String(MainMenuStyle),vertical)">Conditional</animation>
-
-				<animation type="Conditional" condition="Window.IsVisible(contextmenu) + !StringCompare(Skin.String(MainMenuStyle),vertical)" reversible="false">
-					<effect type="slide" end="0,-25" time="350" tween="cubic" easing="out" />			
-				</animation>
-				<animation type="Conditional" condition="!Window.IsVisible(contextmenu) + !StringCompare(Skin.String(MainMenuStyle),vertical)" reversible="false">
-					<effect type="slide" start="0,-25" end="0,0" time="350" tween="sine" easing="out" />			
-				</animation>
-				
-				<animation type="Conditional" condition="Window.IsVisible(contextmenu) + StringCompare(Skin.String(MainMenuStyle),vertical)" reversible="false">
-					<effect type="slide" end="0,-35" time="350" tween="cubic" easing="out" />			
-				</animation>
-				<animation type="Conditional" condition="!Window.IsVisible(contextmenu) + StringCompare(Skin.String(MainMenuStyle),vertical)" reversible="false">
-					<effect type="slide" start="0,-35" end="0,0" time="350" tween="sine" easing="out" />			
-				</animation>	
-
-				<include condition="!StringCompare(Skin.String(MainMenuStyle),vertical)">HomeWidgetsContainer</include>			
-				<include condition="StringCompare(Skin.String(MainMenuStyle),vertical)">HomeWidgetsContainer_Vertical</include>			
-			</control>
-			<include>CommonDialogsFadeOutBG</include>
+			<include>PVRRecordingInfo</include>			
 		</control>	
+
 	</controls>	
 </window>

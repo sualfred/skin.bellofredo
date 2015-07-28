@@ -438,1207 +438,1307 @@
 
 
 
-
 	<include name="HomeWidgetsContainer">
+		<control type="group">
+			<include>DefaultMenuWidgetFocusAnimation</include>
 
-		<!-- =========== -->
-		<!-- Movies 	 -->
-		<!-- =========== --> 
-		<control type="group" id="9050">
-			<visible>StringCompare(Container(20).ListItem.Property(widget),movies)</visible>
-			<include>HomeSlideAnimations</include>
-			<include>HomeMoviesWidgetAnimation</include>			
-			<include>WidgetContainer</include>
-			<control type="group" id="4513">
-				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(250).OnNext + IntegerGreaterThan(Container(250).NumItems,1)</visible>					
-			</control>
-			<control type="group" id="4514">
-				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(250).OnPrevious + IntegerGreaterThan(Container(250).NumItems,1)</visible>
-			</control>
-			<control type="group">
-				<visible>!IntegerGreaterThan(Container(250).NumItems,5)</visible>
-				<include>WidgetEmptyPosters</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<visible>!Control.HasFocus(25)</visible>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(250).HasPrevious</visible>
+			<!-- =========== -->
+			<!-- Movies 	 -->
+			<!-- =========== --> 
+			<control type="group" id="9050">
+				<visible>StringCompare(Container(20).ListItem.Property(widget),movies)</visible>
+				<include>HomeSlideAnimations</include>
+				<include>WidgetContainer</include>
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(250).OnNext + IntegerGreaterThan(Container(250).NumItems,1)</visible>					
 				</control>
-				<control type="image">  					
-					<include>ArrowWidth</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(250).HasNext</visible>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(250).OnPrevious + IntegerGreaterThan(Container(250).NumItems,1)</visible>
 				</control>
+				<control type="group">
+					<visible>!IntegerGreaterThan(Container(250).NumItems,5)</visible>
+					<include>WidgetEmptyPosters</include>
+				</control>
+				<control type="group">
+					<description>arrows left right</description>
+					<visible>!Control.HasFocus(25)</visible>
+					<include>ArrowDimension</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+					<control type="image">  					
+						<left>0</left>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_left.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>						
+						<visible>Container(250).HasPrevious</visible>
+					</control>
+					<control type="image">  					
+						<include>ArrowWidth</include>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_right.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+						<visible>Container(250).HasNext</visible>
+					</control>
+				</control>
+				<control type="button" id="90501">
+					<description>invisible control button for widgets</description>
+					<onleft>Control.Move(250,-1)</onleft>
+					<onright>Control.Move(250,1)</onright>
+					<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(25)">SetFocus(25)</onup>
+					<onup condition="Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(25)">SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
+					<onback>SetFocus(20)</onback>					
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>			
+					<onclick>SetFocus(250)</onclick>
+					<onclick>Select</onclick>
+					<onclick>SetFocus(90501)</onclick>	
+					<include>TopButton</include>
+				</control>
+				<control type="fixedlist" id="250">
+					<include>WidgetPosterLayout</include>
+					<content>$VAR[QuickNav_WidgetListContentMovies]</content>
+				</control>
+				<control type="button" id="25">
+					<description>invisible control button for category</description>
+					<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
+					<onup>SetFocus(21)</onup>								
+					<ondown condition="IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(90501)</ondown>
+					<ondown condition="!IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(20)</ondown>
+					<onback condition="IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(90501)</onback>
+					<onback condition="!IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(20)</onback>	
+					<include>TopButton</include>
+					<!-- on right switches -->
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),1)">Skin.SetString(QuickNavWidgetMoviesType,2)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),2)">Skin.SetString(QuickNavWidgetMoviesType,3)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),3)">Skin.SetString(QuickNavWidgetMoviesType,4)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">Skin.SetString(QuickNavWidgetMoviesType,5)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">Skin.SetString(QuickNavWidgetMoviesType,6)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),6)">Skin.SetString(QuickNavWidgetMoviesType,7)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),7)">Skin.SetString(QuickNavWidgetMoviesType,1)</onright>
+					<!-- on left switches -->
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),1)">Skin.SetString(QuickNavWidgetMoviesType,7)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),7)">Skin.SetString(QuickNavWidgetMoviesType,6)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),6)">Skin.SetString(QuickNavWidgetMoviesType,5)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">Skin.SetString(QuickNavWidgetMoviesType,4)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">Skin.SetString(QuickNavWidgetMoviesType,3)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),3)">Skin.SetString(QuickNavWidgetMoviesType,2)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),2)">Skin.SetString(QuickNavWidgetMoviesType,1)</onleft>
+					<!-- on click command -->
+					<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentMovies])</onclick>	
+				</control>
+				<include name="WidgetBottomLabels">
+					<param name="Container">250</param>
+				</include>			
+				<include name="ParamWidgetCounterLoading">
+					<param name="Container">250</param>  
+				</include>
 			</control>
-			<control type="button" id="90501">
-				<description>invisible control button for widgets</description>
-				<onleft>Control.Move(250,-1)</onleft>
-				<onright>Control.Move(250,1)</onright>
-				<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(25)">SetFocus(25)</onup>
-				<onup condition="Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(25)">SetFocus(21)</onup>
-				<ondown>SetFocus(20)</ondown>
-				<onback>SetFocus(20)</onback>	
-				<onclick>SetFocus(250)</onclick>
-				<onclick>Select</onclick>
-				<onclick>SetFocus(90501)</onclick>	
-				<include>TopButton</include>
-			</control>
-			<control type="fixedlist" id="250">
-				<include>WidgetPosterLayout</include>
-				<content>$VAR[QuickNav_WidgetListContentMovies]</content>
-			</control>
-			<control type="button" id="25">
-				<description>invisible control button for category</description>
-				<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
-				<onup>SetFocus(21)</onup>								
-				<ondown condition="IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(90501)</ondown>
-				<ondown condition="!IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(20)</ondown>
-				<onback condition="IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(90501)</onback>
-				<onback condition="!IntegerGreaterThan(Container(250).NumItems,0)">SetFocus(20)</onback>	
-				<include>TopButton</include>
-				<!-- on right switches -->
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),1)">Skin.SetString(QuickNavWidgetMoviesType,2)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),2)">Skin.SetString(QuickNavWidgetMoviesType,3)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),3)">Skin.SetString(QuickNavWidgetMoviesType,4)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">Skin.SetString(QuickNavWidgetMoviesType,5)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">Skin.SetString(QuickNavWidgetMoviesType,6)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),6)">Skin.SetString(QuickNavWidgetMoviesType,7)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),7)">Skin.SetString(QuickNavWidgetMoviesType,1)</onright>
-				<!-- on left switches -->
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),1)">Skin.SetString(QuickNavWidgetMoviesType,7)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),7)">Skin.SetString(QuickNavWidgetMoviesType,6)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),6)">Skin.SetString(QuickNavWidgetMoviesType,5)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),5)">Skin.SetString(QuickNavWidgetMoviesType,4)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),4)">Skin.SetString(QuickNavWidgetMoviesType,3)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),3)">Skin.SetString(QuickNavWidgetMoviesType,2)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMoviesType),2)">Skin.SetString(QuickNavWidgetMoviesType,1)</onleft>
-				<!-- on click command -->
-				<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentMovies])</onclick>	
-			</control>
-			<include name="WidgetBottomLabels">
-				<param name="Container">250</param>
-			</include>			
-			<include name="ParamWidgetCounterLoading">
-				<param name="Container">250</param>  
-			</include>
-		</control>
 
-		<!-- =========== -->
-		<!-- TV Shows 	 -->
-		<!-- =========== --> 
-		<control type="group" id="9060">
-			<visible>StringCompare(Container(20).ListItem.Property(widget),tvshows)</visible>
-			<include>HomeSlideAnimations</include>
-			<include>HomeTVShowsWidgetAnimation</include>			
-			<include>WidgetContainer</include>	
-			<control type="group" id="4513">
-				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(350).OnNext + IntegerGreaterThan(Container(350).NumItems,1)</visible>					
-			</control>
-			<control type="group" id="4514">
-				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(350).OnPrevious + IntegerGreaterThan(Container(350).NumItems,1)</visible>
-			</control>
-			<control type="group">
-				<visible>!IntegerGreaterThan(Container(350).NumItems,5)</visible>
-				<include>WidgetEmptyPosters</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>				
-				<visible>!Control.HasFocus(35)</visible>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(350).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(350).HasNext</visible>
-				</control>
-			</control>
-			<control type="button" id="90601">
-				<description>invisible control button for widgets</description>
-				<onleft>Control.Move(350,-1)</onleft>
-				<onright>Control.Move(350,1)</onright>
-				<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(35)">SetFocus(35)</onup>
-				<onup condition="Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(35)">SetFocus(21)</onup>
-				<ondown>SetFocus(20)</ondown>
-				<onback>SetFocus(20)</onback>	
-				<onclick>SetFocus(350)</onclick>
-				<onclick>Select</onclick>				
-				<onclick>SetFocus(90601)</onclick>	
-				<include>TopButton</include>
-			</control>
-			<control type="fixedlist" id="350">
-				<include>WidgetPosterLayout</include>
-				<content>$VAR[QuickNav_WidgetListContentTVShows]</content>				
-			</control>
-			<control type="button" id="35">
-				<description>invisible control button for category</description>
-				<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
+			<!-- =========== -->
+			<!-- TV Shows 	 -->
+			<!-- =========== --> 
+			<control type="group" id="9060">
 				<visible>StringCompare(Container(20).ListItem.Property(widget),tvshows)</visible>
-				<onup>SetFocus(21)</onup>
-				<ondown condition="IntegerGreaterThan(Container(350).NumItems,0)">SetFocus(90601)</ondown>
-				<ondown condition="!IntegerGreaterThan(Container(350).NumItems,0)">SetFocus(20)</ondown>
-				<onback condition="IntegerGreaterThan(Container(350).NumItems,0)">SetFocus(90601)</onback>
-				<onback condition="!IntegerGreaterThan(Container(350).NumItems,0)">SetFocus(20)</onback>	
-				<include>TopButton</include>
-				<!-- on right switches -->
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">Skin.SetString(QuickNavWidgetTVShowsType,2)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),2)">Skin.SetString(QuickNavWidgetTVShowsType,3)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),3)">Skin.SetString(QuickNavWidgetTVShowsType,4)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),4)">Skin.SetString(QuickNavWidgetTVShowsType,5)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),5)">Skin.SetString(QuickNavWidgetTVShowsType,1)</onright>
-				<!-- on left switches -->
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">Skin.SetString(QuickNavWidgetTVShowsType,5)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),5)">Skin.SetString(QuickNavWidgetTVShowsType,4)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),4)">Skin.SetString(QuickNavWidgetTVShowsType,3)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),3)">Skin.SetString(QuickNavWidgetTVShowsType,2)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),2)">Skin.SetString(QuickNavWidgetTVShowsType,1)</onleft>
-				<!-- on click command -->
-				<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentTVShows])</onclick>			
-			</control>
-			<include name="WidgetBottomLabels">
-				<param name="Container">350</param>
-			</include>			
-			<include name="ParamWidgetCounterLoading">
-				<param name="Container">350</param>  
-			</include>
-		</control>
+				<include>HomeSlideAnimations</include>		
+				<include>WidgetContainer</include>	
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(350).OnNext + IntegerGreaterThan(Container(350).NumItems,1)</visible>					
+				</control>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(350).OnPrevious + IntegerGreaterThan(Container(350).NumItems,1)</visible>
+				</control>
+				<control type="group">
+					<visible>!IntegerGreaterThan(Container(350).NumItems,5)</visible>
+					<include>WidgetEmptyPosters</include>
+				</control>
+				<control type="group">
+					<description>arrows left right</description>				
+					<visible>!Control.HasFocus(35)</visible>
+					<include>ArrowDimension</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+					<control type="image">  					
+						<left>0</left>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_left.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>						
+						<visible>Container(350).HasPrevious</visible>
+					</control>
+					<control type="image">  					
+						<include>ArrowWidth</include>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_right.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+						<visible>Container(350).HasNext</visible>
+					</control>
+				</control>
+				<control type="button" id="90601">
+					<description>invisible control button for widgets</description>
+					<onleft>Control.Move(350,-1)</onleft>
+					<onright>Control.Move(350,1)</onright>
+					<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(35)">SetFocus(35)</onup>
+					<onup condition="Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(35)">SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
 
-		<!-- =========== -->
-		<!-- Music	 	 -->
-		<!-- =========== --> 
-		<control type="group" id="9070">
-			<include>HomeSlideAnimations</include>
-			<visible>StringCompare(Container(20).ListItem.Property(widget),music)</visible>
-			<include>HomeMusicWidgetAnimation</include>			
-			<include>WidgetContainer</include>
-			<control type="group" id="4513">
-				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(450).OnNext + IntegerGreaterThan(Container(450).NumItems,1)</visible>					
-			</control>
-			<control type="group" id="4514">
-				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(450).OnPrevious + IntegerGreaterThan(Container(450).NumItems,1)</visible>
-			</control>
-			<control type="group">
-				<include>BackgroundVignette</include>
-				<include>VideoWallAnimations</include>
-				<visible>Control.IsVisible(581)</visible>				
-			</control>
-			<control type="group">
-				<visible>!IntegerGreaterThan(Container(450).NumItems,4)</visible>
-				<include>WidgetEmptyBoxes</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<visible>!Control.HasFocus(46)</visible>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(450).HasPrevious</visible>
+					<onback>SetFocus(20)</onback>				
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>	
+					<onclick>SetFocus(350)</onclick>
+					<onclick>Select</onclick>				
+					<onclick>SetFocus(90601)</onclick>	
+					<include>TopButton</include>
 				</control>
-				<control type="image">  					
-					<include>ArrowWidth</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(450).HasNext</visible>
+				<control type="fixedlist" id="350">
+					<include>WidgetPosterLayout</include>
+					<content>$VAR[QuickNav_WidgetListContentTVShows]</content>				
 				</control>
+				<control type="button" id="35">
+					<description>invisible control button for category</description>
+					<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
+					<visible>StringCompare(Container(20).ListItem.Property(widget),tvshows)</visible>
+					<onup>SetFocus(21)</onup>
+					<ondown condition="IntegerGreaterThan(Container(350).NumItems,0)">SetFocus(90601)</ondown>
+					<ondown condition="!IntegerGreaterThan(Container(350).NumItems,0)">SetFocus(20)</ondown>
+					<onback condition="IntegerGreaterThan(Container(350).NumItems,0)">SetFocus(90601)</onback>
+					<onback condition="!IntegerGreaterThan(Container(350).NumItems,0)">SetFocus(20)</onback>	
+					<include>TopButton</include>
+					<!-- on right switches -->
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">Skin.SetString(QuickNavWidgetTVShowsType,2)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),2)">Skin.SetString(QuickNavWidgetTVShowsType,3)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),3)">Skin.SetString(QuickNavWidgetTVShowsType,4)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),4)">Skin.SetString(QuickNavWidgetTVShowsType,5)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),5)">Skin.SetString(QuickNavWidgetTVShowsType,1)</onright>
+					<!-- on left switches -->
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),1)">Skin.SetString(QuickNavWidgetTVShowsType,5)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),5)">Skin.SetString(QuickNavWidgetTVShowsType,4)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),4)">Skin.SetString(QuickNavWidgetTVShowsType,3)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),3)">Skin.SetString(QuickNavWidgetTVShowsType,2)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetTVShowsType),2)">Skin.SetString(QuickNavWidgetTVShowsType,1)</onleft>
+					<!-- on click command -->
+					<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentTVShows])</onclick>			
+				</control>
+				<include name="WidgetBottomLabels">
+					<param name="Container">350</param>
+				</include>			
+				<include name="ParamWidgetCounterLoading">
+					<param name="Container">350</param>  
+				</include>
 			</control>
-			<control type="button" id="45">
-				<description>invisible control button for music widgets</description>
-				<onleft>Control.Move(450,-1)</onleft>
-				<onright>Control.Move(450,1)</onright>
-				<onup condition="Control.IsVisible(46)">SetFocus(46)</onup>
-				<onup condition="!Control.IsVisible(46)">SetFocus(21)</onup>
-				<ondown>SetFocus(20)</ondown>
-				<onback>SetFocus(20)</onback>				
-				<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(450).ListItem.Label],return)</onclick>
-				<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5) + !IsEmpty(Container(450).ListItem.DBID)">RunScript(script.playalbum,albumid=$INFO[Container(450).ListItem.DBID])</onclick>
-				<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5) + IsEmpty(Container(450).ListItem.DBID)">PlayMedia("musicdb://recentlyplayedalbums/-1/")</onclick>
-				<onclick condition="!stringcompare(Skin.String(QuickNavWidgetMusicType),4) + !stringcompare(Skin.String(QuickNavWidgetMusicType),5)">SetFocus(450)</onclick>
-				<onclick condition="!stringcompare(Skin.String(QuickNavWidgetMusicType),4) + !stringcompare(Skin.String(QuickNavWidgetMusicType),5)">Select</onclick>
-				<onclick>SetFocus(45)</onclick>	
-				<include>TopButton</include>
-			</control>
-			<control type="fixedlist" id="450">
-				<include>WidgetSquareLayout</include>
-				<content target="music">$VAR[QuickNav_WidgetListContentMusic]</content>
-			</control>
-			<control type="button" id="46">
-				<description>invisible control button for category</description>
-				<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
+
+			<!-- =========== -->
+			<!-- Music	 	 -->
+			<!-- =========== --> 
+			<control type="group" id="9070">
+				<include>HomeSlideAnimations</include>
 				<visible>StringCompare(Container(20).ListItem.Property(widget),music)</visible>
-				<onup>SetFocus(21)</onup>
-				<ondown condition="IntegerGreaterThan(Container(450).NumItems,0)">SetFocus(45)</ondown>
-				<ondown condition="!IntegerGreaterThan(Container(450).NumItems,0)">SetFocus(20)</ondown>
-				<onback condition="IntegerGreaterThan(Container(450).NumItems,0)">SetFocus(45)</onback>
-				<onback condition="!IntegerGreaterThan(Container(450).NumItems,0)">SetFocus(20)</onback>
-				<include>TopButton</include>
-				<!-- on right switches -->
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetMusicType),1)">Skin.SetString(QuickNavWidgetMusicType,2)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">Skin.SetString(QuickNavWidgetMusicType,3)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetMusicType),3)">Skin.SetString(QuickNavWidgetMusicType,4)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">Skin.SetString(QuickNavWidgetMusicType,5)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5)">Skin.SetString(QuickNavWidgetMusicType,1)</onright>
-				<!-- on left switches -->
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMusicType),1)">Skin.SetString(QuickNavWidgetMusicType,5)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5)">Skin.SetString(QuickNavWidgetMusicType,4)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">Skin.SetString(QuickNavWidgetMusicType,3)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMusicType),3)">Skin.SetString(QuickNavWidgetMusicType,2)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">Skin.SetString(QuickNavWidgetMusicType,1)</onleft>
-				<!-- on click command -->
-				<onclick>ActivateWindow(Music,$VAR[QuickNav_WidgetListContentMusic])</onclick>						
-			</control>
-			<include name="WidgetBottomLabels">
-				<param name="Container">450</param>  
-			</include>			
-			<include name="ParamWidgetCounterLoading">
-				<param name="Container">450</param>   
-			</include>
-		</control>
+				<include>WidgetContainer</include>
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(450).OnNext + IntegerGreaterThan(Container(450).NumItems,1)</visible>					
+				</control>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(450).OnPrevious + IntegerGreaterThan(Container(450).NumItems,1)</visible>
+				</control>
+				<control type="group">
+					<include>BackgroundVignette</include>
+					<include>VideoWallAnimations</include>
+					<visible>Control.IsVisible(581)</visible>				
+				</control>
+				<control type="group">
+					<visible>!IntegerGreaterThan(Container(450).NumItems,4)</visible>
+					<include>WidgetEmptyBoxes</include>
+				</control>
+				<control type="group">
+					<description>arrows left right</description>
+					<visible>!Control.HasFocus(46)</visible>
+					<include>ArrowDimension</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+					<control type="image">  					
+						<left>0</left>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_left.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>						
+						<visible>Container(450).HasPrevious</visible>
+					</control>
+					<control type="image">  					
+						<include>ArrowWidth</include>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_right.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+						<visible>Container(450).HasNext</visible>
+					</control>
+				</control>
+				<control type="button" id="45">
+					<description>invisible control button for music widgets</description>
+					<onleft>Control.Move(450,-1)</onleft>
+					<onright>Control.Move(450,1)</onright>
+					<onup condition="Control.IsVisible(46)">SetFocus(46)</onup>
+					<onup condition="!Control.IsVisible(46)">SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
 
-		<!-- =========== -->
-		<!-- Amazon Sandmann Plugin 	 -->
-		<!-- =========== --> 
-		<control type="group" id="9073">
-			<visible>StringCompare(Container(20).ListItem.Property(widget),amazondb) + System.HasAddon(plugin.video.amazon)</visible>
-			<include>HomeSlideAnimations</include>
-			<include>HomeAmazonDBWidgetAnimation</include>			
-			<include>WidgetContainer</include>				
-			<control type="group" id="4513">
-				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(750).OnNext + IntegerGreaterThan(Container(750).NumItems,1)</visible>					
-			</control>
-			<control type="group" id="4514">
-				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(750).OnPrevious + IntegerGreaterThan(Container(750).NumItems,1)</visible>
-			</control>
-			<control type="group">
-				<visible>!IntegerGreaterThan(Container(750).NumItems,5)</visible>
-				<include>WidgetEmptyPosters</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<visible>!Control.HasFocus(75)</visible>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(750).HasPrevious</visible>				
+					<onback>SetFocus(20)</onback>				
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>				
+					<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(450).ListItem.Label],return)</onclick>
+					<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5) + !IsEmpty(Container(450).ListItem.DBID)">RunScript(script.playalbum,albumid=$INFO[Container(450).ListItem.DBID])</onclick>
+					<onclick condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5) + IsEmpty(Container(450).ListItem.DBID)">PlayMedia("musicdb://recentlyplayedalbums/-1/")</onclick>
+					<onclick condition="!stringcompare(Skin.String(QuickNavWidgetMusicType),4) + !stringcompare(Skin.String(QuickNavWidgetMusicType),5)">SetFocus(450)</onclick>
+					<onclick condition="!stringcompare(Skin.String(QuickNavWidgetMusicType),4) + !stringcompare(Skin.String(QuickNavWidgetMusicType),5)">Select</onclick>
+					<onclick>SetFocus(45)</onclick>	
+					<include>TopButton</include>
 				</control>
-				<control type="image">  					
-					<include>ArrowWidth</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(750).HasNext</visible>
+				<control type="fixedlist" id="450">
+					<include>WidgetSquareLayout</include>
+					<content target="music">$VAR[QuickNav_WidgetListContentMusic]</content>
 				</control>
-			</control>			
-			<control type="button" id="90731">
-				<description>invisible control button for widgets</description>
-				<onleft>Control.Move(750,-1)</onleft>
-				<onright>Control.Move(750,1)</onright>
-				<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(75)">SetFocus(75)</onup>
-				<onup condition="Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(75)">SetFocus(21)</onup>
-				<ondown>SetFocus(20)</ondown>
-				<onback>SetFocus(20)</onback>	
-				<onclick>SetFocus(750)</onclick>
-				<onclick>Select</onclick>			
-				<onclick>SetFocus(90731)</onclick>	
-				<include>TopButton</include>
+				<control type="button" id="46">
+					<description>invisible control button for category</description>
+					<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
+					<visible>StringCompare(Container(20).ListItem.Property(widget),music)</visible>
+					<onup>SetFocus(21)</onup>
+					<ondown condition="IntegerGreaterThan(Container(450).NumItems,0)">SetFocus(45)</ondown>
+					<ondown condition="!IntegerGreaterThan(Container(450).NumItems,0)">SetFocus(20)</ondown>
+					<onback condition="IntegerGreaterThan(Container(450).NumItems,0)">SetFocus(45)</onback>
+					<onback condition="!IntegerGreaterThan(Container(450).NumItems,0)">SetFocus(20)</onback>
+					<include>TopButton</include>
+					<!-- on right switches -->
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetMusicType),1)">Skin.SetString(QuickNavWidgetMusicType,2)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">Skin.SetString(QuickNavWidgetMusicType,3)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetMusicType),3)">Skin.SetString(QuickNavWidgetMusicType,4)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">Skin.SetString(QuickNavWidgetMusicType,5)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5)">Skin.SetString(QuickNavWidgetMusicType,1)</onright>
+					<!-- on left switches -->
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetMusicType),1)">Skin.SetString(QuickNavWidgetMusicType,5)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetMusicType),5)">Skin.SetString(QuickNavWidgetMusicType,4)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetMusicType),4)">Skin.SetString(QuickNavWidgetMusicType,3)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetMusicType),3)">Skin.SetString(QuickNavWidgetMusicType,2)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetMusicType),2)">Skin.SetString(QuickNavWidgetMusicType,1)</onleft>
+					<!-- on click command -->
+					<onclick>ActivateWindow(Music,$VAR[QuickNav_WidgetListContentMusic])</onclick>						
+				</control>
+				<include name="WidgetBottomLabels">
+					<param name="Container">450</param>  
+				</include>			
+				<include name="ParamWidgetCounterLoading">
+					<param name="Container">450</param>   
+				</include>
 			</control>
-			<control type="fixedlist" id="750">
-				<visible>System.HasAddon(plugin.video.amazon)</visible>
-				<include>WidgetPosterLayout</include>
-				<content limit="15" target="video">$VAR[QuickNav_WidgetListContentAmazonDB]</content>				
-			</control>						
-			<control type="button" id="75">
-				<description>invisible control button for category</description>
-				<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
-				<visible>StringCompare(Container(20).ListItem.Property(widget),amazondb)</visible>
-				<onup>SetFocus(21)</onup>
-				<ondown condition="IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(90731)</ondown>
-				<ondown condition="!IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(20)</ondown>
-				<onback condition="IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(90731)</onback>
-				<onback condition="!IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(20)</onback>				
-				<include>TopButton</include>
-				<!-- on right switches -->
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),1)">Skin.SetString(QuickNavWidgetAmazonDBType,2)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),2)">Skin.SetString(QuickNavWidgetAmazonDBType,3)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),3)">Skin.SetString(QuickNavWidgetAmazonDBType,4)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),4)">Skin.SetString(QuickNavWidgetAmazonDBType,5)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),5)">Skin.SetString(QuickNavWidgetAmazonDBType,6)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),6)">Skin.SetString(QuickNavWidgetAmazonDBType,1)</onright>
-				<!-- on left switches -->
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),1)">Skin.SetString(QuickNavWidgetAmazonDBType,6)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),6)">Skin.SetString(QuickNavWidgetAmazonDBType,5)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),5)">Skin.SetString(QuickNavWidgetAmazonDBType,4)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),4)">Skin.SetString(QuickNavWidgetAmazonDBType,3)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),3)">Skin.SetString(QuickNavWidgetAmazonDBType,2)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),2)">Skin.SetString(QuickNavWidgetAmazonDBType,1)</onleft>
-				<!-- on click command -->
-				<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentAmazonDB])</onclick>	
-			</control>
-			<include name="WidgetBottomLabels">
-				<param name="Container">750</param>
-			</include>				
-			<include name="ParamWidgetCounterLoading">
-				<param name="Container">750</param>  
-			</include>
-		</control>
 
-		<!-- =========== -->
-		<!-- Amazon AddonScriptorDE Plugin 	 -->
-		<!-- =========== --> 
-		<control type="group" id="9074">
-			<visible>StringCompare(Container(20).ListItem.Property(widget),amazon) + System.HasAddon(plugin.video.prime_instant)</visible>
-			<include>HomeSlideAnimations</include>
-			<include>HomeAmazonWidgetAnimation</include>			
-			<include>WidgetContainer</include>	
-			<control type="group" id="4513">
-				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(751).OnNext + IntegerGreaterThan(Container(751).NumItems,1)</visible>					
-			</control>
-			<control type="group" id="4514">
-				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(751).OnPrevious + IntegerGreaterThan(Container(751).NumItems,1)</visible>
-			</control>
-			<control type="group">
-				<visible>!IntegerGreaterThan(Container(751).NumItems,5)</visible>
-				<include>WidgetEmptyPosters</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<visible>!Control.HasFocus(76)</visible>				
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(751).HasPrevious</visible>
+			<!-- =========== -->
+			<!-- Amazon Sandmann Plugin 	 -->
+			<!-- =========== --> 
+			<control type="group" id="9073">
+				<visible>StringCompare(Container(20).ListItem.Property(widget),amazondb) + System.HasAddon(plugin.video.amazon)</visible>
+				<include>HomeSlideAnimations</include>	
+				<include>WidgetContainer</include>				
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(750).OnNext + IntegerGreaterThan(Container(750).NumItems,1)</visible>					
 				</control>
-				<control type="image">  					
-					<include>ArrowWidth</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(751).HasNext</visible>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(750).OnPrevious + IntegerGreaterThan(Container(750).NumItems,1)</visible>
 				</control>
-			</control>
-			<control type="button" id="90741">
-				<description>invisible control button for widgets</description>
-				<onleft>Control.Move(751,-1)</onleft>
-				<onright>Control.Move(751,1)</onright>
-				<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(76)">SetFocus(76)</onup>
-				<onup condition="Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(76)">SetFocus(21)</onup>
-				<ondown>SetFocus(20)</ondown>
-				<onback>SetFocus(20)</onback>	
-				<onclick>SetFocus(751)</onclick>
-				<onclick>Select</onclick>			
-				<onclick>SetFocus(90741)</onclick>	
-				<include>TopButton</include>
-			</control>
-			<control type="fixedlist" id="751">
-				<visible>System.HasAddon(plugin.video.prime_instant)</visible>
-				<include>WidgetPosterLayout</include>
-				<content limit="15" target="video">$VAR[QuickNav_WidgetListContentAmazon]</content>				
-			</control>								
-			<control type="button" id="76">
-				<description>invisible control button for category</description>
-				<onup>SetFocus(21)</onup>
-				<ondown condition="IntegerGreaterThan(Container(751).NumItems,0)">SetFocus(90741)</ondown>
-				<ondown condition="!IntegerGreaterThan(Container(751).NumItems,0)">SetFocus(20)</ondown>
-				<onback condition="IntegerGreaterThan(Container(751).NumItems,0)">SetFocus(90741)</onback>
-				<onback condition="!IntegerGreaterThan(Container(751).NumItems,0)">SetFocus(20)</onback>				
-				<include>TopButton</include>
-				<!-- on right switches -->
-				<onright condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),1)">Skin.SetString(QuickNavWidgetAmazonType,2)</onright>
-				<onright condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),2)">Skin.SetString(QuickNavWidgetAmazonType,3)</onright>
-				<onright condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),3)">Skin.SetString(QuickNavWidgetAmazonType,4)</onright>
-				<onright condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),4)">Skin.SetString(QuickNavWidgetAmazonType,5)</onright>
-				<onright condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),5)">Skin.SetString(QuickNavWidgetAmazonType,6)</onright>
-				<onright condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),6)">Skin.SetString(QuickNavWidgetAmazonType,1)</onright>
-				<!-- on left switches -->
-				<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),1)">Skin.SetString(QuickNavWidgetAmazonType,6)</onleft>
-				<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),6)">Skin.SetString(QuickNavWidgetAmazonType,5)</onleft>
-				<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),5)">Skin.SetString(QuickNavWidgetAmazonType,4)</onleft>
-				<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),4)">Skin.SetString(QuickNavWidgetAmazonType,3)</onleft>
-				<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),3)">Skin.SetString(QuickNavWidgetAmazonType,2)</onleft>
-				<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),2)">Skin.SetString(QuickNavWidgetAmazonType,1)</onleft>
-				<!-- on click command -->
-				<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentAmazon])</onclick>	
-			</control>
-			<include name="WidgetBottomLabels">
-				<param name="Container">751</param>
-			</include>		
-			<include name="ParamWidgetCounterLoading">
-				<param name="Container">751</param>  
-			</include>
-		</control>
+				<control type="group">
+					<visible>!IntegerGreaterThan(Container(750).NumItems,5)</visible>
+					<include>WidgetEmptyPosters</include>
+				</control>
+				<control type="group">
+					<description>arrows left right</description>
+					<visible>!Control.HasFocus(75)</visible>
+					<include>ArrowDimension</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+					<control type="image">  					
+						<left>0</left>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_left.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>						
+						<visible>Container(750).HasPrevious</visible>				
+					</control>
+					<control type="image">  					
+						<include>ArrowWidth</include>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_right.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+						<visible>Container(750).HasNext</visible>
+					</control>
+				</control>			
+				<control type="button" id="90731">
+					<description>invisible control button for widgets</description>
+					<onleft>Control.Move(750,-1)</onleft>
+					<onright>Control.Move(750,1)</onright>
+					<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(75)">SetFocus(75)</onup>
+					<onup condition="Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(75)">SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
 
-		<!-- =========== -->
-		<!-- TuneIn Radio -->
-		<!-- =========== -->
-		<control type="group" id="9080">
-			<description>tunein radio widget</description>
-			<visible>StringCompare(Container(20).ListItem.Property(widget),tunein)</visible>
-			<include>HomeSlideAnimations</include>
-			<include>HomeTuneInWidgetAnimation</include>
-			<include>WidgetContainer</include>
-			<control type="group" id="4513">
-				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(550).OnNext + IntegerGreaterThan(Container(550).NumItems,1)</visible>					
-			</control>
-			<control type="group" id="4514">
-				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(550).OnPrevious + IntegerGreaterThan(Container(550).NumItems,1)</visible>
-			</control>
-			<control type="group">
-				<visible>!IntegerGreaterThan(Container(550).NumItems,4)</visible>
-				<include>WidgetEmptyBoxes</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<visible>!Control.HasFocus(55)</visible>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(550).HasPrevious</visible>
+					<onback>SetFocus(20)</onback>				
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>	
+					<onclick>SetFocus(750)</onclick>
+					<onclick>Select</onclick>			
+					<onclick>SetFocus(90731)</onclick>	
+					<include>TopButton</include>
 				</control>
-				<control type="image">  					
-					<include>ArrowWidth</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(550).HasNext</visible>
+				<control type="fixedlist" id="750">
+					<visible>System.HasAddon(plugin.video.amazon)</visible>
+					<include>WidgetPosterLayout</include>
+					<content limit="15" target="video">$VAR[QuickNav_WidgetListContentAmazonDB]</content>				
+				</control>						
+				<control type="button" id="75">
+					<description>invisible control button for category</description>
+					<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
+					<visible>StringCompare(Container(20).ListItem.Property(widget),amazondb)</visible>
+					<onup>SetFocus(21)</onup>
+					<ondown condition="IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(90731)</ondown>
+					<ondown condition="!IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(20)</ondown>
+					<onback condition="IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(90731)</onback>
+					<onback condition="!IntegerGreaterThan(Container(750).NumItems,0)">SetFocus(20)</onback>				
+					<include>TopButton</include>
+					<!-- on right switches -->
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),1)">Skin.SetString(QuickNavWidgetAmazonDBType,2)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),2)">Skin.SetString(QuickNavWidgetAmazonDBType,3)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),3)">Skin.SetString(QuickNavWidgetAmazonDBType,4)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),4)">Skin.SetString(QuickNavWidgetAmazonDBType,5)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),5)">Skin.SetString(QuickNavWidgetAmazonDBType,6)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),6)">Skin.SetString(QuickNavWidgetAmazonDBType,1)</onright>
+					<!-- on left switches -->
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),1)">Skin.SetString(QuickNavWidgetAmazonDBType,6)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),6)">Skin.SetString(QuickNavWidgetAmazonDBType,5)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),5)">Skin.SetString(QuickNavWidgetAmazonDBType,4)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),4)">Skin.SetString(QuickNavWidgetAmazonDBType,3)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),3)">Skin.SetString(QuickNavWidgetAmazonDBType,2)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetAmazonDBType),2)">Skin.SetString(QuickNavWidgetAmazonDBType,1)</onleft>
+					<!-- on click command -->
+					<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentAmazonDB])</onclick>	
 				</control>
+				<include name="WidgetBottomLabels">
+					<param name="Container">750</param>
+				</include>				
+				<include name="ParamWidgetCounterLoading">
+					<param name="Container">750</param>  
+				</include>
 			</control>
-			<control type="button" id="90801">
-				<description>invisible control button for widgets</description>
-				<onleft>Control.Move(550,-1)</onleft>
-				<onright>Control.Move(550,1)</onright>
-				<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(55)">SetFocus(55)</onup>
-				<onup condition="Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(55)">SetFocus(21)</onup>
-				<ondown>SetFocus(20)</ondown>
-				<onback>SetFocus(20)</onback>	
-				<onclick>SetFocus(550)</onclick>
-				<onclick>Select</onclick>			
-				<onclick>SetFocus(90801)</onclick>	
-				<include>TopButton</include>
+
+			<!-- =========== -->
+			<!-- Amazon AddonScriptorDE Plugin 	 -->
+			<!-- =========== --> 
+			<control type="group" id="9074">
+				<visible>StringCompare(Container(20).ListItem.Property(widget),amazon) + System.HasAddon(plugin.video.prime_instant)</visible>
+				<include>HomeSlideAnimations</include>	
+				<include>WidgetContainer</include>	
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(751).OnNext + IntegerGreaterThan(Container(751).NumItems,1)</visible>					
+				</control>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(751).OnPrevious + IntegerGreaterThan(Container(751).NumItems,1)</visible>
+				</control>
+				<control type="group">
+					<visible>!IntegerGreaterThan(Container(751).NumItems,5)</visible>
+					<include>WidgetEmptyPosters</include>
+				</control>
+				<control type="group">
+					<description>arrows left right</description>
+					<visible>!Control.HasFocus(76)</visible>				
+					<include>ArrowDimension</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+					<control type="image">  					
+						<left>0</left>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_left.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>						
+						<visible>Container(751).HasPrevious</visible>
+					</control>
+					<control type="image">  					
+						<include>ArrowWidth</include>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_right.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+						<visible>Container(751).HasNext</visible>
+					</control>
+				</control>
+				<control type="button" id="90741">
+					<description>invisible control button for widgets</description>
+					<onleft>Control.Move(751,-1)</onleft>
+					<onright>Control.Move(751,1)</onright>
+					<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(76)">SetFocus(76)</onup>
+					<onup condition="Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(76)">SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
+
+					<onback>SetFocus(20)</onback>				
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>	
+					<onclick>SetFocus(751)</onclick>
+					<onclick>Select</onclick>			
+					<onclick>SetFocus(90741)</onclick>	
+					<include>TopButton</include>
+				</control>
+				<control type="fixedlist" id="751">
+					<visible>System.HasAddon(plugin.video.prime_instant)</visible>
+					<include>WidgetPosterLayout</include>
+					<content limit="15" target="video">$VAR[QuickNav_WidgetListContentAmazon]</content>				
+				</control>								
+				<control type="button" id="76">
+					<description>invisible control button for category</description>
+					<onup>SetFocus(21)</onup>
+					<ondown condition="IntegerGreaterThan(Container(751).NumItems,0)">SetFocus(90741)</ondown>
+					<ondown condition="!IntegerGreaterThan(Container(751).NumItems,0)">SetFocus(20)</ondown>
+					<onback condition="IntegerGreaterThan(Container(751).NumItems,0)">SetFocus(90741)</onback>
+					<onback condition="!IntegerGreaterThan(Container(751).NumItems,0)">SetFocus(20)</onback>				
+					<include>TopButton</include>
+					<!-- on right switches -->
+					<onright condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),1)">Skin.SetString(QuickNavWidgetAmazonType,2)</onright>
+					<onright condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),2)">Skin.SetString(QuickNavWidgetAmazonType,3)</onright>
+					<onright condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),3)">Skin.SetString(QuickNavWidgetAmazonType,4)</onright>
+					<onright condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),4)">Skin.SetString(QuickNavWidgetAmazonType,5)</onright>
+					<onright condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),5)">Skin.SetString(QuickNavWidgetAmazonType,6)</onright>
+					<onright condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),6)">Skin.SetString(QuickNavWidgetAmazonType,1)</onright>
+					<!-- on left switches -->
+					<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),1)">Skin.SetString(QuickNavWidgetAmazonType,6)</onleft>
+					<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),6)">Skin.SetString(QuickNavWidgetAmazonType,5)</onleft>
+					<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),5)">Skin.SetString(QuickNavWidgetAmazonType,4)</onleft>
+					<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),4)">Skin.SetString(QuickNavWidgetAmazonType,3)</onleft>
+					<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),3)">Skin.SetString(QuickNavWidgetAmazonType,2)</onleft>
+					<onleft condition="!Skin.HasSetting(LockWidgetSwitch) + stringcompare(Skin.String(QuickNavWidgetAmazonType),2)">Skin.SetString(QuickNavWidgetAmazonType,1)</onleft>
+					<!-- on click command -->
+					<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentAmazon])</onclick>	
+				</control>
+				<include name="WidgetBottomLabels">
+					<param name="Container">751</param>
+				</include>		
+				<include name="ParamWidgetCounterLoading">
+					<param name="Container">751</param>  
+				</include>
 			</control>
-			<control type="fixedlist" id="550">	
-				<visible>System.HasAddon(plugin.audio.tuneinradio)</visible>
-				<include>WidgetSquareLayout</include>
-				<content target="music">$VAR[QuickNav_WidgetListContentTuneIn]</content>
-			</control>
-			<control type="button" id="55">
-				<description>invisible control button for category</description>
-				<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
+
+			<!-- =========== -->
+			<!-- TuneIn Radio -->
+			<!-- =========== -->
+			<control type="group" id="9080">
+				<description>tunein radio widget</description>
 				<visible>StringCompare(Container(20).ListItem.Property(widget),tunein)</visible>
-				<onup>SetFocus(21)</onup>
-				<ondown condition="IntegerGreaterThan(Container(550).NumItems,0)">SetFocus(90801)</ondown>
-				<ondown condition="!IntegerGreaterThan(Container(550).NumItems,0)">SetFocus(20)</ondown>
-				<onback condition="IntegerGreaterThan(Container(550).NumItems,0)">SetFocus(90801)</onback>
-				<onback condition="!IntegerGreaterThan(Container(550).NumItems,0)">SetFocus(20)</onback>	
-				<include>TopButton</include>
-				<!-- on right switches -->
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">Skin.SetString(QuickNavWidgetTuneInType,2)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">Skin.SetString(QuickNavWidgetTuneInType,3)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">Skin.SetString(QuickNavWidgetTuneInType,1)</onright>
-				<!-- on left switches -->
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">Skin.SetString(QuickNavWidgetTuneInType,3)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),3">Skin.SetString(QuickNavWidgetTuneInType,2)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">Skin.SetString(QuickNavWidgetTuneInType,1)</onleft>
-				<!-- on click command -->
-				<onclick>ActivateWindow(Music,$VAR[QuickNav_WidgetListContentTuneIn])</onclick>	
-			</control>
-			<include name="WidgetBottomLabels">
-				<param name="Container">550</param>  
-			</include>			
-			<include name="ParamWidgetCounterLoading">
-				<param name="Container">550</param>  
-			</include>
-		</control>
+				<include>HomeSlideAnimations</include>
+				<include>WidgetContainer</include>
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(550).OnNext + IntegerGreaterThan(Container(550).NumItems,1)</visible>					
+				</control>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(550).OnPrevious + IntegerGreaterThan(Container(550).NumItems,1)</visible>
+				</control>
+				<control type="group">
+					<visible>!IntegerGreaterThan(Container(550).NumItems,4)</visible>
+					<include>WidgetEmptyBoxes</include>
+				</control>
+				<control type="group">
+					<description>arrows left right</description>
+					<visible>!Control.HasFocus(55)</visible>
+					<include>ArrowDimension</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+					<control type="image">  					
+						<left>0</left>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_left.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>						
+						<visible>Container(550).HasPrevious</visible>
+					</control>
+					<control type="image">  					
+						<include>ArrowWidth</include>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_right.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+						<visible>Container(550).HasNext</visible>
+					</control>
+				</control>
+				<control type="button" id="90801">
+					<description>invisible control button for widgets</description>
+					<onleft>Control.Move(550,-1)</onleft>
+					<onright>Control.Move(550,1)</onright>
+					<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(55)">SetFocus(55)</onup>
+					<onup condition="Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(55)">SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
 
-		<!-- =========== -->
-		<!-- YouTube -->
-		<!-- =========== -->
-		<control type="group" id="9098">
-			<description>youtube widget</description>
-			<visible>StringCompare(Container(20).ListItem.Property(widget),youtube)</visible>
-			<include>HomeSlideAnimations</include>
-			<include>HomeYouTubeWidgetAnimation</include>
-			<include>WidgetContainer</include>
-			<control type="group" id="4513">
-				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(653).OnNext + IntegerGreaterThan(Container(653).NumItems,1)</visible>					
-			</control>
-			<control type="group" id="4514">
-				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(653).OnPrevious + IntegerGreaterThan(Container(653).NumItems,1)</visible>
-			</control>
-			<control type="group">
-				<visible>!IntegerGreaterThan(Container(653).NumItems,4)</visible>
-				<include>WidgetEmptyBoxes</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<visible>!Control.HasFocus(66)</visible>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(653).HasPrevious</visible>
+					<onback>SetFocus(20)</onback>				
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>	
+					<onclick>SetFocus(550)</onclick>
+					<onclick>Select</onclick>			
+					<onclick>SetFocus(90801)</onclick>	
+					<include>TopButton</include>
 				</control>
-				<control type="image">  					
-					<include>ArrowWidth</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(653).HasNext</visible>
+				<control type="fixedlist" id="550">	
+					<visible>System.HasAddon(plugin.audio.tuneinradio)</visible>
+					<include>WidgetSquareLayout</include>
+					<content target="music">$VAR[QuickNav_WidgetListContentTuneIn]</content>
 				</control>
+				<control type="button" id="55">
+					<description>invisible control button for category</description>
+					<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
+					<visible>StringCompare(Container(20).ListItem.Property(widget),tunein)</visible>
+					<onup>SetFocus(21)</onup>
+					<ondown condition="IntegerGreaterThan(Container(550).NumItems,0)">SetFocus(90801)</ondown>
+					<ondown condition="!IntegerGreaterThan(Container(550).NumItems,0)">SetFocus(20)</ondown>
+					<onback condition="IntegerGreaterThan(Container(550).NumItems,0)">SetFocus(90801)</onback>
+					<onback condition="!IntegerGreaterThan(Container(550).NumItems,0)">SetFocus(20)</onback>	
+					<include>TopButton</include>
+					<!-- on right switches -->
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">Skin.SetString(QuickNavWidgetTuneInType,2)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">Skin.SetString(QuickNavWidgetTuneInType,3)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">Skin.SetString(QuickNavWidgetTuneInType,1)</onright>
+					<!-- on left switches -->
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">Skin.SetString(QuickNavWidgetTuneInType,3)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),3">Skin.SetString(QuickNavWidgetTuneInType,2)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">Skin.SetString(QuickNavWidgetTuneInType,1)</onleft>
+					<!-- on click command -->
+					<onclick>ActivateWindow(Music,$VAR[QuickNav_WidgetListContentTuneIn])</onclick>	
+				</control>
+				<include name="WidgetBottomLabels">
+					<param name="Container">550</param>  
+				</include>			
+				<include name="ParamWidgetCounterLoading">
+					<param name="Container">550</param>  
+				</include>
 			</control>
-			<control type="button" id="90981">
-				<description>invisible control button for widgets</description>
-				<onleft>Control.Move(653,-1)</onleft>
-				<onright>Control.Move(653,1)</onright>
-				<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(66)">SetFocus(66)</onup>
-				<onup condition="Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(66)">SetFocus(21)</onup>
-				<ondown>SetFocus(20)</ondown>
-				<onback>SetFocus(20)</onback>	
-				<onclick>SetFocus(653)</onclick>
-				<onclick>Select</onclick>			
-				<onclick>SetFocus(90981)</onclick>	
-				<include>TopButton</include>
-			</control>
-			<control type="fixedlist" id="653">	
-				<include>WidgetSquareLayout</include>
-				<content target="video">$VAR[QuickNav_WidgetListContentYouTube]</content>
-			</control>
-			<control type="button" id="66">
-				<description>invisible control button for category</description>
-				<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
+
+			<!-- =========== -->
+			<!-- YouTube -->
+			<!-- =========== -->
+			<control type="group" id="9098">
+				<description>youtube widget</description>
 				<visible>StringCompare(Container(20).ListItem.Property(widget),youtube)</visible>
-				<onup>SetFocus(21)</onup>
-				<ondown condition="IntegerGreaterThan(Container(653).NumItems,0)">SetFocus(90981)</ondown>
-				<ondown condition="!IntegerGreaterThan(Container(653).NumItems,0)">SetFocus(20)</ondown>
-				<onback condition="IntegerGreaterThan(Container(653).NumItems,0)">SetFocus(90981)</onback>
-				<onback condition="!IntegerGreaterThan(Container(653).NumItems,0)">SetFocus(20)</onback>	
-				<include>TopButton</include>
-				<!-- on right switches -->
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),1)">Skin.SetString(QuickNavWidgetYouTubeType,2)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">Skin.SetString(QuickNavWidgetYouTubeType,3)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),3)">Skin.SetString(QuickNavWidgetYouTubeType,4)</onright>
-				<onright condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),4)">Skin.SetString(QuickNavWidgetYouTubeType,1)</onright>
-				<!-- on left switches -->
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),1)">Skin.SetString(QuickNavWidgetYouTubeType,4)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),4">Skin.SetString(QuickNavWidgetYouTubeType,3)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),3">Skin.SetString(QuickNavWidgetYouTubeType,2)</onleft>
-				<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">Skin.SetString(QuickNavWidgetYouTubeType,1)</onleft>
-				<!-- on click command -->
-				<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentYouTube])</onclick>	
-			</control>
-			<include name="WidgetBottomLabels">
-				<param name="Container">653</param>  
-			</include>			
-			<include name="ParamWidgetCounterLoading">
-				<param name="Container">653</param>   
-			</include>
-		</control>
+				<include>HomeSlideAnimations</include>
+				<include>WidgetContainer</include>
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(653).OnNext + IntegerGreaterThan(Container(653).NumItems,1)</visible>					
+				</control>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(653).OnPrevious + IntegerGreaterThan(Container(653).NumItems,1)</visible>
+				</control>
+				<control type="group">
+					<visible>!IntegerGreaterThan(Container(653).NumItems,4)</visible>
+					<include>WidgetEmptyBoxes</include>
+				</control>
+				<control type="group">
+					<description>arrows left right</description>
+					<visible>!Control.HasFocus(66)</visible>
+					<include>ArrowDimension</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+					<control type="image">  					
+						<left>0</left>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_left.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>						
+						<visible>Container(653).HasPrevious</visible>
+					</control>
+					<control type="image">  					
+						<include>ArrowWidth</include>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_right.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+						<visible>Container(653).HasNext</visible>
+					</control>
+				</control>
+				<control type="button" id="90981">
+					<description>invisible control button for widgets</description>
+					<onleft>Control.Move(653,-1)</onleft>
+					<onright>Control.Move(653,1)</onright>
+					<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(66)">SetFocus(66)</onup>
+					<onup condition="Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(66)">SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
 
-		<!-- =========== -->
-		<!-- Custom Widget #1 -->
-		<!-- =========== -->		
-		<control type="group" id="9090">
-			<description>custom widget group</description>
-			<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)</visible>
-			<include>HomeSlideAnimations</include>
-			<include>HomeCustomWidgetAnimation</include>
-			<include>WidgetContainer</include>
-			<control type="group" id="4513">
-				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(551).OnNext + IntegerGreaterThan(Container(551).NumItems,1)</visible>					
-			</control>
-			<control type="group" id="4514">
-				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(551).OnPrevious + IntegerGreaterThan(Container(551).NumItems,1)</visible>
-			</control>
-			<control type="group">
-				<visible>!IntegerGreaterThan(Container(551).NumItems,4)</visible>
-				<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetEmptyBoxes</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetEmptyPosters</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(551).HasPrevious</visible>
+					<onback>SetFocus(20)</onback>				
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>	
+					<onclick>SetFocus(653)</onclick>
+					<onclick>Select</onclick>			
+					<onclick>SetFocus(90981)</onclick>	
+					<include>TopButton</include>
 				</control>
-				<control type="image">  					
-					<include>ArrowWidth</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(551).HasNext</visible>
+				<control type="fixedlist" id="653">	
+					<include>WidgetSquareLayout</include>
+					<content target="video">$VAR[QuickNav_WidgetListContentYouTube]</content>
 				</control>
-			</control>
-			<control type="button" id="90901">
-				<description>invisible control button for widgets</description>
-				<onleft>Control.Move(551,-1)</onleft>
-				<onright>Control.Move(551,1)</onright>
-				<onup>SetFocus(21)</onup>
-				<ondown>SetFocus(20)</ondown>
-				<onback>SetFocus(20)</onback>	
-				<onclick>SetFocus(551)</onclick>
-				<onclick>Select</onclick>			
-				<onclick>SetFocus(90901)</onclick>	
-				<include>TopButton</include>
-			</control>
-			<control type="fixedlist" id="551">
-				<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetSquareLayout</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetPosterLayout</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.1.Source),mixed)" name="widgetgroup-customgroup">
-					<param name="GroupNo">1</param>
-				</include>
-				<include condition="SubString(Skin.String(widgetgroup.1.Source),path)" name="widgetgroup-custompath">
-					<param name="GroupNo">1</param>
-					<param name="Target">$INFO[Skin.String(widgetgroup.1.Target)]</param>
-					<param name="Limit">$INFO[Skin.String(widgetgroup.1.Limit)]</param>
+				<control type="button" id="66">
+					<description>invisible control button for category</description>
+					<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
+					<visible>StringCompare(Container(20).ListItem.Property(widget),youtube)</visible>
+					<onup>SetFocus(21)</onup>
+					<ondown condition="IntegerGreaterThan(Container(653).NumItems,0)">SetFocus(90981)</ondown>
+					<ondown condition="!IntegerGreaterThan(Container(653).NumItems,0)">SetFocus(20)</ondown>
+					<onback condition="IntegerGreaterThan(Container(653).NumItems,0)">SetFocus(90981)</onback>
+					<onback condition="!IntegerGreaterThan(Container(653).NumItems,0)">SetFocus(20)</onback>	
+					<include>TopButton</include>
+					<!-- on right switches -->
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),1)">Skin.SetString(QuickNavWidgetYouTubeType,2)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">Skin.SetString(QuickNavWidgetYouTubeType,3)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),3)">Skin.SetString(QuickNavWidgetYouTubeType,4)</onright>
+					<onright condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),4)">Skin.SetString(QuickNavWidgetYouTubeType,1)</onright>
+					<!-- on left switches -->
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),1)">Skin.SetString(QuickNavWidgetYouTubeType,4)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),4">Skin.SetString(QuickNavWidgetYouTubeType,3)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),3">Skin.SetString(QuickNavWidgetYouTubeType,2)</onleft>
+					<onleft condition="stringcompare(Skin.String(QuickNavWidgetYouTubeType),2)">Skin.SetString(QuickNavWidgetYouTubeType,1)</onleft>
+					<!-- on click command -->
+					<onclick>ActivateWindow(Videos,$VAR[QuickNav_WidgetListContentYouTube])</onclick>	
+				</control>
+				<include name="WidgetBottomLabels">
+					<param name="Container">653</param>  
+				</include>			
+				<include name="ParamWidgetCounterLoading">
+					<param name="Container">653</param>   
 				</include>
 			</control>
-			<include name="WidgetBottomLabels">
-				<param name="Container">551</param>  
-			</include>		
-			<include name="ParamWidgetCounterLoading">
-				<param name="Container">551</param>   
-			</include>	
-		</control>
 
-		<!-- =========== -->
-		<!-- Custom Widget #2 -->
-		<!-- =========== -->			
-		<control type="group" id="9091">
-			<description>custom widget group2</description>
-			<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)</visible>
-			<include>HomeSlideAnimations</include>
-			<include>HomeCustomWidget2Animation</include>
-			<include>WidgetContainer</include>
-			<control type="group" id="4513">
-				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(552).OnNext + IntegerGreaterThan(Container(552).NumItems,1)</visible>					
-			</control>
-			<control type="group" id="4514">
-				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(552).OnPrevious + IntegerGreaterThan(Container(552).NumItems,1)</visible>
-			</control>
-			<control type="group">
-				<visible>!IntegerGreaterThan(Container(552).NumItems,4)</visible>
-				<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetEmptyBoxes</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetEmptyPosters</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(552).HasPrevious</visible>
+			<!-- =========== -->
+			<!-- Custom Widget #1 -->
+			<!-- =========== -->		
+			<control type="group" id="9090">
+				<description>custom widget group</description>
+				<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)</visible>
+				<include>HomeSlideAnimations</include>
+				<include>WidgetContainer</include>
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(551).OnNext + IntegerGreaterThan(Container(551).NumItems,1)</visible>					
 				</control>
-				<control type="image">  					
-					<include>ArrowWidth</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(552).HasNext</visible>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(551).OnPrevious + IntegerGreaterThan(Container(551).NumItems,1)</visible>
 				</control>
-			</control>
-			<control type="button" id="90911">
-				<description>invisible control button for widgets</description>
-				<onleft>Control.Move(552,-1)</onleft>
-				<onright>Control.Move(552,1)</onright>
-				<onup>SetFocus(21)</onup>
-				<ondown>SetFocus(20)</ondown>
-				<onback>SetFocus(20)</onback>	
-				<onclick>SetFocus(552)</onclick>
-				<onclick>Select</onclick>			
-				<onclick>SetFocus(90911)</onclick>	
-				<include>TopButton</include>
-			</control>
-			<control type="fixedlist" id="552">					
-				<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetSquareLayout</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetPosterLayout</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.2.Source),mixed)" name="widgetgroup-customgroup">
-					<param name="GroupNo">2</param>
-				</include>
-				<include condition="SubString(Skin.String(widgetgroup.2.Source),path)" name="widgetgroup-custompath">
-					<param name="GroupNo">2</param>
-					<param name="Target">$INFO[Skin.String(widgetgroup.2.Target)]</param>
-					<param name="Limit">$INFO[Skin.String(widgetgroup.2.Limit)]</param>
-				</include>
-			</control>
-			<include name="WidgetBottomLabels">
-				<param name="Container">552</param>  
-			</include>		
-			<include name="ParamWidgetCounterLoading">
-				<param name="Container">552</param>   
-			</include>	
-		</control>
+				<control type="group">
+					<visible>!IntegerGreaterThan(Container(551).NumItems,4)</visible>
+					<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetEmptyBoxes</include>
+					<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetEmptyPosters</include>
+				</control>
+				<control type="group">
+					<description>arrows left right</description>
+					<include>ArrowDimension</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+					<control type="image">  					
+						<left>0</left>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_left.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>						
+						<visible>Container(551).HasPrevious</visible>
+					</control>
+					<control type="image">  					
+						<include>ArrowWidth</include>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_right.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+						<visible>Container(551).HasNext</visible>
+					</control>
+				</control>
+				<control type="button" id="90901">
+					<description>invisible control button for widgets</description>
+					<onleft>Control.Move(551,-1)</onleft>
+					<onright>Control.Move(551,1)</onright>
+					<onup>SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
 
-		<!-- =========== -->
-		<!-- Custom Widget #3 -->
-		<!-- =========== -->			
-		<control type="group" id="9093">
-			<description>custom widget group3</description>
-			<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)</visible>
-			<include>HomeSlideAnimations</include>
-			<include>HomeCustomWidget3Animation</include>
-			<include>WidgetContainer</include>
-			<control type="group" id="4513">
-				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(553).OnNext + IntegerGreaterThan(Container(553).NumItems,1)</visible>					
-			</control>
-			<control type="group" id="4514">
-				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(553).OnPrevious + IntegerGreaterThan(Container(553).NumItems,1)</visible>
-			</control>
-			<control type="group">
-				<visible>!IntegerGreaterThan(Container(553).NumItems,4)</visible>
-				<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetEmptyBoxes</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetEmptyPosters</include>
-			</control>			
-			<control type="group">
-				<description>arrows left right</description>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(553).HasPrevious</visible>
+					<onback>SetFocus(20)</onback>				
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>	
+					<onclick>SetFocus(551)</onclick>
+					<onclick>Select</onclick>			
+					<onclick>SetFocus(90901)</onclick>	
+					<include>TopButton</include>
 				</control>
-				<control type="image">  					
-					<include>ArrowWidth</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(553).HasNext</visible>
+				<control type="fixedlist" id="551">
+					<include condition="!StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetSquareLayout</include>
+					<include condition="StringCompare(Skin.String(widgetgroup.1.Layout),Poster)">WidgetPosterLayout</include>
+					<include condition="StringCompare(Skin.String(widgetgroup.1.Source),mixed)" name="widgetgroup-customgroup">
+						<param name="GroupNo">1</param>
+					</include>
+					<include condition="SubString(Skin.String(widgetgroup.1.Source),path)" name="widgetgroup-custompath">
+						<param name="GroupNo">1</param>
+						<param name="Target">$INFO[Skin.String(widgetgroup.1.Target)]</param>
+						<param name="Limit">$INFO[Skin.String(widgetgroup.1.Limit)]</param>
+					</include>
 				</control>
+				<include name="WidgetBottomLabels">
+					<param name="Container">551</param>  
+				</include>		
+				<include name="ParamWidgetCounterLoading">
+					<param name="Container">551</param>   
+				</include>	
 			</control>
-			<control type="button" id="90931">
-				<description>invisible control button for widgets</description>
-				<onleft>Control.Move(553,-1)</onleft>
-				<onright>Control.Move(553,1)</onright>
-				<onup>SetFocus(21)</onup>
-				<ondown>SetFocus(20)</ondown>
-				<onback>SetFocus(20)</onback>	
-				<onclick>SetFocus(553)</onclick>
-				<onclick>Select</onclick>			
-				<onclick>SetFocus(90931)</onclick>	
-				<include>TopButton</include>
-			</control>
-			<control type="fixedlist" id="553">					
-				<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetSquareLayout</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetPosterLayout</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.3.Source),mixed)" name="widgetgroup-customgroup">
-					<param name="GroupNo">3</param>
-				</include>
-				<include condition="SubString(Skin.String(widgetgroup.3.Source),path)" name="widgetgroup-custompath">
-					<param name="GroupNo">3</param>
-					<param name="Target">$INFO[Skin.String(widgetgroup.3.Target)]</param>
-					<param name="Limit">$INFO[Skin.String(widgetgroup.3.Limit)]</param>
-				</include>
-			</control>
-			<include name="WidgetBottomLabels">
-				<param name="Container">553</param>  
-			</include>		
-			<include name="ParamWidgetCounterLoading">
-				<param name="Container">553</param>   
-			</include>	
-		</control>
 
-		<!-- =========== -->
-		<!-- Custom Widget #4 -->
-		<!-- =========== -->			
-		<control type="group" id="9094">
-			<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)</visible>
-			<description>custom widget group4</description>
-			<include>HomeSlideAnimations</include>
-			<include>HomeCustomWidget4Animation</include>
-			<include>WidgetContainer</include>
-			<control type="group" id="4513">
-				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(554).OnNext + IntegerGreaterThan(Container(554).NumItems,1)</visible>					
-			</control>
-			<control type="group" id="4514">
-				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(554).OnPrevious + IntegerGreaterThan(Container(554).NumItems,1)</visible>
-			</control>
-			<control type="group">
-				<visible>!IntegerGreaterThan(Container(554).NumItems,4)</visible>
-				<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetEmptyBoxes</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetEmptyPosters</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(554).HasPrevious</visible>
+			<!-- =========== -->
+			<!-- Custom Widget #2 -->
+			<!-- =========== -->			
+			<control type="group" id="9091">
+				<description>custom widget group2</description>
+				<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)</visible>
+				<include>HomeSlideAnimations</include>
+				<include>WidgetContainer</include>
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(552).OnNext + IntegerGreaterThan(Container(552).NumItems,1)</visible>					
 				</control>
-				<control type="image">  					
-					<include>ArrowWidth</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(554).HasNext</visible>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(552).OnPrevious + IntegerGreaterThan(Container(552).NumItems,1)</visible>
 				</control>
-			</control>
-			<control type="button" id="90941">
-				<description>invisible control button for widgets</description>
-				<onleft>Control.Move(554,-1)</onleft>
-				<onright>Control.Move(554,1)</onright>
-				<onup>SetFocus(21)</onup>
-				<ondown>SetFocus(20)</ondown>
-				<onback>SetFocus(20)</onback>	
-				<onclick>SetFocus(554)</onclick>
-				<onclick>Select</onclick>			
-				<onclick>SetFocus(90941)</onclick>	
-				<include>TopButton</include>
-			</control>
-			<control type="fixedlist" id="554">	
-				<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetSquareLayout</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetPosterLayout</include>
-				<include condition="StringCompare(Skin.String(widgetgroup.4.Source),mixed)" name="widgetgroup-customgroup">
-					<param name="GroupNo">4</param>
-				</include>
-				<include condition="SubString(Skin.String(widgetgroup.4.Source),path)" name="widgetgroup-custompath">
-					<param name="GroupNo">4</param>
-					<param name="Target">$INFO[Skin.String(widgetgroup.4.Target)]</param>
-					<param name="Limit">$INFO[Skin.String(widgetgroup.4.Limit)]</param>
-				</include>
-			</control>
-			<include name="WidgetBottomLabels">
-				<param name="Container">554</param>  
-			</include>		
-			<include name="ParamWidgetCounterLoading">
-				<param name="Container">554</param>   
-			</include>	
-		</control>
+				<control type="group">
+					<visible>!IntegerGreaterThan(Container(552).NumItems,4)</visible>
+					<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetEmptyBoxes</include>
+					<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetEmptyPosters</include>
+				</control>
+				<control type="group">
+					<description>arrows left right</description>
+					<include>ArrowDimension</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+					<control type="image">  					
+						<left>0</left>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_left.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>						
+						<visible>Container(552).HasPrevious</visible>
+					</control>
+					<control type="image">  					
+						<include>ArrowWidth</include>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_right.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+						<visible>Container(552).HasNext</visible>
+					</control>
+				</control>
+				<control type="button" id="90911">
+					<description>invisible control button for widgets</description>
+					<onleft>Control.Move(552,-1)</onleft>
+					<onright>Control.Move(552,1)</onright>
+					<onup>SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
 
-		<!-- =========== -->
-		<!-- RSS Feed	 -->
-		<!-- =========== -->			
-		<control type="group" id="9099">
-			<description>rss video feed widget</description>
-			<visible>StringCompare(Container(20).ListItem.Property(widget),rssvideowidget)</visible>
-			<include>HomeSlideAnimations</include>
-			<include>HomeRSSWidgetAnimation</include>
-			<include>WidgetContainer</include>
-			<control type="group" id="4513">
-				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(650).OnNext + IntegerGreaterThan(Container(650).NumItems,1)</visible>					
-			</control>
-			<control type="group" id="4514">
-				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(650).OnPrevious + IntegerGreaterThan(Container(650).NumItems,1)</visible>
-			</control>
-			<control type="group">
-				<visible>!IntegerGreaterThan(Container(650).NumItems,4)</visible>
-				<include>WidgetEmptyBoxes</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<visible>!Control.HasFocus(65)</visible>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(650).HasPrevious</visible>
+					<onback>SetFocus(20)</onback>				
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>	
+					<onclick>SetFocus(552)</onclick>
+					<onclick>Select</onclick>			
+					<onclick>SetFocus(90911)</onclick>	
+					<include>TopButton</include>
 				</control>
-				<control type="image">  					
-					<include>ArrowWidth</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(650).HasNext</visible>
+				<control type="fixedlist" id="552">					
+					<include condition="!StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetSquareLayout</include>
+					<include condition="StringCompare(Skin.String(widgetgroup.2.Layout),Poster)">WidgetPosterLayout</include>
+					<include condition="StringCompare(Skin.String(widgetgroup.2.Source),mixed)" name="widgetgroup-customgroup">
+						<param name="GroupNo">2</param>
+					</include>
+					<include condition="SubString(Skin.String(widgetgroup.2.Source),path)" name="widgetgroup-custompath">
+						<param name="GroupNo">2</param>
+						<param name="Target">$INFO[Skin.String(widgetgroup.2.Target)]</param>
+						<param name="Limit">$INFO[Skin.String(widgetgroup.2.Limit)]</param>
+					</include>
 				</control>
+				<include name="WidgetBottomLabels">
+					<param name="Container">552</param>  
+				</include>		
+				<include name="ParamWidgetCounterLoading">
+					<param name="Container">552</param>   
+				</include>	
 			</control>
-			<control type="button" id="90991">
-				<description>invisible control button for widgets</description>
-				<onleft>Control.Move(650,-1)</onleft>
-				<onright>Control.Move(650,1)</onright>
-				<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(65)">SetFocus(65)</onup>
-				<onup condition="Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(65)">SetFocus(21)</onup>
-				<ondown>SetFocus(20)</ondown>
-				<onback>SetFocus(20)</onback>	
-				<onclick>SetFocus(650)</onclick>
-				<onclick>Select</onclick>			
-				<onclick>SetFocus(90991)</onclick>	
-				<include>TopButton</include>
+
+			<!-- =========== -->
+			<!-- Custom Widget #3 -->
+			<!-- =========== -->			
+			<control type="group" id="9093">
+				<description>custom widget group3</description>
+				<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)</visible>
+				<include>HomeSlideAnimations</include>
+				<include>WidgetContainer</include>
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(553).OnNext + IntegerGreaterThan(Container(553).NumItems,1)</visible>					
+				</control>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(553).OnPrevious + IntegerGreaterThan(Container(553).NumItems,1)</visible>
+				</control>
+				<control type="group">
+					<visible>!IntegerGreaterThan(Container(553).NumItems,4)</visible>
+					<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetEmptyBoxes</include>
+					<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetEmptyPosters</include>
+				</control>			
+				<control type="group">
+					<description>arrows left right</description>
+					<include>ArrowDimension</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+					<control type="image">  					
+						<left>0</left>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_left.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>						
+						<visible>Container(553).HasPrevious</visible>
+					</control>
+					<control type="image">  					
+						<include>ArrowWidth</include>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_right.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+						<visible>Container(553).HasNext</visible>
+					</control>
+				</control>
+				<control type="button" id="90931">
+					<description>invisible control button for widgets</description>
+					<onleft>Control.Move(553,-1)</onleft>
+					<onright>Control.Move(553,1)</onright>
+					<onup>SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
+
+					<onback>SetFocus(20)</onback>				
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>	
+					<onclick>SetFocus(553)</onclick>
+					<onclick>Select</onclick>			
+					<onclick>SetFocus(90931)</onclick>	
+					<include>TopButton</include>
+				</control>
+				<control type="fixedlist" id="553">					
+					<include condition="!StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetSquareLayout</include>
+					<include condition="StringCompare(Skin.String(widgetgroup.3.Layout),Poster)">WidgetPosterLayout</include>
+					<include condition="StringCompare(Skin.String(widgetgroup.3.Source),mixed)" name="widgetgroup-customgroup">
+						<param name="GroupNo">3</param>
+					</include>
+					<include condition="SubString(Skin.String(widgetgroup.3.Source),path)" name="widgetgroup-custompath">
+						<param name="GroupNo">3</param>
+						<param name="Target">$INFO[Skin.String(widgetgroup.3.Target)]</param>
+						<param name="Limit">$INFO[Skin.String(widgetgroup.3.Limit)]</param>
+					</include>
+				</control>
+				<include name="WidgetBottomLabels">
+					<param name="Container">553</param>  
+				</include>		
+				<include name="ParamWidgetCounterLoading">
+					<param name="Container">553</param>   
+				</include>	
 			</control>
-			<control type="fixedlist" id="650">	
-				<include>WidgetSquareLayout</include>
-				<content>plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=$VAR[RSSVideoFeedURL]</content>
-			</control>			
-			<control type="button" id="65">
-				<description>invisible control button for category</description>
-				<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
+
+			<!-- =========== -->
+			<!-- Custom Widget #4 -->
+			<!-- =========== -->			
+			<control type="group" id="9094">
+				<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)</visible>
+				<description>custom widget group4</description>
+				<include>HomeSlideAnimations</include>
+				<include>WidgetContainer</include>
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(554).OnNext + IntegerGreaterThan(Container(554).NumItems,1)</visible>					
+				</control>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(554).OnPrevious + IntegerGreaterThan(Container(554).NumItems,1)</visible>
+				</control>
+				<control type="group">
+					<visible>!IntegerGreaterThan(Container(554).NumItems,4)</visible>
+					<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetEmptyBoxes</include>
+					<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetEmptyPosters</include>
+				</control>
+				<control type="group">
+					<description>arrows left right</description>
+					<include>ArrowDimension</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+					<control type="image">  					
+						<left>0</left>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_left.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>						
+						<visible>Container(554).HasPrevious</visible>
+					</control>
+					<control type="image">  					
+						<include>ArrowWidth</include>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_right.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+						<visible>Container(554).HasNext</visible>
+					</control>
+				</control>
+				<control type="button" id="90941">
+					<description>invisible control button for widgets</description>
+					<onleft>Control.Move(554,-1)</onleft>
+					<onright>Control.Move(554,1)</onright>
+					<onup>SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
+
+					<onback>SetFocus(20)</onback>				
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>	
+					<onclick>SetFocus(554)</onclick>
+					<onclick>Select</onclick>			
+					<onclick>SetFocus(90941)</onclick>	
+					<include>TopButton</include>
+				</control>
+				<control type="fixedlist" id="554">	
+					<include condition="!StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetSquareLayout</include>
+					<include condition="StringCompare(Skin.String(widgetgroup.4.Layout),Poster)">WidgetPosterLayout</include>
+					<include condition="StringCompare(Skin.String(widgetgroup.4.Source),mixed)" name="widgetgroup-customgroup">
+						<param name="GroupNo">4</param>
+					</include>
+					<include condition="SubString(Skin.String(widgetgroup.4.Source),path)" name="widgetgroup-custompath">
+						<param name="GroupNo">4</param>
+						<param name="Target">$INFO[Skin.String(widgetgroup.4.Target)]</param>
+						<param name="Limit">$INFO[Skin.String(widgetgroup.4.Limit)]</param>
+					</include>
+				</control>
+				<include name="WidgetBottomLabels">
+					<param name="Container">554</param>  
+				</include>		
+				<include name="ParamWidgetCounterLoading">
+					<param name="Container">554</param>   
+				</include>	
+			</control>
+
+			<!-- =========== -->
+			<!-- RSS Feed	 -->
+			<!-- =========== -->			
+			<control type="group" id="9099">
+				<description>rss video feed widget</description>
 				<visible>StringCompare(Container(20).ListItem.Property(widget),rssvideowidget)</visible>
-				<onup>SetFocus(21)</onup>
-				<ondown condition="IntegerGreaterThan(Container(650).NumItems,0)">SetFocus(90991)</ondown>
-				<ondown condition="!IntegerGreaterThan(Container(650).NumItems,0)">SetFocus(20)</ondown>
-				<onback condition="IntegerGreaterThan(Container(650).NumItems,0)">SetFocus(90991)</onback>
-				<onback condition="!IntegerGreaterThan(Container(650).NumItems,0)">SetFocus(20)</onback>
-				<include>TopButton</include>
-				<!-- on right switches -->
-				<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),Euronews)">Skin.SetString(RSSVideoFeedURL,BBC News)</onright>
-				<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),BBC News)">Skin.SetString(RSSVideoFeedURL,Vice)</onright>
-				<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),Vice)">Skin.SetString(RSSVideoFeedURL,TMZ)</onright>
-				<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),TMZ)">Skin.SetString(RSSVideoFeedURL,The Ellen Show)</onright>
-				<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),The Ellen Show)">Skin.SetString(RSSVideoFeedURL,TEDx Talks)</onright>
-				<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),TEDx Talks)">Skin.SetString(RSSVideoFeedURL,VH1)</onright>
-				<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),VH1)">Skin.SetString(RSSVideoFeedURL,VEVO)</onright>
-				<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),VEVO)">Skin.SetString(RSSVideoFeedURL,Comedy Central)</onright>
-				<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),Comedy Central)">Skin.SetString(RSSVideoFeedURL,Funny Or Die)</onright>
-				<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),Funny Or Die)">Skin.SetString(RSSVideoFeedURL,GameTrailers)</onright>
-				<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),GameTrailers)">Skin.SetString(RSSVideoFeedURL,NBA)</onright>
-				<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),NBA) + !IsEmpty(Skin.String(SearchStringURL))">Skin.SetString(RSSVideoFeedURL,Custom)</onright>
-				<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),NBA) + IsEmpty(Skin.String(SearchStringURL))">Skin.SetString(RSSVideoFeedURL,Euronews)</onright>
-				<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),Custom)">Skin.SetString(RSSVideoFeedURL,Euronews)</onright>
-				<!-- on left switches -->
-				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Euronews) + !IsEmpty(Skin.String(SearchStringURL))">Skin.SetString(RSSVideoFeedURL,Custom)</onleft>
-				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Euronews) + IsEmpty(Skin.String(SearchStringURL))">Skin.SetString(RSSVideoFeedURL,NBA)</onleft>
-				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),BBC News)">Skin.SetString(RSSVideoFeedURL,Euronews)</onleft>
-				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Vice)">Skin.SetString(RSSVideoFeedURL,BBC News)</onleft>
-				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),TMZ)">Skin.SetString(RSSVideoFeedURL,Vice)</onleft>
-				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),The Ellen Show)">Skin.SetString(RSSVideoFeedURL,TMZ)</onleft>
-				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),TEDx Talks)">Skin.SetString(RSSVideoFeedURL,The Ellen Show)</onleft>
-				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),VH1)">Skin.SetString(RSSVideoFeedURL,TEDx Talks)</onleft>
-				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),VEVO)">Skin.SetString(RSSVideoFeedURL,VH1)</onleft>
-				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Comedy Central)">Skin.SetString(RSSVideoFeedURL,VEVO)</onleft>
-				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Funny Or Die)">Skin.SetString(RSSVideoFeedURL,Comedy Central)</onleft>
-				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),GameTrailers)">Skin.SetString(RSSVideoFeedURL,Funny Or Die)</onleft>			
-				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),NBA)">Skin.SetString(RSSVideoFeedURL,GameTrailers)</onleft>
-				<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Custom)">Skin.SetString(RSSVideoFeedURL,NBA)</onleft>
-				<!-- on click command -->
-				<onclick>ActivateWindow(Videos,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=$VAR[RSSVideoFeedURL])</onclick>	
+				<include>HomeSlideAnimations</include>
+				<include>WidgetContainer</include>
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(650).OnNext + IntegerGreaterThan(Container(650).NumItems,1)</visible>					
+				</control>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(650).OnPrevious + IntegerGreaterThan(Container(650).NumItems,1)</visible>
+				</control>
+				<control type="group">
+					<visible>!IntegerGreaterThan(Container(650).NumItems,4)</visible>
+					<include>WidgetEmptyBoxes</include>
+				</control>
+				<control type="group">
+					<description>arrows left right</description>
+					<visible>!Control.HasFocus(65)</visible>
+					<include>ArrowDimension</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+					<control type="image">  					
+						<left>0</left>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_left.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>						
+						<visible>Container(650).HasPrevious</visible>
+					</control>
+					<control type="image">  					
+						<include>ArrowWidth</include>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_right.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+						<visible>Container(650).HasNext</visible>
+					</control>
+				</control>
+				<control type="button" id="90991">
+					<description>invisible control button for widgets</description>
+					<onleft>Control.Move(650,-1)</onleft>
+					<onright>Control.Move(650,1)</onright>
+					<onup condition="!Skin.HasSetting(LockWidgetSwitch) + Control.IsVisible(65)">SetFocus(65)</onup>
+					<onup condition="Skin.HasSetting(LockWidgetSwitch) | !Control.IsVisible(65)">SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
+
+					<onback>SetFocus(20)</onback>				
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>	
+					<onclick>SetFocus(650)</onclick>
+					<onclick>Select</onclick>			
+					<onclick>SetFocus(90991)</onclick>	
+					<include>TopButton</include>
+				</control>
+				<control type="fixedlist" id="650">	
+					<include>WidgetSquareLayout</include>
+					<content>plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=$VAR[RSSVideoFeedURL]</content>
+				</control>			
+				<control type="button" id="65">
+					<description>invisible control button for category</description>
+					<visible allowhiddenfocus="false">!Skin.HasSetting(LockWidgetSwitch)</visible>
+					<visible>StringCompare(Container(20).ListItem.Property(widget),rssvideowidget)</visible>
+					<onup>SetFocus(21)</onup>
+					<ondown condition="IntegerGreaterThan(Container(650).NumItems,0)">SetFocus(90991)</ondown>
+					<ondown condition="!IntegerGreaterThan(Container(650).NumItems,0)">SetFocus(20)</ondown>
+					<onback condition="IntegerGreaterThan(Container(650).NumItems,0)">SetFocus(90991)</onback>
+					<onback condition="!IntegerGreaterThan(Container(650).NumItems,0)">SetFocus(20)</onback>
+					<include>TopButton</include>
+					<!-- on right switches -->
+					<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),Euronews)">Skin.SetString(RSSVideoFeedURL,BBC News)</onright>
+					<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),BBC News)">Skin.SetString(RSSVideoFeedURL,Vice)</onright>
+					<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),Vice)">Skin.SetString(RSSVideoFeedURL,TMZ)</onright>
+					<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),TMZ)">Skin.SetString(RSSVideoFeedURL,The Ellen Show)</onright>
+					<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),The Ellen Show)">Skin.SetString(RSSVideoFeedURL,TEDx Talks)</onright>
+					<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),TEDx Talks)">Skin.SetString(RSSVideoFeedURL,VH1)</onright>
+					<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),VH1)">Skin.SetString(RSSVideoFeedURL,VEVO)</onright>
+					<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),VEVO)">Skin.SetString(RSSVideoFeedURL,Comedy Central)</onright>
+					<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),Comedy Central)">Skin.SetString(RSSVideoFeedURL,Funny Or Die)</onright>
+					<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),Funny Or Die)">Skin.SetString(RSSVideoFeedURL,GameTrailers)</onright>
+					<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),GameTrailers)">Skin.SetString(RSSVideoFeedURL,NBA)</onright>
+					<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),NBA) + !IsEmpty(Skin.String(SearchStringURL))">Skin.SetString(RSSVideoFeedURL,Custom)</onright>
+					<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),NBA) + IsEmpty(Skin.String(SearchStringURL))">Skin.SetString(RSSVideoFeedURL,Euronews)</onright>
+					<onright condition="stringcompare(Skin.String(RSSVideoFeedURL),Custom)">Skin.SetString(RSSVideoFeedURL,Euronews)</onright>
+					<!-- on left switches -->
+					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Euronews) + !IsEmpty(Skin.String(SearchStringURL))">Skin.SetString(RSSVideoFeedURL,Custom)</onleft>
+					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Euronews) + IsEmpty(Skin.String(SearchStringURL))">Skin.SetString(RSSVideoFeedURL,NBA)</onleft>
+					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),BBC News)">Skin.SetString(RSSVideoFeedURL,Euronews)</onleft>
+					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Vice)">Skin.SetString(RSSVideoFeedURL,BBC News)</onleft>
+					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),TMZ)">Skin.SetString(RSSVideoFeedURL,Vice)</onleft>
+					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),The Ellen Show)">Skin.SetString(RSSVideoFeedURL,TMZ)</onleft>
+					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),TEDx Talks)">Skin.SetString(RSSVideoFeedURL,The Ellen Show)</onleft>
+					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),VH1)">Skin.SetString(RSSVideoFeedURL,TEDx Talks)</onleft>
+					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),VEVO)">Skin.SetString(RSSVideoFeedURL,VH1)</onleft>
+					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Comedy Central)">Skin.SetString(RSSVideoFeedURL,VEVO)</onleft>
+					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Funny Or Die)">Skin.SetString(RSSVideoFeedURL,Comedy Central)</onleft>
+					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),GameTrailers)">Skin.SetString(RSSVideoFeedURL,Funny Or Die)</onleft>			
+					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),NBA)">Skin.SetString(RSSVideoFeedURL,GameTrailers)</onleft>
+					<onleft condition="stringcompare(Skin.String(RSSVideoFeedURL),Custom)">Skin.SetString(RSSVideoFeedURL,NBA)</onleft>
+					<!-- on click command -->
+					<onclick>ActivateWindow(Videos,plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=$VAR[RSSVideoFeedURL])</onclick>	
+				</control>
+				<include name="WidgetBottomLabels">
+					<param name="Container">650</param>  
+				</include>		
+				<include name="ParamWidgetCounterLoading">
+					<param name="Container">650</param>   
+				</include>
 			</control>
-			<include name="WidgetBottomLabels">
-				<param name="Container">650</param>  
-			</include>		
-			<include name="ParamWidgetCounterLoading">
-				<param name="Container">650</param>   
-			</include>
+
+			<!-- =========== -->
+			<!--  Playlist Music	 -->
+			<!-- =========== -->			
+			<control type="group" id="9071">
+				<description>playlist widget</description>
+				<visible>SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)</visible>
+				<include>HomeSlideAnimations</include>
+				<include>WidgetContainer</include>
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(651).OnNext + IntegerGreaterThan(Container(651).NumItems,1)</visible>					
+				</control>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(651).OnPrevious + IntegerGreaterThan(Container(651).NumItems,1)</visible>
+				</control>
+				<control type="group">
+					<visible>!IntegerGreaterThan(Container(651).NumItems,4)</visible>
+					<include>WidgetEmptyBoxes</include>
+				</control>
+				<control type="group">
+					<description>arrows left right</description>				
+					<include>ArrowDimension</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+					<control type="image">  					
+						<left>0</left>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_left.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>						
+						<visible>Container(651).HasPrevious</visible>
+					</control>
+					<control type="image">  					
+						<include>ArrowWidth</include>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_right.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+						<visible>Container(651).HasNext</visible>
+					</control>
+				</control>
+				<control type="button" id="90711">
+					<description>invisible control button for widgets</description>
+					<onleft>Control.Move(651,-1)</onleft>
+					<onright>Control.Move(651,1)</onright>
+					<onup>SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
+
+					<onback>SetFocus(20)</onback>				
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>	
+					<onclick>SetFocus(651)</onclick>
+					<onclick>Select</onclick>			
+					<onclick>SetFocus(90711)</onclick>	
+					<include>TopButton</include>
+				</control>
+				<control type="fixedlist" id="651">	
+					<include>WidgetSquareLayout</include>
+					<content target="music">$VAR[QuickNav_WidgetListContentPlaylists]</content>
+				</control>
+				<include name="WidgetBottomLabels">
+					<param name="Container">651</param>  
+				</include>		
+				<include name="ParamWidgetCounterLoading">
+					<param name="Container">651</param>   
+				</include>
+			</control>
+
+			<!-- =========== -->
+			<!--  Playlist Video	 -->
+			<!-- =========== -->			
+			<control type="group" id="9072">
+				<description>playlist widget</description>
+				<visible>SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)</visible>
+				<include>HomeSlideAnimations</include>
+				<include>WidgetContainer</include>
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(652).OnNext + IntegerGreaterThan(Container(652).NumItems,1)</visible>					
+				</control>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(652).OnPrevious + IntegerGreaterThan(Container(652).NumItems,1)</visible>
+				</control>
+				<control type="group">
+					<visible>!IntegerGreaterThan(Container(652).NumItems,4)</visible>
+					<include>WidgetEmptyPosters</include>
+				</control>
+				<control type="group">
+					<description>arrows left right</description>
+					<include>ArrowDimension</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+					<control type="image">  					
+						<left>0</left>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_left.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>						
+						<visible>Container(652).HasPrevious</visible>
+					</control>
+					<control type="image">  					
+						<include>ArrowWidth</include>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_right.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+						<visible>Container(652).HasNext</visible>
+					</control>
+				</control>
+				<control type="button" id="90721">
+					<description>invisible control button for widgets</description>
+					<onleft>Control.Move(652,-1)</onleft>
+					<onright>Control.Move(652,1)</onright>
+					<onup>SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
+
+					<onback>SetFocus(20)</onback>				
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>	
+					<onclick>SetFocus(652)</onclick>
+					<onclick>Select</onclick>			
+					<onclick>SetFocus(90721)</onclick>	
+					<include>TopButton</include>
+				</control>
+				<control type="fixedlist" id="652">	
+					<include>WidgetPosterLayout</include>
+					<content target="videos">$VAR[QuickNav_WidgetListContentPlaylists]</content>
+				</control>
+				<include name="WidgetBottomLabels">
+					<param name="Container">652</param>
+				</include>			
+				<include name="ParamWidgetCounterLoading">
+					<param name="Container">652</param>  
+				</include>
+			</control>	
+
+			<!-- =========== -->
+			<!--  All TV Channels	 -->
+			<!-- =========== -->	
+
+			<control type="group" id="9064">
+				<description>tv channels widget</description>
+				<visible>StringCompare(Container(20).ListItem.Property(widget),tvchannels)</visible>
+				<include>HomeSlideAnimations</include>
+				<include>WidgetContainer</include>
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(654).OnNext + IntegerGreaterThan(Container(654).NumItems,1)</visible>					
+				</control>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(654).OnPrevious + IntegerGreaterThan(Container(654).NumItems,1)</visible>
+				</control>
+				<control type="group">
+					<visible>!IntegerGreaterThan(Container(654).NumItems,4)</visible>
+					<include>WidgetEmptyBoxes</include>
+				</control>
+				<control type="group">
+					<description>arrows left right</description>
+					<include>ArrowDimension</include>
+					<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
+					<control type="image">  					
+						<left>0</left>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_left.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>						
+						<visible>Container(652).HasPrevious</visible>
+					</control>
+					<control type="image">  					
+						<include>ArrowWidth</include>
+						<width>25</width>
+						<height>25</height>
+						<texture background="true">buttons/arrow_right.png</texture>
+						<colordiffuse>CCFFFFFF</colordiffuse>
+						<visible>Container(652).HasNext</visible>
+					</control>
+				</control>
+				<control type="button" id="90641">
+					<description>invisible control button for widgets</description>
+					<onleft>Control.Move(654,-1)</onleft>
+					<onright>Control.Move(654,1)</onright>
+					<onup>SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
+
+					<onback>SetFocus(20)</onback>				
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>	
+					<onclick>SetFocus(654)</onclick>
+					<onclick>Select</onclick>			
+					<onclick>SetFocus(90641)</onclick>	
+					<include>TopButton</include>
+				</control>
+				<control type="fixedlist" id="654">	
+					<include>WidgetSquareLayout</include>
+					<content target="videos">pvr://channels/tv/all channels/</content>
+				</control>
+				<include name="WidgetBottomLabels">
+					<param name="Container">654</param>
+				</include>			
+				<include name="ParamWidgetCounterLoading">
+					<param name="Container">654</param>  
+				</include>
+			</control>
+
 		</control>
 
-		<!-- =========== -->
-		<!--  Playlist Music	 -->
-		<!-- =========== -->			
-		<control type="group" id="9071">
-			<description>playlist widget</description>
-			<visible>SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)</visible>
-			<include>HomeSlideAnimations</include>
-			<include>HomePlaylistWidgetAnimation</include>
-			<include>WidgetContainer</include>
-			<control type="group" id="4513">
-				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(651).OnNext + IntegerGreaterThan(Container(651).NumItems,1)</visible>					
-			</control>
-			<control type="group" id="4514">
-				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(651).OnPrevious + IntegerGreaterThan(Container(651).NumItems,1)</visible>
-			</control>
-			<control type="group">
-				<visible>!IntegerGreaterThan(Container(651).NumItems,4)</visible>
-				<include>WidgetEmptyBoxes</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>				
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(651).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(651).HasNext</visible>
-				</control>
-			</control>
-			<control type="button" id="90711">
-				<description>invisible control button for widgets</description>
-				<onleft>Control.Move(651,-1)</onleft>
-				<onright>Control.Move(651,1)</onright>
-				<onup>SetFocus(21)</onup>
-				<ondown>SetFocus(20)</ondown>
-				<onback>SetFocus(20)</onback>	
-				<onclick>SetFocus(651)</onclick>
-				<onclick>Select</onclick>			
-				<onclick>SetFocus(90711)</onclick>	
-				<include>TopButton</include>
-			</control>
-			<control type="fixedlist" id="651">	
-				<include>WidgetSquareLayout</include>
-				<content target="music">$VAR[QuickNav_WidgetListContentPlaylists]</content>
-			</control>
-			<include name="WidgetBottomLabels">
-				<param name="Container">651</param>  
-			</include>		
-			<include name="ParamWidgetCounterLoading">
-				<param name="Container">651</param>   
-			</include>
-		</control>
-
-		<!-- =========== -->
-		<!--  Playlist Video	 -->
-		<!-- =========== -->			
-		<control type="group" id="9072">
-			<description>playlist widget</description>
-			<visible>SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)</visible>
-			<include>HomeSlideAnimations</include>
-			<include>HomePlaylistWidgetAnimation</include>
-			<include>WidgetContainer</include>
-			<control type="group" id="4513">
-				<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(652).OnNext + IntegerGreaterThan(Container(652).NumItems,1)</visible>					
-			</control>
-			<control type="group" id="4514">
-				<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
-				<visible>Container(652).OnPrevious + IntegerGreaterThan(Container(652).NumItems,1)</visible>
-			</control>
-			<control type="group">
-				<visible>!IntegerGreaterThan(Container(652).NumItems,4)</visible>
-				<include>WidgetEmptyBoxes</include>
-			</control>
-			<control type="group">
-				<description>arrows left right</description>
-				<include>ArrowDimension</include>
-				<include condition="Skin.HasSetting(HomeWidgetArrowAnimation)">ArrowPulseFade</include>
-				<control type="image">  					
-					<left>0</left>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_left.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>						
-					<visible>Container(652).HasPrevious</visible>
-				</control>
-				<control type="image">  					
-					<include>ArrowWidth</include>
-					<width>25</width>
-					<height>25</height>
-					<texture background="true">buttons/arrow_right.png</texture>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<visible>Container(652).HasNext</visible>
-				</control>
-			</control>
-			<control type="button" id="90721">
-				<description>invisible control button for widgets</description>
-				<onleft>Control.Move(652,-1)</onleft>
-				<onright>Control.Move(652,1)</onright>
-				<onup>SetFocus(21)</onup>
-				<ondown>SetFocus(20)</ondown>
-				<onback>SetFocus(20)</onback>	
-				<onclick>SetFocus(652)</onclick>
-				<onclick>Select</onclick>			
-				<onclick>SetFocus(90721)</onclick>	
-				<include>TopButton</include>
-			</control>
-			<control type="fixedlist" id="652">	
-				<include>WidgetPosterLayout</include>
-				<content target="videos">$VAR[QuickNav_WidgetListContentPlaylists]</content>
-			</control>
-			<include name="WidgetBottomLabels">
-				<param name="Container">652</param>
-			</include>			
-			<include name="ParamWidgetCounterLoading">
-				<param name="Container">652</param>  
-			</include>
-		</control>
 	</include>
 
 </includes>

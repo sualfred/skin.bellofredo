@@ -202,7 +202,7 @@
 						<visible>!Skin.HasSetting(HideBGFanart)</visible>
 						<include>BackgroundAnimation</include>
 						<visible>!Window.IsActive(playercontrols)</visible>
-						<visible>[ControlGroup(9050).HasFocus | ControlGroup(9060).HasFocus | ControlGroup(9070).HasFocus | ControlGroup(9073).HasFocus | ControlGroup(9074).HasFocus | ControlGroup(9080).HasFocus | ControlGroup(9090).HasFocus | ControlGroup(9091).HasFocus | ControlGroup(9093).HasFocus | ControlGroup(9094).HasFocus | ControlGroup(9099).HasFocus | ControlGroup(9071).HasFocus | ControlGroup(9072).HasFocus | ControlGroup(9098).HasFocus]</visible>
+						<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
 					</control>
 					<control type="image">
 						<description>Widget Fanart Fallback Diffuse</description>
@@ -211,8 +211,8 @@
 						<animation effect="fade" end="20" time="0" condition="true">Conditional</animation>
 						<include>BackgroundFade</include>
 						<visible>!Skin.HasSetting(HideBGFanart) + Skin.HasSetting(DiffuseWidgetFanart)</visible>
-						<visible>!Window.IsActive(playercontrols)</visible>
-						<visible>[ControlGroup(9050).HasFocus | ControlGroup(9060).HasFocus | ControlGroup(9070).HasFocus | ControlGroup(9073).HasFocus | ControlGroup(9074).HasFocus | ControlGroup(9080).HasFocus | ControlGroup(9090).HasFocus | ControlGroup(9091).HasFocus | ControlGroup(9093).HasFocus | ControlGroup(9094).HasFocus | ControlGroup(9099).HasFocus | ControlGroup(9071).HasFocus | ControlGroup(9072).HasFocus | ControlGroup(9098).HasFocus]</visible>
+						<visible>!Window.IsActive(playercontrols)</visible>						
+						<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
 					</control>
 					<control type="image">
 						<description>Widget Fanart</description>
@@ -223,7 +223,7 @@
 						<include>BackgroundAnimation</include>
 						<visible>!Skin.HasSetting(HideBGFanart) + Skin.HasSetting(DiffuseWidgetFanart)</visible>
 						<visible>!Window.IsActive(playercontrols)</visible>
-						<visible>[ControlGroup(9050).HasFocus | ControlGroup(9060).HasFocus | ControlGroup(9070).HasFocus | ControlGroup(9073).HasFocus | ControlGroup(9074).HasFocus | ControlGroup(9080).HasFocus | ControlGroup(9090).HasFocus | ControlGroup(9091).HasFocus | ControlGroup(9093).HasFocus | ControlGroup(9094).HasFocus | ControlGroup(9099).HasFocus | ControlGroup(9071).HasFocus | ControlGroup(9072).HasFocus | ControlGroup(9098).HasFocus]</visible>
+						<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
 					</control>
 					<control type="image">
 						<description>Widget Fanart</description>
@@ -234,7 +234,7 @@
 						<fadetime>FanartCrossfadeTime</fadetime>					
 						<visible>!Skin.HasSetting(HideBGFanart) + !Skin.HasSetting(DiffuseWidgetFanart)</visible>
 						<visible>!Window.IsActive(playercontrols)</visible>
-						<visible>[ControlGroup(9050).HasFocus | ControlGroup(9060).HasFocus | ControlGroup(9070).HasFocus | ControlGroup(9073).HasFocus | ControlGroup(9074).HasFocus | ControlGroup(9080).HasFocus | ControlGroup(9090).HasFocus | ControlGroup(9091).HasFocus | ControlGroup(9093).HasFocus | ControlGroup(9094).HasFocus | ControlGroup(9099).HasFocus | ControlGroup(9071).HasFocus | ControlGroup(9072).HasFocus | ControlGroup(9098).HasFocus]</visible>
+						<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
 					</control>
 				</control>
 			</control>
