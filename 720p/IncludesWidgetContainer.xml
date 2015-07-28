@@ -370,6 +370,16 @@
 				<height>190.5</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 				<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+				<visible>!StringCompare(Container(20).ListItem.Property(widget),tvchannels)</visible>
+			</control>
+			<control type="image">
+				<left>20</left>
+				<top>5</top>
+				<width>190.5</width>
+				<height>190.5</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+				<visible>StringCompare(Container(20).ListItem.Property(widget),tvchannels)</visible>
 			</control>
 			<control type="image">
 				<left>14</left>
@@ -405,6 +415,16 @@
 					<height>190.5</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+					<visible>!StringCompare(Container(20).ListItem.Property(widget),tvchannels)</visible>
+				</control>
+				<control type="image">
+					<left>20</left>
+					<top>5</top>
+					<width>190.5</width>
+					<height>190.5</height>
+					<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+					<visible>StringCompare(Container(20).ListItem.Property(widget),tvchannels)</visible>
 				</control>
 				<control type="image">
 					<left>14</left>

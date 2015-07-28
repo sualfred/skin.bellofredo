@@ -231,16 +231,13 @@
 					<font>FontSize_22</font>
 					<textcolor>white</textcolor>
 					<shadowcolor>77000000</shadowcolor>
-					<include name="FakeFadeLabel2">
-						<param name="condition">!IsEmpty(Container($PARAM[Container]).ListItem.Tagline)</param>
-					</include>
 					<label>$INFO[Container(654).ListItem.Label2]$INFO[Container(654).ListItem.Genre, (,)]</label>
 					<visible>StringCompare(Container(20).ListItem.Property(widget),tvchannels)</visible>
 				</control>
 
 				<!--Small Down Info-->
 				<control type="grouplist">
-					<animation effect="slide" time="0" end="0,-26" condition="IsEmpty(Container($PARAM[Container]).ListItem.Tagline) + IsEmpty(Container($PARAM[Container]).ListItem.Genre)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,-26" condition="IsEmpty(Container($PARAM[Container]).ListItem.Tagline) + IsEmpty(Container($PARAM[Container]).ListItem.Genre) + !StringCompare(Container(20).ListItem.Property(widget),tvchannels)">Conditional</animation>
 					<top>62</top>
 					<left>-1</left>
 					<orientation>horizontal</orientation>
@@ -531,7 +528,17 @@
 				<width>190.5</width>
 				<height>190.5</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>				
+				<visible>!StringCompare(Container(20).ListItem.Property(widget),tvchannels)</visible>
+			</control>
+			<control type="image">
+				<left>6</left>
+				<top>5</top>
+				<width>190.5</width>
+				<height>190.5</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
 				<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+				<visible>StringCompare(Container(20).ListItem.Property(widget),tvchannels)</visible>
 			</control>
 			<control type="image">
 				<top>-1</top>
@@ -566,6 +573,16 @@
 					<height>190.5</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+					<visible>!StringCompare(Container(20).ListItem.Property(widget),tvchannels)</visible>
+				</control>
+				<control type="image">
+					<left>6</left>
+					<top>5</top>
+					<width>190.5</width>
+					<height>190.5</height>
+					<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+					<visible>StringCompare(Container(20).ListItem.Property(widget),tvchannels)</visible>
 				</control>
 				<control type="image">
 					<top>-1</top>
