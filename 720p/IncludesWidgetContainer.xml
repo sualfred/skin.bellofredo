@@ -1097,6 +1097,7 @@
 					<include>TopButton</include>
 				</control>
 				<control type="fixedlist" id="653">	
+					<visible>StringCompare(Container(20).ListItem.Property(widget),youtube)</visible>
 					<include>WidgetSquareLayout</include>
 					<content target="video">$VAR[QuickNav_WidgetListContentYouTube]</content>
 				</control>
