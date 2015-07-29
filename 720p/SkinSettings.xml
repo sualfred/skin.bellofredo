@@ -260,11 +260,18 @@
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31347])</onclick>
 						</control>
 
+						<control type="button" id="8350">
+							<description>edit shutdownmenu</description>
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31468]</label>
+							<onclick>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=shutdownmenu)</onclick>
+						</control>
+
 						<!-- Default Type Settings -->
 						<control type="button" id="8304">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
-							<label>Label Mainmenu Options</label>
+							<label>$LOCALIZE[31479]</label>
 							<enable>false</enable>
 							<visible>!StringCompare(Skin.String(MainMenuStyle),vertical) + !SubString(Skin.String(MainMenuStyle),icon)</visible>
 						</control>
@@ -273,7 +280,7 @@
 						<control type="button" id="8305">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
-							<label>Icon Mainmenu Options</label>
+							<label>$LOCALIZE[31480]</label>
 							<enable>false</enable>
 							<visible>SubString(Skin.String(MainMenuStyle),icon)</visible>
 						</control>
@@ -282,7 +289,7 @@
 						<control type="button" id="8306">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
-							<label>Vertical Mainmenu Options</label>
+							<label>$LOCALIZE[31481]</label>
 							<enable>false</enable>
 							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>
 						</control>
@@ -346,19 +353,6 @@
 							<visible>!StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
 						</control>
 
-						<control type="button" id="8316">
-							<include>SettingsButton</include>
-							<label>- $LOCALIZE[31297]</label>
-							<label2>[COLOR=selected]$VAR[RecordingBoxLabel][/COLOR]</label2>
-							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[34122])</onclick>
-							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(RecordingBox,global))</onclick>
-							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31298])</onclick>
-							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.Reset(RecordingBox))</onclick>
-							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[13113])</onclick>
-							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(RecordingBox,disabled))</onclick>
-							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31297])</onclick>
-							<visible>!StringCompare(Skin.String(MainMenuStyle),vertical)</visible>					
-						</control>
 
 						<control type="radiobutton" id="8317">
 							<description>Disable Icon Labels</description>
@@ -372,7 +366,7 @@
 						<control type="radiobutton" id="8318">
 							<description>Hide Library Details Widgets</description>
 							<include>SettingsRadioButton</include>
-							<label>- Show Libary Totals in Widgets</label>
+							<label>- $LOCALIZE[31482]</label>
 							<onclick>Skin.ToggleSetting(HideWidgetLibraryStats)</onclick>
 							<selected>!Skin.HasSetting(HideWidgetLibraryStats)</selected>
 							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
@@ -381,7 +375,7 @@
 						<control type="radiobutton" id="8319">
 							<description>Hide Menu Icons</description>
 							<include>SettingsRadioButton</include>
-							<label>- Show Menu Icons</label>
+							<label>- $LOCALIZE[31483]</label>
 							<onclick>Skin.ToggleSetting(HideVerticalMenuIcons)</onclick>
 							<selected>!Skin.HasSetting(HideVerticalMenuIcons)</selected>
 							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
@@ -440,11 +434,24 @@
 							<label>$LOCALIZE[31356]</label>
 							<enable>false</enable>
 						</control>
-
+						<control type="radiobutton" id="8341">
+							<description>Enable Kodi Icon</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31108]</label>
+							<onclick>Skin.ToggleSetting(HideKodiSymbol)</onclick>
+							<selected>!Skin.HasSetting(HideKodiSymbol)</selected>
+						</control>
+						<control type="radiobutton" id="8342">
+							<description>Hide Library Totals</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31161]</label>
+							<onclick>Skin.ToggleSetting(HideLibraryTotals)</onclick>
+							<selected>!Skin.HasSetting(HideLibraryTotals)</selected>
+						</control>
 						<control type="radiobutton" id="8347">
 							<description>disable top menu</description>
 							<include>SettingsRadioButton</include>
-							<label>- Enable Top Menu</label>
+							<label>- $LOCALIZE[31484]</label>
 							<onclick>Skin.ToggleSetting(DisableTopMenu)</onclick>
 							<selected>!Skin.HasSetting(DisableTopMenu)</selected>
 						</control>
@@ -454,15 +461,7 @@
 							<label>- $LOCALIZE[31361]</label>
 							<label2>[COLOR=blue]$VAR[TopMenuStyleLabel][/COLOR]</label2>
 							<onclick>Skin.ToggleSetting(IconTopMenuStyle)</onclick>
-							<enable>!Skin.HasSetting(DisableTopMenu)</enable>
-						</control>
-						<control type="radiobutton" id="8341">
-							<description>Enable Kodi Icon</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31108]</label>
-							<onclick>Skin.ToggleSetting(HideKodiSymbol)</onclick>
-							<selected>!Skin.HasSetting(HideKodiSymbol)</selected>
-							<enable>!Skin.HasSetting(DisableTopMenu)</enable>
+							<visible>!Skin.HasSetting(DisableTopMenu)</visible>
 						</control>
 						<control type="radiobutton" id="8343">
 							<description>Disable favourites button</description>
@@ -470,7 +469,7 @@
 							<label>- $LOCALIZE[31357]</label>
 							<onclick>Skin.ToggleSetting(DisableFavouritesButton)</onclick>
 							<selected>!Skin.HasSetting(DisableFavouritesButton)</selected>
-							<enable>!Skin.HasSetting(DisableTopMenu)</enable>
+							<visible>!Skin.HasSetting(DisableTopMenu)</visible>
 						</control>
 						<control type="radiobutton" id="8344">
 							<description>Disable search button</description>
@@ -478,7 +477,7 @@
 							<label>- $LOCALIZE[31358]</label>
 							<onclick>Skin.ToggleSetting(DisableSearchButton)</onclick>
 							<selected>!Skin.HasSetting(DisableSearchButton)</selected>
-							<enable>!Skin.HasSetting(DisableTopMenu)</enable>
+							<visible>!Skin.HasSetting(DisableTopMenu)</visible>
 						</control>
 						<control type="radiobutton" id="8345">
 							<description>Disable libary refresh button</description>
@@ -486,7 +485,7 @@
 							<label>- $LOCALIZE[31064]</label>
 							<onclick>Skin.ToggleSetting(DisableLibraryRefreshButton)</onclick>
 							<selected>!Skin.HasSetting(DisableLibraryRefreshButton)</selected>
-							<enable>!Skin.HasSetting(DisableTopMenu)</enable>
+							<visible>!Skin.HasSetting(DisableTopMenu)</visible>
 						</control>
 						<control type="radiobutton" id="8346">
 							<description>Disable power button</description>
@@ -494,29 +493,7 @@
 							<label>- $LOCALIZE[31359]</label>
 							<onclick>Skin.ToggleSetting(DisablePowerButton)</onclick>
 							<selected>!Skin.HasSetting(DisablePowerButton)</selected>
-							<enable>!Skin.HasSetting(DisableTopMenu)</enable>
-						</control>
-						<control type="radiobutton" id="8342">
-							<description>Hide Library Totals</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31161]</label>
-							<onclick>Skin.ToggleSetting(HideLibraryTotals)</onclick>
-							<selected>!Skin.HasSetting(HideLibraryTotals)</selected>
-						</control>
-						
-
-						<!--shutdownmenu-->
-						<control type="button" id="8309">
-							<disabledcolor>55white</disabledcolor>
-							<include>SettingsButton</include>
-							<label>$LOCALIZE[31469]</label>
-							<enable>false</enable>
-						</control>
-						<control type="button" id="8350">
-							<description>edit shutdownmenu</description>
-							<include>SettingsButton</include>
-							<label>- $LOCALIZE[31468]</label>
-							<onclick>RunScript(script.skinshortcuts,type=manage&amp;nolabels=True&amp;group=shutdownmenu)</onclick>
+							<visible>!Skin.HasSetting(DisableTopMenu)</visible>
 						</control>
 						
 					</control>
