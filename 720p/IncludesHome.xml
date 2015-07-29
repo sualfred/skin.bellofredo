@@ -876,11 +876,11 @@
 					<control type="button" id="210">
 						<description>Favorites</description>
 						<include>TopButton</include>
-						<onclick>SetFocus(20)</onclick>
 						<onfocus>ClearProperty(WidgetHasFocus,Home)</onfocus>
 						<onfocus>SetProperty(TopMenuHasFocus,1,Home)</onfocus>
-						<onclick>ClearProperty(TopMenuHasFocus,Home)</onclick>
-						<ondown>ClearProperty(TopMenuHasFocus,Home)</ondown>
+						<onclick>SetFocus(20)</onclick>
+						<onclick>AlarmClock(TopMenuHasFocus,ClearProperty(TopMenuHasFocus,Home),00:01,silent)</onclick>
+						<ondown>ClearProperty(TopMenuHasFocus,Home)</ondown>						
 						<ondown>SetFocus(20)</ondown>
 						<onback>SetFocus(20)</onback>
 						<onback>ClearProperty(TopMenuHasFocus,Home)</onback>
