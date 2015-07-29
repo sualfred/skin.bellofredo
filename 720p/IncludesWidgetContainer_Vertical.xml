@@ -70,7 +70,9 @@
 	<include name="WidgetContainer_Vertical">
 		<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>
 		<top>-35</top>
-		<left>450</left>		
+		<left>450</left>
+
+		<!--<include>VerticalMenuWidgetUpDown</include>		-->
 		<!-- headline -->
 		<control type="grouplist">
 			<top>165</top>
@@ -100,7 +102,34 @@
 				<textcolor>white</textcolor>
 				<shadowcolor>77000000</shadowcolor>				
 				<scroll>false</scroll>						
-				<label>$VAR[QuickNavWidgetHeaderTitle]</label>				
+				<label>$VAR[QuickNavWidgetHeaderTitle]</label>
+				<visible>[!Control.IsVisible(2013) + !Control.IsVisible(2014)] | [!IsEmpty(Container(20).ListItem.Property(widget)) | !IsEmpty(Container(20).ListItem.Property(widgetPlaylist))]</visible>
+			</control>		
+			<control type="label">
+				<description>header title</description>		
+				<width>auto</width>
+				<height>50</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>FontSize_40</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>77000000</shadowcolor>				
+				<scroll>false</scroll>						
+				<label>$VAR[QuickNavWidgetHeaderTitleNext]</label>
+				<visible>Control.IsVisible(2013) + IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))</visible>
+			</control>		
+			<control type="label">
+				<description>header title</description>		
+				<width>auto</width>
+				<height>50</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>FontSize_40</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>77000000</shadowcolor>				
+				<scroll>false</scroll>						
+				<label>$VAR[QuickNavWidgetHeaderTitlePrevious]</label>
+				<visible>Control.IsVisible(2014) + IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))</visible>
 			</control>
 			<control type="image">  					
 				<left>763</left>
@@ -632,7 +661,7 @@
 			<!-- =========== --> 
 			<control type="group" id="9050">
 				<visible>StringCompare(Container(20).ListItem.Property(widget),movies)</visible>
-				<include>HomeSlideAnimations</include>
+				<include>VerticalMenuWidgetUpDown</include>
 				<include>WidgetContainer_Vertical</include>
 				<control type="group" id="4513">
 					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
@@ -698,6 +727,13 @@
 				<include name="ParamWidgetCounterLoading_Vertical">
 					<param name="Container">250</param>  
 				</include>
+				<!-- library stats -->		
+				<include name="ParamLibraryStatsVerticalMenu">
+					<param name="Headline">$LOCALIZE[31200]</param>
+					<param name="Label1">$INFO[Window(Home).Property(Movies.Count),, $LOCALIZE[20342]]</param>
+					<param name="Label2">$INFO[Window(Home).Property(Movies.UnWatched),, $LOCALIZE[31475]]</param>
+					<param name="Label3">$INFO[Window(Home).Property(Movies.Watched),, $LOCALIZE[31477]]</param>
+				</include>
 			</control>
 
 			<!-- =========== -->
@@ -705,7 +741,7 @@
 			<!-- =========== --> 
 			<control type="group" id="9060">
 				<visible>StringCompare(Container(20).ListItem.Property(widget),tvshows)</visible>
-				<include>HomeSlideAnimations</include>
+				<include>VerticalMenuWidgetUpDown</include>
 				<include>WidgetContainer_Vertical</include>	
 				<control type="group" id="4513">
 					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
@@ -768,13 +804,20 @@
 				<include name="ParamWidgetCounterLoading_Vertical">
 					<param name="Container">350</param>  
 				</include>
+				<!-- library stats -->	
+				<include name="ParamLibraryStatsVerticalMenu">
+					<param name="Headline">$LOCALIZE[31201]</param>			
+					<param name="Label1">$INFO[Window(Home).Property(TVShows.Count),, $LOCALIZE[31002]]</param>
+					<param name="Label2">$INFO[Window(Home).Property(Episodes.UnWatched),, $LOCALIZE[31476]]</param>
+					<param name="Label3">$INFO[Window(Home).Property(Episodes.Watched),, $LOCALIZE[31478]]</param>
+				</include>
 			</control>
 
 			<!-- =========== -->
 			<!-- Music	 	 -->
 			<!-- =========== --> 
 			<control type="group" id="9070">
-				<include>HomeSlideAnimations</include>
+				<include>VerticalMenuWidgetUpDown</include>
 				<visible>StringCompare(Container(20).ListItem.Property(widget),music)</visible>
 				<include>WidgetContainer_Vertical</include>
 				<control type="group" id="4513">
@@ -846,6 +889,13 @@
 				<include name="ParamWidgetCounterLoading_Vertical">
 					<param name="Container">450</param>   
 				</include>
+				<!-- library stats -->	
+				<include name="ParamLibraryStatsVerticalMenu">		
+					<param name="Headline">$LOCALIZE[31202]</param>				
+					<param name="Label1">$INFO[Window(Home).Property(Music.AlbumsCount),, $LOCALIZE[132]]</param>
+					<param name="Label2">$INFO[Window(Home).Property(Music.SongsCount),, $LOCALIZE[134]]</param>
+					<param name="Label3">$INFO[Window(Home).Property(Music.ArtistsCount),, $LOCALIZE[133]]</param>
+				</include>
 			</control>
 
 			<!-- =========== -->
@@ -853,7 +903,7 @@
 			<!-- =========== --> 
 			<control type="group" id="9073">
 				<visible>StringCompare(Container(20).ListItem.Property(widget),amazondb) + System.HasAddon(plugin.video.amazon)</visible>
-				<include>HomeSlideAnimations</include>
+				<include>VerticalMenuWidgetUpDown</include>
 				<include>WidgetContainer_Vertical</include>				
 				<control type="group" id="4513">
 					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
@@ -926,7 +976,7 @@
 			<!-- =========== --> 
 			<control type="group" id="9074">,
 				<visible>StringCompare(Container(20).ListItem.Property(widget),amazon) + System.HasAddon(plugin.video.prime_instant)</visible>
-				<include>HomeSlideAnimations</include>
+				<include>VerticalMenuWidgetUpDown</include>
 				<include>WidgetContainer_Vertical</include>	
 				<control type="group" id="4513">
 					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
@@ -999,7 +1049,7 @@
 			<control type="group" id="9080">
 				<description>tunein radio widget</description>
 				<visible>StringCompare(Container(20).ListItem.Property(widget),tunein)</visible>
-				<include>HomeSlideAnimations</include>
+				<include>VerticalMenuWidgetUpDown</include>
 				<include>WidgetContainer_Vertical</include>
 				<control type="group" id="4513">
 					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
@@ -1066,7 +1116,7 @@
 			<control type="group" id="9098">
 				<description>youtube widget</description>
 				<visible>StringCompare(Container(20).ListItem.Property(widget),youtube)</visible>
-				<include>HomeSlideAnimations</include>
+				<include>VerticalMenuWidgetUpDown</include>
 				<include>WidgetContainer_Vertical</include>
 				<control type="group" id="4513">
 					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
@@ -1135,7 +1185,7 @@
 			<control type="group" id="9090">
 				<description>custom widget group</description>
 				<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)</visible>
-				<include>HomeSlideAnimations</include>
+				<include>VerticalMenuWidgetUpDown</include>
 				<include>WidgetContainer_Vertical</include>
 				<control type="group" id="4513">
 					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
@@ -1189,7 +1239,7 @@
 			<control type="group" id="9091">
 				<description>custom widget group2</description>
 				<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)</visible>
-				<include>HomeSlideAnimations</include>
+				<include>VerticalMenuWidgetUpDown</include>
 				<include>WidgetContainer_Vertical</include>
 				<control type="group" id="4513">
 					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
@@ -1243,7 +1293,7 @@
 			<control type="group" id="9093">
 				<description>custom widget group3</description>
 				<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)</visible>
-				<include>HomeSlideAnimations</include>
+				<include>VerticalMenuWidgetUpDown</include>
 				<include>WidgetContainer_Vertical</include>
 				<control type="group" id="4513">
 					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
@@ -1297,7 +1347,7 @@
 			<control type="group" id="9094">
 				<visible>StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)</visible>
 				<description>custom widget group4</description>
-				<include>HomeSlideAnimations</include>
+				<include>VerticalMenuWidgetUpDown</include>
 				<include>WidgetContainer_Vertical</include>
 				<control type="group" id="4513">
 					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
@@ -1351,7 +1401,7 @@
 			<control type="group" id="9099">
 				<description>rss video feed widget</description>
 				<visible>StringCompare(Container(20).ListItem.Property(widget),rssvideowidget)</visible>
-				<include>HomeSlideAnimations</include>
+				<include>VerticalMenuWidgetUpDown</include>
 				<include>WidgetContainer_Vertical</include>
 				<control type="group" id="4513">
 					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
@@ -1440,7 +1490,7 @@
 			<control type="group" id="9071">
 				<description>playlist widget</description>
 				<visible>SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)</visible>
-				<include>HomeSlideAnimations</include>
+				<include>VerticalMenuWidgetUpDown</include>
 				<include>WidgetContainer_Vertical</include>
 				<control type="group" id="4513">
 					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
@@ -1485,7 +1535,7 @@
 			<control type="group" id="9072">
 				<description>playlist widget</description>
 				<visible>SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)</visible>
-				<include>HomeSlideAnimations</include>
+				<include>VerticalMenuWidgetUpDown</include>
 				<include>WidgetContainer_Vertical</include>
 				<control type="group" id="4513">
 					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
@@ -1530,7 +1580,7 @@
 			<control type="group" id="9064">
 				<description>tv channel widget</description>
 				<visible>StringCompare(Container(20).ListItem.Property(widget),tvchannels)</visible>
-				<include>HomeSlideAnimations</include>
+				<include>VerticalMenuWidgetUpDown</include>
 				<include>WidgetContainer_Vertical</include>
 				<control type="group" id="4513">
 					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>

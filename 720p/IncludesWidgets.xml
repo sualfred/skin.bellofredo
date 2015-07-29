@@ -22,11 +22,15 @@
 	<!-- library stats vertical menu param defintions -->
 	<include name="ParamLibraryStatsVerticalMenu">
 		<control type="group">
-			<include>LibraryStatsVerticalMenu</include>
-			<visible>!Skin.HasSetting(HideLibraryStats) + !IsEmpty(Control.GetLabel(17)) + StringCompare(Container(20).ListItem.Property(defaultID),$PARAM[defaultID])</visible>
-			<animation effect="slide" end="0,-325" time="0" condition="IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">Conditional</animation>
-			<top>470</top>
-			<left>447</left>
+			<animation type="Conditional" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">   
+				<effect type="fade" start="100" end="0" time="250" tween="sine" easing="inout" />
+			</animation>	
+			<animation type="Conditional" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">
+				<effect type="fade" delay="480" start="0" end="100" time="300" tween="sine" easing="in"  />
+			</animation>	
+			<visible>!Skin.HasSetting(HideWidgetLibraryStats) + !IsEmpty(Control.GetLabel(17))</visible>
+			<top>510</top>
+			<left>7</left>
 			<width>1235</width>
 			<control type="label">				
 				<width>1235</width>

@@ -73,37 +73,6 @@
 		</animation>
 	</include>
 
-	<include name="LibraryStatsVerticalMenu">
-
-		<animation type="WindowOpen" reversible="true">
-			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
-			<effect type="slide" start="0,-55" end="0,0" time="350" tween="cubic" easing="out" />
-		</animation>
-		<animation type="WindowClose" reversible="true">
-			<effect type="fade" start="100" end="0" time="300" delay="250" tween="sine" easing="inout" />
-			<effect type="slide" start="0,0" end="0,-55" time="350" delay="250" tween="sine" easing="inout" />
-		</animation>
-
-		<animation type="Visible" reversible="true">
-			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
-			<effect type="slide" start="0,55" end="0,0" time="350" tween="cubic" easing="out" />
-		</animation>
-		<animation type="Hidden" reversible="true">
-			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
-			<effect type="slide" start="0,0" end="0,55" time="350" tween="sine" easing="inout" />
-		</animation>
-
-		<animation type="Conditional" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">   
-			<effect type="fade" start="100" end="0" time="250" tween="sine" easing="inout" />
-			<!--<effect type="slide" start="0,0" end="-55,0" time="350" tween="sine" easing="inout" />-->
-		</animation>	
-
-		<animation type="Conditional" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">
-			<effect type="fade" delay="480" start="0" end="100" time="300" tween="sine" easing="in"  />
-			<!--<effect type="slide" delay="480" start="-55,0" end="0,0" time="350" tween="cubic" easing="out" />-->
-		</animation>	
-	</include>
-
 	<include name="Top250">
 		<animation type="WindowOpen" reversible="true">
 			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
@@ -877,6 +846,29 @@
 			<effect type="slide" start="0,0" end="0,50" time="650" tween="sine" easing="out" />
 		</animation>
 	</include>	
+
+	<include name="VerticalMenuWidgetUpDown">
+		
+		<animation effect="fade" start="100" end="0" time="300" condition="IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">Hidden</animation>
+		<animation effect="fade" start="0" end="100" time="300">Visible</animation>
+
+		<animation type="Conditional" reversible="false" condition="Control.IsVisible(2013)">			
+			<effect type="slide" start="0,-55" end="0,0" time="350" tween="cubic" easing="out"/>
+		</animation>
+		<animation type="Conditional" reversible="false" condition="Control.IsVisible(2014)">			
+			<effect type="slide" start="0,55" end="0,0" time="350" tween="cubic" easing="out"/>			
+		</animation>
+
+		<animation type="WindowOpen" reversible="true">
+			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+			<effect type="slide" start="0,-55" end="0,0" time="350" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose" reversible="true">
+			<effect type="fade" start="100" end="0" time="300" delay="250" tween="sine" easing="inout" />
+			<effect type="slide" start="0,0" end="0,-55" time="350" delay="250" tween="sine" easing="inout" />
+		</animation>
+		
+	</include>
 
 	<include name="VisibleFadeEffectRecent">
 		<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout">Hidden</animation>

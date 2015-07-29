@@ -228,6 +228,7 @@
 						<onright>9000</onright>
 						<onup>8300</onup>
 						<ondown>8300</ondown>
+
 						<!-- main menu -->
 						<control type="button" id="8301">
 							<disabledcolor>55white</disabledcolor>
@@ -258,144 +259,62 @@
 							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(MainMenuStyle,vertical))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31347])</onclick>
 						</control>
-						<control type="radiobutton" id="8308">
-							<description>Disable Icon Labels</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31362]</label>
-							<onclick>Skin.ToggleSetting(HideIconMenuLabels)</onclick>
-							<selected>!Skin.HasSetting(HideIconMenuLabels)</selected>
-							<enable>SubString(Skin.String(MainMenuStyle),icons)</enable>
-						</control>
-						<control type="radiobutton" id="8304">
-							<description>Disable PurpleBar</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31067]</label>
-							<onclick>Skin.ToggleSetting(DisablePurpleBar)</onclick>
-							<selected>!Skin.HasSetting(DisablePurpleBar)</selected>
-						</control>
-						<control type="radiobutton" id="8305">
-							<description>Lock widget content switch</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31271]</label>
-							<onclick>Skin.ToggleSetting(LockWidgetSwitch)</onclick>
-							<selected>!Skin.HasSetting(LockWidgetSwitch)</selected>
-						</control>
-						<control type="radiobutton" id="8306">
-							<description>widget counter</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31192]</label>
-							<onclick>Skin.ToggleSetting(HideWidgetCounter)</onclick>
-							<selected>!Skin.HasSetting(HideWidgetCounter)</selected>
-						</control>
-						<control type="radiobutton" id="8307">
-							<description>Hide Library Details</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31127]</label>
-							<onclick>Skin.ToggleSetting(HideLibraryStats)</onclick>
-							<selected>!Skin.HasSetting(HideLibraryStats)</selected>
-						</control>
-						<!-- top menu -->
-						<control type="button" id="8310">
+
+						<!-- Default Type Settings -->
+						<control type="button" id="8304">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
-							<label>$LOCALIZE[31356]</label>
+							<label>Label Mainmenu Options</label>
 							<enable>false</enable>
+							<visible>!StringCompare(Skin.String(MainMenuStyle),vertical) + !SubString(Skin.String(MainMenuStyle),icon)</visible>
 						</control>
-						<control type="button" id="8317">
-							<description>Style of item</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31361]</label>
-							<label2>[COLOR=blue]$VAR[TopMenuStyleLabel][/COLOR]</label2>
-							<onclick>Skin.ToggleSetting(IconTopMenuStyle)</onclick>
-							<selected>!Skin.HasSetting(ShowKodiSymbol)</selected>
-						</control>
-						<control type="radiobutton" id="8311">
-							<description>Enable Kodi Icon</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31108]</label>
-							<onclick>Skin.ToggleSetting(ShowKodiSymbol)</onclick>
-							<selected>!Skin.HasSetting(ShowKodiSymbol)</selected>
-						</control>
-						<control type="radiobutton" id="8312">
-							<description>Hide Library Totals</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31161]</label>
-							<onclick>Skin.ToggleSetting(ShowLibraryTotals)</onclick>
-							<selected>Skin.HasSetting(ShowLibraryTotals)</selected>
-						</control>
-						<control type="radiobutton" id="8313">
-							<description>Disable favourites button</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31357]</label>
-							<onclick>Skin.ToggleSetting(DisableFavouritesButton)</onclick>
-							<selected>!Skin.HasSetting(DisableFavouritesButton)</selected>
-						</control>
-						<control type="radiobutton" id="8314">
-							<description>Disable search button</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31358]</label>
-							<onclick>Skin.ToggleSetting(DisableSearchButton)</onclick>
-							<selected>!Skin.HasSetting(DisableSearchButton)</selected>
-						</control>
-						<control type="radiobutton" id="8315">
-							<description>Disable libary refresh button</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31064]</label>
-							<onclick>Skin.ToggleSetting(DisableLibraryRefreshButton)</onclick>
-							<selected>!Skin.HasSetting(DisableLibraryRefreshButton)</selected>
-						</control>
-						<control type="radiobutton" id="8316">
-							<description>Disable power button</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31359]</label>
-							<onclick>Skin.ToggleSetting(DisablePowerButton)</onclick>
-							<selected>!Skin.HasSetting(DisablePowerButton)</selected>
-						</control>
-						<!--animations -->
-						<control type="button" id="8320">
+
+						<!-- Icon Type Settings -->
+						<control type="button" id="8305">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
-							<label>$LOCALIZE[31110]</label>
+							<label>Icon Mainmenu Options</label>
 							<enable>false</enable>
+							<visible>SubString(Skin.String(MainMenuStyle),icon)</visible>
 						</control>
-						<control type="radiobutton" id="8321">
-							<description>Enable HomeMenu Animation</description>
-							<include>SettingsRadioButton</include>
-							<label>- $LOCALIZE[31013]</label>
-							<onclick>Skin.ToggleSetting(HomeMenuAnimation)</onclick>
-							<selected>Skin.HasSetting(HomeMenuAnimation)</selected>
-							<enable>!Skin.HasSetting(DisablePurpleBar)</enable>
+
+						<!-- Vertical Type Settings -->
+						<control type="button" id="8306">
+							<disabledcolor>55white</disabledcolor>
+							<include>SettingsButton</include>
+							<label>Vertical Mainmenu Options</label>
+							<enable>false</enable>
+							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>
 						</control>
-						<control type="radiobutton" id="8322">
+
+						<control type="radiobutton" id="8310">
 							<description>Enable HomeMenu Arrow Animation</description>
 							<include>SettingsRadioButton</include>
 							<label>- $LOCALIZE[31045]</label>
 							<onclick>Skin.ToggleSetting(HomeMenuArrowAnimation)</onclick>
 							<selected>Skin.HasSetting(HomeMenuArrowAnimation)</selected>
+							<visible>!StringCompare(Skin.String(MainMenuStyle),vertical)</visible>
 						</control>
-						<control type="radiobutton" id="8323">
+
+						<control type="radiobutton" id="8311">
 							<description>Enable HomeWidget Arrow Animation</description>
 							<include>SettingsRadioButton</include>
 							<label>- $LOCALIZE[31046]</label>
 							<onclick>Skin.ToggleSetting(HomeWidgetArrowAnimation)</onclick>
 							<selected>Skin.HasSetting(HomeWidgetArrowAnimation)</selected>
+							<visible>!StringCompare(Skin.String(MainMenuStyle),vertical)</visible>
 						</control>
-						<!--misc-->
-						<control type="button" id="8330">
-							<disabledcolor>55white</disabledcolor>
-							<include>SettingsButton</include>
-							<label>$LOCALIZE[31069]</label>
-							<enable>false</enable>
-						</control>
-						<control type="radiobutton" id="8331">
+
+						<control type="radiobutton" id="8312">
 							<description>Hide Home NP VideoInfo</description>
 							<include>SettingsRadioButton</include>
 							<label>- $LOCALIZE[31104]</label>
 							<onclick>Skin.ToggleSetting(HideHomeNPCovers)</onclick>
 							<selected>!Skin.HasSetting(HideHomeNPCovers)</selected>
-							<enable>!StringCompare(Skin.String(MainMenuStyle),vertical)</enable>
+							<visible>!StringCompare(Skin.String(MainMenuStyle),vertical)</visible>
 						</control>
-						<control type="button" id="8332">
+
+						<control type="button" id="8313">
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31297]</label>
 							<label2>[COLOR=selected]$VAR[RecordingBoxLabel][/COLOR]</label2>
@@ -406,23 +325,194 @@
 							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[13113])</onclick>
 							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(RecordingBox,disabled))</onclick>
 							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31297])</onclick>
-							<enable>!StringCompare(Skin.String(MainMenuStyle),vertical)</enable>					
+							<visible>!StringCompare(Skin.String(MainMenuStyle),vertical)</visible>
+						</control>
+
+						<control type="radiobutton" id="8314">
+							<description>Hide Library Details</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31127]</label>
+							<onclick>Skin.ToggleSetting(HideLibraryStats)</onclick>
+							<selected>!Skin.HasSetting(HideLibraryStats)</selected>
+							<visible>!StringCompare(Skin.String(MainMenuStyle),vertical)</visible>
+						</control>
+						
+						<control type="radiobutton" id="8315">
+							<description>Hide Home NP VideoInfo</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31104]</label>
+							<onclick>Skin.ToggleSetting(HideHomeNPCovers)</onclick>
+							<selected>!Skin.HasSetting(HideHomeNPCovers)</selected>
+							<visible>!StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
+						</control>
+
+						<control type="button" id="8316">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31297]</label>
+							<label2>[COLOR=selected]$VAR[RecordingBoxLabel][/COLOR]</label2>
+							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[34122])</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(RecordingBox,global))</onclick>
+							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31298])</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.Reset(RecordingBox))</onclick>
+							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[13113])</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(RecordingBox,disabled))</onclick>
+							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31297])</onclick>
+							<visible>!StringCompare(Skin.String(MainMenuStyle),vertical)</visible>					
+						</control>
+
+						<control type="radiobutton" id="8317">
+							<description>Disable Icon Labels</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31362]</label>
+							<onclick>Skin.ToggleSetting(HideIconMenuLabels)</onclick>
+							<selected>!Skin.HasSetting(HideIconMenuLabels)</selected>
+							<visible>SubString(Skin.String(MainMenuStyle),icons)</visible>
+						</control>
+						
+						<control type="radiobutton" id="8318">
+							<description>Hide Library Details Widgets</description>
+							<include>SettingsRadioButton</include>
+							<label>- Show Libary Totals in Widgets</label>
+							<onclick>Skin.ToggleSetting(HideWidgetLibraryStats)</onclick>
+							<selected>!Skin.HasSetting(HideWidgetLibraryStats)</selected>
+							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
+						</control>
+						
+						<control type="radiobutton" id="8319">
+							<description>Hide Menu Icons</description>
+							<include>SettingsRadioButton</include>
+							<label>- Show Menu Icons</label>
+							<onclick>Skin.ToggleSetting(HideVerticalMenuIcons)</onclick>
+							<selected>!Skin.HasSetting(HideVerticalMenuIcons)</selected>
+							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
+						</control>
+
+						
+						<!-- Common Settings -->
+						<control type="button" id="8307">
+							<disabledcolor>55white</disabledcolor>
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[31069]</label>
+							<enable>false</enable>
+						</control>
+
+						<control type="radiobutton" id="8330">
+							<description>Disable PurpleBar</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31067]</label>
+							<onclick>Skin.ToggleSetting(DisablePurpleBar)</onclick>
+							<selected>!Skin.HasSetting(DisablePurpleBar)</selected>
+						</control>
+						<control type="radiobutton" id="8331">
+							<description>Enable HomeMenu Animation</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31013]</label>
+							<onclick>Skin.ToggleSetting(HomeMenuAnimation)</onclick>
+							<selected>Skin.HasSetting(HomeMenuAnimation)</selected>
+							<enable>!Skin.HasSetting(DisablePurpleBar)</enable>
+						</control>
+						<control type="radiobutton" id="8332">
+							<description>Lock widget content switch</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31271]</label>
+							<onclick>Skin.ToggleSetting(LockWidgetSwitch)</onclick>
+							<selected>!Skin.HasSetting(LockWidgetSwitch)</selected>
 						</control>
 						<control type="radiobutton" id="8333">
+							<description>widget counter</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31192]</label>
+							<onclick>Skin.ToggleSetting(HideWidgetCounter)</onclick>
+							<selected>!Skin.HasSetting(HideWidgetCounter)</selected>
+						</control>
+						<control type="radiobutton" id="8334">
 							<description>Hide Small Rec Info</description>
 							<include>SettingsRadioButton</include>
 							<label>- $LOCALIZE[31336]</label>
 							<onclick>Skin.ToggleSetting(HideSmallRecInfo)</onclick>
 							<selected>!Skin.HasSetting(HideSmallRecInfo)</selected>
 						</control>
-						<!--shutdownmenu-->
+
+						<!-- top menu -->
+						<control type="button" id="8308">
+							<disabledcolor>55white</disabledcolor>
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[31356]</label>
+							<enable>false</enable>
+						</control>
+
+						<control type="radiobutton" id="8347">
+							<description>disable top menu</description>
+							<include>SettingsRadioButton</include>
+							<label>- Enable Top Menu</label>
+							<onclick>Skin.ToggleSetting(DisableTopMenu)</onclick>
+							<selected>!Skin.HasSetting(DisableTopMenu)</selected>
+						</control>
 						<control type="button" id="8340">
+							<description>Style of item</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31361]</label>
+							<label2>[COLOR=blue]$VAR[TopMenuStyleLabel][/COLOR]</label2>
+							<onclick>Skin.ToggleSetting(IconTopMenuStyle)</onclick>
+							<enable>!Skin.HasSetting(DisableTopMenu)</enable>
+						</control>
+						<control type="radiobutton" id="8341">
+							<description>Enable Kodi Icon</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31108]</label>
+							<onclick>Skin.ToggleSetting(HideKodiSymbol)</onclick>
+							<selected>!Skin.HasSetting(HideKodiSymbol)</selected>
+							<enable>!Skin.HasSetting(DisableTopMenu)</enable>
+						</control>
+						<control type="radiobutton" id="8343">
+							<description>Disable favourites button</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31357]</label>
+							<onclick>Skin.ToggleSetting(DisableFavouritesButton)</onclick>
+							<selected>!Skin.HasSetting(DisableFavouritesButton)</selected>
+							<enable>!Skin.HasSetting(DisableTopMenu)</enable>
+						</control>
+						<control type="radiobutton" id="8344">
+							<description>Disable search button</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31358]</label>
+							<onclick>Skin.ToggleSetting(DisableSearchButton)</onclick>
+							<selected>!Skin.HasSetting(DisableSearchButton)</selected>
+							<enable>!Skin.HasSetting(DisableTopMenu)</enable>
+						</control>
+						<control type="radiobutton" id="8345">
+							<description>Disable libary refresh button</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31064]</label>
+							<onclick>Skin.ToggleSetting(DisableLibraryRefreshButton)</onclick>
+							<selected>!Skin.HasSetting(DisableLibraryRefreshButton)</selected>
+							<enable>!Skin.HasSetting(DisableTopMenu)</enable>
+						</control>
+						<control type="radiobutton" id="8346">
+							<description>Disable power button</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31359]</label>
+							<onclick>Skin.ToggleSetting(DisablePowerButton)</onclick>
+							<selected>!Skin.HasSetting(DisablePowerButton)</selected>
+							<enable>!Skin.HasSetting(DisableTopMenu)</enable>
+						</control>
+						<control type="radiobutton" id="8342">
+							<description>Hide Library Totals</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31161]</label>
+							<onclick>Skin.ToggleSetting(HideLibraryTotals)</onclick>
+							<selected>!Skin.HasSetting(HideLibraryTotals)</selected>
+						</control>
+						
+
+						<!--shutdownmenu-->
+						<control type="button" id="8309">
 							<disabledcolor>55white</disabledcolor>
 							<include>SettingsButton</include>
 							<label>$LOCALIZE[31469]</label>
 							<enable>false</enable>
 						</control>
-						<control type="button" id="8341">
+						<control type="button" id="8350">
 							<description>edit shutdownmenu</description>
 							<include>SettingsButton</include>
 							<label>- $LOCALIZE[31468]</label>
@@ -795,174 +885,174 @@
 							<include>SettingsButton</include>
 							<label>- Show IDs</label>
 							<onclick>RunScript(script.toolbox,info=textviewer,header=Skin View IDs,text='"$VAR[ViewIDText]"')</onclick>
-							</control>											
-							<control type="button" id="8504">
-								<disabledcolor>55white</disabledcolor>
-								<include>SettingsButton</include>
-								<label>$LOCALIZE[31180]</label>
-								<enable>false</enable>
-							</control>
-							<control type="button" id="8505">
-								<include>SettingsButton</include>
-								<label>- $LOCALIZE[31119]</label>
-								<label2>[CAPITALIZE][COLOR=selected]$INFO[Skin.String(WatchedFlag)][/COLOR][/CAPITALIZE]</label2>
-								<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31120])</onclick>
-								<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(WatchedFlag,unwatched))</onclick>
-								<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31121])</onclick>
-								<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(WatchedFlag,watched))</onclick>
-								<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31122])</onclick>
-								<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(WatchedFlag,hidden))</onclick>
-								<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31119])</onclick>
-							</control>	
-							<!-- genre icons -->
-							<control type="button" id="8520">
-								<include>SettingsButton</include>
-								<label>- $LOCALIZE[31460]</label>
-								<label2>[CAPITALIZE][COLOR=selected]$VAR[VarGenreSourceLabel][/COLOR][/CAPITALIZE]</label2>
-								<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31294])</onclick>
-								<onclick>SetProperty(Dialog.1.BuiltIn,Skin.Reset(GenreSource))</onclick>
-								<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31461])</onclick>
-								<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(GenreSource,own)||Skin.SetPath(OwnGenreIconSource))</onclick>
-								<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[24075])</onclick>
-								<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(GenreSource,disabled))</onclick>
-								<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31460])</onclick>
-							</control>		
-							<!--IMDb Rating Update-->
-							<control type="button" id="8506">
-								<description>IMDb Rating Updater</description>
-								<label>- $LOCALIZE[31092]</label>
-								<include>SettingsButton</include>
-								<label2>[COLOR=selected]$VAR[IMDbUpdateLabels][/COLOR]</label2>
-								<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31187] / $LOCALIZE[31188] / $LOCALIZE[31189])</onclick>
-								<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(AutoUpdateRatings,all))</onclick>
-								<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31187] / $LOCALIZE[31188])</onclick>
-								<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(AutoUpdateRatings,onlymovies))</onclick>
-								<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31187])</onclick>
-								<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(AutoUpdateRatings,top250))</onclick>
-								<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31188])</onclick>
-								<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(AutoUpdateRatings,movies))</onclick>
-								<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31189])</onclick>
-								<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(AutoUpdateRatings,mpaa))</onclick>
-								<onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31066])</onclick>
-								<onclick>SetProperty(Dialog.6.BuiltIn,Skin.Reset(AutoUpdateRatings))</onclick>
-								<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31191])</onclick>
-								<enable>System.HasAddon(script.imdbupdate)</enable>
-							</control>
-							<!--Artwork Downloader-->
-							<control type="radiobutton" id="8507">
-								<description>Artwork Downloader</description>
-								<include>SettingsRadioButton</include>
-								<label>- $LOCALIZE[31047]</label>
-								<onclick>Skin.ToggleSetting(AutoUpdateArt)</onclick>
-								<selected>Skin.HasSetting(AutoUpdateArt)</selected>
-								<enable>System.HasAddon(script.artwork.downloader)</enable>
-							</control>																	
-							<control type="button" id="8508">
-								<disabledcolor>55white</disabledcolor>
-								<include>SettingsButton</include>
-								<label>$LOCALIZE[31181]</label>
-								<enable>false</enable>
-							</control>
-							<control type="button" id="8509">
-								<include>SettingsButton</include>
-								<label>- $LOCALIZE[31146]</label>
-								<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,clearlogo)</onclick>
-								<visible>System.HasAddon(script.artwork.downloader)</visible>
-							</control>
-							<control type="button" id="8510">
-								<include>SettingsButton</include>
-								<label>- $LOCALIZE[31147]</label>
-								<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,clearart)</onclick>
-								<visible>System.HasAddon(script.artwork.downloader)</visible>
-							</control>
-							<control type="button" id="8511">
-								<include>SettingsButton</include>
-								<label>- $LOCALIZE[31148]</label>
-								<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,landscape)</onclick>
-								<visible>System.HasAddon(script.artwork.downloader)</visible>
-							</control>
-							<control type="button" id="8512">
-								<include>SettingsButton</include>
-								<label>- $LOCALIZE[31149]</label>
-								<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,banner)</onclick>
-								<visible>System.HasAddon(script.artwork.downloader)</visible>
-							</control>
-							<control type="button" id="8513">
-								<include>SettingsButton</include>
-								<label>- $LOCALIZE[31150]</label>
-								<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,poster)</onclick>
-								<visible>System.HasAddon(script.artwork.downloader)</visible>
-							</control>
-							<control type="button" id="8514">
-								<include>SettingsButton</include>
-								<label>- $LOCALIZE[31165]</label>
-								<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,discart)</onclick>
-								<visible>System.HasAddon(script.artwork.downloader)</visible>
-							</control>
-							<control type="button" id="8515">
-								<include>SettingsButton</include>
-								<label>- $LOCALIZE[31160]</label>
-								<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,clearlogo)</onclick>
-								<visible>System.HasAddon(script.artwork.downloader)</visible>
-							</control>
+						</control>											
+						<control type="button" id="8504">
+							<disabledcolor>55white</disabledcolor>
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[31180]</label>
+							<enable>false</enable>
 						</control>
-						<!--============-->
-						<!--== Addons ==-->
-						<!--============-->
-						<control type="grouplist" id="8600">
-							<include>CloseAnimation</include>
-							<visible>Container(8800).Hasfocus(6)</visible>
-							<left>297</left>
-							<top>0</top>
-							<width>782</width>
-							<height>414</height>
-							<itemgap>2</itemgap>
-							<pagecontrol>60</pagecontrol>
-							<onleft>8800</onleft>
-							<onright>9000</onright>
-							<onup>8600</onup>
-							<ondown>8600</ondown>																
-							<control type="button" id="8601">
-								<disabledcolor>55white</disabledcolor>
-								<include>SettingsButton</include>
-								<label>$LOCALIZE[31294]</label>
-								<enable>false</enable>
-							</control>
-							<control type="button" id="8602">
-								<include>SettingsButton</include>
-								<label>- $LOCALIZE[31319]</label>
-								<onclick>RunScript(script.bellofredo.extrapack)</onclick>
-							</control>
-							<control type="button" id="8603">
-								<include>SettingsButton</include>
-								<label>- $LOCALIZE[31320]</label>
-								<onclick>RunScript(script.bellofredo.extrapack,mode=forcerefresh)</onclick>
-							</control>
-							<control type="radiobutton" id="8604">
-								<include>SettingsRadioButton</include>
-								<label>- $LOCALIZE[31400]</label>
-								<onclick>Skin.ToggleSetting(AutoRunExtrapack)</onclick>
-								<selected>Skin.HasSetting(AutoRunExtrapack)</selected>
-							</control>
-							<control type="button" id="8605">
-								<disabledcolor>55white</disabledcolor>
-								<include>SettingsButton</include>
-								<label>$LOCALIZE[31396]</label>
-								<enable>false</enable>
-							</control>
-							<control type="button" id="8606">
-								<include>SettingsButton</include>
-								<label>- NextUp Overlay Position  [COLOR=55white](Requires NextUp Add-on)[/COLOR]</label>
-								<label2>[COLOR=blue]$VAR[NextUpStyleLabel][/COLOR]</label2>
-								<onclick>Skin.ToggleSetting(NextUpTop)</onclick>
-								<enable>System.HasAddon(service.nextup.notification)</enable>
-							</control>
-							<control type="button" id="8607">
-								<include>SettingsButton</include>
-								<label>- $LOCALIZE[1045]</label>
-								<onclick>Addon.OpenSettings(service.nextup.notification)</onclick>
-								<visible>System.HasAddon(service.nextup.notification)</visible>
-							</control>
+						<control type="button" id="8505">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31119]</label>
+							<label2>[CAPITALIZE][COLOR=selected]$INFO[Skin.String(WatchedFlag)][/COLOR][/CAPITALIZE]</label2>
+							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31120])</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(WatchedFlag,unwatched))</onclick>
+							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31121])</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(WatchedFlag,watched))</onclick>
+							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31122])</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(WatchedFlag,hidden))</onclick>
+							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31119])</onclick>
+						</control>	
+						<!-- genre icons -->
+						<control type="button" id="8520">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31460]</label>
+							<label2>[CAPITALIZE][COLOR=selected]$VAR[VarGenreSourceLabel][/COLOR][/CAPITALIZE]</label2>
+							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31294])</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.Reset(GenreSource))</onclick>
+							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31461])</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(GenreSource,own)||Skin.SetPath(OwnGenreIconSource))</onclick>
+							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[24075])</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(GenreSource,disabled))</onclick>
+							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31460])</onclick>
+						</control>		
+						<!--IMDb Rating Update-->
+						<control type="button" id="8506">
+							<description>IMDb Rating Updater</description>
+							<label>- $LOCALIZE[31092]</label>
+							<include>SettingsButton</include>
+							<label2>[COLOR=selected]$VAR[IMDbUpdateLabels][/COLOR]</label2>
+							<onclick>SetProperty(Dialog.1.Label,$LOCALIZE[31187] / $LOCALIZE[31188] / $LOCALIZE[31189])</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(AutoUpdateRatings,all))</onclick>
+							<onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31187] / $LOCALIZE[31188])</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(AutoUpdateRatings,onlymovies))</onclick>
+							<onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31187])</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(AutoUpdateRatings,top250))</onclick>
+							<onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31188])</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(AutoUpdateRatings,movies))</onclick>
+							<onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31189])</onclick>
+							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(AutoUpdateRatings,mpaa))</onclick>
+							<onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31066])</onclick>
+							<onclick>SetProperty(Dialog.6.BuiltIn,Skin.Reset(AutoUpdateRatings))</onclick>
+							<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31191])</onclick>
+							<enable>System.HasAddon(script.imdbupdate)</enable>
+						</control>
+						<!--Artwork Downloader-->
+						<control type="radiobutton" id="8507">
+							<description>Artwork Downloader</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31047]</label>
+							<onclick>Skin.ToggleSetting(AutoUpdateArt)</onclick>
+							<selected>Skin.HasSetting(AutoUpdateArt)</selected>
+							<enable>System.HasAddon(script.artwork.downloader)</enable>
+						</control>																	
+						<control type="button" id="8508">
+							<disabledcolor>55white</disabledcolor>
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[31181]</label>
+							<enable>false</enable>
+						</control>
+						<control type="button" id="8509">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31146]</label>
+							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,clearlogo)</onclick>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>
+						<control type="button" id="8510">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31147]</label>
+							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,clearart)</onclick>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>
+						<control type="button" id="8511">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31148]</label>
+							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,landscape)</onclick>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>
+						<control type="button" id="8512">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31149]</label>
+							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,banner)</onclick>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>
+						<control type="button" id="8513">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31150]</label>
+							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,poster)</onclick>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>
+						<control type="button" id="8514">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31165]</label>
+							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,discart)</onclick>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>
+						<control type="button" id="8515">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31160]</label>
+							<onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,clearlogo)</onclick>
+							<visible>System.HasAddon(script.artwork.downloader)</visible>
+						</control>
+					</control>
+					<!--============-->
+					<!--== Addons ==-->
+					<!--============-->
+					<control type="grouplist" id="8600">
+						<include>CloseAnimation</include>
+						<visible>Container(8800).Hasfocus(6)</visible>
+						<left>297</left>
+						<top>0</top>
+						<width>782</width>
+						<height>414</height>
+						<itemgap>2</itemgap>
+						<pagecontrol>60</pagecontrol>
+						<onleft>8800</onleft>
+						<onright>9000</onright>
+						<onup>8600</onup>
+						<ondown>8600</ondown>																
+						<control type="button" id="8601">
+							<disabledcolor>55white</disabledcolor>
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[31294]</label>
+							<enable>false</enable>
+						</control>
+						<control type="button" id="8602">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31319]</label>
+							<onclick>RunScript(script.bellofredo.extrapack)</onclick>
+						</control>
+						<control type="button" id="8603">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[31320]</label>
+							<onclick>RunScript(script.bellofredo.extrapack,mode=forcerefresh)</onclick>
+						</control>
+						<control type="radiobutton" id="8604">
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31400]</label>
+							<onclick>Skin.ToggleSetting(AutoRunExtrapack)</onclick>
+							<selected>Skin.HasSetting(AutoRunExtrapack)</selected>
+						</control>
+						<control type="button" id="8605">
+							<disabledcolor>55white</disabledcolor>
+							<include>SettingsButton</include>
+							<label>$LOCALIZE[31396]</label>
+							<enable>false</enable>
+						</control>
+						<control type="button" id="8606">
+							<include>SettingsButton</include>
+							<label>- NextUp Overlay Position  [COLOR=55white](Requires NextUp Add-on)[/COLOR]</label>
+							<label2>[COLOR=blue]$VAR[NextUpStyleLabel][/COLOR]</label2>
+							<onclick>Skin.ToggleSetting(NextUpTop)</onclick>
+							<enable>System.HasAddon(service.nextup.notification)</enable>
+						</control>
+						<control type="button" id="8607">
+							<include>SettingsButton</include>
+							<label>- $LOCALIZE[1045]</label>
+							<onclick>Addon.OpenSettings(service.nextup.notification)</onclick>
+							<visible>System.HasAddon(service.nextup.notification)</visible>
+						</control>
 						<!--
 						<control type="radiobutton" id="8607">
 							<include>SettingsRadioButton</include>
