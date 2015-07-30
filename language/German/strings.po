@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Bello Fredo\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-07-21 09:16+0000\n"
+"PO-Revision-Date: 2015-07-30 13:16+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/bello-fredo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -1951,3 +1951,48 @@ msgstr "Banner Art"
 msgctxt "#31473"
 msgid "[COLOR=invalid]Error: No valid path[/COLOR]"
 msgstr "[COLOR=invalid]Fehler: Pfad nicht gültig[/COLOR]"
+
+#: \720p\SkinSettings.xml:257
+msgctxt "#31474"
+msgid "Vertical Menu"
+msgstr "Vertikales Menü"
+
+msgctxt "#31475"
+msgid "unwatched movies"
+msgstr "ungesehene Filme"
+
+msgctxt "#31476"
+msgid "unwatched episodes"
+msgstr "ungesehene Episoden"
+
+msgctxt "#31477"
+msgid "watched movies"
+msgstr "gesehene Filme"
+
+msgctxt "#31478"
+msgid "watched episodes"
+msgstr "gesehene Episoden"
+
+msgctxt "#31479"
+msgid "Label Mainmenu Options"
+msgstr "Label Menü Optionen"
+
+msgctxt "#31480"
+msgid "Icon Mainmenu Options"
+msgstr "Icon Menü Optionen"
+
+msgctxt "#31481"
+msgid "Vertical Mainmenu Options"
+msgstr "Vertikales Menü Optionen"
+
+msgctxt "#31482"
+msgid "Show Libary Totals in Widgets"
+msgstr "Zeige Datenbank-Statistiken in Widgets"
+
+msgctxt "#31483"
+msgid "Show Menu Icons"
+msgstr "Zeige Menü Symbole"
+
+msgctxt "#31484"
+msgid "Enable Top Menu"
+msgstr "Aktiviere Top Menü"
