@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes> 
+
+	<!-- ========================== -->
+	<!-- == Parameter includes	 == -->
+	<!-- ========================== -->
 	<include name="ParamWidgetCounterLoading">
 		<control type="label">
 			<left>0</left>
@@ -67,6 +71,34 @@
 		</control>
 	</include>
 
+	<include name="ParamEmptyBoxes">
+		<control type="image">
+			<left>$PARAM[left]</left>
+			<top>5</top>
+			<width>190.5</width>
+			<height>190.5</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
+			<fadetime>800</fadetime>
+		</control> 
+	</include>
+
+	<include name="ParamEmptyPosters">
+		<control type="image">
+			<left>$PARAM[left]</left>
+			<top>5</top>
+			<width>144.6</width>
+			<height>208.4</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
+			<fadetime>800</fadetime>
+		</control> 
+	</include>
+
+	<!-- ========================== -->
+	<!-- == Common includes	 	== -->
+	<!-- ========================== -->
+
 	<include name="WidgetContainer">
 		<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>			
 		<control type="image">
@@ -127,7 +159,6 @@
 			<include>DownUpAnimation</include>
 			<centerleft>50%</centerleft>
 			<width>878</width>
-			<!--<top>$PARAM[Top]</top>-->
 			<top>465</top>
 			<height>70</height>
 			<font>FontSize_22</font>
@@ -143,48 +174,24 @@
 			<label2>$VAR[QuickNavWidgetListItemLabel2]</label2>
 		</control>
 	</include>
-
+	
 	<include name="WidgetEmptyBoxes">
 		<top>250</top>
 		<centerleft>50%</centerleft>
 		<width>905</width>
 		<height>275</height>
-		<control type="image">
-			<left>20</left>
-			<top>5</top>
-			<width>190.5</width>
-			<height>190.5</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
-			<fadetime>800</fadetime>
-		</control> 
-		<control type="image">
-			<left>245</left>
-			<top>5</top>
-			<width>190.5</width>
-			<height>190.5</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
-			<fadetime>800</fadetime>
-		</control> 
-		<control type="image">
-			<left>470</left>
-			<top>5</top>
-			<width>190.5</width>
-			<height>190.5</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
-			<fadetime>800</fadetime>
-		</control>
-		<control type="image">
-			<left>695</left>
-			<top>5</top>
-			<width>190.5</width>
-			<height>190.5</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
-			<fadetime>800</fadetime>
-		</control>			
+		<include name="ParamEmptyBoxes">
+			<param name="left">20</param>
+		</include>
+		<include name="ParamEmptyBoxes">
+			<param name="left">245</param>
+		</include>
+		<include name="ParamEmptyBoxes">
+			<param name="left">470</param>
+		</include>
+		<include name="ParamEmptyBoxes">
+			<param name="left">695</param>
+		</include>
 	</include>
 
 	<include name="WidgetEmptyPosters">
@@ -192,51 +199,21 @@
 		<centerleft>50%</centerleft>
 		<width>908</width>
 		<height>275</height>
-		<control type="image">
-			<left>22</left>
-			<top>5</top>
-			<width>144.6</width>
-			<height>208.4</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
-			<fadetime>800</fadetime>
-		</control> 
-		<control type="image">
-			<left>202</left>
-			<top>5</top>
-			<width>144.6</width>
-			<height>208.4</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
-			<fadetime>800</fadetime>
-		</control>
-		<control type="image">
-			<left>382</left>
-			<top>5</top>
-			<width>144.6</width>
-			<height>208.4</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
-			<fadetime>800</fadetime>
-		</control>
-		<control type="image">
-			<left>562</left>
-			<top>5</top>
-			<width>144.6</width>
-			<height>208.4</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
-			<fadetime>800</fadetime>
-		</control>		
-		<control type="image">
-			<left>742</left>
-			<top>5</top>
-			<width>144.6</width>
-			<height>208.4</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
-			<fadetime>800</fadetime>
-		</control> 
+		<include name="ParamEmptyPosters">
+			<param name="left">22</param>
+		</include>
+		<include name="ParamEmptyPosters">
+			<param name="left">202</param>
+		</include>
+		<include name="ParamEmptyPosters">
+			<param name="left">382</param>
+		</include>
+		<include name="ParamEmptyPosters">
+			<param name="left">562</param>
+		</include>
+		<include name="ParamEmptyPosters">
+			<param name="left">742</param>
+		</include>
 	</include>
 
 	<include name="WidgetPosterLayout">
@@ -439,7 +416,9 @@
 		</definition>
 	</include>
 
-
+	<!-- ========================== -->
+	<!-- == Widgets      	 	== -->
+	<!-- ========================== -->
 
 	<include name="HomeWidgetsContainer">
 		<control type="group">
@@ -1744,7 +1723,6 @@
 			</control>
 
 		</control>
-
 	</include>
 
 </includes>

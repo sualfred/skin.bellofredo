@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes> 
+	<!-- ========================== -->
+	<!-- == Parameter includes	 == -->
+	<!-- ========================== -->
+	<include name="ParamLibraryStatsVerticalMenu">
+		<control type="group">
+			<animation type="Conditional" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">   
+				<effect type="fade" start="100" end="0" time="250" tween="sine" easing="inout" />
+			</animation>	
+			<animation type="Conditional" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">
+				<effect type="fade" delay="480" start="0" end="100" time="300" tween="sine" easing="in"  />
+			</animation>	
+			<visible>!Skin.HasSetting(HideWidgetLibraryStats) + !IsEmpty(Control.GetLabel(17))</visible>
+			<top>510</top>
+			<left>7</left>
+			<width>1235</width>
+			<control type="label">				
+				<width>1235</width>
+				<height>18</height>
+				<textcolor>white</textcolor>
+				<shadowcolor>55000000</shadowcolor>
+				<font>FontSize_30</font>
+				<align>left</align>			
+				<label>$PARAM[Headline]</label>										
+				<scroll>false</scroll>			
+			</control>
+		</control>
+	</include>
+	
+	<include name="ParamLibraryStatsVerticalMenuContent">
+		<control type="group">
+			<animation type="Conditional" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">   
+				<effect type="fade" start="100" end="0" time="250" tween="sine" easing="inout" />
+			</animation>	
+			<animation type="Conditional" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">
+				<effect type="fade" delay="480" start="0" end="100" time="300" tween="sine" easing="in"  />
+			</animation>	
+			<visible>!Skin.HasSetting(HideWidgetLibraryStats) + !IsEmpty(Control.GetLabel(17))</visible>
+			<top>510</top>
+			<left>7</left>
+			<width>1235</width>
+			<control type="label">	
+				<top>31</top>
+				<left>0</left>
+				<width>1235</width>
+				<height>18</height>
+				<textcolor>77white</textcolor>
+				<shadowcolor>55000000</shadowcolor>
+				<font>FontSize_20</font>
+				<align>left</align>			
+				<label fallback="195">$PARAM[Label]</label>				
+			</control>
+		</control>
+	</include>
+
 	<include name="ParamWidgetCounterLoading_Vertical">
 		<control type="label">
 			<left>7</left>
@@ -66,6 +120,34 @@
 			</control>
 		</control>
 	</include>
+
+	<include name="ParamEmptyBoxes_Vertical">
+		<control type="image">
+			<left>$PARAM[left]</left>
+			<top>5</top>
+			<width>190.5</width>
+			<height>190.5</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
+			<fadetime>800</fadetime>
+		</control> 
+	</include>
+
+	<include name="ParamEmptyPosters_Vertical">
+		<control type="image">
+			<left>$PARAM[left]</left>
+			<top>5</top>
+			<width>144.6</width>
+			<height>208.4</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
+			<fadetime>800</fadetime>
+		</control> 
+	</include>
+
+	<!-- ========================== -->
+	<!-- == Common includes	 	== -->
+	<!-- ========================== -->
 
 	<include name="WidgetContainer_Vertical">
 		<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>
@@ -150,7 +232,6 @@
 		<!--labels-->
 		<control type="grouplist">
 			<visible>!Container($PARAM[Container]).IsUpdating + !IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
-			<!--<include>VisibleFadeEffect</include>-->
 			<animation type="Hidden" reversible="false">   
 				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
 			</animation>	
@@ -346,18 +427,7 @@
 			</control>
 		</control>
 	</include>
-	<!-- empty box fallbacks -->	
-	<include name="ParamEmptyBoxes_Vertical">
-		<control type="image">
-			<left>$PARAM[left]</left>
-			<top>5</top>
-			<width>190.5</width>
-			<height>190.5</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
-			<fadetime>800</fadetime>
-		</control> 
-	</include>
+	
 	<include name="WidgetEmptyBoxes_Vertical">
 		<top>250</top>		
 		<left>1</left>
@@ -382,17 +452,7 @@
 			<param name="left">1031</param>
 		</include>
 	</include>
-	<include name="ParamEmptyPosters_Vertical">
-		<control type="image">
-			<left>$PARAM[left]</left>
-			<top>5</top>
-			<width>144.6</width>
-			<height>208.4</height>
-			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
-			<fadetime>800</fadetime>
-		</control> 
-	</include>
+	
 	<include name="WidgetEmptyPosters_Vertical">
 		<top>242</top>	
 		<width>1800</width>
@@ -422,8 +482,7 @@
 			<param name="left">1127</param>
 		</include>
 	</include>
-
-	<!-- poster layout -->
+	
 	<include name="WidgetPosterLayout_Vertical">		
 		<top>242</top>	
 		<width>1280</width>
@@ -523,7 +582,7 @@
 			</control>
 		</focusedlayout>
 	</include>
-	<!-- box layout -->
+
 	<include name="WidgetSquareLayout_Vertical">
 		<param name="aspectratio" default="scale"/>
 		<definition>
@@ -625,6 +684,10 @@
 		</definition>
 	</include>
 
+	<!-- ========================== -->
+	<!-- == Widgets      	 	== -->
+	<!-- ========================== -->
+
 
 	<include name="HomeWidgetsContainer_Vertical">
 		<control type="group">				
@@ -719,7 +782,7 @@
 				<control type="group">
 					<include name="FakeFadeLabel3of3"/>
 					<include name="ParamLibraryStatsVerticalMenuContent">				
-					<param name="Label">$INFO[Window(Home).Property(Movies.Watched),, $LOCALIZE[31477]]</param>
+						<param name="Label">$INFO[Window(Home).Property(Movies.Watched),, $LOCALIZE[31477]]</param>
 					</include>
 				</control>
 			</control>
@@ -812,7 +875,7 @@
 				<control type="group">
 					<include name="FakeFadeLabel3of3"/>
 					<include name="ParamLibraryStatsVerticalMenuContent">				
-					<param name="Label">$INFO[Window(Home).Property(Episodes.Watched),, $LOCALIZE[31478]]</param>
+						<param name="Label">$INFO[Window(Home).Property(Episodes.Watched),, $LOCALIZE[31478]]</param>
 					</include>
 				</control>
 
@@ -913,7 +976,7 @@
 				<control type="group">
 					<include name="FakeFadeLabel3of3"/>
 					<include name="ParamLibraryStatsVerticalMenuContent">				
-					<param name="Label">$INFO[Window(Home).Property(Music.ArtistsCount),, $LOCALIZE[133]]</param>
+						<param name="Label">$INFO[Window(Home).Property(Music.ArtistsCount),, $LOCALIZE[133]]</param>
 					</include>
 				</control>
 			</control>
@@ -1640,7 +1703,6 @@
 					<param name="Container">654</param>   
 				</include>
 			</control>
-
 		</control>
 	</include>
 

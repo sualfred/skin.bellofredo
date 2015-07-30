@@ -17,7 +17,6 @@
 	<include file="IncludesPVR.xml" />
 	<include file="script-skinshortcuts-includes.xml" />
 	<include file="IncludesDialogs.xml" />
-	<include file="IncludesWidgets.xml" />
 	<include file="IncludesWidgetContainer.xml" />
 	<include file="IncludesWidgetContainer_Vertical.xml" />
 
@@ -3111,5 +3110,64 @@
 		<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 		<texture background="true" diffuse="thumbs/video_diffuse.png">thumbs/video_overlay_noglass.png</texture>
 	</control>
+</include>
+
+
+<!-- hidden library stat labels -->
+<include name="HiddenLibraryStats">
+	<control type="group" id="16">
+		<visible>!Skin.HasSetting(HideLibraryStats) + [StringCompare(Container(20).ListItem.Property(defaultID),movies) | StringCompare(Container(20).ListItem.Property(defaultID),music) | StringCompare(Container(20).ListItem.Property(defaultID),tvshows)]</visible>
+		<control type="label" id="17">
+			<label>$VAR[LibraryInfoLabel]</label>			
+			<include>TopButton</include>
+		</control>
+		<control type="label" id="18">
+			<label>$VAR[LibraryInfoLabel2]</label>
+			<include>TopButton</include>
+		</control>
+		<control type="label" id="19">
+			<label>$VAR[LibraryInfoLabel3]</label>
+			<include>TopButton</include>
+		</control>
+	</control>
+</include>
+
+<!-- custom widget path -->
+<include name="widgetgroup-custompath">
+	<content limit="$PARAM[Limit]" target="$PARAM[Target]">$INFO[Skin.String(CustomWidgetPath$PARAM[GroupNo].List)]</content>
+</include>
+
+<!-- custom widget group -->
+<include name="widgetgroup-customgroup">
+	<content>
+		<include>skinshortcuts-group-widgetgroup$PARAM[GroupNo]</include>
+	</content>
+</include>
+
+<!-- item counter -->
+<include name="widgetItemCounter">
+	<control type="label">
+		<left>$PARAM[left]</left>
+		<top>216</top>
+		<width>1280</width>
+		<height>70</height>
+		<aligny>top</aligny>
+		<align>$PARAM[align]</align>			
+		<textcolor>77white</textcolor>
+		<shadowcolor>55000000</shadowcolor>
+		<font>FontSize_16</font>							
+		<include>VisibleFadeEffect4</include>			
+	</control>
+</include>
+
+<!-- arrows -->
+<include name="ArrowDimension">
+	<left>150</left>
+	<top>337</top>
+	<width>828</width>
+	<height>25</height>
+</include>
+<include name="ArrowWidth">
+	<left>956</left>
 </include>
 </includes>

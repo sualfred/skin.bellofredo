@@ -1,3 +1,12 @@
+[B][COLOR=FF56ADDA]v4.5.8[/COLOR][/B]
+• Added: Optional vertical menu
+• Added: Hewbrew language
+• Added: More customize options and new look for the Top Menu 
+• Fixed: Amazon add-on and YouTube add-on widget issues (finally)
+• Fixed: YouTube viewtype change right after playback
+• Fixed: Billions of other small things and conditions
+• And a code cleanup as hell
+
 [B][COLOR=FF56ADDA]v4.5.7[/COLOR][/B]
 • Changed: Home menu animations (smoooooooth as hell)
 • Fixed: NetFlix views page width
