@@ -1,5 +1,6 @@
 [B][COLOR=FF56ADDA]v4.5.8[/COLOR][/B]
 • Added: Optional vertical menu
+• Added: New PVR widget -> All TV Channels
 • Added: Hewbrew language
 • Added: More customize options and new look for the Top Menu 
 • Fixed: Amazon add-on and YouTube add-on widget issues (finally)
