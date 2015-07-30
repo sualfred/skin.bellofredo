@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes> 
+	<include name="FakeFadeLabel1of3">
+		<param name="condition" default="true"/>
+		<definition>
+			<animation type="Conditional" reversible="false" condition="$PARAM[condition]" loop="true">
+				<effect type="fade" start="0" end="100" time="500" delay="0" />
+				<effect type="fade" start="100" end="0" time="500" delay="10000" />
+				<effect type="fade" start="100" end="0" time="500" delay="20000" />
+				<effect type="fade" start="100" end="0" time="500" delay="30000" />
+			</animation>			
+		</definition>
+	</include>
+	<include name="FakeFadeLabel2of3">
+		<param name="condition" default="true"/>
+		<definition>
+			<animation type="Conditional" reversible="false" condition="$PARAM[condition]" loop="true">
+				<effect type="fade" start="0" end="100" time="500" delay="10500" />
+				<effect type="fade" start="100" end="0" time="500" delay="20000" />
+				<effect type="fade" start="100" end="0" time="500" delay="30000" />
+			</animation>			
+		</definition>
+	</include>
+	<include name="FakeFadeLabel3of3">
+		<param name="condition" default="true"/>
+		<definition>
+			<animation type="Conditional" reversible="false" condition="$PARAM[condition]" loop="true">
+				<effect type="fade" start="0" end="100" time="500" delay="20500" />
+				<effect type="fade" start="100" end="0" time="500" delay="30000" />
+			</animation>			
+		</definition>
+	</include>
 
 	<include name="FakeFadeLabel">
 		<animation type="Conditional" reversible="false" condition="$PARAM[condition]" loop="true">

@@ -42,7 +42,22 @@
 				<label>$PARAM[Headline]</label>										
 				<scroll>false</scroll>			
 			</control>
-			<control type="fadelabel">	
+		</control>
+	</include>
+	<!-- library stats vertical menu param content defintions -->
+	<include name="ParamLibraryStatsVerticalMenuContent">
+		<control type="group">
+			<animation type="Conditional" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">   
+				<effect type="fade" start="100" end="0" time="250" tween="sine" easing="inout" />
+			</animation>	
+			<animation type="Conditional" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">
+				<effect type="fade" delay="480" start="0" end="100" time="300" tween="sine" easing="in"  />
+			</animation>	
+			<visible>!Skin.HasSetting(HideWidgetLibraryStats) + !IsEmpty(Control.GetLabel(17))</visible>
+			<top>510</top>
+			<left>7</left>
+			<width>1235</width>
+			<control type="label">	
 				<top>31</top>
 				<left>0</left>
 				<width>1235</width>
@@ -51,13 +66,7 @@
 				<shadowcolor>55000000</shadowcolor>
 				<font>FontSize_20</font>
 				<align>left</align>			
-				<label>$PARAM[Label1]</label>						
-				<label>$PARAM[Label2]</label>						
-				<label>$PARAM[Label3]</label>
-				<scroll>false</scroll>
-				<scrollout>false</scrollout>
-				<scrollspeed>100</scrollspeed>
-				<pauseatend>4000</pauseatend>						
+				<label fallback="195">$PARAM[Label]</label>				
 			</control>
 		</control>
 	</include>
@@ -89,6 +98,7 @@
 			<include>VisibleFadeEffect4</include>			
 		</control>
 	</include>
+
 	<!-- arrows -->
 	<include name="ArrowDimension">
 		<left>150</left>
@@ -99,5 +109,7 @@
 	<include name="ArrowWidth">
 		<left>956</left>
 	</include>
+
+
 
 </includes>

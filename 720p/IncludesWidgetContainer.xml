@@ -339,67 +339,24 @@
 	</include>
 
 	<include name="WidgetSquareLayout">
-		<top>250</top>		
-		<centerleft>50%</centerleft>
-		<width>905</width>
-		<height>360</height>
-		<preloaditems>3</preloaditems>
-		<focusposition>0</focusposition>
-		<onup condition="Control.IsVisible(65)">SetFocus(65)</onup>
-		<onup condition="Control.IsVisible(46)">SetFocus(46)</onup>
-		<onup condition="Control.IsVisible(55)">SetFocus(55)</onup>
-		<onup condition="!Control.IsVisible(65) + !Control.IsVisible(46) + !Control.IsVisible(55)">SetFocus(21)</onup>
-		<ondown>SetFocus(20)</ondown>
-		<onback>SetFocus(20)</onback>
-		<movement>3</movement>
-		<orientation>horizontal</orientation>
-		<scrolltime tween="Quadratic" easing="out">300</scrolltime>
-		<itemlayout height="200" width="225">
-			<control type="image">
-				<left>20</left>
-				<top>5</top>
-				<width>190.5</width>
-				<height>190.5</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
-			</control>
-			<control type="image">
-				<left>20</left>
-				<top>5</top>
-				<width>190.5</width>
-				<height>190.5</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-				<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>		
-				<visible>!Control.IsVisible(654)</visible>
-			</control>
-			<control type="image">
-				<left>20</left>
-				<top>5</top>
-				<width>190.5</width>
-				<height>190.5</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-				<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>		
-				<visible>Control.IsVisible(654)</visible>
-			</control>
-			<control type="image">
-				<left>14</left>
-				<top>-1</top>
-				<width>203</width>
-				<height>203</height>
-				<texture background="true">osd/widgets/square_overlay.png</texture>
-				<aspectratio align="center" aligny="center">stretch</aspectratio>
-			</control>
-		</itemlayout>
-		<focusedlayout height="200" width="225">
-			<control type="group">				
-				<animation type="Focus" reversible="false" >
-					<effect type="zoom" start="100" end="95" time="100" tween="back" easing="in" center="auto"/>
-					<effect type="fade" start="100" end="90" time="100" tween="sine" easing="in" />
-				</animation>
-				<animation type="UnFocus" reversible="false" >
-					<effect type="zoom" start="95" end="100" time="100" tween="back" easing="in" center="auto" />
-					<effect type="fade" start="90" end="100" time="100" tween="sine" easing="in" />
-				</animation>
+		<param name="aspectratio" default="scale"/>
+		<definition>
+			<top>250</top>		
+			<centerleft>50%</centerleft>
+			<width>905</width>
+			<height>360</height>
+			<preloaditems>3</preloaditems>
+			<focusposition>0</focusposition>
+			<onup condition="Control.IsVisible(65)">SetFocus(65)</onup>
+			<onup condition="Control.IsVisible(46)">SetFocus(46)</onup>
+			<onup condition="Control.IsVisible(55)">SetFocus(55)</onup>
+			<onup condition="!Control.IsVisible(65) + !Control.IsVisible(46) + !Control.IsVisible(55)">SetFocus(21)</onup>
+			<ondown>SetFocus(20)</ondown>
+			<onback>SetFocus(20)</onback>
+			<movement>3</movement>
+			<orientation>horizontal</orientation>
+			<scrolltime tween="Quadratic" easing="out">300</scrolltime>
+			<itemlayout height="200" width="225">
 				<control type="image">
 					<left>20</left>
 					<top>5</top>
@@ -413,47 +370,73 @@
 					<top>5</top>
 					<width>190.5</width>
 					<height>190.5</height>
-					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>		
-					<visible>!Control.IsVisible(654)</visible>
-				</control>
-				<control type="image">
-					<left>20</left>
-					<top>5</top>
-					<width>190.5</width>
-					<height>190.5</height>
-					<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>		
-					<visible>Control.IsVisible(654)</visible>
+					<aspectratio align="center" aligny="center" scalediffuse="false">$PARAM[aspectratio]</aspectratio>
+					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
 				</control>
 				<control type="image">
 					<left>14</left>
 					<top>-1</top>
-					<width>202.5</width>
-					<height>202.5</height>
+					<width>203</width>
+					<height>203</height>
 					<texture background="true">osd/widgets/square_overlay.png</texture>
 					<aspectratio align="center" aligny="center">stretch</aspectratio>
 				</control>
-				<control type="image">
-					<left>15</left>
-					<top>0</top>
-					<width>200</width>
-					<height>200</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>				
-					<texture border="10,10,10,10">osd/widgets/square_focus.png</texture>
-					<animation type="Conditional" condition="![Control.IsVisible(4513) | Control.IsVisible(4514)]" reversible="false">
-						<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
-						<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+			</itemlayout>
+			<focusedlayout height="200" width="225">
+				<control type="group">				
+					<animation type="Focus" reversible="false" >
+						<effect type="zoom" start="100" end="95" time="100" tween="back" easing="in" center="auto"/>
+						<effect type="fade" start="100" end="90" time="100" tween="sine" easing="in" />
 					</animation>
-					<animation type="Conditional" condition="[Control.IsVisible(4513) | Control.IsVisible(4514)]" reversible="false">
-						<effect type="zoom" start="100" end="95" time="200" tween="sine" easing="inout" center="auto" />
-						<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+					<animation type="UnFocus" reversible="false" >
+						<effect type="zoom" start="95" end="100" time="100" tween="back" easing="in" center="auto" />
+						<effect type="fade" start="90" end="100" time="100" tween="sine" easing="in" />
 					</animation>
-					<visible>![Control.IsVisible(4513) | Control.IsVisible(4514)]</visible>
-					<visible>!Control.HasFocus(46) + !Control.HasFocus(55) + !Control.HasFocus(65) + !Control.HasFocus(66)</visible>
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>190.5</width>
+						<height>190.5</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
+					</control>
+					<control type="image">
+						<left>20</left>
+						<top>5</top>
+						<width>190.5</width>
+						<height>190.5</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">$PARAM[aspectratio]</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>	
+					</control>
+					<control type="image">
+						<left>14</left>
+						<top>-1</top>
+						<width>202.5</width>
+						<height>202.5</height>
+						<texture background="true">osd/widgets/square_overlay.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<top>0</top>
+						<width>200</width>
+						<height>200</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>				
+						<texture border="10,10,10,10">osd/widgets/square_focus.png</texture>
+						<animation type="Conditional" condition="![Control.IsVisible(4513) | Control.IsVisible(4514)]" reversible="false">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+						</animation>
+						<animation type="Conditional" condition="[Control.IsVisible(4513) | Control.IsVisible(4514)]" reversible="false">
+							<effect type="zoom" start="100" end="95" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+						</animation>
+						<visible>![Control.IsVisible(4513) | Control.IsVisible(4514)]</visible>
+						<visible>!Control.HasFocus(46) + !Control.HasFocus(55) + !Control.HasFocus(65) + !Control.HasFocus(66)</visible>
+					</control>
 				</control>
-			</control>
-		</focusedlayout>
+			</focusedlayout>
+		</definition>
 	</include>
 
 
@@ -1747,7 +1730,9 @@
 					<include>TopButton</include>
 				</control>
 				<control type="fixedlist" id="654">	
-					<include>WidgetSquareLayout</include>
+					<include name="WidgetSquareLayout">
+						<param name="aspectratio">keep</param>
+					</include>
 					<content target="videos">pvr://channels/tv/all channels/</content>
 				</control>
 				<include name="WidgetBottomLabels">

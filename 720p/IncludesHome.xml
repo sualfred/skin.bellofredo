@@ -14,13 +14,6 @@
 			<animation effect="fade" time="0" start="100" end="75" condition="!Skin.HasTheme(ElegantDark) + [Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)]">Conditional</animation>
 			<animation effect="fade" time="0" start="100" end="50" condition="Skin.HasTheme(ElegantDark) + [Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)]">Conditional</animation>
 		</control>
-		<!--
-		<control type="image">
-			<include>FullscreenDimensions</include>
-			<texture background="true">windows/bg/black_pulse.png</texture>
-			<animation effect="fade" time="0" end="70" condition="true">Conditional</animation>
-			<visible>Skin.HasSetting(DisablePurpleBar)</visible>
-		</control>-->
 		<control type="image">
 			<include>FullscreenDimensions</include>
 			<texture background="true">windows/bg/colors_pulse.png</texture>
@@ -457,6 +450,26 @@
 		</control>
 		<!--pulse bar -->
 		<include>PulseBar</include>
+		<!--seperator-->
+		<control type="image">
+			<left>405</left>
+			<top>130</top>
+			<texture>info/seperator_fade.png</texture>
+			<colordiffuse>33white</colordiffuse>
+			<width>1</width>
+			<height>500</height>
+			<include>WidgetMainMenuSlideAnimations_Vertical</include>
+			<include>HomeSlideAnimations</include>
+			<animation type="Visible" tween="sine" easing="out">
+				<effect type="zoom" start="0" end="100" center="auto" time="450" delay="200" />
+				<effect type="fade" start="0" end="80" time="450" delay="200" />
+			</animation>
+			<animation type="Hidden" tween="sine" easing="out">
+				<effect type="zoom" start="100" end="0" center="auto" time="350" delay="0"/>
+				<effect type="fade" start="80" end="0" time="350" delay="0"/>
+			</animation>
+			<visible>!Skin.HasSetting(HideVerticalMenuSeperator)</visible>
+		</control>
 		<!-- main group -->
 		<control type="group">
 			<visible allowhiddenfocus="true">!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4) + !Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
@@ -465,7 +478,7 @@
 			<!-- main menu -->
 			<control type="group">
 				<control type="fixedlist" id="20">
-					<animation effect="slide" time="0" start="0,0" end="25,0" condition="Skin.HasSetting(HideVerticalMenuIcons)">Conditional</animation>
+					<animation effect="slide" time="0" start="0,0" end="48,0" condition="Skin.HasSetting(HideVerticalMenuIcons)">Conditional</animation>
 					<include>WidgetMainMenuSlideAnimations_Vertical</include>
 					<include>HomeSlideAnimations</include>
 					<visible allowhiddenfocus="true">!Control.HasFocus(23)</visible>
@@ -476,7 +489,7 @@
 					<height>480</height>
 					<align>right</align>
 					<onright condition="!IsEmpty(Container(20).ListItem.Property(widget)) | !IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">SetProperty(WidgetHasFocus,1,Home)</onright>
-					<onright condition="IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">Select</onright>
+					<!--<onright condition="IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">Select</onright>-->
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),movies)">SetFocus(90501)</onright>
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),tvshows)">SetFocus(90601)</onright>
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),music)">SetFocus(45)</onright>

@@ -266,7 +266,7 @@
 
 				<!--Small Down Info-->
 				<control type="grouplist">
-					<animation effect="slide" time="0" end="0,-26" condition="IsEmpty(Container($PARAM[Container]).ListItem.Tagline) + IsEmpty(Container($PARAM[Container]).ListItem.Genre) + !StringCompare(Container(20).ListItem.Property(widget),tvchannels)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,-26" condition="[!Control.HasFocus(654) + IsEmpty(Container($PARAM[Container]).ListItem.Tagline) + IsEmpty(Container($PARAM[Container]).ListItem.Genre) + !StringCompare(Container(20).ListItem.Property(widget),tvchannels)]  | [Control.HasFocus(654) + !Container(654).ListItem.HasEpg]">Conditional</animation>
 					<top>62</top>
 					<left>-1</left>
 					<orientation>horizontal</orientation>
@@ -525,68 +525,26 @@
 	</include>
 	<!-- box layout -->
 	<include name="WidgetSquareLayout_Vertical">
-		<top>250</top>
-		<left>1</left>	
-		<width>1800</width>
-		<height>450</height>
-		<preloaditems>3</preloaditems>
-		<focusposition>0</focusposition>		
-		<movement>4</movement>
-		<onup condition="Control.IsVisible(65)">SetFocus(65)</onup>
-		<onup condition="Control.IsVisible(46)">SetFocus(46)</onup>
-		<onup condition="Control.IsVisible(55)">SetFocus(55)</onup>
-		<onup condition="!Control.IsVisible(65) + !Control.IsVisible(46) + !Control.IsVisible(55) + [Control.IsVisible(210) | Control.IsVisible(211) | Control.IsVisible(212) | Control.IsVisible(214)]">SetFocus(21)</onup>
-		<ondown>SetFocus(20)</ondown>
-		<onback>SetFocus(20)</onback>
-		<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
-		<onback>ClearProperty(WidgetHasFocus,Home)</onback>
-		<orientation>horizontal</orientation>
-		<scrolltime tween="Quadratic" easing="out">300</scrolltime>
-		<itemlayout height="200" width="205">
-			<control type="image">
-				<left>6</left>
-				<top>5</top>
-				<width>190.5</width>
-				<height>190.5</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
-			</control>
-			<control type="image">
-				<left>6</left>
-				<top>5</top>
-				<width>190.5</width>
-				<height>190.5</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-				<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>				
-				<visible>!Control.IsVisible(9064)</visible>
-			</control>
-			<control type="image">
-				<left>6</left>
-				<top>5</top>
-				<width>190.5</width>
-				<height>190.5</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-				<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
-				<visible>Control.IsVisible(9064)</visible>
-			</control>
-			<control type="image">
-				<top>-1</top>
-				<width>203</width>
-				<height>203</height>
-				<texture background="true">osd/widgets/square_overlay.png</texture>
-				<aspectratio align="center" aligny="center">stretch</aspectratio>
-			</control>
-		</itemlayout>
-		<focusedlayout height="200" width="205">
-			<control type="group">				
-				<animation type="Focus" reversible="false" >
-					<effect type="zoom" start="100" end="95" time="100" tween="back" easing="in" center="auto"/>
-					<effect type="fade" start="100" end="90" time="100" tween="sine" easing="in" />
-				</animation>
-				<animation type="UnFocus" reversible="false" >
-					<effect type="zoom" start="95" end="100" time="100" tween="back" easing="in" center="auto" />
-					<effect type="fade" start="90" end="100" time="100" tween="sine" easing="in" />
-				</animation>
+		<param name="aspectratio" default="scale"/>
+		<definition>
+			<top>250</top>
+			<left>1</left>	
+			<width>1800</width>
+			<height>450</height>
+			<preloaditems>3</preloaditems>
+			<focusposition>0</focusposition>		
+			<movement>4</movement>
+			<onup condition="Control.IsVisible(65)">SetFocus(65)</onup>
+			<onup condition="Control.IsVisible(46)">SetFocus(46)</onup>
+			<onup condition="Control.IsVisible(55)">SetFocus(55)</onup>
+			<onup condition="!Control.IsVisible(65) + !Control.IsVisible(46) + !Control.IsVisible(55) + [Control.IsVisible(210) | Control.IsVisible(211) | Control.IsVisible(212) | Control.IsVisible(214)]">SetFocus(21)</onup>
+			<ondown>SetFocus(20)</ondown>
+			<onback>SetFocus(20)</onback>
+			<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+			<onback>ClearProperty(WidgetHasFocus,Home)</onback>
+			<orientation>horizontal</orientation>
+			<scrolltime tween="Quadratic" easing="out">300</scrolltime>
+			<itemlayout height="200" width="205">
 				<control type="image">
 					<left>6</left>
 					<top>5</top>
@@ -600,56 +558,71 @@
 					<top>5</top>
 					<width>190.5</width>
 					<height>190.5</height>
-					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
-					<visible>!Control.IsVisible(9064)</visible>
-				</control>
-				<control type="image">
-					<left>6</left>
-					<top>5</top>
-					<width>190.5</width>
-					<height>190.5</height>
-					<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
-					<visible>Control.IsVisible(9064)</visible>
+					<aspectratio align="center" aligny="center" scalediffuse="false">$PARAM[aspectratio]</aspectratio>
+					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>				
 				</control>
 				<control type="image">
 					<top>-1</top>
-					<width>202.5</width>
-					<height>202.5</height>
+					<width>203</width>
+					<height>203</height>
 					<texture background="true">osd/widgets/square_overlay.png</texture>
 					<aspectratio align="center" aligny="center">stretch</aspectratio>
 				</control>
-				<control type="image">
-					<left>1</left>
-					<top>0</top>
-					<width>200</width>
-					<height>200</height>
-					<aspectratio align="center" aligny="center">stretch</aspectratio>				
-					<texture border="10,10,10,10">osd/widgets/square_focus.png</texture>
-					<animation type="Conditional" condition="![Control.IsVisible(4513) | Control.IsVisible(4514)]" reversible="false">
-						<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
-						<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+			</itemlayout>
+			<focusedlayout height="200" width="205">
+				<control type="group">				
+					<animation type="Focus" reversible="false" >
+						<effect type="zoom" start="100" end="95" time="100" tween="back" easing="in" center="auto"/>
+						<effect type="fade" start="100" end="90" time="100" tween="sine" easing="in" />
 					</animation>
-					<animation type="Conditional" condition="[Control.IsVisible(4513) | Control.IsVisible(4514)]" reversible="false">
-						<effect type="zoom" start="100" end="95" time="200" tween="sine" easing="inout" center="auto" />
-						<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+					<animation type="UnFocus" reversible="false" >
+						<effect type="zoom" start="95" end="100" time="100" tween="back" easing="in" center="auto" />
+						<effect type="fade" start="90" end="100" time="100" tween="sine" easing="in" />
 					</animation>
-					<visible>!Control.IsVisible(4513) + !Control.IsVisible(4514) + !IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
-					<visible>!Control.HasFocus(46) + !Control.HasFocus(55) + !Control.HasFocus(65) + !Control.HasFocus(66)</visible>
+					<control type="image">
+						<left>6</left>
+						<top>5</top>
+						<width>190.5</width>
+						<height>190.5</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
+					</control>
+					<control type="image">
+						<left>6</left>
+						<top>5</top>
+						<width>190.5</width>
+						<height>190.5</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">$PARAM[aspectratio]</aspectratio>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+					</control>
+					<control type="image">
+						<top>-1</top>
+						<width>202.5</width>
+						<height>202.5</height>
+						<texture background="true">osd/widgets/square_overlay.png</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<left>1</left>
+						<top>0</top>
+						<width>200</width>
+						<height>200</height>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>				
+						<texture border="10,10,10,10">osd/widgets/square_focus.png</texture>
+						<animation type="Conditional" condition="![Control.IsVisible(4513) | Control.IsVisible(4514)]" reversible="false">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+						</animation>
+						<animation type="Conditional" condition="[Control.IsVisible(4513) | Control.IsVisible(4514)]" reversible="false">
+							<effect type="zoom" start="100" end="95" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+						</animation>
+						<visible>!Control.IsVisible(4513) + !Control.IsVisible(4514) + !IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+						<visible>!Control.HasFocus(46) + !Control.HasFocus(55) + !Control.HasFocus(65) + !Control.HasFocus(66)</visible>
+					</control>
 				</control>
-			</control>
-		</focusedlayout>
-	</include>
-
-	<include name="ArrowDimension_Vertical">
-		<left>150</left>
-		<top>337</top>
-		<width>828</width>
-		<height>25</height>
-	</include>
-	<include name="ArrowWidth_Vertical">
-		<left>956</left>
+			</focusedlayout>
+		</definition>
 	</include>
 
 
@@ -727,13 +700,28 @@
 				<include name="ParamWidgetCounterLoading_Vertical">
 					<param name="Container">250</param>  
 				</include>
-				<!-- library stats -->		
+				<!-- library stats -->	
 				<include name="ParamLibraryStatsVerticalMenu">
 					<param name="Headline">$LOCALIZE[31200]</param>
-					<param name="Label1">$INFO[Window(Home).Property(Movies.Count),, $LOCALIZE[20342]]</param>
-					<param name="Label2">$INFO[Window(Home).Property(Movies.UnWatched),, $LOCALIZE[31475]]</param>
-					<param name="Label3">$INFO[Window(Home).Property(Movies.Watched),, $LOCALIZE[31477]]</param>
 				</include>
+				<control type="group">
+					<include name="FakeFadeLabel1of3" />
+					<include name="ParamLibraryStatsVerticalMenuContent">				
+						<param name="Label">$INFO[Window(Home).Property(Movies.Count),, $LOCALIZE[20342]]</param>
+					</include>
+				</control>
+				<control type="group">
+					<include name="FakeFadeLabel2of3"/>		
+					<include name="ParamLibraryStatsVerticalMenuContent">				
+						<param name="Label">$INFO[Window(Home).Property(Movies.UnWatched),, $LOCALIZE[31475]]</param>
+					</include>
+				</control>
+				<control type="group">
+					<include name="FakeFadeLabel3of3"/>
+					<include name="ParamLibraryStatsVerticalMenuContent">				
+					<param name="Label">$INFO[Window(Home).Property(Movies.Watched),, $LOCALIZE[31477]]</param>
+					</include>
+				</control>
 			</control>
 
 			<!-- =========== -->
@@ -804,13 +792,30 @@
 				<include name="ParamWidgetCounterLoading_Vertical">
 					<param name="Container">350</param>  
 				</include>
+
 				<!-- library stats -->	
 				<include name="ParamLibraryStatsVerticalMenu">
-					<param name="Headline">$LOCALIZE[31201]</param>			
-					<param name="Label1">$INFO[Window(Home).Property(TVShows.Count),, $LOCALIZE[31002]]</param>
-					<param name="Label2">$INFO[Window(Home).Property(Episodes.UnWatched),, $LOCALIZE[31476]]</param>
-					<param name="Label3">$INFO[Window(Home).Property(Episodes.Watched),, $LOCALIZE[31478]]</param>
+					<param name="Headline">$LOCALIZE[31201]</param>
 				</include>
+				<control type="group">
+					<include name="FakeFadeLabel1of3" />
+					<include name="ParamLibraryStatsVerticalMenuContent">				
+						<param name="Label">$INFO[Window(Home).Property(TVShows.Count),, $LOCALIZE[31002]]</param>
+					</include>
+				</control>
+				<control type="group">
+					<include name="FakeFadeLabel2of3"/>		
+					<include name="ParamLibraryStatsVerticalMenuContent">				
+						<param name="Label">$INFO[Window(Home).Property(Episodes.UnWatched),, $LOCALIZE[31476]]</param>
+					</include>
+				</control>
+				<control type="group">
+					<include name="FakeFadeLabel3of3"/>
+					<include name="ParamLibraryStatsVerticalMenuContent">				
+					<param name="Label">$INFO[Window(Home).Property(Episodes.Watched),, $LOCALIZE[31478]]</param>
+					</include>
+				</control>
+
 			</control>
 
 			<!-- =========== -->
@@ -890,12 +895,27 @@
 					<param name="Container">450</param>   
 				</include>
 				<!-- library stats -->	
-				<include name="ParamLibraryStatsVerticalMenu">		
-					<param name="Headline">$LOCALIZE[31202]</param>				
-					<param name="Label1">$INFO[Window(Home).Property(Music.AlbumsCount),, $LOCALIZE[132]]</param>
-					<param name="Label2">$INFO[Window(Home).Property(Music.SongsCount),, $LOCALIZE[134]]</param>
-					<param name="Label3">$INFO[Window(Home).Property(Music.ArtistsCount),, $LOCALIZE[133]]</param>
+				<include name="ParamLibraryStatsVerticalMenu">
+					<param name="Headline">$LOCALIZE[31202]</param>
 				</include>
+				<control type="group">
+					<include name="FakeFadeLabel1of3" />
+					<include name="ParamLibraryStatsVerticalMenuContent">				
+						<param name="Label">$INFO[Window(Home).Property(Music.AlbumsCount),, $LOCALIZE[132]]</param>
+					</include>
+				</control>
+				<control type="group">
+					<include name="FakeFadeLabel2of3"/>		
+					<include name="ParamLibraryStatsVerticalMenuContent">				
+						<param name="Label">$INFO[Window(Home).Property(Music.SongsCount),, $LOCALIZE[134]]</param>
+					</include>
+				</control>
+				<control type="group">
+					<include name="FakeFadeLabel3of3"/>
+					<include name="ParamLibraryStatsVerticalMenuContent">				
+					<param name="Label">$INFO[Window(Home).Property(Music.ArtistsCount),, $LOCALIZE[133]]</param>
+					</include>
+				</control>
 			</control>
 
 			<!-- =========== -->
@@ -1608,7 +1628,9 @@
 					<include>TopButton</include>
 				</control>
 				<control type="fixedlist" id="654">	
-					<include>WidgetSquareLayout_Vertical</include>
+					<include name="WidgetSquareLayout_Vertical">
+						<param name="aspectratio">keep</param>
+					</include>
 					<content target="videos">pvr://channels/tv/all channels/</content>
 				</control>
 				<include name="WidgetBottomLabels_Vertical">

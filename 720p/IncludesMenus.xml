@@ -128,82 +128,108 @@
 	</include>
 	<!-- Home SubMenus -->
 	<include name="VerticalHomeSubMenus">
+
+		<control type="group">
+			<visible allowhiddenfocus="true">![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Container(20).OnNext | Container(20).OnPrevious] + Control.HasFocus(23)</visible>
+			<include>HomeSlideAnimations</include>
+			<left>93</left>
+			<top>140</top>
+			<width>1600</width>
+			<height>480</height>
+			<align>right</align>
+			<control type="label">
+				<width>290</width>
+				<textcolor>white</textcolor>
+				<shadowcolor>55000000</shadowcolor>
+				<font>FontSize_40</font>
+				<align>right</align>
+				<label>$INFO[Control.GetLabel(20)]</label>
+			</control>
+		</control>
+
+
 		<control type="list" id="23">
 			<description>SubMenu Container Movies</description>
+			<animation effect="slide" time="0" start="0,0" end="48,0" condition="Skin.HasSetting(HideVerticalMenuIcons)">Conditional</animation>
 			<visible allowhiddenfocus="true">![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Container(20).OnNext | Container(20).OnPrevious] + Control.HasFocus(23)</visible>
 			<include>HomeSlideAnimations</include>
 			<left>45</left>
-			<top>140</top>
+			<top>190</top>
 			<width>1600</width>
-			<height>440</height>
+			<height>430</height>
 			<align>right</align>
 			<onright>20</onright>
 			<onleft>20</onleft>
-			<itemlayout width="350" height="40">
+			<itemlayout width="335" height="40">
 				<control type="label">
-					<width>305</width>
+					<width>290</width>
 					<textcolor>55white</textcolor>
 					<shadowcolor>55000000</shadowcolor>
-					<font>FontSize_30</font>
+					<font>FontSize_22</font>
 					<align>right</align>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
 				<control type="image">
 					<top>5</top>
-					<left>325</left>
+					<left>310</left>
 					<width>25</width>
 					<height>25</height>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<texture background="true" fallback="special://skin/extras/icons/shortcut.png">$INFO[ListItem.Icon]</texture>
 					<colordiffuse>55white</colordiffuse>
+					<visible>!Skin.HasSetting(HideVerticalMenuIcons)</visible>
 				</control>
 			</itemlayout>
-			<focusedlayout width="350" height="40">
-				<animation type="Focus" reversible="false" condition="Container(23).OnPrevious ">
-					<effect type="fade" start="20" end="100" time="500"/>
-					<effect type="slide" start="0,45" end="0,0" time="400" tween="back" easing="out"/>
-				</animation>
-				<animation type="Focus" reversible="false" condition="Container(23).OnNext ">
-					<effect type="fade" start="20" end="100" time="500"/>
-					<effect type="slide" start="0,-45" end="0,0" time="400" tween="back" easing="out"/>
-				</animation>
-				<control type="label">
-					<width>305</width>
-					<textcolor>white</textcolor>
-					<shadowcolor>55000000</shadowcolor>
-					<font>FontSize_30B</font>
-					<align>right</align>
-					<label>$INFO[ListItem.Label]</label>
-					<visible>Control.HasFocus(23)</visible>
-				</control>
-				<control type="label">
-					<width>305</width>
-					<textcolor>55white</textcolor>
-					<shadowcolor>55000000</shadowcolor>
-					<font>FontSize_30</font>
-					<align>right</align>
-					<label>$INFO[ListItem.Label]</label>
-					<visible>!Control.HasFocus(23)</visible>
-				</control>
-				<control type="image">
-					<top>5</top>
-					<left>325</left>
-					<width>25</width>
-					<height>25</height>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<texture background="true" fallback="special://skin/extras/icons/shortcut.png">$INFO[ListItem.Icon]</texture>
-					<colordiffuse>white</colordiffuse>
-					<visible>Control.HasFocus(23)</visible>
-				</control>
-				<control type="image">
-					<top>5</top>
-					<left>325</left>
-					<width>25</width>
-					<height>25</height>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<texture background="true" fallback="special://skin/extras/icons/shortcut.png">$INFO[ListItem.Icon]</texture>
-					<colordiffuse>55white</colordiffuse>
-					<visible>!Control.HasFocus(23)</visible>
+			<focusedlayout width="335" height="40">
+				<control type="group">
+					<animation type="Focus" reversible="false" condition="Container(23).OnPrevious">
+						<effect type="fade" start="20" end="100" time="500"/>
+						<effect type="slide" start="0,45" end="0,0" time="400" tween="back" easing="out"/>
+					</animation>
+					<animation type="Focus" reversible="false" condition="Container(23).OnNext">
+						<effect type="fade" start="20" end="100" time="500"/>
+						<effect type="slide" start="0,-45" end="0,0" time="400" tween="back" easing="out"/>
+					</animation>
+					<control type="label">
+						<width>290</width>
+						<textcolor>white</textcolor>
+						<shadowcolor>55000000</shadowcolor>
+						<font>FontSize_30B</font>
+						<align>right</align>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>Control.HasFocus(23)</visible>
+					</control>
+					<control type="label">
+						<width>290</width>
+						<textcolor>55white</textcolor>
+						<shadowcolor>55000000</shadowcolor>
+						<font>FontSize_30</font>
+						<align>right</align>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!Control.HasFocus(23)</visible>
+					</control>
+					<control type="image">
+						<top>5</top>
+						<left>310</left>
+						<width>25</width>
+						<height>25</height>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture background="true" fallback="special://skin/extras/icons/shortcut.png">$INFO[ListItem.Icon]</texture>
+						<colordiffuse>white</colordiffuse>
+						<visible>Control.HasFocus(23)</visible>
+						<visible>!Skin.HasSetting(HideVerticalMenuIcons)</visible>
+					</control>
+					<control type="image">
+						<top>5</top>
+						<left>310</left>
+						<width>25</width>
+						<height>25</height>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture background="true" fallback="special://skin/extras/icons/shortcut.png">$INFO[ListItem.Icon]</texture>
+						<colordiffuse>55white</colordiffuse>
+						<visible>!Control.HasFocus(23)</visible>
+						<visible>!Skin.HasSetting(HideVerticalMenuIcons)</visible>
+					</control>
 				</control>
 			</focusedlayout>
 			<content>
@@ -482,7 +508,7 @@
 		</control>			
 	</include>
 
-		<include name="ContextMenuFavourites">
+	<include name="ContextMenuFavourites">
 		<control type="image" id="999">
 			<description>background image</description>
 			<left>0</left>
@@ -918,26 +944,26 @@
 				<itemgap>0</itemgap>
 				<onleft>Close</onleft>
 				<onright>Close</onright>
-				</control>
-				<control type="button" id="1000">
-					<description>button template</description>
-					<width>350</width>
-					<height>40</height>
-					<textcolor>77white</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<disabledcolor>33white</disabledcolor>
-					<shadowcolor>99000000</shadowcolor>
-					<align>center</align>
-					<aligny>top</aligny>
-					<textwidth>320</textwidth>
-					<textoffsetx>23</textoffsetx>
-					<textoffsety>7</textoffsety>
-					<texturefocus border="23">windows/filemanager/contextmenu_fo.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<pulseonselect>no</pulseonselect>
-					<font>FontSize_22</font>
-				</control>
 			</control>
-		</include>
-		
-	</includes>
+			<control type="button" id="1000">
+				<description>button template</description>
+				<width>350</width>
+				<height>40</height>
+				<textcolor>77white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>33white</disabledcolor>
+				<shadowcolor>99000000</shadowcolor>
+				<align>center</align>
+				<aligny>top</aligny>
+				<textwidth>320</textwidth>
+				<textoffsetx>23</textoffsetx>
+				<textoffsety>7</textoffsety>
+				<texturefocus border="23">windows/filemanager/contextmenu_fo.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<pulseonselect>no</pulseonselect>
+				<font>FontSize_22</font>
+			</control>
+		</control>
+	</include>
+
+</includes>

@@ -2369,7 +2369,7 @@
 	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video) + !IsEmpty(Container(652).ListItem.Label) + !IsEmpty(Container(652).ListItem.TVShowTitle)">$INFO[Container(652).ListItem.Label,,[CR]]$LOCALIZE[559]</value>
 	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video) + !IsEmpty(Container(652).ListItem.Label2)">$INFO[Container(652).ListItem.Label2,,[CR]]$LOCALIZE[559]</value>
 	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video)">$LOCALIZE[559]</value>	
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),tvchannels)">$INFO[Container(654).ListItem.StartTime] - $INFO[Container(654).ListItem.EndTime]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),tvchannels) + Container(654).ListItem.HasEpg">$INFO[Container(654).ListItem.StartTime] - $INFO[Container(654).ListItem.EndTime]</value>
 </variable>
 
 
@@ -2415,7 +2415,7 @@
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)">$INFO[Skin.String(widgetgroup.2.Label2)]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)">$INFO[Skin.String(widgetgroup.3.Label2)]</value>
 	<value condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup4)">$INFO[Skin.String(widgetgroup.4.Label2)]</value>
-	<value condition="StringCompare(Container(20).ListItem.Property(widget),tvchannels)">$INFO[Container(654).ListItem.StartTime] - $INFO[Container(654).ListItem.EndTime]</value>
+	<value condition="StringCompare(Container(20).ListItem.Property(widget),tvchannels) + Container(654).ListItem.HasEpg">$INFO[Container(654).ListItem.StartTime] - $INFO[Container(654).ListItem.EndTime]</value>
 	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music) + !IsEmpty(Container(651).ListItem.Label2)">$INFO[Container(651).ListItem.Label2,,[CR]]$LOCALIZE[559]</value>		
 	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/music)">$LOCALIZE[559]</value>
 	<value condition="SubString(Container(20).ListItem.Property(widgetPlaylist),playlists/video) + !IsEmpty(Container(652).ListItem.Label) + !IsEmpty(Container(652).ListItem.TVShowTitle)">$INFO[Container(652).ListItem.Label,,[CR]]$LOCALIZE[559]</value>

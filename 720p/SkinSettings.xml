@@ -380,6 +380,15 @@
 							<selected>!Skin.HasSetting(HideVerticalMenuIcons)</selected>
 							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
 						</control>
+						
+						<control type="radiobutton" id="8320">
+							<description>Hide Menu Icons</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31485]</label>
+							<onclick>Skin.ToggleSetting(HideVerticalMenuSeperator)</onclick>
+							<selected>!Skin.HasSetting(HideVerticalMenuSeperator)</selected>
+							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
+						</control>
 
 						
 						<!-- Common Settings -->

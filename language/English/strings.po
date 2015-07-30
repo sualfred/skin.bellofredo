@@ -2018,3 +2018,7 @@ msgstr ""
 msgctxt "#31484"
 msgid "Enable Top Menu"
 msgstr ""
+
+msgctxt "#31485"
+msgid "Enable Vertical Menu Seperator"
+msgstr ""
