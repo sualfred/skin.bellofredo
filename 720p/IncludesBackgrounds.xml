@@ -421,19 +421,7 @@
 		</control>
 	</include>
 
-	<include name="BackgroundVignette">			
-		<control type="image">
-			<top>0</top>
-			<include>FullscreenDimensions</include>		
-			<texture background="true">windows/bg/shine.png</texture>
-			<visible>Window.IsActive(home)</visible>
-			<visible>!Window.IsActive(playercontrols)</visible>						
-			<animation effect="fade" time="0" start="100" end="0" condition="StringCompare(Skin.String(BGColorDiffuse),0)">Conditional</animation>
-			<animation effect="fade" time="0" start="100" end="25" condition="StringCompare(Skin.String(BGColorDiffuse),25)">Conditional</animation>
-			<animation effect="fade" time="0" start="100" end="50" condition="StringCompare(Skin.String(BGColorDiffuse),50)">Conditional</animation>
-			<animation effect="fade" time="0" start="100" end="75" condition="StringCompare(Skin.String(BGColorDiffuse),75) | IsEmpty(Skin.String(BGColorDiffuse))">Conditional</animation>
-			<animation effect="fade" time="0" start="100" end="100" condition="StringCompare(Skin.String(BGColorDiffuse),100)">Conditional</animation>
-		</control>
+	<include name="BackgroundVignette">
 		<control type="image">
 			<description>Vignette</description>
 			<include>FullscreenDimensions</include>

@@ -26,6 +26,7 @@
 			<visible>!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4)</visible>
 
 			<control type="group">	
+
 				<!-- hidden main menu movement controls -->
 				<control type="group" id="2013">
 					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="300" tween="quadratic" easing="out">Hidden</animation>

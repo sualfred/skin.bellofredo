@@ -5,23 +5,39 @@
 	<!--Pulse Bar -->
 	<!--===========-->
 
-	<include name="PulseBar">		
-		<control type="image">
-			<include>FullscreenDimensions</include>
-			<texture background="true">windows/bg/colors_pulse.png</texture>
-			<visible>!Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar)</visible>
-		</control>
-		<control type="image">
-			<height>720</height>
-			<width>3280</width>
-			<texture>windows/bg/colors_pulse.png</texture>
-			<animation type="Conditional" condition="true" loop="true" reversible="false">
-				<effect type="slide" start="0,0" end="-2000,0" time="20350" />
-				<effect type="slide" start="0,0" end="2000,0" time="20350" delay="20350"/>
-			</animation>
-			<visible>Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar)</visible>
+	<include name="PulseBar">
+		<control type="group">
+			<control type="image">
+				<top>0</top>
+				<include>FullscreenDimensions</include>		
+				<texture background="true">windows/bg/shine.png</texture>
+				<visible>!Window.IsActive(playercontrols)</visible>		
+				<animation effect="fade" time="0" start="100" end="0" condition="StringCompare(Skin.String(BGColorDiffuse),0)" reversible="false">Conditional</animation>
+				<animation effect="fade" time="0" start="100" end="25" condition="StringCompare(Skin.String(BGColorDiffuse),25)" reversible="false">Conditional</animation>
+				<animation effect="fade" time="0" start="100" end="50" condition="StringCompare(Skin.String(BGColorDiffuse),50)" reversible="false">Conditional</animation>
+				<animation effect="fade" time="0" start="100" end="75" condition="StringCompare(Skin.String(BGColorDiffuse),75) | IsEmpty(Skin.String(BGColorDiffuse))" reversible="false">Conditional</animation>
+				<animation effect="fade" time="0" start="100" end="100" condition="StringCompare(Skin.String(BGColorDiffuse),100)" reversible="false">Conditional</animation>
+			</control>		
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture background="true">windows/bg/colors_pulse.png</texture>
+				<visible>!Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar)</visible>
+			</control>
+			<control type="image">
+				<height>720</height>
+				<width>3280</width>
+				<texture>windows/bg/colors_pulse.png</texture>
+				<animation type="Conditional" condition="true" loop="true" reversible="false">
+					<effect type="slide" start="0,0" end="-2000,0" time="20350" />
+					<effect type="slide" start="0,0" end="2000,0" time="20350" delay="20350"/>
+				</animation>
+				<visible>Skin.HasSetting(HomeMenuAnimation) + !Skin.HasSetting(DisablePurpleBar)</visible>
+			</control>
 		</control>
 	</include>
+
+
+
 
 
 	<!--======================-->
@@ -429,43 +445,45 @@
 	<!--===========-->
 	<include name="HomeMenuWraplist_Vertical">		
 		<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
-		<!-- background diffuse -->
-		<control type="image">
-			<animation type="Conditional" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">   
-				<effect type="fade" start="90" end="45" time="1000" tween="sine" easing="inout" />
-			</animation>	
-			<animation type="Conditional" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">
-				<effect type="fade" delay="0" start="45" end="90" time="500" tween="sine" easing="inout"  />
-			</animation>	
-			<include>FullscreenDimensions</include>
-			<texture background="true">views/other/menus_overlay.png</texture>
-		</control>
-		<!--pulse bar -->
-		<include>PulseBar</include>
-		<!--seperator-->
-		<control type="image">
-			<left>405</left>
-			<top>130</top>
-			<texture>info/seperator_fade.png</texture>
-			<colordiffuse>33white</colordiffuse>
-			<width>1</width>
-			<height>500</height>
-			<include>WidgetMainMenuSlideAnimations_Vertical</include>
-			<include>HomeSlideAnimations</include>
-			<animation type="Visible" tween="sine" easing="out">
-				<effect type="zoom" start="0" end="100" center="auto" time="450" delay="200" />
-				<effect type="fade" start="0" end="80" time="450" delay="200" />
-			</animation>
-			<animation type="Hidden" tween="sine" easing="out">
-				<effect type="zoom" start="100" end="0" center="auto" time="350" delay="0"/>
-				<effect type="fade" start="80" end="0" time="350" delay="0"/>
-			</animation>
-			<visible>!Skin.HasSetting(HideVerticalMenuSeperator)</visible>
-		</control>
+		
 		<!-- main group -->
 		<control type="group">
 			<visible allowhiddenfocus="true">!SubString(Player.Filenameandpath,extras/intro/intro.mp4) + !SubString(Player.Filenameandpath,extras\intro\intro.mp4) + !Window.IsActive(1110) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(selectdialog) + !Window.IsActive(virtualkeyboard) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(Favourites) + !Window.IsActive(ProgressDialog) + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-skinshortcuts.xml)</visible>
 			<include>HomeSlideAnimations</include>
+			<!--pulse bar -->
+			<include>PulseBar</include>
+			
+			<!-- background diffuse -->
+			<control type="image">
+				<animation type="Conditional" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">   
+					<effect type="fade" start="75" end="45" time="1000" tween="sine" easing="inout" />
+				</animation>	
+				<animation type="Conditional" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">
+					<effect type="fade" delay="0" start="45" end="75" time="500" tween="sine" easing="inout"  />
+				</animation>	
+				<include>FullscreenDimensions</include>
+				<texture background="true">views/other/menus_overlay.png</texture>
+			</control>
+			<!--seperator-->
+			<control type="image">
+				<left>405</left>
+				<top>130</top>
+				<texture>info/seperator_fade.png</texture>
+				<colordiffuse>33white</colordiffuse>
+				<width>1</width>
+				<height>500</height>
+				<include>WidgetMainMenuSlideAnimations_Vertical</include>
+				<include>HomeSlideAnimations</include>
+				<animation type="Visible" tween="sine" easing="out">
+					<effect type="zoom" start="0" end="100" center="auto" time="450" delay="200" />
+					<effect type="fade" start="0" end="80" time="450" delay="200" />
+				</animation>
+				<animation type="Hidden" tween="sine" easing="out">
+					<effect type="zoom" start="100" end="0" center="auto" time="350" delay="0"/>
+					<effect type="fade" start="80" end="0" time="350" delay="0"/>
+				</animation>
+				<visible>!Skin.HasSetting(HideVerticalMenuSeperator)</visible>
+			</control>
 			
 			<!-- main menu -->
 			<control type="group">
