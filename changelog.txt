@@ -1,3 +1,12 @@
+[B][COLOR=FF56ADDA]v4.5.9[/COLOR][/B]
+• Replaced: Small color diffuse in the Home screen with an fullscreen color diffuse
+• Added: Option to adjust the color diffuse with 0,25,50,75 and 100% transparency
+• Replaced: A lot of strings
+• Removed: Big pause OSD delayed timeout animation
+• Removed: Outdated additional themes 
+• Improved: Now playing information at the bottom at the screen
+• Fixed: Some minor small bugs such as missing icon overrides
+
 [B][COLOR=FF56ADDA]v4.5.8[/COLOR][/B]
 • Added: Optional vertical menu
 • Added: New PVR widget -> All TV Channels
