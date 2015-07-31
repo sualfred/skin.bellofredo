@@ -381,7 +381,7 @@
 							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
 						</control>
 						
-						<control type="radiobutton" id="8320">
+						<control type="radiobutton" id="8321">
 							<description>Hide Menu Icons</description>
 							<include>SettingsRadioButton</include>
 							<label>- $LOCALIZE[31485]</label>
@@ -389,7 +389,6 @@
 							<selected>!Skin.HasSetting(HideVerticalMenuSeperator)</selected>
 							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
 						</control>
-
 						
 						<!-- Common Settings -->
 						<control type="button" id="8307">
@@ -413,6 +412,24 @@
 							<onclick>Skin.ToggleSetting(HomeMenuAnimation)</onclick>
 							<selected>Skin.HasSetting(HomeMenuAnimation)</selected>
 							<enable>!Skin.HasSetting(DisablePurpleBar)</enable>
+						</control>
+						
+						<control type="button" id="8335">
+							<description>Hide Menu Icons</description>
+							<include>SettingsButton</include>
+							<label>- Background Color Diffuse Strength</label>
+							<label2>[COLOR=selected]$VAR[BGColorDiffuseLabel]%[/COLOR]</label2>
+							<onclick>SetProperty(Dialog.1.Label,0%)</onclick>
+							<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(BGColorDiffuse,0))</onclick>
+							<onclick>SetProperty(Dialog.2.Label,25%)</onclick>
+							<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(BGColorDiffuse,25))</onclick>
+							<onclick>SetProperty(Dialog.3.Label,50%)</onclick>
+							<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(BGColorDiffuse,50))</onclick>
+							<onclick>SetProperty(Dialog.4.Label,75%)</onclick>
+							<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(BGColorDiffuse,75))</onclick>
+							<onclick>SetProperty(Dialog.5.Label,100%)</onclick>
+							<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(BGColorDiffuse,100))</onclick>
+							<onclick>RunScript(script.toolbox,info=selectdialog,header=Set Strength)</onclick>
 						</control>
 						<control type="radiobutton" id="8332">
 							<description>Lock widget content switch</description>

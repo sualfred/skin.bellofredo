@@ -2549,6 +2549,11 @@
 	<value>$LOCALIZE[31298]</value>
 </variable>
 
+<variable name="BGColorDiffuseLabel">
+	<value condition="!IsEmpty(Skin.String(BGColorDiffuse))">$INFO[Skin.String(BGColorDiffuse)]</value>
+	<value condition="IsEmpty(Skin.String(BGColorDiffuse))">75</value>
+</variable>
+
 <variable name="ArtistLogoLabel">
 	<value condition="StringCompare(Skin.String(ArtistLogo),AlbumDir)">$LOCALIZE[31346]</value>
 	<value condition="StringCompare(Skin.String(ArtistLogo),disabled)">$LOCALIZE[13113]</value>	

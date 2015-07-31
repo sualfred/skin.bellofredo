@@ -272,7 +272,7 @@
 						<texturenofocus>-</texturenofocus>
 						<align>left</align>
 						<textoffsetx>10</textoffsetx>
-						<label>$ADDON[script.skinshortcuts 32048]</label>
+						<label>$LOCALIZE[31489]</label>
 					</control>
 					<control type="button" id="305">
 						<description>Change Label</description>
@@ -287,7 +287,7 @@
 						<texturenofocus>-</texturenofocus>
 						<align>left</align>
 						<textoffsetx>10</textoffsetx>
-						<label>$ADDON[script.skinshortcuts 32025]</label>
+						<label>$LOCALIZE[31488]</label>
 						<label2>[COLOR=selected]$INFO[Container(211).ListItem.Label][/COLOR]</label2>
 					</control>				
 					<control type="button" id="311">
@@ -303,7 +303,7 @@
 						<texturenofocus>-</texturenofocus>
 						<align>left</align>
 						<textoffsetx>10</textoffsetx>
-						<label>$ADDON[script.skinshortcuts 32026]</label>
+						<label>$LOCALIZE[31486]</label>
 						<label2>[COLOR=selected]$INFO[Container(211).ListItem.Thumb][/COLOR]</label2>
 					</control>
 					<control type="button" id="307">
@@ -319,7 +319,7 @@
 						<texturenofocus>-</texturenofocus>
 						<align>left</align>
 						<textoffsetx>10</textoffsetx>
-						<label>$ADDON[script.skinshortcuts 32027]</label>
+						<label>$LOCALIZE[31487]</label>
 						<label2>[COLOR=selected]$INFO[Container(211).ListItem.Property(displaypath)][/COLOR]</label2>
 					</control>
 					<control type="button" id="405">

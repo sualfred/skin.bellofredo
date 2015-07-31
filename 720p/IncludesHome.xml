@@ -5,15 +5,7 @@
 	<!--Pulse Bar -->
 	<!--===========-->
 
-	<include name="PulseBar">
-		<control type="image">
-			<top>-20</top>
-			<include>FullscreenDimensions</include>			
-			<texture background="true">views/list/shine.png</texture>
-			<visible>!Skin.HasTheme(Original-Bello) + !Window.IsActive(playercontrols)</visible>
-			<animation effect="fade" time="0" start="100" end="75" condition="!Skin.HasTheme(ElegantDark) + [Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)]">Conditional</animation>
-			<animation effect="fade" time="0" start="100" end="50" condition="Skin.HasTheme(ElegantDark) + [Control.HasFocus(20) | ControlGroup(21).HasFocus | Control.HasFocus(23)]">Conditional</animation>
-		</control>
+	<include name="PulseBar">		
 		<control type="image">
 			<include>FullscreenDimensions</include>
 			<texture background="true">windows/bg/colors_pulse.png</texture>

@@ -71,8 +71,8 @@ msgid "Off"
 msgstr "Off"
 
 msgctxt "#31013"
-msgid "Enable Home Menu Animation"
-msgstr "Enable Home Menu Animation"
+msgid "Enable Pulse Bar Animation"
+msgstr "Enable Pulse Bar Animation"
 
 msgctxt "#31014"
 msgid "Enable Startup Intro Video"
@@ -292,8 +292,8 @@ msgid "Disabled"
 msgstr "Disabled"
 
 msgctxt "#31067"
-msgid "Enable Aurora-Pulse-Bar behind the Mainmenu"
-msgstr "Enable Aurora-Pulse-Bar behind the Mainmenu"
+msgid "Enable Pulse Bar behind the Mainmenu"
+msgstr "Enable Pulse Bar behind the Mainmenu"
 
 msgctxt "#31068"
 msgid "Online Video Information"
@@ -2021,4 +2021,20 @@ msgstr ""
 
 msgctxt "#31485"
 msgid "Enable Vertical Menu Seperator"
+msgstr ""
+
+msgctxt "#31486"
+msgid "Set Icon"
+msgstr ""
+
+msgctxt "#31487"
+msgid "Edit Action"
+msgstr ""
+
+msgctxt "#31488"
+msgid "Set Label"
+msgstr ""
+
+msgctxt "#31489"
+msgid "Set Action"
 msgstr ""

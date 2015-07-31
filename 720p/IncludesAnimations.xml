@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes> 
+	<include name="DynamicFade">
+		<param name="condition" default="true" />
+		<param name="end" default="75" />
+		<param name="time" default="0" />
+		<definition>
+			<animation effect="fade" time="$PARAM[time]" start="100" end="$PARAM[end]" condition="$PARAM[condition]">Conditional</animation>
+		</definition>
+	</include>
+
 	<include name="FakeFadeLabel1of3">
 		<param name="condition" default="true"/>
 		<definition>
