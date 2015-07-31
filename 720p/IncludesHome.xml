@@ -452,14 +452,14 @@
 			<include>HomeSlideAnimations</include>
 			<!--pulse bar -->
 			<include>PulseBar</include>
-			
+
 			<!-- background diffuse -->
 			<control type="image">
 				<animation type="Conditional" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">   
-					<effect type="fade" start="75" end="45" time="1000" tween="sine" easing="inout" />
+					<effect type="fade" start="90" end="45" time="1000" tween="sine" easing="inout" />
 				</animation>	
 				<animation type="Conditional" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">
-					<effect type="fade" delay="0" start="45" end="75" time="500" tween="sine" easing="inout"  />
+					<effect type="fade" delay="0" start="45" end="90" time="500" tween="sine" easing="inout"  />
 				</animation>	
 				<include>FullscreenDimensions</include>
 				<texture background="true">views/other/menus_overlay.png</texture>

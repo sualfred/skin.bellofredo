@@ -258,9 +258,10 @@
 	<icon labelID="32047">special://skin/extras/icons/update.png</icon>	
 	<icon labelID="744">special://skin/extras/icons/file.png</icon>	
 	<icon labelID="136">special://skin/extras/icons/playlist.png</icon>	
-	<icon labelID="136">special://skin/extras/icons/playlist.png</icon>	
+	<icon labelID="344">special://skin/extras/icons/movies.png</icon>	
 	<!-- videos -->
 	<icon image="DefaultVideos.png">special://skin/extras/icons/videos.png</icon>	
+	
 	<icon image="DefaultVideo.png">special://skin/extras/icons/videos.png</icon>	
 	<icon image="DefaultVideoPlaylists.png">special://skin/extras/icons/videos.png</icon>		
 	<icon image="DefaultGenre.png">special://skin/extras/icons/videos.png</icon>
@@ -295,6 +296,7 @@
 	<icon image="DefaultRecentlyAddedMovies.png">special://skin/extras/icons/movies.png</icon>
 	<icon image="DefaultMovieTitle.png">special://skin/extras/icons/movies.png</icon>
 	<icon image="DefaultSets.png">special://skin/extras/icons/movies.png</icon>
+	<icon image="DefaultActor.png">special://skin/extras/icons/movies.png</icon>	
 	<!-- tvshows -->
 	<icon image="DefaultTVShows.png">special://skin/extras/icons/tvshows.png</icon>
 	<icon image="DefaultTVShowTitle.png">special://skin/extras/icons/tvshows.png</icon>
