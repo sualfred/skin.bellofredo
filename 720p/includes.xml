@@ -982,7 +982,7 @@
 						<top>0</top>
 						<width>300</width>
 						<height>33</height>
-						<label>$LOCALIZE[31316]...</label>
+						<label>$VAR[NowPlayingLabel]...</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>NotificationsFont</font>
@@ -1042,7 +1042,7 @@
 							<top>0</top>
 							<width>300</width>
 							<height>33</height>
-							<label>$LOCALIZE[31316]...</label>
+							<label>$VAR[NowPlayingLabel]...</label>
 							<align>left</align>
 							<aligny>center</aligny>
 							<font>NotificationsFont</font>
@@ -1128,7 +1128,7 @@
 						<top>0</top>
 						<width>300</width>
 						<height>33</height>
-						<label>$LOCALIZE[31316]...</label>
+						<label>$VAR[NowPlayingLabel]...</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>NotificationsFont</font>
@@ -1188,7 +1188,7 @@
 							<top>0</top>
 							<width>300</width>
 							<height>33</height>
-							<label>$LOCALIZE[31316]...</label>
+							<label>$VAR[NowPlayingLabel]...</label>
 							<align>left</align>
 							<aligny>center</aligny>
 							<font>NotificationsFont</font>
@@ -1290,7 +1290,7 @@
 						<top>0</top>
 						<width>300</width>
 						<height>33</height>
-						<label>$LOCALIZE[31316]...</label>
+						<label>$VAR[NowPlayingLabel]...</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>NotificationsFont</font>
@@ -1352,7 +1352,7 @@
 					<top>0</top>
 					<width>300</width>
 					<height>33</height>
-					<label>$LOCALIZE[31316]...</label>
+					<label>$VAR[NowPlayingLabel]...</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>NotificationsFont</font>
@@ -1382,7 +1382,7 @@
 					<top>0</top>
 					<width>300</width>
 					<height>33</height>
-					<label>$LOCALIZE[31316]...</label>
+					<label>$VAR[NowPlayingLabel]...</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>NotificationsFont</font>
@@ -1412,7 +1412,7 @@
 					<top>0</top>
 					<width>300</width>
 					<height>33</height>
-					<label>$LOCALIZE[31316]...</label>
+					<label>$VAR[NowPlayingLabel]...</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>NotificationsFont</font>
@@ -1448,7 +1448,7 @@
 						<top>0</top>
 						<width>300</width>
 						<height>33</height>
-						<label>$LOCALIZE[31316]...</label>
+						<label>$VAR[NowPlayingLabel]...</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>NotificationsFont</font>
@@ -2552,6 +2552,11 @@
 <variable name="BGColorDiffuseLabel">
 	<value condition="!IsEmpty(Skin.String(BGColorDiffuse))">$INFO[Skin.String(BGColorDiffuse)]</value>
 	<value condition="IsEmpty(Skin.String(BGColorDiffuse))">75</value>
+</variable>
+
+<variable name="NowPlayingLabel">
+	<value condition="Player.Paused">$LOCALIZE[112]...</value>
+	<value>$LOCALIZE[31316]...</value>
 </variable>
 
 <variable name="ArtistLogoLabel">

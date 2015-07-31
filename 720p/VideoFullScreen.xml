@@ -30,75 +30,6 @@
 			<visible>Window.IsActive(PVROSDChannels) | Window.IsActive(PVROSDGuide) | Window.IsActive(ShutdownMenu)</visible>
 		</control>
 
-		<!-- ============================ -->
-		<!-- === YouTube Info Line   ==== -->
-		<!-- ============================ 
-		<control type="group" id="1">
-			<left>27</left>
-			<top>27</top>
-			<animation type="WindowOpen">
-				<effect type="slide" start="-150,0" end="0,0" time="450" delay="0" tween="sine" easing="out" />
-				<effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="out" />
-			</animation>
-			<animation type="WindowClose">
-				<effect type="slide" start="0,0" end="-200,0" time="400" delay="0" tween="sine" easing="out" />
-				<effect type="fade" start="100" end="0" time="400" delay="0" tween="sine" easing="out" />
-			</animation>
-			<animation type="Visible">
-				<effect type="slide" start="-150,0" end="0,0" time="450" delay="0" tween="sine" easing="out" />
-				<effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="out" />
-			</animation>
-			<animation type="Hidden">
-				<effect type="slide" start="0,0" end="-300,0" time="400" delay="0" tween="sine" easing="out" />
-				<effect type="fade" start="100" end="0" time="400" delay="0" tween="sine" easing="out" />
-			</animation>
-			<visible>!Window.IsActive(videoosd)</visible>
-			<visible>SubString(Player.Filenameandpath,.googlevideo.com) + Skin.HasSetting(ShowYouTubeChannelOSD)</visible>
-			<control type="image" id="1">
-				<left>9</left>
-				<top>9</top>
-				<width>72</width>
-				<height>72</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-				<texture colordiffuse="bbwhite" background="true">white.png</texture>
-			</control>		
-			<control type="image" id="1">
-				<left>10</left>
-				<top>10</top>
-				<width>70</width>
-				<height>70</height>
-				<aspectratio align="center" aligny="center">scale</aspectratio>
-				<texture background="true">$INFO[Player.Art(thumb)]</texture>
-			</control>
-			<control type="group" id="1">
-				<control type="image" id="1">
-					<left>81</left>
-					<top>9</top>
-					<width>229</width>
-					<height>72</height>
-					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-					<texture colordiffuse="bbwhite" background="true">white.png</texture>
-				</control>		
-				<control type="image" id="1">
-					<left>235</left>
-					<top>17</top>
-					<width>68</width>
-					<height>30</height>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<texture background="true">osd/youtube/yt-logo.png</texture>
-				</control>
-				<control type="label" id="1">
-					<left>90</left>
-					<top>47</top>
-					<width>213</width>
-					<height>30</height>
-					<label>$INFO[VideoPlayer.Studio]</label>
-					<align>right</align>
-					<font>FontSize_22B</font>
-					<textcolor>ccblack</textcolor>
-				</control>
-			</control>
-		</control>-->
          
 		<!-- ============================ -->
 		<!-- === VideoFullcreen Code ==== -->
@@ -781,10 +712,10 @@
 				<effect type="zoom" time="350" center="640,360" start="100" end="150" tween="cubic" easing="in"/>
 				<effect type="fade" time="350" start="100" easing="in" end="0"/>
 			</animation>
-			<animation type="Conditional" condition="Player.Paused + ![Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.SeekOffset | Player.Forwarding | Player.Rewinding | Player.ShowInfo]">
+			<!--<animation type="Conditional" condition="!Player.Paused + ![Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.SeekOffset | Player.Forwarding | Player.Rewinding | Player.ShowInfo]">
 				<effect type="zoom" time="350" delay="13000" center="640,360" start="100" end="0" tween="cubic" easing="in"/>
 				<effect type="fade" time="350" delay="13000" start="100" easing="in" end="0"/>
-			</animation>
+			</animation>-->
 			<control type="image" id="1">
 				<left>450</left>
 				<top>165</top>

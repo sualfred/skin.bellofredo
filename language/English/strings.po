@@ -672,8 +672,8 @@ msgid "Views"
 msgstr "Views"
 
 msgctxt "#31159"
-msgid "Show SeekBar instead of the fullscreen info for videos"
-msgstr "Show SeekBar instead of the fullscreen info for videos"
+msgid "Show alternative Paused Screen"
+msgstr "Show alternative Paused Screen"
 
 msgctxt "#31160"
 msgid "Download [COLOR=selected]logo.png[/COLOR] for all Movies"
