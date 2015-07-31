@@ -1,3 +1,6 @@
+[B][COLOR=FF56ADDA]v4.5.9a[/COLOR][/B]
+• Fixed: Color diffuse issues with icon and bottom label menu
+
 [B][COLOR=FF56ADDA]v4.5.9[/COLOR][/B]
 • Replaced: Small color diffuse in the Home screen with an fullscreen color diffuse
 • Added: Option to adjust the color diffuse with 0,25,50,75 and 100% transparency

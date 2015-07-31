@@ -17,6 +17,10 @@
 				<animation effect="fade" time="0" start="100" end="50" condition="StringCompare(Skin.String(BGColorDiffuse),50)" reversible="false">Conditional</animation>
 				<animation effect="fade" time="0" start="100" end="75" condition="StringCompare(Skin.String(BGColorDiffuse),75) | IsEmpty(Skin.String(BGColorDiffuse))" reversible="false">Conditional</animation>
 				<animation effect="fade" time="0" start="100" end="100" condition="StringCompare(Skin.String(BGColorDiffuse),100)" reversible="false">Conditional</animation>
+
+				<animation effect="slide" time="0" start="0,0" end="0,-100" condition="StringCompare(Skin.String(MainMenuStyle),textbottom)">Conditional</animation>
+				<animation effect="slide" time="0" start="0,0" end="0,-15" condition="!StringCompare(Skin.String(MainMenuStyle),vertical) + !StringCompare(Skin.String(MainMenuStyle),textbottom) + !SubString(Skin.String(MainMenuStyle),icon)">Conditional</animation>
+
 			</control>		
 			<control type="image">
 				<include>FullscreenDimensions</include>
