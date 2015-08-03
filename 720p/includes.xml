@@ -3146,6 +3146,11 @@
 	</control>
 </include>
 
+<include name="WidgetItemCounter">
+	<value condition="SubString(Container(20).ListItem.Property(widget),weather)">blaaaa</value>
+	<value>$INFO[Container($PARAM[Container]).CurrentItem] / $INFO[Container($PARAM[Container]).NumItems]</value>
+</include>
+
 <!-- custom widget path -->
 <include name="widgetgroup-custompath">
 	<content limit="$PARAM[Limit]" target="$PARAM[Target]">$INFO[Skin.String(CustomWidgetPath$PARAM[GroupNo].List)]</content>

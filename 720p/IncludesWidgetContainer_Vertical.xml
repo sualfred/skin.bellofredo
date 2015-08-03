@@ -64,11 +64,27 @@
 			<align>left</align>			
 			<textcolor>77white</textcolor>
 			<shadowcolor>55000000</shadowcolor>
-			<font>FontSize_16</font>							
-			<include>VisibleFadeEffect4</include>		
+			<font>FontSize_16</font>			
 			<label>$INFO[Container($PARAM[Container]).CurrentItem] / $INFO[Container($PARAM[Container]).NumItems]</label>
+			<include>VisibleFadeEffect</include>
 			<visible>!StringCompare(Container(20).ListItem.Property(widget),weather)</visible>
-			<visible>!Container($PARAM[Container]).IsUpdating</visible>
+			<visible>!Container($PARAM[Container]).IsUpdating + !Control.IsVisible(2013) + !Control.IsVisible(2014)</visible>
+			<visible>!stringcompare(ListItem.Label,..) + !Skin.HasSetting(HideWidgetCounter) + IntegerGreaterThan(Container($PARAM[Container]).NumItems,0)</visible>
+		</control>
+		<control type="label">
+			<left>7</left>
+			<top>216</top>
+			<width>1280</width>
+			<height>70</height>
+			<aligny>top</aligny>
+			<align>left</align>			
+			<textcolor>77white</textcolor>
+			<shadowcolor>55000000</shadowcolor>
+			<font>FontSize_16</font>				
+			<label>$LOCALIZE[143] $INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits] - $INFO[Window(Weather).Property(Current.Condition)] - $LOCALIZE[383]: $INFO[Window(Weather).Property(Current.Wind)]</label>
+			<include>VisibleFadeEffect</include>
+			<visible>StringCompare(Container(20).ListItem.Property(widget),weather)</visible>
+			<visible>!Container($PARAM[Container]).IsUpdating + !Control.IsVisible(2013) + !Control.IsVisible(2014)</visible>
 			<visible>!stringcompare(ListItem.Label,..) + !Skin.HasSetting(HideWidgetCounter) + IntegerGreaterThan(Container($PARAM[Container]).NumItems,0)</visible>
 		</control>
 		<control type="grouplist" id="4156416165">			
@@ -169,7 +185,7 @@
 				<textoffsetx>10</textoffsetx>
 				<textcolor>white</textcolor>
 				<shadowcolor>77000000</shadowcolor>
-				<font>FontSize_30B</font>						
+				<font>FontSize_20B</font>						
 			</control>
 
 			<!-- bottom label -->
