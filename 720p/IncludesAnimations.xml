@@ -240,11 +240,19 @@
 	</include>	
 
 	<include name="VerticalWidgetSlide">
-		<animation condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false" type="Conditional">
+		<!--<animation effect="slide" time="0" end="0,-17" condition="Skin.HasSetting(HideWidgetCounter)">Conditional</animation>-->
+		<animation condition="!IsEmpty(Window(Home).Property(WidgetHasFocus)) + !Skin.HasSetting(HideWidgetCounter)" reversible="false" type="Conditional">
 			<effect delay="380" end="-400,35" start="0,0" time="350" tween="sine" easing="inout" type="slide" />
 		</animation>
-		<animation condition="IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false" type="Conditional">
+		<animation condition="IsEmpty(Window(Home).Property(WidgetHasFocus)) + !Skin.HasSetting(HideWidgetCounter)" reversible="false" type="Conditional">
 			<effect delay="180" end="0,0" start="-400,35" time="350" tween="sine" easing="inout" type="slide" />
+		</animation>
+
+		<animation condition="!IsEmpty(Window(Home).Property(WidgetHasFocus)) + Skin.HasSetting(HideWidgetCounter)" reversible="false" type="Conditional">
+			<effect delay="380" end="-400,52" start="0,0" time="350" tween="sine" easing="inout" type="slide" />
+		</animation>
+		<animation condition="IsEmpty(Window(Home).Property(WidgetHasFocus)) + Skin.HasSetting(HideWidgetCounter)" reversible="false" type="Conditional">
+			<effect delay="180" end="0,0" start="-400,52" time="350" tween="sine" easing="inout" type="slide" />
 		</animation>
 	</include>
 

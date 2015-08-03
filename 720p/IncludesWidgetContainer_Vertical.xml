@@ -67,6 +67,7 @@
 			<font>FontSize_16</font>							
 			<include>VisibleFadeEffect4</include>		
 			<label>$INFO[Container($PARAM[Container]).CurrentItem] / $INFO[Container($PARAM[Container]).NumItems]</label>
+			<visible>!StringCompare(Container(20).ListItem.Property(widget),weather)</visible>
 			<visible>!Container($PARAM[Container]).IsUpdating</visible>
 			<visible>!stringcompare(ListItem.Label,..) + !Skin.HasSetting(HideWidgetCounter) + IntegerGreaterThan(Container($PARAM[Container]).NumItems,0)</visible>
 		</control>
@@ -131,7 +132,7 @@
 			<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
 		</control> 
-	</include>
+	</include>	
 
 	<include name="ParamEmptyPosters_Vertical">
 		<control type="image">
@@ -143,6 +144,90 @@
 			<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back_trans.png</texture>
 			<fadetime>800</fadetime>
 		</control> 
+	</include>
+
+	<include name="ParamBoxes_LabelOverlays_Vertical">
+		<!-- label diffuse -->
+		<control type="group">
+			<left>$PARAM[left]</left>
+			<control type="image">
+				<left>6</left>
+				<top>5</top>
+				<width>190.5</width>
+				<height>190.5</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">osd/widgets/label_diffuse.png</texture>
+			</control>
+			<!--top label -->
+			<control type="label">
+				<left>6</left>
+				<top>0</top>
+				<width>190.5</width>
+				<align>left</align>
+				<height>50</height>
+				<label>$PARAM[topLabel]</label>
+				<textoffsetx>10</textoffsetx>
+				<textcolor>white</textcolor>
+				<shadowcolor>77000000</shadowcolor>
+				<font>FontSize_30B</font>						
+			</control>
+
+			<!-- bottom label -->
+			<control type="label">
+				<left>6</left>
+				<top>135</top>
+				<width>190.5</width>
+				<align>left</align>
+				<height>50</height>
+				<label>$PARAM[bottomLabel]</label>
+				<textoffsetx>10</textoffsetx>
+				<textcolor>white</textcolor>
+				<shadowcolor>77000000</shadowcolor>
+				<font>FontSize_14B</font>						
+			</control>
+			
+			<!-- temp icons -->
+			<control type="grouplist">
+				<orientation>horizontal</orientation>
+				<itemgap>5</itemgap>
+				<width>180.5</width>
+				<height>50</height>
+				<left>16</left>
+				<top>155</top>
+				<align>left</align>
+				<control type="image">
+					<width>8</width>
+					<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+					<texture background="true">osd/widgets/simple_arrow.png</texture>
+					<colordiffuse>red</colordiffuse>
+				</control>
+				<control type="label">
+					<top>155</top>
+					<width min="45" max="60">auto</width>
+					<align>left</align>
+					<height>50</height>
+					<label>$PARAM[HighTemp]</label>
+					<textcolor>white</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<font>FontSize_14B</font>						
+				</control>
+				<control type="image">
+					<width>8</width>
+					<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+					<texture flipy="true" background="true">osd/widgets/simple_arrow.png</texture>
+					<colordiffuse>blue</colordiffuse>
+				</control>
+				<control type="label">					
+					<width min="45" max="60">auto</width>
+					<align>left</align>
+					<height>50</height>
+					<label>$PARAM[LowTemp]</label>
+					<textcolor>white</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<font>FontSize_14B</font>						
+				</control>
+			</control>
+		</control>
 	</include>
 
 	<!-- ========================== -->
@@ -452,6 +537,60 @@
 			<param name="left">1031</param>
 		</include>
 	</include>
+
+	<include name="WidgetEmptyBoxesWeather_Vertical">
+		<top>250</top>		
+		<left>1</left>
+		<width>1800</width>
+		<height>450</height>
+		<include name="ParamEmptyBoxes_Vertical">
+			<param name="left">6</param>
+		</include>
+		<include name="ParamEmptyBoxes_Vertical">
+			<param name="left">211</param>
+		</include>
+		<include name="ParamEmptyBoxes_Vertical">
+			<param name="left">416</param>
+		</include>
+		<include name="ParamEmptyBoxes_Vertical">
+			<param name="left">621</param>
+		</include>
+	</include>
+
+	<include name="WidgetBoxesLabelOverlays_Vertical">
+		<top>250</top>		
+		<left>1</left>
+		<width>1800</width>
+		<height>450</height>
+		<include name="ParamBoxes_LabelOverlays_Vertical">
+			<param name="left">0</param>
+			<param name="topLabel">$INFO[Container(655).ListItemPosition(0).Label]</param>
+			<param name="HighTemp">$INFO[Container(655).ListItemPosition(0).Property(HighTemperature)]</param>
+			<param name="LowTemp">$INFO[Container(655).ListItemPosition(0).Property(LowTemperature)]</param>
+			<param name="bottomLabel">$INFO[Container(655).ListItemPosition(0).Label2]</param>
+		</include>
+		<include name="ParamBoxes_LabelOverlays_Vertical">
+			<param name="left">205</param>
+			<param name="topLabel">$INFO[Container(655).ListItemPosition(1).Label]</param>
+			<param name="HighTemp">$INFO[Container(655).ListItemPosition(1).Property(HighTemperature)]</param>
+			<param name="LowTemp">$INFO[Container(655).ListItemPosition(1).Property(LowTemperature)]</param>
+			<param name="bottomLabel">$INFO[Container(655).ListItemPosition(1).Label2]</param>
+		</include>
+		<include name="ParamBoxes_LabelOverlays_Vertical">
+			<param name="left">410</param>
+			<param name="topLabel">$INFO[Container(655).ListItemPosition(2).Label]</param>
+			<param name="HighTemp">$INFO[Container(655).ListItemPosition(2).Property(HighTemperature)]</param>
+			<param name="LowTemp">$INFO[Container(655).ListItemPosition(2).Property(LowTemperature)]</param>
+			<param name="bottomLabel">$INFO[Container(655).ListItemPosition(2).Label2]</param>
+		</include>
+		<include name="ParamBoxes_LabelOverlays_Vertical">
+			<param name="left">615</param>
+			<param name="topLabel">$INFO[Container(655).ListItemPosition(3).Label]</param>
+			<param name="HighTemp">$INFO[Container(655).ListItemPosition(3).Property(HighTemperature)]</param>
+			<param name="LowTemp">$INFO[Container(655).ListItemPosition(3).Property(LowTemperature)]</param>
+			<param name="bottomLabel">$INFO[Container(655).ListItemPosition(3).Label2]</param>
+		</include>
+	</include>
 	
 	<include name="WidgetEmptyPosters_Vertical">
 		<top>242</top>	
@@ -508,7 +647,7 @@
 				<width>144.6</width>
 				<height>208.4</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back.png</texture>
+				<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb75_back.png</texture>
 			</control>
 			<control type="image">
 				<left>7</left>
@@ -543,7 +682,7 @@
 					<width>144.6</width>
 					<height>208.4</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb_back.png</texture>
+					<texture background="true" diffuse="osd/widgets/poster_diffuse.png">thumbs/thumb75_back.png</texture>
 				</control>
 				<control type="image">
 					<left>7</left>
@@ -585,6 +724,7 @@
 
 	<include name="WidgetSquareLayout_Vertical">
 		<param name="aspectratio" default="scale"/>
+		<param name="border" default="0"/>
 		<definition>
 			<top>250</top>
 			<left>1</left>	
@@ -610,7 +750,7 @@
 					<width>190.5</width>
 					<height>190.5</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
+					<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb75_back.png</texture>
 				</control>
 				<control type="image">
 					<left>6</left>
@@ -618,7 +758,8 @@
 					<width>190.5</width>
 					<height>190.5</height>
 					<aspectratio align="center" aligny="center" scalediffuse="false">$PARAM[aspectratio]</aspectratio>
-					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>				
+					<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+					<bordersize>$PARAM[border]</bordersize>
 				</control>
 				<control type="image">
 					<top>-1</top>
@@ -644,7 +785,7 @@
 						<width>190.5</width>
 						<height>190.5</height>
 						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-						<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb_back.png</texture>
+						<texture background="true" diffuse="osd/widgets/square_diffuse.png">thumbs/thumb75_back.png</texture>
 					</control>
 					<control type="image">
 						<left>6</left>
@@ -652,7 +793,8 @@
 						<width>190.5</width>
 						<height>190.5</height>
 						<aspectratio align="center" aligny="center" scalediffuse="false">$PARAM[aspectratio]</aspectratio>
-						<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>
+						<texture background="true" fallback="thumbs/fallback_square_tp.png" diffuse="osd/widgets/square_diffuse.png">$VAR[QuickNavWidgetThumb]</texture>						
+						<bordersize>$PARAM[border]</bordersize>
 					</control>
 					<control type="image">
 						<top>-1</top>
@@ -683,6 +825,10 @@
 			</focusedlayout>
 		</definition>
 	</include>
+
+	<!-- ========================== -->
+	<!-- == Weather includes	== -->
+	<!-- ========================== -->
 
 	<!-- ========================== -->
 	<!-- == Widgets      	 	== -->
@@ -1629,7 +1775,7 @@
 					<visible>Container(652).OnPrevious + IntegerGreaterThan(Container(652).NumItems,1)</visible>
 				</control>
 				<control type="group">
-					<include>WidgetEmptyBoxes_Vertical</include>
+					<include>WidgetEmptyPosters_Vertical</include>
 				</control>
 				<control type="button" id="90721">
 					<description>invisible control button for widgets</description>
@@ -1687,7 +1833,7 @@
 					<onback>ClearProperty(WidgetHasFocus,Home)</onback>
 					<onclick>SetFocus(654)</onclick>
 					<onclick>Select</onclick>			
-					<onclick>SetFocus(90731)</onclick>	
+					<onclick>SetFocus(90641)</onclick>	
 					<include>TopButton</include>
 				</control>
 				<control type="fixedlist" id="654">	
@@ -1703,6 +1849,61 @@
 					<param name="Container">654</param>   
 				</include>
 			</control>
+
+
+			<!-- =========== -->
+			<!--  Weather	 -->
+			<!-- =========== -->			
+			<control type="group" id="9065">
+				<description>playlist widget</description>
+				<visible>StringCompare(Container(20).ListItem.Property(widget),weather)</visible>
+				<include>VerticalMenuWidgetUpDown</include>
+				<include>WidgetContainer_Vertical</include>
+				<control type="group" id="4513">
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(655).OnNext + IntegerGreaterThan(Container(655).NumItems,1)</visible>					
+				</control>
+				<control type="group" id="4514">
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="100" tween="quadratic" easing="out">Hidden</animation>
+					<visible>Container(655).OnPrevious + IntegerGreaterThan(Container(655).NumItems,1)</visible>
+				</control>
+				<control type="group">
+					<include>WidgetEmptyBoxesWeather_Vertical</include>
+				</control>
+				<control type="button" id="90651">
+					<description>invisible control button for widgets</description>
+					<onleft>Control.Move(655,-1)</onleft>
+					<onright>Control.Move(655,1)</onright>
+					<onup condition="[Control.IsVisible(210) | Control.IsVisible(211) | Control.IsVisible(212) | Control.IsVisible(214)]">SetFocus(21)</onup>
+					<ondown>SetFocus(20)</ondown>
+					<onback>SetFocus(20)</onback>	
+					<ondown>ClearProperty(WidgetHasFocus,Home)</ondown>		
+					<onback>ClearProperty(WidgetHasFocus,Home)</onback>
+					<onclick>SetFocus(655)</onclick>
+					<onclick>Select</onclick>			
+					<onclick>SetFocus(90651)</onclick>	
+					<include>TopButton</include>
+				</control>
+				<control type="fixedlist" id="655">	
+					<include name="WidgetSquareLayout_Vertical">
+						<param name="aspectratio">keep</param>
+						<param name="border">10</param>
+					</include>
+					<content>
+						<include>Weather_WidgetForecast</include>
+					</content>
+				</control>				
+				<control type="group">
+					<include>WidgetBoxesLabelOverlays_Vertical</include>
+				</control>
+				<include name="WidgetBottomLabels_Vertical">
+					<param name="Container">655</param>
+				</include>			
+				<include name="ParamWidgetCounterLoading_Vertical">
+					<param name="Container">655</param>  
+				</include>
+			</control>
+
 		</control>
 	</include>
 

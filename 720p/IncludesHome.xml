@@ -20,7 +20,7 @@
 
 				<animation effect="slide" time="0" start="0,0" end="0,-100" condition="StringCompare(Skin.String(MainMenuStyle),textbottom)">Conditional</animation>
 				<animation effect="slide" time="0" start="0,0" end="0,-15" condition="!StringCompare(Skin.String(MainMenuStyle),vertical) + !StringCompare(Skin.String(MainMenuStyle),textbottom) + !SubString(Skin.String(MainMenuStyle),icon)">Conditional</animation>
-
+				
 			</control>		
 			<control type="image">
 				<include>FullscreenDimensions</include>
@@ -45,7 +45,7 @@
 
 
 	<!--======================-->
-	<!--Main Home List Buttons-->
+	<!-- Horizontal Main Home List Buttons-->
 	<!--======================-->
 	<include name="HomeMenuWraplist">
 
@@ -77,6 +77,7 @@
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),tvshows)">SetFocus(90601)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),music)">SetFocus(45)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),tunein)">SetFocus(90801)</onup>
+					<onup condition="StringCompare(Container(20).ListItem.Property(widget),weather)">SetFocus(90651)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup1)">SetFocus(90901)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup2)">SetFocus(90911)</onup>
 					<onup condition="StringCompare(Container(20).ListItem.Property(widget),widgetgroup3)">SetFocus(90931)</onup>
@@ -502,7 +503,7 @@
 					<width>1600</width>
 					<height>480</height>
 					<align>right</align>
-					<onright condition="!IsEmpty(Container(20).ListItem.Property(widget)) | !IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">SetProperty(WidgetHasFocus,1,Home)</onright>
+					<onright condition="[!IsEmpty(Container(20).ListItem.Property(widget)) | !IsEmpty(Container(20).ListItem.Property(widgetPlaylist))] + !StringCompare(Container(20).ListItem.Property(widget),weather)">SetProperty(WidgetHasFocus,1,Home)</onright>
 					<!--<onright condition="IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">Select</onright>-->
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),movies)">SetFocus(90501)</onright>
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),tvshows)">SetFocus(90601)</onright>
@@ -608,13 +609,14 @@
 				<!--widgets-->
 				<control type="group">
 					<left>-10</left>
+					<animation effect="slide" time="0" end="0,-17" condition="Skin.HasSetting(HideWidgetCounter)">Conditional</animation>
 					<!-- move widgets if context menu is visible -->			
 					<animation type="Conditional" condition="Window.IsVisible(contextmenu)" reversible="false">
 						<effect type="slide" end="0,-35" time="350" tween="cubic" easing="out" />			
 					</animation>
 					<animation type="Conditional" condition="!Window.IsVisible(contextmenu)" reversible="false">
 						<effect type="slide" start="0,-35" end="0,0" time="350" tween="sine" easing="out" />			
-					</animation>	
+					</animation>						
 					<include condition="StringCompare(Skin.String(MainMenuStyle),vertical)">HomeWidgetsContainer_Vertical</include>			
 				</control>
 			</control>
