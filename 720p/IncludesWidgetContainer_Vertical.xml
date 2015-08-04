@@ -251,11 +251,10 @@
 	<!-- ========================== -->
 
 	<include name="WidgetContainer_Vertical">
-		<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>
+		<!--<visible>![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ProgressDialog) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>-->
 		<top>-35</top>
 		<left>450</left>
 
-		<!--<include>VerticalMenuWidgetUpDown</include>		-->
 		<!-- headline -->
 		<control type="grouplist">
 			<top>165</top>
@@ -286,7 +285,7 @@
 				<shadowcolor>77000000</shadowcolor>				
 				<scroll>false</scroll>						
 				<label>$VAR[QuickNavWidgetHeaderTitle]</label>
-				<visible>[!Control.IsVisible(2013) + !Control.IsVisible(2014)] | [!IsEmpty(Container(20).ListItem.Property(widget)) | !IsEmpty(Container(20).ListItem.Property(widgetPlaylist))]</visible>
+				<visible>!Control.IsVisible(2013) + !Control.IsVisible(2014) + [!IsEmpty(Container(20).ListItem.Property(widget)) | !IsEmpty(Container(20).ListItem.Property(widgetPlaylist))]</visible>
 			</control>		
 			<control type="label">
 				<description>header title</description>		
@@ -299,7 +298,7 @@
 				<shadowcolor>77000000</shadowcolor>				
 				<scroll>false</scroll>						
 				<label>$VAR[QuickNavWidgetHeaderTitleNext]</label>
-				<visible>Control.IsVisible(2013) + IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))</visible>
+				<visible>Control.IsVisible(2013)</visible>
 			</control>		
 			<control type="label">
 				<description>header title</description>		
@@ -312,7 +311,7 @@
 				<shadowcolor>77000000</shadowcolor>				
 				<scroll>false</scroll>						
 				<label>$VAR[QuickNavWidgetHeaderTitlePrevious]</label>
-				<visible>Control.IsVisible(2014) + IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))</visible>
+				<visible>Control.IsVisible(2014)</visible>
 			</control>
 			<control type="image">  					
 				<left>763</left>

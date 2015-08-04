@@ -896,23 +896,28 @@
 
 	<include name="VerticalMenuWidgetUpDown">
 		
-		<animation effect="fade" start="100" end="0" time="300" condition="IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">Hidden</animation>
-		<animation effect="fade" start="0" end="100" time="300">Visible</animation>
+		<!--<animation effect="fade" start="100" end="0" time="300" condition="IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">Hidden</animation>-->
+		<!--<animation effect="slide" start="0,0" end="0,55" time="300" condition="IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">Hidden</animation>-->
 
-		<animation type="Conditional" reversible="false" condition="Control.IsVisible(2013)">			
-			<effect type="slide" start="0,-55" end="0,0" time="350" tween="cubic" easing="out"/>
+		<animation type="Hidden" reversible="false">		
+			<effect type="fade" start="100" end="0" time="300" />
+			<effect type="slide" start="0,0" end="0,45" time="350" tween="cubic" easing="out"/>
 		</animation>
-		<animation type="Conditional" reversible="false" condition="Control.IsVisible(2014)">			
-			<effect type="slide" start="0,55" end="0,0" time="350" tween="cubic" easing="out"/>			
-		</animation>
+		
+		<animation type="Visible" reversible="false">			
+			<effect delay="350" type="fade" start="0" end="100" time="300" />
+			<effect delay="350" type="slide" start="0,45" end="0,0" time="350" tween="cubic" easing="out"/>
+		</animation>	
+		
+
 
 		<animation type="WindowOpen" reversible="true">
 			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
-			<effect type="slide" start="0,-55" end="0,0" time="350" tween="cubic" easing="out" />
+			<effect type="slide" start="0,-45" end="0,0" time="350" tween="cubic" easing="out" />
 		</animation>
 		<animation type="WindowClose" reversible="true">
 			<effect type="fade" start="100" end="0" time="300" delay="250" tween="sine" easing="inout" />
-			<effect type="slide" start="0,0" end="0,-55" time="350" delay="250" tween="sine" easing="inout" />
+			<effect type="slide" start="0,0" end="0,-45" time="350" delay="250" tween="sine" easing="inout" />
 		</animation>
 		
 	</include>
