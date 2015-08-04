@@ -29,11 +29,11 @@
 
 				<!-- hidden main menu movement controls -->
 				<control type="group" id="2013">
-					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="350" tween="quadratic" easing="out">Hidden</animation>
+					<animation reversible="false" effect="slide" start="0,0" end="0,-242" time="250" tween="quadratic" easing="out">Hidden</animation>
 					<visible>Container(20).OnNext + IntegerGreaterThan(Container(20).NumItems,1)</visible>					
 				</control>
 				<control type="group" id="2014">
-					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="350" tween="quadratic" easing="out">Hidden</animation>
+					<animation reversible="false" effect="slide" start="0,0" end="0,242" time="250" tween="quadratic" easing="out">Hidden</animation>
 					<visible>Container(20).OnPrevious + IntegerGreaterThan(Container(20).NumItems,1)</visible>
 				</control>				
 
