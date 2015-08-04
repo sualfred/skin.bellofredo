@@ -52,19 +52,28 @@
 						<top>7</top>
 						<width>276</width>
 						<height>168</height>
+						<texture diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
+						<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
+						<include>VisibleFadeEffect</include>
+					</control>
+					<control type="image">
+						<left>7</left>
+						<top>7</top>
+						<width>276</width>
+						<height>168</height>
 						<texture diffuse="thumbs/video_diffuse.png">$INFO[ListItem.Icon]</texture>
 						<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
 						<include>VisibleFadeEffect</include>
 					</control>
-						<control type="image">
-							<left>7</left>
-							<top>7</top>
-							<width>276</width>
-							<height>168</height>
-							<texture diffuse="thumbs/video_diffuse.png">views/episode/episode_label.png</texture>
-							<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
-							<include>VisibleFadeEffect</include>
-						</control>
+					<control type="image">
+						<left>7</left>
+						<top>7</top>
+						<width>276</width>
+						<height>168</height>
+						<texture diffuse="thumbs/video_diffuse.png">views/episode/episode_label.png</texture>
+						<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
+						<include>VisibleFadeEffect</include>
+					</control>
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -90,6 +99,15 @@
 				</itemlayout>
 				<focusedlayout width="306">
 					<control type="group">
+						<control type="image">
+							<left>7</left>
+							<top>7</top>
+							<width>276</width>
+							<height>168</height>
+							<texture diffuse="thumbs/video_diffuse.png">thumbs/thumb_back.png</texture>
+							<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
+							<include>VisibleFadeEffect</include>
+						</control>
 						<control type="image">
 							<left>7</left>
 							<top>7</top>

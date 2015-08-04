@@ -389,6 +389,14 @@
 							<selected>!Skin.HasSetting(HideVerticalMenuSeperator)</selected>
 							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
 						</control>
+						<control type="radiobutton" id="8322">
+							<description>Hide Scroll Diffuse</description>
+							<include>SettingsRadioButton</include>
+							<label>- $LOCALIZE[31490]</label>
+							<onclick>Skin.ToggleSetting(HideVerticalMenuScrollDiffuse)</onclick>
+							<selected>!Skin.HasSetting(HideVerticalMenuScrollDiffuse)</selected>
+							<visible>StringCompare(Skin.String(MainMenuStyle),vertical)</visible>		
+						</control>
 						
 						<!-- Common Settings -->
 						<control type="button" id="8307">

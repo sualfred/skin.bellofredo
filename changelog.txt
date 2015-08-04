@@ -1,3 +1,6 @@
+[B][COLOR=FF56ADDA]v4.6.1[/COLOR][/B]
+• Fixed: Missing thumbnail background in the bookmark OSD
+
 [B][COLOR=FF56ADDA]v4.6.0[/COLOR][/B]
 • Added: Simple weather widget
 • Fixed: Vertical menu widget positions if the item counter is disabled

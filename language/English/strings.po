@@ -2038,3 +2038,7 @@ msgstr ""
 msgctxt "#31489"
 msgid "Set Action"
 msgstr ""
+
+msgctxt "#31490"
+msgid "Enable Menu Label Diffuse"
+msgstr ""
