@@ -129,23 +129,7 @@
 	<!-- Home SubMenus -->
 	<include name="VerticalHomeSubMenus">
 
-		<control type="group">
-			<visible allowhiddenfocus="true">![Window.IsActive(1110) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(ShutdownMenu) | Window.IsActive(ProgressDialog) | Window.IsActive(PlayerControls) | Window.IsActive(Favourites) | Window.IsActive(script-skinshortcuts.xml) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Container(20).OnNext | Container(20).OnPrevious] + Control.HasFocus(23)</visible>
-			<include>HomeSlideAnimations</include>
-			<left>93</left>
-			<top>140</top>
-			<width>1600</width>
-			<height>480</height>
-			<align>right</align>
-			<control type="label">
-				<width>290</width>
-				<textcolor>white</textcolor>
-				<shadowcolor>55000000</shadowcolor>
-				<font>FontSize_40</font>
-				<align>right</align>
-				<label>$INFO[Control.GetLabel(20)]</label>
-			</control>
-		</control>
+		
 
 
 		<control type="list" id="23">
