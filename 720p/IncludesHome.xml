@@ -487,11 +487,8 @@
 			
 			
 			<control type="group">
-				<!-- main menu -->
-				<!-- Home menu slide animations -->
-
-					
-				<control type="fixedlist" id="20">
+				<!-- main menu -->					
+				<control type="list" id="20">
 					<animation effect="slide" time="0" start="0,0" end="48,0" condition="Skin.HasSetting(HideVerticalMenuIcons)">Conditional</animation>
 					<include>WidgetMainMenuSlideAnimations_Vertical</include>
 					<include>HomeSlideAnimations</include>
@@ -500,10 +497,9 @@
 					<left>45</left>
 					<top>140</top>
 					<width>1600</width>
-					<height>480</height>
+					<height>495</height>
 					<align>right</align>
 					<onright condition="[!IsEmpty(Container(20).ListItem.Property(widget)) | !IsEmpty(Container(20).ListItem.Property(widgetPlaylist))] + !StringCompare(Container(20).ListItem.Property(widget),weather)">SetProperty(WidgetHasFocus,1,Home)</onright>
-					<!--<onright condition="IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">Select</onright>-->
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),movies)">SetFocus(90501)</onright>
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),tvshows)">SetFocus(90601)</onright>
 					<onright condition="StringCompare(Container(20).ListItem.Property(widget),music)">SetFocus(45)</onright>
@@ -546,8 +542,7 @@
 							<visible>!Skin.HasSetting(HideVerticalMenuIcons)</visible>
 						</control>
 					</itemlayout>
-
-					<focusedlayout width="label" height="55">	
+					<focusedlayout width="355" height="55">	
 						<control type="group">
 
 							<animation type="Focus" reversible="false" condition="Container(20).OnPrevious">
@@ -612,14 +607,14 @@
 				<!-- menu scroll deffuse -->
 				<control type="group">
 					<visible>!Skin.HasSetting(HideVerticalMenuScrollDiffuse)</visible>
+					
 					<control type="image">
 						<include>WidgetMainMenuSlideAnimations_Vertical</include>
-						<left>-10</left>
+						<left>-20</left>
 						<top>-410</top>
 						<width>1280</width>
 						<height>1240</height>
 						<aspectratio>stretch</aspectratio>
-						<!--<texture border="2" diffuse="views/other/vertical_diffuse.png">white.png</texture>-->
 						<texture border="2" diffuse="views/other/vertical_diffuse.png">views/other/menus_overlay.png</texture>
 						<animation condition="Container(20).Row(0)" effect="slide" end="0,-55" time="200">Conditional</animation>
 						<animation condition="Container(20).Row(1)" effect="slide" end="0,0" time="200">Conditional</animation>
@@ -635,12 +630,11 @@
 					</control>
 					<control type="image">
 						<include>WidgetMainMenuSlideAnimations_Vertical</include>
-						<left>-10</left>
+						<left>-20</left>
 						<top>-360</top>
 						<width>1280</width>
 						<height>1240</height>
 						<aspectratio>stretch</aspectratio>
-						<!--<texture border="2" diffuse="views/other/vertical_diffuse.png">white.png</texture>-->
 						<texture border="2" diffuse="views/other/vertical_diffuse.png">views/other/menus_overlay.png</texture>
 						<animation condition="Container(23).Row(0)" effect="slide" end="0,-40" time="200">Conditional</animation>
 						<animation condition="Container(23).Row(1)" effect="slide" end="0,0" time="200">Conditional</animation>
@@ -652,6 +646,7 @@
 						<animation condition="Container(23).Row(7)" effect="slide" end="0,220" time="200">Conditional</animation>
 						<animation condition="Container(23).Row(8)" effect="slide" end="0,260" time="200">Conditional</animation>
 						<animation condition="Container(23).Row(9)" effect="slide" end="0,300" time="200">Conditional</animation>
+						<animation condition="Container(23).Row(10)" effect="slide" end="0,340" time="200">Conditional</animation>
 						<visible>Control.HasFocus(23)</visible>
 					</control>
 				</control>
