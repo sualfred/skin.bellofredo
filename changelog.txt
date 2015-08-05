@@ -1,5 +1,7 @@
 [B][COLOR=FF56ADDA]v4.6.1[/COLOR][/B]
 • Fixed: Missing thumbnail background in the bookmark OSD
+• Fixed: Global background (why does nobody noticed it?)
+• Added: Soft label diffuse while scrolling the vertical menu (can be disabled)
 
 [B][COLOR=FF56ADDA]v4.6.0[/COLOR][/B]
 • Added: Simple weather widget
