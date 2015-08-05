@@ -499,7 +499,7 @@
 					<left>-40</left>
 					<top>-360</top>
 					<width>1280</width>
-					<height>1240</height>
+					<height>1190</height>
 					<aspectratio>stretch</aspectratio>
 					<texture border="2" diffuse="views/other/vertical_diffuse_inverted.png">views/other/menus_overlay.png</texture>
 					<animation condition="Container(23).Row(0)" effect="slide" end="0,-40" time="200">Conditional</animation>
@@ -685,7 +685,7 @@
 						<left>-40</left>
 						<top>-360</top>
 						<width>1280</width>
-						<height>1240</height>
+						<height>1190</height>
 						<aspectratio>stretch</aspectratio>
 						<texture border="2" diffuse="views/other/vertical_diffuse.png">views/other/menus_overlay.png</texture>
 						<animation condition="Container(23).Row(0)" effect="slide" end="0,-40" time="200">Conditional</animation>
