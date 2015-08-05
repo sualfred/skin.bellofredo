@@ -12,6 +12,7 @@
 			<randomize>true</randomize>
 			<loop>yes</loop>				
 			<visible>![Player.HasVideo + !Skin.HasSetting(HideBGVideo)]</visible>
+			<visible>![Skin.HasSetting(CustomBackground) + !IsEmpty(Skin.String(CustomImageBackgroundPath))]</visible>
 			<visible>!IsEmpty(Skin.String(WeatherFanartDir)) + Window.IsVisible(weather) | StringCompare(Container(20).ListItem.Property(backgroundName),Conditional Weather) | StringCompare(Container(20).ListItem.Property(defaultID),weather)</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>
@@ -121,6 +122,7 @@
 				<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 			</control>
 			<control type="group">
+				<visible>![Skin.HasSetting(CustomBackground) + !IsEmpty(Skin.String(CustomImageBackgroundPath))]</visible>
 				<visible>![[StringCompare(Container(20).ListItem.Property(defaultID),weather) | Window.IsVisible(weather)] + [Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))]]</visible>
 				<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 				<control type="image">
