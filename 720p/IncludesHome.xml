@@ -573,7 +573,7 @@
 					<itemgap>0</itemgap>
 					<orientation>vertical</orientation>
 					<focusposition>1</focusposition>
-					<movement>8</movement>			-->			
+					<movement>7</movement>			-->			
 					<scrolltime tween="Quadratic" easing="out">400</scrolltime>
 					<itemlayout width="335" height="55">
 						<control type="label">

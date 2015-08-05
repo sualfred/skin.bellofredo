@@ -1,3 +1,6 @@
+[B][COLOR=FF56ADDA]v4.6.1a[/COLOR][/B]
+• Quick fix: Broken vertical menu fixedlist
+
 [B][COLOR=FF56ADDA]v4.6.1[/COLOR][/B]
 • Fixed: Missing thumbnail background in the bookmark OSD
 • Fixed: Global background (why does nobody noticed it?)
