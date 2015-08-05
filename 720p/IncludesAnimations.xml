@@ -895,22 +895,14 @@
 	</include>	
 
 	<include name="VerticalMenuWidgetUpDown">
-		
-		<!--<animation effect="fade" start="100" end="0" time="300" condition="IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">Hidden</animation>-->
-		<!--<animation effect="slide" start="0,0" end="0,55" time="300" condition="IsEmpty(Container(20).ListItem.Property(widget)) + IsEmpty(Container(20).ListItem.Property(widgetPlaylist))">Hidden</animation>-->
-
 		<animation type="Hidden" reversible="false">		
 			<effect type="fade" start="100" end="0" time="200" />
 			<effect type="slide" start="0,0" end="0,45" time="250" tween="cubic" easing="out"/>
-		</animation>
-		
+		</animation>		
 		<animation type="Visible" reversible="false">			
 			<effect delay="250" type="fade" start="0" end="100" time="200" />
 			<effect delay="250" type="slide" start="0,45" end="0,0" time="250" tween="cubic" easing="out"/>
 		</animation>	
-		
-
-
 		<animation type="WindowOpen" reversible="true">
 			<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in"  />
 			<effect type="slide" start="0,-45" end="0,0" time="250" tween="cubic" easing="out" />
@@ -918,8 +910,7 @@
 		<animation type="WindowClose" reversible="true">
 			<effect type="fade" start="100" end="0" time="200" delay="250" tween="sine" easing="inout" />
 			<effect type="slide" start="0,0" end="0,-45" time="250" delay="250" tween="sine" easing="inout" />
-		</animation>
-		
+		</animation>		
 	</include>
 
 	<include name="VisibleFadeEffectRecent">

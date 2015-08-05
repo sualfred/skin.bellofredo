@@ -477,7 +477,7 @@
 					<effect type="fade" delay="0" start="45" end="90" time="500" tween="sine" easing="in"  />
 				</animation>
 				<control type="image">
-					<left>-40</left>
+					<left>-80</left>
 					<top>-410</top>
 					<width>1280</width>
 					<height>1240</height>
@@ -496,7 +496,7 @@
 					<visible>!Control.HasFocus(23) + IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
 				</control>
 				<control type="image">
-					<left>-40</left>
+					<left>-80</left>
 					<top>-360</top>
 					<width>1280</width>
 					<height>1190</height>
@@ -660,9 +660,15 @@
 				<!-- menu scroll labels deffuse -->
 				<control type="group">
 					<visible>!Skin.HasSetting(HideVerticalMenuScrollDiffuse)</visible>	
+					<animation type="Conditional" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">   
+						<effect type="fade" start="100" end="45" time="1000" tween="sine" easing="inout" />
+					</animation>	
+					<animation type="Conditional" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))" reversible="false">
+						<effect type="fade" delay="0" start="45" end="100" time="500" tween="sine" easing="in"  />
+					</animation>
 					<include>WidgetMainMenuSlideAnimations_Vertical</include>				
 					<control type="image">
-						<left>-40</left>
+						<left>-80</left>
 						<top>-410</top>
 						<width>1280</width>
 						<height>1240</height>
@@ -682,7 +688,7 @@
 						<visible>!Control.HasFocus(23)</visible>
 					</control>
 					<control type="image">
-						<left>-40</left>
+						<left>-80</left>
 						<top>-360</top>
 						<width>1280</width>
 						<height>1190</height>
