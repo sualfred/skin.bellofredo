@@ -423,7 +423,7 @@
 				<!--widgets-->
 				<control type="group">	
 					<!-- widget position change -->
-					<animation effect="slide" time="0" start="0,0" end="0,100" condition="StringCompare(Skin.String(MainMenuStyle),textbottom)">Conditional</animation>
+					<animation effect="slide" time="0" start="0,0" end="0,-100" condition="StringCompare(Skin.String(MainMenuStyle),textbottom)">Conditional</animation>
 					<!-- move widgets if context menu is visible -->
 					<animation type="Conditional" condition="Window.IsVisible(contextmenu)" reversible="false">
 						<effect type="slide" end="0,-25" time="350" tween="cubic" easing="out" />			
