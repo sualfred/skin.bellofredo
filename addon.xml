@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.bellofredo" version="4.6.1a" name="Bello Fredo" provider-name="sualfred">
+<addon id="skin.bellofredo" version="4.6.2" name="Bello Fredo" provider-name="sualfred">
   <requires>
 		<import addon="xbmc.gui" version="5.9.0" />
 		<import addon="service.skin.widgets" version="0.0.29"/>
 		<import addon="service.library.data.provider" version="0.0.1" />
-		<import addon="script.tvtunes" version="3.0.6" />
-		<import addon="script.tv.show.next.aired" version="6.0.10" />
 		<import addon="script.artwork.downloader" version="12.0.24" />
 		<import addon="script.globalsearch" version="2.0.8" />
 		<import addon="script.artistslideshow" version="1.6.5" />
