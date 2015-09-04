@@ -1,3 +1,7 @@
+[B][COLOR=FF56ADDA]v4.6.2[/COLOR][/B]
+• Removed addon requirements
+• Fixed widget position for bottom label main menu
+
 [B][COLOR=FF56ADDA]v4.6.1a[/COLOR][/B]
 • Quick fix: Broken vertical menu fixedlist
 
